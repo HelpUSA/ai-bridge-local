@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# SQLite
+*.db
+*.db-journal
+
+# Temp
+temp/*
+!temp/.gitkeep
+
+# Logs
+*.log
+*.jsonl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db

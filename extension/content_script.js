@@ -1,6 +1,6 @@
-// AI Bridge Local v0.4.14 - Confirm send before ACK
+﻿// AI Bridge Local v0.4.16 - Submit recovery
 (() => {
-  const VERSION = "0.4.14";
+  const VERSION = "0.4.16";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -123,7 +123,7 @@
     const txt = candidateText(el);
     let score = 0;
 
-    if (/send|enviar|submit|发送|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
+    if (/send|enviar|submit|å‘é€|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
     if (/stop|cancel|attach|upload|file|mic|microphone|voice|image|search|tool/.test(txt)) score -= 8;
 
     const r = el.getBoundingClientRect();
@@ -224,12 +224,27 @@
     }
   }
 
+  function documentContainsSentMessage(text) {
+    const needle = String(text || "").trim();
+    if (!needle) return false;
+
+    const shortNeedle = needle.slice(0, Math.min(120, needle.length));
+    const candidates = Array.from(document.querySelectorAll(
+      '[data-message-author-role], article, .markdown, [role="article"]'
+    ));
+
+    return candidates.some(el => {
+      const body = (el.innerText || el.textContent || "").trim();
+      return body.includes(shortNeedle);
+    });
+  }
+
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message && message.type === "AI_BRIDGE_INJECT_TEXT") {
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
       const text = message.action?.text || message.action?.message || message.text || "";
 
-      showNotice("Mensagem recebida para injeção", "command_id=" + actionId, "info");
+      showNotice("Mensagem recebida para injeÃ§Ã£o", "command_id=" + actionId, "info");
 
       if (!text) {
         showNotice("Falha: texto vazio", "command_id=" + actionId, "error");
@@ -239,10 +254,28 @@
 
       const composer = findComposer();
       if (!composer) {
-        showNotice("Falha: composer não encontrado", "command_id=" + actionId, "error");
+        showNotice("Falha: composer nÃ£o encontrado", "command_id=" + actionId, "error");
         sendResponse({ok: false, reason: "no_composer"});
         return false;
       }
+
+ const beforeText = getComposerText(composer).trim();
+ if (beforeText) {
+ const ownedPreflightText = beforeText.includes("AI_BRIDGE_LOCAL_START") || beforeText.includes("ai_bridge_local.envelope") || beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
+ if (ownedPreflightText) {
+ showNotice("Limpando composer travado da extensao", "command_id=" + actionId, "warn");
+ setText(composer, String());
+ } else {
+ showNotice("Falha: composer nao vazio antes da injecao", "command_id=" + actionId, "error");
+ sendResponse({
+ ok: false,
+ reason: "composer_not_empty_before_inject",
+ text_length: beforeText.length,
+ preview: beforeText.slice(0, 200)
+ });
+ return false;
+ }
+ }
 
       setText(composer, text);
 
@@ -263,8 +296,8 @@
       const isSubmitted = () => {
         const current = getComposerText(composer).trim();
         if (!current) return true;
-        if (expectedPrefix && !current.includes(expectedPrefix)) return true;
-        return false;
+        if (expectedPrefix && current.includes(expectedPrefix)) return false;
+ return false;
       };
 
       const trySubmit = () => {
@@ -300,7 +333,9 @@
           setTimeout(trySubmit, 250);
         } else {
           const finalText = getComposerText(composer);
-          const reason = clickedAtLeastOnce ? "submit_not_confirmed_composer_still_has_text" : "submit_button_not_found_or_disabled";
+          const ownedStuckText = finalText && expectedPrefix && finalText.includes(expectedPrefix);
+ if (ownedStuckText) setText(composer, String());
+ const reason = clickedAtLeastOnce ? "submit_not_confirmed_composer_still_has_text" : "submit_button_not_found_or_disabled";
           showNotice("Falha ao confirmar envio", "command_id=" + actionId + "\nreason=" + reason, "error");
           console.warn("[Local v" + VERSION + "] Submit failed", {hasButton: !!findSendButton(composer), finalTextLength: finalText.length, clickedAtLeastOnce});
           safeRespond({

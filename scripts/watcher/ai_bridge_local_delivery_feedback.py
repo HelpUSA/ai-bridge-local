@@ -11,12 +11,15 @@ def parse_dt(value):
     if not value:
         return None
     s = str(value).strip()
-    try:
-        if s.endswith('Z'):
-            s = s[:-1] + '+00:00'
-        return datetime.fromisoformat(s).astimezone(timezone.utc)
-    except Exception:
-        pass
+    if not s:
+        return None
+    if s.endswith(chr(90)):
+        s = s[:-1] + chr(43) + chr(48) + chr(48) + chr(58) + chr(48) + chr(48)
+    if chr(84) in s or chr(43) in s[10:]:
+        try:
+            return datetime.fromisoformat(s).astimezone(timezone.utc)
+        except Exception:
+            pass
     try:
         return datetime.strptime(s, '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
     except Exception:
@@ -26,14 +29,13 @@ def age_seconds(row):
     dt = parse_dt(row['delivered_at']) or parse_dt(row['created_at'])
     if not dt:
         return 0
-    return int((datetime.now(timezone.utc) - dt).total_seconds())
+    now = datetime.now(timezone.utc)
+    return int((now - dt).total_seconds())
 
-def feedback_exists(con, original_command_id):
-    cur = con.execute(
-        'select 1 from commands where command_id like ? limit 1',
-        (FEEDBACK_PREFIX + original_command_id + '%',),
-    )
-    return cur.fetchone() is not None
+def feedback_exists(con, original_id):
+    feedback_id = FEEDBACK_PREFIX + str(original_id)
+    row = con.execute('select 1 from commands where command_id=?', (feedback_id,)).fetchone()
+    return row is not None
 
 def build_feedback_text(row, age):
     return (
@@ -50,18 +52,23 @@ def build_feedback_text(row, age):
         'observacao=Nada novo foi executado por este feedback; isto e apenas retorno automatico ao chat de origem.'
     )
 
+def feedback_target(row):
+    if str(row['source_chat_id']) == 'gateway-brain-supervisor':
+        return row['target_chat_id']
+    return row['source_chat_id']
+
 def insert_feedback(con, row, age, dry_run=False):
     original_id = str(row['command_id'])
     feedback_id = FEEDBACK_PREFIX + original_id
     if dry_run:
-        print('DRY_RUN_FEEDBACK|' + feedback_id + '|to=' + str(row['source_chat_id']) + '|original_to=' + str(row['target_chat_id']) + '|age=' + str(age))
+        print('DRY_RUN_FEEDBACK|' + feedback_id + '|to=' + str(feedback_target(row)) + '|original_to=' + str(row['target_chat_id']) + '|age=' + str(age))
         return 0
     con.execute(
         'insert into commands (command_id, source_chat_id, target_chat_id, action, delivery_kind, conversation_id, from_agent, message, payload_json, status, created_at) values (?,?,?,?,?,?,?,?,?,?,?)',
         (
             feedback_id,
             'gateway-brain-supervisor',
-            row['source_chat_id'],
+            feedback_target(row),
             'send-chat-message',
             'local_inter_agent_message',
             'delivery_feedback_' + str(row['conversation_id'] or 'local'),
@@ -72,7 +79,7 @@ def insert_feedback(con, row, age, dry_run=False):
             datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),
         ),
     )
-    print('INSERTED_FEEDBACK|' + feedback_id + '|to=' + str(row['source_chat_id']) + '|original=' + original_id)
+    print('INSERTED_FEEDBACK|' + feedback_id + '|to=' + str(feedback_target(row)) + '|original=' + original_id)
     return 1
 
 def main():
@@ -92,7 +99,7 @@ def main():
         from commands
         where action='send-chat-message'
           and delivery_kind='local_inter_agent_message'
-          and status='delivering'
+          and status in ('queued','delivering')
           and acked_at is null
           and command_id not like ?
         order by id asc

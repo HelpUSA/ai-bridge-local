@@ -1,11 +1,28 @@
-﻿// AI Bridge Local v0.3.8 - Receptor local
+// AI Bridge Local v0.4.13 - Compact status and persistent parse-error dedupe
 (() => {
-  const VERSION = "0.3.8";
+  const VERSION = "0.4.13";
+  const LOCAL_SCHEMA = "ai_bridge_local.envelope";
+  const LOCAL_SCHEMA_VERSION = 1;
+  const reportedEnvelopeErrors = new Set();
+
   console.log("[Local v" + VERSION + "] Active");
+
+  function showNotice(title, detail = "", kind = "info") {
+    // No floating visual toast. Keep diagnostics in console only.
+    try {
+      const prefix = "[AI Bridge Local " + VERSION + "][" + kind + "]";
+      if (detail) {
+        console.log(prefix, title, detail);
+      } else {
+        console.log(prefix, title);
+      }
+    } catch (e) {
+      console.log("[Local] notice error:", e.message);
+    }
+  }
 
   function getChatId() {
     const href = location.href;
-
     const patterns = [
       /chat\.deepseek\.com\/a\/chat\/s\/([0-9a-fA-F-]{36})/i,
       /chat\.deepseek\.com\/.*\/s\/([0-9a-fA-F-]{36})/i,
@@ -35,71 +52,497 @@
   setInterval(registerChatWithBridge, 5000);
 
   function findComposer() {
-    return document.querySelector('textarea, [contenteditable="true"], #prompt-textarea, [role="textbox"]');
+    const selectors = [
+      '#prompt-textarea',
+      '[data-testid="composer"] [contenteditable="true"]',
+      '[contenteditable="true"][role="textbox"]',
+      '[contenteditable="true"]',
+      'textarea',
+      '[role="textbox"]'
+    ];
+
+    for (const selector of selectors) {
+      const el = document.querySelector(selector);
+      if (el) return el;
+    }
+
+    return null;
+  }
+
+  function isVisible(el) {
+    if (!el) return false;
+    const style = window.getComputedStyle(el);
+    if (!style || style.display === "none" || style.visibility === "hidden" || Number(style.opacity) === 0) return false;
+    const rect = el.getBoundingClientRect();
+    return rect.width > 4 && rect.height > 4;
+  }
+
+  function isDisabled(el) {
+    if (!el) return true;
+    if (el.disabled) return true;
+    const aria = String(el.getAttribute("aria-disabled") || "").toLowerCase();
+    if (aria === "true") return true;
+    const cls = String(el.className || "").toLowerCase();
+    if (cls.includes("disabled")) return true;
+    return false;
+  }
+
+  function clickElement(el) {
+    if (!el) return false;
+    try {
+      el.focus?.();
+      for (const type of ["pointerdown", "mousedown", "mouseup", "click"]) {
+        el.dispatchEvent(new MouseEvent(type, {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        }));
+      }
+      el.click?.();
+      return true;
+    } catch (e) {
+      console.warn("[Local v" + VERSION + "] clickElement failed:", e.message);
+      return false;
+    }
+  }
+
+  function candidateText(el) {
+    return [
+      el.innerText || "",
+      el.textContent || "",
+      el.getAttribute("aria-label") || "",
+      el.getAttribute("title") || "",
+      el.getAttribute("data-testid") || "",
+      el.getAttribute("class") || ""
+    ].join(" ").toLowerCase();
+  }
+
+  function scoreSendCandidate(el, composer) {
+    if (!isVisible(el) || isDisabled(el)) return -999;
+
+    const txt = candidateText(el);
+    let score = 0;
+
+    if (/send|enviar|submit|发送|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
+    if (/stop|cancel|attach|upload|file|mic|microphone|voice|image|search|tool/.test(txt)) score -= 8;
+
+    const r = el.getBoundingClientRect();
+    const cr = composer?.getBoundingClientRect?.();
+
+    if (cr) {
+      const nearY = Math.abs((r.top + r.bottom) / 2 - (cr.top + cr.bottom) / 2);
+      const nearX = r.left >= cr.left - 80 && r.left <= cr.right + 160;
+      if (nearY < 140) score += 4;
+      if (nearX) score += 4;
+      if (r.left > cr.left + cr.width * 0.55) score += 3;
+    }
+
+    if (r.width <= 80 && r.height <= 80) score += 2;
+
+    return score;
+  }
+
+  function findSendButton(composer = null) {
+    const selectors = [
+      'button[data-testid="send-button"]',
+      'button[data-testid="composer-submit-button"]',
+      'button[aria-label*="Send" i]',
+      'button[aria-label*="Enviar" i]',
+      'button[title*="Send" i]',
+      'button[title*="Enviar" i]',
+      'button[type="submit"]',
+      '[role="button"][aria-label*="Send" i]',
+      '[role="button"][aria-label*="Enviar" i]',
+      '[class*="send" i]',
+      '[class*="submit" i]'
+    ];
+
+    for (const selector of selectors) {
+      for (const el of Array.from(document.querySelectorAll(selector))) {
+        if (isVisible(el) && !isDisabled(el)) return el;
+      }
+    }
+
+    const generic = Array.from(document.querySelectorAll('button, [role="button"], [aria-label], [title]'))
+      .map(el => ({ el, score: scoreSendCandidate(el, composer) }))
+      .filter(x => x.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    if (generic.length) {
+      console.log("[Local v" + VERSION + "] Generic send candidate:", {
+        score: generic[0].score,
+        text: candidateText(generic[0].el).slice(0, 160)
+      });
+      return generic[0].el;
+    }
+
+    return null;
+  }
+
+  function getComposerText(el) {
+    if (!el) return "";
+    if (el.tagName === "TEXTAREA" || el.tagName === "INPUT") return el.value || "";
+    return el.innerText || el.textContent || "";
   }
 
   function setText(el, text) {
     el.focus();
+
     if (el.tagName === "TEXTAREA" || el.tagName === "INPUT") {
-      const nativeSetter = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value").set;
+      const proto = el.tagName === "TEXTAREA" ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+      const nativeSetter = Object.getOwnPropertyDescriptor(proto, "value").set;
       nativeSetter.call(el, text);
     } else {
-      el.textContent = text;
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      const inserted = document.execCommand && document.execCommand("insertText", false, text);
+      if (!inserted || !getComposerText(el).includes(text.slice(0, Math.min(20, text.length)))) {
+        el.textContent = text;
+      }
     }
+
     el.dispatchEvent(new InputEvent("input", {bubbles: true, cancelable: true, inputType: "insertText", data: text}));
-    el.dispatchEvent(new InputEvent("change", {bubbles: true}));
-    el.dispatchEvent(new Event("blur", {bubbles: true}));
-    el.dispatchEvent(new Event("focus", {bubbles: true}));
+    el.dispatchEvent(new Event("change", {bubbles: true}));
+    el.dispatchEvent(new KeyboardEvent("keyup", {key: " ", code: "Space", bubbles: true}));
   }
 
-  // RECEPTOR
+  function pressEnter(el) {
+    el.focus();
+    for (const type of ["keydown", "keypress", "keyup"]) {
+      el.dispatchEvent(new KeyboardEvent(type, {
+        key: "Enter",
+        code: "Enter",
+        keyCode: 13,
+        which: 13,
+        bubbles: true,
+        cancelable: true
+      }));
+    }
+  }
+
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message && message.type === "AI_BRIDGE_INJECT_TEXT") {
-      const text = message.action?.text || message.text || "";
-      if (!text) { sendResponse({ok: false}); return false; }
+      const actionId = message.action?.action_id || message.action?.command_id || "unknown";
+      const text = message.action?.text || message.action?.message || message.text || "";
+
+      showNotice("Mensagem recebida para injeção", "command_id=" + actionId, "info");
+
+      if (!text) {
+        showNotice("Falha: texto vazio", "command_id=" + actionId, "error");
+        sendResponse({ok: false, reason: "empty_text"});
+        return false;
+      }
+
       const composer = findComposer();
-      if (!composer) { sendResponse({ok: false, reason: "no_composer"}); return false; }
+      if (!composer) {
+        showNotice("Falha: composer não encontrado", "command_id=" + actionId, "error");
+        sendResponse({ok: false, reason: "no_composer"});
+        return false;
+      }
+
       setText(composer, text);
-      // Aguarda o botao send aparecer
+
       let attempts = 0;
-      const tryClick = () => {
-        const btn = document.querySelector('[data-testid="send-button"]:not([disabled]), button[aria-label*="Enviar"]:not([disabled]), button[aria-label*="Send"]:not([disabled])');
-        if (btn) {
-          btn.click();
-          console.log("[Local] Sent after " + (attempts * 200) + "ms");
-        } else if (attempts < 15) {
-          attempts++;
-          setTimeout(tryClick, 200);
+      const maxAttempts = 24;
+      let responded = false;
+
+      const safeRespond = (payload) => {
+        if (responded) return;
+        responded = true;
+        sendResponse(payload);
+      };
+
+      const trySubmit = () => {
+        const currentText = getComposerText(composer);
+        const hasText = currentText.length > 0 || currentText.includes(text.slice(0, Math.min(20, text.length)));
+        const btn = findSendButton(composer);
+
+        if (btn && hasText) {
+          clickElement(btn);
+          showNotice("Mensagem enviada ao chat", "command_id=" + actionId + "\nmethod=button_click", "success");
+          console.log("[Local v" + VERSION + "] Submit by button after " + (attempts * 250) + "ms");
+          safeRespond({ok: true, method: "button_click", attempts, text_length: text.length});
+          return;
+        }
+
+        if (attempts === 6 || attempts === 12 || attempts === 18) {
+          pressEnter(composer);
+          showNotice("Tentativa por Enter", "command_id=" + actionId + "\nattempt=" + attempts, "warn");
+          console.log("[Local v" + VERSION + "] Enter fallback attempt " + attempts);
+        }
+
+        attempts++;
+
+        if (attempts <= maxAttempts) {
+          setTimeout(trySubmit, 250);
         } else {
-          composer.dispatchEvent(new KeyboardEvent("keydown", {key: "Enter", code: "Enter", keyCode: 13, which: 13, bubbles: true}));
-          console.log("[Local] Enter fallback");
+          const finalText = getComposerText(composer);
+          const reason = "submit_button_not_found_or_disabled";
+          showNotice("Falha ao enviar mensagem", "command_id=" + actionId + "\nreason=" + reason, "error");
+          console.warn("[Local v" + VERSION + "] Submit failed", {hasButton: !!findSendButton(composer), finalTextLength: finalText.length});
+          safeRespond({
+            ok: false,
+            reason,
+            final_text_length: finalText.length,
+            attempts
+          });
         }
       };
-      setTimeout(() => { composer.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true})); console.log('[Local] Enter sent'); }, 800);
-      sendResponse({ok: true});
+
+      setTimeout(trySubmit, 300);
       return true;
     }
   });
 
-  // EXTRATOR
+  function normalizeLocalCommand(cmd) {
+    if (!cmd.schema) cmd.schema = LOCAL_SCHEMA;
+    if (!cmd.schema_version) cmd.schema_version = LOCAL_SCHEMA_VERSION;
+    if (!cmd.created_at_utc) cmd.created_at_utc = new Date().toISOString();
+
+    if (cmd.delivery_kind === "inter_agent_message") {
+      cmd.delivery_kind = "local_inter_agent_message";
+    }
+
+    return cmd;
+  }
+
+  function safeIdPart(value) {
+    return String(value || "unknown").replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 80);
+  }
+
+  function canonicalUuid(value) {
+    const m = String(value || "").match(/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/);
+    return m ? m[0].toLowerCase() : "";
+  }
+
+  function extractJsonStringField(raw, field) {
+    try {
+      const re = new RegExp('"' + field + '"\\s*:\\s*"([^"\\r\\n]{0,500})"', "m");
+      const m = String(raw || "").match(re);
+      return m ? m[1] : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function extractJsonUuidField(raw, field) {
+    return canonicalUuid(extractJsonStringField(raw, field));
+  }
+
+  function sanitizeForStatus(value) {
+    return String(value || "")
+      .replace(/@@AI_BRIDGE_LOCAL_START@@/g, "[AI_BRIDGE_LOCAL_START]")
+      .replace(/@@AI_BRIDGE_LOCAL_END@@/g, "[AI_BRIDGE_LOCAL_END]")
+      .replace(/\r/g, "")
+      .slice(0, 1200);
+  }
+
+  function buildLocalStatusMessage(kind, errorMessage, raw) {
+    const currentChatId = canonicalUuid(getChatId());
+    const originalCommandId = extractJsonStringField(raw, "command_id") || "unknown";
+    const originalSource = extractJsonUuidField(raw, "source_chat_id");
+    const originalTarget = extractJsonUuidField(raw, "target_chat_id");
+    const originalConversation = extractJsonStringField(raw, "conversation_id") || "local_bridge_diagnostics";
+    const originalPreview = sanitizeForStatus(raw);
+
+    return {
+      currentChatId,
+      originalCommandId,
+      originalSource,
+      originalTarget,
+      originalConversation,
+      text:
+        "[AI_LOCAL_ERRO]\n" +
+        "acao=corrija_e_reenvie\n" +
+        "no_reply=0\n" +
+        "tipo=" + kind + "\n" +
+        "versao=" + VERSION + "\n" +
+        "id_original=" + originalCommandId + "\n" +
+        "chat_atual=" + (currentChatId || "unknown") + "\n" +
+        "origem=" + (originalSource || "unknown") + "\n" +
+        "destino=" + (originalTarget || "unknown") + "\n" +
+        "erro=" + String(errorMessage || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
+        "correcao=Reenvie um novo envelope local com JSON valido. Use marcadores locais sozinhos nas linhas de inicio/fim. Nao use bloco de codigo. Se citar os marcadores no campo message, nao deixe o marcador sozinho em uma linha.\n" +
+        "original_sanitizado=\n" + originalPreview
+    };
+  }
+
+  function hashTextForStatus(value) {
+    const s = String(value || "");
+    let h = 0;
+    for (let i = 0; i < s.length; i++) {
+      h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    }
+    return Math.abs(h).toString(36);
+  }
+
+  function isStaleEnvelopeForStatus(raw) {
+    const created = extractJsonStringField(raw, "created_at_utc");
+    if (!created) return false;
+    const ts = Date.parse(created);
+    if (!Number.isFinite(ts)) return false;
+    return Date.now() - ts > 120000;
+  }
+
+  function shouldReportEnvelopeError(kind, raw) {
+    const originalCommandId = extractJsonStringField(raw, "command_id") || "unknown";
+    const key = "ai_bridge_local_error_reported_" + safeIdPart(kind) + "_" + safeIdPart(originalCommandId) + "_" + hashTextForStatus(raw);
+
+    if (reportedEnvelopeErrors.has(key)) {
+      console.warn("[Local v" + VERSION + "] Skipping duplicate envelope error in memory:", originalCommandId);
+      return false;
+    }
+
+    try {
+      if (localStorage.getItem(key)) {
+        reportedEnvelopeErrors.add(key);
+        console.warn("[Local v" + VERSION + "] Skipping duplicate envelope error in localStorage:", originalCommandId);
+        return false;
+      }
+    } catch (e) {}
+
+    if (isStaleEnvelopeForStatus(raw)) {
+      reportedEnvelopeErrors.add(key);
+      try { localStorage.setItem(key, String(Date.now())); } catch (e) {}
+      console.warn("[Local v" + VERSION + "] Skipping stale envelope error:", originalCommandId);
+      return false;
+    }
+
+    reportedEnvelopeErrors.add(key);
+    try { localStorage.setItem(key, String(Date.now())); } catch (e) {}
+    return true;
+  }
+
+  function reportEnvelopeError(kind, errorMessage, raw) {
+    try {
+      if (!shouldReportEnvelopeError(kind, raw)) return;
+
+      const info = buildLocalStatusMessage(kind, errorMessage, raw);
+      const targets = [];
+
+      if (info.currentChatId) targets.push(info.currentChatId);
+      if (info.originalTarget && !targets.includes(info.originalTarget)) targets.push(info.originalTarget);
+
+      if (!targets.length) {
+        console.warn("[Local v" + VERSION + "] Could not report envelope error: no valid target chat");
+        return;
+      }
+
+      for (const targetChatId of targets) {
+        const validTarget = canonicalUuid(targetChatId);
+        if (!validTarget) {
+          console.warn("[Local v" + VERSION + "] Skipping invalid status target:", targetChatId);
+          continue;
+        }
+
+        const cmd = {
+          schema: LOCAL_SCHEMA,
+          schema_version: LOCAL_SCHEMA_VERSION,
+          created_at_utc: new Date().toISOString(),
+          command_id: "local_status_" + safeIdPart(kind) + "_" + safeIdPart(info.originalCommandId) + "_to_" + safeIdPart(validTarget).slice(0, 8) + "_" + Date.now(),
+          action: "send-chat-message",
+          source_chat_id: info.currentChatId || info.originalSource || "unknown",
+          target_chat_id: validTarget,
+          delivery_kind: "local_inter_agent_message",
+          conversation_id: info.originalConversation + "_diagnostics",
+          from_agent: "AI Bridge Local Extension " + VERSION,
+          message: info.text
+        };
+
+        console.warn("[Local v" + VERSION + "] Reporting envelope error to chat:", validTarget, kind, errorMessage);
+        send(cmd);
+      }
+    } catch (e) {
+      console.warn("[Local v" + VERSION + "] reportEnvelopeError failed:", e.message);
+    }
+  }
+
   function extract(text) {
     const cmds = [];
-    const regex = /<<<BRIDGE_ASSISTANT_COMMAND_START>>>\s*([\s\S]*?)\s*<<<BRIDGE_ASSISTANT_COMMAND_END>>>/g;
+    const regex = /(?:^|\n)@@AI_BRIDGE_LOCAL_START@@[ \t]*\r?\n([\s\S]*?)\r?\n@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
     let m;
+
     while ((m = regex.exec(text)) !== null) {
-      try { const c = JSON.parse(m[1].trim()); if (c.command_id) cmds.push(c); } catch(e) {}
+      const raw = m[1].trim();
+
+      try {
+        const c = normalizeLocalCommand(JSON.parse(raw));
+
+        if (!c.command_id) {
+          reportEnvelopeError("envelope_missing_command_id", "command_id ausente", raw);
+          continue;
+        }
+
+        if (c.schema !== LOCAL_SCHEMA) {
+          reportEnvelopeError("envelope_invalid_schema", "schema invalido: " + c.schema, raw);
+          continue;
+        }
+
+        cmds.push(c);
+      } catch (e) {
+        const errorKey = safeIdPart((extractJsonStringField(raw, "command_id") || String(raw).slice(0, 80)) + "_" + String(e.message || ""));
+      if (!reportedEnvelopeErrors.has(errorKey)) {
+        reportedEnvelopeErrors.add(errorKey);
+        reportEnvelopeError("envelope_parse_error", e.message, raw);
+      } else {
+        console.warn("[Local v" + VERSION + "] Suppressed duplicate envelope_parse_error:", errorKey);
+      }
+        console.warn("[Local v" + VERSION + "] Invalid local envelope JSON:", e.message, raw.slice(0, 400));
+      }
     }
+
     return cmds;
   }
 
+  const reportedEnvelopeErrorKeys = new Set();
+
+  function hashString(value) {
+    const s = String(value || "");
+    let h = 0;
+    for (let i = 0; i < s.length; i++) {
+      h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    }
+    return String(Math.abs(h));
+  }
+
   const sentIds = new Set();
-  function send(cmd) { if (sentIds.has(cmd.command_id)) return; sentIds.add(cmd.command_id); if (sentIds.size > 50) sentIds.clear();
-    chrome.runtime.sendMessage({type:"AI_BRIDGE_BRIDGE_COMMAND", command:cmd});
+
+  function send(cmd) {
+    if (sentIds.has(cmd.command_id)) {
+      showNotice("Comando duplicado ignorado", "command_id=" + cmd.command_id, "warn");
+      return;
+    }
+
+    sentIds.add(cmd.command_id);
+    if (sentIds.size > 100) sentIds.clear();
+
+    showNotice("Comando local capturado", "command_id=" + cmd.command_id + "\naction=" + cmd.action, "info");
+
+    chrome.runtime.sendMessage({type: "AI_BRIDGE_BRIDGE_COMMAND", command: cmd}, (response) => {
+      if (chrome.runtime.lastError) {
+        showNotice("Falha ao enviar comando ao gateway", chrome.runtime.lastError.message, "error");
+        return;
+      }
+
+      if (response && response.ok) {
+        const status = response.data?.status || "unknown";
+        showNotice("Comando enviado ao gateway", "command_id=" + cmd.command_id + "\nstatus=" + status, "success");
+      } else {
+        showNotice("Gateway recusou comando", JSON.stringify(response || {}), "error");
+      }
+    });
   }
 
   let last = "";
   setInterval(() => {
     const t = document.body?.innerText || "";
-    if (t !== last) { last = t; extract(t).forEach(send); }
+    if (t !== last) {
+      last = t;
+      extract(t).forEach(send);
+    }
   }, 2000);
 })();

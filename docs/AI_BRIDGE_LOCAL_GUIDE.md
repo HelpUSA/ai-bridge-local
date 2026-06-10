@@ -528,6 +528,16 @@ A versao `0.4.34` consolida o modelo de workers virtuais por `source_chat_id`, p
 
 
 ## Roadmap v0.5.0 - AI Bridge Local Control Center
+### Atividade futura - telemetria do service worker e eventos da extensao
+
+Hoje o watcher le com boa confiabilidade o que chega ao gateway, ao banco e a fila local, mas isso nao garante visibilidade completa de tudo que passa internamente pelo service worker da extensao (`background.js`) ou pelo `content_script.js`. Para o Control Center da versao v0.5.0, deve ser implementada uma trilha de diagnostico enviada pela extensao ao gateway e persistida na tabela `events`.
+
+Eventos recomendados: `envelope_detected`, `envelope_parse_error`, `envelope_semantic_error`, `postCommand_attempt`, `postCommand_ok`, `postCommand_failed`, `delivery_attempt`, `delivery_ok`, `delivery_failed`, `chat_heartbeat`, `extension_version` e `active_chat_seen`.
+
+Essa telemetria deve alimentar o Control Center para permitir ver mensagens recebidas, erros, status por chat, versao da extensao ativa, falhas de entrega, heartbeat por chat e um diagnostico copiavel para suporte. O objetivo e reduzir casos silenciosos e separar claramente erro de parse, erro semantico, falha de envio ao gateway e falha de entrega ao chat destino.
+
+Regra obrigatoria: um `send-chat-message` semanticamente invalido, por exemplo com `payload.message` preenchido mas sem `message` top-level, deve gerar `AI_LOCAL_SEMANTIC_ERROR` ou `AI_LOCAL_ERROR` no chat de origem e nao pode ser enfileirado, executado ou ignorado silenciosamente.
+
 
 Esta e a proxima frente do projeto. O objetivo e transformar o AI Bridge Local em um aplicativo Windows instalavel, com janela grafica elegante, botoes de controle, tray icon, atualizacao segura e visao operacional dos chats ativos.
 
@@ -718,3 +728,31 @@ Fase 3: atualizacao com backup, validacao, reinicio e rollback
 ### Estado atual
 
 Esta frente ainda nao foi implementada. Ela esta registrada como especificacao inicial para iniciar a versao `v0.5.0`.
+
+
+### Telemetria futura do service worker e eventos da extensão
+
+Hoje o watcher consegue inspecionar principalmente o que chega ao gateway local, ao banco `queue_local.db`, às filas e aos registros de execução. Nem toda mensagem que passa internamente pelo `content_script.js` ou pelo `background.js`/service worker fica visível depois, porque o service worker pode processar algo sem persistir evento, log ou feedback.
+
+Atividade futura: adicionar telemetria explícita da extensão para o gateway local e para a tabela `events`. O objetivo é permitir que o watcher e o futuro Control Center mostrem o histórico operacional da extensão, inclusive mensagens detectadas, erros de parse, erros semânticos, tentativas de envio, falhas de entrega, chats ativos e versões da extensão.
+
+Eventos desejados:
+
+```text
+envelope_detected
+envelope_parse_error
+envelope_semantic_error
+postCommand_attempt
+postCommand_ok
+postCommand_failed
+delivery_attempt
+delivery_ok
+delivery_failed
+chat_heartbeat
+extension_version
+active_chat_seen
+```
+
+Esses eventos devem alimentar o Control Center para exibir status por chat, `source_chat_id`, última atividade, versão da extensão, falhas recentes, comandos recebidos, comandos entregues e diagnóstico copiável.
+
+Regra específica: um `send-chat-message` semanticamente inválido, por exemplo com `payload.message` preenchido mas sem `message` top-level string não vazia, não pode ser aceito silenciosamente. A extensão e o gateway devem gerar `AI_LOCAL_SEMANTIC_ERROR` ou `AI_LOCAL_ERRO` no chat de origem, com orientação `corrija_e_reenvie`, preservando o `command_id` original quando possível e garantindo que nada seja enfileirado como mensagem vazia.

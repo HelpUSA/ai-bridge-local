@@ -596,10 +596,27 @@
       return;
     }
 
-    const actualSourceChatId = getChatId();
+ const actualSourceChatId = getChatId();
  if (actualSourceChatId) {
  if (cmd.source_chat_id && cmd.source_chat_id !== actualSourceChatId) {
- cmd.declared_source_chat_id = cmd.source_chat_id;
+ const declaredSource = cmd.source_chat_id;
+ const statusText = [
+ '[AI_LOCAL_ERRO]',
+ 'acao=corrija_e_reenvie',
+ 'no_reply=0',
+ 'executado=nao',
+ 'tipo=source_chat_id_mismatch',
+ 'versao=' + VERSION,
+ 'id_original=' + (cmd.command_id || 'unknown'),
+ 'chat_atual=' + actualSourceChatId,
+ 'origem_declarada=' + declaredSource,
+ 'destino=' + (cmd.target_chat_id || 'unknown'),
+ 'erro=source_chat_id do envelope nao corresponde ao chat atual. Nada foi executado nem enviado ao gateway.',
+ 'correcao=Reenvie o envelope a partir do chat correto ou ajuste source_chat_id para o chat atual.'
+ ].join(String.fromCharCode(10));
+ showNotice('Source chat divergente', 'command_id=' + (cmd.command_id || 'unknown') + String.fromCharCode(10) + 'origem=' + declaredSource + String.fromCharCode(10) + 'chat_atual=' + actualSourceChatId, 'error');
+ sendTextToChat(statusText, 'source_chat_id_mismatch_' + (cmd.command_id || 'unknown'));
+ return;
  }
  cmd.source_chat_id = actualSourceChatId;
  cmd.source_url = location.href;

@@ -3,10 +3,13 @@ import argparse
 import sqlite3
 
 DB_PATH = 'queue_local.db'
+DEFAULT_PREFIX = 'ai_bridge_local_'
+DEFAULT_EXCLUDE_PREFIXES = ['ai_bridge_local_pizza_']
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--prefix', default='ai_bridge_local_')
+    parser.add_argument('--prefix', default=DEFAULT_PREFIX)
+    parser.add_argument('--exclude-prefix', action='append', default=list(DEFAULT_EXCLUDE_PREFIXES))
     parser.add_argument('--conversation', default='')
     parser.add_argument('--source-chat-id', default='')
     parser.add_argument('--limit', type=int, default=50)
@@ -20,6 +23,12 @@ def main():
         where.append('command_id like ?')
         params.append(args.prefix + '%')
         title_parts.append('prefix=' + args.prefix)
+
+    for excluded in args.exclude_prefix or []:
+        if excluded:
+            where.append('command_id not like ?')
+            params.append(excluded + '%')
+            title_parts.append('exclude_prefix=' + excluded)
 
     if args.conversation:
         where.append('conversation_id = ?')

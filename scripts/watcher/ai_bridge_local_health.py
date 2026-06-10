@@ -5,6 +5,8 @@ import sys
 from pathlib import Path
 
 DB_PATH = 'queue_local.db'
+INCLUDE_PREFIX = 'ai_bridge_local_'
+EXCLUDE_PREFIXES = ['ai_bridge_local_pizza_']
 
 def run_capture(cmd):
     try:
@@ -19,6 +21,14 @@ def print_block(title, text):
         print(text)
     else:
         print('EMPTY')
+
+def build_filter():
+    where = ['command_id like ?']
+    params = [INCLUDE_PREFIX + '%']
+    for excluded in EXCLUDE_PREFIXES:
+        where.append('command_id not like ?')
+        params.append(excluded + '%')
+    return ' where ' + ' and '.join(where), params
 
 def main():
     print('AI_BRIDGE_LOCAL_HEALTH_START')
@@ -40,13 +50,19 @@ def main():
     db_ok = Path(DB_PATH).exists()
     print('DB_EXISTS|' + str(db_ok))
     if db_ok:
+        clause, params = build_filter()
         con = sqlite3.connect(DB_PATH)
         cur = con.cursor()
+        print('DB_FILTER|prefix=' + INCLUDE_PREFIX + '|exclude_prefix=' + ','.join(EXCLUDE_PREFIXES))
         print('DB_FILTERED_COUNTS')
-        for row in cur.execute('select status,count(*) from commands where command_id like ? group by status order by status', ('ai_bridge_local_%',)).fetchall():
+        for row in cur.execute('select status,count(*) from commands' + clause + ' group by status order by status', params).fetchall():
             print(str(row[0]) + '|' + str(row[1]))
         print('DB_RECENT_AI_BRIDGE_LOCAL')
-        rows = cur.execute('select id,command_id,action,status,return_code,conversation_id,created_at from commands where command_id like ? order by id desc limit 10', ('ai_bridge_local_%',)).fetchall()
+        rows = cur.execute(
+            'select id,command_id,action,status,return_code,conversation_id,created_at from commands'
+            + clause + ' order by id desc limit 10',
+            params,
+        ).fetchall()
         for row in rows:
             print('|'.join('' if x is None else str(x)[:160] for x in row))
         con.close()

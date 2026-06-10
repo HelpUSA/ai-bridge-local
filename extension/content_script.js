@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
-  const VERSION = "0.4.31";
+  const VERSION = "0.4.32";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -596,7 +596,16 @@
       return;
     }
 
-    sentIds.add(cmd.command_id);
+    const actualSourceChatId = getChatId();
+ if (actualSourceChatId) {
+ if (cmd.source_chat_id && cmd.source_chat_id !== actualSourceChatId) {
+ cmd.declared_source_chat_id = cmd.source_chat_id;
+ }
+ cmd.source_chat_id = actualSourceChatId;
+ cmd.source_url = location.href;
+ }
+
+ sentIds.add(cmd.command_id);
     if (sentIds.size > 100) sentIds.clear();
 
     showNotice("Comando local capturado", "command_id=" + cmd.command_id + "\naction=" + cmd.action, "info");

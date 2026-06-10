@@ -57,12 +57,38 @@ class GatewayHandler(BaseHTTPRequestHandler):
             self._send_json({"ok": True, "service": "ai-bridge-local", "version": VERSION, "commands_queued": q, "commands_delivering": d, "timestamp": now_iso()})
             return
 
+        if self.path.startswith("/bridge/pending-sources"):
+            qs = parse_qs(urlparse(self.path).query)
+            target_chat_id = qs.get("target_chat_id", ["gateway-brain-supervisor"])[0]
+
+            conn = sqlite3.connect(DB_PATH)
+            rows = conn.execute(
+                "SELECT source_chat_id, COUNT(*) FROM commands WHERE status='queued' AND target_chat_id=? AND action='run-command' GROUP BY source_chat_id ORDER BY MIN(id) ASC",
+                (target_chat_id,)
+            ).fetchall()
+            conn.close()
+
+            sources = [
+                {"source_chat_id": row[0], "queued": row[1]}
+                for row in rows
+                if row[0]
+            ]
+            self._send_json({"ok": True, "target_chat_id": target_chat_id, "sources": sources})
+            return
+
         if self.path.startswith("/bridge/next-action"):
             qs = parse_qs(urlparse(self.path).query)
             chat_id = qs.get("chat_id", ["gateway-brain-supervisor"])[0]
+            source_chat_id = qs.get("source_chat_id", [""])[0]
 
             conn = sqlite3.connect(DB_PATH)
-            row = conn.execute("SELECT * FROM commands WHERE status='queued' AND target_chat_id=? ORDER BY id ASC LIMIT 1", (chat_id,)).fetchone()
+            if source_chat_id:
+                row = conn.execute(
+                    "SELECT * FROM commands WHERE status='queued' AND target_chat_id=? AND source_chat_id=? AND action='run-command' ORDER BY id ASC LIMIT 1",
+                    (chat_id, source_chat_id)
+                ).fetchone()
+            else:
+                row = conn.execute("SELECT * FROM commands WHERE status='queued' AND target_chat_id=? ORDER BY id ASC LIMIT 1", (chat_id,)).fetchone()
             if not row:
                 conn.close()
                 self._send_json({"ok": True, "action": None, "chat_id": chat_id})

@@ -140,11 +140,11 @@ def enqueue_result_message(action, result, status):
     except Exception as e:
         print(f"[worker] Result enqueue skipped/error: {e}")
 
-def poll_once():
+def poll_source(source_chat_id):
     try:
-        data = get_json(f"{GATEWAY}/bridge/next-action?chat_id=gateway-brain-supervisor")
+        data = get_json(f"{GATEWAY}/bridge/next-action?chat_id=gateway-brain-supervisor&source_chat_id={source_chat_id}")
     except Exception as e:
-        print(f"[worker] Poll error: {e}")
+        print(f"[worker] Poll error for source {source_chat_id}: {e}")
         return
 
     action = data.get("action") if data else None
@@ -159,7 +159,7 @@ def poll_once():
         print(f"[worker] Skip {command_id} (send-chat-message - extension handles)")
         return
 
-    print(f"[worker] Running: {command_id} ({action_type})")
+    print(f"[worker] Running: {command_id} ({action_type}) source={source_chat_id}")
 
     if action_type == "run-command":
         result = execute_command(payload, command_id)
@@ -183,6 +183,23 @@ def poll_once():
         print(f"[worker] {command_id}: {status}")
     except Exception as e:
         print(f"[worker] ACK error: {e}")
+
+
+def poll_once():
+    try:
+        data = get_json(f"{GATEWAY}/bridge/pending-sources?target_chat_id=gateway-brain-supervisor")
+    except Exception as e:
+        print(f"[worker] Pending sources error: {e}")
+        return
+
+    sources = data.get("sources", []) if data else []
+    if not sources:
+        return
+
+    for source in sources:
+        source_chat_id = source.get("source_chat_id", "") if isinstance(source, dict) else str(source)
+        if source_chat_id:
+            poll_source(source_chat_id)
 
 def main():
     print(f"[worker] AI Bridge Local Worker v{VERSION} - Porta 8766")

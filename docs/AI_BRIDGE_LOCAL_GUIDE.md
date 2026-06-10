@@ -525,3 +525,196 @@ A separacao principal e:
 - `run-command` para executar localmente via `gateway-brain-supervisor`.
 
 A versao `0.4.34` consolida o modelo de workers virtuais por `source_chat_id`, permitindo operacao livre por varios chats sem misturar resultados.
+
+
+## Roadmap v0.5.0 - AI Bridge Local Control Center
+
+Esta e a proxima frente do projeto. O objetivo e transformar o AI Bridge Local em um aplicativo Windows instalavel, com janela grafica elegante, botoes de controle, tray icon, atualizacao segura e visao operacional dos chats ativos.
+
+### Nome sugerido
+
+```text
+AI Bridge Local Control Center
+```
+
+### Objetivo
+
+Criar um executavel Windows que seja o ponto unico de controle do ambiente local. Ele deve substituir o uso diario de varios arquivos `.bat` ou terminais separados.
+
+O usuario deve poder iniciar, parar, reiniciar, atualizar e acompanhar o gateway, o worker e as filas por chat de forma visual.
+
+### Comportamento do applicativo
+
+O applicativo deve ter uma janela padrao Windows. Ao clicar no botao de fechar, o app nao deve encerrar os servicos imediatamente. Ele deve ficar minimizado na bandeja do Windows, perto do relogio.
+
+O icone da bandeja deve ter opcoes para:
+
+```text
+Abrir painel
+Iniciar tudo
+Parar tudo
+Reiniciar tudo
+Atualizar
+Abrir logs
+Sair de verdade
+```
+
+### Painel principal
+
+A tela inicial deve mostrar, no minimo:
+
+```text
+Gateway/Supervisor: ligado ou desligado
+Worker/Worker pool: ligado ou desligado
+Banco/fila local: OK ou erro
+Ultima atividade
+Ultimo comando
+Ultimo ACK
+Ultimo erro
+Versao local do AI Bridge
+Commit atual
+Tag atual
+```
+
+Botoes princiqpais:
+
+```text
+Iniciar tudo
+Parar tudo
+Reiniciar tudo
+Atualizar
+Abrir documentacao
+Abrir pasta do projeto
+Copiar diagnostico
+```
+
+### Console ao vivo do worker
+
+O Control Center deve ter uma area de console ao vivo para mostrar o que hoje aparece na janela do `worker.bat` ou `worker_pool.bat`.
+
+Essa area e importante porque serve para acompanhamento e para permitir copiar logs e falhas para colar no chat durante a depuracao.
+
+Funcoes desejadas:
+
+```text
+Copiar log
+Salvar log
+Limpar tela
+Pausar rolagem
+Filtrar por chat
+Filtrar por error
+Filtrar por command_id
+```
+
+### Chats ativos e filas por chat
+
+O applicativo deve mostrar uma tabela com cada chat ativo detectado. Isso deve usar a aquitetura ja implementada de workers virtuais por `source_chat_id`.
+
+Campos desejados:
+
+```text
+Nome ou apelido do chat
+chat_id
+source_chat_id
+status
+ultima atividade
+fila pendente
+comando em execucao
+ultimo ACK
+ultimo error
+conversation_id atual
+adapter
+versao da extensao
+versao do protocolo local
+```
+
+### Heartbeat da extensao
+
+Para mostrar chats ativos com versao da extensao, a extensao do navegador deve enviar um heartbeat periodico para o gateway local.
+
+Payload sugerido:
+
+```json
+{
+  "chat_id": "...",
+  "source_chat_id": "...",
+  "extension_version": "0.4.34",
+  "protocol_version": "0.4.34",
+  "adapter": "browser_extension_direct",
+  "last_seen": "...",
+  "page_title": "...",
+  "url_host": "chatgpt.com",
+  "conversation_id": "..."
+}
+```
+
+### Atualizacao
+
+O applicativo deve ter uma area de atualizacao, pois o projeto deve ser atualizado com frequencia.
+
+Fluxo seguro desejado:
+
+```text
+Werificar atualizacao
+Mostrar versao atual
+Mostrar commit atual
+Parar gateway e worker
+Fazer backup de queue_local.db e configs
+Aplicar atualizacao
+Atualizar dependencias, se necessario
+Validar aquivos principais
+Reiniciar servicos
+Mostrar resultado
+Permitir rollback basico se falhar
+```
+
+Tipos de atualizacao:
+
+```text
+Atualizar app desktop
+Atualizar gateway/worker
+Atualizar extensao
+Atualizar documentacao
+Atualizar tudo
+```
+
+### Diagnostico copiavel
+
+O applicativo deve ter botao para gerar um diagnostico copiavel, contendo:
+
+```text
+versao do app
+versao da extensao
+commit atual
+tag atual
+status do gateway
+status do worker
+chats ativos
+filas pendentes
+ultimos erros
+ultimos command_id executados
+porta local
+caminho do projeto
+```
+
+### Tecnologia recomendada
+
+Primeira versao:
+
+```text
+Python + PySide6
+PyInstaller
+Inno Setup em fase posterior
+```
+
+### Fases de implementacao
+
+```text
+Fase 1: painel basico com iniciar, parar, reiniciar, console ao vivo e tray icon
+Fase 2: tabela de chats ativos, filas por source_chat_id e estatus
+Fase 3: atualizacao com backup, validacao, reinicio e rollback
+```
+
+### Estado atual
+
+Esta frente ainda nao foi implementada. Ela esta registrada como especificacao inicial para iniciar a versao `v0.5.0`.

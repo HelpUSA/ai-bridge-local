@@ -22,6 +22,24 @@ def init_db():
     conn.commit()
     conn.close()
 
+def fetch_control_status():
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        rows = conn.execute("SELECT status, COUNT(1) FROM commands GROUP BY status").fetchall()
+        recent = conn.execute("SELECT command_id, source_chat_id, target_chat_id, action, status, created_at, last_error FROM commands ORDER BY id DESC LIMIT 30").fetchall()
+        events = conn.execute("SELECT command_id, event_type, message, created_at FROM events ORDER BY id DESC LIMIT 30").fetchall()
+        return dict(
+            ok=True,
+            service="ai-bridge-local",
+            version=VERSION,
+            timestamp=now_iso(),
+            command_status={(r[0] or ""): r[1] for r in rows},
+            recent_commands=[dict(command_id=r[0], source_chat_id=r[1], target_chat_id=r[2], action=r[3], status=r[4], created_at=r[5], last_error=r[6]) for r in recent],
+            recent_events=[dict(command_id=r[0], event_type=r[1], message=r[2], created_at=r[3]) for r in events],
+        )
+    finally:
+        conn.close()
+
 def normalize_payload(body):
     payload = body.get("payload", {})
     if not isinstance(payload, dict):
@@ -49,6 +67,14 @@ class GatewayHandler(BaseHTTPRequestHandler):
         return json.loads(self.rfile.read(length).decode("utf-8"))
 
     def do_GET(self):
+        if self.path == "/control":
+            self._send_json(fetch_control_status())
+            return
+
+        if self.path == "/control/status":
+            self._send_json(fetch_control_status())
+            return
+
         if self.path == "/health":
             conn = sqlite3.connect(DB_PATH)
             q = conn.execute("SELECT COUNT(*) FROM commands WHERE status='queued'").fetchone()[0]

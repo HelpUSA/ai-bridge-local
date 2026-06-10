@@ -756,3 +756,13 @@ active_chat_seen
 Esses eventos devem alimentar o Control Center para exibir status por chat, `source_chat_id`, última atividade, versão da extensão, falhas recentes, comandos recebidos, comandos entregues e diagnóstico copiável.
 
 Regra específica: um `send-chat-message` semanticamente inválido, por exemplo com `payload.message` preenchido mas sem `message` top-level string não vazia, não pode ser aceito silenciosamente. A extensão e o gateway devem gerar `AI_LOCAL_SEMANTIC_ERROR` ou `AI_LOCAL_ERRO` no chat de origem, com orientação `corrija_e_reenvie`, preservando o `command_id` original quando possível e garantindo que nada seja enfileirado como mensagem vazia.
+
+### Implementado em 2026-06-10 - Central de Controle JSON
+
+Primeira etapa da Central de Controle implementada no gateway local.
+Entradas disponiveis apos reiniciar o gateway:
+- /control
+- /control/status
+
+Ambas retornam JSON com ok, service, version, timestamp, contagem por status de comandos, comandos recentes e eventos recentes.
+Validado com python -m py_compile, git diff --check e smoke via curl apos restart do gateway.

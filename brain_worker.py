@@ -3,11 +3,12 @@
 import json
 import os
 import subprocess
+from pathlib import Path
 import time
 import urllib.request
 
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 
 def now_iso():
     from datetime import datetime, timezone
@@ -38,11 +39,39 @@ def normalize_command(cmd):
         return ["sh", "-lc", cmd]
     return []
 
-def execute_command(payload):
+def prepare_temp_script(payload, command_id):
+    script_text = payload.get("script_text")
+    if not isinstance(script_text, str) or not script_text:
+        return None
+
+    ext = str(payload.get("script_ext") or ".ps1").strip()
+    if not ext.startswith("."):
+        ext = "." + ext
+
+    safe_id = "".join(ch if ch.isalnum() or ch in "-_" else "_" for ch in str(command_id or "script"))[:80]
+    scripts_dir = Path("temp") / "watcher_scripts"
+    scripts_dir.mkdir(parents=True, exist_ok=True)
+    script_path = scripts_dir / (safe_id + ext)
+    script_path.write_text(script_text, encoding="utf-8")
+    return str(script_path)
+
+
+def execute_command(payload, command_id="unknown"):
     if not isinstance(payload, dict):
         return {"return_code": -1, "stdout": "", "stderr": "invalid_payload_not_object"}
 
+    script_path = prepare_temp_script(payload, command_id)
     cmd = normalize_command(payload.get("command"))
+    if script_path:
+        if not cmd:
+            if script_path.lower().endswith(".ps1"):
+                cmd = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", script_path]
+            elif script_path.lower().endswith(".py"):
+                cmd = ["python", script_path]
+            else:
+                cmd = [script_path]
+        else:
+            cmd = [str(x).replace("{script_path}", script_path) for x in cmd]
     cwd = payload.get("cwd") or "."
     timeout = int(payload.get("timeout_seconds") or 30)
 
@@ -133,7 +162,7 @@ def poll_once():
     print(f"[worker] Running: {command_id} ({action_type})")
 
     if action_type == "run-command":
-        result = execute_command(payload)
+        result = execute_command(payload, command_id)
         status = "acked" if result["return_code"] == 0 else "failed"
         enqueue_result_message(action, result, status)
     else:

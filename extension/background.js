@@ -1,5 +1,5 @@
-﻿// AI Bridge Local v0.4.16
-const VERSION = "0.4.16";
+﻿// AI Bridge Local v0.4.17
+const VERSION = "0.4.17";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -99,7 +99,7 @@ async function postDeliveryStatus(action, status, detail, result = {}) {
       schema: "ai_bridge_local.envelope",
       schema_version: 1,
       created_at_utc: new Date().toISOString(),
-      command_id: "local_status_delivery_" + safeIdPart(status) + "_" + safeIdPart(action.command_id) + "_" + Date.now(),
+      command_id: "local_status_delivery_" + safeIdPart(status) + "_" + safeIdPart(action.command_id),
       action: "send-chat-message",
       source_chat_id: targetChatId || "gateway-brain-supervisor",
       target_chat_id: sourceChatId,

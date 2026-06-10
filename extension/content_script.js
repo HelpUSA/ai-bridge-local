@@ -1,6 +1,6 @@
-﻿// AI Bridge Local v0.4.16 - Submit recovery
+﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
-  const VERSION = "0.4.16";
+  const VERSION = "0.4.17";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();

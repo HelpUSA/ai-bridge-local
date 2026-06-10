@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
-  const VERSION = "0.4.29";
+  const VERSION = "0.4.30";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -458,7 +458,7 @@
         "causa_provavel=" + diagnosis.summary.slice(0, 900) + "\\n" +
         "correcao=" + diagnosis.correction + "\\n" +
         "modelo_seguro=" + diagnosis.safeModel + "\\n" +
-        "observacao=Se o comando original continha limpeza/move/delete, reenvie primeiro em modo dry-run/listagem antes de executar alteracoes.\Wn" +
+ "observacao=Se o comando original continha limpeza/move/delete, reenvie primeiro em modo dry-run/listagem antes de executar alteracoes.\\n" +
         "original_sanitizado=\\n" + originalPreview
     };
   }
@@ -472,13 +472,6 @@
     return Math.abs(h).toString(36);
   }
 
-  function isStaleEnvelopeForStatus(raw) {
-    const created = extractJsonStringField(raw, "created_at_utc");
-    if (!created) return false;
-    const ts = Date.parse(created);
-    if (!Number.isFinite(ts)) return false;
-    return Date.now() - ts > 120000;
-  }
 
   function shouldReportEnvelopeError(kind, raw) {
     const originalCommandId = extractJsonStringField(raw, "command_id") || "unknown";
@@ -497,12 +490,6 @@
       }
     } catch (e) {}
 
-    if (isStaleEnvelopeForStatus(raw)) {
-      reportedEnvelopeErrors.add(key);
-      try { localStorage.setItem(key, String(Date.now())); } catch (e) {}
-      console.warn("[Local v" + VERSION + "] Skipping stale envelope error:", originalCommandId);
-      return false;
-    }
 
     reportedEnvelopeErrors.add(key);
     try { localStorage.setItem(key, String(Date.now())); } catch (e) {}

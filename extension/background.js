@@ -1,5 +1,5 @@
-// AI Bridge Local v0.4.13
-const VERSION = "0.4.13";
+// AI Bridge Local v0.4.14
+const VERSION = "0.4.14";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 

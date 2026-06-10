@@ -1,6 +1,6 @@
-// AI Bridge Local v0.4.13 - Compact status and persistent parse-error dedupe
+// AI Bridge Local v0.4.14 - Confirm send before ACK
 (() => {
-  const VERSION = "0.4.13";
+  const VERSION = "0.4.14";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -256,20 +256,39 @@
         sendResponse(payload);
       };
 
+      const expectedPrefix = text.slice(0, Math.min(40, text.length));
+      let clickedAtLeastOnce = false;
+      let lastMethod = "none";
+
+      const isSubmitted = () => {
+        const current = getComposerText(composer).trim();
+        if (!current) return true;
+        if (expectedPrefix && !current.includes(expectedPrefix)) return true;
+        return false;
+      };
+
       const trySubmit = () => {
         const currentText = getComposerText(composer);
         const hasText = currentText.length > 0 || currentText.includes(text.slice(0, Math.min(20, text.length)));
         const btn = findSendButton(composer);
 
-        if (btn && hasText) {
-          clickElement(btn);
-          showNotice("Mensagem enviada ao chat", "command_id=" + actionId + "\nmethod=button_click", "success");
-          console.log("[Local v" + VERSION + "] Submit by button after " + (attempts * 250) + "ms");
-          safeRespond({ok: true, method: "button_click", attempts, text_length: text.length});
+        if (clickedAtLeastOnce && isSubmitted()) {
+          showNotice("Mensagem enviada ao chat", "command_id=" + actionId + "\nmethod=" + lastMethod, "success");
+          console.log("[Local v" + VERSION + "] Submit confirmed by composer clear after " + (attempts * 250) + "ms");
+          safeRespond({ok: true, method: lastMethod, attempts, text_length: text.length, confirmed: true});
           return;
         }
 
-        if (attempts === 6 || attempts === 12 || attempts === 18) {
+        if (btn && hasText && (attempts === 0 || attempts === 3 || attempts === 8 || attempts === 14)) {
+          clickedAtLeastOnce = true;
+          lastMethod = "button_click_confirmed";
+          clickElement(btn);
+          console.log("[Local v" + VERSION + "] Button submit attempt " + attempts);
+        }
+
+        if (hasText && (attempts === 2 || attempts === 6 || attempts === 10 || attempts === 18)) {
+          clickedAtLeastOnce = true;
+          lastMethod = "enter_confirmed";
           pressEnter(composer);
           showNotice("Tentativa por Enter", "command_id=" + actionId + "\nattempt=" + attempts, "warn");
           console.log("[Local v" + VERSION + "] Enter fallback attempt " + attempts);
@@ -281,14 +300,15 @@
           setTimeout(trySubmit, 250);
         } else {
           const finalText = getComposerText(composer);
-          const reason = "submit_button_not_found_or_disabled";
-          showNotice("Falha ao enviar mensagem", "command_id=" + actionId + "\nreason=" + reason, "error");
-          console.warn("[Local v" + VERSION + "] Submit failed", {hasButton: !!findSendButton(composer), finalTextLength: finalText.length});
+          const reason = clickedAtLeastOnce ? "submit_not_confirmed_composer_still_has_text" : "submit_button_not_found_or_disabled";
+          showNotice("Falha ao confirmar envio", "command_id=" + actionId + "\nreason=" + reason, "error");
+          console.warn("[Local v" + VERSION + "] Submit failed", {hasButton: !!findSendButton(composer), finalTextLength: finalText.length, clickedAtLeastOnce});
           safeRespond({
             ok: false,
             reason,
             final_text_length: finalText.length,
-            attempts
+            attempts,
+            clicked: clickedAtLeastOnce
           });
         }
       };

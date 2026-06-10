@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
-  const VERSION = "0.4.17";
+  const VERSION = "0.4.29";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -396,6 +396,38 @@
       .slice(0, 1200);
   }
 
+  function classifyEnvelopeParseProblem(raw, errorMessage) {
+    const source = String(raw || "");
+    const causes = [];
+
+    if (/[\\u2018\\u2019\\u201c\\u201d\\u2032\\u2033]/.test(source)) {
+      causes.push("aspas curvas/Unicode no lugar de aspas JSON validas");
+    }
+    if (/[\\u200b\\u200c\\u200d\\ufeff]/.test(source)) {
+      causes.push("caracteres invisiveis/zero-width no comando");
+    }
+    if (/(?:\\n\\s*[A-Za-z0-9_.-]\\s*){8,}/.test(source)) {
+      causes.push("texto quebrado letra por letra ou colado com quebras artificiais");
+    }
+    if (/"command"\\s*:\\s*\\[[\\s\\S]{0,4000}\\n[\\s\\S]{0,4000}\\]/.test(source)) {
+      causes.push("quebra de linha dentro de string JSON sem escape");
+    }
+ if (source.length > 900 && (source.includes('command') || source.includes('python -c') || source.includes('EncodedCommand') || source.includes('base64') || source.includes('script_text'))) {
+      causes.push("comando inline grande/frágil; prefira script_text/script_ext ou arquivo real");
+    }
+    if (!causes.length) {
+      causes.push("JSON invalido, aspas/backslashes nao escapados ou estrutura incompleta");
+    }
+
+    return {
+      summary: causes.join("; "),
+      correction:
+        "Nada foi executado. Reenvie um envelope novo com command_id novo, JSON estrito, aspas duplas ASCII, sem caracteres invisiveis e sem texto quebrado. Para comandos grandes, use script_text/script_ext ou salve um .ps1/.py real antes de executar.",
+      safeModel:
+        "Modelo seguro: use marcadores locais de inicio/fim sozinhos nas linhas; dentro deles envie um unico JSON valido com payload.cwd, payload.timeout_seconds, payload.script_ext e payload.script_text. Exemplo de script_text curto: Write-Output 'OK'; git status -sb."
+    };
+  }
+
   function buildLocalStatusMessage(kind, errorMessage, raw) {
     const currentChatId = canonicalUuid(getChatId());
     const originalCommandId = extractJsonStringField(raw, "command_id") || "unknown";
@@ -403,6 +435,7 @@
     const originalTarget = extractJsonUuidField(raw, "target_chat_id");
     const originalConversation = extractJsonStringField(raw, "conversation_id") || "local_bridge_diagnostics";
     const originalPreview = sanitizeForStatus(raw);
+    const diagnosis = classifyEnvelopeParseProblem(raw, errorMessage);
 
     return {
       currentChatId,
@@ -411,18 +444,22 @@
       originalTarget,
       originalConversation,
       text:
-        "[AI_LOCAL_ERRO]\n" +
-        "acao=corrija_e_reenvie\n" +
-        "no_reply=0\n" +
-        "tipo=" + kind + "\n" +
-        "versao=" + VERSION + "\n" +
-        "id_original=" + originalCommandId + "\n" +
-        "chat_atual=" + (currentChatId || "unknown") + "\n" +
-        "origem=" + (originalSource || "unknown") + "\n" +
-        "destino=" + (originalTarget || "unknown") + "\n" +
-        "erro=" + String(errorMessage || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
-        "correcao=Reenvie um novo envelope local com JSON valido. Use marcadores locais sozinhos nas linhas de inicio/fim. Nao use bloco de codigo. Se citar os marcadores no campo message, nao deixe o marcador sozinho em uma linha.\n" +
-        "original_sanitizado=\n" + originalPreview
+        "[AI_LOCAL_ERRO]\\n" +
+        "acao=corrija_e_reenvie\\n" +
+        "no_reply=0\\n" +
+        "executado=nao\\n" +
+        "tipo=" + kind + "\\n" +
+        "versao=" + VERSION + "\\n" +
+        "id_original=" + originalCommandId + "\\n" +
+        "chat_atual=" + (currentChatId || "unknown") + "\\n" +
+        "origem=" + (originalSource || "unknown") + "\\n" +
+        "destino=" + (originalTarget || "unknown") + "\\n" +
+        "erro=" + String(errorMessage || "unknown_error").replace(/[\\r\\n]+/g, " ").slice(0, 500) + "\\n" +
+        "causa_provavel=" + diagnosis.summary.slice(0, 900) + "\\n" +
+        "correcao=" + diagnosis.correction + "\\n" +
+        "modelo_seguro=" + diagnosis.safeModel + "\\n" +
+        "observacao=Se o comando original continha limpeza/move/delete, reenvie primeiro em modo dry-run/listagem antes de executar alteracoes.\Wn" +
+        "original_sanitizado=\\n" + originalPreview
     };
   }
 

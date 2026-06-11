@@ -106,8 +106,8 @@ class ControlCenterApp:
 		self.build_ui()
 		self.root.after(500, self.start_tray)
 		self.refresh()
-		self.root.after(1000, self.auto_refresh)
-		self.root.after(1000, self.auto_refresh_logs)
+		self.root.after(3000, self.auto_refresh)
+		self.root.after(3000, self.auto_refresh_logs)
 
 	def build_ui(self):
 		top = tk.Frame(self.root, bg=DARK_BG)
@@ -288,9 +288,9 @@ class ControlCenterApp:
 			self.set_text(self.status_text, json.dumps(data, indent=2, ensure_ascii=False))
 			self.set_text(self.chats_text, self.render_chats(data))
 		except Exception as exc:
-			self.status_var.set("Gateway indisponivel")
+			self.status_var.set("Gateway indisponivel - clique em Ligar AI Bridge")
 			self.summary_var.set(str(exc))
-			self.set_text(self.dashboard_text, "Gateway indisponivel" + chr(10) + str(exc))
+			self.set_text(self.dashboard_text, "Gateway indisponivel - clique em Ligar AI Bridge" + chr(10) + str(exc))
 		self.set_text(self.gateway_text, self.read_tail(GATEWAY_LOG))
 		self.set_text(self.worker_text, self.read_tail(WORKER_LOG))
 
@@ -298,14 +298,14 @@ class ControlCenterApp:
 		try:
 			self.refresh()
 		finally:
-			self.root.after(1000, self.auto_refresh)
+			self.root.after(3000, self.auto_refresh)
 
 	def auto_refresh_logs(self):
 		try:
 			self.set_text(self.gateway_text, self.read_tail(GATEWAY_LOG))
 			self.set_text(self.worker_text, self.read_tail(WORKER_LOG))
 		finally:
-			self.root.after(1000, self.auto_refresh_logs)
+			self.root.after(3000, self.auto_refresh_logs)
 
 	def python_exe(self):
 		return shutil.which("python") or sys.executable

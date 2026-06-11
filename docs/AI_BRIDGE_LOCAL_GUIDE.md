@@ -766,3 +766,7 @@ Entradas disponiveis apos reiniciar o gateway:
 
 Ambas retornam JSON com ok, service, version, timestamp, contagem por status de comandos, comandos recentes e eventos recentes.
 Validado com python -m py_compile, git diff --check e smoke via curl apos restart do gateway.
+
+### Central de Controle Windows residente
+
+A Central de Controle evoluira para aplicativo Windows instalado, com janela propria, icone residente na bandeja do sistema e continuidade operacional ao fechar a janela. A especificacao inicial esta em docs/WINDOWS_CONTROL_CENTER_APP.md.

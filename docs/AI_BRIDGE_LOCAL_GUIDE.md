@@ -831,3 +831,110 @@ Esta secao consolida o estado validado apos os testes bidirecionais e substitui 
 - Falhas inter-chat devem registrar diagnostico objetivo: composer ocupado, botao desabilitado, timeout de inject, destino nao registrado, tabId antigo ou stale delivering timeout.
 - Telemetria futura da extensao deve persistir envelope_detected, envelope_parse_error, envelope_semantic_error, postCommand_attempt, postCommand_ok, postCommand_failed, delivery_attempt, delivery_ok, delivery_failed, chat_heartbeat, extension_version e active_chat_seen.
 - Control Center v0.5.0 deve exibir chats ativos, heartbeat, ultimos ACKs, ultimos erros, console ao vivo, copiar diagnostico e atualizacao segura.
+
+## Status operacional consolidado - 2026-06-11
+
+- AI Bridge Local 0.4.35 operacional; comunicacao bidirecional validada; send-chat-message com message top-level; run-command via gateway-brain-supervisor.
+- Gateway 127.0.0.1:8766 com HTTP/runtime 0.2.3; watchdog stale delivery ativo; queue_local.db sem delivering preso apos watchdog.
+- Smoke run-command OK; smoke send-chat-message OK com button_click_confirmed; Control Center Windows existente.
+- Commits relevantes: b26f1cd docs principal/archive; ab4bc59 gateway version/docs; 0e747c4 watchdog 0.2.3; e89c1ab extensao 0.4.35; ee99cf3 latencia Control Center.
+
+### Regras operacionais atuais
+- JSON estrito; command_id novo; sem placeholders; sem markdown/crases ao executar envelope real; evitar script_text grande e aspas aninhadas; usar script real para tarefas grandes.
+- send-chat-message usa message top-level e delivery_kind local_inter_agent_message; run-command usa payload.cwd, payload.timeout_seconds e payload.command.
+
+### Proximas atividades
+1. Criar tag v0.4.35-stable-docs-gateway-0.2.3.
+2. Implementar telemetria minima da extensao em events: chat_heartbeat, extension_version, delivery_attempt, delivery_ok, delivery_failed, envelope_parse_error, envelope_semantic_error.
+3. Rodar smoke multi-chat pos-tag em 2 ou 3 chats.
+4. Iniciar Control Center v0.5.0 fase 1 com tabela de chats ativos, ultima atividade, versao da extensao, ultimos ACK/falhas, copiar diagnostico e console ao vivo.
+5. Melhorar diagnostico de falha visual no destino: destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, runtime error e inject timeout.
+6. Preparar atualizacao segura no Control Center: parar servicos, backup queue_local.db, git pull, validacoes, reinicio e rollback basico.
+
+## Conteudo consolidado dos documentos movidos para legacy
+
+### Documento legado consolidado: WINDOWS_CONTROL_CENTER_APP.md
+# AI Bridge Local - Aplicativo Windows residente
+
+Data-base: 2026-06-10
+
+## Decisao de produto
+
+A Central de Controle nao sera apenas uma tela HTML. Ela sera um aplicativo Windows instalado na maquina, com janela propria, icone residente na bandeja do sistema e comportamento de continuar ativo quando a janela for fechada.
+
+## Caracteristicas esperadas
+
+- Instalar no Windows como aplicacao local.
+- Subir e supervisionar gateway_local.py e brain_worker.py.
+- Mostrar status do gateway, fila, comandos recentes e eventos recentes.
+- Usar os endpoints locais /control e /control/status como API de leitura.
+- Ao fechar a janela, minimizar para a bandeja do sistema.
+- Ter menu no icone da bandeja com abrir, reiniciar servicos e sair.
+- Incluir empacotamento para gerar executavel e instalador.
+- Manter compatibilidade com a extensao do navegador e com o banco queue_local.db.
+
+## Dependencias previstas
+
+A base Python atual possui tkinter e PIL. Para a versao residente completa serao adicionadas dependencias de empacotamento e bandeja: pystray, psutil e PyInstaller.
+
+## Estrutura proposta
+
+- app_windows/control_center_app.py: aplicacao desktop residente.
+- app_windows/requirements-windows-app.txt: dependencias do app.
+- packaging/build_windows_app.ps1: build do executavel.
+- packaging/install_windows_app.ps1: instalacao local inicial.
+
+## Fase 1
+
+Criar scaffold executavel com tkinter, leitura de /control/status, botao de atualizar, botoes de restart do gateway e worker, e comportamento de minimizar para bandeja quando pystray estiver instalado.
+
+## Fase 2
+
+Gerar executavel com PyInstaller e preparar instalador Windows com atalho e inicializacao automatica opcional.
+
+## Fase 3
+
+Adicionar UI completa, logs, status por chat, diagnostico copiavel e configuracao visual.
+
+## Atualizacao 2026-06-11 - requisitos v0.5.0
+
+- Tabela de chats ativos com chat_id, source_chat_id, ultima atividade, fila pendente e comando em execucao.
+- Heartbeat por chat enviado pela extensao ao gateway.
+- Ultimos ACKs e erros por chat, console ao vivo, filtros, copiar diagnostico e atualizacao segura.
+- Diagnostico claro para destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, inject timeout e runtime error.
+
+
+### Documento legado consolidado: archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10.md
+# AI Bridge Local - status atual 2026-06-10
+
+## Baseline atual
+
+- Versao: 0.4.17
+- Commit: e47184e
+- Tag: v0.4.17-visual-dedupe-temp-script
+- Branch: main
+- Worker: brain_worker.py 0.1.3
+- Gateway: gateway_local.py mantido
+- Repositorio local sem remote/origin configurado
+
+## Validacoes
+
+- git diff --check: OK
+- node --check background.js: OK
+- node --check content_script.js: OK
+- python -m py_compile gateway_local.py brain_worker.py: OK
+- run-command tradicional: OK
+- temp-script workflow: OK
+- cross-profile send-chat-message: acked/button_click_confirmed
+
+## Mudancas 0.4.17
+
+- Visual-dedupe de status compacto local com command_id estavel.
+- Temp-script workflow via script_text + script_ext em temp/watcher_scripts.
+- Compatibilidade mantida com payload.command tradicional.
+
+## Baselines preservados
+
+- 0.4.16: 43b61d5 / v0.4.16-submit-recovery
+- 0.4.14: 6262cde / v0.4.14-confirm-send-before-ack
+

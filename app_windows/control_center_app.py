@@ -31,7 +31,7 @@ if getattr(sys, "frozen", False):
 	ROOT = Path(sys.executable).resolve().parents[2]
 else:
 	ROOT = Path(__file__).resolve().parents[1]
-URL = "http://localhost:8766/control/status"
+URL = "http://127.0.0.1:8766/control/status"
 LOG_DIR = ROOT / "logs"
 GATEWAY_LOG = LOG_DIR / "control_center_gateway.log"
 WORKER_LOG = LOG_DIR / "control_center_worker.log"

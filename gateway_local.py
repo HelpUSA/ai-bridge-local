@@ -4,7 +4,7 @@ import json
 import sqlite3
 import uuid
 from datetime import datetime, timezone
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 HOST = "127.0.0.1"
@@ -212,7 +212,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
 def main():
     print(f"[gateway] AI Bridge Local v{VERSION} - Porta {PORT} - Filtra por target_chat_id")
     init_db()
-    HTTPServer((HOST, PORT), GatewayHandler).serve_forever()
+    ThreadingHTTPServer((HOST, PORT), GatewayHandler).serve_forever()
 
 if __name__ == "__main__":
     main()

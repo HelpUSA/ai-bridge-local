@@ -19,8 +19,34 @@ def init_db():
     conn = sqlite3.connect(DB_PATH)
     conn.execute("CREATE TABLE IF NOT EXISTS commands (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT UNIQUE NOT NULL, source_chat_id TEXT, target_chat_id TEXT, action TEXT, delivery_kind TEXT, conversation_id TEXT, from_agent TEXT, message TEXT, payload_json TEXT, status TEXT DEFAULT 'queued', created_at TEXT DEFAULT (datetime('now')), delivered_at TEXT, acked_at TEXT, return_code INTEGER, stdout TEXT, stderr TEXT, last_error TEXT)")
     conn.execute("CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, event_type TEXT, message TEXT, payload_json TEXT, created_at TEXT DEFAULT (datetime('now')))")
+    conn.execute("CREATE TABLE IF NOT EXISTS invalid_messages (id INTEGER PRIMARY KEY AUTOINCREMENT, source_chat_id TEXT, raw_text TEXT, error TEXT, created_at TEXT DEFAULT (datetime('now')) )")
     conn.commit()
     conn.close()
+
+def validate_command_body(body, payload):
+    need = ['schema', 'schema_version', 'command_id', 'action', 'source_chat_id', 'target_chat_id', 'delivery_kind']
+    for k in need:
+        if not body.get(k):
+            return 'missing_ ' + k
+    if body.get('schema') != 'ai_bridge_local.envelope':
+        return 'bad_schema'
+    if body.get('action') not in ['send-chat-message', 'run-command']:
+        return 'bad_action'
+    if body.get('delivery_kind') not in ['inter_agent_message', 'local_capability']:
+        return 'bad_delivery_kind'
+    if body.get('action') == 'send-chat-message' and not body.get('message'):
+        return 'missing_message'
+    if body.get('action') == 'run-command' and not isinstance(payload, dict):
+        return 'bad_payload'
+    return ''
+
+def record_invalid_message(body, error):
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        conn.execute("INSERT INTO invalid_messages (source_chat_id, raw_text, error) VALUES (?, ?, ?)", (body.get('source_chat_id', ''), json.dumps(body, ensure_ascii=False), error))
+        conn.commit()
+    finally:
+        conn.close()
 
 def record_event(command_id=None, event_type=None, message=None, payload=None):
     if not event_type:

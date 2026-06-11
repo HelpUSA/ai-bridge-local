@@ -5,7 +5,7 @@ a = Analysis(
     ['app_windows\\control_center_app.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('C:\\Python314\\tcl\\tcl8.6', '_tcl_data'), ('C:\\Python314\\tcl\\tk8.6', '_tk_data'), ('C:\\Python314\\tcl\\tcl8.6', 'tcl'), ('C:\\Python314\\tcl\\tk8.6', 'tk')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

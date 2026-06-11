@@ -1,19 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_submodules
-
-hiddenimports = ['tkinter', 'tkinter.ttk', 'tkinter.messagebox', '_tkinter']
-hiddenimports += collect_submodules('tkinter')
 
 
 a = Analysis(
     ['app_windows\\control_center_app.py'],
     pathex=[],
     binaries=[],
-    datas=[('C:\\Python314\\tcl\\tcl8.6', '_tcl_data'), ('C:\\Python314\\tcl\\tk8.6', '_tk_data'), ('C:\\Python314\\tcl\\tcl8.6', 'tcl'), ('C:\\Python314\\tcl\\tk8.6', 'tk')],
-    hiddenimports=hiddenimports,
+    datas=[('C:\\Python314\\Lib\\tkinter', 'py_lib/tkinter'), ('C:\\Python314\\tcl\\tcl8.6', '_tcl_data'), ('C:\\Python314\\tcl\\tk8.6', '_tk_data'), ('C:\\Python314\\tcl\\tcl8.6', 'tcl'), ('C:\\Python314\\tcl\\tk8.6', 'tk')],
+    hiddenimports=['_tkinter'],
     hookspath=[],
     hooksconfig={},
-    runtime_hooks=[],
+    runtime_hooks=['packaging/pyinstaller_runtime_hook.py'],
     excludes=[],
     noarchive=False,
     optimize=0,

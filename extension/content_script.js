@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
-  const VERSION = "0.4.34";
+  const VERSION = "0.4.35";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();

@@ -1,5 +1,5 @@
-﻿// AI Bridge Local v0.4.34
-const VERSION = "0.4.34";
+﻿// AI Bridge Local v0.4.35
+const VERSION = "0.4.35";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -121,6 +121,35 @@ function canonicalChatId(value) {
   return m ? m[0].toLowerCase() : raw;
 }
 
+function withTimeout(promise, timeoutMs, fallback) {
+  return new Promise((resolve) => {
+    let done = false;
+
+    const finish = (value) => {
+      if (done) return;
+      done = true;
+      resolve(value);
+    };
+
+    const timer = setTimeout(() => {
+      finish(fallback);
+    }, timeoutMs);
+
+    Promise.resolve(promise)
+      .then((value) => {
+        clearTimeout(timer);
+        finish(value);
+      })
+      .catch((error) => {
+        clearTimeout(timer);
+        finish({
+          ok: false,
+          reason: "promise_exception",
+          error: error && error.message ? error.message : String(error)
+        });
+      });
+  });
+}
 async function injectText(tabId, action) {
   const message = {
     type: "AI_BRIDGE_INJECT_TEXT",
@@ -187,7 +216,17 @@ async function pollMessages() {
         const action = data.action;
         console.log("[bg] Injecting to:", chatId, action.command_id);
 
-        const result = await injectText(tabId, action);
+        console.log("[bg] Inject start:", action.command_id, "tab", tabId);
+        const result = await withTimeout(
+          injectText(tabId, action),
+          20000,
+          {
+            ok: false,
+            reason: "inject_outer_timeout",
+            error: "injectText outer timeout"
+          }
+        );
+        console.log("[bg] Inject completed:", action.command_id, JSON.stringify(result));
 
         if (result && result.ok) {
           await postAck(action.command_id, "acked", {

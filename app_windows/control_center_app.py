@@ -25,7 +25,8 @@ except Exception:
 	ImageDraw = None
 	TRAY_AVAILABLE = False
 
-APP_TITLE = "AI Bridge Local - Central de Controle v13"
+APP_VERSION = "14"
+APP_TITLE = "AI Bridge Local - Central de Controle v14"
 if getattr(sys, "frozen", False):
 	ROOT = Path(sys.executable).resolve().parents[2]
 else:
@@ -34,6 +35,8 @@ URL = "http://localhost:8766/control/status"
 LOG_DIR = ROOT / "logs"
 GATEWAY_LOG = LOG_DIR / "control_center_gateway.log"
 WORKER_LOG = LOG_DIR / "control_center_worker.log"
+LATEST_VERSION_FILE = ROOT / "app_windows" / "latest_version.txt"
+UPDATE_LOG = LOG_DIR / "control_center_update.log"
 PROCESS_KEYS = ["gateway_local.py", "brain_worker.py"]
 CREATE_NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 DARK_BG = "#171717"
@@ -41,6 +44,42 @@ DARK_PANEL = "#242424"
 DARK_PANEL_2 = "#333333"
 DARK_TEXT = "#e5e7eb"
 DARK_ACCENT = "#00a8e8"
+
+def is_script_running(script_name):
+	if psutil is None:
+		return False
+	for proc in psutil.process_iter(["pid", "cmdline"]):
+		try:
+			cmd = " ".join(proc.info.get("cmdline") or [])
+			if script_name.lower() in cmd.lower() and proc.pid != os.getpid():
+				return True
+		except Exception:
+			pass
+	return False
+
+
+def bridge_background_notice():
+	gw = is_script_running("gateway_local.py")
+	wk = is_script_running("brain_worker.py")
+	if gw and wk:
+		return "Bridge ativo em segundo plano: gateway e worker rodando."
+	if gw or wk:
+		return "Bridge parcialmente ativo em segundo plano."
+	return "Bridge parado em segundo plano."
+
+
+def latest_version():
+	try:
+		return LATEST_VERSION_FILE.read_text(encoding="utf-8").strip() or APP_VERSION
+	except Exception:
+		return APP_VERSION
+
+
+def update_notice():
+	latest = latest_version()
+	if latest != APP_VERSION:
+		return "Nova versao disponivel: v" + latest + ". Clique em Atualizar app."
+	return "App atualizado."
 
 class ControlCenterApp:
 	def __init__(self):
@@ -80,6 +119,8 @@ class ControlCenterApp:
 		tk.Label(self.root, textvariable=self.status_var, anchor="w", bg=DARK_PANEL, fg=DARK_TEXT, font=("Segoe UI", 10, "bold"), padx=10, pady=6).pack(fill="x", padx=10, pady=(2,0))
 		tk.Label(self.root, textvariable=self.summary_var, anchor="w", bg=DARK_PANEL, fg=DARK_ACCENT, font=("Consolas", 10), padx=10, pady=6).pack(fill="x", padx=10)
 		tk.Label(self.root, textvariable=self.process_var, anchor="w", bg=DARK_PANEL, fg=DARK_TEXT, font=("Segoe UI", 10), padx=10, pady=6).pack(fill="x", padx=10, pady=(0,8))
+		self.version_var = tk.StringVar(value=update_notice() + " | " + bridge_background_notice())
+		tk.Label(self.root, textvariable=self.version_var, anchor="w", bg=DARK_PANEL, fg="#fbbf24", font=("Segoe UI", 10, "bold"), padx=10, pady=6).pack(fill="x", padx=10, pady=(0,8))
 		self.tabs = ttk.Notebook(self.root)
 		self.tabs.pack(fill="both", expand=True, padx=10, pady=6)
 		self.dashboard_text = self.add_tab("Painel")
@@ -93,7 +134,6 @@ class ControlCenterApp:
 		tk.Button(bottom, text="Reiniciar AI Bridge", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.restart_bridge).pack(side="left", padx=4)
 		tk.Button(bottom, text="Desligar AI Bridge", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.stop_processes).pack(side="left", padx=4)
 		tk.Button(bottom, text="Limpar logs", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.clear_logs).pack(side="left", padx=4)
-		tk.Button(bottom, text="Parar processos", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.stop_processes).pack(side="left", padx=4)
 		tk.Button(bottom, text="Minimizar", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.hide_window).pack(side="left", padx=4)
 		tk.Button(bottom, text="Sair", bg=DARK_PANEL_2, fg=DARK_TEXT, activebackground=DARK_ACCENT, activeforeground="#000000", relief="flat", padx=10, pady=6, command=self.exit_app).pack(side="right", padx=4)
 
@@ -115,7 +155,7 @@ class ControlCenterApp:
 		if not TRAY_AVAILABLE or self.tray_icon is not None:
 			return
 		menu = pystray.Menu(pystray.MenuItem("Abrir", self.tray_show), pystray.MenuItem("Sair", self.tray_exit))
-		self.tray_icon = pystray.Icon("AI Bridge Local v13", self.make_icon_image(), APP_TITLE, menu)
+		self.tray_icon = pystray.Icon("AI Bridge Local v14", self.make_icon_image(), APP_TITLE, menu)
 		self.tray_icon.run_detached()
 
 	def tray_show(self, icon=None, item=None):
@@ -164,6 +204,10 @@ class ControlCenterApp:
 		rows.append(" queued: " + str(counts.get("queued", 0)))
 		rows.append(" delivering: " + str(counts.get("delivering", 0)))
 		rows.append(" failed: " + str(counts.get("failed", 0)))
+		rows.append("")
+		rows.append("Aviso do sistema:")
+		rows.append(" " + bridge_background_notice())
+		rows.append(" " + update_notice())
 		rows.append("")
 		rows.append("Operacao recomendada")
 		rows.append(" Ligar AI Bridge: inicia gateway + workers internos.")
@@ -229,6 +273,10 @@ class ControlCenterApp:
 
 	def refresh(self):
 		self.update_process_status()
+		try:
+			self.version_var.set(update_notice() + " | " + bridge_background_notice())
+		except Exception:
+			pass
 		self.write_worker_monitor_log()
 		try:
 			data = self.fetch_status()
@@ -288,10 +336,16 @@ class ControlCenterApp:
 		self.start_bridge()
 
 	def start_gateway(self):
+		if is_script_running("gateway_local.py"):
+			self.log("Gateway ja esta ativo; nao vou abrir outra instancia.")
+			return
 		self.start_python_hidden("gateway_local.py", GATEWAY_LOG)
 	def start_worker(self):
 		self.start_python_hidden("brain_worker.py", WORKER_LOG)
 	def start_pool(self):
+		if is_script_running("brain_worker.py"):
+			self.log("Worker ja esta ativo; nao vou abrir outra instancia.")
+			return
 		for i in range(4):
 			self.start_python_hidden("brain_worker.py", WORKER_LOG)
 		time.sleep(1)
@@ -322,6 +376,7 @@ class ControlCenterApp:
 		if not updater.exists():
 			messagebox.showerror(APP_TITLE, "Atualizador nao encontrado: " + str(updater))
 			return
+		UPDATE_LOG.write_text("Atualizacao iniciada pela Central. A janela sera fechada e reaberta.\n", encoding="utf-8")
 		subprocess.Popen([self.python_exe(), str(updater)], cwd=str(ROOT), creationflags=CREATE_NO_WINDOW)
 		self.exit_app()
 

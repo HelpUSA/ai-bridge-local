@@ -24,6 +24,20 @@ async function postJson(path, body) {
   return data;
 }
 
+async function postTelemetryEvent(eventType, details = {}) {
+ try {
+ await postJson('/event', {
+ event_type: eventType,
+ command_id: details.command_id || details.commandId || null,
+ message: details.message || '',
+ payload: Object.assign({ extension_version: VERSION, source: 'background' }, details)
+ });
+ } catch (e) {
+ console.warn('[AI_LOCAL] telemetry failed', eventType, e.message);
+ }
+}
+
+postTelemetryEvent('extension_version', { version: VERSION });
 async function postCommand(cmd) {
   console.log("[bg] Sending:", cmd.command_id);
   return await postJson("/bridge/commands", cmd);
@@ -50,6 +64,9 @@ const postedDeliveryStatusKeys = new Set();
 async function postDeliveryStatus(action, status, detail, result = {}) {
   try {
     if (!action || !action.command_id) return;
+ if (status === 'delivering') postTelemetryEvent('delivery_attempt', { command_id: action.command_id, target_chat_id: action.target_chat_id, action: action.action });
+ if (status === 'sent') postTelemetryEvent('delivery_ok', { command_id: action.command_id, target_chat_id: action.target_chat_id, action: action.action });
+ if (status === 'failed') postTelemetryEvent('delivery_failed', { command_id: action.command_id, target_chat_id: action.target_chat_id, action: action.action, message: String(detail || 'unknown') });
     if (String(action.command_id).startsWith("local_status_")) return;
 
     const statusKey = String(status || "unknown") + ":" + String(action.command_id || "unknown");
@@ -256,6 +273,11 @@ async function pollMessages() {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+ if (message?.type === 'AI_LOCAL_TELEMETRY_EVENT') {
+ postTelemetryEvent(message.event_type, message.payload || {});
+ sendResponse({ ok: true });
+ return true;
+ }
   if (message && message.type === "AI_BRIDGE_BRIDGE_COMMAND") {
     const cmd = message.command || message;
     console.log("[bg] Received:", cmd.command_id);

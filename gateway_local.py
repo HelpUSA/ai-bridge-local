@@ -22,6 +22,19 @@ def init_db():
     conn.commit()
     conn.close()
 
+def record_event(command_id=None, event_type=None, message=None, payload=None):
+    if not event_type:
+        return False
+    sql = 'INSERT INTO events (command_id, event_type, message, payload_json) VALUES (?, ?, ?, ?)'
+    params = (command_id, event_type, message, json.dumps(payload or {}, ensure_ascii=False))
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        conn.execute(sql, params)
+        conn.commit()
+    finally:
+        conn.close()
+    return True
+
 def fail_stale_deliveries(max_age_seconds=45):
     """Fail inter-chat commands that were delivered to the extension but never acked."""
     try:
@@ -174,6 +187,15 @@ class GatewayHandler(BaseHTTPRequestHandler):
                     "payload": payload
                 }
             })
+            return
+
+        if self.path == '/event':
+            event_type = body.get('event_type') or body.get('type')
+            if not event_type:
+                self._send_json(dict(ok=False, error='missing_event_type'), 400)
+                return
+            record_event(command_id=body.get('command_id'), event_type=event_type, message=body.get('message'), payload=body.get('payload') or {})
+            self._send_json(dict(ok=True, event_type=event_type, timestamp=now_iso()))
             return
 
         self._send_json({"error": "not_found"}, 404)

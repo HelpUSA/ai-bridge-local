@@ -496,9 +496,22 @@
     return true;
   }
 
-  function reportEnvelopeError(kind, errorMessage, raw) {
+  function sendTelemetryEvent(eventType, payload = {}) {
+ try {
+ chrome.runtime.sendMessage({ type: 'AI_LOCAL_TELEMETRY_EVENT', event_type: eventType, payload });
+ } catch (e) {
+ console.warn('[AI_LOCAL] telemetry send failed', eventType, e.message);
+ }
+}
+
+function sendChatHeartbeat() {
+ sendTelemetryEvent('chat_heartbeat', { chat_id: getChatId(), href: location.href });
+}
+
+function reportEnvelopeError(kind, errorMessage, raw) {
     try {
       if (!shouldReportEnvelopeError(kind, raw)) return;
+ sendTelemetryEvent(kind === 'envelope_parse_error' ? 'envelope_parse_error' : 'envelope_semantic_error', { message: String(errorMessage || 'unknown'), error_kind: kind, chat_id: getChatId(), raw_preview: String(raw || '').slice(0, 500) });
 
       const info = buildLocalStatusMessage(kind, errorMessage, raw);
       const targets = [];
@@ -651,3 +664,6 @@
     }
   }, 2000);
 })();
+
+setInterval(sendChatHeartbeat, 30000);
+sendChatHeartbeat();

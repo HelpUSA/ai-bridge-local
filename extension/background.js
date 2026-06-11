@@ -1,5 +1,5 @@
-﻿// AI Bridge Local v0.4.32
-const VERSION = "0.4.32";
+﻿// AI Bridge Local v0.4.33
+const VERSION = "0.4.33";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -122,23 +122,26 @@ function canonicalChatId(value) {
 }
 
 async function injectText(tabId, action) {
-  try {
-    const response = await chrome.tabs.sendMessage(tabId, {
-      type: "AI_BRIDGE_INJECT_TEXT",
-      action: {
-        action: "inject_text",
-        text: action.message || "",
-        auto_submit: true,
-        action_id: action.command_id,
-        command_id: action.command_id
-      }
-    });
-    console.log("[bg] Inject result:", action.command_id, JSON.stringify(response));
-    return response || { ok: false, reason: "empty_inject_response" };
-  } catch (e) {
-    console.log("[bg] Inject error:", action.command_id, e.message);
-    return { ok: false, reason: "inject_exception", error: e.message };
-  }
+ try {
+ const message = {
+ type: "AI_BRIDGE_INJECT_TEXT",
+ action: {
+ action: "inject_text",
+ text: action.message || "",
+ auto_submit: true,
+ action_id: action.command_id,
+ command_id: action.command_id
+ }
+ };
+ const timeoutMs = 15000;
+ const timeout = new Promise((resolve) => setTimeout(() => resolve({ ok: false, reason: "inject_timeout", error: "chrome.tabs.sendMessage timeout" }), timeoutMs));
+ const response = await Promise.race([chrome.tabs.sendMessage(tabId, message), timeout]);
+ console.log("[bg] Inject result:", action.command_id, JSON.stringify(response));
+ return response || { ok: false, reason: "empty_inject_response" };
+ } catch (e) {
+ console.log("[bg] Inject error:", action.command_id, e.message);
+ return { ok: false, reason: "inject_exception", error: e.message };
+ }
 }
 
 async function pollMessages() {

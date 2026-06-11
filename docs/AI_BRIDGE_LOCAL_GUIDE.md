@@ -938,3 +938,47 @@ Adicionar UI completa, logs, status por chat, diagnostico copiavel e configuraca
 - 0.4.16: 43b61d5 / v0.4.16-submit-recovery
 - 0.4.14: 6262cde / v0.4.14-confirm-send-before-ack
 
+
+## Status operacional 2026-06-11
+
+- AI Bridge Local 0.4.35 operacional.
+- Comunicacao bidirecional validada.
+- send-chat-message validado com message top-level e delivery_kind local_inter_agent_message.
+- run-command somente via gateway-brain-supervisor com delivery_kind local_capability e payload.cwd, payload.timeout_seconds e payload.command.
+- Gateway em 127.0.0.1:8766.
+- Gateway HTTP/runtime alinhado para 0.2.3.
+- Watchdog stale delivery ativo para evitar delivering infinito.
+- queue_local.db sem delivering preso apos watchdog.
+- Control Center Windows existente.
+- Repo limpo e alinhado com origin/main no fechamento validado.
+- Smoke run-command OK.
+- Smoke send-chat-message OK.
+- Aviso CRLF no Windows pode aparecer sem indicar falha.
+
+### Commits relevantes
+
+- b26f1cd consolidou docs/AI_BRIDGE_LOCAL_GUIDE.md como documento principal e moveu docs/legacy/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10.md para docs/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10.md.
+- ab4bc59 atualizou versao HTTP/runtime do gateway e docs.
+- 0e747c4 corrigiu watchdog stale delivery 0.2.3.
+- e89c1ab adicionou outer inject timeout e extensao 0.4.35.
+- f947c25 consolidou a documentacao do AI Bridge Local no guia principal.
+
+### Regras de operacao atuais
+
+- Usar JSON estrito.
+- Usar command_id novo a cada tentativa.
+- send-chat-message deve usar message top-level e delivery_kind local_inter_agent_message.
+- run-command deve usar target_chat_id gateway-brain-supervisor, delivery_kind local_capability e payload.cwd, payload.timeout_seconds e payload.command.
+- Nao usar placeholders como {json} ou exemplos incompletos em envelope real.
+- Nao usar markdown ou crases quando o objetivo for executar envelope real.
+- Evitar script_text grande, aspas aninhadas, quebras invalidas e caracteres invisiveis.
+- Para tarefas grandes, usar script real em scripts/watcher ou temp e executar comando curto.
+
+### Proximas atividades
+
+1. Criar ou confirmar tag v0.4.35-stable-docs-gateway-0.2.3.
+2. Implementar telemetria minima da extensao em events com chat_heartbeat, extension_version, delivery_attempt, delivery_ok, delivery_failed, envelope_parse_error e envelope_semantic_error.
+3. Rodar smoke multi-chat pos-tag em dois ou tres chats.
+4. Iniciar Control Center v0.5.0 fase 1 com tabela de chats ativos, ultima atividade, versao da extensao, ultimos ACK/falhas, copiar diagnostico e console ao vivo.
+5. Melhorar diagnostico de falha visual no destino: destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, runtime error e inject timeout.
+6. Preparar atualizacao segura no Control Center com parar servicos, backup queue_local.db, git pull, validacoes, reinicio e rollback basico.

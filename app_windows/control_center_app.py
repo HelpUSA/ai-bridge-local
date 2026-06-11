@@ -35,6 +35,7 @@ URL = "http://localhost:8766/control/status"
 LOG_DIR = ROOT / "logs"
 GATEWAY_LOG = LOG_DIR / "control_center_gateway.log"
 WORKER_LOG = LOG_DIR / "control_center_worker.log"
+MONITOR_LOG = LOG_DIR / "control_center_monitor.log"
 LATEST_VERSION_FILE = ROOT / "app_windows" / "latest_version.txt"
 UPDATE_LOG = LOG_DIR / "control_center_update.log"
 PROCESS_KEYS = ["gateway_local.py", "brain_worker.py"]
@@ -267,12 +268,12 @@ class ControlCenterApp:
 		try:
 			LOG_DIR.mkdir(exist_ok=True)
 			line = "[central-monitor] " + now + " repo=" + str(ROOT) + chr(10)
-			with open(WORKER_LOG, "a", encoding="utf-8", errors="replace") as f:
+			with open(MONITOR_LOG, "a", encoding="utf-8", errors="replace") as f:
 				f.write(line)
 				f.flush()
 		except Exception as exc:
 			try:
-				with open(WORKER_LOG, "a", encoding="utf-8", errors="replace") as f:
+				with open(MONITOR_LOG, "a", encoding="utf-8", errors="replace") as f:
 					f.write("[central-monitor-error] " + now + " " + str(exc) + chr(10))
 			except Exception:
 				pass

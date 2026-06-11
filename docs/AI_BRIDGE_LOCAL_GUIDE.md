@@ -982,3 +982,52 @@ Adicionar UI completa, logs, status por chat, diagnostico copiavel e configuraca
 4. Iniciar Control Center v0.5.0 fase 1 com tabela de chats ativos, ultima atividade, versao da extensao, ultimos ACK/falhas, copiar diagnostico e console ao vivo.
 5. Melhorar diagnostico de falha visual no destino: destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, runtime error e inject timeout.
 6. Preparar atualizacao segura no Control Center com parar servicos, backup queue_local.db, git pull, validacoes, reinicio e rollback basico.
+
+
+## Proxima evolucao: Command Gateway, Builder, Validator e quarentena
+
+Objetivo: reduzir dependencia de envelopes JSON crus gerados diretamente por chats. O chat deve declarar uma intencao curta; uma camada local deve montar o envelope completo, validar por contrato formal e permitir que apenas comandos validos entrem na fila principal.
+
+Diagnostico operacional: comandos longos com JSON inline, scripts grandes, escapes, aspas ou caracteres invisiveis podem quebrar antes de chegar ao executor. O resultado e tentativa perdida, retrabalho manual e risco de travar o fluxo. A solucao e adicionar uma borda de validacao e roteamento.
+
+Padroes adotados como referencia:
+- Contrato formal com JSON Schema para campos obrigatorios, tipos, enums, limites e formatos.
+- Validacao na borda antes de inserir em queue_local.db.
+- Invalid Message Channel para JSON ruim, schema errado, placeholders, caracteres invisiveis, aspas curvas e erros semanticos.
+- Dead Letter Queue para comandos validos que falham apos tentativas, entrega ou execucao.
+- Retry limitado com backoff e idempotencia.
+- Structured outputs para origem LLM, sempre com validacao local.
+- Comandos grandes por referencia a scripts reais em scripts/watcher, nao por payload inline grande.
+
+Fluxo recomendado:
+1. Chat escreve uma intencao curta.
+2. Envelope Builder local transforma a intencao em JSON completo e seguro.
+3. Validator aplica contrato formal e regras semanticas.
+4. Gateway grava em commands apenas se o comando for valido.
+5. Extension entrega e registra telemetria.
+6. Invalidos antes da fila vao para invalid_messages.
+7. Validos aceitos que falham de forma persistente vao para dead_letters.
+
+Exemplos de intencao segura:
+text
+AI_LOCAL_INTENT send_chat target=6a2b0a05 message=ACK recebido
+AI_LOCAL_INTENT run cwd=D:/dev/autocode/ai-bridge-local command=git status -sb
+AI_LOCAL_INTENT run_script cwd=D:/dev/autocode/ai-bridge-local script=scripts/watcher/check_status.py
+
+
+Artefatos planejados:
+- schemas/ai_bridge_local_envelope.schema.json como contrato oficial inicial.
+- command_builder.py para gerar envelopes seguros.
+- Preflight validator no gateway antes do insert em commands.
+- Tabela invalid_messages para rejeicoes antes da fila.
+- Tabela dead_letters para falhas persistentes depois de aceitas.
+- Painel no Control Center para validar envelope, copiar comando seguro, ver invalidos, ver DLQ e reprocessar apos correcao.
+
+Ordem de implementacao:
+1. Criar JSON Schema oficial dos envelopes.
+2. Adicionar preflight validator no gateway.
+3. Criar invalid_messages.
+4. Criar command_builder.py.
+5. Bloquear placeholders, aspas curvas, caracteres invisiveis e payload grande.
+6. Migrar comandos grandes para scripts reais.
+7. Expor invalidos e dead letters no Control Center.

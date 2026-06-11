@@ -770,3 +770,56 @@ Validado com python -m py_compile, git diff --check e smoke via curl apos restar
 ### Central de Controle Windows residente
 
 A Central de Controle evoluira para aplicativo Windows instalado, com janela propria, icone residente na bandeja do sistema e continuidade operacional ao fechar a janela. A especificacao inicial esta em docs/WINDOWS_CONTROL_CENTER_APP.md.
+
+## Atualizacao operacional 2026-06-11
+
+Esta secao consolida o estado validado apos os testes bidirecionais e substitui documentos incrementais antigos como fonte operacional diaria.
+
+### Estado atual validado
+
+- Extensao AI Bridge Local 0.4.35 operacional.
+- Gateway local em 127.0.0.1:8766 com SQLite queue_local.db.
+- Worker local usa target_chat_id gateway-brain-supervisor para run-command.
+- Control Center Windows existente em app_windows/control_center_app.py.
+- Comunicacao bidirecional validada por ACK entre este chat e o chat 6a298922-7530-83e9-8561-6474480a6a53.
+- Repo D:/dev/autocode/ai-bridge-local limpo e alinhado em main...origin/main durante a validacao.
+
+### Commits recentes relevantes
+
+- 0e747c4 Fix gateway stale delivery watchdog 0.2.3.
+- 307705f Add gateway stale delivery watchdog 0.2.2.
+- e89c1ab Add outer inject timeout and bump extension 0.4.35.
+- d844139 Harden extension tab message timeout.
+- df860d3 Align extension runtime version 0.4.34.
+- 14843fe Add extension inject timeout and bump version.
+- ee99cf3 Improve local control center latency.
+
+### Regras operacionais consolidadas
+
+- send-chat-message deve usar message top-level; nao usar payload.message para mensagem inter-chat.
+- delivery_kind para comunicacao inter-chat deve ser local_inter_agent_message.
+- run-command deve usar target_chat_id gateway-brain-supervisor, delivery_kind local_capability e payload.cwd, payload.timeout_seconds, payload.command.
+- Cada tentativa deve usar command_id novo.
+- Evitar placeholders como {json} ou { JSON estrito } em mensagens com marcadores reais.
+- Evitar markdown, crases e exemplos ilustrativos quando o objetivo for executar envelope real.
+- Evitar script_text grande, aspas aninhadas, quebras invalidas, barras invertidas Windows em JSON e caracteres invisiveis.
+- Para tarefas grandes, criar script real pequeno em scripts/watcher ou temp e executar comando curto.
+
+### Problemas recentes e resolucoes
+
+- Falhas recentes foram causadas por JSON fragil, payload.message incorreto, placeholders e composer ocupado no chat destino.
+- Essas falhas nao indicaram problema estrutural do bridge.
+- O watchdog do gateway agora marca send-message e send-chat-message presos em delivering por mais de 45 segundos como failed com last_error stale delivering timeout after extension delivery.
+- A extensao 0.4.35 adiciona callback timeout e outer inject timeout no background.
+
+### Proximas atividades prioritarias
+
+1. Fechar smoke oficial 0.4.35 em dois ou tres chats com send-chat-message e run-command.
+2. Corrigir a versao HTTP do gateway caso /health ainda mostre 0.2.1 apesar do watchdog 0.2.3 funcional.
+3. Implementar telemetria da extensao para a tabela events: envelope_detected, envelope_parse_error, envelope_semantic_error, postCommand_attempt, postCommand_ok, postCommand_failed, delivery_attempt, delivery_ok, delivery_failed, chat_heartbeat, extension_version e active_chat_seen.
+4. Melhorar diagnostico do chat destino para casos como destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, inject timeout e runtime error.
+5. Preparar v0.5.0 do Control Center com tabela de chats ativos, heartbeat por chat, ultimos ACKs e erros, botao copiar diagnostico, console ao vivo e atualizacao segura.
+
+### Documento antigo arquivado
+
+- O status incremental docs/legacy/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10.md foi arquivado em docs/archive porque este guia passou a ser a referencia principal consolidada.

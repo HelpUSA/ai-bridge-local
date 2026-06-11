@@ -24,23 +24,29 @@ def init_db():
 
 def fail_stale_deliveries(max_age_seconds=45):
     """Fail inter-chat commands that were delivered to the extension but never acked."""
-    cutoff_expr = f"-{int(max_age_seconds)} seconds"
-    with get_conn() as conn:
-        conn.execute(
-            """
-            UPDATE commands
-               SET status='failed',
-                   acked_at=?,
-                   last_error='stale delivering timeout after extension delivery',
-                   stderr='stale delivering timeout after extension delivery'
-             WHERE status='delivering'
-               AND action IN ('send-message','send-chat-message')
-               AND delivered_at IS NOT NULL
-               AND datetime(substr(delivered_at, 1, 19)) < datetime('now', ?)
-            """,
-            (now_iso(), cutoff_expr),
-        )
-        conn.commit()
+    try:
+        cutoff_expr = f"-{int(max_age_seconds)} seconds"
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            conn.execute(
+                """
+                UPDATE commands
+                   SET status='failed',
+                       acked_at=?,
+                       last_error='stale delivering timeout after extension delivery',
+                       stderr='stale delivering timeout after extension delivery'
+                 WHERE status='delivering'
+                   AND action IN ('send-message','send-chat-message')
+                   AND delivered_at IS NOT NULL
+                   AND datetime(substr(delivered_at, 1, 19)) < datetime('now', ?)
+                """,
+                (now_iso(), cutoff_expr),
+            )
+            conn.commit()
+        finally:
+            conn.close()
+    except Exception as e:
+        print("[gateway] fail_stale_deliveries error:", e)
 
 def fetch_control_status():
     fail_stale_deliveries()

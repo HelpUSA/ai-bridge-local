@@ -187,6 +187,12 @@ class ControlCenterApp:
 		wk = sum(1 for pid, cmd in items if "brain_worker.py" in cmd.lower())
 		self.process_var.set("Processos ocultos/ativos: gateway={0} workers={1} repo={2}".format(gw, wk, ROOT))
 
+	def count_processes(self):
+		items = self.list_processes()
+		gateways = sum(1 for pid, cmd in items if 'gateway_local.py' in cmd.lower())
+		workers = sum(1 for pid, cmd in items if 'brain_worker.py' in cmd.lower())
+		return workers, gateways
+
 	def render_dashboard(self, data):
 		counts = data.get("command_status", {})
 		workers, gateways = self.count_processes()

@@ -122,28 +122,56 @@ function canonicalChatId(value) {
 }
 
 async function injectText(tabId, action) {
- try {
- const message = {
- type: "AI_BRIDGE_INJECT_TEXT",
- action: {
- action: "inject_text",
- text: action.message || "",
- auto_submit: true,
- action_id: action.command_id,
- command_id: action.command_id
- }
- };
- const timeoutMs = 15000;
- const timeout = new Promise((resolve) => setTimeout(() => resolve({ ok: false, reason: "inject_timeout", error: "chrome.tabs.sendMessage timeout" }), timeoutMs));
- const response = await Promise.race([chrome.tabs.sendMessage(tabId, message), timeout]);
- console.log("[bg] Inject result:", action.command_id, JSON.stringify(response));
- return response || { ok: false, reason: "empty_inject_response" };
- } catch (e) {
- console.log("[bg] Inject error:", action.command_id, e.message);
- return { ok: false, reason: "inject_exception", error: e.message };
- }
-}
+  const message = {
+    type: "AI_BRIDGE_INJECT_TEXT",
+    action: {
+      action: "inject_text",
+      text: action.message || "",
+      auto_submit: true,
+      action_id: action.command_id,
+      command_id: action.command_id
+    }
+  };
 
+  return await new Promise((resolve) => {
+    let done = false;
+
+    const finish = (payload) => {
+      if (done) return;
+      done = true;
+      resolve(payload || { ok: false, reason: "empty_inject_response" });
+    };
+
+    const timer = setTimeout(() => {
+      finish({
+        ok: false,
+        reason: "inject_timeout",
+        error: "chrome.tabs.sendMessage callback timeout"
+      });
+    }, 15000);
+
+    try {
+      chrome.tabs.sendMessage(tabId, message, (response) => {
+        clearTimeout(timer);
+        const runtimeError = chrome.runtime.lastError;
+        if (runtimeError) {
+          finish({
+            ok: false,
+            reason: "inject_runtime_error",
+            error: runtimeError.message
+          });
+          return;
+        }
+
+        console.log("[bg] Inject result:", action.command_id, JSON.stringify(response));
+        finish(response || { ok: false, reason: "empty_inject_response" });
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      finish({ ok: false, reason: "inject_exception", error: e.message });
+    }
+  });
+}
 async function pollMessages() {
   for (const chatId of Object.keys(registry)) {
     if (chatId === "unknown") continue;

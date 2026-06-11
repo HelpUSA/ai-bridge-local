@@ -39,3 +39,10 @@ Gerar executavel com PyInstaller e preparar instalador Windows com atalho e inic
 ## Fase 3
 
 Adicionar UI completa, logs, status por chat, diagnostico copiavel e configuracao visual.
+
+## Atualizacao 2026-06-11 - requisitos v0.5.0
+
+- Tabela de chats ativos com chat_id, source_chat_id, ultima atividade, fila pendente e comando em execucao.
+- Heartbeat por chat enviado pela extensao ao gateway.
+- Ultimos ACKs e erros por chat, console ao vivo, filtros, copiar diagnostico e atualizacao segura.
+- Diagnostico claro para destino nao registrado, tabId antigo, composer nao encontrado, botao desabilitado, inject timeout e runtime error.

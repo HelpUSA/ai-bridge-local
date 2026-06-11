@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.2.1"""
+﻿# -*- coding: utf-8 -*-
+"""AI Bridge Local - Gateway v0.2.3"""
 import json
 import sqlite3
 import uuid
@@ -10,7 +10,7 @@ from urllib.parse import parse_qs, urlparse
 HOST = "127.0.0.1"
 PORT = 8766
 DB_PATH = "queue_local.db"
-VERSION = "0.2.1"
+VERSION = "0.2.3"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()

@@ -823,3 +823,11 @@ Esta secao consolida o estado validado apos os testes bidirecionais e substitui 
 ### Documento antigo arquivado
 
 - O status incremental docs/legacy/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10.md foi arquivado em docs/archive porque este guia passou a ser a referencia principal consolidada.
+
+## Complemento operacional 2026-06-11 - smoke 0.4.35 e diagnostico
+
+- Gateway HTTP atualizado para 0.2.3 para refletir o watchdog stale delivery funcional.
+- Smoke oficial 0.4.35 deve cobrir run-command via gateway-brain-supervisor e send-chat-message com message top-level.
+- Falhas inter-chat devem registrar diagnostico objetivo: composer ocupado, botao desabilitado, timeout de inject, destino nao registrado, tabId antigo ou stale delivering timeout.
+- Telemetria futura da extensao deve persistir envelope_detected, envelope_parse_error, envelope_semantic_error, postCommand_attempt, postCommand_ok, postCommand_failed, delivery_attempt, delivery_ok, delivery_failed, chat_heartbeat, extension_version e active_chat_seen.
+- Control Center v0.5.0 deve exibir chats ativos, heartbeat, ultimos ACKs, ultimos erros, console ao vivo, copiar diagnostico e atualizacao segura.

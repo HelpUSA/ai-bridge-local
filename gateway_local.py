@@ -22,7 +22,28 @@ def init_db():
     conn.commit()
     conn.close()
 
+def fail_stale_deliveries(max_age_seconds=45):
+    """Fail inter-chat commands that were delivered to the extension but never acked."""
+    cutoff_expr = f"-{int(max_age_seconds)} seconds"
+    with get_conn() as conn:
+        conn.execute(
+            """
+            UPDATE commands
+               SET status='failed',
+                   acked_at=?,
+                   last_error='stale delivering timeout after extension delivery',
+                   stderr='stale delivering timeout after extension delivery'
+             WHERE status='delivering'
+               AND action IN ('send-message','send-chat-message')
+               AND delivered_at IS NOT NULL
+               AND datetime(substr(delivered_at, 1, 19)) < datetime('now', ?)
+            """,
+            (now_iso(), cutoff_expr),
+        )
+        conn.commit()
+
 def fetch_control_status():
+    fail_stale_deliveries()
     conn = sqlite3.connect(DB_PATH)
     try:
         rows = conn.execute("SELECT status, COUNT(1) FROM commands GROUP BY status").fetchall()
@@ -103,6 +124,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             return
 
         if self.path.startswith("/bridge/next-action"):
+            fail_stale_deliveries()
             qs = parse_qs(urlparse(self.path).query)
             chat_id = qs.get("chat_id", ["gateway-brain-supervisor"])[0]
             source_chat_id = qs.get("source_chat_id", [""])[0]

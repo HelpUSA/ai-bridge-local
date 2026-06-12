@@ -52,3 +52,13 @@ Examples can be generated with command_builder.py and should be kept as text env
 
 Before any queue cleanup, run: python scripts/watcher/backup_queue_db.py
 Use scripts/watcher/repo_health_report.py for a compact repository and queue health summary.
+
+## Windows app runbook
+
+Run Control Center from app_windows/control_center_app.py when operating the bridge locally.
+Run diagnostics with: powershell -NoProfile -ExecutionPolicy Bypass -File app_windows/start_diagnostics_viewer.ps1
+Confirm extension manifest version, run validate_all.ps1, and keep queue backups before cleanup.
+
+## Final validation checklist
+
+Run git status -sb, git diff --check, smoke_command_builder.py, smoke_robustness.py, validate_all.ps1, health_check.py, and self_heal.py --dry-run before release.

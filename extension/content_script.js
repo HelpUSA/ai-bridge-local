@@ -1,6 +1,6 @@
 // AI Bridge Local v0.4.36 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.38";
+  const VERSION = "0.4.36";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -558,70 +558,8 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     }
   }
 
-  function extractSimpleBridgeCommands(text) {
-    const cmds = [];
-    const source = canonicalUuid(getChatId()) || getChatId() || "unknown";
-    const blockRegex = /(?:^|\n)BRIDGE_SEND_CHAT_MESSAGE[ \t]*\r?\n([\s\S]*?)(?=\n(?:BRIDGE_SEND_CHAT_MESSAGE|@@AI_BRIDGE_LOCAL_START@@)|$)/gi;
-    let m;
-
-    while ((m = blockRegex.exec(String(text || ""))) !== null) {
-      const raw = String(m[1] || "").trim();
-      const fields = {};
-      for (const line of raw.split(/\r?\n/)) {
-        const parts = String(line || "").split("=");
-        if (parts.length < 2) continue;
-        const key = parts.shift().trim().toLowerCase();
-        const value = parts.join("=").trim();
-        if (key) fields[key] = value;
-      }
-
-      const target = canonicalUuid(fields.target_chat_id || fields.target || fields.to);
-      const message = String(fields.message || fields.text || "").trim();
-
-      if (!target || !message) {
-        continue;
-      }
-
-      const commandId = fields.command_id || ("simple_bridge_send_" + safeIdPart(target).slice(0, 8) + "_" + hashString(target + "|" + message).slice(0, 12));
-      cmds.push(normalizeLocalCommand({
-        schema: LOCAL_SCHEMA,
-        schema_version: LOCAL_SCHEMA_VERSION,
-        command_id: commandId,
-        action: "send-chat-message",
-        source_chat_id: source,
-        target_chat_id: target,
-        delivery_kind: "inter_agent_message",
-        conversation_id: fields.conversation_id || ("simple_bridge_" + safeIdPart(source).slice(0, 8) + "_to_" + safeIdPart(target).slice(0, 8)),
-        from_agent: fields.from_agent || ("AI Bridge Simple Mode " + VERSION),
-        message
-      }));
-    }
-
-    const oneLineRegex = /(?:^|\n)BRIDGE_REPLY_TO[ \t]*=[ \t]*([0-9a-fA-F-]{36})[ \t]*\r?\nBRIDGE_MESSAGE[ \t]*=[ \t]*([^\r\n]{1,2000})/g;
-    while ((m = oneLineRegex.exec(String(text || ""))) !== null) {
-      const target = canonicalUuid(m[1]);
-      const message = String(m[2] || "").trim();
-      if (!target || !message) continue;
-      const commandId = "simple_bridge_reply_" + safeIdPart(target).slice(0, 8) + "_" + hashString(target + "|" + message).slice(0, 12);
-      cmds.push(normalizeLocalCommand({
-        schema: LOCAL_SCHEMA,
-        schema_version: LOCAL_SCHEMA_VERSION,
-        command_id: commandId,
-        action: "send-chat-message",
-        source_chat_id: source,
-        target_chat_id: target,
-        delivery_kind: "inter_agent_message",
-        conversation_id: "simple_bridge_reply",
-        from_agent: "AI Bridge Simple Mode " + VERSION,
-        message
-      }));
-    }
-
-    return cmds;
-  }
-
   function extract(text) {
-    const cmds = extractSimpleBridgeCommands(text);
+    const cmds = [];
     const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
     let m;
 

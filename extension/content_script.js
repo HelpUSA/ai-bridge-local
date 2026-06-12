@@ -1,4 +1,4 @@
-﻿// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
+// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
 (() => {
   const VERSION = "0.4.35";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -359,7 +359,7 @@
     if (!cmd.created_at_utc) cmd.created_at_utc = new Date().toISOString();
 
     if (cmd.delivery_kind === "inter_agent_message") {
-      cmd.delivery_kind = "local_inter_agent_message";
+      cmd.delivery_kind = "inter_agent_message";
     }
 
     return cmd;
@@ -539,7 +539,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
           action: "send-chat-message",
           source_chat_id: info.currentChatId || info.originalSource || "unknown",
           target_chat_id: validTarget,
-          delivery_kind: "local_inter_agent_message",
+          delivery_kind: "inter_agent_message",
           conversation_id: info.originalConversation + "_diagnostics",
           from_agent: "AI Bridge Local Extension " + VERSION,
           message: info.text

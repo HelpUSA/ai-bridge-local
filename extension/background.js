@@ -1,4 +1,4 @@
-﻿// AI Bridge Local v0.4.35
+// AI Bridge Local v0.4.35
 const VERSION = "0.4.35";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
@@ -120,7 +120,7 @@ async function postDeliveryStatus(action, status, detail, result = {}) {
       action: "send-chat-message",
       source_chat_id: targetChatId || "gateway-brain-supervisor",
       target_chat_id: sourceChatId,
-      delivery_kind: "local_inter_agent_message",
+      delivery_kind: "inter_agent_message",
       conversation_id: (action.conversation_id || "local_delivery_status") + "_status",
       from_agent: "AI Bridge Local Extension " + VERSION,
       message: statusMessage

@@ -13,6 +13,8 @@ python scripts/watcher/smoke_backup_queue_db.py
 if($LASTEXITCODE -ne 0){throw 'backup_queue_smoke_failed'}
 python scripts/watcher/smoke_docs.py
 if($LASTEXITCODE -ne 0){throw 'docs_smoke_failed'}
+python scripts/watcher/smoke_examples.py
+if($LASTEXITCODE -ne 0){throw 'examples_smoke_failed'}
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/watcher/validate_all.ps1
 if($LASTEXITCODE -ne 0){throw 'validate_all_failed'}
 git diff --check

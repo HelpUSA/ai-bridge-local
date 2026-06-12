@@ -92,3 +92,9 @@ examples/.txt contain complete watcher envelopes with required fields. Validate 
 
 ## Command builder microcycle
 Before changing command_builder.py, run py_compile and smoke_command_builder.py. Keep builder changes small and validate examples separately.
+
+## Validated examples in release check
+release_check.ps1 now runs smoke_examples.py so complete envelope examples are validated during release checks.
+
+## Command builder validation smoke
+smoke_command_builder_validate.py verifies command_builder.py and envelope_validator.py are present and that the builder CLI remains callable before deeper --validate changes.

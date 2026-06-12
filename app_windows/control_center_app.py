@@ -353,7 +353,7 @@ class ControlCenterApp:
 		if is_script_running("brain_worker.py"):
 			self.log("Worker ja esta ativo; nao vou abrir outra instancia.")
 			return
-		for i in range(4):
+		for i in range(1):
 			self.start_python_hidden("brain_worker.py", WORKER_LOG)
 		time.sleep(1)
 		self.refresh()

@@ -23,7 +23,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 ROOT = Path.cwd()
 DB = ROOT / "queue_local.db"
@@ -78,7 +78,7 @@ def process_report() -> tuple[list[dict[str, str]], list[dict[str, str]], list[d
     items = win_processes()
     gateways = [p for p in items if is_repo_process(p, GATEWAY)]
     workers = [p for p in items if is_repo_process(p, WORKER)]
-    controls = [p for p in items if "AI-Bridge-Local-Control-Center" in str(p.get("CommandLine") or "")]
+    controls = [p for p in items if str(p.get("Name") or "").lower() == "ai-bridge-local-control-center.exe"]
     return gateways, workers, controls
 
 

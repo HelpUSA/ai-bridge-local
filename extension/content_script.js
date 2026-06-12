@@ -1,6 +1,6 @@
-// AI Bridge Local v0.4.36 - HelpUS AI compatible bridge
+// AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.36";
+  const VERSION = "0.4.37";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();

@@ -1,4 +1,4 @@
-﻿# AI Bridge Local - regras operacionais
+# AI Bridge Local - regras operacionais
 
 Atualizado em 2026-06-12.
 
@@ -73,3 +73,9 @@ O sistema deve tender a auto-recuperacao:
 6. incremento de versao quando houver alteracao.
 7. commit pequeno.
 8. push normal, sem force.
+
+## HelpUSAI
+
+- HelpUSAI / ai.helpusbr.com é alvo oficial da extensão e deve ser auditado junto com ChatGPT.
+- Toda auditoria da extensão deve conferir ChatGPT e HelpUSAI.
+- Toda alteração de versão da extensão deve manter manifest, content_script e background alinhados.

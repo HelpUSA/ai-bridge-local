@@ -2,6 +2,7 @@
 from pathlib import Path
 ROOT=Path.cwd()
 DB=ROOT/'queue_local.db'
+def safe(v): print(str(v).encode('ascii','backslashreplace').decode('ascii'))
 def rows(sql,args=()):
  con=sqlite3.connect(DB); con.row_factory=sqlite3.Row
  try: return [dict(r) for r in con.execute(sql,args)]

@@ -80,3 +80,9 @@ smoke_backup_queue_db.py creates a real local queue backup and confirms backups/
 
 ## Timezone-safe cleanup age
 cleanup_plan.py normalizes command timestamps to UTC and clamps negative ages to zero before marking stale candidates.
+
+## Release hardening 0.4.38
+This checkpoint adds release_check.ps1, safer health alerts, dead letter target filtering, recovery guidance, and envelope examples. Manifest remains 0.4.37; the tag is operational.
+
+## Recovery runbook
+For SyntaxError or IndentationError, restore the broken file or patch only that file, then run py_compile before any commit. For diff_check_failed, trim trailing blank lines and rerun validate_all. For envelope_parse_error, resend a smaller command or use script_ext/script_text. Before queue maintenance, run backup_queue_db.py and cleanup_plan.py in report-only mode.

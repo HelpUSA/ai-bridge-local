@@ -1,0 +1,3 @@
+﻿@@AI_BRIDGE_LOCAL_START@@
+{"payload":{"cwd":"D:/dev/autocode/ai-bridge-local","command":["powershell","-File","scripts/watcher/validate_all.ps1"]}}
+@@AI_BRIDGE_LOCAL_END@@

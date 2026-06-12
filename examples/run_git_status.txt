@@ -1,0 +1,3 @@
+﻿@@AI_BRIDGE_LOCAL_START@@
+{"payload":{"cwd":"D:/dev/autocode/ai-bridge-local","command":["git","status","-sb"]}}
+@@AI_BRIDGE_LOCAL_END@@

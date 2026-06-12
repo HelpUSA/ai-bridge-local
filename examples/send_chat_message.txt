@@ -1,0 +1,1 @@
+﻿Use command_builder.py for real envelopes. Keep markers alone and avoid large inline JSON.

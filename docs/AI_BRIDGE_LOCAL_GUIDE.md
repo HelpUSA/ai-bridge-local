@@ -71,3 +71,6 @@ dead_letters_report.py groups errors by kind and by project prefix so AI Bridge 
 
 ## Operational smokes
 Use smoke_dead_letters_report.py and smoke_cleanup_plan.py to validate reporting scripts before queue maintenance.
+
+## Cleanup age threshold
+cleanup_plan.py supports --min-age-minutes and remains report-only. It marks stale candidates but does not modify the queue.

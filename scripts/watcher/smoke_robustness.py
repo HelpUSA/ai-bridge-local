@@ -1,4 +1,4 @@
-# -- coding: utf-8 --
+﻿# -- coding: utf-8 --
 from pathlib import Path
 ROOT = Path.cwd()
 cs = (ROOT / 'extension/content_script.js').read_text(encoding='utf-8')
@@ -26,3 +26,13 @@ print('OK worker_script_ext')
 assert 'timeout_seconds' in wk
 print('OK worker_timeout_seconds')
 print('ROBUSTNESS_SMOKE_OK')
+import py_compile
+diag_path = ROOT / 'scripts' / 'watcher' / 'control_center_diagnostics.py'
+assert diag_path.exists()
+py_compile.compile(str(diag_path), doraise=True)
+diag = diag_path.read_text(encoding='utf-8')
+assert 'AI_BRIDGE_LOCAL_DIAGNOSTICS' in diag
+assert 'invalid_messages' in diag
+assert 'dead_letters' in diag
+assert 'where status=?' in diag
+print('OK diagnostics_report')

@@ -42,3 +42,8 @@ The report separates watcher-local failures from external project noise such as 
 ## Safe large commands
 
 For large commands, prefer script_text/script_ext or a real saved script instead of fragile inline JSON.
+
+## Command builder validation
+
+command_builder.py supports --validate to check generated envelopes with envelope_validator.py.
+Examples can be generated with command_builder.py and should be kept as text envelopes when needed.

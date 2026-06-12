@@ -5,6 +5,8 @@ python scripts/watcher/repo_health_report.py
 if($LASTEXITCODE -ne 0){throw 'repo_health_failed'}
 python scripts/watcher/smoke_command_builder.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
+python scripts/watcher/smoke_command_builder_validate.py
+if($LASTEXITCODE -ne 0){throw 'command_builder_validate_smoke_failed'}
 python scripts/watcher/smoke_dead_letters_report.py
 if($LASTEXITCODE -ne 0){throw 'dead_letters_smoke_failed'}
 python scripts/watcher/smoke_cleanup_plan.py

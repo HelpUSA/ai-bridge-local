@@ -98,3 +98,9 @@ release_check.ps1 now runs smoke_examples.py so complete envelope examples are v
 
 ## Command builder validation smoke
 smoke_command_builder_validate.py verifies command_builder.py and envelope_validator.py are present and that the builder CLI remains callable before deeper --validate changes.
+
+## Daily watcher checklist
+Use docs/DAILY_WATCHER_CHECKLIST.md for daily operations. It keeps health, backup, cleanup plan, release check, and failure triage in one short routine.
+
+## Operational vs extension release
+Operational tags may advance independently from extension/manifest.json. The extension manifest remains 0.4.37 unless explicitly changed.

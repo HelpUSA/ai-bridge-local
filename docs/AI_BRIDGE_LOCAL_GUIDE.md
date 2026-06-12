@@ -68,3 +68,6 @@ Use python scripts/watcher/cleanup_plan.py to list cleanup candidates only. It m
 
 ## Dead letter error classification
 dead_letters_report.py groups errors by kind and by project prefix so AI Bridge failures are not mixed with Pizza, HelpUS, or Trading noise.
+
+## Operational smokes
+Use smoke_dead_letters_report.py and smoke_cleanup_plan.py to validate reporting scripts before queue maintenance.

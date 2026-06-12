@@ -1,4 +1,4 @@
-# -- coding: utf-8 --
+﻿# -- coding: utf-8 --
 import json
 import os
 import shutil
@@ -331,6 +331,12 @@ class ControlCenterApp:
 		subprocess.Popen([self.python_exe(), "-u", str(script)], cwd=str(ROOT), stdout=log, stderr=subprocess.STDOUT, creationflags=CREATE_NO_WINDOW, env=env)
 		time.sleep(1)
 		self.refresh()
+
+	def open_diagnostics_viewer(self):
+		try:
+			subprocess.Popen([sys.executable, str(ROOT / 'app_windows' / 'diagnostics_viewer.py')], cwd=str(ROOT), creationflags=CREATE_NO_WINDOW)
+		except Exception as exc:
+			messagebox.showerror('Diagnosticos', str(exc))
 
 	def start_bridge(self):
 		self.start_gateway()

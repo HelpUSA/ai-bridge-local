@@ -622,7 +622,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
 
   function extract(text) {
     const cmds = extractSimpleBridgeCommands(text);
-    const regex = /(?:^|\n)@@AI_BRIDGE_LOCAL_START@@[ \t]*\r?\n([\s\S]*?)\r?\n@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
+    const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
     let m;
 
     while ((m = regex.exec(text)) !== null) {

@@ -1031,3 +1031,9 @@ Ordem de implementacao:
 5. Bloquear placeholders, aspas curvas, caracteres invisiveis e payload grande.
 6. Migrar comandos grandes para scripts reais.
 7. Expor invalidos e dead letters no Control Center.
+
+## Robustez contra falhas de comandos
+
+Status consolidado em docs/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12.md.
+
+Resumo: o parser agora aceita envelopes em 3 linhas e também envelopes colapsados em linha única. script_text/script_ext foi validado. Existe smoke oficial em scripts/watcher/smoke_robustness.py. Ainda falta criar health check, cleanup dry-run, cleanup apply seguro e ampliar o smoke para fila, dead letters, invalid messages, timeout e duplicidade.

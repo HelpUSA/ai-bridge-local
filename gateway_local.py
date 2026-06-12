@@ -48,10 +48,10 @@ def validate_command_body(body, payload):
             return 'missing_payload_command_or_script'
     return ''
 
-def record_invalid_message(body, error):
+def record_invalid_message(body, error, raw_text=None):
     conn = sqlite3.connect(DB_PATH)
     try:
-        conn.execute("INSERT INTO invalid_messages (source_chat_id, raw_text, error) VALUES (?, ?, ?)", (body.get('source_chat_id', ''), json.dumps(body, ensure_ascii=False), error))
+        conn.execute("INSERT INTO invalid_messages (source_chat_id, raw_text, error) VALUES (?, ?, ?)", (body.get('source_chat_id', ''), (raw_text if raw_text is not None else json.dumps(body, ensure_ascii=False)), error))
         conn.commit()
     finally:
         conn.close()
@@ -135,10 +135,13 @@ class GatewayHandler(BaseHTTPRequestHandler):
         self.wfile.write(raw)
 
     def _read_json(self):
-        length = int(self.headers.get("Content-Length", 0))
+        length = int(self.headers.get('Content-Length', 0))
         if length <= 0:
+            self._last_raw_body = ''
             return {}
-        return json.loads(self.rfile.read(length).decode("utf-8"))
+        raw = self.rfile.read(length).decode('utf-8')
+        self._last_raw_body = raw
+        return json.loads(raw)
 
     def do_GET(self):
         if self.path == "/control":

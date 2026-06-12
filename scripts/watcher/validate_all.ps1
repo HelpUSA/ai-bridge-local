@@ -8,6 +8,8 @@ python scripts/watcher/control_center_diagnostics.py | Select-Object -First 60
 if($LASTEXITCODE -ne 0){throw 'diag_run_failed'}
 python scripts/watcher/smoke_command_builder.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
+python scripts/watcher/smoke_diagnostics_viewer.py
+if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
 python scripts/watcher/smoke_robustness.py
 if($LASTEXITCODE -ne 0){throw 'smoke_failed'}
 node --check extension/content_script.js

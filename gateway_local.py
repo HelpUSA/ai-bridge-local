@@ -241,6 +241,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
         try:
             body = self._read_json()
         except Exception as e:
+            record_invalid_message({}, 'invalid_json: ' + str(e), getattr(self, '_last_raw_body', ''))
             self._send_json({"ok": False, "error": "invalid_json", "detail": str(e)}, 400)
             return
 

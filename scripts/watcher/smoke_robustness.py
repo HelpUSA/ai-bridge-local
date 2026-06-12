@@ -34,7 +34,7 @@ diag = diag_path.read_text(encoding='utf-8')
 assert 'AI_BRIDGE_LOCAL_DIAGNOSTICS' in diag
 assert 'invalid_messages' in diag
 assert 'dead_letters' in diag
-assert 'where status=?' in diag
+assert ('where status=?' in diag) or ('status = ?' in diag)
 print('OK diagnostics_report')
 cmd_smoke = ROOT / 'scripts' / 'watcher' / 'smoke_command_builder.py'
 assert cmd_smoke.exists()

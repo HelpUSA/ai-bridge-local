@@ -23,3 +23,8 @@ This wrapper stops on native command failures by checking LASTEXITCODE after eac
 ## Command builder smoke
 
 Use scripts/watcher/smoke_command_builder.py to validate run-command and send-chat-message envelope generation against envelope_validator.py.
+
+## Diagnostics filters
+
+Use: python scripts/watcher/control_center_diagnostics.py --limit 20 --target gateway-brain-supervisor --command-prefix ai_bridge_local
+The report supports limit, target_chat_id, and command_id prefix filters for dead letters and failed commands.

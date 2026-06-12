@@ -27,7 +27,7 @@ def validate_command_body(body, payload):
     need = ['schema', 'schema_version', 'command_id', 'action', 'source_chat_id', 'target_chat_id', 'delivery_kind']
     for k in need:
         if not body.get(k):
-            return 'missing_ ' + k
+            return 'missing_' + k
     if body.get('schema') != 'ai_bridge_local.envelope':
         return 'bad_schema'
     if body.get('action') not in ['send-chat-message', 'run-command']:

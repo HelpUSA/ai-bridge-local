@@ -15,3 +15,6 @@ def build_run_command(source_chat_id, cwd, command):
 
 def dumps(envelope):
     return json.dumps(envelope, ensure_ascii=False, indent=2)
+
+def build_script_command(source_chat_id, cwd, script_path, timeout_seconds=120):
+ return build_run_command(source_chat_id, cwd, ['python', script_path])

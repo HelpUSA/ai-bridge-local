@@ -1,1 +1,93 @@
-{"type":"object"}
+{
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_version",
+    "command_id",
+    "action",
+    "source_chat_id",
+    "target_chat_id",
+    "delivery_kind"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ai_bridge_local.envelope"
+    },
+    "schema_version": {
+      "type": "integer"
+    },
+    "action": {
+      "enum": [
+        "send-chat-message",
+        "run-command"
+      ]
+    },
+    "delivery_kind": {
+      "enum": [
+        "inter_agent_message",
+        "local_capability"
+      ]
+    },
+    "command_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "source_chat_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "target_chat_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "conversation_id": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "from_agent": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "message": {
+      "type": "string",
+      "maxLength": 20000
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "send-chat-message"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "message"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "run-command"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "payload"
+        ]
+      }
+    }
+  ]
+}

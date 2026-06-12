@@ -74,3 +74,9 @@ Use smoke_dead_letters_report.py and smoke_cleanup_plan.py to validate reporting
 
 ## Cleanup age threshold
 cleanup_plan.py supports --min-age-minutes and remains report-only. It marks stale candidates but does not modify the queue.
+
+## Backup smoke
+smoke_backup_queue_db.py creates a real local queue backup and confirms backups/queue_local files remain ignored by git.
+
+## Timezone-safe cleanup age
+cleanup_plan.py normalizes command timestamps to UTC and clamps negative ages to zero before marking stale candidates.

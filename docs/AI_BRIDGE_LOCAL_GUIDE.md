@@ -47,3 +47,8 @@ For large commands, prefer script_text/script_ext or a real saved script instead
 
 command_builder.py supports --validate to check generated envelopes with envelope_validator.py.
 Examples can be generated with command_builder.py and should be kept as text envelopes when needed.
+
+## Queue database backup
+
+Before any queue cleanup, run: python scripts/watcher/backup_queue_db.py
+Use scripts/watcher/repo_health_report.py for a compact repository and queue health summary.

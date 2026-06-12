@@ -25,3 +25,7 @@ if($LASTEXITCODE -ne 0){throw 'self_heal_failed'}
 git diff --check
 if($LASTEXITCODE -ne 0){throw 'diff_check_failed'}
 Write-Output 'AI_BRIDGE_LOCAL_VALIDATE_ALL_DONE'
+python scripts/watcher/smoke_backup_queue_db.py
+if($LASTEXITCODE -ne 0){throw 'backup_queue_db_smoke_failed'}
+python scripts/watcher/repo_health_report.py
+if($LASTEXITCODE -ne 0){throw 'repo_health_report_failed'}

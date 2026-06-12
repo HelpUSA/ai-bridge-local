@@ -1,6 +1,6 @@
-// AI Bridge Local v0.4.17 - Visual dedupe and temp script workflow
+// AI Bridge Local v0.4.36 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.35";
+  const VERSION = "0.4.36";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -24,6 +24,7 @@
   function getChatId() {
     const href = location.href;
     const patterns = [
+      /ai\.helpusbr\.com\/c\/([0-9a-fA-F-]{36})/i,
       /chat\.deepseek\.com\/a\/chat\/s\/([0-9a-fA-F-]{36})/i,
       /chat\.deepseek\.com\/.*\/s\/([0-9a-fA-F-]{36})/i,
       /chatgpt\.com\/c\/([0-9a-fA-F-]{36})/i,
@@ -123,7 +124,7 @@
     const txt = candidateText(el);
     let score = 0;
 
-    if (/send|enviar|submit|å‘é€|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
+    if (/send|enviar|submit|Ã¥Ââ€˜Ã©â‚¬Â|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
     if (/stop|cancel|attach|upload|file|mic|microphone|voice|image|search|tool/.test(txt)) score -= 8;
 
     const r = el.getBoundingClientRect();
@@ -244,7 +245,7 @@
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
       const text = message.action?.text || message.action?.message || message.text || "";
 
-      showNotice("Mensagem recebida para injeÃ§Ã£o", "command_id=" + actionId, "info");
+      showNotice("Mensagem recebida para injeÃƒÂ§ÃƒÂ£o", "command_id=" + actionId, "info");
 
       if (!text) {
         showNotice("Falha: texto vazio", "command_id=" + actionId, "error");
@@ -254,7 +255,7 @@
 
       const composer = findComposer();
       if (!composer) {
-        showNotice("Falha: composer nÃ£o encontrado", "command_id=" + actionId, "error");
+        showNotice("Falha: composer nÃƒÂ£o encontrado", "command_id=" + actionId, "error");
         sendResponse({ok: false, reason: "no_composer"});
         return false;
       }
@@ -358,6 +359,10 @@
     if (!cmd.schema_version) cmd.schema_version = LOCAL_SCHEMA_VERSION;
     if (!cmd.created_at_utc) cmd.created_at_utc = new Date().toISOString();
 
+    if (cmd.delivery_kind === "local_inter_agent_message") {
+      cmd.delivery_kind = "inter_agent_message";
+    }
+
     if (cmd.delivery_kind === "inter_agent_message") {
       cmd.delivery_kind = "inter_agent_message";
     }
@@ -413,7 +418,7 @@
       causes.push("quebra de linha dentro de string JSON sem escape");
     }
  if (source.length > 900 && (source.includes('command') || source.includes('python -c') || source.includes('EncodedCommand') || source.includes('base64') || source.includes('script_text'))) {
-      causes.push("comando inline grande/frágil; prefira script_text/script_ext ou arquivo real");
+      causes.push("comando inline grande/frÃ¡gil; prefira script_text/script_ext ou arquivo real");
     }
     if (!causes.length) {
       causes.push("JSON invalido, aspas/backslashes nao escapados ou estrutura incompleta");

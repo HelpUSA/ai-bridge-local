@@ -10,7 +10,7 @@ p.add_argument('--timeout',type=int,default=120)
 p.add_argument('--command',nargs='*')
 a,rest=p.parse_known_args()
 cmd=(a.command or [])+rest
-env={'command_id':a.id,'source_chat_id':a.source,'target_chat_id':a.target,'action':a.action,'conversation_id':'ai_bridge_local_builder','from_agent':'command_builder'}
+env={'schema':'ai_bridge_local.envelope','schema_version':1,'command_id':a.id,'source_chat_id':a.source,'target_chat_id':a.target,'action':a.action,'conversation_id':'ai_bridge_local_builder','from_agent':'command_builder'}
 if a.action=='send-chat-message' and not a.message: raise SystemExit('message required')
 if a.action=='run-command' and a.target!='gateway-brain-supervisor': raise SystemExit('bad target')
 if a.action=='send-chat-message': env.update({'delivery_kind':'inter_agent_message','message':a.message})
@@ -18,3 +18,4 @@ if a.action=='run-command': env.update({'delivery_kind':'local_capability','payl
 print('@@'+'AI_BRIDGE_LOCAL_START@@')
 print(json.dumps(env,separators=(',', ':')))
 print('@@'+'AI_BRIDGE_LOCAL_END@@')
+

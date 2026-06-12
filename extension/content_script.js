@@ -1,6 +1,6 @@
 // AI Bridge Local v0.4.36 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.37";
+  const VERSION = "0.4.38";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -579,7 +579,6 @@ function reportEnvelopeError(kind, errorMessage, raw) {
       const message = String(fields.message || fields.text || "").trim();
 
       if (!target || !message) {
-        reportEnvelopeError("simple_bridge_missing_fields", "BRIDGE_SEND_CHAT_MESSAGE precisa de target_chat_id e message", raw);
         continue;
       }
 

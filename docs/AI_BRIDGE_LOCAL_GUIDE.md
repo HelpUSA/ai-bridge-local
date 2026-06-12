@@ -62,3 +62,6 @@ Confirm extension manifest version, run validate_all.ps1, and keep queue backups
 ## Final validation checklist
 
 Run git status -sb, git diff --check, smoke_command_builder.py, smoke_robustness.py, validate_all.ps1, health_check.py, and self_heal.py --dry-run before release.
+
+## Cleanup plan
+Use python scripts/watcher/cleanup_plan.py to list cleanup candidates only. It must not delete rows. Run backup_queue_db.py before any real cleanup.

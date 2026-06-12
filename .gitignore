@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.pyc
 .venv/
@@ -25,4 +25,4 @@ dist/
 build/
 logs/
 temp/
-backups/queue_local/.db
+backups/queue_local/*.db

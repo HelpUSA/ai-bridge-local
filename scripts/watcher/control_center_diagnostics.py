@@ -18,3 +18,4 @@ def main():
  print('failed_commands_recent')
  for r in rows('select id,command_id,target_chat_id,last_error,created_at from commands where status=''failed'' order by id desc limit 10'): print(r)
 if name=='main': main()
+

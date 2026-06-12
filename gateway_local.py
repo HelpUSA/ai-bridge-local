@@ -300,6 +300,10 @@ class GatewayHandler(BaseHTTPRequestHandler):
                     body.get("command_id")
                 )
             )
+            if body.get('status') == 'failed':
+                row = conn.execute('SELECT command_id, source_chat_id, target_chat_id, action, delivery_kind, payload_json FROM commands WHERE command_id=?', (body.get('command_id'),)).fetchone()
+                if row:
+                    conn.execute('INSERT INTO dead_letters (command_id, source_chat_id, target_chat_id, action, delivery_kind, payload_json, last_error, attempt_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', tuple(row) + (body.get('error', ''), 1))
             conn.commit()
             conn.close()
             self._send_json({"ok": True})

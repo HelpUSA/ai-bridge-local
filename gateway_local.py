@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """AI Bridge Local - Gateway v0.2.3"""
 import json
 import sqlite3
@@ -236,6 +236,11 @@ class GatewayHandler(BaseHTTPRequestHandler):
         if self.path == "/bridge/commands":
             cmd_id = body.get("command_id", str(uuid.uuid4()))
             payload = normalize_payload(body)
+            validation_error = validate_command_body(body, payload)
+            if validation_error:
+                record_invalid_message(body, validation_error)
+                self._send_json(dict(ok=False, error='invalid_envelope', detail=validation_error), 400)
+                return
 
             conn = sqlite3.connect(DB_PATH)
             try:

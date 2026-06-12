@@ -1,6 +1,6 @@
 ﻿import sqlite3, json
 from pathlib import Path
-ROOT=Path(file).resolve().parents[2]
+ROOT=Path.cwd()
 DB=ROOT/'queue_local.db'
 def rows(sql,args=()):
  con=sqlite3.connect(DB); con.row_factory=sqlite3.Row

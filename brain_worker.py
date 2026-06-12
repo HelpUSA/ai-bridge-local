@@ -128,7 +128,7 @@ def enqueue_result_message(action, result, status):
         "action": "send-chat-message",
         "source_chat_id": "gateway-brain-supervisor",
         "target_chat_id": source_chat_id,
-        "delivery_kind": "local_inter_agent_message",
+        "delivery_kind": "inter_agent_message",
         "conversation_id": (action.get("conversation_id") or "local_run_command") + "_result",
         "from_agent": "AI Bridge Local Worker " + VERSION,
         "message": format_result_message(action, result, status)

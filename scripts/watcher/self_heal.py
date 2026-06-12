@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 AI Bridge Local self-heal.
 
@@ -23,7 +23,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 ROOT = Path.cwd()
 DB = ROOT / "queue_local.db"
@@ -236,6 +236,7 @@ def dict_to_line(row: sqlite3.Row) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true", help="Apply self-heal actions. Default is dry-run.")
+    ap.add_argument("--dry-run", action="store_true", help="Explicit dry-run mode. This is the default.")
     ap.add_argument("--delivering-minutes", type=int, default=90)
     ap.add_argument("--queued-minutes", type=int, default=90)
     args = ap.parse_args()

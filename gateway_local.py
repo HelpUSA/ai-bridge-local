@@ -56,6 +56,14 @@ def record_invalid_message(body, error, raw_text=None):
     finally:
         conn.close()
 
+def record_dead_letter(body, payload, error, attempt_count=1):
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        conn.execute('INSERT INTO dead_letters (command_id, source_chat_id, target_chat_id, action, delivery_kind, payload_json, last_error, attempt_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', (body.get('command_id', ''), body.get('source_chat_id', ''), body.get('target_chat_id', ''), body.get('action', ''), body.get('delivery_kind', ''), json.dumps(payload or {}, ensure_ascii=False), error, attempt_count))
+        conn.commit()
+    finally:
+        conn.close()
+
 def record_event(command_id=None, event_type=None, message=None, payload=None):
     if not event_type:
         return False

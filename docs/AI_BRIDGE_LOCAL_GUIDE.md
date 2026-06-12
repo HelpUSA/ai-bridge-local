@@ -104,3 +104,6 @@ Use docs/DAILY_WATCHER_CHECKLIST.md for daily operations. It keeps health, backu
 
 ## Operational vs extension release
 Operational tags may advance independently from extension/manifest.json. The extension manifest remains 0.4.37 unless explicitly changed.
+
+## Version alignment 0.4.39
+The extension manifest and VERSION file were aligned to 0.4.39 after the operational 0.4.38 and 0.4.38.1 checkpoints. Future checkpoints should update both the operational tag and the real extension version when the change is release-worthy.

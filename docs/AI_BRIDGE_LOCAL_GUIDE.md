@@ -28,3 +28,8 @@ Use scripts/watcher/smoke_command_builder.py to validate run-command and send-ch
 
 Use: python scripts/watcher/control_center_diagnostics.py --limit 20 --target gateway-brain-supervisor --command-prefix ai_bridge_local
 The report supports limit, target_chat_id, and command_id prefix filters for dead letters and failed commands.
+
+## Diagnostics viewer
+
+Use app_windows/diagnostics_viewer.py for a small visual diagnostics window.
+Recommended launcher: powershell -NoProfile -ExecutionPolicy Bypass -File app_windows/start_diagnostics_viewer.ps1

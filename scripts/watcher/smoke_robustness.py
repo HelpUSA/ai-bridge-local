@@ -1,6 +1,6 @@
 # -- coding: utf-8 --
 from pathlib import Path
-ROOT = Path(file).resolve().parents[2]
+ROOT = Path.cwd()
 cs = (ROOT / 'extension/content_script.js').read_text(encoding='utf-8')
 gw = (ROOT / 'gateway_local.py').read_text(encoding='utf-8')
 wk = (ROOT / 'brain_worker.py').read_text(encoding='utf-8')

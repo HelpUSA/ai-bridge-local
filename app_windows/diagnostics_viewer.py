@@ -1,6 +1,6 @@
 ﻿import subprocess, sys, tkinter as tk
 from pathlib import Path
-ROOT = Path(file).resolve().parents[1]
+ROOT = Path.cwd()
 CREATE_NO_WINDOW = getattr(subprocess, 'CREATE_NO_WINDOW', 0)
 def run_report():
  cmd = [sys.executable, str(ROOT / 'scripts' / 'watcher' / 'control_center_diagnostics.py')]

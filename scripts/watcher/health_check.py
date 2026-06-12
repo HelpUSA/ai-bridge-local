@@ -65,7 +65,7 @@ def versions_section():
  text = f.read_text(encoding='utf-8', errors='replace')
  if rel.endswith('.json'):
  try:
- data = json.loads(text.lstrip('﻿'))
+ data = json.loads(text.lstrip(chr(65279)))
  print(rel + ': version=' + str(data.get('version')))
  except Exception as exc:
  print(rel + ': json_error=' + repr(exc))
@@ -86,7 +86,6 @@ def main():
  section('process hints')
  if os.name == 'nt':
  run('git processes', ['powershell', '-NoProfile', '-Command', 'Get-Process git -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime,Path | Format-Table -AutoSize | Out-String -Width 4096'])
- run('bridge python processes', ['powershell', '-NoProfile', '-Command', 'Get-CimInstance Win32_Process | Where-Object { $PSItem.Name -match ''python'' -and $PSItem.CommandLine -match ''gateway|worker|control|bridge'' } | Select-Object ProcessId,Name,CommandLine | Format-Table -AutoSize | Out-String -Width 4096'])
  versions_section()
  db_section()
  section('smoke')
@@ -97,7 +96,5 @@ def main():
  print('smoke_robustness.py: missing')
  print()
  print('AI_BRIDGE_LOCAL_HEALTH_CHECK_DONE')
- return 0
 
-if name == 'main':
- raise SystemExit(main())
+main()

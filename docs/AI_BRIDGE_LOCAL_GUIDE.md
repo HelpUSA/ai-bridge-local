@@ -33,3 +33,12 @@ The report supports limit, target_chat_id, and command_id prefix filters for dea
 
 Use app_windows/diagnostics_viewer.py for a small visual diagnostics window.
 Recommended launcher: powershell -NoProfile -ExecutionPolicy Bypass -File app_windows/start_diagnostics_viewer.ps1
+
+## Dead letters grouped report
+
+Use: python scripts/watcher/dead_letters_report.py --limit 20 --prefix ai_bridge_local
+The report separates watcher-local failures from external project noise such as HelpUS, Pizza, or Trading commands.
+
+## Safe large commands
+
+For large commands, prefer script_text/script_ext or a real saved script instead of fragile inline JSON.

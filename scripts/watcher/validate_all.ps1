@@ -9,6 +9,8 @@ if($LASTEXITCODE -ne 0){throw 'diag_run_failed'}
 python scripts/watcher/smoke_command_builder.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
 python scripts/watcher/smoke_diagnostics_viewer.py
+if($LASTEXITCODE -ne 0){throw 'diagnostics_viewer_smoke_failed'}
+python scripts/watcher/smoke_docs.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
 python scripts/watcher/smoke_robustness.py
 if($LASTEXITCODE -ne 0){throw 'smoke_failed'}

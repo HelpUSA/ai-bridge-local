@@ -1,3 +1,3 @@
 ﻿@@AI_BRIDGE_LOCAL_START@@
-{"payload":{"cwd":"D:/dev/autocode/ai-bridge-local","command":["powershell","-File","scripts/watcher/validate_all.ps1"]}}
+{"command_id":"example_run_validate_all","source_chat_id":"6a2bf3a5-db50-83e9-8f12-2ff1f813cd0b","target_chat_id":"gateway-brain-supervisor","action":"run-command","delivery_kind":"local_capability","conversation_id":"example_validate_all","from_agent":"GPT-5.5 Thinking - example","payload":{"cwd":"D:/dev/autocode/ai-bridge-local","timeout_seconds":240,"command":["powershell","-NoProfile","-ExecutionPolicy","Bypass","-File","scripts/watcher/validate_all.ps1"]}}
 @@AI_BRIDGE_LOCAL_END@@

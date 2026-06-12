@@ -86,3 +86,9 @@ This checkpoint adds release_check.ps1, safer health alerts, dead letter target 
 
 ## Recovery runbook
 For SyntaxError or IndentationError, restore the broken file or patch only that file, then run py_compile before any commit. For diff_check_failed, trim trailing blank lines and rerun validate_all. For envelope_parse_error, resend a smaller command or use script_ext/script_text. Before queue maintenance, run backup_queue_db.py and cleanup_plan.py in report-only mode.
+
+## Envelope examples smoke
+examples/.txt contain complete watcher envelopes with required fields. Validate them with python scripts/watcher/smoke_examples.py.
+
+## Command builder microcycle
+Before changing command_builder.py, run py_compile and smoke_command_builder.py. Keep builder changes small and validate examples separately.

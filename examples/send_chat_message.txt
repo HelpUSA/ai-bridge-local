@@ -1,1 +1,3 @@
-﻿Use command_builder.py for real envelopes. Keep markers alone and avoid large inline JSON.
+﻿@@AI_BRIDGE_LOCAL_START@@
+{"command_id":"example_send_chat_message","source_chat_id":"6a2bf3a5-db50-83e9-8f12-2ff1f813cd0b","target_chat_id":"gateway-brain-supervisor","action":"run-command","delivery_kind":"local_capability","conversation_id":"example_chat_message","from_agent":"GPT-5.5 Thinking - example","payload":{"message":"ACK exemplo seguro recebido."}}
+@@AI_BRIDGE_LOCAL_END@@

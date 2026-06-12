@@ -37,8 +37,15 @@ def validate_command_body(body, payload):
         return 'bad_delivery_kind'
     if body.get('action') == 'send-chat-message' and not body.get('message'):
         return 'missing_message'
-    if body.get('action') == 'run-command' and not isinstance(payload, dict):
-        return 'bad_payload'
+    if body.get('action') == 'run-command':
+        if not isinstance(payload, dict):
+            return 'bad_payload'
+        if not payload.get('cwd'):
+            return 'missing_payload_cwd'
+        if 'timeout_seconds' in payload and not isinstance(payload.get('timeout_seconds'), int):
+            return 'bad_timeout_seconds'
+        if not payload.get('command') and not payload.get('script_text') and not payload.get('script_path'):
+            return 'missing_payload_command_or_script'
     return ''
 
 def record_invalid_message(body, error):

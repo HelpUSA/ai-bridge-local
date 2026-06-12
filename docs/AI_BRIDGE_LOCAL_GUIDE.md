@@ -65,3 +65,6 @@ Run git status -sb, git diff --check, smoke_command_builder.py, smoke_robustness
 
 ## Cleanup plan
 Use python scripts/watcher/cleanup_plan.py to list cleanup candidates only. It must not delete rows. Run backup_queue_db.py before any real cleanup.
+
+## Dead letter error classification
+dead_letters_report.py groups errors by kind and by project prefix so AI Bridge failures are not mixed with Pizza, HelpUS, or Trading noise.

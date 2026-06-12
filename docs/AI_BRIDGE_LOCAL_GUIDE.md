@@ -107,3 +107,6 @@ Operational tags may advance independently from extension/manifest.json. The ext
 
 ## Version alignment 0.4.39
 The extension manifest and VERSION file were aligned to 0.4.39 after the operational 0.4.38 and 0.4.38.1 checkpoints. Future checkpoints should update both the operational tag and the real extension version when the change is release-worthy.
+
+## Manifest display name 0.4.39
+The extension manifest name now matches the real extension version: AI Bridge Local 0.4.39. Keep the manifest name and version aligned in future version bumps.

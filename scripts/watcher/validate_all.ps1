@@ -1,0 +1,23 @@
+﻿$ErrorActionPreference='Stop'
+$env:PYTHONIOENCODING='utf-8'
+Write-Output 'AI_BRIDGE_LOCAL_VALIDATE_ALL_START'
+git status -sb
+python -m py_compile scripts/watcher/control_center_diagnostics.py
+if($LASTEXITCODE -ne 0){throw 'diag_compile_failed'}
+python scripts/watcher/control_center_diagnostics.py | Select-Object -First 60
+if($LASTEXITCODE -ne 0){throw 'diag_run_failed'}
+python scripts/watcher/smoke_command_builder.py
+if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
+python scripts/watcher/smoke_robustness.py
+if($LASTEXITCODE -ne 0){throw 'smoke_failed'}
+node --check extension/content_script.js
+if($LASTEXITCODE -ne 0){throw 'content_check_failed'}
+node --check extension/background.js
+if($LASTEXITCODE -ne 0){throw 'background_check_failed'}
+python scripts/watcher/health_check.py
+if($LASTEXITCODE -ne 0){throw 'health_failed'}
+python scripts/watcher/self_heal.py --dry-run
+if($LASTEXITCODE -ne 0){throw 'self_heal_failed'}
+git diff --check
+if($LASTEXITCODE -ne 0){throw 'diff_check_failed'}
+Write-Output 'AI_BRIDGE_LOCAL_VALIDATE_ALL_DONE'

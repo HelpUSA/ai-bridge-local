@@ -36,3 +36,6 @@ assert 'invalid_messages' in diag
 assert 'dead_letters' in diag
 assert 'where status=?' in diag
 print('OK diagnostics_report')
+cmd_smoke = ROOT / 'scripts' / 'watcher' / 'smoke_command_builder.py'
+assert cmd_smoke.exists()
+print('OK command_builder_smoke_present')

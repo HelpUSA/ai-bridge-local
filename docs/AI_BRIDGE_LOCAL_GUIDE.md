@@ -113,3 +113,6 @@ The extension manifest name now matches the real extension version: AI Bridge Lo
 
 ## Version alignment 0.4.40
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.40. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Command builder validator flow
+smoke_command_builder_validate.py now validates the full builder-to-validator path without printing a generated envelope to stdout.

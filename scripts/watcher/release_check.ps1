@@ -1,8 +1,10 @@
-﻿$ErrorActionPreference='Stop'
+$ErrorActionPreference='Stop'
 Write-Output 'AI_BRIDGE_LOCAL_RELEASE_CHECK_START'
 git status -sb
 python scripts/watcher/repo_health_report.py
 if($LASTEXITCODE -ne 0){throw 'repo_health_failed'}
+python scripts/watcher/smoke_version_alignment.py
+if($LASTEXITCODE -ne 0){throw 'version_alignment_smoke_failed'}
 python scripts/watcher/smoke_command_builder.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
 python scripts/watcher/smoke_command_builder_validate.py

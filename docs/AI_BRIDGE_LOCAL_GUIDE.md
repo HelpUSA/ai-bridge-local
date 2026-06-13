@@ -1,4 +1,4 @@
-﻿AI Bridge Local guide 0.4.37
+AI Bridge Local guide 0.4.37
 Repo D:/dev/autocode/ai-bridge-local
 Use send-chat-message with inter_agent_message and top level message.
 Use run-command with local_capability and gateway-brain-supervisor.
@@ -110,3 +110,6 @@ The extension manifest and VERSION file were aligned to 0.4.39 after the operati
 
 ## Manifest display name 0.4.39
 The extension manifest name now matches the real extension version: AI Bridge Local 0.4.39. Keep the manifest name and version aligned in future version bumps.
+
+## Version alignment 0.4.40
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.40. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.

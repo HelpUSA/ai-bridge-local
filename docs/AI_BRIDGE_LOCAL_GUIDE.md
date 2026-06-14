@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.60-executor-gates
-Commit de referencia: f5d317e Add executor gates mode
+Marco publicado mais recente: v0.4.61-auditor-mode
+Commit de referencia: v0.4.61-auditor-mode
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -673,7 +673,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Executa apenas intents aprovadas.
    - Exige validacoes entre fases.
 
-3. Criar modo auditor.
+3. Criar modo auditor. [DONE 0.4.61 - git tags docs divergence audit]
    - Le git log.
    - Le tags.
    - Le docs.
@@ -814,6 +814,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 13. Criar envelopes de ensino. [DONE 0.4.58]
 14. Criar modo planejador. [DONE 0.4.59]
 15. Criar modo executor com gates. [DONE 0.4.60]
+16. Criar modo auditor. [DONE 0.4.61]
 
 ---
 
@@ -940,3 +941,10 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/executor_gates.py para validar intents aprovadas sem executar comandos.
 - Adicionado smoke_executor_gates.py ao validate_all e release_check.
 - Roadmap 9.8 e secao 14 atualizados para marcar modo executor com gates como concluido.
+
+- scripts/watcher/auditor_mode.py.
+
+## Version alignment 0.4.61
+- Adicionado scripts/watcher/auditor_mode.py para auditar git status, tags, VERSION, docs e divergencias sem alterar arquivos.
+- Adicionado smoke_auditor_mode.py ao validate_all e release_check.
+- Roadmap 9.8 e secao 14 atualizados para marcar modo auditor como concluido.

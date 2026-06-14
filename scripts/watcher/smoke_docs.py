@@ -4,7 +4,7 @@ guide_path = ROOT / 'docs' / 'AI_BRIDGE_LOCAL_GUIDE.md'
 version_path = ROOT / 'VERSION'
 guide = guide_path.read_text(encoding='utf-8')
 version = version_path.read_text(encoding='utf-8').strip()
-required_text = ['# AI Bridge Local - Guia Unificado Operacional e Roadmap', 'Marco publicado mais recente:', 'Commit de referencia:', 'Diagnostics report', 'Safe validation wrapper', 'Command builder smoke', 'Diagnostics filters', 'Diagnostics viewer', 'gateway-brain-supervisor', 'script_text/script_ext', 'Dead letters grouped report', 'rollback_helper.py', 'patch_runner.py', 'supervision_protocol.py', 'handoff_template.py', 'responsibility_matrix.py', 'teach_envelopes.py', 'planner_mode.py', 'teach_envelopes.py', 'planner_mode.py', '## 14. Proximas atividades recomendadas em ordem', '## Version alignment ' + version]
+required_text = ['# AI Bridge Local - Guia Unificado Operacional e Roadmap', 'Marco publicado mais recente:', 'Commit de referencia:', 'Diagnostics report', 'Safe validation wrapper', 'Command builder smoke', 'Diagnostics filters', 'Diagnostics viewer', 'gateway-brain-supervisor', 'script_text/script_ext', 'Dead letters grouped report', 'rollback_helper.py', 'patch_runner.py', 'supervision_protocol.py', 'handoff_template.py', 'responsibility_matrix.py', 'teach_envelopes.py', 'planner_mode.py', 'executor_gates.py', 'teach_envelopes.py', 'planner_mode.py', 'executor_gates.py', '## 14. Proximas atividades recomendadas em ordem', '## Version alignment ' + version]
 missing = [needle for needle in required_text if needle not in guide]
 assert not missing, 'missing required guide text: ' + repr(missing)
 required_headings = ['## 1. Objetivo do projeto', '## 2. Estado atual validado', '## 4. Protocolo de envelopes', '## 9. Roadmap detalhado de atividades pendentes', '### 9.7 Longo prazo - orquestracao entre chats', '## 14. Proximas atividades recomendadas em ordem']
@@ -21,10 +21,10 @@ commit_ref = commit_lines[0].split(':', 1)[1].strip()
 assert not commit_ref.lower().startswith('pendente'), commit_ref
 first_token = commit_ref.split()[0] if commit_ref.split() else ''
 assert len(first_token) >= 7, commit_ref
-versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', version]
+versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', version]
 dupes = [v for v in versions if ('[DONE ' + v + '] [DONE ' + v + ']') in guide]
 assert not dupes, 'duplicate DONE markers found: ' + repr(dupes)
-items = ['1. Criar smoke para send-chat-message. [DONE 0.4.45]', '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]', '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]', '4. Criar intent validate_release. [DONE 0.4.48]', '5. Criar patch runner com dry-run. [DONE 0.4.49]', '6. Criar rollback helper. [DONE 0.4.50]', '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]', '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]', '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]', '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]', '11. Criar padrao de handoff entre chats. [DONE 0.4.56]', '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]', '13. Criar envelopes de ensino. [DONE 0.4.58]', '14. Criar modo planejador. [DONE 0.4.59]']
+items = ['1. Criar smoke para send-chat-message. [DONE 0.4.45]', '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]', '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]', '4. Criar intent validate_release. [DONE 0.4.48]', '5. Criar patch runner com dry-run. [DONE 0.4.49]', '6. Criar rollback helper. [DONE 0.4.50]', '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]', '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]', '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]', '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]', '11. Criar padrao de handoff entre chats. [DONE 0.4.56]', '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]', '13. Criar envelopes de ensino. [DONE 0.4.58]', '14. Criar modo planejador. [DONE 0.4.59]', '15. Criar modo executor com gates. [DONE 0.4.60]']
 missing_items = [item for item in items if item not in guide]
 assert not missing_items, 'missing roadmap done markers: ' + repr(missing_items)
 stale_text = ['Criar release 0.4.45 somente depois de smokes e release_check OK.', 'compatibilidade com smoke_docs.py ate que']
@@ -69,3 +69,13 @@ assert planner_item_9_8_count == 1, 'planner 9.8 marker count: ' + str(planner_i
 assert planner_item_14_count == 1, 'planner section 14 marker count: ' + str(planner_item_14_count)
 assert planner_alignment_count == 1, 'planner alignment count: ' + str(planner_alignment_count)
 assert planner_file_line_count == 1, 'planner file line count: ' + str(planner_file_line_count)
+executor_item_9_8 = '2. Criar modo executor com gates. [DONE 0.4.60 - approval validation stop-on-failure gates]'
+executor_item_14 = '15. Criar modo executor com gates. [DONE 0.4.60]'
+executor_item_9_8_count = guide.count(executor_item_9_8)
+executor_item_14_count = guide.count(executor_item_14)
+executor_alignment_count = guide.count('## Version alignment 0.4.60')
+executor_file_line_count = guide.count('- scripts/watcher/executor_gates.py.')
+assert executor_item_9_8_count == 1, 'executor 9.8 marker count: ' + str(executor_item_9_8_count)
+assert executor_item_14_count == 1, 'executor section 14 marker count: ' + str(executor_item_14_count)
+assert executor_alignment_count == 1, 'executor alignment count: ' + str(executor_alignment_count)
+assert executor_file_line_count == 1, 'executor file line count: ' + str(executor_file_line_count)

@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.59-planner-mode
-Commit de referencia: b4728a4 Add planner mode
+Marco publicado mais recente: v0.4.60-executor-gates
+Commit de referencia: local-release-candidate Add executor gates
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -669,7 +669,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Gera plano seguro.
    - Nao executa sem autorizacao.
 
-2. Criar modo executor com gates.
+2. Criar modo executor com gates. [DONE 0.4.60 - approval validation stop-on-failure gates]
    - Executa apenas intents aprovadas.
    - Exige validacoes entre fases.
 
@@ -813,6 +813,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]
 13. Criar envelopes de ensino. [DONE 0.4.58]
 14. Criar modo planejador. [DONE 0.4.59]
+15. Criar modo executor com gates. [DONE 0.4.60]
 
 ---
 
@@ -932,3 +933,10 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/planner_mode.py para gerar plano operacional sem executar comandos.
 - Adicionado smoke_planner_mode.py ao validate_all e release_check.
 - Roadmap 9.8 e secao 14 atualizados para marcar modo planejador como concluido.
+
+- scripts/watcher/executor_gates.py.
+
+## Version alignment 0.4.60
+- Adicionado scripts/watcher/executor_gates.py para validar intents aprovadas sem executar comandos.
+- Adicionado smoke_executor_gates.py ao validate_all e release_check.
+- Roadmap 9.8 e secao 14 atualizados para marcar modo executor com gates como concluido.

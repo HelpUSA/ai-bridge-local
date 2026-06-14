@@ -58,3 +58,7 @@ python scripts/watcher/smoke_handoff_template.py
 if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}
 python scripts/watcher/smoke_responsibility_matrix.py
 if($LASTEXITCODE -ne 0){throw 'smoke_responsibility_matrix_failed'}
+python scripts/watcher/smoke_teach_envelopes.py
+if($LASTEXITCODE -ne 0){throw 'smoke_teach_envelopes_failed'}
+python scripts/watcher/smoke_teach_envelopes.py
+if($LASTEXITCODE -ne 0){throw 'smoke_teach_envelopes_failed'}

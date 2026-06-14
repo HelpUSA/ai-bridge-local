@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.57-responsibility-matrix
-Commit de referencia: b65440f Add responsibility matrix
+Marco publicado mais recente: v0.4.58-teach-envelopes
+Commit de referencia: local-release-candidate Add teach envelopes
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -656,7 +656,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Chat fiscal.
    - Chat documentador.
 
-4. Criar envelopes de ensino.
+4. Criar envelopes de ensino. [DONE 0.4.58 - watcher safety release recovery lessons]
    - teach_watcher_basics.
    - teach_repo_safety.
    - teach_release_flow.
@@ -811,6 +811,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]
 11. Criar padrao de handoff entre chats. [DONE 0.4.56]
 12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]
+13. Criar envelopes de ensino. [DONE 0.4.58]
 
 ---
 
@@ -916,3 +917,12 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/responsibility_matrix.py com papeis supervisor, executor, fiscal e documentador.
 - Adicionado smoke_responsibility_matrix.py ao validate_all e release_check.
 - Roadmap 9.7 e secao 14 atualizados para marcar matriz de responsabilidade como concluida.
+
+- scripts/watcher/teach_envelopes.py.
+
+## Version alignment 0.4.58
+- Adicionado scripts/watcher/teach_envelopes.py com quatro licoes: watcher basics, repo safety, release flow e failure recovery.
+- Adicionado smoke_teach_envelopes.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar envelopes de ensino como concluidos.
+
+- scripts/watcher/teach_envelopes.py.

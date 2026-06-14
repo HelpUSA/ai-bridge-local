@@ -46,3 +46,5 @@ python scripts/watcher/smoke_patch_runner.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 python scripts/watcher/smoke_rollback_helper.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+python scripts/watcher/smoke_supervision_protocol.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

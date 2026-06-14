@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.51-dead-letters-grouped-report
-Commit de referencia: a2afb0c Improve dead letters grouped report
+Marco publicado mais recente: v0.4.52-supervision-protocol
+Commit de referencia: pendente - Add supervision protocol
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -635,7 +635,7 @@ sys.path.insert(0, str(Path.cwd()))
 
 ### 9.7 Longo prazo - orquestracao entre chats
 
-1. Criar protocolo de fiscalizacao.
+1. Criar protocolo de fiscalizacao. [DONE 0.4.52 - roles gates evidence checklist]
    - Chat executor responde com plano.
    - Chat fiscal aprova ou corrige.
    - Executor roda read-only.
@@ -806,7 +806,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 5. Criar patch runner com dry-run.
 6. Criar rollback helper. [DONE 0.4.50]
 7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]
-8. Criar protocolo formal de fiscalizacao entre chats.
+8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
 9. Melhorar docs smoke para garantir que este guia continue completo.
 10. Criar release 0.4.45 somente depois de smokes e release_check OK.
 
@@ -883,3 +883,8 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - dead_letters_report.py consolidado com schema v2 e agrupamentos por error_kind, project, target, command_id e target_and_kind.
 - Opcao --json adicionada para consumo por automacoes.
 - smoke_dead_letters_report valida secoes textuais e payload JSON.
+
+## Version alignment 0.4.52
+- supervision_protocol.py adicionado com papeis, gates e evidencias obrigatorias para executor, fiscal, supervisor e documentador.
+- smoke_supervision_protocol valida saida textual, payload JSON e filtro por fase.
+- Roadmap atualizado para marcar o protocolo formal de fiscalizacao entre chats como concluido.

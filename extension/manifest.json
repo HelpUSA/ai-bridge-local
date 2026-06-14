@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "AI Bridge Local 0.4.51",
-  "version": "0.4.51",
+  "name": "AI Bridge Local 0.4.52",
+  "version": "0.4.52",
   "description": "Gateway local - comunicacao direta",
   "permissions": [
     "tabs",

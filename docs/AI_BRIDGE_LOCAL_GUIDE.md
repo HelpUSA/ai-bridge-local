@@ -122,3 +122,9 @@ See docs/COMMAND_INTAKE_ROADMAP.md for the plan to move command organization fro
 
 ## Version alignment 0.4.41
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.41. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Version alignment 0.4.42
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.42. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Version alignment 0.4.43
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.43. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.

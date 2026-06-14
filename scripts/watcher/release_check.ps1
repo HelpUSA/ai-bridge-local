@@ -25,3 +25,6 @@ git diff --check
 if($LASTEXITCODE -ne 0){throw 'diff_check_failed'}
 git status -sb
 Write-Output 'AI_BRIDGE_LOCAL_RELEASE_CHECK_END'
+
+python scripts/watcher/smoke_command_intake.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

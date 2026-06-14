@@ -35,3 +35,6 @@ python scripts/watcher/smoke_dead_letters_report.py
 if($LASTEXITCODE -ne 0){throw 'dead_letters_report_smoke_failed'}
 python scripts/watcher/smoke_cleanup_plan.py
 if($LASTEXITCODE -ne 0){throw 'cleanup_plan_smoke_failed'}
+
+python scripts/watcher/smoke_command_intake.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

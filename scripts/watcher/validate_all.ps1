@@ -78,3 +78,5 @@ python scripts/watcher/smoke_auditor_mode.py
 if($LASTEXITCODE -ne 0){throw 'smoke_auditor_mode_failed'}
 python scripts/watcher/smoke_release_manager_mode.py
 if($LASTEXITCODE -ne 0){throw 'smoke_release_manager_mode_failed'}
+python scripts/watcher/smoke_hardening_tools.py
+if($LASTEXITCODE -ne 0){throw 'smoke_hardening_tools_failed'}

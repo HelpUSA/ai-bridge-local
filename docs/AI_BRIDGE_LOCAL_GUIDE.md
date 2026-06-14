@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.62-release-manager-mode
-Commit de referencia: v0.4.62-release-manager-mode
+Marco publicado mais recente: v0.4.63-hardening-phase-report
+Commit de referencia: v0.4.63-hardening-phase-report
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -956,3 +956,23 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/release_manager_mode.py para gerar plano seguro de release sem alterar arquivos.
 - Adicionado smoke_release_manager_mode.py ao validate_all e release_check.
 - Roadmap 9.8 e secao 14 atualizados para marcar modo release manager como concluido.
+
+## 16. Hardening pos fase 9.8
+- [DONE 0.4.63] Relatorio final da fase 9.8 criado em reports/AI_BRIDGE_LOCAL_PHASE_9_8_FINAL_2026-06-14.md.
+- [DONE 0.4.63] Plano da proxima fase criado em reports/AI_BRIDGE_LOCAL_NEXT_PHASE_PLAN_2026-06-14.md.
+- [DONE 0.4.63] Utilitarios read-only adicionados: post_release_audit.py, tag_divergence_report.py e dead_letters_review.py.
+- Regra: read-only antes de patch grande, validacao antes de commit/tag/push, auditoria curta apos release.
+- Evitar comandos que dependam de $_ em watcher; preferir arquivos explicitos, listas simples e scripts pequenos.
+
+- scripts/watcher/post_release_audit.py.
+
+- scripts/watcher/tag_divergence_report.py.
+
+- scripts/watcher/dead_letters_review.py.
+
+- scripts/watcher/smoke_hardening_tools.py.
+
+## Version alignment 0.4.63
+- Adicionados relatorio final da fase 9.8 e plano da proxima fase.
+- Adicionadas ferramentas read-only de auditoria curta, divergencia de tags e revisao de dead letters.
+- Adicionado smoke_hardening_tools.py ao validate_all e release_check.

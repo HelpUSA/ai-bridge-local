@@ -108,3 +108,5 @@ python scripts/watcher/smoke_queue_health_audit.py
 if($LASTEXITCODE -ne 0){throw 'smoke_queue_health_audit_failed'}
 python scripts/watcher/smoke_safe_envelope_templates.py
 if($LASTEXITCODE -ne 0){throw 'smoke_safe_envelope_templates_failed'}
+python scripts/watcher/smoke_governance_enforcement_dry_run.py
+if($LASTEXITCODE -ne 0){throw 'smoke_governance_enforcement_dry_run_failed'}

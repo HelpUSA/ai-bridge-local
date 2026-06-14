@@ -4,7 +4,7 @@ Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
 Marco publicado mais recente: v0.4.59-planner-mode
-Commit de referencia: local-release-candidate Add planner mode
+Commit de referencia: b4728a4 Add planner mode
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.

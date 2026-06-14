@@ -124,3 +124,5 @@ python scripts/watcher/smoke_queue_triage_playbook.py
 if($LASTEXITCODE -ne 0){throw 'smoke_queue_triage_playbook_failed'}
 python scripts/watcher/smoke_watcher_failure_taxonomy.py
 if($LASTEXITCODE -ne 0){throw 'smoke_watcher_failure_taxonomy_failed'}
+python scripts/watcher/smoke_self_evolution_guardrails.py
+if($LASTEXITCODE -ne 0){throw 'smoke_self_evolution_guardrails_failed'}

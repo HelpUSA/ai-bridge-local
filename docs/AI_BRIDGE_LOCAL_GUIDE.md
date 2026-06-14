@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.75
+Versao atual: 0.4.76
 Branch principal: main
-Marco publicado mais recente: v0.4.75-command-builder-governance-finalize
-Commit de referencia: v0.4.75-command-builder-governance-finalize
+Marco publicado mais recente: v0.4.76-governance-roadmap
+Commit de referencia: v0.4.76-governance-roadmap
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1150,3 +1150,13 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Atualizado topo do guia para 0.4.75.
 - Criada tag final v0.4.75-command-builder-governance-finalize no HEAD correto.
 - Mantida integracao governance_preflight_for_command ja validada no 0.4.74.
+
+## 29. Governance roadmap
+- [DONE 0.4.76] Roadmap da governanca consolidado sem ativar gates bloqueantes.
+- [DONE 0.4.76] Relatorio criado em reports/AI_BRIDGE_LOCAL_GOVERNANCE_ROADMAP_2026-06-14.md.
+- [DONE 0.4.76] Proximo passo seguro: advisory metadata antes de enforcement.
+
+## Version alignment 0.4.76
+- Atualizado topo do guia para 0.4.76.
+- Consolidado roadmap da governanca 0.4.72 a 0.4.75.
+- Mantido comportamento nao bloqueante.

@@ -46,5 +46,13 @@ python scripts/watcher/smoke_patch_runner.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 python scripts/watcher/smoke_rollback_helper.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+python scripts/watcher/smoke_handoff_template.py
+if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}
+python scripts/watcher/smoke_handoff_template.py
+if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}
+python scripts/watcher/smoke_handoff_template.py
+if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}
 python scripts/watcher/smoke_supervision_protocol.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+python scripts/watcher/smoke_handoff_template.py
+if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}

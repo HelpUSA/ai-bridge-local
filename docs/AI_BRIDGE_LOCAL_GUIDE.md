@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.55-roadmap-done-alignment
-Commit de referencia: 9d600e5 Align roadmap historical done markers
+Marco publicado mais recente: v0.4.56-handoff-template
+Commit de referencia: local-release-candidate Add handoff template
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -643,7 +643,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Executor aplica patch.
    - Fiscal valida evidencias.
 
-2. Criar padrao de handoff.
+2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown]
    - Estado atual.
    - Arquivos alterados.
    - Validacoes.
@@ -809,6 +809,10 @@ Uma atividade so deve ser considerada concluida quando houver:
 8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
 9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]
 10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]
+11. Criar padrao de handoff entre chats. [DONE 0.4.56]
+11. Criar padrao de handoff entre chats. [DONE 0.4.56]
+11. Criar padrao de handoff entre chats. [DONE 0.4.56]
+11. Criar padrao de handoff entre chats. [DONE 0.4.56]
 
 ---
 
@@ -902,3 +906,27 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Roadmap resumido alinhado com releases historicas 0.4.45 a 0.4.49.
 - smoke_docs.py passou a exigir marcadores DONE para os itens 1 a 10 da secao 14.
 - Nenhuma feature operacional nova foi adicionada; mudanca limitada a consistencia de guia, versao e smoke documental.
+
+## Version alignment 0.4.56
+- Adicionado scripts/watcher/handoff_template.py para gerar handoff em texto ou JSON.
+- Adicionado smoke_handoff_template.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar o padrao de handoff como concluido.
+
+## Version alignment 0.4.56
+- Adicionado scripts/watcher/handoff_template.py para gerar handoff em texto ou JSON.
+- Adicionado smoke_handoff_template.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar o padrao de handoff como concluido.
+
+- scripts/watcher/handoff_template.py.
+
+## Version alignment 0.4.56
+- Adicionado scripts/watcher/handoff_template.py para gerar handoff em texto ou JSON.
+- Adicionado smoke_handoff_template.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar o padrao de handoff como concluido.
+
+- scripts/watcher/handoff_template.py.
+
+## Version alignment 0.4.56
+- Adicionado scripts/watcher/handoff_template.py para gerar handoff em texto ou JSON.
+- Adicionado smoke_handoff_template.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar o padrao de handoff como concluido.

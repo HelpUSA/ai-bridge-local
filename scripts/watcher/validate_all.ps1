@@ -108,3 +108,5 @@ python scripts/watcher/smoke_governance_decision_log.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_decision_log_failed'}
 python scripts/watcher/smoke_governance_risk_report.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_risk_report_failed'}
+python scripts/watcher/smoke_command_builder_preferred.py
+if($LASTEXITCODE -ne 0){throw 'smoke_command_builder_preferred_failed'}

@@ -122,3 +122,5 @@ python scripts/watcher/smoke_watcher_recovery_runbook.py
 if($LASTEXITCODE -ne 0){throw 'smoke_watcher_recovery_runbook_failed'}
 python scripts/watcher/smoke_autonomous_evolution_protocol.py
 if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_protocol_failed'}
+python scripts/watcher/smoke_autonomous_evolution_approval_matrix.py
+if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_approval_matrix_failed'}

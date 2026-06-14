@@ -147,3 +147,9 @@ local_bridge_worker_dry_run_report_count = guide.count('reports/AI_BRIDGE_LOCAL_
 assert local_bridge_worker_dry_run_alignment_count == 1, 'local bridge worker dry run alignment count: ' + str(local_bridge_worker_dry_run_alignment_count)
 assert local_bridge_worker_dry_run_section_count == 1, 'local bridge worker dry run section count: ' + str(local_bridge_worker_dry_run_section_count)
 assert local_bridge_worker_dry_run_report_count >= 1, 'local bridge worker dry run report reference missing'
+local_bridge_consolidation_section_count = guide.count('## 24. Consolidacao local bridge 0.4.65 a 0.4.70')
+local_bridge_consolidation_alignment_count = guide.count('## Version alignment 0.4.71')
+local_bridge_consolidation_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_CONSOLIDATION_2026-06-14.md')
+assert local_bridge_consolidation_section_count == 1, 'local bridge consolidation section count: ' + str(local_bridge_consolidation_section_count)
+assert local_bridge_consolidation_alignment_count == 1, 'local bridge consolidation alignment count: ' + str(local_bridge_consolidation_alignment_count)
+assert local_bridge_consolidation_report_count >= 1, 'local bridge consolidation report reference missing'

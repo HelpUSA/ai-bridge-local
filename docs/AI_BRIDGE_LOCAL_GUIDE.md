@@ -1,7 +1,7 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.45
+Versao atual: 0.4.70
 Branch principal: main
 Marco publicado mais recente: v0.4.70-local-bridge-worker-dry-run
 Commit de referencia: v0.4.70-local-bridge-worker-dry-run
@@ -1088,3 +1088,13 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado worker dry-run do local bridge.
 - Mantido envio real fora do escopo desta versao.
 - Adicionado smoke_local_bridge_worker_dry_run.py ao validate_all e release_check.
+
+## 24. Consolidacao local bridge 0.4.65 a 0.4.70
+- [DONE 0.4.71] Topo do guia alinhado com VERSION 0.4.70.
+- [DONE 0.4.71] Sequencia 0.4.65 a 0.4.70 consolidada com store, envelope, writer/ack, dashboard, replay apply e worker dry-run.
+- [DONE 0.4.71] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_CONSOLIDATION_2026-06-14.md.
+
+## Version alignment 0.4.71
+- Correcao documental: topo do guia agora aponta para Versao atual 0.4.70.
+- Consolidacao documental da sequencia local bridge 0.4.65 a 0.4.70.
+- Nenhuma logica de runtime foi alterada neste bloco.

@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.49-patch-runner
-Commit de referencia: d65c9a0 Add patch runner
+Marco publicado mais recente: v0.4.50-rollback-helper
+Commit de referencia: pendente - Add rollback helper
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -559,7 +559,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Se script falhar apos alterar arquivo, marcar estado como partial_change_detected.
    - Sugerir git diff e git restore seletivo.
 
-4. Criar rollback helper.
+4. Criar rollback helper. [DONE 0.4.50 - safe selected rollback helper] [DONE 0.4.50 - safe selected rollback helper]
    - Lista arquivos alterados.
    - Permite restaurar apenas arquivos de uma tentativa.
    - Nunca apaga arquivos untracked sem confirmacao.
@@ -804,7 +804,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 3. Melhorar diagnostico de submit_button_not_found_or_disabled.
 4. Criar intent validate_release.
 5. Criar patch runner com dry-run.
-6. Criar rollback helper.
+6. Criar rollback helper. [DONE 0.4.50] [DONE 0.4.50]
 7. Consolidar relatorio de dead letters por tipo.
 8. Criar protocolo formal de fiscalizacao entre chats.
 9. Melhorar docs smoke para garantir que este guia continue completo.
@@ -871,3 +871,10 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - patch_runner.py adicionado para aplicar arquivos .patch/.diff com git apply --check antes de qualquer aplicacao.
 - Modo padrao apenas valida; aplicacao real exige --apply.
 - smoke_patch_runner incluido no release_check.
+
+## Version alignment 0.4.50
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.50. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+- rollback_helper.py adicionado para listar mudancas e restaurar apenas caminhos selecionados.
+- Arquivos untracked nunca sao removidos sem --delete-untracked e --confirm-delete-untracked para o caminho exato.
+- smoke_rollback_helper incluido no release_check.

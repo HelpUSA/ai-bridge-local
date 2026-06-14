@@ -76,3 +76,5 @@ python scripts/watcher/smoke_local_api_foundations.py
 if($LASTEXITCODE -ne 0){throw 'smoke_local_api_foundations_failed'}
 python scripts/watcher/smoke_local_bridge_store.py
 if($LASTEXITCODE -ne 0){throw 'smoke_local_bridge_store_failed'}
+python scripts/watcher/smoke_local_bridge_envelope.py
+if($LASTEXITCODE -ne 0){throw 'smoke_local_bridge_envelope_failed'}

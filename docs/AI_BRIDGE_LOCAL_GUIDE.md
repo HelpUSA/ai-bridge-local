@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.65-local-bridge-store
-Commit de referencia: v0.4.65-local-bridge-store
+Marco publicado mais recente: v0.4.66-local-bridge-envelope
+Commit de referencia: v0.4.66-local-bridge-envelope
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1012,3 +1012,19 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado storage local inbox/outbox/status com dry-run padrao.
 - Adicionado reconciliador read-only de store local.
 - Adicionado smoke_local_bridge_store.py ao validate_all e release_check.
+
+## 19. Local bridge envelope
+- [DONE 0.4.66] Envelope local entre chats criado com message no campo raiz.
+- [DONE 0.4.66] Replayer dry-run criado para planejar entrega sem executar replay real.
+- [DONE 0.4.66] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_ENVELOPE_2026-06-14.md.
+
+- scripts/watcher/local_bridge_envelope.py.
+
+- scripts/watcher/local_bridge_replay_dry_run.py.
+
+- scripts/watcher/smoke_local_bridge_envelope.py.
+
+## Version alignment 0.4.66
+- Adicionado envelope local entre chats com message no campo raiz.
+- Adicionado replayer dry-run para planejar entregas futuras.
+- Adicionado smoke_local_bridge_envelope.py ao validate_all e release_check.

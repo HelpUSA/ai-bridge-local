@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.69-local-bridge-replay-apply
-Commit de referencia: v0.4.69-local-bridge-replay-apply
+Marco publicado mais recente: v0.4.70-local-bridge-worker-dry-run
+Commit de referencia: v0.4.70-local-bridge-worker-dry-run
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1074,3 +1074,17 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado replay apply controlado para local bridge.
 - Mantido dry-run como padrao e --apply como requisito de escrita.
 - Adicionado smoke_local_bridge_replay_apply.py ao validate_all e release_check.
+
+## 23. Local bridge worker dry-run
+- [DONE 0.4.70] Worker dry-run criado para planejar entregas do outbox.
+- [DONE 0.4.70] Worker nao altera store e nao envia mensagens reais.
+- [DONE 0.4.70] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_WORKER_DRY_RUN_2026-06-14.md.
+
+- scripts/watcher/local_bridge_worker_dry_run.py.
+
+- scripts/watcher/smoke_local_bridge_worker_dry_run.py.
+
+## Version alignment 0.4.70
+- Adicionado worker dry-run do local bridge.
+- Mantido envio real fora do escopo desta versao.
+- Adicionado smoke_local_bridge_worker_dry_run.py ao validate_all e release_check.

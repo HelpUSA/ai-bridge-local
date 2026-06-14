@@ -64,3 +64,5 @@ python scripts/watcher/smoke_supervision_protocol.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 python scripts/watcher/smoke_handoff_template.py
 if($LASTEXITCODE -ne 0){throw 'smoke_handoff_template_failed'}
+python scripts/watcher/smoke_responsibility_matrix.py
+if($LASTEXITCODE -ne 0){throw 'smoke_responsibility_matrix_failed'}

@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.56-handoff-template
-Commit de referencia: a334f16 Add handoff template
+Marco publicado mais recente: v0.4.57-responsibility-matrix
+Commit de referencia: local-release-candidate Add responsibility matrix
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -650,7 +650,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Pendencias.
    - Proximo comando seguro.
 
-3. Criar matriz de responsabilidade.
+3. Criar matriz de responsabilidade. [DONE 0.4.57 - supervisor executor fiscal documentador]
    - Chat supervisor.
    - Chat executor.
    - Chat fiscal.
@@ -810,6 +810,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]
 10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]
 11. Criar padrao de handoff entre chats. [DONE 0.4.56]
+12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]
 
 ---
 
@@ -908,3 +909,10 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/handoff_template.py para gerar handoff em texto ou JSON.
 - Adicionado smoke_handoff_template.py ao validate_all e release_check.
 - Roadmap 9.7 e secao 14 atualizados para marcar o padrao de handoff como concluido.
+
+- scripts/watcher/responsibility_matrix.py.
+
+## Version alignment 0.4.57
+- Adicionado scripts/watcher/responsibility_matrix.py com papeis supervisor, executor, fiscal e documentador.
+- Adicionado smoke_responsibility_matrix.py ao validate_all e release_check.
+- Roadmap 9.7 e secao 14 atualizados para marcar matriz de responsabilidade como concluida.

@@ -559,7 +559,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Se script falhar apos alterar arquivo, marcar estado como partial_change_detected.
    - Sugerir git diff e git restore seletivo.
 
-4. Criar rollback helper. [DONE 0.4.50 - safe selected rollback helper] [DONE 0.4.50 - safe selected rollback helper]
+4. Criar rollback helper. [DONE 0.4.50 - safe selected rollback helper]
    - Lista arquivos alterados.
    - Permite restaurar apenas arquivos de uma tentativa.
    - Nunca apaga arquivos untracked sem confirmacao.
@@ -804,7 +804,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 3. Melhorar diagnostico de submit_button_not_found_or_disabled.
 4. Criar intent validate_release.
 5. Criar patch runner com dry-run.
-6. Criar rollback helper. [DONE 0.4.50] [DONE 0.4.50]
+6. Criar rollback helper. [DONE 0.4.50]
 7. Consolidar relatorio de dead letters por tipo.
 8. Criar protocolo formal de fiscalizacao entre chats.
 9. Melhorar docs smoke para garantir que este guia continue completo.

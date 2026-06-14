@@ -4,7 +4,7 @@ Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
 Marco publicado mais recente: v0.4.48-validate-release-intent
-Commit de referencia: pendente - Add validate release intent
+Commit de referencia: 3762e5c Add validate release intent
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -861,7 +861,6 @@ The extension manifest name, extension manifest version, and VERSION file were a
 ## Version alignment 0.4.48
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.48. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
 
-## Version alignment 0.4.48
 - Intent validate_release adicionada ao command_intake com risco validation.
 - A intent executa release_check.ps1 dentro do fluxo permitido de validacao.
 - smoke_intent_validate_release incluido no release_check.

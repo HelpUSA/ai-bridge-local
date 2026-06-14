@@ -51,11 +51,16 @@ assert not commit_ref.lower().startswith('pendente'), commit_ref
 first_token = commit_ref.split()[0] if commit_ref.split() else ''
 assert len(first_token) >= 7, commit_ref
 
-for marker_version in ['0.4.50', '0.4.51', '0.4.52', '0.4.53', version]:
+for marker_version in ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', version]:
  marker = '[DONE ' + marker_version + '] [DONE ' + marker_version + ']'
  assert marker not in guide, 'duplicate DONE marker found: ' + marker
 
 for item in [
+ '1. Criar smoke para send-chat-message. [DONE 0.4.45]',
+ '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]',
+ '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]',
+ '4. Criar intent validate_release. [DONE 0.4.48]',
+ '5. Criar patch runner com dry-run. [DONE 0.4.49]',
  '6. Criar rollback helper. [DONE 0.4.50]',
  '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]',
  '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]',

@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.54-stale-docs-cleanup
-Commit de referencia: 6870810 Clean stale guide notes
+Marco publicado mais recente: v0.4.55-roadmap-done-alignment
+Commit de referencia: local-release-candidate Align roadmap historical done markers
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -799,11 +799,11 @@ Uma atividade so deve ser considerada concluida quando houver:
 
 ## 14. Proximas atividades recomendadas em ordem
 
-1. Criar smoke para send-chat-message.
-2. Criar intent inspect_delivery_failure.
-3. Melhorar diagnostico de submit_button_not_found_or_disabled.
-4. Criar intent validate_release.
-5. Criar patch runner com dry-run.
+1. Criar smoke para send-chat-message. [DONE 0.4.45]
+2. Criar intent inspect_delivery_failure. [DONE 0.4.46]
+3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]
+4. Criar intent validate_release. [DONE 0.4.48]
+5. Criar patch runner com dry-run. [DONE 0.4.49]
 6. Criar rollback helper. [DONE 0.4.50]
 7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]
 8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
@@ -897,3 +897,8 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Guia limpo para remover item obsoleto de release 0.4.45 e nota antiga de compatibilidade do docs smoke.
 - smoke_docs.py passou a bloquear regressao dessas referencias legadas.
 - Roadmap atualizado para marcar a limpeza documental como concluida.
+
+## Version alignment 0.4.55
+- Roadmap resumido alinhado com releases historicas 0.4.45 a 0.4.49.
+- smoke_docs.py passou a exigir marcadores DONE para os itens 1 a 10 da secao 14.
+- Nenhuma feature operacional nova foi adicionada; mudanca limitada a consistencia de guia, versao e smoke documental.

@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.77
+Versao atual: 0.4.78
 Branch principal: main
-Marco publicado mais recente: v0.4.77-command-builder-advisory
-Commit de referencia: v0.4.77-command-builder-advisory
+Marco publicado mais recente: v0.4.78-command-builder-advisory-gate
+Commit de referencia: v0.4.78-command-builder-advisory-gate
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1163,7 +1163,7 @@ The extension manifest name, extension manifest version, and VERSION file were a
 
 ## 30. Command builder advisory metadata
 - [DONE 0.4.77] Criado command_builder_advisory.py para anexar governance_advisory ao envelope.
-- [DONE 0.4.77] command_builder.py original permanece compatÃ­vel.
+- [DONE 0.4.77] command_builder.py original permanece compatÃƒÂ­vel.
 - [DONE 0.4.77] Relatorio criado em reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_2026-06-14.md.
 
 - scripts/watcher/command_builder_advisory.py.
@@ -1174,3 +1174,12 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Atualizado topo do guia para 0.4.77.
 - Adicionado wrapper command_builder_advisory com metadata nao bloqueante.
 - Adicionado smoke_command_builder_advisory ao validate_all e release_check.
+
+## 31. Command builder advisory gate
+- [DONE 0.4.78] Criado gate opcional por flag para advisory metadata.
+- [DONE 0.4.78] Comportamento padrao permanece nao bloqueante.
+- [DONE 0.4.78] Relatorio criado em reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_GATE_2026-06-14.md.
+
+## Version alignment 0.4.78
+- Atualizado topo do guia para 0.4.78.
+- Marco publicado: v0.4.78-command-builder-advisory-gate.

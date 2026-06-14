@@ -102,3 +102,5 @@ python scripts/watcher/smoke_command_builder_governance.py
 if($LASTEXITCODE -ne 0){throw 'smoke_command_builder_governance_failed'}
 python scripts/watcher/smoke_command_builder_advisory.py
 if($LASTEXITCODE -ne 0){throw 'smoke_command_builder_advisory_failed'}
+python scripts/watcher/smoke_command_builder_advisory_gate.py
+if($LASTEXITCODE -ne 0){throw 'smoke_command_builder_advisory_gate_failed'}

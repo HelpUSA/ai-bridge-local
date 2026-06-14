@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.58-teach-envelopes
-Commit de referencia: 3b1ba76 Add teach envelopes
+Marco publicado mais recente: v0.4.59-planner-mode
+Commit de referencia: local-release-candidate Add planner mode
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -664,7 +664,7 @@ sys.path.insert(0, str(Path.cwd()))
 
 ### 9.8 Longo prazo - automacao operacional
 
-1. Criar modo planejador.
+1. Criar modo planejador. [DONE 0.4.59 - read-only objective plan gates]
    - Recebe objetivo.
    - Gera plano seguro.
    - Nao executa sem autorizacao.
@@ -812,6 +812,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 11. Criar padrao de handoff entre chats. [DONE 0.4.56]
 12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]
 13. Criar envelopes de ensino. [DONE 0.4.58]
+14. Criar modo planejador. [DONE 0.4.59]
 
 ---
 
@@ -924,3 +925,10 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/teach_envelopes.py com quatro licoes: watcher basics, repo safety, release flow e failure recovery.
 - Adicionado smoke_teach_envelopes.py ao validate_all e release_check.
 - Roadmap 9.7 e secao 14 atualizados para marcar envelopes de ensino como concluidos.
+
+- scripts/watcher/planner_mode.py.
+
+## Version alignment 0.4.59
+- Adicionado scripts/watcher/planner_mode.py para gerar plano operacional sem executar comandos.
+- Adicionado smoke_planner_mode.py ao validate_all e release_check.
+- Roadmap 9.8 e secao 14 atualizados para marcar modo planejador como concluido.

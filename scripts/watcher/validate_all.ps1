@@ -70,3 +70,5 @@ python scripts/watcher/smoke_teach_envelopes.py
 if($LASTEXITCODE -ne 0){throw 'smoke_teach_envelopes_failed'}
 python scripts/watcher/smoke_teach_envelopes.py
 if($LASTEXITCODE -ne 0){throw 'smoke_teach_envelopes_failed'}
+python scripts/watcher/smoke_planner_mode.py
+if($LASTEXITCODE -ne 0){throw 'smoke_planner_mode_failed'}

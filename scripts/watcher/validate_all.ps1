@@ -98,3 +98,5 @@ python scripts/watcher/smoke_governance_risk_classifier.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_risk_classifier_failed'}
 python scripts/watcher/smoke_governance_preflight.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_preflight_failed'}
+python scripts/watcher/smoke_command_builder_governance.py
+if($LASTEXITCODE -ne 0){throw 'smoke_command_builder_governance_failed'}

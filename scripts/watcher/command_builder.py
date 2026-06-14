@@ -20,3 +20,17 @@ if a.action=='run-command': env.update({'delivery_kind':'local_capability','payl
 raw='@@'+'AI_BRIDGE_LOCAL_START@@'+chr(10)+json.dumps(env,separators=(',',':'))+chr(10)+'@@'+'AI_BRIDGE_LOCAL_END@@'+chr(10)
 if a.output_file: Path(a.output_file).parent.mkdir(parents=True,exist_ok=True); Path(a.output_file).write_text(raw,encoding='utf-8')
 if not a.output_file: print(raw,end='')
+
+# AI_BRIDGE_LOCAL_GOVERNANCE_PREFLIGHT_INTEGRATION_074
+def governance_preflight_for_command(command_text, allow_mutating=False, allow_destructive=False):
+ import json
+ import subprocess
+ import sys
+ from pathlib import Path
+ root = Path.cwd()
+ flags = []
+ flags = flags + ([] if not allow_mutating else ['--allow-mutating'])
+ flags = flags + ([] if not allow_destructive else ['--allow-destructive'])
+ cmd = [sys.executable, str(root / 'scripts' / 'watcher' / 'governance_preflight.py'), '--command', command_text] + flags
+ result = subprocess.run(cmd, cwd=root, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+ return json.loads(result.stdout)

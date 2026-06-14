@@ -868,7 +868,6 @@ The extension manifest name, extension manifest version, and VERSION file were a
 ## Version alignment 0.4.49
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.49. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
 
-## Version alignment 0.4.49
 - patch_runner.py adicionado para aplicar arquivos .patch/.diff com git apply --check antes de qualquer aplicacao.
 - Modo padrao apenas valida; aplicacao real exige --apply.
 - smoke_patch_runner incluido no release_check.

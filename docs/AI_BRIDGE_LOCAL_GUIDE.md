@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.45-send-chat-message-smoke
-Commit de referencia: 8fcff94 Add send-chat-message smoke
+Marco publicado mais recente: v0.4.46-inspect-delivery-failure
+Commit de referencia: pendente - Add inspect delivery failure intent
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -483,7 +483,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Executa release_check apenas com execute_intent true.
    - Retorna JSON com status.
 
-5. Adicionar intent inspect_delivery_failure.
+5. Adicionar intent inspect_delivery_failure. [DONE 0.4.46 - read-only command delivery failure diagnosis]
    - Recebe command_id.
    - Consulta banco local.
    - Mostra status, dead letter e erro.
@@ -841,3 +841,11 @@ Esses itens ja foram absorvidos no guia unificado, mas permanecem escritos liter
 
 ## Version alignment 0.4.45
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.45. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Version alignment 0.4.46
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.46. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Version alignment 0.4.46
+- Intent read-only inspect_delivery_failure adicionado ao command_intake.
+- Diagnostico por command_id cobre commands, events, dead_letters e invalid_messages.
+- Smoke dedicado smoke_intent_inspect_delivery_failure incluido no release_check.

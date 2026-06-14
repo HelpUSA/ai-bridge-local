@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.66-local-bridge-envelope
-Commit de referencia: v0.4.66-local-bridge-envelope
+Marco publicado mais recente: v0.4.67-local-bridge-writer-ack
+Commit de referencia: v0.4.67-local-bridge-writer-ack
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1028,3 +1028,19 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado envelope local entre chats com message no campo raiz.
 - Adicionado replayer dry-run para planejar entregas futuras.
 - Adicionado smoke_local_bridge_envelope.py ao validate_all e release_check.
+
+## 20. Local bridge writer e ack
+- [DONE 0.4.67] Writer integrou envelope local ao store com dry-run padrao.
+- [DONE 0.4.67] Ack writer criado para registrar status acked, failed ou delivering.
+- [DONE 0.4.67] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_WRITER_ACK_2026-06-14.md.
+
+- scripts/watcher/local_bridge_writer.py.
+
+- scripts/watcher/local_bridge_ack_writer.py.
+
+- scripts/watcher/smoke_local_bridge_writer_ack.py.
+
+## Version alignment 0.4.67
+- Adicionado local_bridge_writer.py para integrar envelope local ao store.
+- Adicionado local_bridge_ack_writer.py para status acked, failed e delivering.
+- Adicionado smoke_local_bridge_writer_ack.py ao validate_all e release_check.

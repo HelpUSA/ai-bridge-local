@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.67-local-bridge-writer-ack
-Commit de referencia: v0.4.67-local-bridge-writer-ack
+Marco publicado mais recente: v0.4.68-local-bridge-dashboard
+Commit de referencia: v0.4.68-local-bridge-dashboard
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1044,3 +1044,19 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado local_bridge_writer.py para integrar envelope local ao store.
 - Adicionado local_bridge_ack_writer.py para status acked, failed e delivering.
 - Adicionado smoke_local_bridge_writer_ack.py ao validate_all e release_check.
+
+## 21. Local bridge dashboard
+- [DONE 0.4.68] Dashboard read-only criado para inbox, outbox e status.
+- [DONE 0.4.68] Resumo textual criado para reduzir truncamento.
+- [DONE 0.4.68] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_DASHBOARD_2026-06-14.md.
+
+- scripts/watcher/local_bridge_dashboard.py.
+
+- scripts/watcher/local_bridge_dashboard_summary.py.
+
+- scripts/watcher/smoke_local_bridge_dashboard.py.
+
+## Version alignment 0.4.68
+- Adicionado dashboard read-only do local bridge store.
+- Adicionado resumo textual do dashboard para reduzir truncamento.
+- Adicionado smoke_local_bridge_dashboard.py ao validate_all e release_check.

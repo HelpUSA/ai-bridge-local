@@ -34,3 +34,6 @@ assert not stale_found, 'stale guide text found: ' + repr(stale_found)
 assert guide.count('2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown]') == 1, 'duplicate handoff 9.7 marker'
 assert guide.count('11. Criar padrao de handoff entre chats. [DONE 0.4.56]') == 1, 'duplicate handoff section 14 marker'
 print('OK docs_smoke', version, latest_marker)
+
+version_alignment_heading_count = guide.count('## Version alignment ' + version)
+assert version_alignment_heading_count == 1, 'version alignment heading count: ' + str(version_alignment_heading_count)

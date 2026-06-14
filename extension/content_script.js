@@ -1,6 +1,6 @@
 // AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.37";
+  const VERSION = "0.4.47";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -124,7 +124,7 @@
     const txt = candidateText(el);
     let score = 0;
 
-    if (/send|enviar|submit|Ã¥Ââ€˜Ã©â‚¬Â|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
+    if (/send|enviar|submit|ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
     if (/stop|cancel|attach|upload|file|mic|microphone|voice|image|search|tool/.test(txt)) score -= 8;
 
     const r = el.getBoundingClientRect();
@@ -245,7 +245,7 @@
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
       const text = message.action?.text || message.action?.message || message.text || "";
 
-      showNotice("Mensagem recebida para injeÃƒÂ§ÃƒÂ£o", "command_id=" + actionId, "info");
+      showNotice("Mensagem recebida para injeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o", "command_id=" + actionId, "info");
 
       if (!text) {
         showNotice("Falha: texto vazio", "command_id=" + actionId, "error");
@@ -255,7 +255,7 @@
 
       const composer = findComposer();
       if (!composer) {
-        showNotice("Falha: composer nÃƒÂ£o encontrado", "command_id=" + actionId, "error");
+        showNotice("Falha: composer nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o encontrado", "command_id=" + actionId, "error");
         sendResponse({ok: false, reason: "no_composer"});
         return false;
       }
@@ -301,6 +301,33 @@
  return false;
       };
 
+ function collectSubmitDiagnostics(composer, btn, currentText, clickedAtLeastOnce) {
+ const buttons = Array.from(document.querySelectorAll('button, [role=button], [aria-label], [title]'));
+ const visibleButtons = buttons.filter(isVisible).length;
+ const disabledVisibleButtons = buttons.filter(el => isVisible(el) && isDisabled(el)).length;
+ const composerVisible = isVisible(composer);
+ const textLength = String(currentText || '').length;
+ let reason = 'submit_button_not_found_or_disabled';
+ if (!composer) reason = 'no_composer';
+ else if (!composerVisible) reason = 'composer_not_visible';
+ else if (!textLength) reason = 'composer_empty_after_inject';
+ else if (!btn && disabledVisibleButtons > 0) reason = 'send_button_disabled_or_blocked';
+ else if (!btn) reason = 'send_button_not_found';
+ else if (isDisabled(btn)) reason = 'send_button_disabled';
+ else if (!isVisible(btn)) reason = 'send_button_not_visible';
+ else if (!clickedAtLeastOnce) reason = 'submit_button_not_clicked';
+ return {
+ reason,
+ composer_visible: composerVisible,
+ composer_text_length: textLength,
+ has_button: !!btn,
+ button_visible: !!btn && isVisible(btn),
+ button_disabled: !!btn && isDisabled(btn),
+ visible_button_count: visibleButtons,
+ disabled_visible_button_count: disabledVisibleButtons
+ };
+ }
+
       const trySubmit = () => {
         const currentText = getComposerText(composer);
         const hasText = currentText.length > 0 || currentText.includes(text.slice(0, Math.min(20, text.length)));
@@ -336,7 +363,9 @@
           const finalText = getComposerText(composer);
           const ownedStuckText = finalText && expectedPrefix && finalText.includes(expectedPrefix);
  if (ownedStuckText) setText(composer, String());
- const reason = clickedAtLeastOnce ? "submit_not_confirmed_composer_still_has_text" : "submit_button_not_found_or_disabled";
+ const finalBtn = findSendButton(composer);
+ const diagnostic = collectSubmitDiagnostics(composer, finalBtn, finalText, clickedAtLeastOnce);
+ const reason = clickedAtLeastOnce ? 'submit_not_confirmed_composer_still_has_text' : diagnostic.reason;
           showNotice("Falha ao confirmar envio", "command_id=" + actionId + "\nreason=" + reason, "error");
           console.warn("[Local v" + VERSION + "] Submit failed", {hasButton: !!findSendButton(composer), finalTextLength: finalText.length, clickedAtLeastOnce});
           safeRespond({
@@ -344,7 +373,8 @@
             reason,
             final_text_length: finalText.length,
             attempts,
-            clicked: clickedAtLeastOnce
+ clicked: clickedAtLeastOnce,
+ diagnostics: diagnostic
           });
         }
       };
@@ -418,7 +448,7 @@
       causes.push("quebra de linha dentro de string JSON sem escape");
     }
  if (source.length > 900 && (source.includes('command') || source.includes('python -c') || source.includes('EncodedCommand') || source.includes('base64') || source.includes('script_text'))) {
-      causes.push("comando inline grande/frÃ¡gil; prefira script_text/script_ext ou arquivo real");
+      causes.push("comando inline grande/frÃƒÆ’Ã‚Â¡gil; prefira script_text/script_ext ou arquivo real");
     }
     if (!causes.length) {
       causes.push("JSON invalido, aspas/backslashes nao escapados ou estrutura incompleta");

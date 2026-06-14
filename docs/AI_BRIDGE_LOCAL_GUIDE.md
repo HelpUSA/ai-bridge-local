@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.72
+Versao atual: 0.4.73
 Branch principal: main
-Marco publicado mais recente: v0.4.72-governance-risk-classifier
-Commit de referencia: v0.4.72-governance-risk-classifier
+Marco publicado mais recente: v0.4.73-governance-preflight
+Commit de referencia: v0.4.73-governance-preflight
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1112,3 +1112,17 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado classificador de risco read-only para comandos watcher.
 - Atualizado topo do guia para 0.4.72.
 - Adicionado smoke_governance_risk_classifier.py ao validate_all e release_check.
+
+## 26. Governance preflight
+- [DONE 0.4.73] Preflight read-only criado sobre governance_risk_classifier.
+- [DONE 0.4.73] Warnings emitidos para mutating, destructive e unknown_review_required.
+- [DONE 0.4.73] Relatorio criado em reports/AI_BRIDGE_LOCAL_GOVERNANCE_PREFLIGHT_2026-06-14.md.
+
+- scripts/watcher/governance_preflight.py.
+
+- scripts/watcher/smoke_governance_preflight.py.
+
+## Version alignment 0.4.73
+- Adicionado governance_preflight.py em modo read-only.
+- Atualizado topo do guia para 0.4.73.
+- Adicionado smoke_governance_preflight.py ao validate_all e release_check.

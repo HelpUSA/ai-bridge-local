@@ -38,3 +38,6 @@ if($LASTEXITCODE -ne 0){throw 'cleanup_plan_smoke_failed'}
 
 python scripts/watcher/smoke_command_intake.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+
+python scripts/watcher/smoke_command_intake_negative.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

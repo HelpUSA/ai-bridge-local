@@ -28,3 +28,6 @@ Write-Output 'AI_BRIDGE_LOCAL_RELEASE_CHECK_END'
 
 python scripts/watcher/smoke_command_intake.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+
+python scripts/watcher/smoke_command_intake_negative.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

@@ -132,3 +132,5 @@ python scripts/watcher/smoke_autonomous_evolution_protocol.py
 if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_protocol_failed'}
 python scripts/watcher/smoke_autonomous_evolution_approval_matrix.py
 if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_approval_matrix_failed'}
+python scripts/watcher/smoke_autonomous_change_proposal_template.py
+if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_change_proposal_template_failed'}

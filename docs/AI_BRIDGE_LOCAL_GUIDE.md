@@ -897,8 +897,3 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Guia limpo para remover item obsoleto de release 0.4.45 e nota antiga de compatibilidade do docs smoke.
 - smoke_docs.py passou a bloquear regressao dessas referencias legadas.
 - Roadmap atualizado para marcar a limpeza documental como concluida.
-
-## Version alignment 0.4.54
-- Guia limpo para remover item obsoleto de release 0.4.45 e nota antiga de compatibilidade do docs smoke.
-- smoke_docs.py passou a bloquear regressao dessas referencias legadas.
-- Roadmap atualizado para marcar a limpeza documental como concluida.

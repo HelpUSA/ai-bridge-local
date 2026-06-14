@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.63-hardening-phase-report
-Commit de referencia: v0.4.63-hardening-phase-report
+Marco publicado mais recente: v0.4.64-local-api-foundations
+Commit de referencia: v0.4.64-local-api-foundations
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -976,3 +976,22 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionados relatorio final da fase 9.8 e plano da proxima fase.
 - Adicionadas ferramentas read-only de auditoria curta, divergencia de tags e revisao de dead letters.
 - Adicionado smoke_hardening_tools.py ao validate_all e release_check.
+
+## 17. Proxima fase - fundamentos API local
+- [DONE 0.4.64] API local read-only inicial criada em scripts/watcher/local_api_readonly.py.
+- [DONE 0.4.64] API local dry-run inicial criada em scripts/watcher/local_api_dry_run.py.
+- [DONE 0.4.64] Plano de comunicacao entre chats criado em scripts/watcher/chat_bridge_plan.py.
+- [DONE 0.4.64] Relatorio de blocos criado em reports/AI_BRIDGE_LOCAL_NEXT_PHASE_BLOCKS_2026-06-14.md.
+
+- scripts/watcher/local_api_readonly.py.
+
+- scripts/watcher/local_api_dry_run.py.
+
+- scripts/watcher/chat_bridge_plan.py.
+
+- scripts/watcher/smoke_local_api_foundations.py.
+
+## Version alignment 0.4.64
+- Adicionados fundamentos da API local read-only e dry-run.
+- Adicionado plano de comunicacao entre chats sem depender da extensao como unico caminho.
+- Adicionado smoke_local_api_foundations.py ao validate_all e release_check.

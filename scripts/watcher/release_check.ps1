@@ -72,3 +72,5 @@ python scripts/watcher/smoke_release_manager_mode.py
 if($LASTEXITCODE -ne 0){throw 'smoke_release_manager_mode_failed'}
 python scripts/watcher/smoke_hardening_tools.py
 if($LASTEXITCODE -ne 0){throw 'smoke_hardening_tools_failed'}
+python scripts/watcher/smoke_local_api_foundations.py
+if($LASTEXITCODE -ne 0){throw 'smoke_local_api_foundations_failed'}

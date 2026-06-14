@@ -4,7 +4,7 @@ Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
 Marco publicado mais recente: v0.4.51-dead-letters-grouped-report
-Commit de referencia: pendente - Improve dead letters grouped report
+Commit de referencia: a2afb0c Improve dead letters grouped report
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.

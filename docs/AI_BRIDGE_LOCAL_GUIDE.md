@@ -643,7 +643,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Executor aplica patch.
    - Fiscal valida evidencias.
 
-2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown] [DONE 0.4.56 - template cli json markdown]
+2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown]
    - Estado atual.
    - Arquivos alterados.
    - Validacoes.
@@ -809,9 +809,6 @@ Uma atividade so deve ser considerada concluida quando houver:
 8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
 9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]
 10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]
-11. Criar padrao de handoff entre chats. [DONE 0.4.56]
-11. Criar padrao de handoff entre chats. [DONE 0.4.56]
-11. Criar padrao de handoff entre chats. [DONE 0.4.56]
 11. Criar padrao de handoff entre chats. [DONE 0.4.56]
 
 ---

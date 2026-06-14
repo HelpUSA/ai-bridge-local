@@ -30,4 +30,7 @@ assert not missing_items, 'missing roadmap done markers: ' + repr(missing_items)
 stale_text = ['Criar release 0.4.45 somente depois de smokes e release_check OK.', 'compatibilidade com smoke_docs.py ate que']
 stale_found = [stale for stale in stale_text if stale in guide]
 assert not stale_found, 'stale guide text found: ' + repr(stale_found)
+
+assert guide.count('2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown]') == 1, 'duplicate handoff 9.7 marker'
+assert guide.count('11. Criar padrao de handoff entre chats. [DONE 0.4.56]') == 1, 'duplicate handoff section 14 marker'
 print('OK docs_smoke', version, latest_marker)

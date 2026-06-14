@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.50-rollback-helper
-Commit de referencia: 0b5ca45 Add rollback helper
+Marco publicado mais recente: v0.4.51-dead-letters-grouped-report
+Commit de referencia: pendente - Improve dead letters grouped report
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -566,7 +566,7 @@ sys.path.insert(0, str(Path.cwd()))
 
 ### 9.4 Medio prazo - banco e dead letters
 
-1. Melhorar relatorio de dead letters.
+1. Melhorar relatorio de dead letters. [DONE 0.4.51 - grouped by kind target command_id]
    - Agrupar por tipo.
    - Arupar por chat origem/destino.
    - Mostrar ultimos 20.
@@ -805,7 +805,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 4. Criar intent validate_release.
 5. Criar patch runner com dry-run.
 6. Criar rollback helper. [DONE 0.4.50]
-7. Consolidar relatorio de dead letters por tipo.
+7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]
 8. Criar protocolo formal de fiscalizacao entre chats.
 9. Melhorar docs smoke para garantir que este guia continue completo.
 10. Criar release 0.4.45 somente depois de smokes e release_check OK.
@@ -878,3 +878,8 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - rollback_helper.py adicionado para listar mudancas e restaurar apenas caminhos selecionados.
 - Arquivos untracked nunca sao removidos sem --delete-untracked e --confirm-delete-untracked para o caminho exato.
 - smoke_rollback_helper incluido no release_check.
+
+## Version alignment 0.4.51
+- dead_letters_report.py consolidado com schema v2 e agrupamentos por error_kind, project, target, command_id e target_and_kind.
+- Opcao --json adicionada para consumo por automacoes.
+- smoke_dead_letters_report valida secoes textuais e payload JSON.

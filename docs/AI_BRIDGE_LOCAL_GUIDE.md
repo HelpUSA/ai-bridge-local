@@ -4,7 +4,7 @@ Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
 Marco publicado mais recente: v0.4.45-send-chat-message-smoke
-Commit de referencia: pendente - Add send-chat-message smoke
+Commit de referencia: 8fcff94 Add send-chat-message smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -31,12 +31,13 @@ Estado validado em 2026-06-14:
 
 - Versao: 0.4.44.
 - Branch: main.
-- Ultimo commit publicado: be59288 Add intent payload support.
-- Ultima tag publicada: v0.4.44-intent-payload.
+- Ultimo commit publicado: 8fcff94 Add send-chat-message smoke.
+- Ultima tag publicada: v0.4.45-send-chat-message-smoke.
 - Marco anterior: d73bc1c Add command builder output file mode.
 - Repo remoto: HelpUSA/ai-bridge-local.
 - Release check validado na 0.4.44.
 - Smoke de payload.intent validado.
+- Smoke dedicado de send-chat-message validado e incluido no release_check.
 - Push para main e tag v0.4.44-intent-payload concluido.
 
 O repositorio havia sido recuperado com sucesso para o estado estavel 0.4.43 antes da implementacao final do payload.intent. A implementacao final da 0.4.44 foi feita com patch em arquivo real e validada antes de commit e push.

@@ -51,7 +51,7 @@ assert not commit_ref.lower().startswith('pendente'), commit_ref
 first_token = commit_ref.split()[0] if commit_ref.split() else ''
 assert len(first_token) >= 7, commit_ref
 
-for marker_version in ['0.4.50', '0.4.51', '0.4.52', version]:
+for marker_version in ['0.4.50', '0.4.51', '0.4.52', '0.4.53', version]:
  marker = '[DONE ' + marker_version + '] [DONE ' + marker_version + ']'
  assert marker not in guide, 'duplicate DONE marker found: ' + marker
 
@@ -59,7 +59,16 @@ for item in [
  '6. Criar rollback helper. [DONE 0.4.50]',
  '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]',
  '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]',
+ '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]',
+ '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]',
 ]:
  assert item in guide, 'missing roadmap done marker: ' + item
+
+stale_text = [
+ 'Criar release 0.4.45 somente depois de smokes e release_check OK.',
+ 'compatibilidade com smoke_docs.py ate que',
+]
+for stale in stale_text:
+ assert stale not in guide, 'stale guide text found: ' + stale
 
 print('OK docs_smoke', version, latest_marker)

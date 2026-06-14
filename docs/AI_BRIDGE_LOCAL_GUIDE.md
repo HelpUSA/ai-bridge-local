@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.53-docs-smoke-coverage
-Commit de referencia: e5d8bc1 Improve docs smoke coverage
+Marco publicado mais recente: v0.4.54-stale-docs-cleanup
+Commit de referencia: local-release-candidate Clean stale guide notes
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -808,7 +808,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]
 8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
 9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]
-10. Criar release 0.4.45 somente depois de smokes e release_check OK.
+10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]
 
 ---
 
@@ -837,7 +837,6 @@ Esta secao preserva explicitamente os marcadores que os smokes historicos ainda 
 - script_text/script_ext: mecanismo de script temporario usado apenas para scripts pequenos e controlados.
 - Dead letters grouped report: relatorio agrupado de falhas persistentes por tipo, alvo e command_id.
 
-Esses itens ja foram absorvidos no guia unificado, mas permanecem escritos literalmente aqui para compatibilidade com smoke_docs.py ate que o proprio smoke seja evoluido para validar a nova estrutura consolidada.
 
 ## Version alignment 0.4.45
 The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.45. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
@@ -893,3 +892,13 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - smoke_docs.py fortalecido para validar marcador de release, commit de referencia, secoes essenciais, itens recentes do roadmap e notas de version alignment.
 - O smoke agora valida que o marcador publicado inicia com a versao atual do arquivo VERSION.
 - Roadmap atualizado para marcar a melhoria de cobertura do docs smoke como concluida.
+
+## Version alignment 0.4.54
+- Guia limpo para remover item obsoleto de release 0.4.45 e nota antiga de compatibilidade do docs smoke.
+- smoke_docs.py passou a bloquear regressao dessas referencias legadas.
+- Roadmap atualizado para marcar a limpeza documental como concluida.
+
+## Version alignment 0.4.54
+- Guia limpo para remover item obsoleto de release 0.4.45 e nota antiga de compatibilidade do docs smoke.
+- smoke_docs.py passou a bloquear regressao dessas referencias legadas.
+- Roadmap atualizado para marcar a limpeza documental como concluida.

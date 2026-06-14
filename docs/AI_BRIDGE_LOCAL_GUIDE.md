@@ -116,3 +116,6 @@ The extension manifest name, extension manifest version, and VERSION file were a
 
 ## Command builder validator flow
 smoke_command_builder_validate.py now validates the full builder-to-validator path without printing a generated envelope to stdout.
+
+## Command intake roadmap
+See docs/COMMAND_INTAKE_ROADMAP.md for the plan to move command organization from chat-authored envelopes into gateway-managed intentions, preflight checks, risk classes, job execution and structured results.

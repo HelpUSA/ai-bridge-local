@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.68-local-bridge-dashboard
-Commit de referencia: v0.4.68-local-bridge-dashboard
+Marco publicado mais recente: v0.4.69-local-bridge-replay-apply
+Commit de referencia: v0.4.69-local-bridge-replay-apply
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1060,3 +1060,17 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado dashboard read-only do local bridge store.
 - Adicionado resumo textual do dashboard para reduzir truncamento.
 - Adicionado smoke_local_bridge_dashboard.py ao validate_all e release_check.
+
+## 22. Local bridge replay apply
+- [DONE 0.4.69] Replay apply controlado criado com dry-run padrao.
+- [DONE 0.4.69] Escrita real exige --apply e store dentro do repo.
+- [DONE 0.4.69] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_REPLAY_APPLY_2026-06-14.md.
+
+- scripts/watcher/local_bridge_replay_apply.py.
+
+- scripts/watcher/smoke_local_bridge_replay_apply.py.
+
+## Version alignment 0.4.69
+- Adicionado replay apply controlado para local bridge.
+- Mantido dry-run como padrao e --apply como requisito de escrita.
+- Adicionado smoke_local_bridge_replay_apply.py ao validate_all e release_check.

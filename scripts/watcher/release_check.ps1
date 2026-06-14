@@ -82,3 +82,5 @@ python scripts/watcher/smoke_local_bridge_writer_ack.py
 if($LASTEXITCODE -ne 0){throw 'smoke_local_bridge_writer_ack_failed'}
 python scripts/watcher/smoke_local_bridge_dashboard.py
 if($LASTEXITCODE -ne 0){throw 'smoke_local_bridge_dashboard_failed'}
+python scripts/watcher/smoke_local_bridge_replay_apply.py
+if($LASTEXITCODE -ne 0){throw 'smoke_local_bridge_replay_apply_failed'}

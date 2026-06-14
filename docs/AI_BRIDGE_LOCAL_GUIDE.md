@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.78
+Versao atual: 0.4.79
 Branch principal: main
-Marco publicado mais recente: v0.4.78-command-builder-advisory-gate
-Commit de referencia: v0.4.78-command-builder-advisory-gate
+Marco publicado mais recente: v0.4.79-governance-decision-log
+Commit de referencia: v0.4.79-governance-decision-log
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1163,7 +1163,7 @@ The extension manifest name, extension manifest version, and VERSION file were a
 
 ## 30. Command builder advisory metadata
 - [DONE 0.4.77] Criado command_builder_advisory.py para anexar governance_advisory ao envelope.
-- [DONE 0.4.77] command_builder.py original permanece compatÃƒÂ­vel.
+- [DONE 0.4.77] command_builder.py original permanece compatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­vel.
 - [DONE 0.4.77] Relatorio criado em reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_2026-06-14.md.
 
 - scripts/watcher/command_builder_advisory.py.
@@ -1182,4 +1182,12 @@ The extension manifest name, extension manifest version, and VERSION file were a
 
 ## Version alignment 0.4.78
 - Atualizado topo do guia para 0.4.78.
-- Marco publicado: v0.4.78-command-builder-advisory-gate.
+- Marco publicado: v0.4.79-governance-decision-log.
+## 32. Governance decision log
+- [DONE 0.4.79] Criado log JSONL de decisoes de governanca.
+- [DONE 0.4.79] Registro permanece read-only em relacao ao comando analisado.
+- [DONE 0.4.79] Relatorio criado em reports/AI_BRIDGE_LOCAL_GOVERNANCE_DECISION_LOG_2026-06-14.md.
+
+## Version alignment 0.4.79
+- Atualizado topo do guia para 0.4.79.
+- Marco publicado: v0.4.79-governance-decision-log.

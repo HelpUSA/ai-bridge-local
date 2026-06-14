@@ -1,6 +1,6 @@
 // AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.4.78";
+  const VERSION = "0.4.79";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -124,7 +124,7 @@
     const txt = candidateText(el);
     let score = 0;
 
-    if (/send|enviar|submit|ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
+    if (/send|enviar|submit|ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã…â€œÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â|send-button|composer-submit|paper|plane|arrow|up/.test(txt)) score += 10;
     if (/stop|cancel|attach|upload|file|mic|microphone|voice|image|search|tool/.test(txt)) score -= 8;
 
     const r = el.getBoundingClientRect();
@@ -245,7 +245,7 @@
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
       const text = message.action?.text || message.action?.message || message.text || "";
 
-      showNotice("Mensagem recebida para injeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o", "command_id=" + actionId, "info");
+      showNotice("Mensagem recebida para injeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o", "command_id=" + actionId, "info");
 
       if (!text) {
         showNotice("Falha: texto vazio", "command_id=" + actionId, "error");
@@ -255,7 +255,7 @@
 
       const composer = findComposer();
       if (!composer) {
-        showNotice("Falha: composer nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o encontrado", "command_id=" + actionId, "error");
+        showNotice("Falha: composer nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o encontrado", "command_id=" + actionId, "error");
         sendResponse({ok: false, reason: "no_composer"});
         return false;
       }
@@ -448,7 +448,7 @@
       causes.push("quebra de linha dentro de string JSON sem escape");
     }
  if (source.length > 900 && (source.includes('command') || source.includes('python -c') || source.includes('EncodedCommand') || source.includes('base64') || source.includes('script_text'))) {
-      causes.push("comando inline grande/frÃƒÆ’Ã‚Â¡gil; prefira script_text/script_ext ou arquivo real");
+      causes.push("comando inline grande/frÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gil; prefira script_text/script_ext ou arquivo real");
     }
     if (!causes.length) {
       causes.push("JSON invalido, aspas/backslashes nao escapados ou estrutura incompleta");

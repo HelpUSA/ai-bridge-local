@@ -60,6 +60,25 @@ def execute_command(payload, command_id="unknown"):
     if not isinstance(payload, dict):
         return {"return_code": -1, "stdout": "", "stderr": "invalid_payload_not_object"}
 
+    intent = payload.get("intent")
+    if intent and not payload.get("command") and not payload.get("script_text") and not payload.get("script_path"):
+        intent_command = [
+            "python",
+            "scripts/watcher/command_intake.py",
+            "--intent",
+            str(intent),
+            "--command-id",
+            str(command_id),
+            "--cwd",
+            str(payload.get("cwd") or "."),
+        ]
+        if payload.get("execute_intent"):
+            intent_command.append("--execute")
+        if payload.get("timeout_seconds"):
+            intent_command.extend(["--timeout", str(int(payload.get("timeout_seconds")))])
+        payload = dict(payload)
+        payload["command"] = intent_command
+
     script_path = prepare_temp_script(payload, command_id)
     cmd = normalize_command(payload.get("command"))
     if script_path:
@@ -74,27 +93,21 @@ def execute_command(payload, command_id="unknown"):
             cmd = [str(x).replace("{script_path}", script_path) for x in cmd]
     cwd = payload.get("cwd") or "."
     timeout = int(payload.get("timeout_seconds") or 30)
-
     if not cmd:
         return {"return_code": -1, "stdout": "", "stderr": "missing_payload_command"}
-
     try:
         result = subprocess.run(
             cmd,
             cwd=cwd,
             capture_output=True,
             text=True,
-            encoding="utf-8",
-            errors="replace",
             timeout=timeout,
-            shell=False
         )
         return {"return_code": result.returncode, "stdout": truncate(result.stdout), "stderr": truncate(result.stderr)}
     except subprocess.TimeoutExpired:
         return {"return_code": -1, "stdout": "", "stderr": "timeout"}
-    except Exception as e:
-        return {"return_code": -1, "stdout": "", "stderr": str(e)}
-
+    except Exception as exc:
+        return {"return_code": -1, "stdout": "", "stderr": str(exc)}
 def format_result_message(action, result, status):
     command_id = action.get("command_id", "unknown")
     payload = action.get("payload", {}) if isinstance(action.get("payload", {}), dict) else {}

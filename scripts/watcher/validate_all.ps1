@@ -44,3 +44,6 @@ if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 
 python scripts/watcher/smoke_command_builder_output_file.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+
+python scripts/watcher/smoke_intent_payload.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

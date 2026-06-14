@@ -44,7 +44,7 @@ def validate_command_body(body, payload):
             return 'missing_payload_cwd'
         if 'timeout_seconds' in payload and not isinstance(payload.get('timeout_seconds'), int):
             return 'bad_timeout_seconds'
-        if not payload.get('command') and not payload.get('script_text') and not payload.get('script_path'):
+        if not payload.get('command') and not payload.get('script_text') and not payload.get('script_path') and not payload.get('intent'):
             return 'missing_payload_command_or_script'
     return ''
 

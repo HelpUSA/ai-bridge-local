@@ -110,3 +110,5 @@ python scripts/watcher/smoke_safe_envelope_templates.py
 if($LASTEXITCODE -ne 0){throw 'smoke_safe_envelope_templates_failed'}
 python scripts/watcher/smoke_governance_enforcement_dry_run.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_enforcement_dry_run_failed'}
+python scripts/watcher/smoke_release_safety_checklist.py
+if($LASTEXITCODE -ne 0){throw 'smoke_release_safety_checklist_failed'}

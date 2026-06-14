@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.44
+Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.44-intent-payload
-Commit de referencia: be59288 Add intent payload support
+Marco publicado mais recente: v0.4.45-send-chat-message-smoke
+Commit de referencia: pendente - Add send-chat-message smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -459,7 +459,7 @@ sys.path.insert(0, str(Path.cwd()))
 
 ### 9.1 Curto prazo - confiabilidade do watcher
 
-1. Criar smoke especifico para send-chat-message.
+1. Criar smoke especifico para send-chat-message. [DONE 0.4.45 - send-chat-message smoke dedicated]
    - Validar schema.
    - Validar message no topo.
    - Validar payload opcional vazio.
@@ -837,3 +837,6 @@ Esta secao preserva explicitamente os marcadores que os smokes historicos ainda 
 - Dead letters grouped report: relatorio agrupado de falhas persistentes por tipo, alvo e command_id.
 
 Esses itens ja foram absorvidos no guia unificado, mas permanecem escritos literalmente aqui para compatibilidade com smoke_docs.py ate que o proprio smoke seja evoluido para validar a nova estrutura consolidada.
+
+## Version alignment 0.4.45
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.45. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.

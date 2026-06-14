@@ -7,6 +7,8 @@ python scripts/watcher/smoke_version_alignment.py
 if($LASTEXITCODE -ne 0){throw 'version_alignment_smoke_failed'}
 python scripts/watcher/smoke_command_builder.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_smoke_failed'}
+python scripts/watcher/smoke_send_chat_message.py
+if($LASTEXITCODE -ne 0){throw 'send_chat_message_smoke_failed'}
 python scripts/watcher/smoke_command_builder_validate.py
 if($LASTEXITCODE -ne 0){throw 'command_builder_validate_smoke_failed'}
 python scripts/watcher/smoke_dead_letters_report.py

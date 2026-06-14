@@ -39,3 +39,9 @@ if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
 
 python scripts/watcher/smoke_intent_payload.py
 if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+
+python scripts/watcher/smoke_intent_validate_release.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}
+
+python scripts/watcher/smoke_intent_validate_release.py
+if($LASTEXITCODE -ne 0){exit $LASTEXITCODE}

@@ -9,6 +9,7 @@ CATALOG = {
 	'inspect_docs': {'risk': 'read_only', 'steps': [['git', 'status', '-sb'], ['python', 'scripts/watcher/smoke_docs.py']]},
 	'run_smokes': {'risk': 'validation', 'steps': [['python', 'scripts/watcher/smoke_version_alignment.py'], ['python', 'scripts/watcher/smoke_command_builder_validate.py'], ['python', 'scripts/watcher/smoke_docs.py']]},
 	'run_release_check': {'risk': 'validation', 'steps': [['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'scripts/watcher/release_check.ps1']]},
+ 'validate_release': {'risk': 'validation', 'steps': [['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'scripts/watcher/release_check.ps1']]},
 	'diagnose_failure': {'risk': 'read_only', 'steps': [['python', 'scripts/watcher/post_failure_triage.py']]},
 	'inspect_delivery_failure': {'risk': 'read_only', 'steps': [['python', 'scripts/watcher/inspect_delivery_failure.py', '--limit', '5']]},
 	'backup_queue': {'risk': 'read_only', 'steps': [['python', 'scripts/watcher/backup_queue_db.py']]},

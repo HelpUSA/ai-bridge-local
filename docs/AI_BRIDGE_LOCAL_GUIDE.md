@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.47-delivery-diagnostics
-Commit de referencia: ec050e5 Improve delivery diagnostics
+Marco publicado mais recente: v0.4.48-validate-release-intent
+Commit de referencia: pendente - Add validate release intent
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -478,7 +478,7 @@ sys.path.insert(0, str(Path.cwd()))
    - Deve ser seguro para qualquer momento.
    - Pode virar intent inspect_full.
 
-4. Adicionar intent validate_release.
+4. Adicionar intent validate_release. [DONE 0.4.48 - validation intent for release_check]
    - Planeja release_check.
    - Executa release_check apenas com execute_intent true.
    - Retorna JSON com status.
@@ -857,3 +857,11 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Diagnostico estruturado de submit_button_not_found_or_disabled adicionado ao content script.
 - O retorno de falha agora inclui diagnostics com composer, botao e contadores de botoes visiveis/desabilitados.
 - smoke_delivery_diagnostics incluido no release_check.
+
+## Version alignment 0.4.48
+The extension manifest name, extension manifest version, and VERSION file were aligned to 0.4.48. Future releases should use scripts/watcher/bump_version.py and scripts/watcher/smoke_version_alignment.py before tagging.
+
+## Version alignment 0.4.48
+- Intent validate_release adicionada ao command_intake com risco validation.
+- A intent executa release_check.ps1 dentro do fluxo permitido de validacao.
+- smoke_intent_validate_release incluido no release_check.

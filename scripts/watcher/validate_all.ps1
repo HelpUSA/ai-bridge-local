@@ -120,3 +120,5 @@ python scripts/watcher/smoke_governance_enforcement_dry_run.py
 if($LASTEXITCODE -ne 0){throw 'smoke_governance_enforcement_dry_run_failed'}
 python scripts/watcher/smoke_release_safety_checklist.py
 if($LASTEXITCODE -ne 0){throw 'smoke_release_safety_checklist_failed'}
+python scripts/watcher/smoke_queue_triage_playbook.py
+if($LASTEXITCODE -ne 0){throw 'smoke_queue_triage_playbook_failed'}

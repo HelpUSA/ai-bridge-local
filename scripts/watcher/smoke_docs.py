@@ -21,7 +21,7 @@ commit_ref = commit_lines[0].split(':', 1)[1].strip()
 assert not commit_ref.lower().startswith('pendente'), commit_ref
 first_token = commit_ref.split()[0] if commit_ref.split() else ''
 assert len(first_token) >= 7, commit_ref
-versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', '0.4.61', '0.4.62', '0.4.63', '0.4.64', '0.4.65', '0.4.66', '0.4.67', '0.4.68', '0.4.69', '0.4.70', '0.4.72', '0.4.73', '0.4.74', version]
+versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', '0.4.61', '0.4.62', '0.4.63', '0.4.64', '0.4.65', '0.4.66', '0.4.67', '0.4.68', '0.4.69', '0.4.70', '0.4.72', '0.4.73', '0.4.74', '0.4.75', version]
 dupes = [v for v in versions if ('[DONE ' + v + '] [DONE ' + v + ']') in guide]
 assert not dupes, 'duplicate DONE markers found: ' + repr(dupes)
 items = ['1. Criar smoke para send-chat-message. [DONE 0.4.45]', '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]', '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]', '4. Criar intent validate_release. [DONE 0.4.48]', '5. Criar patch runner com dry-run. [DONE 0.4.49]', '6. Criar rollback helper. [DONE 0.4.50]', '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]', '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]', '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]', '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]', '11. Criar padrao de handoff entre chats. [DONE 0.4.56]', '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]', '13. Criar envelopes de ensino. [DONE 0.4.58]', '14. Criar modo planejador. [DONE 0.4.59]', '15. Criar modo executor com gates. [DONE 0.4.60]', '16. Criar modo auditor. [DONE 0.4.61]', '17. Criar modo release manager. [DONE 0.4.62]']
@@ -171,3 +171,9 @@ command_builder_governance_report_count = guide.count('reports/AI_BRIDGE_LOCAL_C
 assert command_builder_governance_alignment_count == 1, 'command builder governance alignment count: ' + str(command_builder_governance_alignment_count)
 assert command_builder_governance_section_count == 1, 'command builder governance section count: ' + str(command_builder_governance_section_count)
 assert command_builder_governance_report_count >= 1, 'command builder governance report reference missing'
+command_builder_governance_finalize_alignment_count = guide.count('## Version alignment 0.4.75')
+command_builder_governance_finalize_section_count = guide.count('## 28. Command builder governance finalize')
+command_builder_governance_finalize_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_GOVERNANCE_FINALIZE_2026-06-14.md')
+assert command_builder_governance_finalize_alignment_count == 1, 'command builder governance finalize alignment count: ' + str(command_builder_governance_finalize_alignment_count)
+assert command_builder_governance_finalize_section_count == 1, 'command builder governance finalize section count: ' + str(command_builder_governance_finalize_section_count)
+assert command_builder_governance_finalize_report_count >= 1, 'command builder governance finalize report reference missing'

@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.74
+Versao atual: 0.4.75
 Branch principal: main
-Marco publicado mais recente: v0.4.74-command-builder-governance
-Commit de referencia: v0.4.74-command-builder-governance
+Marco publicado mais recente: v0.4.75-command-builder-governance-finalize
+Commit de referencia: v0.4.75-command-builder-governance-finalize
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1140,3 +1140,13 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Integrado governance_preflight ao command_builder como helper nao bloqueante.
 - Atualizado topo do guia para 0.4.74.
 - Adicionado smoke_command_builder_governance.py ao validate_all e release_check.
+
+## 28. Command builder governance finalize
+- [DONE 0.4.75] Release corretiva de fechamento para alinhar tag/HEAD apos ajustes do command_builder governance.
+- [DONE 0.4.75] Sem nova feature; objetivo e higiene de release e rastreabilidade.
+- [DONE 0.4.75] Relatorio criado em reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_GOVERNANCE_FINALIZE_2026-06-14.md.
+
+## Version alignment 0.4.75
+- Atualizado topo do guia para 0.4.75.
+- Criada tag final v0.4.75-command-builder-governance-finalize no HEAD correto.
+- Mantida integracao governance_preflight_for_command ja validada no 0.4.74.

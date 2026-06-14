@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.52-supervision-protocol
-Commit de referencia: e5663a1 Add supervision protocol
+Marco publicado mais recente: v0.4.53-docs-smoke-coverage
+Commit de referencia: local-release-candidate Improve docs smoke coverage
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -807,7 +807,7 @@ Uma atividade so deve ser considerada concluida quando houver:
 6. Criar rollback helper. [DONE 0.4.50]
 7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]
 8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]
-9. Melhorar docs smoke para garantir que este guia continue completo.
+9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]
 10. Criar release 0.4.45 somente depois de smokes e release_check OK.
 
 ---
@@ -888,3 +888,8 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - supervision_protocol.py adicionado com papeis, gates e evidencias obrigatorias para executor, fiscal, supervisor e documentador.
 - smoke_supervision_protocol valida saida textual, payload JSON e filtro por fase.
 - Roadmap atualizado para marcar o protocolo formal de fiscalizacao entre chats como concluido.
+
+## Version alignment 0.4.53
+- smoke_docs.py fortalecido para validar marcador de release, commit de referencia, secoes essenciais, itens recentes do roadmap e notas de version alignment.
+- O smoke agora valida que o marcador publicado inicia com a versao atual do arquivo VERSION.
+- Roadmap atualizado para marcar a melhoria de cobertura do docs smoke como concluida.

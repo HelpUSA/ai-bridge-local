@@ -3,8 +3,8 @@
 Atualizado em: 2026-06-14
 Versao atual: 0.4.45
 Branch principal: main
-Marco publicado mais recente: v0.4.64-local-api-foundations
-Commit de referencia: v0.4.64-local-api-foundations
+Marco publicado mais recente: v0.4.65-local-bridge-store
+Commit de referencia: v0.4.65-local-bridge-store
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -995,3 +995,20 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionados fundamentos da API local read-only e dry-run.
 - Adicionado plano de comunicacao entre chats sem depender da extensao como unico caminho.
 - Adicionado smoke_local_api_foundations.py ao validate_all e release_check.
+
+## 18. Local bridge store
+- [DONE 0.4.65] Storage local inbox/outbox/status criado com dry-run padrao.
+- [DONE 0.4.65] Reconciliador read-only criado para contar inbox, outbox e status.
+- [DONE 0.4.65] Smoke usa diretorio temporario para evitar sujar o repo.
+- [DONE 0.4.65] Relatorio criado em reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_STORE_2026-06-14.md.
+
+- scripts/watcher/local_bridge_store.py.
+
+- scripts/watcher/local_bridge_reconcile.py.
+
+- scripts/watcher/smoke_local_bridge_store.py.
+
+## Version alignment 0.4.65
+- Adicionado storage local inbox/outbox/status com dry-run padrao.
+- Adicionado reconciliador read-only de store local.
+- Adicionado smoke_local_bridge_store.py ao validate_all e release_check.

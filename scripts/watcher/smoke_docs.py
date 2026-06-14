@@ -57,3 +57,5 @@ assert teach_item_9_7_count == 1, 'teach 9.7 marker count: ' + str(teach_item_9_
 assert teach_item_14_count == 1, 'teach section 14 marker count: ' + str(teach_item_14_count)
 teach_alignment_count = guide.count('## Version alignment 0.4.58')
 assert teach_alignment_count == 1, 'teach version alignment count: ' + str(teach_alignment_count)
+teach_file_line_count = guide.count('- scripts/watcher/teach_envelopes.py.')
+assert teach_file_line_count == 1, 'teach file line count: ' + str(teach_file_line_count)

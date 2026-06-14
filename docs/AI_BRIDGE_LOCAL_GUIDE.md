@@ -924,5 +924,3 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Adicionado scripts/watcher/teach_envelopes.py com quatro licoes: watcher basics, repo safety, release flow e failure recovery.
 - Adicionado smoke_teach_envelopes.py ao validate_all e release_check.
 - Roadmap 9.7 e secao 14 atualizados para marcar envelopes de ensino como concluidos.
-
-- scripts/watcher/teach_envelopes.py.

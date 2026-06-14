@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.76
+Versao atual: 0.4.77
 Branch principal: main
-Marco publicado mais recente: v0.4.76-governance-roadmap
-Commit de referencia: v0.4.76-governance-roadmap
+Marco publicado mais recente: v0.4.77-command-builder-advisory
+Commit de referencia: v0.4.77-command-builder-advisory
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local. Ele substitui os documentos soltos anteriores da pasta docs. Os documentos historicos foram preservados em docs/archive E docs/legacy, mas a fonte ativa de orientacao passa a ser este guia unico.
@@ -1160,3 +1160,17 @@ The extension manifest name, extension manifest version, and VERSION file were a
 - Atualizado topo do guia para 0.4.76.
 - Consolidado roadmap da governanca 0.4.72 a 0.4.75.
 - Mantido comportamento nao bloqueante.
+
+## 30. Command builder advisory metadata
+- [DONE 0.4.77] Criado command_builder_advisory.py para anexar governance_advisory ao envelope.
+- [DONE 0.4.77] command_builder.py original permanece compatÃ­vel.
+- [DONE 0.4.77] Relatorio criado em reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_2026-06-14.md.
+
+- scripts/watcher/command_builder_advisory.py.
+
+- scripts/watcher/smoke_command_builder_advisory.py.
+
+## Version alignment 0.4.77
+- Atualizado topo do guia para 0.4.77.
+- Adicionado wrapper command_builder_advisory com metadata nao bloqueante.
+- Adicionado smoke_command_builder_advisory ao validate_all e release_check.

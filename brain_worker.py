@@ -8,7 +8,7 @@ import time
 import urllib.request
 
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 
 def now_iso():
     from datetime import datetime, timezone
@@ -153,6 +153,47 @@ def enqueue_result_message(action, result, status):
     except Exception as e:
         print(f"[worker] Result enqueue skipped/error: {e}")
 
+def format_accepted_message(action):
+    command_id = action.get("command_id", "unknown")
+    payload = action.get("payload", {}) if isinstance(action.get("payload", {}), dict) else {}
+    cwd = payload.get("cwd", ".")
+    return (
+        "[AI_LOCAL]\n"
+        "comando aceito, execucao iniciada\n"
+        f"id={command_id}\n"
+        "status=running\n"
+        "no_reply=1\n"
+        f"cwd={cwd}"
+    )
+
+def enqueue_accepted_message(action):
+    source_chat_id = action.get("source_chat_id", "")
+    if not source_chat_id:
+        return ()
+
+    command_id = action.get("command_id", "unknown")
+    accepted_command_id = "accepted_to_" + command_id
+
+    body = {
+        "schema": "ai_bridge_local.envelope",
+        "schema_version": 1,
+        "command_id": accepted_command_id,
+        "action": "send-chat-message",
+        "source_chat_id": "gateway-brain-supervisor",
+        "target_chat_id": source_chat_id,
+        "delivery_kind": "inter_agent_message",
+        "conversation_id": (action.get("conversation_id") or "local_run_command") + "_accepted",
+        "from_agent": "AI Bridge Local Worker " + VERSION,
+        "message": format_accepted_message(action),
+    }
+
+    try:
+        post_json(f"{GATEWAY}/bridge/commands", body)
+        print(f"[worker] Accepted notice enqueued: {accepted_command_id}")
+    except Exception as e:
+        print(f"[worker] Accepted notice skipped/error: {e}")
+
+
 def poll_source(source_chat_id):
     try:
         data = get_json(f"{GATEWAY}/bridge/next-action?chat_id=gateway-brain-supervisor&source_chat_id={source_chat_id}")
@@ -175,6 +216,7 @@ def poll_source(source_chat_id):
     print(f"[worker] Running: {command_id} ({action_type}) source={source_chat_id}")
 
     if action_type == "run-command":
+        enqueue_accepted_message(action)
         result = execute_command(payload, command_id)
         status = "acked" if result["return_code"] == 0 else "failed"
         enqueue_result_message(action, result, status)

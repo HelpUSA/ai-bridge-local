@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.98
+Versao atual: 0.4.99
 Branch principal: main
-Marco publicado mais recente: v0.4.98-latency-parallel-polling-docs
-Commit de referencia: v0.4.98-latency-parallel-polling-docs
+Marco publicado mais recente: v0.4.99-command-accepted-progress-notice
+Commit de referencia: v0.4.99-command-accepted-progress-notice
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -378,3 +378,15 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 ## Version alignment 0.4.98
 - Atualizado topo do guia para 0.4.98.
 - Marco publicado: v0.4.98-latency-parallel-polling-docs.
+
+## 52. Command accepted progress notice
+- [DONE 0.4.99] Criado aviso rapido [AI_LOCAL] quando o worker aceita run-command.
+- [DONE 0.4.99] Mantido suporte a comandos grandes sem dividir em etapas pequenas.
+- [DONE 0.4.99] Resultado final continua em [AI_LOCAL_RUN].
+- [DONE 0.4.99] Criado docs/COMMAND_ACCEPTED_PROGRESS_NOTICE.md.
+- [DONE 0.4.99] Criado scripts/watcher/smoke_command_accepted_progress_notice.py.
+
+
+## Version alignment 0.4.99
+- Atualizado topo do guia para 0.4.99.
+- Marco publicado: v0.4.99-command-accepted-progress-notice.

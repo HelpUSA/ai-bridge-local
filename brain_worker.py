@@ -217,21 +217,23 @@ def format_result_message(action, result, status):
     cmd = payload.get("command", "")
     cwd = payload.get("cwd", ".")
     return_code = result.get("return_code")
-    chat_can_continue = "1" if status == "acked" and return_code == 0 else "0"
-    next_action = "continue_next_activity" if chat_can_continue == "1" else "fix_error_before_continue"
+    success = "1" if status == "acked" and return_code == 0 else "0"
+    chat_can_continue = "1"
+    next_action = "continue_next_activity" if success == "1" else "fix_error_before_continue"
     observacao = (
         "Comando concluido com sucesso. O chat pode analisar o resultado e seguir para a proxima atividade."
-        if chat_can_continue == "1"
-        else "Comando falho. O chat deve analisar stderr/stdout e corrigir antes de prosseguir."
+        if success == "1"
+        else "Comando falhou. O chat deve analisar stderr/stdout, explicar a causa e propor ou executar a correcao segura."
     )
 
     return (
         "[AI_LOCAL_RUN]\n"
         f"id={command_id}\n"
         f"status={status}\n"
-        f"return_code={result.get('return_code')}\n"
+        f"return_code={return_code}\n"
         "no_reply=1\n"
         "result_is_final=1\n"
+        f"success={success}\n"
         f"chat_can_continue={chat_can_continue}\n"
         f"next_action={next_action}\n"
         f"observacao={observacao}\n"
@@ -240,6 +242,7 @@ def format_result_message(action, result, status):
         "stdout=\n" + truncate(result.get("stdout", ""), 3500) + "\n"
         "stderr=\n" + truncate(result.get("stderr", ""), 1500)
     )
+
 
 def enqueue_result_message(action, result, status):
     source_chat_id = action.get("source_chat_id", "")

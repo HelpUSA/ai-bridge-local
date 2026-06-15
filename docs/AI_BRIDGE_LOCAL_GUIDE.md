@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.9
+Versao atual: 0.5.10
 Branch principal: main
-Marco publicado mais recente: v0.5.9-remove-accepted-running-notice
-Commit de referencia: v0.5.9-remove-accepted-running-notice
+Marco publicado mais recente: v0.5.10-final-result-failure-continues
+Commit de referencia: v0.5.10-final-result-failure-continues
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -401,27 +401,27 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 
 ## Version alignment 0.5.0
 - Atualizado topo do guia para 0.5.0.
-- Marco publicado: v0.5.9-remove-accepted-running-notice.
+- Marco publicado: v0.5.10-final-result-failure-continues.
 
 ## 55. Queue reports cleanup
 - DONE 0.5.1 queue_status_report.py
 - DONE 0.5.1 dead_letters_cleanup_plan.py dry-run
 
 ## Version alignment 0.5.1
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## Version alignment 0.5.2
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 56. Immediate gateway feedback
 - DONE 0.5.2 feedback imediato para run-command aceito.
 - DONE 0.5.2 feedback imediato para invalid_envelope parseavel.
 
 ## Version alignment 0.5.3
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 57. Gateway feedback dedup
 - DONE 0.5.3 feedback inicial idempotente por command_id e source_chat_id.
@@ -429,33 +429,33 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.3 smoke_gateway_feedback_dedup.py.
 
 ## Version alignment 0.5.5
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 59. Disable worker running notice
 - DONE 0.5.5 remove aviso intermediario do worker.
 - DONE 0.5.5 fluxo esperado: queued inicial + AI_LOCAL_RUN final.
 
 ## Version alignment 0.5.6
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 60. Remove worker running notice
 - DONE 0.5.6 remove de verdade o aviso intermediario running do worker.
 - DONE 0.5.6 fluxo esperado: queued inicial + AI_LOCAL_RUN final.
 
 ## Version alignment 0.5.7
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 61. Final result continue hint
 - DONE 0.5.7 adiciona result_is_final, chat_can_continue e next_action no AI_LOCAL_RUN final.
 - DONE 0.5.7 nao cria nova mensagem intermediaria.
 
 ## Version alignment 0.5.8
-- Versao atual: 0.5.9
-- Marco publicado: v0.5.9-remove-accepted-running-notice
+- Versao atual: 0.5.10
+- Marco publicado: v0.5.10-final-result-failure-continues
 
 ## 62. Single worker guard
 - DONE 0.5.8 adiciona PID lock para impedir multiplos brain_worker.py.
-- DONE 0.5.8 remove lock stale e permite somente um worker ativo.\n\n## Version alignment 0.5.9\n- Versao atual: 0.5.9\n- Marco publicado: v0.5.9-remove-accepted-running-notice\n\n\n## 63. Remove accepted running notice\n- DONE 0.5.9 remove o aviso accepted/running emitido pelo worker.\n- DONE 0.5.9 fluxo esperado: queued do gateway + AI_LOCAL_RUN final.\n
+- DONE 0.5.8 remove lock stale e permite somente um worker ativo.\n\n## Version alignment 0.5.9\n- Versao atual: 0.5.10\n- Marco publicado: v0.5.10-final-result-failure-continues\n\n\n## 63. Remove accepted running notice\n- DONE 0.5.9 remove o aviso accepted/running emitido pelo worker.\n- DONE 0.5.9 fluxo esperado: queued do gateway + AI_LOCAL_RUN final.\n\n\n## Version alignment 0.5.10\n- Versao atual: 0.5.10\n- Marco publicado: v0.5.10-final-result-failure-continues\n\n\n## 64. Final result failure continues\n- DONE 0.5.10 define chat_can_continue=1 tambem em falhas finais.\n- DONE 0.5.10 adiciona success=0/1 e usa next_action para orientar correcao ou continuidade.\n

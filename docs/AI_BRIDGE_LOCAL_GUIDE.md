@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.97
+Versao atual: 0.4.98
 Branch principal: main
-Marco publicado mais recente: v0.4.97-latency-parallel-polling
-Commit de referencia: v0.4.97-latency-parallel-polling
+Marco publicado mais recente: v0.4.98-latency-parallel-polling-docs
+Commit de referencia: v0.4.98-latency-parallel-polling-docs
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -369,3 +369,12 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - watcher_recovery_runbook alignment count:
 - watcher_recovery_runbook report reference missing
 - watcher_recovery_runbook section count:
+## 51. Latency parallel polling docs
+- [DONE 0.4.98] Documentada arquitetura de polling paralelo por chat.
+- [DONE 0.4.98] Criado docs/LATENCY_PARALLEL_POLLING_ARCHITECTURE.md.
+- [DONE 0.4.98] Criado reports/AI_BRIDGE_LOCAL_LATENCY_PARALLEL_POLLING_REPORT_2026-06-14.md.
+- [DONE 0.4.98] Criado scripts/watcher/smoke_latency_parallel_polling_docs.py.
+
+## Version alignment 0.4.98
+- Atualizado topo do guia para 0.4.98.
+- Marco publicado: v0.4.98-latency-parallel-polling-docs.

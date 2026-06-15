@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """AI Bridge Local - Brain Worker v0.1.2"""
 import json
+import atexit
 import os
 import subprocess
 from pathlib import Path
@@ -11,6 +12,59 @@ from concurrent.futures import ThreadPoolExecutor
 
 GATEWAY = "http://127.0.0.1:8766"
 VERSION = "0.1.5"
+
+
+WORKER_LOCK_PATH = Path("temp/brain_worker.pid")
+
+def _pid_is_running(pid: int) -> bool:
+    if pid <= 0:
+        return False
+    if os.name == "nt":
+        try:
+            import ctypes
+            handle = ctypes.windll.kernel32.OpenProcess(0x1000, False, int(pid))
+            if handle:
+                ctypes.windll.kernel32.CloseHandle(handle)
+                return True
+            return False
+        except Exception:
+            return False
+    try:
+        os.kill(pid, 0)
+        return True
+    except OSError:
+        return False
+
+def _release_single_worker_lock() -> None:
+    try:
+        if WORKER_LOCK_PATH.exists() and WORKER_LOCK_PATH.read_text(encoding="utf-8").strip() == str(os.getpid()):
+            WORKER_LOCK_PATH.unlink()
+    except Exception:
+        pass
+
+def acquire_single_worker_lock() -> None:
+    WORKER_LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    current_pid = os.getpid()
+    if WORKER_LOCK_PATH.exists():
+        raw = WORKER_LOCK_PATH.read_text(encoding="utf-8").strip()
+        try:
+            existing_pid = int(raw)
+        except ValueError:
+            existing_pid = -1
+
+        if existing_pid != current_pid and _pid_is_running(existing_pid):
+            print(f"[worker] another brain_worker.py is already running pid={existing_pid}; exiting")
+            raise SystemExit(0)
+
+        print(f"[worker] removing stale worker lock pid={raw}")
+        try:
+            WORKER_LOCK_PATH.unlink()
+        except FileNotFoundError:
+            pass
+
+    WORKER_LOCK_PATH.write_text(str(current_pid), encoding="utf-8")
+    atexit.register(_release_single_worker_lock)
+
 
 MAX_PARALLEL_RUN_COMMANDS = int(os.environ.get("AI_BRIDGE_MAX_PARALLEL_RUN_COMMANDS", "3"))
 RUN_EXECUTOR = ThreadPoolExecutor(max_workers=MAX_PARALLEL_RUN_COMMANDS)
@@ -359,6 +413,7 @@ def poll_once():
             poll_source(source_chat_id)
 
 def main():
+    acquire_single_worker_lock()
     print(f"[worker] AI Bridge Local Worker v{VERSION} - Porta 8766")
     print("[worker] Ctrl+C to stop")
     while True:

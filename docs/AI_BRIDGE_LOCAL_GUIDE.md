@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.11
+Versao atual: 0.5.12
 Branch principal: main
-Marco publicado mais recente: v0.5.11-composer-submit-guard
-Commit de referencia: v0.5.11-composer-submit-guard
+Marco publicado mais recente: v0.5.12-delivery-diagnostics
+Commit de referencia: v0.5.12-delivery-diagnostics
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -473,3 +473,12 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - [Operations Runbook](OPERATIONS_RUNBOOK.md)
 - [Releases](RELEASES.md)
 - [Watcher Notes](WATCHER_NOTES.md)
+
+## Version alignment 0.5.12
+- Versao atual: 0.5.12
+- Marco previsto: v0.5.12-delivery-diagnostics
+
+## 66. Delivery diagnostics 0.5.12
+- DONE 0.5.12 adiciona documentacao curta para diagnostico de falhas de entrega sem executar testes entre chats.
+- DONE 0.5.12 adiciona smoke readonly para garantir taxonomia de diagnostico de entrega.
+- DONE 0.5.12 preserva a regra de versionar toda evolucao relevante.

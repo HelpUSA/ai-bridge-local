@@ -5,15 +5,18 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "watcher"))
 
-from dry_run_delivery_plan import (  # noqa: E402
+from dry_run_delivery_plan import (
     build_dry_run_delivery_plan,
     render_dry_run_delivery_plan,
 )
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.28", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.28"), VERSION
 
 manifest = json.loads((ROOT / "extension" / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest["version"] == VERSION, manifest
@@ -62,4 +65,4 @@ assert "Version alignment 0.5.28" in guide
 assert "Preflight dry-run batch 0.5.28" in guide
 assert "v0.5.28-preflight-dry-run-batch" in guide
 
-print("OK dry_run_delivery_plan_0528 0.5.28")
+print("OK dry_run_delivery_plan_0528 " + VERSION)

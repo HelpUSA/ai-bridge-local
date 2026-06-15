@@ -130,3 +130,5 @@ python scripts/watcher/smoke_autonomous_evolution_task_queue.py
 if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_task_queue_failed'}
 python scripts/watcher/smoke_autonomous_evolution_audit_ledger.py
 if($LASTEXITCODE -ne 0){throw 'smoke_autonomous_evolution_audit_ledger_failed'}
+python scripts/watcher/smoke_latency_parallel_polling.py
+if($LASTEXITCODE -ne 0){throw 'smoke_latency_parallel_polling_failed'}

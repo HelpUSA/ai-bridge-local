@@ -21,7 +21,7 @@ commit_ref = commit_lines[0].split(':', 1)[1].strip()
 assert not commit_ref.lower().startswith('pendente'), commit_ref
 first_token = commit_ref.split()[0] if commit_ref.split() else ''
 assert len(first_token) >= 7, commit_ref
-versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', '0.4.61', '0.4.62', '0.4.63', '0.4.64', '0.4.65', '0.4.66', '0.4.67', '0.4.68', '0.4.69', '0.4.70', '0.4.72', '0.4.73', '0.4.74', '0.4.75', '0.4.76', '0.4.77', '0.4.78', '0.4.79', '0.4.80', '0.4.81', '0.4.82', '0.4.83', '0.4.84', '0.4.85', '0.4.86', '0.4.87', '0.4.88', '0.4.89', '0.4.90', '0.4.91', '0.4.92', '0.4.93', '0.4.94', '0.4.95', '0.4.96', version]
+versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', '0.4.61', '0.4.62', '0.4.63', '0.4.64', '0.4.65', '0.4.66', '0.4.67', '0.4.68', '0.4.69', '0.4.70', '0.4.72', '0.4.73', '0.4.74', '0.4.75', '0.4.76', '0.4.77', '0.4.78', '0.4.79', '0.4.80', '0.4.81', '0.4.82', '0.4.83', '0.4.84', '0.4.85', '0.4.86', '0.4.87', '0.4.88', '0.4.89', '0.4.90', '0.4.91', '0.4.92', '0.4.93', '0.4.94', '0.4.95', '0.4.96', '0.4.97', version]
 dupes = [v for v in versions if ('[DONE ' + v + '] [DONE ' + v + ']') in guide]
 assert not dupes, 'duplicate DONE markers found: ' + repr(dupes)
 items = ['1. Criar smoke para send-chat-message. [DONE 0.4.45]', '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]', '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]', '4. Criar intent validate_release. [DONE 0.4.48]', '5. Criar patch runner com dry-run. [DONE 0.4.49]', '6. Criar rollback helper. [DONE 0.4.50]', '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]', '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]', '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]', '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]', '11. Criar padrao de handoff entre chats. [DONE 0.4.56]', '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]', '13. Criar envelopes de ensino. [DONE 0.4.58]', '14. Criar modo planejador. [DONE 0.4.59]', '15. Criar modo executor com gates. [DONE 0.4.60]', '16. Criar modo auditor. [DONE 0.4.61]', '17. Criar modo release manager. [DONE 0.4.62]']
@@ -303,3 +303,9 @@ autonomous_evolution_audit_ledger_report_count = guide.count('reports/AI_BRIDGE_
 assert autonomous_evolution_audit_ledger_alignment_count == 1, 'autonomous_evolution_audit_ledger alignment count: ' + str(autonomous_evolution_audit_ledger_alignment_count)
 assert autonomous_evolution_audit_ledger_section_count == 1, 'autonomous_evolution_audit_ledger section count: ' + str(autonomous_evolution_audit_ledger_section_count)
 assert autonomous_evolution_audit_ledger_report_count >= 1, 'autonomous_evolution_audit_ledger report reference missing'
+latency_parallel_polling_alignment_count = guide.count('## Version alignment 0.4.97')
+latency_parallel_polling_section_count = guide.count('## 50. Latency parallel polling')
+latency_parallel_polling_smoke_count = guide.count('scripts/watcher/smoke_latency_parallel_polling.py')
+assert latency_parallel_polling_alignment_count == 1, 'latency_parallel_polling alignment count: ' + str(latency_parallel_polling_alignment_count)
+assert latency_parallel_polling_section_count == 1, 'latency_parallel_polling section count: ' + str(latency_parallel_polling_section_count)
+assert latency_parallel_polling_smoke_count >= 1, 'latency_parallel_polling smoke reference missing'

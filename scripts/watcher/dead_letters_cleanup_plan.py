@@ -1,0 +1,13 @@
+﻿import argparse, sqlite3
+parser=argparse.ArgumentParser()
+parser.add_argument('--limit', type=int, default=50)
+parser.add_argument('--apply', action='store_true')
+args=parser.parse_args()
+conn=sqlite3.connect('queue_local.db')
+print('DEAD_LETTERS_CLEANUP_PLAN_START')
+rows=conn.execute('select id, command_id, source_chat_id, failed_at, last_error from dead_letters order by id asc limit ?', (args.limit,)).fetchall()
+print('candidate_count', len(rows))
+print('candidates', rows)
+print('dry_run_only')
+conn.close()
+print('DEAD_LETTERS_CLEANUP_PLAN_END')

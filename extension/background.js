@@ -1,5 +1,5 @@
 // AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
-const VERSION = "0.5.0";
+const VERSION = "0.5.1";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 

@@ -1,6 +1,6 @@
 // AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.1";
+  const VERSION = "0.5.2";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -412,7 +412,7 @@
 
   function extractJsonStringField(raw, field) {
     try {
-      const re = new RegExp('"' + field + '"\\s*:\\s*"([^"\\r\\n]{0.5.1})"', "m");
+      const re = new RegExp('"' + field + '"\\s*:\\s*"([^"\\r\\n]{0.5.2})"', "m");
       const m = String(raw || "").match(re);
       return m ? m[1] : "";
     } catch (e) {

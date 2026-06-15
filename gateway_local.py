@@ -10,7 +10,7 @@ from urllib.parse import parse_qs, urlparse
 HOST = "127.0.0.1"
 PORT = 8766
 DB_PATH = "queue_local.db"
-VERSION = "0.2.3"
+VERSION = "0.2.5"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -119,6 +119,57 @@ def fetch_control_status():
             recent_commands=[dict(command_id=r[0], source_chat_id=r[1], target_chat_id=r[2], action=r[3], status=r[4], created_at=r[5], last_error=r[6]) for r in recent],
             recent_events=[dict(command_id=r[0], event_type=r[1], message=r[2], created_at=r[3]) for r in events],
         )
+    finally:
+        conn.close()
+
+
+def enqueue_source_feedback(body, feedback_type, detail):
+    source_chat_id = body.get('source_chat_id', '')
+    if not source_chat_id:
+        return
+    original_id = str(body.get('command_id', 'unknown'))
+    target_chat_id = body.get('target_chat_id', '')
+    if feedback_type == 'accepted' and body.get('action') != 'run-command':
+        return
+    safe_id = ''.join(ch if ch.isalnum() or ch in '-_' else '_' for ch in original_id)[:80]
+    local_id = 'local_status_' + feedback_type + '_' + safe_id + '_' + uuid.uuid4().hex[:12]
+    if feedback_type == 'accepted':
+        lines = [
+            '[AI_LOCAL]',
+            'comando recebido pelo gateway',
+            'id=' + original_id,
+            'status=queued',
+            'processamento=na_fila_local',
+            'no_reply=1',
+            'destino=' + target_chat_id,
+            'observacao=O comando entrou na fila local e sera processado. Nao precisa responder a esta mensagem.',
+        ]
+    else:
+        lines = [
+            '[AI_LOCAL_ERRO]',
+            'acao=corrija_e_reenvie',
+            'no_reply=0',
+            'executado=nao',
+            'tipo=invalid_envelope',
+            'versao=' + VERSION,
+            'id_original=' + original_id,
+            'chat_atual=' + source_chat_id,
+            'origem=' + source_chat_id,
+            'destino=' + target_chat_id,
+            'erro=' + str(detail),
+            'causa_provavel=Envelope parseou, mas faltam campos obrigatorios ou ha campos invalidos.',
+            'correcao=Nada foi executado. Corrija o envelope e reenvie.',
+        ]
+    message = chr(10).join(lines)
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        conn.execute(
+            "INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
+            (local_id, 'gateway-brain-supervisor', source_chat_id, 'send-chat-message', 'inter_agent_message', body.get('conversation_id', ''), 'AI Bridge Local Gateway', message, '{}')
+        )
+        conn.commit()
+    except sqlite3.IntegrityError:
+        pass
     finally:
         conn.close()
 
@@ -259,6 +310,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             validation_error = validate_command_body(body, payload)
             if validation_error:
                 record_invalid_message(body, validation_error)
+                enqueue_source_feedback(body, 'invalid_envelope', validation_error)
                 self._send_json(dict(ok=False, error='invalid_envelope', detail=validation_error), 400)
                 return
 
@@ -279,6 +331,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
                     )
                 )
                 conn.commit()
+                enqueue_source_feedback(body, 'accepted', 'queued')
                 self._send_json({"ok": True, "command_id": cmd_id, "status": "queued", "target_chat_id": body.get("target_chat_id", "")})
             except sqlite3.IntegrityError:
                 self._send_json({"ok": False, "error": "duplicate", "command_id": cmd_id}, 409)

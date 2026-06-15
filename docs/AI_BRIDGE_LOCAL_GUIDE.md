@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.1
+Versao atual: 0.5.2
 Branch principal: main
-Marco publicado mais recente: v0.5.1-queue-reports-cleanup
-Commit de referencia: v0.5.1-queue-reports-cleanup
+Marco publicado mais recente: v0.5.2-immediate-gateway-feedback
+Commit de referencia: v0.5.2-immediate-gateway-feedback
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -401,12 +401,20 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 
 ## Version alignment 0.5.0
 - Atualizado topo do guia para 0.5.0.
-- Marco publicado: v0.5.1-queue-reports-cleanup.
+- Marco publicado: v0.5.2-immediate-gateway-feedback.
 
 ## 55. Queue reports cleanup
 - DONE 0.5.1 queue_status_report.py
 - DONE 0.5.1 dead_letters_cleanup_plan.py dry-run
 
 ## Version alignment 0.5.1
-- Versao atual: 0.5.1
-- Marco publicado: v0.5.1-queue-reports-cleanup
+- Versao atual: 0.5.2
+- Marco publicado: v0.5.2-immediate-gateway-feedback
+
+## Version alignment 0.5.2
+- Versao atual: 0.5.2
+- Marco publicado: v0.5.2-immediate-gateway-feedback
+
+## 56. Immediate gateway feedback
+- DONE 0.5.2 feedback imediato para run-command aceito.
+- DONE 0.5.2 feedback imediato para invalid_envelope parseavel.

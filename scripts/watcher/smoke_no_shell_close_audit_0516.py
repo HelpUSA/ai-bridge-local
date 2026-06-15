@@ -4,10 +4,13 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.16", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.16"), VERSION
 
 manifest = json.loads((ROOT / "extension" / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest["version"] == VERSION, manifest
@@ -38,4 +41,4 @@ assert "Invoke-Native" in runner
 assert "throw" in runner
 assert "git diff --check" in runner
 
-print("OK no_shell_close_audit_0516 0.5.16")
+print("OK no_shell_close_audit_0516 " + VERSION)

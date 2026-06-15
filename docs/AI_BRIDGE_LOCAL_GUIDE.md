@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.23
+Versao atual: 0.5.26
 Branch principal: main
-Marco publicado mais recente: v0.5.23-diagnostic-readonly-batch
-Commit de referencia: v0.5.23-diagnostic-readonly-batch
+Marco publicado mais recente: v0.5.26-observability-readonly-batch
+Commit de referencia: v0.5.26-observability-readonly-batch
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -475,7 +475,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - [Watcher Notes](WATCHER_NOTES.md)
 
 ## Version alignment 0.5.12
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.12-delivery-diagnostics
 
 ## 66. Delivery diagnostics 0.5.12
@@ -483,7 +483,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.12 adiciona smoke readonly para garantir taxonomia de diagnostico de entrega.
 - DONE 0.5.12 preserva a regra de versionar toda evolucao relevante.
 ## Version alignment 0.5.13
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.13-delivery-diagnostic-classifier
 
 ## 67. Delivery diagnostic classifier 0.5.13
@@ -491,7 +491,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.13 adiciona smoke estatico para codigos de diagnostico.
 - DONE 0.5.13 nao executa testes entre chats nem altera fluxo real de envio.
 ## Version alignment 0.5.14
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.14-fix-version-smokes-no-bom
 
 ## 68. Fix version smokes and UTF-8 no BOM 0.5.14
@@ -500,7 +500,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.14 reforca que scripts de release devem parar explicitamente quando validacoes falham.
 - DONE 0.5.14 nao executa testes entre chats.
 ## Version alignment 0.5.15
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.15-safe-release-runner
 
 ## 69. Safe release runner 0.5.15
@@ -510,7 +510,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.15 usa AddPaths explicitos para evitar commit amplo acidental.
 - DONE 0.5.15 nao executa testes entre chats.
 ## Version alignment 0.5.16
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.16-no-shell-close-audit
 
 ## 70. No shell close audit 0.5.16
@@ -519,7 +519,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.16 preserva regra de UTF-8 sem BOM para VERSION.
 - DONE 0.5.16 nao executa testes entre chats.
 ## Version alignment 0.5.17
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.17-forward-compatible-smoke-policy
 
 ## 71. Forward-compatible smoke policy 0.5.17
@@ -528,7 +528,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.17 adiciona auditoria estatica contra smokes historicos travados em VERSION exata.
 - DONE 0.5.17 nao executa testes entre chats.
 ## Version alignment 0.5.20
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.20-release-process-batch
 
 ## 72. Release runner self-smoke 0.5.18
@@ -546,7 +546,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.20 fecha batch de processo de release 0.5.18 a 0.5.20.
 - DONE 0.5.20 nao executa testes entre chats.
 ## Version alignment 0.5.23
-- Versao atual: 0.5.23
+- Versao atual: 0.5.26
 - Marco previsto: v0.5.23-diagnostic-readonly-batch
 
 ## 75. Diagnostic classifier readonly integration 0.5.21
@@ -562,3 +562,20 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.23 valida classifier, integracao e formatter com dados readonly.
 - DONE 0.5.23 fecha batch diagnostico readonly 0.5.21 a 0.5.23.
 - DONE 0.5.23 nao executa testes entre chats.
+## Version alignment 0.5.26
+- Versao atual: 0.5.26
+- Marco previsto: v0.5.26-observability-readonly-batch
+
+## 78. Delivery diagnostic summary 0.5.24
+- DONE 0.5.24 adiciona resumo local readonly de diagnosticos.
+- DONE 0.5.24 agrupa diagnosticos por tipo e status sem alterar fila.
+
+## 79. Queue worker health 0.5.25
+- DONE 0.5.25 adiciona health check readonly para fila e worker.
+- DONE 0.5.25 detecta workers ativos duplicados, locks stale e comandos falhos em snapshot.
+
+## 80. Observability readonly batch 0.5.26
+- DONE 0.5.26 adiciona gerador de relatorio operacional readonly.
+- DONE 0.5.26 consolida versao, tag, commit, validacoes, diagnosticos e saude de fila/worker.
+- DONE 0.5.26 fecha batch observabilidade readonly 0.5.24 a 0.5.26.
+- DONE 0.5.26 nao executa testes entre chats.

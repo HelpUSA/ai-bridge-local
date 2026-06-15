@@ -8,10 +8,13 @@ sys.path.insert(0, str(ROOT / "scripts" / "watcher"))
 from delivery_diagnostic_formatter import format_delivery_diagnostic_result  # noqa: E402
 from delivery_diagnostic_integration import classify_delivery_event  # noqa: E402
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.23", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.23"), VERSION
 
 fixtures_path = ROOT / "scripts" / "watcher" / "fixtures" / "delivery_failure_fixtures_0523.json"
 fixtures = json.loads(fixtures_path.read_text(encoding="utf-8-sig"))
@@ -49,4 +52,4 @@ assert "Version alignment 0.5.23" in guide
 assert "Diagnostic readonly batch 0.5.23" in guide
 assert "v0.5.23-diagnostic-readonly-batch" in guide
 
-print("OK delivery_failure_fixtures_0523 0.5.23")
+print("OK delivery_failure_fixtures_0523 " + VERSION)

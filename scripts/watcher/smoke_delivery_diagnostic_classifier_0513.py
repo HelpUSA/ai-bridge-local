@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -10,14 +10,19 @@ from delivery_diagnostic_classifier import (  # noqa: E402
     format_diagnostic,
 )
 
-VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-GUIDE = (ROOT / "docs" / "AI_BRIDGE_LOCAL_GUIDE.md").read_text(encoding="utf-8")
-DOC_0512 = (ROOT / "docs" / "DELIVERY_DIAGNOSTICS_0512.md").read_text(encoding="utf-8")
+VERSION = (ROOT / "VERSION").read_text(encoding="utf-8-sig").strip()
+GUIDE = (ROOT / "docs" / "AI_BRIDGE_LOCAL_GUIDE.md").read_text(encoding="utf-8-sig")
+DOC_0512 = (ROOT / "docs" / "DELIVERY_DIAGNOSTICS_0512.md").read_text(encoding="utf-8-sig")
+DOC_0513 = (ROOT / "docs" / "DELIVERY_DIAGNOSTICS_0513.md").read_text(encoding="utf-8-sig")
 
-assert VERSION == "0.5.13", VERSION
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
+assert version_tuple(VERSION) >= version_tuple("0.5.13"), VERSION
 assert "Version alignment 0.5.13" in GUIDE
 assert "Delivery diagnostic classifier 0.5.13" in GUIDE
 assert "v0.5.13-delivery-diagnostic-classifier" in GUIDE
+assert "Delivery diagnostic classifier 0.5.13" in DOC_0513
 
 required_codes = {
     "target_chat_not_registered",
@@ -55,4 +60,4 @@ for code in required_codes - {"delivery_not_acked", "unknown_delivery_failure"}:
     assert code in DOC_0512, code
 
 assert "nao executa entrega inter-chat" in DOC_0512
-print("OK delivery_diagnostic_classifier_0513 0.5.13")
+print("OK delivery_diagnostic_classifier_0513 " + VERSION)

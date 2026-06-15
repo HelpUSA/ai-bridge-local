@@ -1,10 +1,10 @@
-﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
+# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.13
+Versao atual: 0.5.14
 Branch principal: main
-Marco publicado mais recente: v0.5.13-delivery-diagnostic-classifier
-Commit de referencia: v0.5.13-delivery-diagnostic-classifier
+Marco publicado mais recente: v0.5.14-fix-version-smokes-no-bom
+Commit de referencia: v0.5.14-fix-version-smokes-no-bom
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -475,7 +475,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - [Watcher Notes](WATCHER_NOTES.md)
 
 ## Version alignment 0.5.12
-- Versao atual: 0.5.13
+- Versao atual: 0.5.14
 - Marco previsto: v0.5.12-delivery-diagnostics
 
 ## 66. Delivery diagnostics 0.5.12
@@ -483,10 +483,19 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.12 adiciona smoke readonly para garantir taxonomia de diagnostico de entrega.
 - DONE 0.5.12 preserva a regra de versionar toda evolucao relevante.
 ## Version alignment 0.5.13
-- Versao atual: 0.5.13
+- Versao atual: 0.5.14
 - Marco previsto: v0.5.13-delivery-diagnostic-classifier
 
 ## 67. Delivery diagnostic classifier 0.5.13
 - DONE 0.5.13 adiciona classificador readonly para falhas de entrega.
 - DONE 0.5.13 adiciona smoke estatico para codigos de diagnostico.
 - DONE 0.5.13 nao executa testes entre chats nem altera fluxo real de envio.
+## Version alignment 0.5.14
+- Versao atual: 0.5.14
+- Marco previsto: v0.5.14-fix-version-smokes-no-bom
+
+## 68. Fix version smokes and UTF-8 no BOM 0.5.14
+- DONE 0.5.14 grava VERSION sem BOM para evitar falhas como \ufeff0.5.13.
+- DONE 0.5.14 torna smokes 0.5.12 e 0.5.13 compativeis com versoes futuras.
+- DONE 0.5.14 reforca que scripts de release devem parar explicitamente quando validacoes falham.
+- DONE 0.5.14 nao executa testes entre chats.

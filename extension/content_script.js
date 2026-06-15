@@ -1,6 +1,6 @@
-// AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
+﻿// AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.10";
+  const VERSION = "0.5.11";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -119,7 +119,68 @@
     ].join(" ").toLowerCase();
   }
 
+
+  function isUnsafeSubmitCandidate(el) {
+    if (!el) return true;
+
+    const txt = (
+      (el.innerText || "") + " " +
+      (el.textContent || "") + " " +
+      (el.getAttribute("aria-label") || "") + " " +
+      (el.getAttribute("title") || "") + " " +
+      (el.getAttribute("data-testid") || "") + " " +
+      (el.getAttribute("class") || "")
+    ).toLowerCase();
+
+    if (/share|compartilhar|copy link|copiar link|cancel|cancelar|close|fechar|menu|more|mais/.test(txt)) {
+      return true;
+    }
+
+    const dialog = el.closest('[role="dialog"], dialog, [aria-modal="true"]');
+    if (dialog) return true;
+
+    return false;
+  }
+
+  function findBlockingModal() {
+    const nodes = Array.from(document.querySelectorAll('[role="dialog"], dialog, [aria-modal="true"]'));
+
+    return nodes.find((node) => {
+      if (!isVisible(node)) return false;
+
+      const txt = ((node.innerText || "") + " " + (node.textContent || "")).toLowerCase();
+      return /compartilhar|share|copiar link|copy link|link de chat/.test(txt);
+    }) || null;
+  }
+
+  function closeBlockingModalIfPresent() {
+    const modal = findBlockingModal();
+    if (!modal) return false;
+
+    console.warn("[Local v" + VERSION + "] Closing blocking modal before composer submit");
+
+    const cancelBtn = Array.from(modal.querySelectorAll('button, [role="button"]')).find((btn) => {
+      const txt = (
+        (btn.innerText || "") + " " +
+        (btn.getAttribute("aria-label") || "") + " " +
+        (btn.getAttribute("title") || "")
+      ).toLowerCase();
+
+      return /cancel|cancelar|close|fechar/.test(txt);
+    });
+
+    if (cancelBtn && isVisible(cancelBtn)) {
+      clickElement(cancelBtn);
+      return true;
+    }
+
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", code: "Escape", bubbles: true }));
+    document.dispatchEvent(new KeyboardEvent("keyup", { key: "Escape", code: "Escape", bubbles: true }));
+    return true;
+  }
+
   function scoreSendCandidate(el, composer) {
+    if (isUnsafeSubmitCandidate(el)) return -9999;
     if (!isVisible(el) || isDisabled(el)) return -999;
 
     const txt = candidateText(el);
@@ -166,6 +227,7 @@
     }
 
     const generic = Array.from(document.querySelectorAll('button, [role="button"], [aria-label], [title]'))
+      .filter(el => !isUnsafeSubmitCandidate(el))
       .map(el => ({ el, score: scoreSendCandidate(el, composer) }))
       .filter(x => x.score > 0)
       .sort((a, b) => b.score - a.score);
@@ -254,6 +316,7 @@
         return false;
       }
 
+      closeBlockingModalIfPresent();
       const composer = findComposer();
       if (!composer) {
         showNotice("Falha: composer nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o encontrado", "command_id=" + actionId, "error");
@@ -330,6 +393,7 @@
  }
 
       const trySubmit = () => {
+        closeBlockingModalIfPresent();
         const currentText = getComposerText(composer);
         const hasText = currentText.length > 0 || currentText.includes(text.slice(0, Math.min(20, text.length)));
         const btn = findSendButton(composer);
@@ -412,7 +476,7 @@
 
   function extractJsonStringField(raw, field) {
     try {
-      const re = new RegExp('"' + field + '"\\s*:\\s*"([^"\\r\\n]{0.5.10})"', "m");
+      const re = new RegExp('"' + field + '"\\s*:\\s*"([^"\\r\\n]{0,2000})"', "m");
       const m = String(raw || "").match(re);
       return m ? m[1] : "";
     } catch (e) {

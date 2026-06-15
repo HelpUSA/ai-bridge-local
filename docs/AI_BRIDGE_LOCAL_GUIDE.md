@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.10
+Versao atual: 0.5.11
 Branch principal: main
-Marco publicado mais recente: v0.5.10-final-result-failure-continues
-Commit de referencia: v0.5.10-final-result-failure-continues
+Marco publicado mais recente: v0.5.11-composer-submit-guard
+Commit de referencia: v0.5.11-composer-submit-guard
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -459,3 +459,10 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 ## 62. Single worker guard
 - DONE 0.5.8 adiciona PID lock para impedir multiplos brain_worker.py.
 - DONE 0.5.8 remove lock stale e permite somente um worker ativo.\n\n## Version alignment 0.5.9\n- Versao atual: 0.5.10\n- Marco publicado: v0.5.10-final-result-failure-continues\n\n\n## 63. Remove accepted running notice\n- DONE 0.5.9 remove o aviso accepted/running emitido pelo worker.\n- DONE 0.5.9 fluxo esperado: queued do gateway + AI_LOCAL_RUN final.\n\n\n## Version alignment 0.5.10\n- Versao atual: 0.5.10\n- Marco publicado: v0.5.10-final-result-failure-continues\n\n\n## 64. Final result failure continues\n- DONE 0.5.10 define chat_can_continue=1 tambem em falhas finais.\n- DONE 0.5.10 adiciona success=0/1 e usa next_action para orientar correcao ou continuidade.\n
+## Version alignment 0.5.11
+- Versao atual: 0.5.11
+- Marco publicado: v0.5.11-composer-submit-guard
+
+## 65. Composer submit guard
+- DONE 0.5.11 evita selecionar Share/Compartilhar como botao de envio.
+- DONE 0.5.11 fecha modal bloqueante antes de injetar ou enviar.

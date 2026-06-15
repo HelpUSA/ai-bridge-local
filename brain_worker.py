@@ -208,7 +208,7 @@ def format_accepted_message(action):
     cwd = payload.get("cwd", ".")
     return (
         "[AI_LOCAL]\n"
-        "comando em execucao silenciosa\n"
+        "worker_running_notice_disabled\n"
         f"id={command_id}\n"
         "status=running\n"
         "no_reply=1\n"

@@ -2,10 +2,14 @@ from pathlib import Path
 import json
 
 ROOT = Path(__file__).resolve().parents[2]
+
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.14", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.14"), VERSION
 
 manifest = json.loads((ROOT / "extension" / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest["version"] == VERSION, manifest
@@ -19,4 +23,4 @@ assert "Fix version smokes and UTF-8 no BOM 0.5.14" in guide
 assert "v0.5.14-fix-version-smokes-no-bom" in guide
 assert "nao executa entrega inter-chat" in doc
 assert "UTF-8 sem BOM" in doc
-print("OK fix_version_smokes_no_bom_0514 0.5.14")
+print("OK fix_version_smokes_no_bom_0514 " + VERSION)

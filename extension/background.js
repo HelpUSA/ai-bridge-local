@@ -218,56 +218,147 @@ async function injectText(tabId, action) {
     }
   });
 }
-async function pollMessages() {
-  for (const chatId of Object.keys(registry)) {
-    if (chatId === "unknown") continue;
+const POLL_INTERVAL_MS = 1000;
+const POLL_SOON_DEBOUNCE_MS = 150;
+const MAX_ACTIONS_PER_CHAT_CYCLE = 3;
+let pollInFlight = false;
+let pollSoonTimer = null;
+let pollRequestedAgain = false;
+const perChatInFlight = new Set();
 
-    const tabId = registry[chatId];
-    if (!tabId) continue;
+function pollMessagesSoon(reason = 'manual') {
+  if (pollSoonTimer) clearTimeout(pollSoonTimer);
+  pollSoonTimer = setTimeout(() => {
+    pollSoonTimer = null;
+    pollMessages(reason);
+  }, POLL_SOON_DEBOUNCE_MS);
+}
 
-    try {
-      const res = await fetch(GATEWAY + "/bridge/next-action?chat_id=" + encodeURIComponent(chatId));
+async function pollOneChat(chatId) {
+  if (chatId === 'unknown') return;
+  if (perChatInFlight.has(chatId)) return;
+
+  perChatInFlight.add(chatId);
+  try {
+    for (let actionIndex = 0; actionIndex < MAX_ACTIONS_PER_CHAT_CYCLE; actionIndex += 1) {
+      const tabId = registry[chatId];
+      if (!tabId) return;
+
+      const pollStartedAt = Date.now();
+      const res = await fetch(GATEWAY + '/bridge/next-action?chat_id=' + encodeURIComponent(chatId));
       const data = await res.json();
 
-      if (data.action && data.action.message) {
-        const action = data.action;
-        console.log("[bg] Injecting to:", chatId, action.command_id);
+      if (!(data.action && data.action.message)) return;
 
-        console.log("[bg] Inject start:", action.command_id, "tab", tabId);
-        const result = await withTimeout(
-          injectText(tabId, action),
-          20000,
-          {
-            ok: false,
-            reason: "inject_outer_timeout",
-            error: "injectText outer timeout"
-          }
-        );
-        console.log("[bg] Inject completed:", action.command_id, JSON.stringify(result));
+      const action = data.action;
+      postTelemetryEvent('action_received', {
+        command_id: action.command_id,
+        target_chat_id: chatId,
+        action: action.action,
+        action_index: actionIndex,
+        poll_latency_ms: Date.now() - pollStartedAt
+      });
 
-        if (result && result.ok) {
-          await postAck(action.command_id, "acked", {
-            stdout: JSON.stringify({
-              method: result.method || "unknown",
-              attempts: result.attempts ?? null,
-              text_length: result.text_length ?? null
-            })
-          });
-          console.log("[bg] ACKed:", action.command_id);
-          await postDeliveryStatus(action, "sent", "acked", result);
-        } else {
-          const reason = result?.reason || result?.error || "inject_failed";
-          await postAck(action.command_id, "failed", {
-            return_code: -1,
-            stderr: reason,
-            error: reason
-          });
-          console.log("[bg] FAILED:", action.command_id, reason);
-          await postDeliveryStatus(action, "error", reason, result || {});
+      console.log('[bg] Injecting to:', chatId, action.command_id);
+      console.log('[bg] Inject start:', action.command_id, 'tab', tabId);
+
+      const injectStartedAt = Date.now();
+      postTelemetryEvent('inject_started', {
+        command_id: action.command_id,
+        target_chat_id: chatId,
+        tab_id: tabId,
+        action_index: actionIndex
+      });
+
+      const result = await withTimeout(
+        injectText(tabId, action),
+        20000,
+        {
+          ok: false,
+          reason: 'inject_outer_timeout',
+          error: 'injectText outer timeout'
         }
+      );
+
+      const injectDurationMs = Date.now() - injectStartedAt;
+      postTelemetryEvent('inject_done', {
+        command_id: action.command_id,
+        target_chat_id: chatId,
+        ok: !!(result && result.ok),
+        duration_ms: injectDurationMs,
+        reason: result && (result.reason || result.error) ? (result.reason || result.error) : ''
+      });
+
+      console.log('[bg] Inject completed:', action.command_id, JSON.stringify(result));
+
+      if (result && result.ok) {
+        await postAck(action.command_id, 'acked', {
+          stdout: JSON.stringify({
+            method: result.method || 'unknown',
+            attempts: result.attempts ?? null,
+            text_length: result.text_length ?? null
+          })
+        });
+        postTelemetryEvent('ack_posted', {
+          command_id: action.command_id,
+          target_chat_id: chatId,
+          status: 'acked'
+        });
+        console.log('[bg] ACKed:', action.command_id);
+        await postDeliveryStatus(action, 'sent', 'acked', result);
+      } else {
+        const reason = result?.reason || result?.error || 'inject_failed';
+        await postAck(action.command_id, 'failed', {
+          return_code: -1,
+          stderr: reason,
+          error: reason
+        });
+        postTelemetryEvent('ack_posted', {
+          command_id: action.command_id,
+          target_chat_id: chatId,
+          status: 'failed',
+          reason: reason
+        });
+        console.log('[bg] FAILED:', action.command_id, reason);
+        await postDeliveryStatus(action, 'error', reason, result || {});
       }
-    } catch (e) {
-      console.log("[bg] Poll error:", chatId, e.message);
+    }
+  } catch (e) {
+    console.log('[bg] Poll error:', chatId, e.message);
+  } finally {
+    perChatInFlight.delete(chatId);
+  }
+}
+
+function pollMessages(reason = 'interval') {
+  if (pollInFlight) {
+    pollRequestedAgain = true;
+    return;
+  }
+
+  pollInFlight = true;
+  try {
+    const chatIds = Object.keys(registry).filter((chatId) => chatId !== 'unknown' && registry[chatId]);
+    postTelemetryEvent('poll_started', {
+      reason: reason,
+      chat_count: chatIds.length
+    });
+
+    void Promise.allSettled(chatIds.map((chatId) => pollOneChat(chatId))).then((results) => {
+      const rejected = results.filter((result) => result.status === 'rejected').length;
+      if (rejected > 0) {
+        postTelemetryEvent('poll_completed_with_rejections', {
+          reason: reason,
+          rejected: rejected,
+          chat_count: chatIds.length
+        });
+      }
+    });
+  } finally {
+    pollInFlight = false;
+    if (pollRequestedAgain) {
+      pollRequestedAgain = false;
+      pollMessagesSoon('queued_again');
     }
   }
 }
@@ -283,7 +374,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     console.log("[bg] Received:", cmd.command_id);
 
     postCommand(cmd)
-      .then(r => sendResponse({ ok: true, data: r }))
+      .then(r => {
+        pollMessagesSoon('postCommand');
+        sendResponse({ ok: true, data: r });
+      })
       .catch(e => {
         console.log("[bg] postCommand error:", e.message);
         sendResponse({ ok: false, error: e.message });
@@ -297,11 +391,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (cid && sender.tab) {
       registry[cid] = sender.tab.id;
       console.log("[bg] Registered:", cid, "tab:", sender.tab.id);
+      pollMessagesSoon('registerChat');
     }
     sendResponse({ ok: true });
     return true;
   }
 });
 
-setInterval(pollMessages, 5000);
+setInterval(() => pollMessages('interval'), POLL_INTERVAL_MS);
+pollMessagesSoon('startup');
 console.log("[AI Bridge Local] v" + VERSION);

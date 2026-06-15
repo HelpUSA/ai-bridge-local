@@ -49,8 +49,9 @@
     });
   }
 
+  const REGISTER_CHAT_INTERVAL_MS = 1500;
   registerChatWithBridge();
-  setInterval(registerChatWithBridge, 5000);
+  setInterval(registerChatWithBridge, REGISTER_CHAT_INTERVAL_MS);
 
   function findComposer() {
     const selectors = [

@@ -466,3 +466,10 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 ## 65. Composer submit guard
 - DONE 0.5.11 evita selecionar Share/Compartilhar como botao de envio.
 - DONE 0.5.11 fecha modal bloqueante antes de injetar ou enviar.
+
+## Documentacao operacional complementar
+
+- [Current Status](CURRENT_STATUS.md)
+- [Operations Runbook](OPERATIONS_RUNBOOK.md)
+- [Releases](RELEASES.md)
+- [Watcher Notes](WATCHER_NOTES.md)

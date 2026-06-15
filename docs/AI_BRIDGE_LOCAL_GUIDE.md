@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.2
+Versao atual: 0.5.3
 Branch principal: main
-Marco publicado mais recente: v0.5.2-immediate-gateway-feedback
-Commit de referencia: v0.5.2-immediate-gateway-feedback
+Marco publicado mais recente: v0.5.3-gateway-feedback-dedup
+Commit de referencia: v0.5.3-gateway-feedback-dedup
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -401,20 +401,29 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 
 ## Version alignment 0.5.0
 - Atualizado topo do guia para 0.5.0.
-- Marco publicado: v0.5.2-immediate-gateway-feedback.
+- Marco publicado: v0.5.3-gateway-feedback-dedup.
 
 ## 55. Queue reports cleanup
 - DONE 0.5.1 queue_status_report.py
 - DONE 0.5.1 dead_letters_cleanup_plan.py dry-run
 
 ## Version alignment 0.5.1
-- Versao atual: 0.5.2
-- Marco publicado: v0.5.2-immediate-gateway-feedback
+- Versao atual: 0.5.3
+- Marco publicado: v0.5.3-gateway-feedback-dedup
 
 ## Version alignment 0.5.2
-- Versao atual: 0.5.2
-- Marco publicado: v0.5.2-immediate-gateway-feedback
+- Versao atual: 0.5.3
+- Marco publicado: v0.5.3-gateway-feedback-dedup
 
 ## 56. Immediate gateway feedback
 - DONE 0.5.2 feedback imediato para run-command aceito.
 - DONE 0.5.2 feedback imediato para invalid_envelope parseavel.
+
+## Version alignment 0.5.3
+- Versao atual: 0.5.3
+- Marco publicado: v0.5.3-gateway-feedback-dedup
+
+## 57. Gateway feedback dedup
+- DONE 0.5.3 feedback inicial idempotente por command_id e source_chat_id.
+- DONE 0.5.3 reducao de avisos duplicados de progresso.
+- DONE 0.5.3 smoke_gateway_feedback_dedup.py.

@@ -10,7 +10,7 @@ from urllib.parse import parse_qs, urlparse
 HOST = "127.0.0.1"
 PORT = 8766
 DB_PATH = "queue_local.db"
-VERSION = "0.2.5"
+VERSION = "0.2.6"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -132,7 +132,8 @@ def enqueue_source_feedback(body, feedback_type, detail):
     if feedback_type == 'accepted' and body.get('action') != 'run-command':
         return
     safe_id = ''.join(ch if ch.isalnum() or ch in '-_' else '_' for ch in original_id)[:80]
-    local_id = 'local_status_' + feedback_type + '_' + safe_id + '_' + uuid.uuid4().hex[:12]
+    source_key = ''.join(ch if ch.isalnum() or ch in '-_' else '_' for ch in source_chat_id)[:24]
+    local_id = 'local_status_' + feedback_type + '_' + safe_id + '_to_' + source_key
     if feedback_type == 'accepted':
         lines = [
             '[AI_LOCAL]',

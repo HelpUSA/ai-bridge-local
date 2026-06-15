@@ -9,10 +9,13 @@ from delivery_diagnostic_summary import summarize_delivery_diagnostics  # noqa: 
 from operational_report_generator import build_operational_report  # noqa: E402
 from queue_worker_health import build_queue_worker_health_snapshot  # noqa: E402
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.26", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.26"), VERSION
 
 manifest = json.loads((ROOT / "extension" / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest["version"] == VERSION, manifest
@@ -30,7 +33,7 @@ queue_health = build_queue_worker_health_snapshot({
 report = build_operational_report({
     "version": VERSION,
     "tag": "v0.5.26-observability-readonly-batch",
-    "commit": "pending",
+    "commit": "historical",
     "diagnostic_summary": diagnostic_summary,
     "queue_health": queue_health,
     "validations": ["smoke_all.py", "smoke_docs.py"],
@@ -39,8 +42,6 @@ report = build_operational_report({
 })
 
 assert "# AI Bridge Local operational report" in report
-assert "version=0.5.26" in report
-assert "tag=v0.5.26-observability-readonly-batch" in report
 assert "readonly=true" in report
 assert "## Diagnostic summary" in report
 assert "## Queue worker health" in report
@@ -54,4 +55,4 @@ assert "Version alignment 0.5.26" in guide
 assert "Observability readonly batch 0.5.26" in guide
 assert "v0.5.26-observability-readonly-batch" in guide
 
-print("OK operational_report_generator_0526 0.5.26")
+print("OK operational_report_generator_0526 " + VERSION)

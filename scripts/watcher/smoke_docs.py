@@ -315,3 +315,10 @@ latency_parallel_polling_docs_doc_count = guide.count('docs/LATENCY_PARALLEL_POL
 assert latency_parallel_polling_docs_alignment_count == 1, 'latency_parallel_polling_docs alignment count: ' + str(latency_parallel_polling_docs_alignment_count)
 assert latency_parallel_polling_docs_section_count == 1, 'latency_parallel_polling_docs section count: ' + str(latency_parallel_polling_docs_section_count)
 assert latency_parallel_polling_docs_doc_count >= 1, 'latency_parallel_polling_docs doc reference missing'
+
+worker_queue_parallelism_alignment_count = guide.count('## Version alignment 0.5.0')
+worker_queue_parallelism_section_count = guide.count('## 53. Worker queue parallelism')
+worker_queue_parallelism_doc_count = guide.count('docs/WORKER_QUEUE_PARALLELISM.md')
+assert worker_queue_parallelism_alignment_count == 1, 'worker_queue_parallelism alignment count: ' + str(worker_queue_parallelism_alignment_count)
+assert worker_queue_parallelism_section_count == 1, 'worker_queue_parallelism section count: ' + str(worker_queue_parallelism_section_count)
+assert worker_queue_parallelism_doc_count >= 1, 'worker_queue_parallelism doc reference missing'

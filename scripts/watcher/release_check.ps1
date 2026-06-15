@@ -137,3 +137,6 @@ if($LASTEXITCODE -ne 0){throw 'smoke_latency_parallel_polling_docs_failed'}
 
 python scripts/watcher/smoke_command_accepted_progress_notice.py
 if($LASTEXITCODE -ne 0){throw 'smoke_command_accepted_progress_notice_failed'}
+
+python scripts/watcher/smoke_worker_queue_parallelism.py
+if($LASTEXITCODE -ne 0){throw 'smoke_worker_queue_parallelism_failed'}

@@ -6,9 +6,58 @@ import subprocess
 from pathlib import Path
 import time
 import urllib.request
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.1.4"
+VERSION = "0.1.5"
+
+MAX_PARALLEL_RUN_COMMANDS = int(os.environ.get("AI_BRIDGE_MAX_PARALLEL_RUN_COMMANDS", "3"))
+RUN_EXECUTOR = ThreadPoolExecutor(max_workers=MAX_PARALLEL_RUN_COMMANDS)
+RUN_FUTURES = {}
+RUN_FUTURES_LOCK = threading.Lock()
+CWD_LOCKS = {}
+CWD_LOCKS_LOCK = threading.Lock()
+
+
+def normalize_cwd_for_lock(payload):
+    if not isinstance(payload, dict):
+        return "."
+    cwd = str(payload.get("cwd") or ".").replace("\\", "/").rstrip("/")
+    return cwd or "."
+
+
+def get_cwd_lock(cwd):
+    with CWD_LOCKS_LOCK:
+        lock = CWD_LOCKS.get(cwd)
+        if lock is None:
+            lock = threading.Lock()
+            CWD_LOCKS[cwd] = lock
+        return lock
+
+
+def reap_run_futures():
+    done = []
+    with RUN_FUTURES_LOCK:
+        for future, command_id in list(RUN_FUTURES.items()):
+            if future.done():
+                done.append((future, command_id))
+                RUN_FUTURES.pop(future, None)
+    for future, command_id in done:
+        try:
+            future.result()
+        except Exception as exc:
+            print(f"[worker] Future error for {command_id}: {exc}")
+
+
+def submit_run_action(action):
+    command_id = action.get("command_id", "unknown")
+    future = RUN_EXECUTOR.submit(run_action, action)
+    with RUN_FUTURES_LOCK:
+        RUN_FUTURES[future] = command_id
+    print(f"[worker] Submitted parallel run: {command_id}")
+    return True
+
 
 def now_iso():
     from datetime import datetime, timezone
@@ -194,6 +243,46 @@ def enqueue_accepted_message(action):
         print(f"[worker] Accepted notice skipped/error: {e}")
 
 
+
+def run_action(action):
+    command_id = action.get("command_id", "unknown")
+    action_type = action.get("action", "")
+    payload = action.get("payload", {})
+    status = "acked"
+    result = {"return_code": 0, "stdout": f"OK {action_type}", "stderr": ""}
+
+    try:
+        if action_type == "run-command":
+            enqueue_accepted_message(action)
+            cwd_key = normalize_cwd_for_lock(payload)
+            cwd_lock = get_cwd_lock(cwd_key)
+            print(f"[worker] Waiting cwd lock: {command_id} cwd={cwd_key}")
+            with cwd_lock:
+                print(f"[worker] Running with cwd lock: {command_id} cwd={cwd_key}")
+                result = execute_command(payload, command_id)
+            status = "acked" if result["return_code"] == 0 else "failed"
+            enqueue_result_message(action, result, status)
+        else:
+            result = {"return_code": 0, "stdout": f"OK {action_type}", "stderr": ""}
+            status = "acked"
+
+        ack = {
+            "command_id": command_id,
+            "status": status,
+            "return_code": result["return_code"],
+            "stdout": result.get("stdout", ""),
+            "stderr": result.get("stderr", ""),
+            "error": result.get("stderr", "") if status == "failed" else "",
+        }
+
+        try:
+            post_json(f"{GATEWAY}/bridge/acks", ack)
+            print(f"[worker] {command_id}: {status}")
+        except Exception as e:
+            print(f"[worker] ACK error: {e}")
+    except Exception as exc:
+        print(f"[worker] run_action error for {command_id}: {exc}")
+
 def poll_source(source_chat_id):
     try:
         data = get_json(f"{GATEWAY}/bridge/next-action?chat_id=gateway-brain-supervisor&source_chat_id={source_chat_id}")
@@ -241,6 +330,7 @@ def poll_source(source_chat_id):
 
 
 def poll_once():
+    reap_run_futures()
     try:
         data = get_json(f"{GATEWAY}/bridge/pending-sources?target_chat_id=gateway-brain-supervisor")
     except Exception as e:

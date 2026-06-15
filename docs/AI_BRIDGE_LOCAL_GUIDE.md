@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.4.99
+Versao atual: 0.5.0
 Branch principal: main
-Marco publicado mais recente: v0.4.99-command-accepted-progress-notice
-Commit de referencia: v0.4.99-command-accepted-progress-notice
+Marco publicado mais recente: v0.5.0-worker-queue-parallelism
+Commit de referencia: v0.5.0-worker-queue-parallelism
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -390,3 +390,15 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 ## Version alignment 0.4.99
 - Atualizado topo do guia para 0.4.99.
 - Marco publicado: v0.4.99-command-accepted-progress-notice.
+
+## 53. Worker queue parallelism
+- [DONE 0.5.0] Worker passa a submeter run-command em ThreadPoolExecutor.
+- [DONE 0.5.0] Limite padrao de paralelismo: AI_BRIDGE_MAX_PARALLEL_RUN_COMMANDS=3.
+- [DONE 0.5.0] Lock por cwd serializa comandos no mesmo repositorio.
+- [DONE 0.5.0] Gateway continua sendo fila local em queue_local.db.
+- [DONE 0.5.0] Criado docs/WORKER_QUEUE_PARALLELISM.md.
+- [DONE 0.5.0] Criado scripts/watcher/smoke_worker_queue_parallelism.py.
+
+## Version alignment 0.5.0
+- Atualizado topo do guia para 0.5.0.
+- Marco publicado: v0.5.0-worker-queue-parallelism.

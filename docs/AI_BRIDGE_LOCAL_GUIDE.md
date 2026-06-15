@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.15
+Versao atual: 0.5.16
 Branch principal: main
-Marco publicado mais recente: v0.5.15-safe-release-runner
-Commit de referencia: v0.5.15-safe-release-runner
+Marco publicado mais recente: v0.5.16-no-shell-close-audit
+Commit de referencia: v0.5.16-no-shell-close-audit
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -475,7 +475,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - [Watcher Notes](WATCHER_NOTES.md)
 
 ## Version alignment 0.5.12
-- Versao atual: 0.5.15
+- Versao atual: 0.5.16
 - Marco previsto: v0.5.12-delivery-diagnostics
 
 ## 66. Delivery diagnostics 0.5.12
@@ -483,7 +483,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.12 adiciona smoke readonly para garantir taxonomia de diagnostico de entrega.
 - DONE 0.5.12 preserva a regra de versionar toda evolucao relevante.
 ## Version alignment 0.5.13
-- Versao atual: 0.5.15
+- Versao atual: 0.5.16
 - Marco previsto: v0.5.13-delivery-diagnostic-classifier
 
 ## 67. Delivery diagnostic classifier 0.5.13
@@ -491,7 +491,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.13 adiciona smoke estatico para codigos de diagnostico.
 - DONE 0.5.13 nao executa testes entre chats nem altera fluxo real de envio.
 ## Version alignment 0.5.14
-- Versao atual: 0.5.15
+- Versao atual: 0.5.16
 - Marco previsto: v0.5.14-fix-version-smokes-no-bom
 
 ## 68. Fix version smokes and UTF-8 no BOM 0.5.14
@@ -500,7 +500,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.14 reforca que scripts de release devem parar explicitamente quando validacoes falham.
 - DONE 0.5.14 nao executa testes entre chats.
 ## Version alignment 0.5.15
-- Versao atual: 0.5.15
+- Versao atual: 0.5.16
 - Marco previsto: v0.5.15-safe-release-runner
 
 ## 69. Safe release runner 0.5.15
@@ -509,3 +509,12 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.15 impede VERSION com UTF-8 BOM.
 - DONE 0.5.15 usa AddPaths explicitos para evitar commit amplo acidental.
 - DONE 0.5.15 nao executa testes entre chats.
+## Version alignment 0.5.16
+- Versao atual: 0.5.16
+- Marco previsto: v0.5.16-no-shell-close-audit
+
+## 70. No shell close audit 0.5.16
+- DONE 0.5.16 adiciona auditoria para scripts PowerShell versionados nao encerrarem o shell interativo.
+- DONE 0.5.16 exige throw ou funcao de checagem para falhas.
+- DONE 0.5.16 preserva regra de UTF-8 sem BOM para VERSION.
+- DONE 0.5.16 nao executa testes entre chats.

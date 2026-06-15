@@ -2,10 +2,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.15", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.15"), VERSION
 
 runner = (ROOT / "scripts" / "release" / "run_safe_release.ps1").read_text(encoding="utf-8-sig")
 doc = (ROOT / "docs" / "SAFE_RELEASE_RUNNER_0515.md").read_text(encoding="utf-8-sig")
@@ -31,4 +34,4 @@ assert "Version alignment 0.5.15" in guide
 assert "Safe release runner 0.5.15" in guide
 assert "v0.5.15-safe-release-runner" in guide
 
-print("OK safe_release_runner_0515 0.5.15")
+print("OK safe_release_runner_0515 " + VERSION)

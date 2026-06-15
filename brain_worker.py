@@ -208,7 +208,7 @@ def format_accepted_message(action):
     cwd = payload.get("cwd", ".")
     return (
         "[AI_LOCAL]\n"
-        "worker_running_notice_disabled\n"
+# running notice removed in 0.5.6:         "worker_running_notice_disabled\n"
         f"id={command_id}\n"
         "status=running\n"
         "no_reply=1\n"

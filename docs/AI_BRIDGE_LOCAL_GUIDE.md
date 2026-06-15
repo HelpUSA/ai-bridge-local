@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.5
+Versao atual: 0.5.6
 Branch principal: main
-Marco publicado mais recente: v0.5.5-disable-worker-running-notice
-Commit de referencia: v0.5.5-disable-worker-running-notice
+Marco publicado mais recente: v0.5.6-remove-worker-running-notice
+Commit de referencia: v0.5.6-remove-worker-running-notice
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -401,27 +401,27 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 
 ## Version alignment 0.5.0
 - Atualizado topo do guia para 0.5.0.
-- Marco publicado: v0.5.5-disable-worker-running-notice.
+- Marco publicado: v0.5.6-remove-worker-running-notice.
 
 ## 55. Queue reports cleanup
 - DONE 0.5.1 queue_status_report.py
 - DONE 0.5.1 dead_letters_cleanup_plan.py dry-run
 
 ## Version alignment 0.5.1
-- Versao atual: 0.5.5
-- Marco publicado: v0.5.5-disable-worker-running-notice
+- Versao atual: 0.5.6
+- Marco publicado: v0.5.6-remove-worker-running-notice
 
 ## Version alignment 0.5.2
-- Versao atual: 0.5.5
-- Marco publicado: v0.5.5-disable-worker-running-notice
+- Versao atual: 0.5.6
+- Marco publicado: v0.5.6-remove-worker-running-notice
 
 ## 56. Immediate gateway feedback
 - DONE 0.5.2 feedback imediato para run-command aceito.
 - DONE 0.5.2 feedback imediato para invalid_envelope parseavel.
 
 ## Version alignment 0.5.3
-- Versao atual: 0.5.5
-- Marco publicado: v0.5.5-disable-worker-running-notice
+- Versao atual: 0.5.6
+- Marco publicado: v0.5.6-remove-worker-running-notice
 
 ## 57. Gateway feedback dedup
 - DONE 0.5.3 feedback inicial idempotente por command_id e source_chat_id.
@@ -429,9 +429,17 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.3 smoke_gateway_feedback_dedup.py.
 
 ## Version alignment 0.5.5
-- Versao atual: 0.5.5
-- Marco publicado: v0.5.5-disable-worker-running-notice
+- Versao atual: 0.5.6
+- Marco publicado: v0.5.6-remove-worker-running-notice
 
 ## 59. Disable worker running notice
 - DONE 0.5.5 remove aviso intermediario do worker.
 - DONE 0.5.5 fluxo esperado: queued inicial + AI_LOCAL_RUN final.
+
+## Version alignment 0.5.6
+- Versao atual: 0.5.6
+- Marco publicado: v0.5.6-remove-worker-running-notice
+
+## 60. Remove worker running notice
+- DONE 0.5.6 remove de verdade o aviso intermediario running do worker.
+- DONE 0.5.6 fluxo esperado: queued inicial + AI_LOCAL_RUN final.

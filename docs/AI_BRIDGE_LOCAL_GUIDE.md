@@ -1,10 +1,10 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-14
-Versao atual: 0.5.17
+Versao atual: 0.5.20
 Branch principal: main
-Marco publicado mais recente: v0.5.17-forward-compatible-smoke-policy
-Commit de referencia: v0.5.17-forward-compatible-smoke-policy
+Marco publicado mais recente: v0.5.20-release-process-batch
+Commit de referencia: v0.5.20-release-process-batch
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este arquivo e o documento operacional ativo e consolidado do AI Bridge Local.
@@ -475,7 +475,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - [Watcher Notes](WATCHER_NOTES.md)
 
 ## Version alignment 0.5.12
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.12-delivery-diagnostics
 
 ## 66. Delivery diagnostics 0.5.12
@@ -483,7 +483,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.12 adiciona smoke readonly para garantir taxonomia de diagnostico de entrega.
 - DONE 0.5.12 preserva a regra de versionar toda evolucao relevante.
 ## Version alignment 0.5.13
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.13-delivery-diagnostic-classifier
 
 ## 67. Delivery diagnostic classifier 0.5.13
@@ -491,7 +491,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.13 adiciona smoke estatico para codigos de diagnostico.
 - DONE 0.5.13 nao executa testes entre chats nem altera fluxo real de envio.
 ## Version alignment 0.5.14
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.14-fix-version-smokes-no-bom
 
 ## 68. Fix version smokes and UTF-8 no BOM 0.5.14
@@ -500,7 +500,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.14 reforca que scripts de release devem parar explicitamente quando validacoes falham.
 - DONE 0.5.14 nao executa testes entre chats.
 ## Version alignment 0.5.15
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.15-safe-release-runner
 
 ## 69. Safe release runner 0.5.15
@@ -510,7 +510,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.15 usa AddPaths explicitos para evitar commit amplo acidental.
 - DONE 0.5.15 nao executa testes entre chats.
 ## Version alignment 0.5.16
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.16-no-shell-close-audit
 
 ## 70. No shell close audit 0.5.16
@@ -519,7 +519,7 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.16 preserva regra de UTF-8 sem BOM para VERSION.
 - DONE 0.5.16 nao executa testes entre chats.
 ## Version alignment 0.5.17
-- Versao atual: 0.5.17
+- Versao atual: 0.5.20
 - Marco previsto: v0.5.17-forward-compatible-smoke-policy
 
 ## 71. Forward-compatible smoke policy 0.5.17
@@ -527,3 +527,21 @@ Esta secao preserva textos requeridos por scripts/watcher/smoke_docs.py sem mant
 - DONE 0.5.17 atualiza smoke 0.5.16 para comparacao minima.
 - DONE 0.5.17 adiciona auditoria estatica contra smokes historicos travados em VERSION exata.
 - DONE 0.5.17 nao executa testes entre chats.
+## Version alignment 0.5.20
+- Versao atual: 0.5.20
+- Marco previsto: v0.5.20-release-process-batch
+
+## 72. Release runner self-smoke 0.5.18
+- DONE 0.5.18 adiciona validacao estatica do runner de release.
+- DONE 0.5.18 confirma protecoes essenciais do runner sem executar entrega inter-chat.
+
+## 73. Release checklist 0.5.19
+- DONE 0.5.19 consolida checklist operacional de release seguro.
+- DONE 0.5.19 documenta ordem obrigatoria de validacao, commit, tag e push.
+
+## 74. Smoke all 0.5.20
+- DONE 0.5.20 adiciona agregador scripts/watcher/smoke_all.py.
+- DONE 0.5.20 pula smokes legados incompativeis com agregacao geral.
+- DONE 0.5.20 reduz risco de esquecer smoke historico.
+- DONE 0.5.20 fecha batch de processo de release 0.5.18 a 0.5.20.
+- DONE 0.5.20 nao executa testes entre chats.

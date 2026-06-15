@@ -5,10 +5,13 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 
+def version_tuple(value):
+    return tuple(int(part) for part in value.split("."))
+
 version_bytes = (ROOT / "VERSION").read_bytes()
 assert not version_bytes.startswith(b"\xef\xbb\xbf"), version_bytes
 VERSION = version_bytes.decode("utf-8").strip()
-assert VERSION == "0.5.17", VERSION
+assert version_tuple(VERSION) >= version_tuple("0.5.17"), VERSION
 
 manifest = json.loads((ROOT / "extension" / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest["version"] == VERSION, manifest
@@ -49,4 +52,4 @@ for path in smoke_files:
 
 assert not locked, locked
 
-print("OK forward_compatible_smoke_policy_0517 0.5.17")
+print("OK forward_compatible_smoke_policy_0517 " + VERSION)

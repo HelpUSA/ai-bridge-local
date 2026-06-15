@@ -128,9 +128,12 @@ def enqueue_source_feedback(body, feedback_type, detail):
     if not source_chat_id:
         return
     original_id = str(body.get('command_id', 'unknown'))
-    target_chat_id = body.get('target_chat_id', '')
-    if feedback_type == 'accepted' and body.get('action') != 'run-command':
+    if original_id.startswith('local_status_'):
         return
+    target_chat_id = body.get('target_chat_id', '')
+    # Emit accepted/queued feedback for both run-command and send-chat-message.
+    # Inter-chat messages need this too, otherwise capture/enqueue can appear silent
+    # until the destination tab eventually polls and emits a delivery status.
     safe_id = ''.join(ch if ch.isalnum() or ch in '-_' else '_' for ch in original_id)[:80]
     source_key = ''.join(ch if ch.isalnum() or ch in '-_' else '_' for ch in source_chat_id)[:24]
     local_id = 'local_status_' + feedback_type + '_' + safe_id + '_to_' + source_key

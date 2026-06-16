@@ -1,4 +1,4 @@
-﻿import ast
+import ast
 import shutil
 import sqlite3
 import subprocess
@@ -21,19 +21,11 @@ with tempfile.TemporaryDirectory(prefix='ai_bridge_cleanup_smoke_') as tmp:
 
  db = tmp_root / 'queue_local.db'
  con = sqlite3.connect(db)
- con.execute(
- 'create table commands (id integer primary key, command_id text, target_chat_id text, status text, created_at text)'
- )
+ con.execute('create table commands (id integer primary key, command_id text, target_chat_id text, status text, created_at text)')
  old = (datetime.now(timezone.utc) - timedelta(minutes=90)).isoformat()
  recent = datetime.now(timezone.utc).isoformat()
- con.execute(
- 'insert into commands (command_id,target_chat_id,status,created_at) values (?,?,?,?)',
- ('smoke-old-delivering', 'gateway-brain-supervisor', 'delivering', old),
- )
- con.execute(
- 'insert into commands (command_id,target_chat_id,status,created_at) values (?,?,?,?)',
- ('smoke-recent-failed', 'gateway-brain-supervisor', 'failed', recent),
- )
+ con.execute('insert into commands (command_id,target_chat_id,status,created_at) values (?,?,?,?)', ('smoke-old-delivering', 'gateway-brain-supervisor', 'delivering', old))
+ con.execute('insert into commands (command_id,target_chat_id,status,created_at) values (?,?,?,?)', ('smoke-recent-failed', 'gateway-brain-supervisor', 'failed', recent))
  con.commit()
  con.close()
 

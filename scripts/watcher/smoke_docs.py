@@ -1,324 +1,63 @@
-from pathlib import Path
+﻿from pathlib import Path
+
 ROOT = Path.cwd()
-guide_path = ROOT / 'docs' / 'AI_BRIDGE_LOCAL_GUIDE.md'
-version_path = ROOT / 'VERSION'
-guide = guide_path.read_text(encoding='utf-8')
-version = version_path.read_text(encoding='utf-8').strip()
-required_text = ['# AI Bridge Local - Guia Unificado Operacional e Roadmap', 'Marco publicado mais recente:', 'Commit de referencia:', 'Diagnostics report', 'Safe validation wrapper', 'Command builder smoke', 'Diagnostics filters', 'Diagnostics viewer', 'gateway-brain-supervisor', 'script_text/script_ext', 'Dead letters grouped report', 'rollback_helper.py', 'patch_runner.py', 'supervision_protocol.py', 'handoff_template.py', 'responsibility_matrix.py', 'teach_envelopes.py', 'planner_mode.py', 'executor_gates.py', 'auditor_mode.py', 'release_manager_mode.py', 'post_release_audit.py', 'tag_divergence_report.py', 'dead_letters_review.py', 'local_api_readonly.py', 'local_api_dry_run.py', 'chat_bridge_plan.py', 'local_bridge_store.py', 'local_bridge_reconcile.py', 'local_bridge_envelope.py', 'local_bridge_replay_dry_run.py', 'local_bridge_writer.py', 'local_bridge_ack_writer.py', 'local_bridge_dashboard.py', 'local_bridge_dashboard_summary.py', 'local_bridge_replay_apply.py', 'local_bridge_worker_dry_run.py', 'governance_risk_classifier.py', 'governance_preflight.py', 'smoke_command_builder_governance.py', 'teach_envelopes.py', 'planner_mode.py', 'executor_gates.py', 'auditor_mode.py', 'release_manager_mode.py', 'post_release_audit.py', 'tag_divergence_report.py', 'dead_letters_review.py', 'local_api_readonly.py', 'local_api_dry_run.py', 'chat_bridge_plan.py', 'local_bridge_store.py', 'local_bridge_reconcile.py', 'local_bridge_envelope.py', 'local_bridge_replay_dry_run.py', 'local_bridge_writer.py', 'local_bridge_ack_writer.py', 'local_bridge_dashboard.py', 'local_bridge_dashboard_summary.py', 'local_bridge_replay_apply.py', 'local_bridge_worker_dry_run.py', 'governance_risk_classifier.py', 'governance_preflight.py', 'smoke_command_builder_governance.py', '## 14. Proximas atividades recomendadas em ordem', '## Version alignment ' + version]
-missing = [needle for needle in required_text if needle not in guide]
-assert not missing, 'missing required guide text: ' + repr(missing)
-required_headings = ['## 1. Objetivo do projeto', '## 2. Estado atual validado', '## 4. Protocolo de envelopes', '## 9. Roadmap detalhado de atividades pendentes', '### 9.7 Longo prazo - orquestracao entre chats', '## 14. Proximas atividades recomendadas em ordem']
-missing_headings = [heading for heading in required_headings if heading not in guide]
-assert not missing_headings, 'missing required headings: ' + repr(missing_headings)
-guide_lines = guide.splitlines()
-latest_lines = [line for line in guide_lines if line.startswith('Marco publicado mais recente:')]
-assert latest_lines, 'missing latest release marker'
-latest_marker = latest_lines[0].split(':', 1)[1].strip().split()[0]
-assert latest_marker.startswith('v' + version + '-'), (version, latest_marker)
-commit_lines = [line for line in guide_lines if line.startswith('Commit de referencia:')]
-assert commit_lines, 'missing reference commit line'
-commit_ref = commit_lines[0].split(':', 1)[1].strip()
-assert not commit_ref.lower().startswith('pendente'), commit_ref
-first_token = commit_ref.split()[0] if commit_ref.split() else ''
-assert len(first_token) >= 7, commit_ref
-versions = ['0.4.45', '0.4.46', '0.4.47', '0.4.48', '0.4.49', '0.4.50', '0.4.51', '0.4.52', '0.4.53', '0.4.54', '0.4.55', '0.4.56', '0.4.57', '0.4.58', '0.4.59', '0.4.60', '0.4.61', '0.4.62', '0.4.63', '0.4.64', '0.4.65', '0.4.66', '0.4.67', '0.4.68', '0.4.69', '0.4.70', '0.4.72', '0.4.73', '0.4.74', '0.4.75', '0.4.76', '0.4.77', '0.4.78', '0.4.79', '0.4.80', '0.4.81', '0.4.82', '0.4.83', '0.4.84', '0.4.85', '0.4.86', '0.4.87', '0.4.88', '0.4.89', '0.4.90', '0.4.91', '0.4.92', '0.4.93', '0.4.94', '0.4.95', '0.4.96', '0.4.97', '0.4.98', version]
-dupes = [v for v in versions if ('[DONE ' + v + '] [DONE ' + v + ']') in guide]
-assert not dupes, 'duplicate DONE markers found: ' + repr(dupes)
-items = ['1. Criar smoke para send-chat-message. [DONE 0.4.45]', '2. Criar intent inspect_delivery_failure. [DONE 0.4.46]', '3. Melhorar diagnostico de submit_button_not_found_or_disabled. [DONE 0.4.47]', '4. Criar intent validate_release. [DONE 0.4.48]', '5. Criar patch runner com dry-run. [DONE 0.4.49]', '6. Criar rollback helper. [DONE 0.4.50]', '7. Consolidar relatorio de dead letters por tipo. [DONE 0.4.51]', '8. Criar protocolo formal de fiscalizacao entre chats. [DONE 0.4.52]', '9. Melhorar docs smoke para garantir que este guia continue completo. [DONE 0.4.53]', '10. Remover referencias obsoletas de release antiga e compatibilidade do docs smoke. [DONE 0.4.54]', '11. Criar padrao de handoff entre chats. [DONE 0.4.56]', '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]', '13. Criar envelopes de ensino. [DONE 0.4.58]', '14. Criar modo planejador. [DONE 0.4.59]', '15. Criar modo executor com gates. [DONE 0.4.60]', '16. Criar modo auditor. [DONE 0.4.61]', '17. Criar modo release manager. [DONE 0.4.62]']
-missing_items = [item for item in items if item not in guide]
-assert not missing_items, 'missing roadmap done markers: ' + repr(missing_items)
-stale_text = ['Criar release 0.4.45 somente depois de smokes e release_check OK.', 'compatibilidade com smoke_docs.py ate que']
-stale_found = [stale for stale in stale_text if stale in guide]
-assert not stale_found, 'stale guide text found: ' + repr(stale_found)
-
-assert guide.count('2. Criar padrao de handoff. [DONE 0.4.56 - template cli json markdown]') == 1, 'duplicate handoff 9.7 marker'
-assert guide.count('11. Criar padrao de handoff entre chats. [DONE 0.4.56]') == 1, 'duplicate handoff section 14 marker'
-print('OK docs_smoke', version, latest_marker)
-
-version_alignment_heading_count = guide.count('## Version alignment ' + version)
-assert version_alignment_heading_count == 1, 'version alignment heading count: ' + str(version_alignment_heading_count)
-responsibility_item_9_7 = '3. Criar matriz de responsabilidade. [DONE 0.4.57 - supervisor executor fiscal documentador]'
-responsibility_item_14 = '12. Criar matriz de responsabilidade entre chats. [DONE 0.4.57]'
-responsibility_item_9_7_count = guide.count(responsibility_item_9_7)
-responsibility_item_14_count = guide.count(responsibility_item_14)
-assert responsibility_item_9_7_count == 1, 'responsibility 9.7 marker count: ' + str(responsibility_item_9_7_count)
-assert responsibility_item_14_count == 1, 'responsibility section 14 marker count: ' + str(responsibility_item_14_count)
-teach_item_9_7 = '4. Criar envelopes de ensino. [DONE 0.4.58 - watcher safety release recovery lessons]'
-teach_item_14 = '13. Criar envelopes de ensino. [DONE 0.4.58]'
-teach_item_9_7_count = guide.count(teach_item_9_7)
-teach_item_14_count = guide.count(teach_item_14)
-assert teach_item_9_7_count == 1, 'teach 9.7 marker count: ' + str(teach_item_9_7_count)
-assert teach_item_14_count == 1, 'teach section 14 marker count: ' + str(teach_item_14_count)
-teach_item_9_7 = '4. Criar envelopes de ensino. [DONE 0.4.58 - watcher safety release recovery lessons]'
-teach_item_14 = '13. Criar envelopes de ensino. [DONE 0.4.58]'
-teach_item_9_7_count = guide.count(teach_item_9_7)
-teach_item_14_count = guide.count(teach_item_14)
-assert teach_item_9_7_count == 1, 'teach 9.7 marker count: ' + str(teach_item_9_7_count)
-assert teach_item_14_count == 1, 'teach section 14 marker count: ' + str(teach_item_14_count)
-teach_alignment_count = guide.count('## Version alignment 0.4.58')
-assert teach_alignment_count == 1, 'teach version alignment count: ' + str(teach_alignment_count)
-teach_file_line_count = guide.count('- scripts/watcher/teach_envelopes.py.')
-assert teach_file_line_count == 1, 'teach file line count: ' + str(teach_file_line_count)
-planner_item_9_8 = '1. Criar modo planejador. [DONE 0.4.59 - read-only objective plan gates]'
-planner_item_14 = '14. Criar modo planejador. [DONE 0.4.59]'
-planner_item_9_8_count = guide.count(planner_item_9_8)
-planner_item_14_count = guide.count(planner_item_14)
-planner_alignment_count = guide.count('## Version alignment 0.4.59')
-planner_file_line_count = guide.count('- scripts/watcher/planner_mode.py.')
-assert planner_item_9_8_count == 1, 'planner 9.8 marker count: ' + str(planner_item_9_8_count)
-assert planner_item_14_count == 1, 'planner section 14 marker count: ' + str(planner_item_14_count)
-assert planner_alignment_count == 1, 'planner alignment count: ' + str(planner_alignment_count)
-assert planner_file_line_count == 1, 'planner file line count: ' + str(planner_file_line_count)
-executor_item_9_8 = '2. Criar modo executor com gates. [DONE 0.4.60 - approval validation stop-on-failure gates]'
-executor_item_14 = '15. Criar modo executor com gates. [DONE 0.4.60]'
-executor_item_9_8_count = guide.count(executor_item_9_8)
-executor_item_14_count = guide.count(executor_item_14)
-executor_alignment_count = guide.count('## Version alignment 0.4.60')
-executor_file_line_count = guide.count('- scripts/watcher/executor_gates.py.')
-assert executor_item_9_8_count == 1, 'executor 9.8 marker count: ' + str(executor_item_9_8_count)
-assert executor_item_14_count == 1, 'executor section 14 marker count: ' + str(executor_item_14_count)
-assert executor_alignment_count == 1, 'executor alignment count: ' + str(executor_alignment_count)
-assert executor_file_line_count == 1, 'executor file line count: ' + str(executor_file_line_count)
-auditor_item_9_8 = '3. Criar modo auditor. [DONE 0.4.61 - git tags docs divergence audit]'
-auditor_item_14 = '16. Criar modo auditor. [DONE 0.4.61]'
-auditor_item_9_8_count = guide.count(auditor_item_9_8)
-auditor_item_14_count = guide.count(auditor_item_14)
-auditor_alignment_count = guide.count('## Version alignment 0.4.61')
-auditor_file_line_count = guide.count('- scripts/watcher/auditor_mode.py.')
-assert auditor_item_9_8_count == 1, 'auditor 9.8 marker count: ' + str(auditor_item_9_8_count)
-assert auditor_item_14_count == 1, 'auditor section 14 marker count: ' + str(auditor_item_14_count)
-assert auditor_alignment_count == 1, 'auditor alignment count: ' + str(auditor_alignment_count)
-assert auditor_file_line_count == 1, 'auditor file line count: ' + str(auditor_file_line_count)
-release_manager_item_9_8 = '4. Criar modo release manager. [DONE 0.4.62 - safe single-commit release plan]'
-release_manager_item_14 = '17. Criar modo release manager. [DONE 0.4.62]'
-release_manager_item_9_8_count = guide.count(release_manager_item_9_8)
-release_manager_item_14_count = guide.count(release_manager_item_14)
-release_manager_alignment_count = guide.count('## Version alignment 0.4.62')
-release_manager_file_line_count = guide.count('- scripts/watcher/release_manager_mode.py.')
-assert release_manager_item_9_8_count == 1, 'release manager 9.8 marker count: ' + str(release_manager_item_9_8_count)
-assert release_manager_item_14_count == 1, 'release manager section 14 marker count: ' + str(release_manager_item_14_count)
-assert release_manager_alignment_count == 1, 'release manager alignment count: ' + str(release_manager_alignment_count)
-assert release_manager_file_line_count == 1, 'release manager file line count: ' + str(release_manager_file_line_count)
-hardening_alignment_count = guide.count('## Version alignment 0.4.63')
-hardening_section_count = guide.count('## 16. Hardening pos fase 9.8')
-hardening_report_count = guide.count('reports/AI_BRIDGE_LOCAL_PHASE_9_8_FINAL_2026-06-14.md')
-assert hardening_alignment_count == 1, 'hardening alignment count: ' + str(hardening_alignment_count)
-assert hardening_section_count == 1, 'hardening section count: ' + str(hardening_section_count)
-assert hardening_report_count >= 1, 'hardening report reference missing'
-local_api_alignment_count = guide.count('## Version alignment 0.4.64')
-local_api_section_count = guide.count('## 17. Proxima fase - fundamentos API local')
-local_api_report_count = guide.count('reports/AI_BRIDGE_LOCAL_NEXT_PHASE_BLOCKS_2026-06-14.md')
-assert local_api_alignment_count == 1, 'local api alignment count: ' + str(local_api_alignment_count)
-assert local_api_section_count == 1, 'local api section count: ' + str(local_api_section_count)
-assert local_api_report_count >= 1, 'local api report reference missing'
-local_bridge_alignment_count = guide.count('## Version alignment 0.4.65')
-local_bridge_section_count = guide.count('## 18. Local bridge store')
-local_bridge_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_STORE_2026-06-14.md')
-assert local_bridge_alignment_count == 1, 'local bridge alignment count: ' + str(local_bridge_alignment_count)
-assert local_bridge_section_count == 1, 'local bridge section count: ' + str(local_bridge_section_count)
-assert local_bridge_report_count >= 1, 'local bridge report reference missing'
-local_bridge_envelope_alignment_count = guide.count('## Version alignment 0.4.66')
-local_bridge_envelope_section_count = guide.count('## 19. Local bridge envelope')
-local_bridge_envelope_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_ENVELOPE_2026-06-14.md')
-assert local_bridge_envelope_alignment_count == 1, 'local bridge envelope alignment count: ' + str(local_bridge_envelope_alignment_count)
-assert local_bridge_envelope_section_count == 1, 'local bridge envelope section count: ' + str(local_bridge_envelope_section_count)
-assert local_bridge_envelope_report_count >= 1, 'local bridge envelope report reference missing'
-local_bridge_writer_ack_alignment_count = guide.count('## Version alignment 0.4.67')
-local_bridge_writer_ack_section_count = guide.count('## 20. Local bridge writer e ack')
-local_bridge_writer_ack_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_WRITER_ACK_2026-06-14.md')
-assert local_bridge_writer_ack_alignment_count == 1, 'local bridge writer ack alignment count: ' + str(local_bridge_writer_ack_alignment_count)
-assert local_bridge_writer_ack_section_count == 1, 'local bridge writer ack section count: ' + str(local_bridge_writer_ack_section_count)
-assert local_bridge_writer_ack_report_count >= 1, 'local bridge writer ack report reference missing'
-local_bridge_dashboard_alignment_count = guide.count('## Version alignment 0.4.68')
-local_bridge_dashboard_section_count = guide.count('## 21. Local bridge dashboard')
-local_bridge_dashboard_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_DASHBOARD_2026-06-14.md')
-assert local_bridge_dashboard_alignment_count == 1, 'local bridge dashboard alignment count: ' + str(local_bridge_dashboard_alignment_count)
-assert local_bridge_dashboard_section_count == 1, 'local bridge dashboard section count: ' + str(local_bridge_dashboard_section_count)
-assert local_bridge_dashboard_report_count >= 1, 'local bridge dashboard report reference missing'
-local_bridge_replay_apply_alignment_count = guide.count('## Version alignment 0.4.69')
-local_bridge_replay_apply_section_count = guide.count('## 22. Local bridge replay apply')
-local_bridge_replay_apply_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_REPLAY_APPLY_2026-06-14.md')
-assert local_bridge_replay_apply_alignment_count == 1, 'local bridge replay apply alignment count: ' + str(local_bridge_replay_apply_alignment_count)
-assert local_bridge_replay_apply_section_count == 1, 'local bridge replay apply section count: ' + str(local_bridge_replay_apply_section_count)
-assert local_bridge_replay_apply_report_count >= 1, 'local bridge replay apply report reference missing'
-local_bridge_worker_dry_run_alignment_count = guide.count('## Version alignment 0.4.70')
-local_bridge_worker_dry_run_section_count = guide.count('## 23. Local bridge worker dry-run')
-local_bridge_worker_dry_run_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_WORKER_DRY_RUN_2026-06-14.md')
-assert local_bridge_worker_dry_run_alignment_count == 1, 'local bridge worker dry run alignment count: ' + str(local_bridge_worker_dry_run_alignment_count)
-assert local_bridge_worker_dry_run_section_count == 1, 'local bridge worker dry run section count: ' + str(local_bridge_worker_dry_run_section_count)
-assert local_bridge_worker_dry_run_report_count >= 1, 'local bridge worker dry run report reference missing'
-local_bridge_consolidation_section_count = guide.count('## 24. Consolidacao local bridge 0.4.65 a 0.4.70')
-local_bridge_consolidation_alignment_count = guide.count('## Version alignment 0.4.71')
-local_bridge_consolidation_report_count = guide.count('reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_CONSOLIDATION_2026-06-14.md')
-assert local_bridge_consolidation_section_count == 1, 'local bridge consolidation section count: ' + str(local_bridge_consolidation_section_count)
-assert local_bridge_consolidation_alignment_count == 1, 'local bridge consolidation alignment count: ' + str(local_bridge_consolidation_alignment_count)
-assert local_bridge_consolidation_report_count >= 1, 'local bridge consolidation report reference missing'
-governance_risk_classifier_alignment_count = guide.count('## Version alignment 0.4.72')
-governance_risk_classifier_section_count = guide.count('## 25. Governance risk classifier')
-governance_risk_classifier_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14.md')
-assert governance_risk_classifier_alignment_count == 1, 'governance risk classifier alignment count: ' + str(governance_risk_classifier_alignment_count)
-assert governance_risk_classifier_section_count == 1, 'governance risk classifier section count: ' + str(governance_risk_classifier_section_count)
-assert governance_risk_classifier_report_count >= 1, 'governance risk classifier report reference missing'
-governance_preflight_alignment_count = guide.count('## Version alignment 0.4.73')
-governance_preflight_section_count = guide.count('## 26. Governance preflight')
-governance_preflight_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_PREFLIGHT_2026-06-14.md')
-assert governance_preflight_alignment_count == 1, 'governance preflight alignment count: ' + str(governance_preflight_alignment_count)
-assert governance_preflight_section_count == 1, 'governance preflight section count: ' + str(governance_preflight_section_count)
-assert governance_preflight_report_count >= 1, 'governance preflight report reference missing'
-command_builder_governance_alignment_count = guide.count('## Version alignment 0.4.74')
-command_builder_governance_section_count = guide.count('## 27. Command builder governance')
-command_builder_governance_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_GOVERNANCE_2026-06-14.md')
-assert command_builder_governance_alignment_count == 1, 'command builder governance alignment count: ' + str(command_builder_governance_alignment_count)
-assert command_builder_governance_section_count == 1, 'command builder governance section count: ' + str(command_builder_governance_section_count)
-assert command_builder_governance_report_count >= 1, 'command builder governance report reference missing'
-command_builder_governance_finalize_alignment_count = guide.count('## Version alignment 0.4.75')
-command_builder_governance_finalize_section_count = guide.count('## 28. Command builder governance finalize')
-command_builder_governance_finalize_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_GOVERNANCE_FINALIZE_2026-06-14.md')
-assert command_builder_governance_finalize_alignment_count == 1, 'command builder governance finalize alignment count: ' + str(command_builder_governance_finalize_alignment_count)
-assert command_builder_governance_finalize_section_count == 1, 'command builder governance finalize section count: ' + str(command_builder_governance_finalize_section_count)
-assert command_builder_governance_finalize_report_count >= 1, 'command builder governance finalize report reference missing'
-governance_roadmap_alignment_count = guide.count('## Version alignment 0.4.76')
-governance_roadmap_section_count = guide.count('## 29. Governance roadmap')
-governance_roadmap_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_ROADMAP_2026-06-14.md')
-assert governance_roadmap_alignment_count == 1, 'governance roadmap alignment count: ' + str(governance_roadmap_alignment_count)
-assert governance_roadmap_section_count == 1, 'governance roadmap section count: ' + str(governance_roadmap_section_count)
-assert governance_roadmap_report_count >= 1, 'governance roadmap report reference missing'
-command_builder_advisory_alignment_count = guide.count('## Version alignment 0.4.77')
-command_builder_advisory_section_count = guide.count('## 30. Command builder advisory metadata')
-command_builder_advisory_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_2026-06-14.md')
-assert command_builder_advisory_alignment_count == 1, 'command builder advisory alignment count: ' + str(command_builder_advisory_alignment_count)
-assert command_builder_advisory_section_count == 1, 'command builder advisory section count: ' + str(command_builder_advisory_section_count)
-assert command_builder_advisory_report_count >= 1, 'command builder advisory report reference missing'
-command_builder_advisory_gate_alignment_count = guide.count('## Version alignment 0.4.78')
-command_builder_advisory_gate_section_count = guide.count('## 31. Command builder advisory gate')
-command_builder_advisory_gate_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_GATE_2026-06-14.md')
-assert command_builder_advisory_gate_alignment_count == 1, 'command_builder_advisory_gate alignment count: ' + str(command_builder_advisory_gate_alignment_count)
-assert command_builder_advisory_gate_section_count == 1, 'command_builder_advisory_gate section count: ' + str(command_builder_advisory_gate_section_count)
-assert command_builder_advisory_gate_report_count >= 1, 'command_builder_advisory_gate report reference missing'
-governance_decision_log_alignment_count = guide.count('## Version alignment 0.4.79')
-governance_decision_log_section_count = guide.count('## 32. Governance decision log')
-governance_decision_log_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_DECISION_LOG_2026-06-14.md')
-assert governance_decision_log_alignment_count == 1, 'governance_decision_log alignment count: ' + str(governance_decision_log_alignment_count)
-assert governance_decision_log_section_count == 1, 'governance_decision_log section count: ' + str(governance_decision_log_section_count)
-assert governance_decision_log_report_count >= 1, 'governance_decision_log report reference missing'
-governance_risk_report_alignment_count = guide.count('## Version alignment 0.4.80')
-governance_risk_report_section_count = guide.count('## 33. Governance risk report')
-governance_risk_report_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14.md')
-assert governance_risk_report_alignment_count == 1, 'governance_risk_report alignment count: ' + str(governance_risk_report_alignment_count)
-assert governance_risk_report_section_count == 1, 'governance_risk_report section count: ' + str(governance_risk_report_section_count)
-assert governance_risk_report_report_count >= 1, 'governance_risk_report report reference missing'
-command_builder_preferred_alignment_count = guide.count('## Version alignment 0.4.81')
-command_builder_preferred_section_count = guide.count('## 34. Command builder preferred advisory flow')
-command_builder_preferred_report_count = guide.count('reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_PREFERRED_2026-06-14.md')
-assert command_builder_preferred_alignment_count == 1, 'command_builder_preferred alignment count: ' + str(command_builder_preferred_alignment_count)
-assert command_builder_preferred_section_count == 1, 'command_builder_preferred section count: ' + str(command_builder_preferred_section_count)
-assert command_builder_preferred_report_count >= 1, 'command_builder_preferred report reference missing'
-destructive_optin_gate_alignment_count = guide.count('## Version alignment 0.4.82')
-destructive_optin_gate_section_count = guide.count('## 35. Destructive opt-in gate')
-destructive_optin_gate_report_count = guide.count('reports/AI_BRIDGE_LOCAL_DESTRUCTIVE_OPTIN_GATE_2026-06-14.md')
-assert destructive_optin_gate_alignment_count == 1, 'destructive_optin_gate alignment count: ' + str(destructive_optin_gate_alignment_count)
-assert destructive_optin_gate_section_count == 1, 'destructive_optin_gate section count: ' + str(destructive_optin_gate_section_count)
-assert destructive_optin_gate_report_count >= 1, 'destructive_optin_gate report reference missing'
-governance_phase_consolidation_alignment_count = guide.count('## Version alignment 0.4.83')
-governance_phase_consolidation_section_count = guide.count('## 36. Governance phase consolidation')
-governance_phase_consolidation_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_PHASE_CONSOLIDATION_2026-06-14.md')
-assert governance_phase_consolidation_alignment_count == 1, 'governance_phase_consolidation alignment count: ' + str(governance_phase_consolidation_alignment_count)
-assert governance_phase_consolidation_section_count == 1, 'governance_phase_consolidation section count: ' + str(governance_phase_consolidation_section_count)
-assert governance_phase_consolidation_report_count >= 1, 'governance_phase_consolidation report reference missing'
-queue_health_audit_alignment_count = guide.count('## Version alignment 0.4.84')
-queue_health_audit_section_count = guide.count('## 37. Queue health audit')
-queue_health_audit_report_count = guide.count('reports/AI_BRIDGE_LOCAL_QUEUE_HEALTH_AUDIT_2026-06-14.md')
-assert queue_health_audit_alignment_count == 1, 'queue_health_audit alignment count: ' + str(queue_health_audit_alignment_count)
-assert queue_health_audit_section_count == 1, 'queue_health_audit section count: ' + str(queue_health_audit_section_count)
-assert queue_health_audit_report_count >= 1, 'queue_health_audit report reference missing'
-safe_envelope_templates_alignment_count = guide.count('## Version alignment 0.4.85')
-safe_envelope_templates_section_count = guide.count('## 38. Safe envelope templates')
-safe_envelope_templates_report_count = guide.count('reports/AI_BRIDGE_LOCAL_SAFE_ENVELOPE_TEMPLATES_2026-06-14.md')
-assert safe_envelope_templates_alignment_count == 1, 'safe_envelope_templates alignment count: ' + str(safe_envelope_templates_alignment_count)
-assert safe_envelope_templates_section_count == 1, 'safe_envelope_templates section count: ' + str(safe_envelope_templates_section_count)
-assert safe_envelope_templates_report_count >= 1, 'safe_envelope_templates report reference missing'
-governance_enforcement_dry_run_alignment_count = guide.count('## Version alignment 0.4.86')
-governance_enforcement_dry_run_section_count = guide.count('## 39. Governance enforcement dry-run')
-governance_enforcement_dry_run_report_count = guide.count('reports/AI_BRIDGE_LOCAL_GOVERNANCE_ENFORCEMENT_DRY_RUN_2026-06-14.md')
-assert governance_enforcement_dry_run_alignment_count == 1, 'governance_enforcement_dry_run alignment count: ' + str(governance_enforcement_dry_run_alignment_count)
-assert governance_enforcement_dry_run_section_count == 1, 'governance_enforcement_dry_run section count: ' + str(governance_enforcement_dry_run_section_count)
-assert governance_enforcement_dry_run_report_count >= 1, 'governance_enforcement_dry_run report reference missing'
-release_safety_checklist_alignment_count = guide.count('## Version alignment 0.4.87')
-release_safety_checklist_section_count = guide.count('## 40. Release safety checklist')
-release_safety_checklist_report_count = guide.count('reports/AI_BRIDGE_LOCAL_RELEASE_SAFETY_CHECKLIST_2026-06-14.md')
-assert release_safety_checklist_alignment_count == 1, 'release_safety_checklist alignment count: ' + str(release_safety_checklist_alignment_count)
-assert release_safety_checklist_section_count == 1, 'release_safety_checklist section count: ' + str(release_safety_checklist_section_count)
-assert release_safety_checklist_report_count >= 1, 'release_safety_checklist report reference missing'
-queue_triage_playbook_alignment_count = guide.count('## Version alignment 0.4.88')
-queue_triage_playbook_section_count = guide.count('## 41. Queue triage playbook')
-queue_triage_playbook_report_count = guide.count('reports/AI_BRIDGE_LOCAL_QUEUE_TRIAGE_PLAYBOOK_2026-06-14.md')
-assert queue_triage_playbook_alignment_count == 1, 'queue_triage_playbook alignment count: ' + str(queue_triage_playbook_alignment_count)
-assert queue_triage_playbook_section_count == 1, 'queue_triage_playbook section count: ' + str(queue_triage_playbook_section_count)
-assert queue_triage_playbook_report_count >= 1, 'queue_triage_playbook report reference missing'
-watcher_failure_taxonomy_alignment_count = guide.count('## Version alignment 0.4.89')
-watcher_failure_taxonomy_section_count = guide.count('## 42. Watcher failure taxonomy')
-watcher_failure_taxonomy_report_count = guide.count('reports/AI_BRIDGE_LOCAL_WATCHER_FAILURE_TAXONOMY_2026-06-14.md')
-assert watcher_failure_taxonomy_alignment_count == 1, 'watcher_failure_taxonomy alignment count: ' + str(watcher_failure_taxonomy_alignment_count)
-assert watcher_failure_taxonomy_section_count == 1, 'watcher_failure_taxonomy section count: ' + str(watcher_failure_taxonomy_section_count)
-assert watcher_failure_taxonomy_report_count >= 1, 'watcher_failure_taxonomy report reference missing'
-self_evolution_guardrails_alignment_count = guide.count('## Version alignment 0.4.90')
-self_evolution_guardrails_section_count = guide.count('## 43. Self evolution guardrails')
-self_evolution_guardrails_report_count = guide.count('reports/AI_BRIDGE_LOCAL_SELF_EVOLUTION_GUARDRAILS_2026-06-14.md')
-assert self_evolution_guardrails_alignment_count == 1, 'self_evolution_guardrails alignment count: ' + str(self_evolution_guardrails_alignment_count)
-assert self_evolution_guardrails_section_count == 1, 'self_evolution_guardrails section count: ' + str(self_evolution_guardrails_section_count)
-assert self_evolution_guardrails_report_count >= 1, 'self_evolution_guardrails report reference missing'
-watcher_recovery_runbook_alignment_count = guide.count('## Version alignment 0.4.91')
-watcher_recovery_runbook_section_count = guide.count('## 44. Watcher recovery runbook')
-watcher_recovery_runbook_report_count = guide.count('reports/AI_BRIDGE_LOCAL_WATCHER_RECOVERY_RUNBOOK_2026-06-14.md')
-assert watcher_recovery_runbook_alignment_count == 1, 'watcher_recovery_runbook alignment count: ' + str(watcher_recovery_runbook_alignment_count)
-assert watcher_recovery_runbook_section_count == 1, 'watcher_recovery_runbook section count: ' + str(watcher_recovery_runbook_section_count)
-assert watcher_recovery_runbook_report_count >= 1, 'watcher_recovery_runbook report reference missing'
-autonomous_evolution_protocol_alignment_count = guide.count('## Version alignment 0.4.92')
-autonomous_evolution_protocol_section_count = guide.count('## 45. Autonomous evolution protocol')
-autonomous_evolution_protocol_report_count = guide.count('reports/AI_BRIDGE_LOCAL_AUTONOMOUS_EVOLUTION_PROTOCOL_2026-06-14.md')
-assert autonomous_evolution_protocol_alignment_count == 1, 'autonomous_evolution_protocol alignment count: ' + str(autonomous_evolution_protocol_alignment_count)
-assert autonomous_evolution_protocol_section_count == 1, 'autonomous_evolution_protocol section count: ' + str(autonomous_evolution_protocol_section_count)
-assert autonomous_evolution_protocol_report_count >= 1, 'autonomous_evolution_protocol report reference missing'
-autonomous_evolution_approval_matrix_alignment_count = guide.count('## Version alignment 0.4.93')
-autonomous_evolution_approval_matrix_section_count = guide.count('## 46. Autonomous evolution approval matrix')
-autonomous_evolution_approval_matrix_report_count = guide.count('reports/AI_BRIDGE_LOCAL_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX_2026-06-14.md')
-assert autonomous_evolution_approval_matrix_alignment_count == 1, 'autonomous_evolution_approval_matrix alignment count: ' + str(autonomous_evolution_approval_matrix_alignment_count)
-assert autonomous_evolution_approval_matrix_section_count == 1, 'autonomous_evolution_approval_matrix section count: ' + str(autonomous_evolution_approval_matrix_section_count)
-assert autonomous_evolution_approval_matrix_report_count >= 1, 'autonomous_evolution_approval_matrix report reference missing'
-autonomous_change_proposal_template_alignment_count = guide.count('## Version alignment 0.4.94')
-autonomous_change_proposal_template_section_count = guide.count('## 47. Autonomous change proposal template')
-autonomous_change_proposal_template_report_count = guide.count('reports/AI_BRIDGE_LOCAL_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE_2026-06-14.md')
-assert autonomous_change_proposal_template_alignment_count == 1, 'autonomous_change_proposal_template alignment count: ' + str(autonomous_change_proposal_template_alignment_count)
-assert autonomous_change_proposal_template_section_count == 1, 'autonomous_change_proposal_template section count: ' + str(autonomous_change_proposal_template_section_count)
-assert autonomous_change_proposal_template_report_count >= 1, 'autonomous_change_proposal_template report reference missing'
-autonomous_evolution_task_queue_alignment_count = guide.count('## Version alignment 0.4.95')
-autonomous_evolution_task_queue_section_count = guide.count('## 48. Autonomous evolution task queue')
-autonomous_evolution_task_queue_report_count = guide.count('reports/AI_BRIDGE_LOCAL_AUTONOMOUS_EVOLUTION_TASK_QUEUE_2026-06-14.md')
-assert autonomous_evolution_task_queue_alignment_count == 1, 'autonomous_evolution_task_queue alignment count: ' + str(autonomous_evolution_task_queue_alignment_count)
-assert autonomous_evolution_task_queue_section_count == 1, 'autonomous_evolution_task_queue section count: ' + str(autonomous_evolution_task_queue_section_count)
-assert autonomous_evolution_task_queue_report_count >= 1, 'autonomous_evolution_task_queue report reference missing'
-autonomous_evolution_audit_ledger_alignment_count = guide.count('## Version alignment 0.4.96')
-autonomous_evolution_audit_ledger_section_count = guide.count('## 49. Autonomous evolution audit ledger')
-autonomous_evolution_audit_ledger_report_count = guide.count('reports/AI_BRIDGE_LOCAL_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER_2026-06-14.md')
-assert autonomous_evolution_audit_ledger_alignment_count == 1, 'autonomous_evolution_audit_ledger alignment count: ' + str(autonomous_evolution_audit_ledger_alignment_count)
-assert autonomous_evolution_audit_ledger_section_count == 1, 'autonomous_evolution_audit_ledger section count: ' + str(autonomous_evolution_audit_ledger_section_count)
-assert autonomous_evolution_audit_ledger_report_count >= 1, 'autonomous_evolution_audit_ledger report reference missing'
-latency_parallel_polling_alignment_count = guide.count('## Version alignment 0.4.97')
-latency_parallel_polling_section_count = guide.count('## 50. Latency parallel polling')
-latency_parallel_polling_smoke_count = guide.count('scripts/watcher/smoke_latency_parallel_polling.py')
-assert latency_parallel_polling_alignment_count == 1, 'latency_parallel_polling alignment count: ' + str(latency_parallel_polling_alignment_count)
-assert latency_parallel_polling_section_count == 1, 'latency_parallel_polling section count: ' + str(latency_parallel_polling_section_count)
-assert latency_parallel_polling_smoke_count >= 1, 'latency_parallel_polling smoke reference missing'
-latency_parallel_polling_docs_alignment_count = guide.count('## Version alignment 0.4.98')
-latency_parallel_polling_docs_section_count = guide.count('## 51. Latency parallel polling docs')
-latency_parallel_polling_docs_doc_count = guide.count('docs/LATENCY_PARALLEL_POLLING_ARCHITECTURE.md')
-assert latency_parallel_polling_docs_alignment_count == 1, 'latency_parallel_polling_docs alignment count: ' + str(latency_parallel_polling_docs_alignment_count)
-assert latency_parallel_polling_docs_section_count == 1, 'latency_parallel_polling_docs section count: ' + str(latency_parallel_polling_docs_section_count)
-assert latency_parallel_polling_docs_doc_count >= 1, 'latency_parallel_polling_docs doc reference missing'
-
-worker_queue_parallelism_alignment_count = guide.count('## Version alignment 0.5.0')
-worker_queue_parallelism_section_count = guide.count('## 53. Worker queue parallelism')
-worker_queue_parallelism_doc_count = guide.count('docs/WORKER_QUEUE_PARALLELISM.md')
-assert worker_queue_parallelism_alignment_count == 1, 'worker_queue_parallelism alignment count: ' + str(worker_queue_parallelism_alignment_count)
-assert worker_queue_parallelism_section_count == 1, 'worker_queue_parallelism section count: ' + str(worker_queue_parallelism_section_count)
-assert worker_queue_parallelism_doc_count >= 1, 'worker_queue_parallelism doc reference missing'
+DOCS = ROOT / 'docs'
+GUIDE = DOCS / 'AI_BRIDGE_LOCAL_GUIDE.md'
+LEGACY = DOCS / 'legacy'
+assert DOCS.exists(), 'docs missing'
+assert GUIDE.exists(), 'guide missing'
+assert LEGACY.exists(), 'legacy missing'
+root_entries = sorted(p.name for p in DOCS.iterdir())
+assert root_entries == ['AI_BRIDGE_LOCAL_GUIDE.md', 'legacy'], root_entries
+text = GUIDE.read_text(encoding='utf-8-sig')
+required = [
+ 'Versao atual: 0.5.33',
+ 'Repositorio local: D:/dev/autocode/ai-bridge-local',
+ '## 1. Objetivo do projeto',
+ '## 2. Estado atual validado',
+ '## 3. Visao geral da aplicacao',
+ '## 4. Protocolo de envelopes',
+ '## 7. Ideia de integracao grep.app no AI Bridge Local',
+ '## 9. Roadmap detalhado de atividades pendentes',
+ '## 14. Proximas atividades recomendadas em ordem',
+ '## 16. Hardening pos fase 9.8',
+ '## 17. Proxima fase - fundamentos API local',
+ '## 18. Local bridge store',
+ '## 19. Local bridge envelope',
+ '## 20. Local bridge writer e ack',
+ '## 21. Local bridge dashboard',
+ '## 22. Local bridge replay apply',
+ '## 23. Local bridge worker dry-run',
+ '## 24. Consolidacao local bridge 0.4.65 a 0.4.70',
+ '## 25. Governance risk classifier',
+ '## 26. Governance preflight',
+ '## 27. Command builder governance',
+ '## 28. Command builder governance finalize',
+ '## 29. Governance roadmap',
+ '## 30. Command builder advisory metadata',
+ '## 31. Command builder advisory gate',
+ '## 32. Governance decision log',
+ '## 33. Governance risk report',
+ '## 34. Command builder preferred advisory flow',
+ '## 35. Destructive opt-in gate',
+ '## 36. Governance phase consolidation',
+ '## 37. Queue health audit',
+ '## 38. Safe envelope templates',
+ '## 39. Governance enforcement dry-run',
+ '## 40. Release safety checklist',
+ '## 41. Queue triage playbook',
+ '## 42. Watcher failure taxonomy',
+ '## 43. Self evolution guardrails',
+ '## 44. Watcher recovery runbook',
+ '## 45. Autonomous evolution protocol',
+ '## 46. Indice dos documentos movidos para docs/legacy',
+ '## 47. Conteudo preservado dos documentos anteriores',
+ 'grep.app',
+ 'research-code',
+ 'report_only',
+ 'gateway-brain-supervisor',
+]
+missing = [item for item in required if item not in text]
+assert not missing, missing
+assert len(text.splitlines()) > 250, 'guide too short'
+print('OK docs_smoke guide_plus_legacy')

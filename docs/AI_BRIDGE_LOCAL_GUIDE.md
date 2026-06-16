@@ -960,3 +960,50 @@ Criar scripts/research/v0_ui_prompt_plan.py e scripts/watcher/smoke_v0_ui_resear
 ```
 
 <!-- AI_BRIDGE_LOCAL_V0_UI_RESEARCH_END -->
+
+<!-- AI_BRIDGE_LOCAL_SMART_WATCHER_START -->
+
+## 66. Smart Watcher task runner base
+
+### 66.1 Objetivo
+
+O Smart Watcher e a evolucao do watcher de executor de comandos para executor inteligente de tarefas.
+
+A prioridade e reduzir o uso de envelopes grandes, scripts inline frageis e correcoes manuais repetitivas.
+
+### 66.2 Entregas iniciais
+
+- scripts/watcher/smart_task_runner.py
+- scripts/watcher/safe_ops.py
+- scripts/watcher/smoke_smart_task_runner.py
+- reports/AI_BRIDGE_LOCAL_SMART_WATCHER_BASE_2026-06-16.md
+
+### 66.3 Capacidades adicionadas
+
+- execucao em etapas;
+- modo dry-run;
+- estado persistente em runtime/smart_tasks;
+- catalogo inicial de tarefas;
+- classificacao inicial de falhas comuns;
+- biblioteca inicial de operacoes seguras;
+- smoke proprio do Smart Watcher.
+
+### 66.4 Principio operacional
+
+O chat deve preferir scripts locais completos quando a tarefa for grande.
+
+Regra:
+
+- comando curto pode ir pelo watcher;
+- tarefa grande deve virar script local versionado;
+- script local deve validar, gerar relatorio, rodar smokes, diff check e permitir commit/push.
+
+### 66.5 Proximas atividades
+
+1. Criar tarefa real docs_v0_update.
+2. Criar script_stager.py.
+3. Evoluir recuperacao automatica de falhas.
+4. Criar relatorio executivo por tarefa.
+5. Criar workflow seguro de commit reutilizavel.
+
+<!-- AI_BRIDGE_LOCAL_SMART_WATCHER_END -->

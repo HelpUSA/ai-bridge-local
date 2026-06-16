@@ -78,7 +78,7 @@ def record_event(command_id=None, event_type=None, message=None, payload=None):
     return True
 
 def fail_stale_deliveries(max_age_seconds=45):
-    """Fail inter-chat commands that were delivered to the extension but never acked."""
+    """Fail stale deliveries and recover misrouted local run-command rows."""
     try:
         cutoff_expr = f"-{int(max_age_seconds)} seconds"
         conn = sqlite3.connect(DB_PATH)
@@ -97,11 +97,80 @@ def fail_stale_deliveries(max_age_seconds=45):
                 """,
                 (now_iso(), cutoff_expr),
             )
+
+            stale_run_rows = conn.execute(
+                """
+                SELECT command_id, source_chat_id, target_chat_id, conversation_id
+                  FROM commands
+                 WHERE status='delivering'
+                   AND action='run-command'
+                   AND delivery_kind='local_capability'
+                   AND target_chat_id!='gateway-brain-supervisor'
+                   AND delivered_at IS NOT NULL
+                   AND datetime(substr(delivered_at, 1, 19)) < datetime('now', ?)
+                """,
+                (cutoff_expr,),
+            ).fetchall()
+
+            for command_id, source_chat_id, target_chat_id, conversation_id in stale_run_rows:
+                error = (
+                    "stale_run_command_timeout: run-command was delivered to a chat tab "
+                    "instead of gateway-brain-supervisor; route local_capability run-command "
+                    "to gateway-brain-supervisor"
+                )
+                conn.execute(
+                    """
+                    UPDATE commands
+                       SET status='failed',
+                           acked_at=?,
+                           return_code=-1,
+                           stderr=?,
+                           last_error=?
+                     WHERE command_id=?
+                    """,
+                    (now_iso(), error, error, command_id),
+                )
+
+                if source_chat_id:
+                    result_command_id = "result_to_" + str(command_id)
+                    message = chr(10).join([
+                        "[AI_LOCAL_RUN]",
+                        "id=" + str(command_id),
+                        "status=failed",
+                        "return_code=-1",
+                        "no_reply=1",
+                        "result_is_final=1",
+                        "success=0",
+                        "chat_can_continue=1",
+                        "next_action=fix_run_command_routing",
+                        "observacao=Comando local ficou preso em delivering porque foi roteado para uma aba de chat, nao para gateway-brain-supervisor.",
+                        "stdout=",
+                        "stderr=" + error,
+                    ])
+                    try:
+                        conn.execute(
+                            "INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
+                            (
+                                result_command_id,
+                                "gateway-brain-supervisor",
+                                source_chat_id,
+                                "send-chat-message",
+                                "inter_agent_message",
+                                (conversation_id or "local_run_command") + "_stale_result",
+                                "AI Bridge Local Gateway",
+                                message,
+                                "{}",
+                            ),
+                        )
+                    except sqlite3.IntegrityError:
+                        pass
+
             conn.commit()
         finally:
             conn.close()
     except Exception as e:
         print("[gateway] fail_stale_deliveries error:", e)
+
 
 def fetch_control_status():
     fail_stale_deliveries()
@@ -317,6 +386,9 @@ class GatewayHandler(BaseHTTPRequestHandler):
                 enqueue_source_feedback(body, 'invalid_envelope', validation_error)
                 self._send_json(dict(ok=False, error='invalid_envelope', detail=validation_error), 400)
                 return
+
+            if body.get("action") == "run-command" and body.get("delivery_kind") == "local_capability":
+                body["target_chat_id"] = "gateway-brain-supervisor"
 
             conn = sqlite3.connect(DB_PATH)
             try:

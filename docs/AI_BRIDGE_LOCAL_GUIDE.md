@@ -1,4 +1,4 @@
-﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
+# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
 Versao atual: 0.5.33
@@ -27,7 +27,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 ## 3. Visao geral da aplicacao
 
 AI Bridge Local e uma ponte local entre chats/agentes de IA e o ambiente de desenvolvimento local. A aplicacao permite que um chat envie envelopes estruturados para um gateway local, que valida, registra e encaminha comandos para um worker supervisor.
-A arquitetura atual usa envelopes JSON delimitados por @@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@. O watcher le esses envelopes no chat, grava comandos na fila local e um worker processa comandos run-command via local_capability.
+A arquitetura atual usa envelopes JSON delimitados por [AI_BRIDGE_LOCAL_START marker] e [AI_BRIDGE_LOCAL_END marker]. O watcher le esses envelopes no chat, grava comandos na fila local e um worker processa comandos run-command via local_capability.
 Componentes principais: watcher de navegador, gateway local, worker supervisor, fila SQLite queue_local.db, scripts de smoke, relatorios e documentacao operacional.
 
 ## 4. Protocolo de envelopes
@@ -398,3 +398,565 @@ Secao consolidada preservada para compatibilidade, historico operacional e smoke
 
 
 ## 47. Conteudo preservado dos documentos anteriores
+
+<!-- AI_BRIDGE_LOCAL_V0_UI_RESEARCH_START -->
+
+## 48. Integração v0.dev / v0.app como modo de pesquisa e prototipação de UI
+
+### 48.1 Objetivo
+
+O v0.dev / v0.app deve ser usado no AI Bridge Local como ferramenta externa de prototipação, design de interfaces e geração assistida de UI.
+
+O papel do v0 no projeto não é executar comandos locais nem aplicar patches automaticamente no repositório principal. Ele deve atuar como acelerador visual e gerador de protótipos, enquanto o AI Bridge Local continua sendo o executor auditável, com fila, smokes, gates, revisão e commit controlado.
+
+Uso recomendado:
+
+* gerar protótipos de telas para o AI Bridge Local;
+* criar variações de dashboard operacional;
+* desenhar o Command Builder visual;
+* prototipar visualizador de fila, dead letters e worker health;
+* propor telas de auditoria, release manager e autorização interchat;
+* gerar código apenas em sandbox ou relatório;
+* criar prompts reutilizáveis para evolução futura da UI.
+
+### 48.2 Decisão operacional
+
+Decisão: o v0.dev / v0.app pode ser usado no AI Bridge Local como acelerador visual e gerador de protótipos, mas não como executor automático do repositório principal.
+
+Modo inicial aprovado:
+
+* `report_only`
+* `research_only`
+* sem API obrigatória
+* sem escrita em `apps/`, `backend/`, `extension/` ou código produtivo
+* saída em `reports/v0/`
+* revisão humana obrigatória antes de qualquer patch
+
+Status: recomendado para fase de pesquisa e prototipação.
+
+### 48.3 Princípio de segurança
+
+O v0 deve entrar no AI Bridge Local como capacidade externa controlada.
+
+Fluxo seguro:
+
+1. O AI Bridge Local gera um prompt técnico para o v0.
+2. O prompt é salvo em `reports/v0/`.
+3. O humano cola o prompt no v0 manualmente ou, em fase futura, uma integração chama a API do v0.
+4. O resultado gerado pelo v0 é tratado como artefato externo.
+5. Nenhum código gerado é aplicado automaticamente.
+6. Um auditor revisa o resultado.
+7. Um patch local separado é criado somente depois de aprovação.
+8. O patch passa por smokes, `git diff --check`, stage de arquivos exatos, commit e push.
+
+Regra central:
+
+> v0 gera ideias, protótipos e código candidato. AI Bridge Local valida, audita e executa.
+
+### 48.4 Telas candidatas para prototipar no v0
+
+Primeiro lote recomendado:
+
+1. **AI Bridge Local Operations Dashboard**
+
+   * visão geral da fila;
+   * worker health;
+   * comandos pendentes;
+   * comandos recentes;
+   * falhas por tipo;
+   * status do repositório;
+   * último commit;
+   * últimos smokes.
+
+2. **Queue Inspector**
+
+   * listar comandos por status;
+   * filtrar por `command_id`;
+   * filtrar por `source_chat_id`;
+   * filtrar por `target_chat_id`;
+   * filtrar por `cwd`;
+   * mostrar `next_action`;
+   * destacar comandos presos ou falhos.
+
+3. **Dead Letters Viewer**
+
+   * agrupar falhas por tipo;
+   * mostrar causa provável;
+   * sugerir correção segura;
+   * manter modo readonly;
+   * exportar relatório.
+
+4. **Worker Health Panel**
+
+   * worker ativo/inativo;
+   * PID lock;
+   * últimos ciclos;
+   * comandos em execução;
+   * locks por `cwd`;
+   * tempo médio de execução.
+
+5. **Command Builder Visual**
+
+   * formulário para criar envelopes;
+   * seleção de action;
+   * seleção de destino;
+   * `cwd`;
+   * timeout;
+   * `script_ext`;
+   * prévia do JSON;
+   * validação local;
+   * risco classificado antes do envio.
+
+6. **Envelope Preview**
+
+   * mostrar JSON formatado;
+   * validar campos obrigatórios;
+   * destacar `command_id`;
+   * destacar `delivery_kind`;
+   * destacar `payload`;
+   * bloquear exemplos perigosos.
+
+7. **Docs and Runbook Viewer**
+
+   * ler `AI_BRIDGE_LOCAL_GUIDE.md`;
+   * navegar em `docs/legacy`;
+   * pesquisar runbooks;
+   * mostrar roadmap;
+   * mostrar próximas atividades;
+   * mostrar histórico de releases.
+
+8. **Release Checklist UI**
+
+   * status limpo do git;
+   * smokes obrigatórios;
+   * diff check;
+   * arquivos staged;
+   * mensagem de commit;
+   * confirmação de push;
+   * plano de rollback.
+
+9. **Interchat Authorization Gate UI**
+
+   * origem;
+   * destino;
+   * risco;
+   * objetivo;
+   * comando proposto;
+   * aprovar/negar;
+   * registrar auditoria.
+
+10. **Audit Timeline**
+
+    * sequência de comandos;
+    * decisões;
+    * falhas;
+    * correções;
+    * commits;
+    * pushes;
+    * tags;
+    * releases.
+
+### 48.5 Prompt base para uso manual no v0
+
+Use este prompt no v0 para a primeira exploração:
+
+```text
+Crie um dashboard web moderno para o AI Bridge Local.
+
+Contexto:
+AI Bridge Local é uma ponte local entre chats/agentes de IA e repositórios locais. Ele usa envelopes JSON, gateway local, fila SQLite queue_local.db, worker supervisor, smokes, auditoria e commits controlados.
+
+Objetivo:
+Criar uma UI de operações para monitorar e controlar o sistema sem executar comandos automaticamente.
+
+Telas:
+1. Queue Overview
+2. Worker Health
+3. Dead Letters
+4. Command Builder
+5. Envelope Preview
+6. Docs and Runbook Viewer
+7. Release Checklist
+8. Audit Timeline
+9. Interchat Authorization Gate
+
+Regras de segurança:
+- Não incluir segredos.
+- Não incluir tokens.
+- Não executar comandos reais.
+- Não conectar em banco real.
+- Usar dados mockados.
+- Separar claramente botões de ação real e botões desabilitados.
+- Todo comando deve ser marcado como preview/report_only.
+- Nenhum patch deve ser aplicado automaticamente.
+- Priorizar Next.js, React, Tailwind e shadcn/ui.
+
+Estilo:
+Interface limpa, operacional, com cards de status, tabela de eventos, filtros por command_id, source_chat_id, target_chat_id, cwd, success, next_action e timestamp.
+
+Entregue:
+- componentes React;
+- dados mockados;
+- layout responsivo;
+- explicação curta da arquitetura da UI;
+- sugestões de próximos componentes.
+```
+
+### 48.6 Prompt para Command Builder visual
+
+```text
+Crie uma tela chamada AI Bridge Command Builder.
+
+Objetivo:
+Permitir que um operador monte um envelope seguro para o AI Bridge Local em modo preview/report_only.
+
+Campos:
+- version
+- command_id
+- action
+- type
+- delivery_kind
+- source_chat_id
+- target_chat_id
+- conversation_id
+- cwd
+- timeout_seconds
+- script_ext
+- script_text
+- no_reply
+
+Regras:
+- Não executar comandos.
+- Apenas gerar preview.
+- Validar campos obrigatórios.
+- Alertar se script_text contiver padrões perigosos.
+- Alertar se houver comandos destrutivos.
+- Mostrar o JSON final formatado.
+- Botão “Copy JSON” permitido.
+- Botão “Execute” deve ficar desabilitado.
+- Exibir classificação de risco: low, medium, high.
+
+Stack:
+Next.js, React, Tailwind, shadcn/ui.
+
+Use dados mockados.
+```
+
+### 48.7 Prompt para Queue Inspector
+
+```text
+Crie uma tela chamada AI Bridge Queue Inspector.
+
+Objetivo:
+Mostrar uma fila mockada de comandos do AI Bridge Local.
+
+Campos da tabela:
+- command_id
+- status
+- success
+- next_action
+- source_chat_id
+- target_chat_id
+- cwd
+- created_at
+- finished_at
+- duration
+- error_type
+
+Funcionalidades:
+- filtros por status;
+- filtros por success;
+- busca por command_id;
+- badges coloridos;
+- painel lateral com detalhes do comando;
+- botão “Generate readonly diagnostic”;
+- botão “Retry” desabilitado por padrão;
+- aviso de que a tela é apenas protótipo/report_only.
+
+Stack:
+Next.js, React, Tailwind, shadcn/ui.
+
+Use dados mockados.
+```
+
+### 48.8 Prompt para Docs and Runbook Viewer
+
+```text
+Crie uma tela chamada AI Bridge Docs and Runbook Viewer.
+
+Objetivo:
+Visualizar documentação operacional do AI Bridge Local.
+
+Seções:
+- guia principal;
+- docs legacy;
+- runbooks;
+- roadmap;
+- últimos commits;
+- smokes;
+- release checklist.
+
+Funcionalidades:
+- busca textual;
+- árvore lateral de documentos;
+- preview markdown;
+- badges para docs ativos e legacy;
+- bloco de próximas atividades;
+- botão “Copy section”;
+- nenhum acesso real a arquivos;
+- dados mockados.
+
+Stack:
+Next.js, React, Tailwind, shadcn/ui.
+```
+
+### 48.9 Capability futura sugerida
+
+Envelope conceitual futuro:
+
+```json
+{
+  "action": "ui-prototype",
+  "type": "research",
+  "delivery_kind": "local_capability",
+  "payload": {
+    "provider": "v0",
+    "mode": "report_only",
+    "target": "operations_dashboard",
+    "output_dir": "reports/v0"
+  }
+}
+```
+
+Essa capability deve apenas gerar prompt, relatório e checklist.
+
+Ela não deve:
+
+* escrever código em `apps/`;
+* escrever código em `backend/`;
+* escrever código em `extension/`;
+* alterar arquivos produtivos;
+* instalar dependências;
+* executar `npm`;
+* executar `vercel`;
+* executar deploy;
+* abrir PR automaticamente;
+* aplicar patch automaticamente.
+
+### 48.10 Fase 1: sem API
+
+Implementação inicial recomendada:
+
+* criar `reports/v0/AI_BRIDGE_LOCAL_V0_UI_RESEARCH_PLAN_YYYY-MM-DD.md`;
+* criar script futuro `scripts/research/v0_ui_prompt_plan.py`;
+* criar smoke futuro `scripts/watcher/smoke_v0_ui_research_mode.py`;
+* garantir que o smoke valide o termo `report_only`;
+* garantir que nenhum patch de UI seja aplicado pela fase de pesquisa;
+* manter todos os resultados em relatório.
+
+Critérios de aceite da fase 1:
+
+* o script gera prompts;
+* o script não chama API externa;
+* o script não altera código produtivo;
+* o script salva somente em `reports/v0/`;
+* o smoke confirma que o modo é `report_only`;
+* o smoke confirma que não há escrita em pastas produtivas.
+
+### 48.11 Fase 2: com API do v0
+
+A API do v0 só deve ser considerada depois que existirem controles explícitos.
+
+Pré-requisitos:
+
+* `V0_API_KEY` em `.env` local;
+* `.env` em `.gitignore`;
+* logs sem segredo;
+* limite de custo;
+* limite de chamadas;
+* limite de tamanho de prompt;
+* bloqueio de envio de arquivos sensíveis;
+* bloqueio de envio de `queue_local.db` real;
+* bloqueio de envio de tokens;
+* bloqueio de envio de cookies;
+* bloqueio de envio de credenciais;
+* saída sempre em `reports/v0/`;
+* nenhum apply automático.
+
+Variáveis propostas:
+
+```text
+V0_API_KEY=local_secret_only
+AI_BRIDGE_V0_MODE=report_only
+AI_BRIDGE_V0_OUTPUT_DIR=reports/v0
+AI_BRIDGE_V0_MAX_PROMPT_CHARS=12000
+AI_BRIDGE_V0_ALLOW_EXTERNAL_CALLS=0
+```
+
+A variável `AI_BRIDGE_V0_ALLOW_EXTERNAL_CALLS` deve começar como `0`.
+
+### 48.12 Fase 3: importação guardada
+
+Se o resultado do v0 for aprovado, a importação deve usar outro fluxo.
+
+Fluxo de importação:
+
+1. criar branch ou patch separado;
+2. verificar `git status --short`;
+3. revisar arquivos gerados;
+4. remover dependências desnecessárias;
+5. remover segredos;
+6. remover chamadas reais;
+7. usar dados mockados;
+8. rodar lint/test quando aplicável;
+9. rodar smoke específico;
+10. rodar `git diff --check`;
+11. stage de arquivos exatos;
+12. auditoria humana;
+13. commit com mensagem clara;
+14. push somente depois de validação.
+
+Capability futura separada:
+
+```json
+{
+  "action": "ui-prototype-import",
+  "type": "guarded_patch",
+  "delivery_kind": "local_capability",
+  "payload": {
+    "source_report": "reports/v0/...",
+    "mode": "guarded_patch",
+    "requires_human_approval": true
+  }
+}
+```
+
+### 48.13 Riscos
+
+Riscos principais:
+
+* gerar UI bonita, mas desalinhada com a arquitetura real;
+* importar dependências desnecessárias;
+* criar acoplamento indevido com Vercel;
+* expor contexto sensível em prompt externo;
+* aplicar código gerado sem auditoria;
+* confundir protótipo com implementação validada;
+* criar botões que pareçam executar ações reais;
+* gerar código com padrões incompatíveis com o repo;
+* gerar telas que não respeitam o protocolo de envelopes;
+* gerar chamadas externas sem controle de custo.
+
+### 48.14 Mitigações
+
+Mitigações obrigatórias:
+
+* usar v0 como pesquisa e protótipo;
+* manter AI Bridge Local como executor auditável;
+* manter modo `report_only` como padrão;
+* separar relatório, patch e commit;
+* manter smokes como gate obrigatório;
+* nunca enviar segredos;
+* nunca enviar `.env`;
+* nunca enviar banco local real;
+* nunca aplicar patch automaticamente;
+* revisar dependências antes de instalar;
+* exigir aprovação humana para qualquer importação;
+* manter botão de execução real desabilitado em protótipos.
+
+### 48.15 Primeira entrega recomendada
+
+Primeira entrega:
+
+```text
+reports/v0/AI_BRIDGE_LOCAL_V0_UI_RESEARCH_PLAN_2026-06-16.md
+```
+
+Conteúdo do relatório:
+
+* objetivo;
+* prompts sugeridos;
+* telas candidatas;
+* regras de segurança;
+* limites do uso do v0;
+* critérios de aceite;
+* plano de fase 1;
+* plano de fase 2;
+* plano de fase 3.
+
+Segunda entrega:
+
+```text
+scripts/research/v0_ui_prompt_plan.py
+```
+
+Responsabilidade:
+
+* gerar prompt do dashboard;
+* gerar prompt do command builder;
+* gerar prompt do queue inspector;
+* salvar tudo em `reports/v0/`;
+* não chamar API externa;
+* não alterar código produtivo.
+
+Terceira entrega:
+
+```text
+scripts/watcher/smoke_v0_ui_research_mode.py
+```
+
+Responsabilidade:
+
+* validar que o script existe;
+* validar que o modo padrão é `report_only`;
+* validar que a saída vai para `reports/v0/`;
+* validar que não há escrita em `apps/`, `backend/` ou `extension/`;
+* validar que não há uso obrigatório de `V0_API_KEY` na fase 1;
+* validar que o relatório contém “nenhum patch automático”.
+
+### 48.16 Critérios de aceite
+
+A integração documental do v0 será considerada válida quando:
+
+* este guia mencionar v0.dev / v0.app;
+* o modo recomendado for `report_only`;
+* o guia deixar claro que v0 não executa comandos locais;
+* existir relatório em `reports/v0/`;
+* existir plano para `scripts/research/v0_ui_prompt_plan.py`;
+* existir plano para `scripts/watcher/smoke_v0_ui_research_mode.py`;
+* `smoke_docs.py` continuar passando;
+* `git diff --check` continuar passando;
+* a raiz de `docs/` continuar contendo apenas `AI_BRIDGE_LOCAL_GUIDE.md` e `legacy/`.
+
+### 48.17 Decisão final
+
+O v0.dev / v0.app entra no roadmap do AI Bridge Local como:
+
+```text
+External UI Prototype Provider
+```
+
+Modo inicial:
+
+```text
+report_only
+```
+
+Uso principal:
+
+```text
+gerar prompts, protótipos e relatórios de UI
+```
+
+Uso proibido na fase inicial:
+
+```text
+executar comandos, aplicar patches, fazer deploy, instalar dependências ou alterar código produtivo automaticamente
+```
+
+Próxima atividade recomendada:
+
+```text
+Criar scripts/research/v0_ui_prompt_plan.py e scripts/watcher/smoke_v0_ui_research_mode.py.
+```
+
+<!-- AI_BRIDGE_LOCAL_V0_UI_RESEARCH_END -->

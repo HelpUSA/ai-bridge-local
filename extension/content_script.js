@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.11";
+  const VERSION = "0.5.34";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -28,6 +28,7 @@
       /chat\.deepseek\.com\/a\/chat\/s\/([0-9a-fA-F-]{36})/i,
       /chat\.deepseek\.com\/.*\/s\/([0-9a-fA-F-]{36})/i,
       /chatgpt\.com\/c\/([0-9a-fA-F-]{36})/i,
+    /gemini\.google\.com\/app\/([0-9a-zA-Z_-]+)/i,
       /\/c\/([0-9a-fA-F-]{36})/i,
       /\/chat\/([0-9a-fA-F-]{36})/i
     ];

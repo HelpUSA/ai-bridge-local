@@ -1,5 +1,5 @@
 // AI Bridge Local v0.4.37 - HelpUS AI compatible bridge
-const VERSION = "0.5.11";
+const VERSION = "0.5.34";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -133,7 +133,7 @@ async function postDeliveryStatus(action, status, detail, result = {}) {
 }
 
 function canonicalChatId(value) {
-  const raw = String(value || "").trim().replace(/^(chat|deepseek):/i, "");
+  const raw = String(value || "").trim().replace(/^(chat|deepseek|gemini):/i, "");
   const m = raw.match(/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/);
   return m ? m[0].toLowerCase() : raw;
 }

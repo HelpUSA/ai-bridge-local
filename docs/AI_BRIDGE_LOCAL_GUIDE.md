@@ -1059,8 +1059,3 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Decisao: usar Knowledge Vault e knowledge_writer.py como nova ferramenta operacional antes da integracao SMART_TASK_KNOWLEDGE_INTEGRATION_V2_SAFE.
 - Risco registrado: scripts grandes colados no ChatGPT podem sofrer Markdown corruption, crases indevidas e quebras de codigo.
 - Proximo micro: executar integracao minima somente apos docs, nota, report, smokes e diff check passarem.
-
-## 67. Smart task knowledge integration
-- DONE 2026-06-17 smart_task_runner.py grava nota de task no Knowledge Vault por padrao.
-- DONE 2026-06-17 adicionada flag --no-knowledge para desativar gravacao da nota.
-- DONE 2026-06-17 smoke_smart_task_runner valida criacao de nota e cleanup de estado temporario.

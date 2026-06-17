@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import json
@@ -7,7 +7,6 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
-from knowledge_writer import write_note
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE_DIR = ROOT / "runtime" / "smart_tasks"
@@ -181,39 +180,6 @@ class SmartTask:
         self.save()
 
 
- def write_knowledge_note(self, dry_run: bool = False) -> Path:
- related_files = [self.state_path.relative_to(ROOT).as_posix()]
- lines = [
- '# Smart Task Knowledge Note',
- '',
- '## Objective',
- self.objective,
- '',
- '## Status',
- self.status,
- '',
- '## Dry run',
- str(dry_run).lower(),
- '',
- '## Last error',
- self.last_error or 'none',
- '',
- '## Steps',
- ]
- for step in self.steps:
- lines.append(f'- {step.name}: completed={str(step.completed).lower()} output={step.output}')
- lines.extend(['', '## Related files'])
- for item in related_files:
- lines.append(f'- {item}')
- return write_note(
- 'task',
- f'Smart task {self.task_id}',
- '
-'.join(lines),
- slug=f'smart-task-{self.task_id}',
- tags=['ai-bridge-local', 'smart-task', 'knowledge-vault'],
- )
-
 def demo_task(task_id: str) -> SmartTask:
     def inspect() -> str:
         return "repo_head=" + git_head()
@@ -255,8 +221,7 @@ def main() -> int:
     parser.add_argument("--catalog", action="store_true")
     parser.add_argument("--classify-error", default="")
     parser.add_argument("--json", action="store_true")
-    parser.add_argument('--print-state', action='store_true')
- parser.add_argument('--no-knowledge', action='store_true')
+    parser.add_argument("--print-state", action="store_true")
     args = parser.parse_args()
 
     if args.catalog:
@@ -279,8 +244,6 @@ def main() -> int:
 
     task = demo_task(args.task_id)
     task.run(dry_run=args.dry_run)
- if not args.no_knowledge:
- task.write_knowledge_note(dry_run=args.dry_run)
 
     if args.print_state:
         print(task.state_path.read_text(encoding="utf-8"))
@@ -292,4 +255,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

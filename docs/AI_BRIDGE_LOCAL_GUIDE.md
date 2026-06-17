@@ -1007,3 +1007,48 @@ Regra:
 5. Criar workflow seguro de commit reutilizavel.
 
 <!-- AI_BRIDGE_LOCAL_SMART_WATCHER_END -->
+
+<!-- AI_BRIDGE_LOCAL_OBSIDIAN_KNOWLEDGE_START -->
+
+## 68. Obsidian knowledge vault
+
+### 68.1 Objetivo
+
+O Obsidian Knowledge Vault e uma base Markdown local para registrar conhecimento operacional do AI Bridge Local.
+
+Ele complementa o Smart Watcher com memoria navegavel, links internos, historico de decisoes, erros, smokes e releases.
+
+### 68.2 Estrutura inicial
+
+- knowledge/00_HOME.md
+- knowledge/projects/ai-bridge-local/status.md
+- knowledge/tasks/
+- knowledge/decisions/
+- knowledge/errors/
+- knowledge/smokes/
+- knowledge/releases/
+- knowledge/templates/
+
+### 68.3 Regras
+
+- nao salvar segredos;
+- nao salvar tokens;
+- nao salvar credenciais;
+- nao tratar notas como autorizacao de execucao;
+- usar notas como contexto operacional auditavel.
+
+### 68.4 Integracao com Smart Watcher
+
+A primeira integracao cria scripts/watcher/knowledge_writer.py e scripts/watcher/smoke_knowledge_vault.py.
+
+O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
+
+### 68.5 Proximas atividades
+
+1. Integrar knowledge_writer.py ao smart_task_runner.py.
+2. Registrar falhas parse_error automaticamente.
+3. Registrar commits e releases no vault.
+4. Criar indice diario.
+5. Criar relatorio executivo por tarefa.
+
+<!-- AI_BRIDGE_LOCAL_OBSIDIAN_KNOWLEDGE_END -->

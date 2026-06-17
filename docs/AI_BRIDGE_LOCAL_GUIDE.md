@@ -1052,3 +1052,10 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 5. Criar relatorio executivo por tarefa.
 
 <!-- AI_BRIDGE_LOCAL_OBSIDIAN_KNOWLEDGE_END -->
+
+## 66. Docs-first Knowledge Vault alignment
+- DONE 2026-06-17 registrado alinhamento docs-first antes de patch de codigo.
+- HEAD readonly confirmado: 547e8dc feat: add obsidian knowledge vault.
+- Decisao: usar Knowledge Vault e knowledge_writer.py como nova ferramenta operacional antes da integracao SMART_TASK_KNOWLEDGE_INTEGRATION_V2_SAFE.
+- Risco registrado: scripts grandes colados no ChatGPT podem sofrer Markdown corruption, crases indevidas e quebras de codigo.
+- Proximo micro: executar integracao minima somente apos docs, nota, report, smokes e diff check passarem.

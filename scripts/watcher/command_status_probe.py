@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Read-only diagnostic helper for AI Bridge Local command delivery state."""
 from __future__ import annotations
 
@@ -79,16 +79,16 @@ def db_rows_for_command(command_id: str) -> None:
     conn = sqlite3.connect(f"file:{DB_PATH.as_posix()}?mode=ro", uri=True, timeout=10)
     conn.row_factory = sqlite3.Row
     try:
-        tables = [row[0] for row in con.execute("select name from sqlite_master where type='table' order by name")]
+        tables = [row[0] for row in conn.execute("select name from sqlite_master where type='table' order by name")]
         emit("DB_TABLES", ",".join(tables))
         if "commands" not in tables:
             emit("COMMANDS_TABLE_MISSING")
             return
-        cols = [row[1] for row in con.execute("pragma table_info(commands)")]
+        cols = [row[1] for row in conn.execute("pragma table_info(commands)")]
         wanted = ["id", "command_id", "status", "source_chat_id", "target_chat_id", "action", "delivery_kind", "created_at", "delivered_at", "acked_at", "return_code", "last_error", "stdout", "stderr"]
         selected = [col for col in wanted if col in cols]
         sql = "select " + ",".join(selected) + " from commands where command_id in (?, ?) order by id"
-        rows = list(con.execute(sql, (command_id, result_id)))
+        rows = list(conn.execute(sql, (command_id, result_id)))
         emit("DB_MATCH_COUNT", len(rows))
         for row in rows:
             emit("DB_ROW_START")
@@ -97,7 +97,7 @@ def db_rows_for_command(command_id: str) -> None:
                 emit(f"{key}={safe_text(row[key], limit)}")
             emit("DB_ROW_END")
     finally:
-        con.close()
+        conn.close()
 
 
 def classify(command_id: str) -> None:

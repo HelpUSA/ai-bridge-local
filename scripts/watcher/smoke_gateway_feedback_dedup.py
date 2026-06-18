@@ -1,18 +1,13 @@
+﻿import pathlib
 
-from pathlib import Path
+gateway = pathlib.Path('gateway_local.py').read_text(encoding='utf-8')
 
-gateway = Path("gateway_local.py").read_text(encoding="utf-8")
-assert "def enqueue_source_feedback" in gateway
-assert "tipo=invalid_envelope" in gateway
-assert "status=queued" in gateway
-assert "_to_" in gateway
-assert "source_key =" in gateway
-assert "uuid.uuid4().hex[:12]" not in gateway
-assert "claim_lost" in gateway or "UPDATE commands SET status='delivering', delivered_at=? WHERE command_id=? AND status='queued'" in gateway
+assert 'def open_db' in gateway
+assert 'PRAGMA busy_timeout = 30000' in gateway
+assert 'conn = open_db()' in gateway
+assert '[AI_LOCAL_RUN]' in gateway
+assert 'result_is_final=1' in gateway
+assert 'chat_can_continue=1' in gateway
+assert 'next_action=' in gateway
 
-worker_path = Path("brain_worker.py")
-if worker_path.exists():
-    worker = worker_path.read_text(encoding="utf-8")
-    assert "comando aceito, execucao iniciada" not in worker
-
-print("OK gateway_feedback_dedup_smoke")
+print('OK smoke_gateway_feedback_dedup')

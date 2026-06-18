@@ -1,6 +1,6 @@
-﻿// AI Bridge Local v0.5.35 - HelpUS AI compatible bridge
+﻿// AI Bridge Local v0.5.36 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.35";
+  const VERSION = "0.5.36";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
@@ -616,21 +616,19 @@ function reportEnvelopeError(kind, errorMessage, raw) {
 
       const info = buildLocalStatusMessage(kind, errorMessage, raw);
       const targets = [];
+      const targetCandidates = [info.originalSource, info.currentChatId, info.originalTarget];
 
-      if (info.currentChatId) targets.push(info.currentChatId);
-      if (info.originalTarget && !targets.includes(info.originalTarget)) targets.push(info.originalTarget);
+      for (const candidate of targetCandidates) {
+        const validTarget = canonicalUuid(candidate);
+        if (validTarget && !targets.includes(validTarget)) targets.push(validTarget);
+      }
 
       if (!targets.length) {
         console.warn("[Local v" + VERSION + "] Could not report envelope error: no valid target chat");
         return;
       }
 
-      for (const targetChatId of targets) {
-        const validTarget = canonicalUuid(targetChatId);
-        if (!validTarget) {
-          console.warn("[Local v" + VERSION + "] Skipping invalid status target:", targetChatId);
-          continue;
-        }
+      for (const validTarget of targets) {
 
         const cmd = {
           schema: LOCAL_SCHEMA,
@@ -656,10 +654,14 @@ function reportEnvelopeError(kind, errorMessage, raw) {
 
   function extract(text) {
     const cmds = [];
+    const sourceText = String(text || "");
+    if (sourceText.includes("[AI_LOCAL_ERRO]") || sourceText.includes("[AI_LOCAL_RUN]") || sourceText.includes("[AI_LOCAL]")) {
+      return cmds;
+    }
     const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
     let m;
 
-    while ((m = regex.exec(text)) !== null) {
+    while ((m = regex.exec(sourceText)) !== null) {
       const raw = m[1].trim();
 
       try {
@@ -864,14 +866,31 @@ sendChatHeartbeat();
     if (!node || !(node instanceof Element)) return;
     if (isComposerOrInputNode(node)) return;
 
-    const text = String(node.innerText || node.textContent || "").trim();
-    if (!text || (!text.includes(START_MARKER) && !text.includes(END_MARKER))) return;
+    const candidateTexts = [];
+    const addCandidateText = (element) => {
+      if (!element || !(element instanceof Element)) return;
+      if (isComposerOrInputNode(element)) return;
+      const candidateText = String(element.innerText || element.textContent || "").trim();
+      if (!candidateText) return;
+      if (candidateText.length > MAX_CAPTURE_CHARS) return;
+      if (!candidateText.includes(START_MARKER) || !candidateText.includes(END_MARKER)) return;
+      candidateTexts.push(candidateText);
+    };
 
-    const parsed = parseCapturedEnvelopeText(text);
-    if (!parsed.ok) {
-      console.warn("[Local] Gemini envelope capture rejected:", parsed.error);
-      return;
+    addCandidateText(node);
+    node.querySelectorAll("pre, code, markdown, [class*='message'], [class*='response'], [data-message-author-role]").forEach(addCandidateText);
+    candidateTexts.sort((a, b) => a.length - b.length);
+
+    let parsed = null;
+    for (const candidateText of candidateTexts) {
+      const attempt = parseCapturedEnvelopeText(candidateText);
+      if (attempt.ok) {
+        parsed = attempt;
+        break;
+      }
+      console.warn("[Local] Gemini envelope candidate rejected:", attempt.error);
     }
+    if (!parsed) return;
 
     const commandId = String(parsed.envelope.command_id || "").trim();
     if (wasCaptured(commandId)) {

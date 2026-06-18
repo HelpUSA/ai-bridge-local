@@ -15,7 +15,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.2.7"
+VERSION = "0.2.8"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()

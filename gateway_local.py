@@ -10,13 +10,18 @@ from urllib.parse import parse_qs, urlparse
 HOST = "127.0.0.1"
 PORT = 8766
 DB_PATH = "queue_local.db"
+
+def open_db():
+    conn = sqlite3.connect(DB_PATH, timeout=30)
+    conn.execute('PRAGMA busy_timeout = 30000')
+    return conn
 VERSION = "0.2.6"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
 
 def init_db():
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     conn.execute("CREATE TABLE IF NOT EXISTS commands (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT UNIQUE NOT NULL, source_chat_id TEXT, target_chat_id TEXT, action TEXT, delivery_kind TEXT, conversation_id TEXT, from_agent TEXT, message TEXT, payload_json TEXT, status TEXT DEFAULT 'queued', created_at TEXT DEFAULT (datetime('now')), delivered_at TEXT, acked_at TEXT, return_code INTEGER, stdout TEXT, stderr TEXT, last_error TEXT)")
     conn.execute("CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, event_type TEXT, message TEXT, payload_json TEXT, created_at TEXT DEFAULT (datetime('now')))")
     conn.execute("CREATE TABLE IF NOT EXISTS invalid_messages (id INTEGER PRIMARY KEY AUTOINCREMENT, source_chat_id TEXT, raw_text TEXT, error TEXT, created_at TEXT DEFAULT (datetime('now')) )")
@@ -49,7 +54,7 @@ def validate_command_body(body, payload):
     return ''
 
 def record_invalid_message(body, error, raw_text=None):
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     try:
         conn.execute("INSERT INTO invalid_messages (source_chat_id, raw_text, error) VALUES (?, ?, ?)", (body.get('source_chat_id', ''), (raw_text if raw_text is not None else json.dumps(body, ensure_ascii=False)), error))
         conn.commit()
@@ -57,7 +62,7 @@ def record_invalid_message(body, error, raw_text=None):
         conn.close()
 
 def record_dead_letter(body, payload, error, attempt_count=1):
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     try:
         conn.execute('INSERT INTO dead_letters (command_id, source_chat_id, target_chat_id, action, delivery_kind, payload_json, last_error, attempt_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', (body.get('command_id', ''), body.get('source_chat_id', ''), body.get('target_chat_id', ''), body.get('action', ''), body.get('delivery_kind', ''), json.dumps(payload or {}, ensure_ascii=False), error, attempt_count))
         conn.commit()
@@ -69,7 +74,7 @@ def record_event(command_id=None, event_type=None, message=None, payload=None):
         return False
     sql = 'INSERT INTO events (command_id, event_type, message, payload_json) VALUES (?, ?, ?, ?)'
     params = (command_id, event_type, message, json.dumps(payload or {}, ensure_ascii=False))
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     try:
         conn.execute(sql, params)
         conn.commit()
@@ -81,7 +86,7 @@ def fail_stale_deliveries(max_age_seconds=45):
     """Fail stale deliveries and recover misrouted local run-command rows."""
     try:
         cutoff_expr = f"-{int(max_age_seconds)} seconds"
-        conn = sqlite3.connect(DB_PATH)
+        conn = open_db()
         try:
             conn.execute(
                 """
@@ -174,7 +179,7 @@ def fail_stale_deliveries(max_age_seconds=45):
 
 def fetch_control_status():
     fail_stale_deliveries()
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     try:
         rows = conn.execute("SELECT status, COUNT(1) FROM commands GROUP BY status").fetchall()
         recent = conn.execute("SELECT command_id, source_chat_id, target_chat_id, action, status, created_at, last_error FROM commands ORDER BY id DESC LIMIT 30").fetchall()
@@ -234,7 +239,7 @@ def enqueue_source_feedback(body, feedback_type, detail):
             'correcao=Nada foi executado. Corrija o envelope e reenvie.',
         ]
     message = chr(10).join(lines)
-    conn = sqlite3.connect(DB_PATH)
+    conn = open_db()
     try:
         conn.execute(
             "INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
@@ -285,7 +290,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             return
 
         if self.path == "/health":
-            conn = sqlite3.connect(DB_PATH)
+            conn = open_db()
             q = conn.execute("SELECT COUNT(*) FROM commands WHERE status='queued'").fetchone()[0]
             d = conn.execute("SELECT COUNT(*) FROM commands WHERE status='delivering'").fetchone()[0]
             conn.close()
@@ -296,7 +301,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             qs = parse_qs(urlparse(self.path).query)
             target_chat_id = qs.get("target_chat_id", ["gateway-brain-supervisor"])[0]
 
-            conn = sqlite3.connect(DB_PATH)
+            conn = open_db()
             rows = conn.execute(
                 "SELECT source_chat_id, COUNT(*) FROM commands WHERE status='queued' AND target_chat_id=? AND action='run-command' GROUP BY source_chat_id ORDER BY MIN(id) ASC",
                 (target_chat_id,)
@@ -317,7 +322,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             chat_id = qs.get("chat_id", ["gateway-brain-supervisor"])[0]
             source_chat_id = qs.get("source_chat_id", [""])[0]
 
-            conn = sqlite3.connect(DB_PATH)
+            conn = open_db()
             if source_chat_id:
                 row = conn.execute(
                     "SELECT * FROM commands WHERE status='queued' AND target_chat_id=? AND source_chat_id=? AND action='run-command' ORDER BY id ASC LIMIT 1",
@@ -390,7 +395,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             if body.get("action") == "run-command" and body.get("delivery_kind") == "local_capability":
                 body["target_chat_id"] = "gateway-brain-supervisor"
 
-            conn = sqlite3.connect(DB_PATH)
+            conn = open_db()
             try:
                 conn.execute(
                     "INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
@@ -416,7 +421,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             return
 
         if self.path == "/bridge/acks":
-            conn = sqlite3.connect(DB_PATH)
+            conn = open_db()
             conn.execute(
                 "UPDATE commands SET status=?,acked_at=?,return_code=?,stdout=?,stderr=?,last_error=? WHERE command_id=?",
                 (

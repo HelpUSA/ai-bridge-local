@@ -1,9 +1,12 @@
-﻿// AI Bridge Local v0.5.36 - HelpUS AI compatible bridge
+﻿// AI Bridge Local v0.5.37 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.36";
+  const VERSION = "0.5.37";
+  const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
+  const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const LOCAL_SCHEMA_VERSION = 1;
   const reportedEnvelopeErrors = new Set();
+  const reportedEnvelopeErrorTimes = new Map();
 
   console.log("[Local v" + VERSION + "] Active");
 
@@ -523,9 +526,9 @@
     return {
       summary: causes.join("; "),
       correction:
-        "Nada foi executado. Reenvie um envelope novo com command_id novo, JSON estrito, aspas duplas ASCII, sem caracteres invisiveis e sem texto quebrado. Para comandos grandes, use script_text/script_ext ou salve um .ps1/.py real antes de executar.",
+        "Nada foi executado. Reenvie um envelope novo com command_id novo, JSON estrito, aspas duplas ASCII, sem caracteres invisiveis e sem texto quebrado. Para comandos grandes, prefira payload.command com python -c + base64; se usar script_text, escape quebras de linha como \\n.",
       safeModel:
-        "Modelo seguro: use marcadores locais de inicio/fim sozinhos nas linhas; dentro deles envie um unico JSON valido com payload.cwd, payload.timeout_seconds, payload.script_ext e payload.script_text. Exemplo de script_text curto: Write-Output 'OK'; git status -sb."
+        "Modelo seguro: use marcadores locais de inicio/fim sozinhos nas linhas; dentro deles envie um unico JSON valido com payload.cwd, payload.timeout_seconds e payload.command. Para comandos grandes, use python -c com base64; script_text somente curto com \\n escapado."
     };
   }
 
@@ -578,22 +581,27 @@
     const originalCommandId = extractJsonStringField(raw, "command_id") || "unknown";
     const key = "ai_bridge_local_error_reported_" + safeIdPart(kind) + "_" + safeIdPart(originalCommandId) + "_" + hashTextForStatus(raw);
 
-    if (reportedEnvelopeErrors.has(key)) {
+    const now = Date.now();
+    const memoryReportedAt = reportedEnvelopeErrorTimes.get(key);
+    if (memoryReportedAt && now - memoryReportedAt < ENVELOPE_ERROR_DEDUPE_MS) {
       console.warn("[Local v" + VERSION + "] Skipping duplicate envelope error in memory:", originalCommandId);
       return false;
     }
 
     try {
-      if (localStorage.getItem(key)) {
+      const storedReportedAt = Number(localStorage.getItem(key) || 0);
+      if (storedReportedAt && now - storedReportedAt < ENVELOPE_ERROR_DEDUPE_MS) {
         reportedEnvelopeErrors.add(key);
+        reportedEnvelopeErrorTimes.set(key, storedReportedAt);
         console.warn("[Local v" + VERSION + "] Skipping duplicate envelope error in localStorage:", originalCommandId);
         return false;
       }
+      if (storedReportedAt) localStorage.removeItem(key);
     } catch (e) {}
 
-
     reportedEnvelopeErrors.add(key);
-    try { localStorage.setItem(key, String(Date.now())); } catch (e) {}
+    reportedEnvelopeErrorTimes.set(key, now);
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
     return true;
   }
 
@@ -655,7 +663,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
   function extract(text) {
     const cmds = [];
     const sourceText = String(text || "");
-    if (sourceText.includes("[AI_LOCAL_ERRO]") || sourceText.includes("[AI_LOCAL_RUN]") || sourceText.includes("[AI_LOCAL]")) {
+    if (LOCAL_STATUS_PREFIXES.some((prefix) => sourceText.includes(prefix))) {
       return cmds;
     }
     const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
@@ -872,6 +880,7 @@ sendChatHeartbeat();
       if (isComposerOrInputNode(element)) return;
       const candidateText = String(element.innerText || element.textContent || "").trim();
       if (!candidateText) return;
+      if (LOCAL_STATUS_PREFIXES.some((prefix) => candidateText.includes(prefix))) return;
       if (candidateText.length > MAX_CAPTURE_CHARS) return;
       if (!candidateText.includes(START_MARKER) || !candidateText.includes(END_MARKER)) return;
       candidateTexts.push(candidateText);

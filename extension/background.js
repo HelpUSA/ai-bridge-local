@@ -363,7 +363,89 @@ function pollMessages(reason = 'interval') {
   }
 }
 
+
+function aiBridgeCapturedPlainObject(value) {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value));
+}
+
+function aiBridgeCapturedString(value) {
+  return String(value || "").trim();
+}
+
+function aiBridgeCapturedCommandText(envelope) {
+  const payload = aiBridgeCapturedPlainObject(envelope && envelope.payload) ? envelope.payload : {};
+  const parts = [];
+  if (Array.isArray(payload.command)) parts.push(payload.command.join(" "));
+  if (payload.script_text) parts.push(String(payload.script_text));
+  if (payload.cwd) parts.push(String(payload.cwd));
+  return (" " + parts.join(" ") + " ").toLowerCase();
+}
+
+function aiBridgeCapturedReadonlyAllowed(envelope) {
+  const text = aiBridgeCapturedCommandText(envelope);
+  const blocked = ["remove-item", " set-content", " add-content", " out-file", " git add", " git commit", " git push", " npm install", " pip install", " invoke-expression", " iex", " curl", " del ", " erase ", " rm ", " rmdir ", " move ", " mv ", " copy ", " cp "];
+  if (blocked.some((token) => text.includes(token))) return false;
+  return text.includes("get-childitem") || text.includes(" dir ") || text.includes("git status") || text.includes("git diff --name-only") || text.includes("git diff --stat");
+}
+
+function validateAiBridgeCapturedEnvelopeMessage(message, sender) {
+  const envelope = message && message.envelope;
+  if (!aiBridgeCapturedPlainObject(envelope)) return { ok: false, error: "captured_envelope_not_object" };
+
+  const sourceChatId = aiBridgeCapturedString(message.source_chat_id || envelope.source_chat_id);
+  const commandId = aiBridgeCapturedString(envelope.command_id);
+  const targetChatId = aiBridgeCapturedString(envelope.target_chat_id);
+
+  const conversationId = aiBridgeCapturedString(envelope.conversation_id);
+  const action = aiBridgeCapturedString(envelope.action || envelope.type);
+  const deliveryKind = aiBridgeCapturedString(envelope.delivery_kind);
+
+  if (!sourceChatId) return { ok: false, error: "missing_source_chat_id" };
+  if (!commandId) return { ok: false, error: "missing_command_id" };
+  if (!targetChatId) return { ok: false, error: "missing_target_chat_id" };
+  if (!conversationId) return { ok: false, error: "missing_conversation_id" };
+  if (!action) return { ok: false, error: "missing_action" };
+
+  const forwardedEnvelope = { ...envelope, source_chat_id: sourceChatId, action, type: envelope.type || action };
+
+  if (action === "send-chat-message") {
+    if (deliveryKind !== "inter_agent_message") return { ok: false, error: "send_chat_message_requires_inter_agent_message" };
+    return { ok: true, envelope: forwardedEnvelope, command_id: commandId };
+  }
+
+  if (action === "run-command") {
+    if (deliveryKind !== "local_capability") return { ok: false, error: "run_command_requires_local_capability" };
+    if (!aiBridgeCapturedPlainObject(envelope.payload)) return { ok: false, error: "run_command_requires_payload_object" };
+    if (!aiBridgeCapturedReadonlyAllowed(envelope)) return { ok: false, error: "run_command_rejected_by_readonly_gate" };
+    return { ok: true, envelope: forwardedEnvelope, command_id: commandId };
+  }
+
+  return { ok: false, error: "captured_action_not_allowed" };
+}
+
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message && message.type === "AI_BRIDGE_CAPTURED_ENVELOPE") {
+    const validation = validateAiBridgeCapturedEnvelopeMessage(message, sender);
+    if (!validation.ok) {
+      console.warn("[bg] captured envelope rejected:", validation.error);
+      sendResponse({ ok: false, error: validation.error });
+      return true;
+    }
+
+    postCommand(validation.envelope)
+      .then(() => {
+        pollMessagesSoon("capturedEnvelope");
+        sendResponse({ ok: true });
+      })
+      .catch((e) => {
+        console.log("[bg] captured envelope postCommand error:", e.message);
+        sendResponse({ ok: false, error: e.message });
+      });
+    return true;
+  }
+
+
  if (message?.type === 'AI_LOCAL_TELEMETRY_EVENT') {
  postTelemetryEvent(message.event_type, message.payload || {});
  sendResponse({ ok: true });

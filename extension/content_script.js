@@ -768,3 +768,161 @@ function reportEnvelopeError(kind, errorMessage, raw) {
 
 setInterval(sendChatHeartbeat, 30000);
 sendChatHeartbeat();
+
+/* AI Bridge Local: Gemini auto envelope capture. */
+(function installAiBridgeGeminiCapturedEnvelopeBridge() {
+  if (window.__AI_BRIDGE_GEMINI_CAPTURE_INSTALLED__) return;
+  window.__AI_BRIDGE_GEMINI_CAPTURE_INSTALLED__ = true;
+
+  const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
+  const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+  const MAX_CAPTURE_CHARS = 20000;
+  const DEDUPE_PREFIX = "ai_bridge_captured_envelope:";
+
+  function isGeminiAppPage() {
+    return /gemini\.google\.com\/app\/([0-9a-zA-Z_-]+)/i.test(location.href);
+  }
+
+  function getGeminiChatId() {
+    const match = location.href.match(/gemini\.google\.com\/app\/([0-9a-zA-Z_-]+)/i);
+    return match ? match[1] : "";
+  }
+
+  function countOccurrences(text, needle) {
+    let count = 0;
+    let offset = 0;
+    while (true) {
+      const foundAt = text.indexOf(needle, offset);
+      if (foundAt < 0) return count;
+      count += 1;
+      offset = foundAt + needle.length;
+    }
+  }
+
+  function parseCapturedEnvelopeText(rawText) {
+    const text = String(rawText || "").trim();
+    if (!text || !text.includes(START_MARKER) || !text.includes(END_MARKER)) {
+      return { ok: false, error: "marker_missing" };
+    }
+    if (text.length > MAX_CAPTURE_CHARS) {
+      return { ok: false, error: "capture_too_large" };
+    }
+    if (countOccurrences(text, START_MARKER) !== 1 || countOccurrences(text, END_MARKER) !== 1) {
+      return { ok: false, error: "multiple_or_missing_blocks" };
+    }
+
+    const startIndex = text.indexOf(START_MARKER);
+    const endIndex = text.indexOf(END_MARKER);
+    if (startIndex < 0 || endIndex < 0 || endIndex <= startIndex) {
+      return { ok: false, error: "invalid_marker_order" };
+    }
+
+    const before = text.slice(0, startIndex).trim();
+    const body = text.slice(startIndex + START_MARKER.length, endIndex).trim();
+    const after = text.slice(endIndex + END_MARKER.length).trim();
+    if (before || after) return { ok: false, error: "text_outside_block" };
+    if (!body) return { ok: false, error: "empty_json_body" };
+
+    let envelope;
+    try {
+      envelope = JSON.parse(body);
+    } catch (err) {
+      return { ok: false, error: "invalid_json", detail: String(err && err.message ? err.message : err) };
+    }
+    if (!envelope || typeof envelope !== "object" || Array.isArray(envelope)) {
+      return { ok: false, error: "json_not_object" };
+    }
+    if (!String(envelope.command_id || "").trim()) {
+      return { ok: false, error: "missing_command_id" };
+    }
+    return { ok: true, envelope, raw_text: text };
+  }
+
+  function isComposerOrInputNode(node) {
+    if (!node || !(node instanceof Element)) return false;
+    return Boolean(node.closest('textarea,input,[contenteditable="true"],[role="textbox"],form'));
+  }
+
+  function wasCaptured(commandId) {
+    try {
+      return sessionStorage.getItem(DEDUPE_PREFIX + commandId) === "1";
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function markCaptured(commandId) {
+    try {
+      sessionStorage.setItem(DEDUPE_PREFIX + commandId, "1");
+    } catch (err) {
+      // best effort only
+    }
+  }
+
+  function tryCaptureEnvelopeFromNode(node) {
+    if (!isGeminiAppPage()) return;
+    if (!node || !(node instanceof Element)) return;
+    if (isComposerOrInputNode(node)) return;
+
+    const text = String(node.innerText || node.textContent || "").trim();
+    if (!text || (!text.includes(START_MARKER) && !text.includes(END_MARKER))) return;
+
+    const parsed = parseCapturedEnvelopeText(text);
+    if (!parsed.ok) {
+      console.warn("[Local] Gemini envelope capture rejected:", parsed.error);
+      return;
+    }
+
+    const commandId = String(parsed.envelope.command_id || "").trim();
+    if (wasCaptured(commandId)) {
+      console.warn("[Local] Gemini envelope duplicate ignored:", commandId);
+      return;
+    }
+    markCaptured(commandId);
+
+    chrome.runtime.sendMessage({
+      type: "AI_BRIDGE_CAPTURED_ENVELOPE",
+      source_chat_id: getGeminiChatId(),
+      raw_text: parsed.raw_text,
+      envelope: parsed.envelope
+    }, (response) => {
+      const runtimeError = chrome.runtime.lastError;
+      if (runtimeError) {
+        console.warn("[Local] Gemini envelope capture sendMessage failed:", runtimeError.message);
+        return;
+      }
+      if (!response || !response.ok) {
+        console.warn("[Local] Gemini envelope capture rejected by background:", response && response.error);
+      } else {
+        console.log("[Local] Gemini envelope captured:", commandId);
+      }
+    });
+  }
+
+  function installGeminiEnvelopeObserver() {
+    if (!isGeminiAppPage() || !document.body) return;
+
+    const seenNodes = new WeakSet();
+    document.body.querySelectorAll("*").forEach((el) => seenNodes.add(el));
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const addedNode of mutation.addedNodes) {
+          if (!(addedNode instanceof Element)) continue;
+          if (seenNodes.has(addedNode)) continue;
+          seenNodes.add(addedNode);
+          window.setTimeout(() => tryCaptureEnvelopeFromNode(addedNode), 250);
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    console.log("[Local] Gemini envelope observer installed for chat:", getGeminiChatId());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installGeminiEnvelopeObserver, { once: true });
+  } else {
+    installGeminiEnvelopeObserver();
+  }
+})();

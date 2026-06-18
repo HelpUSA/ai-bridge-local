@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Inspect local AI Bridge command status by command_id.
 
 This is a read-only diagnostic helper. It checks queue_local.db and recent

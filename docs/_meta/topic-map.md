@@ -19,6 +19,7 @@ tags:
 - [[docs/decisions/ADR-0001-docs-architecture]]
 - [[docs/decisions/ADR-0002-extension-internal-router]]
 - [[docs/decisions/ADR-0004-adapter-isolation]]
+- [[docs/history/evidence-index]]
 - [[docs/history/legacy-map]]
 - [[docs/how-to/add-new-ai-adapter]]
 - [[docs/index]]
@@ -51,6 +52,7 @@ tags:
 
 ## diagnostics
 
+- [[docs/_meta/status-marker-index]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_SYNTAX_REPAIR_0556]]
 - [[docs/how-to/recover-from-envelope-error]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]]
@@ -205,7 +207,6 @@ tags:
 
 ## governance
 
-- [[docs/_meta/status-marker-index]]
 - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
 - [[docs/legacy/CURRENT_STATUS]]
@@ -240,6 +241,8 @@ tags:
 - [[docs/DEEPSEEK_INLINE_RECEIPT_AFTER_ENVELOPE_0555]]
 - [[docs/DEEPSEEK_PERSISTENT_DELIVERY_RECEIPT_0554]]
 - [[docs/DIRECT_INTERCHAT_ROUTER_SAFE_0542]]
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/how-to/send-message-between-chats]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]]
@@ -282,8 +285,6 @@ tags:
 - [[reports/AI_BRIDGE_LOCAL_LATENCY_PARALLEL_POLLING_REPORT_2026-06-14]]
 - [[reports/AI_BRIDGE_LOCAL_LOCAL_BRIDGE_ENVELOPE_2026-06-14]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FINAL_RESULT_GUARD_APPLY_20260618_221211.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## operations
 

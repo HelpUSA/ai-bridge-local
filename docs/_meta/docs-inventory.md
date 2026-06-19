@@ -8,16 +8,16 @@ tags:
 
 # Documentation inventory
 
-Generated: 2026-06-19T14:51:46
+Generated: 2026-06-19T15:14:58
 
 | File | Topic | Lines | Status markers | Title |
 |---|---:|---:|---:|---|
-| [[docs/_meta/docs-inventory]] | architecture | 317 | 193 | Documentation inventory |
+| [[docs/_meta/docs-inventory]] | architecture | 323 | 193 | Documentation inventory |
 | [[docs/_meta/duplicates]] | operations | 341 | 165 | Duplicate exact-content groups |
 | [[docs/_meta/obsidian-setup-report]] | uncategorized | 27 | 0 | Obsidian setup report |
-| [[docs/_meta/status-marker-index]] | governance | 1511 | 1500 | Status marker index |
+| [[docs/_meta/status-marker-index]] | diagnostics | 1511 | 1500 | Status marker index |
 | [[docs/_meta/tag-index]] | chatgpt | 28 | 0 | Tag index |
-| [[docs/_meta/topic-map]] | architecture | 340 | 190 | Topic map |
+| [[docs/_meta/topic-map]] | architecture | 349 | 190 | Topic map |
 | [[docs/AI_BRIDGE_LOCAL_GUIDE]] | gateway | 1205 | 68 | AI Bridge Local - Guia Unificado Operacional e Roadmap |
 | [[docs/architecture/adapter-isolation]] | architecture | 22 | 0 | Adapter isolation |
 | [[docs/architecture/direct-interchat]] | interchat | 22 | 0 | Direct interchat |
@@ -43,7 +43,10 @@ Generated: 2026-06-19T14:51:46
 | [[docs/FORCE_CHATGPT_PROMPT_TEXTAREA_COMPOSER_0549]] | chatgpt | 25 | 0 | AI Bridge Local 0.5.49 - Force ChatGPT prompt-textarea composer |
 | [[docs/GEMINI_LOCAL_STATUS_PREFIX_SCOPE_0552]] | gateway | 30 | 0 | AI Bridge Local 0.5.52 - Gemini local status prefix scope |
 | [[docs/GEMINI_MANIFEST_NAME_SYNC_0540]] | gemini | 23 | 0 | AI Bridge Local 0.5.40 - Gemini manifest name sync |
-| [[docs/history/evolution-timeline]] | interchat | 2120 | 325 | Evolution timeline by version |
+| [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]] | interchat | 8886 | 99 | main...origin/main |
+| [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]] | interchat | 1780 | 62 | main...origin/main |
+| [[docs/history/evidence-index]] | architecture | 35 | 1 | Evidence index |
+| [[docs/history/evolution-timeline]] | interchat | 2566 | 325 | Evolution timeline by version |
 | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
 | [[docs/how-to/add-new-ai-adapter]] | architecture | 20 | 0 | Add new AI adapter |
 | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
@@ -270,7 +273,7 @@ Generated: 2026-06-19T14:51:46
 | [[reports/AI_BRIDGE_LOCAL_COMPOSER_SUBMIT_GUARD_2026-06-15]] | gateway | 12 | 0 | AI Bridge Local - Composer submit guard report 2026-06-15 |
 | [[reports/AI_BRIDGE_LOCAL_DESTRUCTIVE_OPTIN_GATE_2026-06-14]] | architecture | 10 | 0 | AI Bridge Local - Destructive opt-in gate 0.4.82 |
 | [[reports/AI_BRIDGE_LOCAL_DISABLE_WORKER_RUNNING_NOTICE_2026-06-15]] | gateway | 12 | 0 | AI Bridge Local - Disable worker running notice report 2026-06-15 |
-| [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] | gateway | 39727 | 1574 | main...origin/main |
+| [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] | gateway | 40334 | 1598 | main...origin/main |
 | [[reports/AI_BRIDGE_LOCAL_FINAL_RESULT_CONTINUE_HINT_2026-06-15]] | interchat | 12 | 0 | AI Bridge Local - Final result continue hint report 2026-06-15 |
 | [[reports/AI_BRIDGE_LOCAL_FINAL_RESULT_FAILURE_CONTINUES_2026-06-15]] | diagnostics | 12 | 1 | AI Bridge Local - Final result failure continues report 2026-06-15 |
 | [[reports/AI_BRIDGE_LOCAL_GATEWAY_FEEDBACK_DEDUP_2026-06-15]] | gateway | 12 | 0 | AI Bridge Local - Gateway feedback dedup report 2026-06-15 |
@@ -316,7 +319,5 @@ Generated: 2026-06-19T14:51:46
 | [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FINAL_RESULT_GUARD_APPLY_20260618_221211.txt]] | interchat | 300 | 0 | main...origin/main |
 | [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_20260618_214019.txt]] | gateway | 34 | 0 | AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_20260618_214019 |
 | [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_RETRY_20260618_214451.txt]] | diagnostics | 34 | 0 | AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_RETRY_20260618_214451 |
-| [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]] | diagnostics | 16977 | 400 | main...origin/main |
-| [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]] | interchat | 8886 | 99 | main...origin/main |
-| [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]] | interchat | 1780 | 62 | main...origin/main |
+| [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]] | diagnostics | 17584 | 424 | main...origin/main |
 | [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]] | gateway | 2510 | 32 | main...origin/main |

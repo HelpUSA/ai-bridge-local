@@ -1,0 +1,1779 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260618225931
+Nome de Usuário: WAGNERPREDATOR\wmsjp
+Executar como Usuário: WAGNERPREDATOR\wmsjp
+Nome da Configuração: 
+Computador: WAGNERPREDATOR (Microsoft Windows NT 10.0.26200.0)
+Aplicativo Host: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ID do Processo: 29324
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== DIRECT INTERCHAT GATEWAY DEPENDENCY ANALYSIS ===
+Data: 2026-06-18T22:59:31.8061694-03:00
+PWD: D:\dev\autocode\ai-bridge-local
+
+=== VERSION / STATUS ===
+0.5.41
+## main...origin/main
+?? reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt
+?? reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt
+?? reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt
+a580311 (HEAD -> main, tag: v0.5.41-chatgpt-outbound-envelope-capture, origin/mai
+n, origin/HEAD) Add ChatGPT outbound envelope capture 0.5.41
+6feb111 (tag: v0.5.40-gemini-manifest-name-sync) Sync Gemini extension manifest n
+ame 0.5.40
+bf9f1f6 (tag: v0.5.39-final-result-feedback-guard) Fix final result feedback guar
+d 0.5.39
+692ab8e Improve feedback and Gemini capture operability
+e7f5c69 Fix envelope feedback routing and capture guards
+
+=== BACKGROUND: MESSAGE TYPES ===
+
+  extension\background.js:4:const registry = {};
+  extension\background.js:5:
+  extension\background.js:6:async function postJson(path, body) {
+> extension\background.js:7:  const res = await fetch(GATEWAY + path, {
+  extension\background.js:8:    method: "POST",
+  extension\background.js:9:    headers: { "Content-Type": "application/json" },
+  extension\background.js:10:    body: JSON.stringify(body)
+  extension\background.js:11:  });
+  extension\background.js:12:
+  extension\background.js:13:  let data = {};
+  extension\background.js:14:  try {
+  extension\background.js:15:    data = await res.json();
+  extension\background.js:40:postTelemetryEvent('extension_version', { version:
+VERSION });
+  extension\background.js:41:async function postCommand(cmd) {
+  extension\background.js:42:  console.log("[bg] Sending:", cmd.command_id);
+> extension\background.js:43:  return await postJson("/bridge/commands", cmd);
+  extension\background.js:44:}
+  extension\background.js:45:
+  extension\background.js:46:async function postAck(commandId, status, extra =
+{}) {
+  extension\background.js:47:  const body = Object.assign({
+  extension\background.js:48:    command_id: commandId,
+  extension\background.js:49:    status: status
+  extension\background.js:50:  }, extra);
+  extension\background.js:51:
+  extension\background.js:64:async function postDeliveryStatus(action, status,
+detail, result = {}) {
+  extension\background.js:65:  try {
+  extension\background.js:66:    if (!action || !action.command_id) return;
+> extension\background.js:67: if (status === 'delivering')
+postTelemetryEvent('delivery_attempt', { command_id: action.command_id,
+target_chat_id: action.target_chat_id, action: action.action });
+> extension\background.js:68: if (status === 'sent')
+postTelemetryEvent('delivery_ok', { command_id: action.command_id,
+target_chat_id: action.target_chat_id, action: action.action });
+> extension\background.js:69: if (status === 'failed')
+postTelemetryEvent('delivery_failed', { command_id: action.command_id,
+target_chat_id: action.target_chat_id, action: action.action, message:
+String(detail || 'unknown') });
+  extension\background.js:70:    if
+(String(action.command_id).startsWith("local_status_")) return;
+  extension\background.js:71:
+  extension\background.js:72:    const statusKey = String(status || "unknown")
++ ":" + String(action.command_id || "unknown");
+  extension\background.js:73:    if (postedDeliveryStatusKeys.has(statusKey)) {
+  extension\background.js:74:      console.log("[bg] Suppressed duplicate
+delivery status:", statusKey);
+  extension\background.js:75:      return;
+  extension\background.js:76:    }
+  extension\background.js:77:    postedDeliveryStatusKeys.add(statusKey);
+  extension\background.js:78:
+> extension\background.js:79:    const sourceChatId =
+canonicalChatId(action.source_chat_id || "");
+> extension\background.js:80:    const targetChatId =
+canonicalChatId(action.target_chat_id || "");
+  extension\background.js:81:
+  extension\background.js:82:    if (!isUuid(sourceChatId)) {
+> extension\background.js:83:      console.log("[bg] Skip compact delivery
+status: invalid source_chat_id", action.source_chat_id);
+  extension\background.js:84:      return;
+  extension\background.js:85:    }
+  extension\background.js:86:
+  extension\background.js:87:    const resultText = String(detail ||
+"unknown").replace(/[\r\n]+/g, " ").slice(0, 120);
+  extension\background.js:88:    const method = result.method || "unknown";
+  extension\background.js:89:    const attempts = result.attempts ?? "unknown";
+  extension\background.js:90:
+  extension\background.js:91:    let statusMessage = "";
+  extension\background.js:109:        "origem=" + sourceChatId + "\n" +
+  extension\background.js:110:        "destino=" + (targetChatId || "unknown")
++ "\n" +
+  extension\background.js:111:        "erro=" + resultText + "\n" +
+> extension\background.js:112:        "correcao=Se a mensagem nao chegou ao
+destino, reenvie o envelope local com novo command_id ou verifique se a aba
+destino esta aberta, com extensao recarregada e chat_id correto.";
+  extension\background.js:113:    }
+  extension\background.js:114:
+  extension\background.js:115:    await postCommand({
+> extension\background.js:116:      schema: "ai_bridge_local.envelope",
+  extension\background.js:117:      schema_version: 1,
+  extension\background.js:118:      created_at_utc: new Date().toISOString(),
+  extension\background.js:119:      command_id: "local_status_delivery_" +
+safeIdPart(status) + "_" + safeIdPart(action.command_id),
+> extension\background.js:120:      action: "send-chat-message",
+> extension\background.js:121:      source_chat_id: targetChatId ||
+"gateway-brain-supervisor",
+> extension\background.js:122:      target_chat_id: sourceChatId,
+  extension\background.js:123:      delivery_kind: "inter_agent_message",
+  extension\background.js:124:      conversation_id: (action.conversation_id ||
+"local_delivery_status") + "_status",
+  extension\background.js:125:      from_agent: "AI Bridge Local Extension " +
+VERSION,
+  extension\background.js:126:      message: statusMessage
+  extension\background.js:127:    });
+  extension\background.js:128:
+  extension\background.js:129:    console.log("[bg] Compact delivery status
+queued:", action.command_id, status);
+  extension\background.js:130:  } catch (e) {
+  extension\background.js:169:}
+  extension\background.js:170:async function injectText(tabId, action) {
+  extension\background.js:171:  const message = {
+> extension\background.js:172:    type: "AI_BRIDGE_INJECT_TEXT",
+  extension\background.js:173:    action: {
+  extension\background.js:174:      action: "inject_text",
+  extension\background.js:175:      text: action.message || "",
+  extension\background.js:176:      auto_submit: true,
+  extension\background.js:177:      action_id: action.command_id,
+  extension\background.js:178:      command_id: action.command_id
+  extension\background.js:179:    }
+  extension\background.js:180:  };
+  extension\background.js:192:      finish({
+  extension\background.js:193:        ok: false,
+  extension\background.js:194:        reason: "inject_timeout",
+> extension\background.js:195:        error: "chrome.tabs.sendMessage callback
+timeout"
+  extension\background.js:196:      });
+  extension\background.js:197:    }, 15000);
+  extension\background.js:198:
+  extension\background.js:199:    try {
+> extension\background.js:200:      chrome.tabs.sendMessage(tabId, message,
+(response) => {
+  extension\background.js:201:        clearTimeout(timer);
+  extension\background.js:202:        const runtimeError =
+chrome.runtime.lastError;
+  extension\background.js:203:        if (runtimeError) {
+  extension\background.js:204:          finish({
+  extension\background.js:205:            ok: false,
+  extension\background.js:206:            reason: "inject_runtime_error",
+  extension\background.js:207:            error: runtimeError.message
+  extension\background.js:208:          });
+  extension\background.js:226:let pollRequestedAgain = false;
+  extension\background.js:227:const perChatInFlight = new Set();
+  extension\background.js:228:
+> extension\background.js:229:function pollMessagesSoon(reason = 'manual') {
+  extension\background.js:230:  if (pollSoonTimer) clearTimeout(pollSoonTimer);
+  extension\background.js:231:  pollSoonTimer = setTimeout(() => {
+  extension\background.js:232:    pollSoonTimer = null;
+> extension\background.js:233:    pollMessages(reason);
+  extension\background.js:234:  }, POLL_SOON_DEBOUNCE_MS);
+  extension\background.js:235:}
+  extension\background.js:236:
+  extension\background.js:237:async function pollOneChat(chatId) {
+  extension\background.js:238:  if (chatId === 'unknown') return;
+  extension\background.js:239:  if (perChatInFlight.has(chatId)) return;
+  extension\background.js:240:
+  extension\background.js:241:  perChatInFlight.add(chatId);
+  extension\background.js:245:      if (!tabId) return;
+  extension\background.js:246:
+  extension\background.js:247:      const pollStartedAt = Date.now();
+> extension\background.js:248:      const res = await fetch(GATEWAY +
+'/bridge/next-action?chat_id=' + encodeURIComponent(chatId));
+  extension\background.js:249:      const data = await res.json();
+  extension\background.js:250:
+  extension\background.js:251:      if (!(data.action && data.action.message))
+return;
+  extension\background.js:252:
+  extension\background.js:253:      const action = data.action;
+  extension\background.js:254:      postTelemetryEvent('action_received', {
+  extension\background.js:255:        command_id: action.command_id,
+> extension\background.js:256:        target_chat_id: chatId,
+  extension\background.js:257:        action: action.action,
+  extension\background.js:258:        action_index: actionIndex,
+  extension\background.js:259:        poll_latency_ms: Date.now() -
+pollStartedAt
+  extension\background.js:260:      });
+  extension\background.js:261:
+  extension\background.js:262:      console.log('[bg] Injecting to:', chatId,
+action.command_id);
+  extension\background.js:263:      console.log('[bg] Inject start:',
+action.command_id, 'tab', tabId);
+  extension\background.js:264:
+  extension\background.js:265:      const injectStartedAt = Date.now();
+  extension\background.js:266:      postTelemetryEvent('inject_started', {
+  extension\background.js:267:        command_id: action.command_id,
+> extension\background.js:268:        target_chat_id: chatId,
+  extension\background.js:269:        tab_id: tabId,
+  extension\background.js:270:        action_index: actionIndex
+  extension\background.js:271:      });
+  extension\background.js:272:
+  extension\background.js:273:      const result = await withTimeout(
+  extension\background.js:274:        injectText(tabId, action),
+  extension\background.js:275:        20000,
+  extension\background.js:276:        {
+  extension\background.js:283:      const injectDurationMs = Date.now() -
+injectStartedAt;
+  extension\background.js:284:      postTelemetryEvent('inject_done', {
+  extension\background.js:285:        command_id: action.command_id,
+> extension\background.js:286:        target_chat_id: chatId,
+  extension\background.js:287:        ok: !!(result && result.ok),
+  extension\background.js:288:        duration_ms: injectDurationMs,
+  extension\background.js:289:        reason: result && (result.reason ||
+result.error) ? (result.reason || result.error) : ''
+  extension\background.js:290:      });
+  extension\background.js:291:
+  extension\background.js:292:      console.log('[bg] Inject completed:',
+action.command_id, JSON.stringify(result));
+  extension\background.js:293:
+  extension\background.js:294:      if (result && result.ok) {
+  extension\background.js:301:        });
+  extension\background.js:302:        postTelemetryEvent('ack_posted', {
+  extension\background.js:303:          command_id: action.command_id,
+> extension\background.js:304:          target_chat_id: chatId,
+  extension\background.js:305:          status: 'acked'
+  extension\background.js:306:        });
+  extension\background.js:307:        console.log('[bg] ACKed:',
+action.command_id);
+  extension\background.js:308:        await postDeliveryStatus(action, 'sent',
+'acked', result);
+  extension\background.js:309:      } else {
+  extension\background.js:310:        const reason = result?.reason ||
+result?.error || 'inject_failed';
+  extension\background.js:311:        await postAck(action.command_id,
+'failed', {
+  extension\background.js:312:          return_code: -1,
+  extension\background.js:315:        });
+  extension\background.js:316:        postTelemetryEvent('ack_posted', {
+  extension\background.js:317:          command_id: action.command_id,
+> extension\background.js:318:          target_chat_id: chatId,
+  extension\background.js:319:          status: 'failed',
+  extension\background.js:320:          reason: reason
+  extension\background.js:321:        });
+  extension\background.js:322:        console.log('[bg] FAILED:',
+action.command_id, reason);
+  extension\background.js:323:        await postDeliveryStatus(action, 'error',
+reason, result || {});
+  extension\background.js:324:      }
+  extension\background.js:325:    }
+  extension\background.js:326:  } catch (e) {
+  extension\background.js:330:  }
+  extension\background.js:331:}
+  extension\background.js:332:
+> extension\background.js:333:function pollMessages(reason = 'interval') {
+  extension\background.js:334:  if (pollInFlight) {
+  extension\background.js:335:    pollRequestedAgain = true;
+  extension\background.js:336:    return;
+  extension\background.js:337:  }
+  extension\background.js:338:
+  extension\background.js:339:  pollInFlight = true;
+  extension\background.js:340:  try {
+  extension\background.js:341:    const chatIds =
+Object.keys(registry).filter((chatId) => chatId !== 'unknown' &&
+registry[chatId]);
+  extension\background.js:358:    pollInFlight = false;
+  extension\background.js:359:    if (pollRequestedAgain) {
+  extension\background.js:360:      pollRequestedAgain = false;
+> extension\background.js:361:      pollMessagesSoon('queued_again');
+  extension\background.js:362:    }
+  extension\background.js:363:  }
+  extension\background.js:364:}
+  extension\background.js:365:
+  extension\background.js:366:
+  extension\background.js:367:function aiBridgeCapturedPlainObject(value) {
+  extension\background.js:368:  return Boolean(value && typeof value ===
+"object" && !Array.isArray(value));
+  extension\background.js:369:}
+  extension\background.js:390:
+  extension\background.js:391:function
+validateAiBridgeCapturedEnvelopeMessage(message, sender) {
+  extension\background.js:392:  const envelope = message && message.envelope;
+> extension\background.js:393:  if (!aiBridgeCapturedPlainObject(envelope))
+return { ok: false, error: "captured_envelope_not_object" };
+  extension\background.js:394:
+> extension\background.js:395:  const sourceChatId =
+aiBridgeCapturedString(message.source_chat_id || envelope.source_chat_id);
+  extension\background.js:396:  const commandId =
+aiBridgeCapturedString(envelope.command_id);
+> extension\background.js:397:  const targetChatId =
+aiBridgeCapturedString(envelope.target_chat_id);
+  extension\background.js:398:
+  extension\background.js:399:  const conversationId =
+aiBridgeCapturedString(envelope.conversation_id);
+  extension\background.js:400:  const action =
+aiBridgeCapturedString(envelope.action || envelope.type);
+  extension\background.js:401:  const deliveryKind =
+aiBridgeCapturedString(envelope.delivery_kind);
+  extension\background.js:402:
+> extension\background.js:403:  if (!sourceChatId) return { ok: false, error:
+"missing_source_chat_id" };
+  extension\background.js:404:  if (!commandId) return { ok: false, error:
+"missing_command_id" };
+> extension\background.js:405:  if (!targetChatId) return { ok: false, error:
+"missing_target_chat_id" };
+  extension\background.js:406:  if (!conversationId) return { ok: false, error:
+"missing_conversation_id" };
+  extension\background.js:407:  if (!action) return { ok: false, error:
+"missing_action" };
+  extension\background.js:408:
+> extension\background.js:409:  const forwardedEnvelope = { ...envelope,
+source_chat_id: sourceChatId, action, type: envelope.type || action };
+  extension\background.js:410:
+> extension\background.js:411:  if (action === "send-chat-message") {
+  extension\background.js:412:    if (deliveryKind !== "inter_agent_message")
+return { ok: false, error: "send_chat_message_requires_inter_agent_message" };
+  extension\background.js:413:    return { ok: true, envelope:
+forwardedEnvelope, command_id: commandId };
+  extension\background.js:414:  }
+  extension\background.js:415:
+  extension\background.js:416:  if (action === "run-command") {
+  extension\background.js:417:    if (deliveryKind !== "local_capability")
+return { ok: false, error: "run_command_requires_local_capability" };
+  extension\background.js:418:    if
+(!aiBridgeCapturedPlainObject(envelope.payload)) return { ok: false, error:
+"run_command_requires_payload_object" };
+  extension\background.js:419:    if
+(!aiBridgeCapturedReadonlyAllowed(envelope)) return { ok: false, error:
+"run_command_rejected_by_readonly_gate" };
+  extension\background.js:424:}
+  extension\background.js:425:
+  extension\background.js:426:
+> extension\background.js:427:chrome.runtime.onMessage.addListener((message,
+sender, sendResponse) => {
+> extension\background.js:428:  if (message && message.type ===
+"AI_BRIDGE_CAPTURED_ENVELOPE") {
+  extension\background.js:429:    const validation =
+validateAiBridgeCapturedEnvelopeMessage(message, sender);
+  extension\background.js:430:    if (!validation.ok) {
+  extension\background.js:431:      console.warn("[bg] captured envelope
+rejected:", validation.error);
+  extension\background.js:432:      sendResponse({ ok: false, error:
+validation.error });
+  extension\background.js:433:      return true;
+  extension\background.js:434:    }
+  extension\background.js:435:
+  extension\background.js:436:    postCommand(validation.envelope)
+  extension\background.js:437:      .then(() => {
+> extension\background.js:438:        pollMessagesSoon("capturedEnvelope");
+  extension\background.js:439:        sendResponse({ ok: true });
+  extension\background.js:440:      })
+  extension\background.js:441:      .catch((e) => {
+  extension\background.js:442:        console.log("[bg] captured envelope
+postCommand error:", e.message);
+  extension\background.js:443:        sendResponse({ ok: false, error:
+e.message });
+  extension\background.js:444:      });
+  extension\background.js:445:    return true;
+  extension\background.js:446:  }
+  extension\background.js:451: sendResponse({ ok: true });
+  extension\background.js:452: return true;
+  extension\background.js:453: }
+> extension\background.js:454:  if (message && message.type ===
+"AI_BRIDGE_BRIDGE_COMMAND") {
+  extension\background.js:455:    const cmd = message.command || message;
+  extension\background.js:456:    console.log("[bg] Received:", cmd.command_id);
+  extension\background.js:457:
+  extension\background.js:458:    postCommand(cmd)
+  extension\background.js:459:      .then(r => {
+> extension\background.js:460:        pollMessagesSoon('postCommand');
+  extension\background.js:461:        sendResponse({ ok: true, data: r });
+  extension\background.js:462:      })
+  extension\background.js:463:      .catch(e => {
+  extension\background.js:464:        console.log("[bg] postCommand error:",
+e.message);
+  extension\background.js:465:        sendResponse({ ok: false, error:
+e.message });
+  extension\background.js:466:      });
+  extension\background.js:467:
+  extension\background.js:468:    return true;
+  extension\background.js:469:  }
+  extension\background.js:470:
+> extension\background.js:471:  if (message && message.type ===
+"AI_BRIDGE_REGISTER_CHAT") {
+> extension\background.js:472:    const cid = canonicalChatId(message.chat_id);
+  extension\background.js:473:    if (cid && sender.tab) {
+  extension\background.js:474:      registry[cid] = sender.tab.id;
+  extension\background.js:475:      console.log("[bg] Registered:", cid,
+"tab:", sender.tab.id);
+> extension\background.js:476:      pollMessagesSoon('registerChat');
+  extension\background.js:477:    }
+  extension\background.js:478:    sendResponse({ ok: true });
+  extension\background.js:479:    return true;
+  extension\background.js:480:  }
+  extension\background.js:481:});
+  extension\background.js:482:
+> extension\background.js:483:setInterval(() => pollMessages('interval'),
+POLL_INTERVAL_MS);
+> extension\background.js:484:pollMessagesSoon('startup');
+  extension\background.js:485:console.log("[AI Bridge Local] v" + VERSION);
+
+=== CONTENT SCRIPT: ROUTING / SEND / CAPTURE ===
+  extension\content_script.js:2:(() => {
+  extension\content_script.js:3:  const VERSION = "0.5.41";
+  extension\content_script.js:4:  const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 *
+1000;
+> extension\content_script.js:5:  const LOCAL_STATUS_PREFIXES =
+["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
+> extension\content_script.js:6:  const LOCAL_SCHEMA =
+"ai_bridge_local.envelope";
+  extension\content_script.js:7:  const LOCAL_SCHEMA_VERSION = 1;
+  extension\content_script.js:8:  const reportedEnvelopeErrors = new Set();
+  extension\content_script.js:9:  const reportedEnvelopeErrorTimes = new Map();
+  extension\content_script.js:10:
+  extension\content_script.js:11:  console.log("[Local v" + VERSION + "]
+Active");
+  extension\content_script.js:12:
+  extension\content_script.js:13:  function showNotice(title, detail = "", kind
+= "info") {
+  extension\content_script.js:14:    // No floating visual toast. Keep
+diagnostics in console only.
+  extension\content_script.js:47:  function registerChatWithBridge() {
+  extension\content_script.js:48:    const chat_id = getChatId();
+  extension\content_script.js:49:    console.log("[Local v" + VERSION + "]
+Register chat:", chat_id, location.href);
+> extension\content_script.js:50:    chrome.runtime.sendMessage({
+> extension\content_script.js:51:      type: "AI_BRIDGE_REGISTER_CHAT",
+  extension\content_script.js:52:      chat_id
+  extension\content_script.js:53:    });
+  extension\content_script.js:54:  }
+  extension\content_script.js:55:
+> extension\content_script.js:56:  const REGISTER_CHAT_INTERVAL_MS = 1500;
+  extension\content_script.js:57:  registerChatWithBridge();
+> extension\content_script.js:58:  setInterval(registerChatWithBridge,
+REGISTER_CHAT_INTERVAL_MS);
+  extension\content_script.js:59:
+> extension\content_script.js:60:  function findComposer() {
+  extension\content_script.js:61:    const selectors = [
+  extension\content_script.js:62:      '#prompt-textarea',
+  extension\content_script.js:63:      '[data-testid="composer"]
+[contenteditable="true"]',
+  extension\content_script.js:64:
+'[contenteditable="true"][role="textbox"]',
+  extension\content_script.js:65:      '[contenteditable="true"]',
+  extension\content_script.js:66:      'textarea',
+  extension\content_script.js:67:      '[role="textbox"]'
+  extension\content_script.js:68:    ];
+  extension\content_script.js:307:    });
+  extension\content_script.js:308:  }
+  extension\content_script.js:309:
+> extension\content_script.js:310:
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+> extension\content_script.js:311:    if (message && message.type ===
+"AI_BRIDGE_INJECT_TEXT") {
+  extension\content_script.js:312:      const actionId =
+message.action?.action_id || message.action?.command_id || "unknown";
+  extension\content_script.js:313:      const text = message.action?.text ||
+message.action?.message || message.text || "";
+  extension\content_script.js:314:
+  extension\content_script.js:315:      showNotice("Mensagem recebida para
+injeÃƒÆ’Ã†â€™Ãƒâ€Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€
+Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o", "command_id=" + actionId, "info");
+  extension\content_script.js:316:
+  extension\content_script.js:317:      if (!text) {
+  extension\content_script.js:318:        showNotice("Falha: texto vazio",
+"command_id=" + actionId, "error");
+  extension\content_script.js:319:        sendResponse({ok: false, reason:
+"empty_text"});
+  extension\content_script.js:321:      }
+  extension\content_script.js:322:
+  extension\content_script.js:323:      closeBlockingModalIfPresent();
+> extension\content_script.js:324:      const composer = findComposer();
+  extension\content_script.js:325:      if (!composer) {
+  extension\content_script.js:326:        showNotice("Falha: composer
+nÃƒÆ’Ã†â€™Ãƒâ€Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o encontrado", "command_id=" +
+actionId, "error");
+  extension\content_script.js:327:        sendResponse({ok: false, reason:
+"no_composer"});
+  extension\content_script.js:328:        return false;
+  extension\content_script.js:329:      }
+  extension\content_script.js:330:
+  extension\content_script.js:331: const beforeText =
+getComposerText(composer).trim();
+  extension\content_script.js:332: if (beforeText) {
+> extension\content_script.js:333: const ownedPreflightText =
+beforeText.includes("AI_BRIDGE_LOCAL_START") ||
+beforeText.includes("ai_bridge_local.envelope") ||
+beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
+  extension\content_script.js:334: if (ownedPreflightText) {
+  extension\content_script.js:335: showNotice("Limpando composer travado da
+extensao", "command_id=" + actionId, "warn");
+  extension\content_script.js:336: setText(composer, String());
+  extension\content_script.js:337: } else {
+  extension\content_script.js:338: showNotice("Falha: composer nao vazio antes
+da injecao", "command_id=" + actionId, "error");
+  extension\content_script.js:339: sendResponse({
+  extension\content_script.js:340: ok: false,
+  extension\content_script.js:341: reason: "composer_not_empty_before_inject",
+  extension\content_script.js:411:
+  extension\content_script.js:412:        if (btn && hasText && (attempts === 0
+|| attempts === 3 || attempts === 8 || attempts === 14)) {
+  extension\content_script.js:413:          clickedAtLeastOnce = true;
+> extension\content_script.js:414:          lastMethod =
+"button_click_confirmed";
+  extension\content_script.js:415:          clickElement(btn);
+  extension\content_script.js:416:          console.log("[Local v" + VERSION +
+"] Button submit attempt " + attempts);
+  extension\content_script.js:417:        }
+  extension\content_script.js:418:
+  extension\content_script.js:419:        if (hasText && (attempts === 2 ||
+attempts === 6 || attempts === 10 || attempts === 18)) {
+  extension\content_script.js:420:          clickedAtLeastOnce = true;
+  extension\content_script.js:421:          lastMethod = "enter_confirmed";
+  extension\content_script.js:422:          pressEnter(composer);
+  extension\content_script.js:494:
+  extension\content_script.js:495:  function sanitizeForStatus(value) {
+  extension\content_script.js:496:    return String(value || "")
+> extension\content_script.js:497:      .replace(/@@AI_BRIDGE_LOCAL_START@@/g,
+"[AI_BRIDGE_LOCAL_START]")
+> extension\content_script.js:498:      .replace(/@@AI_BRIDGE_LOCAL_END@@/g,
+"[AI_BRIDGE_LOCAL_END]")
+  extension\content_script.js:499:      .replace(/\r/g, "")
+  extension\content_script.js:500:      .slice(0, 1200);
+  extension\content_script.js:501:  }
+  extension\content_script.js:502:
+  extension\content_script.js:503:  function classifyEnvelopeParseProblem(raw,
+errorMessage) {
+  extension\content_script.js:504:    const source = String(raw || "");
+  extension\content_script.js:505:    const causes = [];
+  extension\content_script.js:506:
+  extension\content_script.js:535:  function buildLocalStatusMessage(kind,
+errorMessage, raw) {
+  extension\content_script.js:536:    const currentChatId =
+canonicalUuid(getChatId());
+  extension\content_script.js:537:    const originalCommandId =
+extractJsonStringField(raw, "command_id") || "unknown";
+> extension\content_script.js:538:    const originalSource =
+extractJsonUuidField(raw, "source_chat_id");
+> extension\content_script.js:539:    const originalTarget =
+extractJsonUuidField(raw, "target_chat_id");
+  extension\content_script.js:540:    const originalConversation =
+extractJsonStringField(raw, "conversation_id") || "local_bridge_diagnostics";
+  extension\content_script.js:541:    const originalPreview =
+sanitizeForStatus(raw);
+  extension\content_script.js:542:    const diagnosis =
+classifyEnvelopeParseProblem(raw, errorMessage);
+  extension\content_script.js:543:
+  extension\content_script.js:544:    return {
+  extension\content_script.js:545:      currentChatId,
+  extension\content_script.js:546:      originalCommandId,
+  extension\content_script.js:547:      originalSource,
+  extension\content_script.js:579:
+  extension\content_script.js:580:  function shouldReportEnvelopeError(kind,
+raw) {
+  extension\content_script.js:581:    const originalCommandId =
+extractJsonStringField(raw, "command_id") || "unknown";
+> extension\content_script.js:582:    const key =
+"ai_bridge_local_error_reported_" + safeIdPart(kind) + "_" +
+safeIdPart(originalCommandId) + "_" + hashTextForStatus(raw);
+  extension\content_script.js:583:
+  extension\content_script.js:584:    const now = Date.now();
+  extension\content_script.js:585:    const memoryReportedAt =
+reportedEnvelopeErrorTimes.get(key);
+  extension\content_script.js:586:    if (memoryReportedAt && now -
+memoryReportedAt < ENVELOPE_ERROR_DEDUPE_MS) {
+  extension\content_script.js:587:      console.warn("[Local v" + VERSION + "]
+Skipping duplicate envelope error in memory:", originalCommandId);
+  extension\content_script.js:588:      return false;
+  extension\content_script.js:589:    }
+  extension\content_script.js:590:
+  extension\content_script.js:607:
+  extension\content_script.js:608:  function sendTelemetryEvent(eventType,
+payload = {}) {
+  extension\content_script.js:609: try {
+> extension\content_script.js:610: chrome.runtime.sendMessage({ type:
+'AI_LOCAL_TELEMETRY_EVENT', event_type: eventType, payload });
+  extension\content_script.js:611: } catch (e) {
+  extension\content_script.js:612: console.warn('[AI_LOCAL] telemetry send
+failed', eventType, e.message);
+  extension\content_script.js:613: }
+  extension\content_script.js:614:}
+  extension\content_script.js:615:
+  extension\content_script.js:616:function sendChatHeartbeat() {
+  extension\content_script.js:617: sendTelemetryEvent('chat_heartbeat', {
+chat_id: getChatId(), href: location.href });
+  extension\content_script.js:618:}
+  extension\content_script.js:642:          schema: LOCAL_SCHEMA,
+  extension\content_script.js:643:          schema_version:
+LOCAL_SCHEMA_VERSION,
+  extension\content_script.js:644:          created_at_utc: new
+Date().toISOString(),
+> extension\content_script.js:645:          command_id: "local_status_" +
+safeIdPart(kind) + "_" + safeIdPart(info.originalCommandId) + "_to_" +
+safeIdPart(validTarget).slice(0, 8) + "_" + Date.now(),
+> extension\content_script.js:646:          action: "send-chat-message",
+> extension\content_script.js:647:          source_chat_id: info.currentChatId
+|| info.originalSource || "unknown",
+> extension\content_script.js:648:          target_chat_id: validTarget,
+  extension\content_script.js:649:          delivery_kind:
+"inter_agent_message",
+  extension\content_script.js:650:          conversation_id:
+info.originalConversation + "_diagnostics",
+  extension\content_script.js:651:          from_agent: "AI Bridge Local
+Extension " + VERSION,
+  extension\content_script.js:652:          message: info.text
+  extension\content_script.js:653:        };
+  extension\content_script.js:654:
+  extension\content_script.js:655:        console.warn("[Local v" + VERSION +
+"] Reporting envelope error to chat:", validTarget, kind, errorMessage);
+  extension\content_script.js:656:        send(cmd);
+  extension\content_script.js:663:  function extract(text) {
+  extension\content_script.js:664:    const cmds = [];
+  extension\content_script.js:665:    const sourceText = String(text || "");
+> extension\content_script.js:666:    if (LOCAL_STATUS_PREFIXES.some((prefix)
+=> sourceText.includes(prefix))) {
+  extension\content_script.js:667:      return cmds;
+  extension\content_script.js:668:    }
+> extension\content_script.js:669:    const regex =
+/(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[
+\t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
+  extension\content_script.js:670:    let m;
+  extension\content_script.js:671:
+  extension\content_script.js:672:    while ((m = regex.exec(sourceText)) !==
+null) {
+  extension\content_script.js:673:      const raw = m[1].trim();
+  extension\content_script.js:674:
+  extension\content_script.js:675:      try {
+  extension\content_script.js:676:        const c =
+normalizeLocalCommand(JSON.parse(raw));
+  extension\content_script.js:677:
+  extension\content_script.js:722:
+  extension\content_script.js:723: const actualSourceChatId = getChatId();
+  extension\content_script.js:724: if (actualSourceChatId) {
+> extension\content_script.js:725: if (cmd.source_chat_id && cmd.source_chat_id
+!== actualSourceChatId) {
+> extension\content_script.js:726: const declaredSource = cmd.source_chat_id;
+  extension\content_script.js:727: const statusText = [
+  extension\content_script.js:728: '[AI_LOCAL_ERRO]',
+  extension\content_script.js:729: 'acao=corrija_e_reenvie',
+  extension\content_script.js:730: 'no_reply=0',
+  extension\content_script.js:731: 'executado=nao',
+> extension\content_script.js:732: 'tipo=source_chat_id_mismatch',
+  extension\content_script.js:733: 'versao=' + VERSION,
+  extension\content_script.js:734: 'id_original=' + (cmd.command_id ||
+'unknown'),
+  extension\content_script.js:735: 'chat_atual=' + actualSourceChatId,
+  extension\content_script.js:736: 'origem_declarada=' + declaredSource,
+> extension\content_script.js:737: 'destino=' + (cmd.target_chat_id ||
+'unknown'),
+> extension\content_script.js:738: 'erro=source_chat_id do envelope nao
+corresponde ao chat atual. Nada foi executado nem enviado ao gateway.',
+> extension\content_script.js:739: 'correcao=Reenvie o envelope a partir do
+chat correto ou ajuste source_chat_id para o chat atual.'
+  extension\content_script.js:740: ].join(String.fromCharCode(10));
+  extension\content_script.js:741: showNotice('Source chat divergente',
+'command_id=' + (cmd.command_id || 'unknown') + String.fromCharCode(10) +
+'origem=' + declaredSource + String.fromCharCode(10) + 'chat_atual=' +
+actualSourceChatId, 'error');
+> extension\content_script.js:742: sendTextToChat(statusText,
+'source_chat_id_mismatch_' + (cmd.command_id || 'unknown'));
+  extension\content_script.js:743: return;
+  extension\content_script.js:744: }
+> extension\content_script.js:745: cmd.source_chat_id = actualSourceChatId;
+  extension\content_script.js:746: cmd.source_url = location.href;
+  extension\content_script.js:747: }
+  extension\content_script.js:748:
+  extension\content_script.js:749: sentIds.add(cmd.command_id);
+  extension\content_script.js:750:    if (sentIds.size > 100) sentIds.clear();
+  extension\content_script.js:751:
+  extension\content_script.js:752:    showNotice("Comando local capturado",
+"command_id=" + cmd.command_id + "\naction=" + cmd.action, "info");
+  extension\content_script.js:753:
+> extension\content_script.js:754:    chrome.runtime.sendMessage({type:
+"AI_BRIDGE_BRIDGE_COMMAND", command: cmd}, (response) => {
+  extension\content_script.js:755:      if (chrome.runtime.lastError) {
+> extension\content_script.js:756:        showNotice("Falha ao enviar comando
+ao gateway", chrome.runtime.lastError.message, "error");
+  extension\content_script.js:757:        return;
+  extension\content_script.js:758:      }
+  extension\content_script.js:759:
+  extension\content_script.js:760:      if (response && response.ok) {
+  extension\content_script.js:761:        const status = response.data?.status
+|| "unknown";
+> extension\content_script.js:762:        showNotice("Comando enviado ao
+gateway", "command_id=" + cmd.command_id + "\nstatus=" + status, "success");
+  extension\content_script.js:763:      } else {
+> extension\content_script.js:764:        showNotice("Gateway recusou comando",
+JSON.stringify(response || {}), "error");
+  extension\content_script.js:765:      }
+  extension\content_script.js:766:    });
+  extension\content_script.js:767:  }
+  extension\content_script.js:768:
+  extension\content_script.js:769:  let last = "";
+  extension\content_script.js:770:  setInterval(() => {
+  extension\content_script.js:771:    const t = document.body?.innerText || "";
+  extension\content_script.js:772:    if (t !== last) {
+  extension\content_script.js:781:
+  extension\content_script.js:782:/* AI Bridge Local: Gemini auto envelope
+capture. */
+  extension\content_script.js:783:(function
+installAiBridgeGeminiCapturedEnvelopeBridge() {
+> extension\content_script.js:784:  if
+(window.__AI_BRIDGE_GEMINI_CAPTURE_INSTALLED__) return;
+> extension\content_script.js:785:
+window.__AI_BRIDGE_GEMINI_CAPTURE_INSTALLED__ = true;
+  extension\content_script.js:786:
+> extension\content_script.js:787:  const START_MARKER = "@@" +
+"AI_BRIDGE_LOCAL_START" + "@@";
+> extension\content_script.js:788:  const END_MARKER = "@@" +
+"AI_BRIDGE_LOCAL_END" + "@@";
+  extension\content_script.js:789:  const MAX_CAPTURE_CHARS = 20000;
+> extension\content_script.js:790:  const DEDUPE_PREFIX =
+"ai_bridge_captured_envelope:";
+  extension\content_script.js:791:
+  extension\content_script.js:792:  function isGeminiAppPage() {
+  extension\content_script.js:793:    return
+/gemini\.google\.com\/app\/([0-9a-zA-Z_-]+)/i.test(location.href);
+  extension\content_script.js:794:  }
+  extension\content_script.js:795:
+  extension\content_script.js:796:  function getGeminiChatId() {
+  extension\content_script.js:797:    const match =
+location.href.match(/gemini\.google\.com\/app\/([0-9a-zA-Z_-]+)/i);
+  extension\content_script.js:798:    return match ? match[1] : "";
+  extension\content_script.js:880:      if (isComposerOrInputNode(element))
+return;
+  extension\content_script.js:881:      const candidateText =
+String(element.innerText || element.textContent || "").trim();
+  extension\content_script.js:882:      if (!candidateText) return;
+> extension\content_script.js:883:      if (LOCAL_STATUS_PREFIXES.some((prefix)
+=> candidateText.includes(prefix))) return;
+  extension\content_script.js:884:      if (candidateText.length >
+MAX_CAPTURE_CHARS) return;
+  extension\content_script.js:885:      if
+(!candidateText.includes(START_MARKER) || !candidateText.includes(END_MARKER))
+return;
+  extension\content_script.js:886:      candidateTexts.push(candidateText);
+  extension\content_script.js:887:    };
+  extension\content_script.js:888:
+  extension\content_script.js:889:    addCandidateText(node);
+  extension\content_script.js:890:    node.querySelectorAll("pre, code,
+markdown, [class*='message'], [class*='response'],
+[data-message-author-role]").forEach(addCandidateText);
+  extension\content_script.js:891:    candidateTexts.sort((a, b) => a.length -
+b.length);
+  extension\content_script.js:908:    }
+  extension\content_script.js:909:    markCaptured(commandId);
+  extension\content_script.js:910:
+> extension\content_script.js:911:    chrome.runtime.sendMessage({
+> extension\content_script.js:912:      type: "AI_BRIDGE_CAPTURED_ENVELOPE",
+> extension\content_script.js:913:      source_chat_id: getGeminiChatId(),
+  extension\content_script.js:914:      raw_text: parsed.raw_text,
+  extension\content_script.js:915:      envelope: parsed.envelope
+  extension\content_script.js:916:    }, (response) => {
+  extension\content_script.js:917:      const runtimeError =
+chrome.runtime.lastError;
+  extension\content_script.js:918:      if (runtimeError) {
+  extension\content_script.js:919:        console.warn("[Local] Gemini envelope
+capture sendMessage failed:", runtimeError.message);
+  extension\content_script.js:920:        return;
+  extension\content_script.js:921:      }
+  extension\content_script.js:958:
+  extension\content_script.js:959:/* AI Bridge Local: ChatGPT outbound envelope
+capture. */
+  extension\content_script.js:960:(function
+installAiBridgeChatGptOutboundEnvelopeCapture() {
+> extension\content_script.js:961:  if
+(window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
+> extension\content_script.js:962:
+window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
+  extension\content_script.js:963:
+  extension\content_script.js:964:  const CAPTURE_VERSION = "0.5.41";
+  extension\content_script.js:965:  const MAX_CAPTURE_CHARS = 30000;
+> extension\content_script.js:966:  const DEDUPE_PREFIX =
+"ai_bridge_chatgpt_outbound_capture:";
+  extension\content_script.js:967:
+  extension\content_script.js:968:  const START_MARKERS = [
+> extension\content_script.js:969:    "@@" + "AI_BRIDGE_LOCAL_START" + "@@",
+> extension\content_script.js:970:    "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@"
+  extension\content_script.js:971:  ];
+> extension\content_script.js:972:  const END_MARKER = "@@" +
+"AI_BRIDGE_LOCAL_END" + "@@";
+  extension\content_script.js:973:
+  extension\content_script.js:974:  function isChatGptPage() {
+  extension\content_script.js:975:    return
+/chatgpt\.com/i.test(location.hostname);
+  extension\content_script.js:976:  }
+  extension\content_script.js:977:
+  extension\content_script.js:978:  function getCurrentChatId() {
+  extension\content_script.js:979:    const href = String(location.href || "");
+  extension\content_script.js:980:    const patterns = [
+  extension\content_script.js:1008:      if (sessionStorage.getItem(key))
+return true;
+  extension\content_script.js:1009:      sessionStorage.setItem(key,
+String(Date.now()));
+  extension\content_script.js:1010:    } catch (_) {
+> extension\content_script.js:1011:      if
+(window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ &&
+window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__.has(commandId)) return true;
+> extension\content_script.js:1012:
+window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ =
+window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ || new Set();
+> extension\content_script.js:1013:
+window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__.add(commandId);
+  extension\content_script.js:1014:    }
+  extension\content_script.js:1015:    return false;
+  extension\content_script.js:1016:  }
+  extension\content_script.js:1017:
+  extension\content_script.js:1018:  function showCaptureNotice(title, text,
+kind) {
+  extension\content_script.js:1019:    try {
+  extension\content_script.js:1020:      const id =
+"ai-bridge-chatgpt-outbound-capture-notice";
+  extension\content_script.js:1021:      let box = document.getElementById(id);
+  extension\content_script.js:1044:  }
+  extension\content_script.js:1045:
+  extension\content_script.js:1046:  function sendCommandToBackground(cmd) {
+> extension\content_script.js:1047:    chrome.runtime.sendMessage({ type:
+"AI_BRIDGE_BRIDGE_COMMAND", command: cmd }, (response) => {
+  extension\content_script.js:1048:      const runtimeError =
+chrome.runtime.lastError;
+  extension\content_script.js:1049:      if (runtimeError) {
+  extension\content_script.js:1050:        console.warn("[Local v" +
+CAPTURE_VERSION + "] ChatGPT outbound capture sendMessage failed:",
+runtimeError.message);
+  extension\content_script.js:1051:        showCaptureNotice("Falha ao enviar
+ao background", runtimeError.message, "error");
+  extension\content_script.js:1052:        return;
+  extension\content_script.js:1053:      }
+  extension\content_script.js:1054:      if (!response || !response.ok) {
+  extension\content_script.js:1055:        const err = response &&
+response.error ? response.error : "unknown_background_error";
+  extension\content_script.js:1068:      return;
+  extension\content_script.js:1069:    }
+  extension\content_script.js:1070:    const errCmd = {
+> extension\content_script.js:1071:      schema: "ai_bridge_local.envelope",
+  extension\content_script.js:1072:      schema_version: 1,
+> extension\content_script.js:1073:      command_id: "local_status_" +
+safeIdPart(kind) + "_" + safeIdPart(commandId) + "_" + Date.now(),
+> extension\content_script.js:1074:      action: "send-chat-message",
+> extension\content_script.js:1075:      source_chat_id: currentChatId,
+> extension\content_script.js:1076:      target_chat_id: currentChatId,
+  extension\content_script.js:1077:      delivery_kind: "inter_agent_message",
+  extension\content_script.js:1078:      conversation_id:
+"chatgpt_outbound_capture_diagnostics",
+  extension\content_script.js:1079:      from_agent: "AI Bridge Local Extension
+" + CAPTURE_VERSION,
+  extension\content_script.js:1080:      to_agent: "Current ChatGPT Chat",
+  extension\content_script.js:1081:      message:
+  extension\content_script.js:1082:        "[AI_LOCAL_ERRO]\n" +
+  extension\content_script.js:1083:        "acao=corrija_e_reenvie\n" +
+  extension\content_script.js:1084:        "no_reply=0\n" +
+  extension\content_script.js:1088:        "id_original=" + (commandId ||
+"unknown") + "\n" +
+  extension\content_script.js:1089:        "chat_atual=" + currentChatId + "\n"
++
+  extension\content_script.js:1090:        "erro=" + String(message ||
+"unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
+> extension\content_script.js:1091:        "correcao=Use JSON estrito entre
+@@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@, com source_chat_id igual
+ao chat atual.\n" +
+  extension\content_script.js:1092:        "original_sanitizado=\n" +
+String(raw || "").replace(/\r/g, "").slice(0, 1200),
+  extension\content_script.js:1093:      no_reply: 1
+  extension\content_script.js:1094:    };
+  extension\content_script.js:1095:    sendCommandToBackground(errCmd);
+  extension\content_script.js:1096:  }
+  extension\content_script.js:1097:
+  extension\content_script.js:1098:  function extractEnvelopeBlocks(text) {
+  extension\content_script.js:1099:    const source = String(text || "");
+  extension\content_script.js:1117:  function processText(text) {
+  extension\content_script.js:1118:    const source = String(text || "").trim();
+  extension\content_script.js:1119:    if (!source || source.length >
+MAX_CAPTURE_CHARS) return;
+> extension\content_script.js:1120:    if (!source.includes("AI_BRIDGE_LOCAL_")
+|| !source.includes("ai_bridge_local.envelope")) return;
+  extension\content_script.js:1121:    if (source.includes("[AI_LOCAL]") ||
+source.includes("[AI_LOCAL_ERRO]") || source.includes("[AI_LOCAL_RUN]")) return;
+  extension\content_script.js:1122:
+  extension\content_script.js:1123:    const blocks =
+extractEnvelopeBlocks(source);
+  extension\content_script.js:1124:    if (!blocks.length) return;
+  extension\content_script.js:1125:
+  extension\content_script.js:1126:    const currentChatId = getCurrentChatId();
+  extension\content_script.js:1127:
+  extension\content_script.js:1128:    for (const block of blocks) {
+  extension\content_script.js:1141:      }
+  extension\content_script.js:1142:      if (wasCaptured(commandId)) continue;
+  extension\content_script.js:1143:
+> extension\content_script.js:1144:      if (cmd.source_chat_id &&
+currentChatId && cmd.source_chat_id !== currentChatId) {
+> extension\content_script.js:1145:
+sendLocalError("source_chat_id_mismatch", commandId, "source_chat_id do
+envelope nao corresponde ao chat atual", block.raw);
+  extension\content_script.js:1146:        continue;
+  extension\content_script.js:1147:      }
+  extension\content_script.js:1148:
+> extension\content_script.js:1149:      cmd.source_chat_id = currentChatId ||
+cmd.source_chat_id || "unknown";
+  extension\content_script.js:1150:      cmd.source_url = location.href;
+  extension\content_script.js:1151:      sendCommandToBackground(cmd);
+  extension\content_script.js:1152:    }
+  extension\content_script.js:1153:  }
+  extension\content_script.js:1154:
+  extension\content_script.js:1155:  function collectCandidateText(element) {
+  extension\content_script.js:1156:    const candidates = [];
+  extension\content_script.js:1157:    const push = (el) => {
+
+=== GATEWAY ROUTES AND ACTION HANDLING ===
+  gateway_local.py:1:# -*- coding: utf-8 -*-
+  gateway_local.py:2:"""AI Bridge Local - Gateway v0.2.3"""
+  gateway_local.py:3:import json
+> gateway_local.py:4:import sqlite3
+  gateway_local.py:5:import uuid
+  gateway_local.py:6:from datetime import datetime, timezone
+  gateway_local.py:7:from http.server import BaseHTTPRequestHandler,
+ThreadingHTTPServer
+  gateway_local.py:8:from urllib.parse import parse_qs, urlparse
+  gateway_local.py:9:
+  gateway_local.py:10:HOST = "127.0.0.1"
+  gateway_local.py:11:PORT = 8766
+> gateway_local.py:12:DB_PATH = "queue_local.db"
+  gateway_local.py:13:
+  gateway_local.py:14:def open_db():
+> gateway_local.py:15:    conn = sqlite3.connect(DB_PATH, timeout=30)
+  gateway_local.py:16:    conn.execute('PRAGMA busy_timeout = 30000')
+  gateway_local.py:17:    return conn
+  gateway_local.py:18:VERSION = "0.2.9"
+  gateway_local.py:19:
+  gateway_local.py:20:def now_iso():
+  gateway_local.py:21:    return datetime.now(timezone.utc).isoformat()
+  gateway_local.py:22:
+  gateway_local.py:23:def init_db():
+  gateway_local.py:24:    conn = open_db()
+> gateway_local.py:25:    conn.execute("CREATE TABLE IF NOT EXISTS commands (id
+INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT UNIQUE NOT NULL,
+source_chat_id TEXT, target_chat_id TEXT, action TEXT, delivery_kind TEXT,
+conversation_id TEXT, from_agent TEXT, message TEXT, payload_json TEXT, status
+TEXT DEFAULT 'queued', created_at TEXT DEFAULT (datetime('now')), delivered_at
+TEXT, acked_at TEXT, return_code INTEGER, stdout TEXT, stderr TEXT, last_error
+TEXT)")
+  gateway_local.py:26:    conn.execute("CREATE TABLE IF NOT EXISTS events (id
+INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, event_type TEXT, message
+TEXT, payload_json TEXT, created_at TEXT DEFAULT (datetime('now')))")
+> gateway_local.py:27:    conn.execute("CREATE TABLE IF NOT EXISTS
+invalid_messages (id INTEGER PRIMARY KEY AUTOINCREMENT, source_chat_id TEXT,
+raw_text TEXT, error TEXT, created_at TEXT DEFAULT (datetime('now')) )")
+> gateway_local.py:28:    conn.execute("CREATE TABLE IF NOT EXISTS dead_letters
+(id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, source_chat_id TEXT,
+target_chat_id TEXT, action TEXT, delivery_kind TEXT, payload_json TEXT,
+last_error TEXT, attempt_count INTEGER, failed_at TEXT DEFAULT
+(datetime('now')))")
+  gateway_local.py:29:    conn.commit()
+  gateway_local.py:30:    conn.close()
+  gateway_local.py:31:
+  gateway_local.py:32:def validate_command_body(body, payload):
+> gateway_local.py:33:    need = ['schema', 'schema_version', 'command_id',
+'action', 'source_chat_id', 'target_chat_id', 'delivery_kind']
+  gateway_local.py:34:    for k in need:
+  gateway_local.py:35:        if not body.get(k):
+  gateway_local.py:36:            return 'missing_' + k
+  gateway_local.py:37:    if body.get('schema') != 'ai_bridge_local.envelope':
+  gateway_local.py:38:        return 'bad_schema'
+> gateway_local.py:39:    if body.get('action') not in ['send-chat-message',
+'run-command']:
+  gateway_local.py:40:        return 'bad_action'
+> gateway_local.py:41:    if body.get('delivery_kind') not in
+['inter_agent_message', 'local_capability']:
+> gateway_local.py:42:        return 'bad_delivery_kind'
+> gateway_local.py:43:    if body.get('action') == 'send-chat-message' and not
+body.get('message'):
+  gateway_local.py:44:        return 'missing_message'
+> gateway_local.py:45:    if body.get('action') == 'run-command':
+  gateway_local.py:46:        if not isinstance(payload, dict):
+  gateway_local.py:47:            return 'bad_payload'
+  gateway_local.py:48:        if not payload.get('cwd'):
+  gateway_local.py:49:            return 'missing_payload_cwd'
+  gateway_local.py:50:        if 'timeout_seconds' in payload and not
+isinstance(payload.get('timeout_seconds'), int):
+  gateway_local.py:51:            return 'bad_timeout_seconds'
+  gateway_local.py:52:        if not payload.get('command') and not
+payload.get('script_text') and not payload.get('script_path') and not
+payload.get('intent'):
+  gateway_local.py:53:            return 'missing_payload_command_or_script'
+  gateway_local.py:56:def record_invalid_message(body, error, raw_text=None):
+  gateway_local.py:57:    conn = open_db()
+  gateway_local.py:58:    try:
+> gateway_local.py:59:        conn.execute("INSERT INTO invalid_messages
+(source_chat_id, raw_text, error) VALUES (?, ?, ?)",
+(body.get('source_chat_id', ''), (raw_text if raw_text is not None else
+json.dumps(body, ensure_ascii=False)), error))
+  gateway_local.py:60:        conn.commit()
+  gateway_local.py:61:    finally:
+  gateway_local.py:62:        conn.close()
+  gateway_local.py:63:
+  gateway_local.py:64:def record_dead_letter(body, payload, error,
+attempt_count=1):
+  gateway_local.py:65:    conn = open_db()
+  gateway_local.py:66:    try:
+> gateway_local.py:67:        conn.execute('INSERT INTO dead_letters
+(command_id, source_chat_id, target_chat_id, action, delivery_kind,
+payload_json, last_error, attempt_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+(body.get('command_id', ''), body.get('source_chat_id', ''),
+body.get('target_chat_id', ''), body.get('action', ''),
+body.get('delivery_kind', ''), json.dumps(payload or {}, ensure_ascii=False),
+error, attempt_count))
+  gateway_local.py:68:        conn.commit()
+  gateway_local.py:69:    finally:
+  gateway_local.py:70:        conn.close()
+  gateway_local.py:71:
+  gateway_local.py:72:def record_event(command_id=None, event_type=None,
+message=None, payload=None):
+  gateway_local.py:73:    if not event_type:
+  gateway_local.py:74:        return False
+> gateway_local.py:75:    sql = 'INSERT INTO events (command_id, event_type,
+message, payload_json) VALUES (?, ?, ?, ?)'
+  gateway_local.py:76:    params = (command_id, event_type, message,
+json.dumps(payload or {}, ensure_ascii=False))
+  gateway_local.py:77:    conn = open_db()
+  gateway_local.py:78:    try:
+  gateway_local.py:79:        conn.execute(sql, params)
+  gateway_local.py:80:        conn.commit()
+  gateway_local.py:81:    finally:
+  gateway_local.py:82:        conn.close()
+  gateway_local.py:83:    return True
+  gateway_local.py:84:
+  gateway_local.py:85:def fail_stale_deliveries(max_age_seconds=45):
+> gateway_local.py:86:    """Fail stale deliveries and recover misrouted local
+run-command rows."""
+  gateway_local.py:87:    try:
+  gateway_local.py:88:        cutoff_expr = f"-{int(max_age_seconds)} seconds"
+  gateway_local.py:89:        conn = open_db()
+  gateway_local.py:90:        try:
+  gateway_local.py:91:            conn.execute(
+  gateway_local.py:92:                """
+> gateway_local.py:93:                UPDATE commands
+> gateway_local.py:94:                   SET status='failed',
+  gateway_local.py:95:                       acked_at=?,
+  gateway_local.py:96:                       last_error='stale delivering
+timeout after extension delivery',
+  gateway_local.py:97:                       stderr='stale delivering timeout
+after extension delivery'
+> gateway_local.py:98:                 WHERE status='delivering'
+> gateway_local.py:99:                   AND action IN
+('send-message','send-chat-message')
+  gateway_local.py:100:                   AND delivered_at IS NOT NULL
+  gateway_local.py:101:                   AND datetime(substr(delivered_at, 1,
+19)) < datetime('now', ?)
+  gateway_local.py:102:                """,
+  gateway_local.py:103:                (now_iso(), cutoff_expr),
+  gateway_local.py:104:            )
+  gateway_local.py:105:
+  gateway_local.py:106:            stale_run_rows = conn.execute(
+  gateway_local.py:107:                """
+> gateway_local.py:108:                SELECT command_id, source_chat_id,
+target_chat_id, conversation_id
+> gateway_local.py:109:                  FROM commands
+> gateway_local.py:110:                 WHERE status='delivering'
+> gateway_local.py:111:                   AND action='run-command'
+> gateway_local.py:112:                   AND delivery_kind='local_capability'
+> gateway_local.py:113:                   AND
+target_chat_id!='gateway-brain-supervisor'
+  gateway_local.py:114:                   AND delivered_at IS NOT NULL
+  gateway_local.py:115:                   AND datetime(substr(delivered_at, 1,
+19)) < datetime('now', ?)
+  gateway_local.py:116:                """,
+  gateway_local.py:117:                (cutoff_expr,),
+  gateway_local.py:118:            ).fetchall()
+  gateway_local.py:119:
+> gateway_local.py:120:            for command_id, source_chat_id,
+target_chat_id, conversation_id in stale_run_rows:
+  gateway_local.py:121:                error = (
+> gateway_local.py:122:                    "stale_run_command_timeout:
+run-command was delivered to a chat tab "
+> gateway_local.py:123:                    "instead of
+gateway-brain-supervisor; route local_capability run-command "
+  gateway_local.py:124:                    "to gateway-brain-supervisor"
+  gateway_local.py:125:                )
+  gateway_local.py:126:                conn.execute(
+  gateway_local.py:127:                    """
+> gateway_local.py:128:                    UPDATE commands
+> gateway_local.py:129:                       SET status='failed',
+  gateway_local.py:130:                           acked_at=?,
+  gateway_local.py:131:                           return_code=-1,
+  gateway_local.py:132:                           stderr=?,
+  gateway_local.py:133:                           last_error=?
+  gateway_local.py:134:                     WHERE command_id=?
+  gateway_local.py:135:                    """,
+  gateway_local.py:136:                    (now_iso(), error, error,
+command_id),
+  gateway_local.py:137:                )
+  gateway_local.py:138:
+> gateway_local.py:139:                if source_chat_id:
+  gateway_local.py:140:                    result_command_id = "result_to_" +
+str(command_id)
+  gateway_local.py:141:                    message = chr(10).join([
+  gateway_local.py:142:                        "[AI_LOCAL_RUN]",
+  gateway_local.py:143:                        "id=" + str(command_id),
+> gateway_local.py:144:                        "status=failed",
+  gateway_local.py:145:                        "return_code=-1",
+  gateway_local.py:146:                        "no_reply=1",
+  gateway_local.py:147:                        "result_is_final=1",
+  gateway_local.py:148:                        "success=0",
+  gateway_local.py:149:                        "chat_can_continue=1",
+  gateway_local.py:150:
+"next_action=fix_run_command_routing",
+  gateway_local.py:151:                        "observacao=Comando local ficou
+preso em delivering porque foi roteado para uma aba de chat, nao para
+gateway-brain-supervisor.",
+  gateway_local.py:152:                        "stdout=",
+  gateway_local.py:154:                    ])
+  gateway_local.py:155:                    try:
+  gateway_local.py:156:                        conn.execute(
+> gateway_local.py:157:                            "INSERT INTO commands (comman
+d_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_age
+nt,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
+  gateway_local.py:158:                            (
+  gateway_local.py:159:                                result_command_id,
+  gateway_local.py:160:
+"gateway-brain-supervisor",
+> gateway_local.py:161:                                source_chat_id,
+> gateway_local.py:162:                                "send-chat-message",
+> gateway_local.py:163:                                "inter_agent_message",
+  gateway_local.py:164:                                (conversation_id or
+"local_run_command") + "_stale_result",
+  gateway_local.py:165:                                "AI Bridge Local
+Gateway",
+  gateway_local.py:166:                                message,
+  gateway_local.py:167:                                "{}",
+  gateway_local.py:168:                            ),
+  gateway_local.py:169:                        )
+> gateway_local.py:170:                    except sqlite3.IntegrityError:
+  gateway_local.py:171:                        pass
+  gateway_local.py:172:
+  gateway_local.py:173:            conn.commit()
+  gateway_local.py:174:        finally:
+  gateway_local.py:175:            conn.close()
+  gateway_local.py:176:    except Exception as e:
+  gateway_local.py:177:        print("[gateway] fail_stale_deliveries error:",
+e)
+  gateway_local.py:178:
+  gateway_local.py:179:
+> gateway_local.py:180:def fetch_control_status():
+  gateway_local.py:181:    fail_stale_deliveries()
+  gateway_local.py:182:    conn = open_db()
+  gateway_local.py:183:    try:
+> gateway_local.py:184:        rows = conn.execute("SELECT status, COUNT(1)
+FROM commands GROUP BY status").fetchall()
+> gateway_local.py:185:        recent = conn.execute("SELECT command_id,
+source_chat_id, target_chat_id, action, status, created_at, last_error FROM
+commands ORDER BY id DESC LIMIT 30").fetchall()
+  gateway_local.py:186:        events = conn.execute("SELECT command_id,
+event_type, message, created_at FROM events ORDER BY id DESC LIMIT
+30").fetchall()
+  gateway_local.py:187:        return dict(
+  gateway_local.py:188:            ok=True,
+  gateway_local.py:189:            service="ai-bridge-local",
+  gateway_local.py:190:            version=VERSION,
+  gateway_local.py:191:            timestamp=now_iso(),
+> gateway_local.py:192:            command_status={(r[0] or ""): r[1] for r in
+rows},
+> gateway_local.py:193:            recent_commands=[dict(command_id=r[0],
+source_chat_id=r[1], target_chat_id=r[2], action=r[3], status=r[4],
+created_at=r[5], last_error=r[6]) for r in recent],
+  gateway_local.py:194:            recent_events=[dict(command_id=r[0],
+event_type=r[1], message=r[2], created_at=r[3]) for r in events],
+  gateway_local.py:195:        )
+  gateway_local.py:196:    finally:
+  gateway_local.py:197:        conn.close()
+  gateway_local.py:198:
+  gateway_local.py:199:
+  gateway_local.py:200:
+  gateway_local.py:201:def is_final_result_feedback_notice(body):
+  gateway_local.py:235:    if '"result_is_final": true' in blob or
+'"result_is_final": 1' in blob:
+  gateway_local.py:236:        return True
+  gateway_local.py:237:
+> gateway_local.py:238:    if action == "send-chat-message" and "next_action="
+in blob and "chat_can_continue=" in blob:
+  gateway_local.py:239:        return True
+  gateway_local.py:240:
+  gateway_local.py:241:    return False
+  gateway_local.py:242:
+  gateway_local.py:243:
+  gateway_local.py:244:def should_skip_source_feedback(body):
+> gateway_local.py:245:    """Prevent feedback loops for local status and final
+result messages."""
+  gateway_local.py:246:    if not isinstance(body, dict):
+  gateway_local.py:247:        return False
+  gateway_local.py:248:
+  gateway_local.py:249:    command_id = str(body.get("command_id", "") or "")
+> gateway_local.py:250:    if command_id.startswith("local_status_"):
+  gateway_local.py:251:        return True
+  gateway_local.py:252:
+  gateway_local.py:253:    return is_final_result_feedback_notice(body)
+  gateway_local.py:254:
+  gateway_local.py:255:
+  gateway_local.py:256:def enqueue_source_feedback(body, feedback_type, detail):
+  gateway_local.py:257:    if should_skip_source_feedback(body):
+  gateway_local.py:258:        return None
+> gateway_local.py:259:    source_chat_id = body.get('source_chat_id', '')
+> gateway_local.py:260:    if not source_chat_id:
+  gateway_local.py:261:        return
+  gateway_local.py:262:    original_id = str(body.get('command_id', 'unknown'))
+> gateway_local.py:263:    if original_id.startswith('local_status_'):
+  gateway_local.py:264:        return
+> gateway_local.py:265:    target_chat_id = body.get('target_chat_id', '')
+> gateway_local.py:266:    # Emit accepted/queued feedback for both run-command
+and send-chat-message.
+  gateway_local.py:267:    # Inter-chat messages need this too, otherwise
+capture/enqueue can appear silent
+> gateway_local.py:268:    # until the destination tab eventually polls and
+emits a delivery status.
+  gateway_local.py:269:    safe_id = ''.join(ch if ch.isalnum() or ch in '-_'
+else '_' for ch in original_id)[:80]
+> gateway_local.py:270:    source_key = ''.join(ch if ch.isalnum() or ch in
+'-_' else '_' for ch in source_chat_id)[:24]
+> gateway_local.py:271:    local_id = 'local_status_' + feedback_type + '_' +
+safe_id + '_to_' + source_key
+  gateway_local.py:272:    if feedback_type == 'accepted':
+  gateway_local.py:273:        lines = [
+  gateway_local.py:274:            '[AI_LOCAL]',
+  gateway_local.py:275:            'comando recebido pelo gateway',
+  gateway_local.py:276:            'id=' + original_id,
+> gateway_local.py:277:            'status=queued',
+  gateway_local.py:278:            'processamento=na_fila_local',
+  gateway_local.py:279:            'no_reply=1',
+> gateway_local.py:280:            'destino=' + target_chat_id,
+  gateway_local.py:281:            'observacao=O comando entrou na fila local e
+sera processado. Nao precisa responder a esta mensagem.',
+  gateway_local.py:282:        ]
+  gateway_local.py:283:    else:
+  gateway_local.py:284:        lines = [
+  gateway_local.py:285:            '[AI_LOCAL_ERRO]',
+  gateway_local.py:286:            'acao=corrija_e_reenvie',
+  gateway_local.py:287:            'no_reply=0',
+  gateway_local.py:288:            'executado=nao',
+  gateway_local.py:289:            'tipo=invalid_envelope',
+  gateway_local.py:290:            'versao=' + VERSION,
+  gateway_local.py:291:            'id_original=' + original_id,
+> gateway_local.py:292:            'chat_atual=' + source_chat_id,
+> gateway_local.py:293:            'origem=' + source_chat_id,
+> gateway_local.py:294:            'destino=' + target_chat_id,
+  gateway_local.py:295:            'erro=' + str(detail),
+  gateway_local.py:296:            'causa_provavel=Envelope parseou, mas faltam
+campos obrigatorios ou ha campos invalidos.',
+  gateway_local.py:297:            'correcao=Nada foi executado. Corrija o
+envelope e reenvie.',
+  gateway_local.py:298:        ]
+  gateway_local.py:299:    message = chr(10).join(lines)
+  gateway_local.py:300:    conn = open_db()
+  gateway_local.py:301:    try:
+  gateway_local.py:302:        conn.execute(
+> gateway_local.py:303:            "INSERT INTO commands (command_id,source_chat
+_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,paylo
+ad_json) VALUES (?,?,?,?,?,?,?,?,?)",
+> gateway_local.py:304:            (local_id, 'gateway-brain-supervisor',
+source_chat_id, 'send-chat-message', 'inter_agent_message',
+body.get('conversation_id', ''), 'AI Bridge Local Gateway', message, '{}')
+  gateway_local.py:305:        )
+  gateway_local.py:306:        conn.commit()
+> gateway_local.py:307:    except sqlite3.IntegrityError:
+  gateway_local.py:308:        pass
+  gateway_local.py:309:    finally:
+  gateway_local.py:310:        conn.close()
+  gateway_local.py:311:
+  gateway_local.py:312:def normalize_payload(body):
+  gateway_local.py:313:    payload = body.get("payload", {})
+  gateway_local.py:314:    if not isinstance(payload, dict):
+  gateway_local.py:315:        payload = {}
+  gateway_local.py:321:    return payload
+  gateway_local.py:322:
+  gateway_local.py:323:class GatewayHandler(BaseHTTPRequestHandler):
+> gateway_local.py:324:    def _send_json(self, data, status=200):
+  gateway_local.py:325:        raw = json.dumps(data,
+ensure_ascii=False).encode("utf-8")
+> gateway_local.py:326:        self.send_response(status)
+  gateway_local.py:327:        self.send_header("Content-Type",
+"application/json; charset=utf-8")
+  gateway_local.py:328:        self.send_header("Content-Length", str(len(raw)))
+  gateway_local.py:329:        self.end_headers()
+  gateway_local.py:330:        self.wfile.write(raw)
+  gateway_local.py:331:
+  gateway_local.py:332:    def _read_json(self):
+  gateway_local.py:333:        length = int(self.headers.get('Content-Length',
+0))
+  gateway_local.py:334:        if length <= 0:
+  gateway_local.py:340:
+  gateway_local.py:341:    def do_GET(self):
+  gateway_local.py:342:        if self.path == "/control":
+> gateway_local.py:343:            self._send_json(fetch_control_status())
+  gateway_local.py:344:            return
+  gateway_local.py:345:
+> gateway_local.py:346:        if self.path == "/control/status":
+> gateway_local.py:347:            self._send_json(fetch_control_status())
+  gateway_local.py:348:            return
+  gateway_local.py:349:
+  gateway_local.py:350:        if self.path == "/health":
+  gateway_local.py:351:            conn = open_db()
+> gateway_local.py:352:            q = conn.execute("SELECT COUNT(*) FROM
+commands WHERE status='queued'").fetchone()[0]
+> gateway_local.py:353:            d = conn.execute("SELECT COUNT(*) FROM
+commands WHERE status='delivering'").fetchone()[0]
+  gateway_local.py:354:            conn.close()
+> gateway_local.py:355:            self._send_json({"ok": True, "service":
+"ai-bridge-local", "version": VERSION, "commands_queued": q,
+"commands_delivering": d, "timestamp": now_iso()})
+  gateway_local.py:356:            return
+  gateway_local.py:357:
+  gateway_local.py:358:        if
+self.path.startswith("/bridge/pending-sources"):
+  gateway_local.py:359:            qs = parse_qs(urlparse(self.path).query)
+> gateway_local.py:360:            target_chat_id = qs.get("target_chat_id",
+["gateway-brain-supervisor"])[0]
+  gateway_local.py:361:
+  gateway_local.py:362:            conn = open_db()
+  gateway_local.py:363:            rows = conn.execute(
+> gateway_local.py:364:                "SELECT source_chat_id, COUNT(*) FROM
+commands WHERE status='queued' AND target_chat_id=? AND action='run-command'
+GROUP BY source_chat_id ORDER BY MIN(id) ASC",
+> gateway_local.py:365:                (target_chat_id,)
+  gateway_local.py:366:            ).fetchall()
+  gateway_local.py:367:            conn.close()
+  gateway_local.py:368:
+  gateway_local.py:369:            sources = [
+> gateway_local.py:370:                {"source_chat_id": row[0], "queued":
+row[1]}
+  gateway_local.py:371:                for row in rows
+  gateway_local.py:372:                if row[0]
+  gateway_local.py:373:            ]
+> gateway_local.py:374:            self._send_json({"ok": True,
+"target_chat_id": target_chat_id, "sources": sources})
+  gateway_local.py:375:            return
+  gateway_local.py:376:
+  gateway_local.py:377:        if self.path.startswith("/bridge/next-action"):
+  gateway_local.py:378:            fail_stale_deliveries()
+  gateway_local.py:379:            qs = parse_qs(urlparse(self.path).query)
+  gateway_local.py:380:            chat_id = qs.get("chat_id",
+["gateway-brain-supervisor"])[0]
+> gateway_local.py:381:            source_chat_id = qs.get("source_chat_id",
+[""])[0]
+  gateway_local.py:382:
+  gateway_local.py:383:            conn = open_db()
+> gateway_local.py:384:            if source_chat_id:
+  gateway_local.py:385:                row = conn.execute(
+> gateway_local.py:386:                    "SELECT * FROM commands WHERE
+status='queued' AND target_chat_id=? AND source_chat_id=? AND
+action='run-command' ORDER BY id ASC LIMIT 1",
+> gateway_local.py:387:                    (chat_id, source_chat_id)
+  gateway_local.py:388:                ).fetchone()
+  gateway_local.py:389:            else:
+> gateway_local.py:390:                row = conn.execute("SELECT * FROM
+commands WHERE status='queued' AND target_chat_id=? ORDER BY id ASC LIMIT 1",
+(chat_id,)).fetchone()
+  gateway_local.py:391:            if not row:
+  gateway_local.py:392:                conn.close()
+  gateway_local.py:393:                self._send_json({"ok": True, "action":
+None, "chat_id": chat_id})
+  gateway_local.py:394:                return
+  gateway_local.py:395:
+  gateway_local.py:396:            cmd_id = row[1]
+> gateway_local.py:397:            conn.execute("UPDATE commands SET
+status='delivering', delivered_at=? WHERE command_id=?", (now_iso(), cmd_id))
+  gateway_local.py:398:            conn.commit()
+  gateway_local.py:399:            conn.close()
+  gateway_local.py:400:
+  gateway_local.py:401:            payload = {}
+  gateway_local.py:402:            try:
+  gateway_local.py:403:                payload = json.loads(row[9]) if row[9]
+else {}
+  gateway_local.py:404:            except Exception:
+  gateway_local.py:405:                payload = {}
+  gateway_local.py:409:                "chat_id": chat_id,
+  gateway_local.py:410:                "action": {
+  gateway_local.py:411:                    "command_id": row[1],
+> gateway_local.py:412:                    "source_chat_id": row[2],
+> gateway_local.py:413:                    "target_chat_id": row[3],
+  gateway_local.py:414:                    "action": row[4],
+> gateway_local.py:415:                    "delivery_kind": row[5],
+  gateway_local.py:416:                    "conversation_id": row[6],
+  gateway_local.py:417:                    "from_agent": row[7],
+  gateway_local.py:418:                    "message": row[8],
+  gateway_local.py:419:                    "payload": payload
+  gateway_local.py:420:                }
+  gateway_local.py:421:            })
+  gateway_local.py:422:            return
+  gateway_local.py:423:
+  gateway_local.py:440:            self._send_json({"ok": False, "error":
+"invalid_json", "detail": str(e)}, 400)
+  gateway_local.py:441:            return
+  gateway_local.py:442:
+> gateway_local.py:443:        if self.path == "/bridge/commands":
+  gateway_local.py:444:            cmd_id = body.get("command_id",
+str(uuid.uuid4()))
+  gateway_local.py:445:            payload = normalize_payload(body)
+  gateway_local.py:446:            validation_error =
+validate_command_body(body, payload)
+  gateway_local.py:447:            if validation_error:
+  gateway_local.py:448:                record_invalid_message(body,
+validation_error)
+  gateway_local.py:449:                enqueue_source_feedback(body,
+'invalid_envelope', validation_error)
+  gateway_local.py:450:                self._send_json(dict(ok=False,
+error='invalid_envelope', detail=validation_error), 400)
+  gateway_local.py:451:                return
+  gateway_local.py:452:
+> gateway_local.py:453:            if body.get("action") == "run-command" and
+body.get("delivery_kind") == "local_capability":
+> gateway_local.py:454:                body["target_chat_id"] =
+"gateway-brain-supervisor"
+  gateway_local.py:455:
+  gateway_local.py:456:            conn = open_db()
+  gateway_local.py:457:            try:
+  gateway_local.py:458:                conn.execute(
+> gateway_local.py:459:                    "INSERT INTO commands (command_id,sou
+rce_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,messa
+ge,payload_json) VALUES (?,?,?,?,?,?,?,?,?)",
+  gateway_local.py:460:                    (
+  gateway_local.py:461:                        cmd_id,
+> gateway_local.py:462:                        body.get("source_chat_id", ""),
+> gateway_local.py:463:                        body.get("target_chat_id", ""),
+  gateway_local.py:464:                        body.get("action", ""),
+> gateway_local.py:465:                        body.get("delivery_kind", ""),
+  gateway_local.py:466:                        body.get("conversation_id", ""),
+  gateway_local.py:467:                        body.get("from_agent", ""),
+  gateway_local.py:468:                        body.get("message", ""),
+  gateway_local.py:469:                        json.dumps(payload,
+ensure_ascii=False)
+  gateway_local.py:470:                    )
+  gateway_local.py:471:                )
+  gateway_local.py:472:                conn.commit()
+  gateway_local.py:473:                enqueue_source_feedback(body,
+'accepted', 'queued')
+> gateway_local.py:474:                self._send_json({"ok": True,
+"command_id": cmd_id, "status": "queued", "target_chat_id":
+body.get("target_chat_id", "")})
+> gateway_local.py:475:            except sqlite3.IntegrityError:
+  gateway_local.py:476:                self._send_json({"ok": False, "error":
+"duplicate", "command_id": cmd_id}, 409)
+  gateway_local.py:477:            finally:
+  gateway_local.py:478:                conn.close()
+  gateway_local.py:479:            return
+  gateway_local.py:480:
+  gateway_local.py:481:        if self.path == "/bridge/acks":
+  gateway_local.py:482:            conn = open_db()
+  gateway_local.py:483:            conn.execute(
+> gateway_local.py:484:                "UPDATE commands SET
+status=?,acked_at=?,return_code=?,stdout=?,stderr=?,last_error=? WHERE
+command_id=?",
+  gateway_local.py:485:                (
+> gateway_local.py:486:                    body.get("status", "acked"),
+  gateway_local.py:487:                    now_iso(),
+  gateway_local.py:488:                    body.get("return_code"),
+  gateway_local.py:489:                    body.get("stdout", ""),
+  gateway_local.py:490:                    body.get("stderr", ""),
+  gateway_local.py:491:                    body.get("error", ""),
+  gateway_local.py:492:                    body.get("command_id")
+  gateway_local.py:493:                )
+  gateway_local.py:494:            )
+> gateway_local.py:495:            if body.get('status') == 'failed':
+> gateway_local.py:496:                row = conn.execute('SELECT command_id,
+source_chat_id, target_chat_id, action, delivery_kind, payload_json FROM
+commands WHERE command_id=?', (body.get('command_id'),)).fetchone()
+  gateway_local.py:497:                if row:
+> gateway_local.py:498:                    conn.execute('INSERT INTO
+dead_letters (command_id, source_chat_id, target_chat_id, action,
+delivery_kind, payload_json, last_error, attempt_count) VALUES (?, ?, ?, ?, ?,
+?, ?, ?)', tuple(row) + (body.get('error', ''), 1))
+  gateway_local.py:499:            conn.commit()
+  gateway_local.py:500:            conn.close()
+  gateway_local.py:501:            self._send_json({"ok": True})
+  gateway_local.py:502:            return
+  gateway_local.py:503:
+  gateway_local.py:504:        self._send_json({"error": "not_found"}, 404)
+  gateway_local.py:505:
+  gateway_local.py:506:    def log_message(self, format, *args):
+  gateway_local.py:507:        pass
+  gateway_local.py:508:
+  gateway_local.py:509:def main():
+> gateway_local.py:510:    print(f"[gateway] AI Bridge Local v{VERSION} - Porta
+{PORT} - Filtra por target_chat_id")
+  gateway_local.py:511:    init_db()
+  gateway_local.py:512:    ThreadingHTTPServer((HOST, PORT),
+GatewayHandler).serve_forever()
+  gateway_local.py:513:
+  gateway_local.py:514:if __name__ == "__main__":
+  gateway_local.py:515:    main()
+  brain_worker.py:66:    atexit.register(_release_single_worker_lock)
+  brain_worker.py:67:
+  brain_worker.py:68:
+> brain_worker.py:69:MAX_PARALLEL_RUN_COMMANDS =
+int(os.environ.get("AI_BRIDGE_MAX_PARALLEL_RUN_COMMANDS", "3"))
+> brain_worker.py:70:RUN_EXECUTOR =
+ThreadPoolExecutor(max_workers=MAX_PARALLEL_RUN_COMMANDS)
+  brain_worker.py:71:RUN_FUTURES = {}
+  brain_worker.py:72:RUN_FUTURES_LOCK = threading.Lock()
+  brain_worker.py:73:CWD_LOCKS = {}
+  brain_worker.py:74:CWD_LOCKS_LOCK = threading.Lock()
+  brain_worker.py:75:
+  brain_worker.py:76:
+  brain_worker.py:77:def normalize_cwd_for_lock(payload):
+  brain_worker.py:78:    if not isinstance(payload, dict):
+  brain_worker.py:211:        return {"return_code": -1, "stdout": "",
+"stderr": "timeout"}
+  brain_worker.py:212:    except Exception as exc:
+  brain_worker.py:213:        return {"return_code": -1, "stdout": "",
+"stderr": str(exc)}
+> brain_worker.py:214:def format_result_message(action, result, status):
+  brain_worker.py:215:    command_id = action.get("command_id", "unknown")
+  brain_worker.py:216:    payload = action.get("payload", {}) if
+isinstance(action.get("payload", {}), dict) else {}
+  brain_worker.py:217:    cmd = payload.get("command", "")
+  brain_worker.py:218:    cwd = payload.get("cwd", ".")
+  brain_worker.py:219:    return_code = result.get("return_code")
+> brain_worker.py:220:    success = "1" if status == "acked" and return_code ==
+0 else "0"
+  brain_worker.py:221:    chat_can_continue = "1"
+  brain_worker.py:222:    next_action = "continue_next_activity" if success ==
+"1" else "fix_error_before_continue"
+  brain_worker.py:223:    observacao = (
+  brain_worker.py:224:        "Comando concluido com sucesso. O chat pode
+analisar o resultado e seguir para a proxima atividade."
+  brain_worker.py:225:        if success == "1"
+  brain_worker.py:226:        else "Comando falhou. O chat deve analisar
+stderr/stdout, explicar a causa e propor ou executar a correcao segura."
+  brain_worker.py:227:    )
+  brain_worker.py:228:
+  brain_worker.py:229:    return (
+  brain_worker.py:230:        "[AI_LOCAL_RUN]\n"
+  brain_worker.py:231:        f"id={command_id}\n"
+> brain_worker.py:232:        f"status={status}\n"
+  brain_worker.py:233:        f"return_code={return_code}\n"
+  brain_worker.py:234:        "no_reply=1\n"
+  brain_worker.py:235:        "result_is_final=1\n"
+  brain_worker.py:236:        f"success={success}\n"
+  brain_worker.py:237:        f"chat_can_continue={chat_can_continue}\n"
+  brain_worker.py:238:        f"next_action={next_action}\n"
+  brain_worker.py:239:        f"observacao={observacao}\n"
+  brain_worker.py:240:        f"cwd={cwd}\n"
+  brain_worker.py:244:    )
+  brain_worker.py:245:
+  brain_worker.py:246:
+> brain_worker.py:247:def enqueue_result_message(action, result, status):
+> brain_worker.py:248:    source_chat_id = action.get("source_chat_id", "")
+> brain_worker.py:249:    if not source_chat_id:
+  brain_worker.py:250:        return
+  brain_worker.py:251:
+  brain_worker.py:252:    command_id = action.get("command_id", "unknown")
+  brain_worker.py:253:    result_command_id = "result_to_" + command_id
+  brain_worker.py:254:
+  brain_worker.py:255:    body = {
+  brain_worker.py:256:        "schema": "ai_bridge_local.envelope",
+  brain_worker.py:257:        "schema_version": 1,
+  brain_worker.py:258:        "command_id": result_command_id,
+> brain_worker.py:259:        "action": "send-chat-message",
+> brain_worker.py:260:        "source_chat_id": "gateway-brain-supervisor",
+> brain_worker.py:261:        "target_chat_id": source_chat_id,
+> brain_worker.py:262:        "delivery_kind": "inter_agent_message",
+  brain_worker.py:263:        "conversation_id": (action.get("conversation_id")
+or "local_run_command") + "_result",
+  brain_worker.py:264:        "from_agent": "AI Bridge Local Worker " + VERSION,
+> brain_worker.py:265:        "message": format_result_message(action, result,
+status)
+  brain_worker.py:266:    }
+  brain_worker.py:267:
+  brain_worker.py:268:    try:
+> brain_worker.py:269:        post_json(f"{GATEWAY}/bridge/commands", body)
+  brain_worker.py:270:        print(f"[worker] Result enqueued:
+{result_command_id}")
+  brain_worker.py:271:    except Exception as e:
+  brain_worker.py:272:        print(f"[worker] Result enqueue skipped/error:
+{e}")
+  brain_worker.py:273:
+  brain_worker.py:274:def format_accepted_message(action):
+  brain_worker.py:275:    return ""
+  brain_worker.py:276:
+  brain_worker.py:277:
+  brain_worker.py:285:    command_id = action.get("command_id", "unknown")
+  brain_worker.py:286:    action_type = action.get("action", "")
+  brain_worker.py:287:    payload = action.get("payload", {})
+> brain_worker.py:288:    status = "acked"
+  brain_worker.py:289:    result = {"return_code": 0, "stdout": f"OK
+{action_type}", "stderr": ""}
+  brain_worker.py:290:
+  brain_worker.py:291:    try:
+> brain_worker.py:292:        if action_type == "run-command":
+  brain_worker.py:293:            # accepted/running notice removed in 0.5.9
+  brain_worker.py:294:            cwd_key = normalize_cwd_for_lock(payload)
+  brain_worker.py:295:            cwd_lock = get_cwd_lock(cwd_key)
+  brain_worker.py:296:            print(f"[worker] Waiting cwd lock:
+{command_id} cwd={cwd_key}")
+  brain_worker.py:297:            with cwd_lock:
+  brain_worker.py:298:                print(f"[worker] Running with cwd lock:
+{command_id} cwd={cwd_key}")
+  brain_worker.py:299:                result = execute_command(payload,
+command_id)
+> brain_worker.py:300:            status = "acked" if result["return_code"] ==
+0 else "failed"
+> brain_worker.py:301:            enqueue_result_message(action, result, status)
+  brain_worker.py:302:        else:
+  brain_worker.py:303:            result = {"return_code": 0, "stdout": f"OK
+{action_type}", "stderr": ""}
+> brain_worker.py:304:            status = "acked"
+  brain_worker.py:305:
+  brain_worker.py:306:        ack = {
+  brain_worker.py:307:            "command_id": command_id,
+> brain_worker.py:308:            "status": status,
+  brain_worker.py:309:            "return_code": result["return_code"],
+  brain_worker.py:310:            "stdout": result.get("stdout", ""),
+  brain_worker.py:311:            "stderr": result.get("stderr", ""),
+> brain_worker.py:312:            "error": result.get("stderr", "") if status
+== "failed" else "",
+  brain_worker.py:313:        }
+  brain_worker.py:314:
+  brain_worker.py:315:        try:
+  brain_worker.py:316:            post_json(f"{GATEWAY}/bridge/acks", ack)
+> brain_worker.py:317:            print(f"[worker] {command_id}: {status}")
+  brain_worker.py:318:        except Exception as e:
+  brain_worker.py:319:            print(f"[worker] ACK error: {e}")
+  brain_worker.py:320:    except Exception as exc:
+  brain_worker.py:321:        print(f"[worker] run_action error for
+{command_id}: {exc}")
+  brain_worker.py:322:
+> brain_worker.py:323:def poll_source(source_chat_id):
+  brain_worker.py:324:    try:
+> brain_worker.py:325:        data = get_json(f"{GATEWAY}/bridge/next-action?cha
+t_id=gateway-brain-supervisor&source_chat_id={source_chat_id}")
+  brain_worker.py:326:    except Exception as e:
+> brain_worker.py:327:        print(f"[worker] Poll error for source
+{source_chat_id}: {e}")
+  brain_worker.py:328:        return
+  brain_worker.py:329:
+  brain_worker.py:330:    action = data.get("action") if data else None
+  brain_worker.py:331:    if not action:
+  brain_worker.py:332:        return
+  brain_worker.py:333:
+  brain_worker.py:334:    command_id = action.get("command_id", "unknown")
+  brain_worker.py:335:    action_type = action.get("action", "")
+  brain_worker.py:336:    payload = action.get("payload", {})
+  brain_worker.py:337:
+> brain_worker.py:338:    if action_type == "send-chat-message":
+> brain_worker.py:339:        print(f"[worker] Skip {command_id}
+(send-chat-message - extension handles)")
+  brain_worker.py:340:        return
+  brain_worker.py:341:
+> brain_worker.py:342:    print(f"[worker] Running: {command_id}
+({action_type}) source={source_chat_id}")
+  brain_worker.py:343:
+> brain_worker.py:344:    if action_type == "run-command":
+  brain_worker.py:345:        # accepted/running notice removed in 0.5.9
+  brain_worker.py:346:        result = execute_command(payload, command_id)
+> brain_worker.py:347:        status = "acked" if result["return_code"] == 0
+else "failed"
+> brain_worker.py:348:        enqueue_result_message(action, result, status)
+  brain_worker.py:349:    else:
+  brain_worker.py:350:        result = {"return_code": 0, "stdout": f"OK
+{action_type}", "stderr": ""}
+> brain_worker.py:351:        status = "acked"
+  brain_worker.py:352:
+  brain_worker.py:353:    ack = {
+  brain_worker.py:354:        "command_id": command_id,
+> brain_worker.py:355:        "status": status,
+  brain_worker.py:356:        "return_code": result["return_code"],
+  brain_worker.py:357:        "stdout": result.get("stdout", ""),
+  brain_worker.py:358:        "stderr": result.get("stderr", ""),
+> brain_worker.py:359:        "error": result.get("stderr", "") if status ==
+"failed" else ""
+  brain_worker.py:360:    }
+  brain_worker.py:361:
+  brain_worker.py:362:    try:
+  brain_worker.py:363:        post_json(f"{GATEWAY}/bridge/acks", ack)
+> brain_worker.py:364:        print(f"[worker] {command_id}: {status}")
+  brain_worker.py:365:    except Exception as e:
+  brain_worker.py:366:        print(f"[worker] ACK error: {e}")
+  brain_worker.py:367:
+  brain_worker.py:368:
+  brain_worker.py:369:def poll_once():
+  brain_worker.py:370:    reap_run_futures()
+  brain_worker.py:371:    try:
+> brain_worker.py:372:        data = get_json(f"{GATEWAY}/bridge/pending-sources
+?target_chat_id=gateway-brain-supervisor")
+  brain_worker.py:373:    except Exception as e:
+  brain_worker.py:374:        print(f"[worker] Pending sources error: {e}")
+  brain_worker.py:375:        return
+  brain_worker.py:376:
+  brain_worker.py:377:    sources = data.get("sources", []) if data else []
+  brain_worker.py:378:    if not sources:
+  brain_worker.py:379:        return
+  brain_worker.py:380:
+  brain_worker.py:381:    for source in sources:
+> brain_worker.py:382:        source_chat_id = source.get("source_chat_id", "")
+if isinstance(source, dict) else str(source)
+> brain_worker.py:383:        if source_chat_id:
+> brain_worker.py:384:            poll_source(source_chat_id)
+  brain_worker.py:385:
+  brain_worker.py:386:def main():
+  brain_worker.py:387:    acquire_single_worker_lock()
+  brain_worker.py:388:    print(f"[worker] AI Bridge Local Worker v{VERSION} -
+Porta 8766")
+  brain_worker.py:389:    print("[worker] Ctrl+C to stop")
+  brain_worker.py:390:    while True:
+  brain_worker.py:391:        poll_once()
+  brain_worker.py:392:        time.sleep(2)
+
+=== STATIC FUNCTION INDEX ===
+
+FILE extension\background.js
+   41 function postCommand
+   63 function postDeliveryStatus
+  134 function canonicalChatId
+  228 function pollMessagesSoon
+  236 function pollOneChat
+  332 function pollMessages
+  365 function aiBridgeCapturedPlainObject
+  370 function aiBridgeCapturedString
+  374 function aiBridgeCapturedCommandText
+  383 function aiBridgeCapturedReadonlyAllowed
+  390 function validateAiBridgeCapturedEnvelopeMessage
+
+FILE extension\content_script.js
+   26 function getChatId
+   46 function registerChatWithBridge
+  185 function scoreSendCandidate
+  211 function findSendButton
+  294 function documentContainsSentMessage
+  455 function normalizeLocalCommand
+  534 function buildLocalStatusMessage
+  607 function sendTelemetryEvent
+  615 function sendChatHeartbeat
+  716 function send
+  795 function getGeminiChatId
+  811 function parseCapturedEnvelopeText
+  855 function wasCaptured
+  863 function markCaptured
+  871 function tryCaptureEnvelopeFromNode
+  973 function isChatGptPage
+  977 function getCurrentChatId
+ 1003 function wasCaptured
+ 1017 function showCaptureNotice
+ 1045 function sendCommandToBackground
+ 1063 function sendLocalError
+ 1173 function tryCaptureFromElement
+
+=== QUICK ARCHITECTURE SUMMARY FROM STATIC SCAN ===
+background_has_registered_chats_map=True
+background_has_tabs_sendMessage=True
+background_posts_to_gateway_bridge_commands=True
+background_handles_captured_envelope=True
+content_sends_bridge_command=True
+content_sends_captured_envelope=True
+content_can_receive_deliver_message=True
+content_chatgpt_outbound_capture_added=True
+
+BACKGROUND bridge/commands occurrences: 1
+BACKGROUND tabs.sendMessage occurrences: 4
+CONTENT AI_BRIDGE_BRIDGE_COMMAND occurrences: 2
+CONTENT AI_BRIDGE_CAPTURED_ENVELOPE occurrences: 1
+
+=== END ===
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260618225932
+**********************

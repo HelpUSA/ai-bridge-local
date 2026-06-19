@@ -8,11 +8,11 @@ tags:
 
 # Obsidian setup report
 
-Generated: 2026-06-19T14:51:46
+Generated: 2026-06-19T15:14:59
 
 ## Summary
 
-- Files indexed: 308
+- Files indexed: 309
 - Topics: 10
 - Versions found: 294
 - Duplicate groups: 55

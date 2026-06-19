@@ -10,13 +10,15 @@ tags:
 
 ## 0.0.0
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.0.1
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]]
@@ -28,8 +30,6 @@ tags:
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221407/AI_BRIDGE_LOCAL_DIAG_20260618_213840.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.1.0
@@ -71,22 +71,24 @@ tags:
 
 ## 0.2.6
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
 
 ## 0.2.9
 
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221407/AI_BRIDGE_LOCAL_DIAG_20260618_213840.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_SAFE_20260618_220843.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## 0.26100.8655
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221407/AI_BRIDGE_LOCAL_DIAG_20260618_213840.txt]]
@@ -96,12 +98,12 @@ tags:
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_20260618_214019.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_RETRY_20260618_214451.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.26200.0
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221407/AI_BRIDGE_LOCAL_DIAG_20260618_213840.txt]]
@@ -111,8 +113,6 @@ tags:
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_20260618_214019.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_RETRY_20260618_214451.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.3.0
@@ -122,6 +122,8 @@ tags:
 
 ## 0.30319.42000
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221407/AI_BRIDGE_LOCAL_DIAG_20260618_213840.txt]]
@@ -131,8 +133,6 @@ tags:
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_20260618_214019.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FIX_RESULT_FEEDBACK_LOOP_RETRY_20260618_214451.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.4.13
@@ -158,6 +158,7 @@ tags:
 ## 0.4.16
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]]
@@ -256,6 +257,7 @@ tags:
 ## 0.4.24
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -265,6 +267,7 @@ tags:
 ## 0.4.25
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -274,6 +277,7 @@ tags:
 ## 0.4.27
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -283,6 +287,7 @@ tags:
 ## 0.4.28
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -305,6 +310,7 @@ tags:
 ## 0.4.30
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -314,6 +320,7 @@ tags:
 ## 0.4.31
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]]
 - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
@@ -326,6 +333,7 @@ tags:
 ## 0.4.32
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -335,6 +343,7 @@ tags:
 ## 0.4.33
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -344,6 +353,7 @@ tags:
 ## 0.4.34
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]]
 - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
@@ -487,6 +497,7 @@ tags:
 ## 0.4.72
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_PHASE_CONSOLIDATION_2026-06-14]]
 - [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]]
@@ -540,6 +551,7 @@ tags:
 ## 0.4.80
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]]
 
@@ -571,6 +583,7 @@ tags:
 ## 0.4.85
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
 - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
@@ -589,6 +602,7 @@ tags:
 ## 0.4.87
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
 - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
@@ -601,6 +615,7 @@ tags:
 ## 0.4.88
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
 - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
@@ -613,6 +628,7 @@ tags:
 ## 0.4.89
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
 - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
@@ -622,6 +638,7 @@ tags:
 ## 0.4.90
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
 - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
@@ -631,6 +648,7 @@ tags:
 ## 0.4.91
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
 - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
@@ -640,6 +658,7 @@ tags:
 ## 0.4.92
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
@@ -652,6 +671,7 @@ tags:
 ## 0.4.93
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
@@ -664,6 +684,7 @@ tags:
 ## 0.4.94
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
 - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
@@ -676,6 +697,7 @@ tags:
 ## 0.4.95
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
@@ -688,6 +710,7 @@ tags:
 ## 0.4.96
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
@@ -710,6 +733,7 @@ tags:
 ## 0.4.98
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
@@ -722,6 +746,7 @@ tags:
 ## 0.4.99
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
 - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
@@ -737,6 +762,7 @@ tags:
 ## 0.5.0
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
@@ -884,6 +910,7 @@ tags:
 ## 0.5.17
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
 - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
@@ -895,6 +922,7 @@ tags:
 ## 0.5.18
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
 - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
@@ -918,6 +946,7 @@ tags:
 ## 0.5.2
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
 - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
@@ -933,6 +962,7 @@ tags:
 ## 0.5.20
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/root_1_SMOKE_ALL_0520]]
 - [[docs/legacy/root_SMOKE_ALL_0520]]
@@ -943,6 +973,7 @@ tags:
 ## 0.5.21
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
 - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
@@ -954,6 +985,7 @@ tags:
 ## 0.5.22
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
 - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
@@ -965,6 +997,7 @@ tags:
 ## 0.5.23
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
 - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
@@ -976,6 +1009,7 @@ tags:
 ## 0.5.24
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
 - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
@@ -999,6 +1033,7 @@ tags:
 ## 0.5.26
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
 - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
@@ -1010,6 +1045,7 @@ tags:
 ## 0.5.27
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
 - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
@@ -1033,6 +1069,7 @@ tags:
 ## 0.5.3
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
 - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
@@ -1084,7 +1121,9 @@ tags:
 ## 0.5.33
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
 - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
@@ -1092,16 +1131,15 @@ tags:
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_SAFE_20260618_220843.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
 
 ## 0.5.34
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_SAFE_20260618_220843.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
 
 ## 0.5.37
 
@@ -1127,13 +1165,13 @@ tags:
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/FINAL_RESULT_FEEDBACK_GUARD_0539]]
 - [[docs/GEMINI_MANIFEST_NAME_SYNC_0540]]
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FINAL_RESULT_GUARD_APPLY_20260618_221211.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## 0.5.40
@@ -1141,11 +1179,11 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/GEMINI_MANIFEST_NAME_SYNC_0540]]
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## 0.5.41
 
@@ -1153,10 +1191,10 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CHATGPT_OUTBOUND_ENVELOPE_CAPTURE_0541]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## 0.5.42
 
@@ -1245,6 +1283,7 @@ tags:
 ## 0.5.5
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
 - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
@@ -1340,7 +1379,6 @@ tags:
 
 ## 0.5.59
 
-- [[docs/_meta/docs-inventory]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1348,6 +1386,7 @@ tags:
 ## 0.5.6
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
@@ -1360,6 +1399,7 @@ tags:
 ## 0.5.7
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/_meta/status-marker-index]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
 - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
@@ -1389,6 +1429,7 @@ tags:
 
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/RELEASES]]
 - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
@@ -1402,7 +1443,6 @@ tags:
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_SAFE_20260618_220843.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## v0.1.2
 
@@ -1423,12 +1463,12 @@ tags:
 
 ## v0.2.3
 
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_SAFE_20260618_220843.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## v0.3.8-interchat-baseline
 
@@ -2212,13 +2252,13 @@ tags:
 
 ## v0.5.39-final-result-feedback-guard
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/archived_local_20260618_221452/AI_BRIDGE_LOCAL_FINAL_RESULT_GUARD_APPLY_20260618_221211.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 - [[reports/GEMINI_WATCHER_9b406ec6ce0bcea0_DIAG_20260618_222208.txt]]
 
 ## v0.5.3-gateway-fe
@@ -2243,11 +2283,11 @@ tags:
 
 ## v0.5.40-gemini-manifest-name-sync
 
+- [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_ENVELOPE_CAPTURE_DIAG_20260618_223315.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## v0.5.41-chatgpt
 
@@ -2258,10 +2298,10 @@ tags:
 ## v0.5.41-chatgpt-outbound-envelope-capture
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
-- [[reports/DIRECT_INTERCHAT_GATEWAY_DEPENDENCY_ANALYSIS_20260618_225931.txt]]
 
 ## v0.5.42
 

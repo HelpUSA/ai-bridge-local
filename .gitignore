@@ -32,3 +32,13 @@ backups/queue_local/*.db
 .obsidian/workspace-mobile.json
 .obsidian/cache
 .obsidian/plugins
+
+# Obsidian personal UI state
+.obsidian/appearance.json
+.obsidian/graph.json
+reports/obsidian_context_*.md
+
+# Obsidian personal UI state
+.obsidian/appearance.json
+.obsidian/graph.json
+reports/obsidian_context_*.md

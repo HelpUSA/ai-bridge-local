@@ -1,7 +1,10 @@
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.39";
+const VERSION = "0.5.42";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
+const DIRECT_INTERCHAT_ENABLED = true;
+const DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = false;
+
 
 async function postJson(path, body) {
   const res = await fetch(GATEWAY + path, {
@@ -167,6 +170,127 @@ function withTimeout(promise, timeoutMs, fallback) {
       });
   });
 }
+
+function boolFlag(value) {
+  return value === true || value === "true" || value === 1 || value === "1";
+}
+
+function shouldForceGateway(cmd) {
+  return Boolean(
+    cmd &&
+    (
+      boolFlag(cmd.force_gateway) ||
+      boolFlag(cmd.audit_required) ||
+      boolFlag(cmd.persist_required) ||
+      boolFlag(cmd.require_gateway)
+    )
+  );
+}
+
+function isDirectInterChatCommand(cmd) {
+  return Boolean(
+    DIRECT_INTERCHAT_ENABLED &&
+    cmd &&
+    cmd.action === "send-chat-message" &&
+    cmd.delivery_kind === "inter_agent_message" &&
+    cmd.target_chat_id &&
+    cmd.message &&
+    !shouldForceGateway(cmd)
+  );
+}
+
+function mustUseGateway(cmd) {
+  if (!cmd) return true;
+
+  if (shouldForceGateway(cmd)) return true;
+
+  if (cmd.action === "run-command") return true;
+  if (cmd.delivery_kind === "local_capability") return true;
+
+  if (cmd.action === "send-chat-message" && cmd.delivery_kind === "inter_agent_message") {
+    return false;
+  }
+
+  return true;
+}
+
+async function deliverInterChatDirect(cmd) {
+  const targetChatId = canonicalChatId(cmd.target_chat_id || "");
+  const sourceChatId = canonicalChatId(cmd.source_chat_id || "");
+
+  if (!targetChatId) {
+    return { ok: false, direct: true, error: "missing_target_chat_id" };
+  }
+
+  const tabId = registry[targetChatId];
+  if (!tabId) {
+    return {
+      ok: false,
+      direct: true,
+      error: "target_chat_not_registered",
+      target_chat_id: targetChatId,
+      hint: "Abra/recarregue a aba destino para a extensao registrar o chat_id, ou reenvie com force_gateway=true."
+    };
+  }
+
+  const directAction = Object.assign({}, cmd, {
+    command_id: cmd.command_id,
+    action: cmd.action,
+    message: cmd.message || "",
+    target_chat_id: targetChatId,
+    source_chat_id: sourceChatId || cmd.source_chat_id || ""
+  });
+
+  console.log("[bg] Direct inter-chat delivery:", directAction.command_id, "to", targetChatId, "tab", tabId);
+
+  const result = await withTimeout(
+    injectText(tabId, directAction),
+    20000,
+    { ok: false, reason: "direct_interchat_inject_timeout" }
+  );
+
+  if (result && result.ok) {
+    console.log("[bg] Direct inter-chat delivered:", directAction.command_id, JSON.stringify(result));
+    return { ok: true, direct: true, command_id: directAction.command_id, target_chat_id: targetChatId, result };
+  }
+
+  const reason = result && (result.reason || result.error) ? (result.reason || result.error) : "direct_interchat_inject_failed";
+  console.log("[bg] Direct inter-chat failed:", directAction.command_id, reason);
+  return { ok: false, direct: true, command_id: directAction.command_id, target_chat_id: targetChatId, error: reason, result };
+}
+
+function shouldFallbackDirectFailureToGateway(cmd, directResult) {
+  if (!DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK) return false;
+  if (!cmd || !directResult || directResult.ok) return false;
+  return boolFlag(cmd.allow_gateway_fallback) || boolFlag(cmd.force_gateway_on_direct_failure);
+}
+
+async function routeBridgeCommand(cmd, sourceLabel) {
+  if (isDirectInterChatCommand(cmd)) {
+    const directResult = await deliverInterChatDirect(cmd);
+    if (directResult && directResult.ok) {
+      return { ok: true, direct: true, data: directResult };
+    }
+
+    if (shouldFallbackDirectFailureToGateway(cmd, directResult)) {
+      console.log("[bg] Direct inter-chat fallback to gateway:", cmd.command_id, directResult && directResult.error);
+      const gatewayResult = await postCommand(cmd);
+      pollMessagesSoon(sourceLabel + "_directFallback");
+      return { ok: true, direct: false, fallback: true, data: gatewayResult, direct_error: directResult && directResult.error };
+    }
+
+    return { ok: false, direct: true, error: (directResult && directResult.error) || "direct_interchat_failed", data: directResult };
+  }
+
+  if (mustUseGateway(cmd)) {
+    const gatewayResult = await postCommand(cmd);
+    pollMessagesSoon(sourceLabel || "postCommand");
+    return { ok: true, direct: false, data: gatewayResult };
+  }
+
+  return { ok: false, direct: false, error: "unroutable_command" };
+}
+
 async function injectText(tabId, action) {
   const message = {
     type: "AI_BRIDGE_INJECT_TEXT",
@@ -433,13 +557,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return true;
     }
 
-    postCommand(validation.envelope)
-      .then(() => {
-        pollMessagesSoon("capturedEnvelope");
-        sendResponse({ ok: true });
+    routeBridgeCommand(validation.envelope, "capturedEnvelope")
+      .then((r) => {
+        sendResponse(r);
       })
       .catch((e) => {
-        console.log("[bg] captured envelope postCommand error:", e.message);
+        console.log("[bg] captured envelope route error:", e.message);
         sendResponse({ ok: false, error: e.message });
       });
     return true;
@@ -455,13 +578,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const cmd = message.command || message;
     console.log("[bg] Received:", cmd.command_id);
 
-    postCommand(cmd)
-      .then(r => {
-        pollMessagesSoon('postCommand');
-        sendResponse({ ok: true, data: r });
+    routeBridgeCommand(cmd, "postCommand")
+      .then((r) => {
+        sendResponse(r);
       })
-      .catch(e => {
-        console.log("[bg] postCommand error:", e.message);
+      .catch((e) => {
+        console.log("[bg] route command error:", e.message);
         sendResponse({ ok: false, error: e.message });
       });
 

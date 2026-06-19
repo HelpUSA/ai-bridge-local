@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.41
+Versao atual: 0.5.42
 Branch principal: main
-Marco publicado mais recente: v0.5.41-chatgpt-outbound-envelope-capture
+Marco publicado mais recente: v0.5.42-direct-interchat-router-safe
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.41.
+- Versao atual: 0.5.42.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1077,10 +1077,21 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.41
+- Versao atual: 0.5.42
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
 - DONE 0.5.41 adiciona observer outbound para envelopes em respostas ChatGPT.
 - DONE 0.5.41 aceita START/END e BEGIN/END.
 - DONE 0.5.41 valida source_chat_id e reporta erro local quando possivel.
+
+
+## Version alignment 0.5.42
+- Versao atual: 0.5.42
+- Marco publicado: v0.5.42-direct-interchat-router-safe
+
+## Direct inter-chat router safe
+- DONE 0.5.42 roteia send-chat-message/inter_agent_message direto pelo background quando o target_chat_id esta registrado.
+- DONE 0.5.42 mantem run-command/local_capability sempre via gateway/DB/worker.
+- DONE 0.5.42 adiciona feature flags e evita fallback automatico para nao mascarar falhas.
+- DONE 0.5.42 preserva avisos/acks/resultados do fluxo gateway.

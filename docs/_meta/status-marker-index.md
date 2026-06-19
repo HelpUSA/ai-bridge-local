@@ -9,273 +9,273 @@ tags:
 # Status marker index
 
 - [[docs/_meta/docs-inventory]] L41: | [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] | gateway | 23 | 1 | AI Bridge Local 0.5.46 - Disable legacy scanner and inline heartbeat guard |
-- [[docs/_meta/docs-inventory]] L50: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
-- [[docs/_meta/docs-inventory]] L52: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
-- [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e temp-script workflow |
-- [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
-- [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
-- [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
-- [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
-- [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
-- [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado 0.4.23 |
-- [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package |
-- [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore Pizza noise |
-- [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local de gateway e worker |
-- [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe seguro |
-- [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback |
-- [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e delivery feedback |
-- [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedback |
-- [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative source_chat_id |
-- [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
-- [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
-- [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
-- [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10 |
-- [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
-- [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
-- [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/docs-inventory]] L234: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/docs-inventory]] L235: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/docs-inventory]] L236: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/docs-inventory]] L237: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/docs-inventory]] L238: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/docs-inventory]] L239: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/docs-inventory]] L240: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/docs-inventory]] L241: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
-- [[docs/_meta/docs-inventory]] L242: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/docs-inventory]] L250: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
-- [[docs/_meta/docs-inventory]] L285: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.4.72 |
-- [[docs/_meta/docs-inventory]] L286: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
+- [[docs/_meta/docs-inventory]] L51: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
+- [[docs/_meta/docs-inventory]] L53: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
+- [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e temp-script workflow |
+- [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
+- [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
+- [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
+- [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
+- [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
+- [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado 0.4.23 |
+- [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package |
+- [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore Pizza noise |
+- [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local de gateway e worker |
+- [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe seguro |
+- [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback |
+- [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e delivery feedback |
+- [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedback |
+- [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative source_chat_id |
+- [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
+- [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
+- [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
+- [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10 |
+- [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
+- [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
+- [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/docs-inventory]] L234: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/docs-inventory]] L235: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/docs-inventory]] L236: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/docs-inventory]] L237: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/docs-inventory]] L238: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/docs-inventory]] L239: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/docs-inventory]] L240: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/docs-inventory]] L241: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/docs-inventory]] L242: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
+- [[docs/_meta/docs-inventory]] L243: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/docs-inventory]] L251: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
+- [[docs/_meta/docs-inventory]] L286: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.4.72 |
+- [[docs/_meta/docs-inventory]] L287: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
 - [[docs/_meta/duplicates]] L13: - [[docs/legacy/COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/duplicates]] L14: - [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/duplicates]] L15: - [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/duplicates]] L19: - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/_meta/duplicates]] L20: - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/_meta/duplicates]] L21: - [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/duplicates]] L27: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/duplicates]] L31: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/duplicates]] L33: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/duplicates]] L37: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/duplicates]] L43: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/duplicates]] L49: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/duplicates]] L55: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/duplicates]] L61: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/duplicates]] L67: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/duplicates]] L69: - [[docs/legacy/SINGLE_WORKER_GUARD]]
-- [[docs/_meta/duplicates]] L73: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/duplicates]] L81: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/duplicates]] L85: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/duplicates]] L91: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/duplicates]] L93: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/duplicates]] L97: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/duplicates]] L99: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/duplicates]] L103: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/duplicates]] L109: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/duplicates]] L111: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/duplicates]] L115: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/duplicates]] L121: - [[docs/legacy/FINAL_AUDIT_0531]]
-- [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
-- [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_FINAL_AUDIT_0531]]
-- [[docs/_meta/duplicates]] L127: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/duplicates]] L133: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/duplicates]] L139: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/duplicates]] L145: - [[docs/legacy/FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L151: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/duplicates]] L153: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/duplicates]] L157: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/duplicates]] L27: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/duplicates]] L31: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/duplicates]] L33: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/duplicates]] L37: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/duplicates]] L43: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/duplicates]] L49: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/duplicates]] L55: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/duplicates]] L61: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/duplicates]] L67: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/duplicates]] L69: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/duplicates]] L73: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/duplicates]] L75: - [[docs/legacy/SINGLE_WORKER_GUARD]]
+- [[docs/_meta/duplicates]] L79: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L81: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L85: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/duplicates]] L87: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/duplicates]] L91: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/duplicates]] L93: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/duplicates]] L97: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/duplicates]] L99: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/duplicates]] L103: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/duplicates]] L105: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/duplicates]] L109: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/duplicates]] L111: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/duplicates]] L115: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/duplicates]] L121: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/duplicates]] L127: - [[docs/legacy/FINAL_AUDIT_0531]]
+- [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
+- [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_FINAL_AUDIT_0531]]
+- [[docs/_meta/duplicates]] L133: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/duplicates]] L139: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/duplicates]] L145: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/duplicates]] L151: - [[docs/legacy/FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L153: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L157: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/duplicates]] L159: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
 - [[docs/_meta/duplicates]] L163: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
 - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
 - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
@@ -285,81 +285,81 @@ tags:
 - [[docs/_meta/duplicates]] L175: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
 - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
 - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/duplicates]] L181: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/duplicates]] L183: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/duplicates]] L193: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/duplicates]] L199: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/duplicates]] L205: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/duplicates]] L211: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/duplicates]] L217: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/duplicates]] L223: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/duplicates]] L229: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/duplicates]] L241: - [[docs/legacy/FINAL_STABILIZATION_0530]]
-- [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/duplicates]] L247: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/duplicates]] L253: - [[docs/legacy/OPERATIONS_RUNBOOK]]
-- [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/duplicates]] L259: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/duplicates]] L265: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/duplicates]] L267: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/duplicates]] L271: - [[docs/legacy/root_1_WATCHER_NOTES]]
-- [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_WATCHER_NOTES]]
-- [[docs/_meta/duplicates]] L273: - [[docs/legacy/WATCHER_NOTES]]
-- [[docs/_meta/duplicates]] L277: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/duplicates]] L283: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/duplicates]] L285: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/duplicates]] L289: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/duplicates]] L295: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/duplicates]] L301: - [[docs/legacy/CURRENT_STATUS]]
-- [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_CURRENT_STATUS]]
-- [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_CURRENT_STATUS]]
-- [[docs/_meta/duplicates]] L307: - [[docs/legacy/RELEASES]]
-- [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_RELEASES]]
-- [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_RELEASES]]
-- [[docs/_meta/duplicates]] L313: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/duplicates]] L319: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/duplicates]] L321: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/duplicates]] L325: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/duplicates]] L327: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/duplicates]] L181: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/duplicates]] L183: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/duplicates]] L187: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/duplicates]] L193: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/duplicates]] L199: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/duplicates]] L205: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/duplicates]] L211: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/duplicates]] L217: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/duplicates]] L223: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/duplicates]] L229: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/duplicates]] L235: - [[docs/legacy/FINAL_STABILIZATION_0530]]
+- [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/duplicates]] L241: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/duplicates]] L247: - [[docs/legacy/OPERATIONS_RUNBOOK]]
+- [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/duplicates]] L253: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/duplicates]] L259: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/duplicates]] L265: - [[docs/legacy/root_1_WATCHER_NOTES]]
+- [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_WATCHER_NOTES]]
+- [[docs/_meta/duplicates]] L267: - [[docs/legacy/WATCHER_NOTES]]
+- [[docs/_meta/duplicates]] L271: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/duplicates]] L273: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/duplicates]] L277: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/duplicates]] L283: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/duplicates]] L285: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/duplicates]] L289: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/duplicates]] L295: - [[docs/legacy/CURRENT_STATUS]]
+- [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_CURRENT_STATUS]]
+- [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_CURRENT_STATUS]]
+- [[docs/_meta/duplicates]] L301: - [[docs/legacy/RELEASES]]
+- [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_RELEASES]]
+- [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_RELEASES]]
+- [[docs/_meta/duplicates]] L307: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/duplicates]] L313: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/duplicates]] L319: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/duplicates]] L321: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/duplicates]] L325: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/duplicates]] L327: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
 - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
 - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SMOKE_ALL_0520]]
 - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SMOKE_ALL_0520]]
@@ -367,1144 +367,1144 @@ tags:
 - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
 - [[docs/_meta/duplicates]] L339: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
 - [[docs/_meta/status-marker-index]] L11: - [[docs/_meta/docs-inventory]] L41: | [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] | gateway | 23 | 1 | AI Bridge Local 0.5.46 - Disable legacy scanner and inline heartbeat guard |
-- [[docs/_meta/status-marker-index]] L12: - [[docs/_meta/docs-inventory]] L47: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
-- [[docs/_meta/status-marker-index]] L13: - [[docs/_meta/docs-inventory]] L49: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
-- [[docs/_meta/status-marker-index]] L14: - [[docs/_meta/docs-inventory]] L53: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e temp-script workflow |
-- [[docs/_meta/status-marker-index]] L15: - [[docs/_meta/docs-inventory]] L54: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
-- [[docs/_meta/status-marker-index]] L16: - [[docs/_meta/docs-inventory]] L55: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
-- [[docs/_meta/status-marker-index]] L17: - [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
-- [[docs/_meta/status-marker-index]] L18: - [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
-- [[docs/_meta/status-marker-index]] L19: - [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
-- [[docs/_meta/status-marker-index]] L20: - [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado 0.4.23 |
-- [[docs/_meta/status-marker-index]] L21: - [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package |
-- [[docs/_meta/status-marker-index]] L22: - [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore Pizza noise |
-- [[docs/_meta/status-marker-index]] L23: - [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local de gateway e worker |
-- [[docs/_meta/status-marker-index]] L24: - [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe seguro |
-- [[docs/_meta/status-marker-index]] L25: - [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback |
-- [[docs/_meta/status-marker-index]] L26: - [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e delivery feedback |
-- [[docs/_meta/status-marker-index]] L27: - [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedback |
-- [[docs/_meta/status-marker-index]] L28: - [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative source_chat_id |
-- [[docs/_meta/status-marker-index]] L29: - [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
-- [[docs/_meta/status-marker-index]] L30: - [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
-- [[docs/_meta/status-marker-index]] L31: - [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
-- [[docs/_meta/status-marker-index]] L32: - [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10 |
-- [[docs/_meta/status-marker-index]] L33: - [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L34: - [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
-- [[docs/_meta/status-marker-index]] L35: - [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
-- [[docs/_meta/status-marker-index]] L36: - [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/status-marker-index]] L37: - [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/status-marker-index]] L38: - [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L39: - [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L40: - [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L41: - [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/status-marker-index]] L42: - [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/status-marker-index]] L43: - [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/status-marker-index]] L44: - [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L45: - [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L46: - [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L47: - [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L48: - [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L49: - [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L50: - [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L51: - [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L52: - [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L53: - [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L54: - [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L55: - [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L56: - [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L57: - [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L58: - [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L59: - [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L60: - [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L61: - [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L62: - [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L63: - [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L64: - [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L65: - [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L66: - [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L67: - [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/status-marker-index]] L68: - [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L69: - [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L70: - [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L71: - [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L72: - [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L73: - [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L74: - [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L75: - [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L76: - [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L77: - [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L78: - [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L79: - [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L80: - [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L81: - [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L82: - [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/status-marker-index]] L83: - [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/status-marker-index]] L84: - [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/status-marker-index]] L85: - [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L86: - [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L87: - [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L88: - [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L89: - [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L90: - [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L91: - [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L92: - [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L93: - [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L94: - [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L95: - [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L96: - [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L97: - [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L98: - [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L99: - [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L100: - [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L101: - [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L102: - [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L103: - [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L104: - [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L105: - [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L106: - [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L107: - [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L108: - [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/status-marker-index]] L109: - [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L110: - [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L111: - [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L112: - [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L113: - [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L114: - [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L115: - [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L116: - [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L117: - [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L118: - [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L119: - [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L120: - [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L121: - [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L122: - [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L123: - [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L124: - [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L125: - [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L126: - [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L127: - [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L128: - [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L129: - [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L130: - [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L131: - [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L132: - [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/status-marker-index]] L133: - [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
-- [[docs/_meta/status-marker-index]] L134: - [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/status-marker-index]] L135: - [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L136: - [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L137: - [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L138: - [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
-- [[docs/_meta/status-marker-index]] L139: - [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L140: - [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L141: - [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L142: - [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/status-marker-index]] L143: - [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
-- [[docs/_meta/status-marker-index]] L144: - [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/status-marker-index]] L145: - [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L146: - [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L147: - [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L148: - [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L149: - [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L150: - [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L151: - [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L152: - [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L153: - [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L154: - [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L155: - [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L156: - [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L157: - [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L158: - [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L159: - [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L160: - [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L161: - [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L162: - [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L163: - [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L164: - [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L165: - [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L166: - [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L167: - [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L168: - [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
-- [[docs/_meta/status-marker-index]] L169: - [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L170: - [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L171: - [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L172: - [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L173: - [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L174: - [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L175: - [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L176: - [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L177: - [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L178: - [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L179: - [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L180: - [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L181: - [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L182: - [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L183: - [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L184: - [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L185: - [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L186: - [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L187: - [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L188: - [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L189: - [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L190: - [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L191: - [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L192: - [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L193: - [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L194: - [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L195: - [[docs/_meta/docs-inventory]] L234: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L196: - [[docs/_meta/docs-inventory]] L235: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L197: - [[docs/_meta/docs-inventory]] L236: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L198: - [[docs/_meta/docs-inventory]] L237: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L199: - [[docs/_meta/docs-inventory]] L238: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
-- [[docs/_meta/status-marker-index]] L200: - [[docs/_meta/docs-inventory]] L239: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L201: - [[docs/_meta/docs-inventory]] L247: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
-- [[docs/_meta/status-marker-index]] L202: - [[docs/_meta/docs-inventory]] L282: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.4.72 |
-- [[docs/_meta/status-marker-index]] L203: - [[docs/_meta/docs-inventory]] L283: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
+- [[docs/_meta/status-marker-index]] L12: - [[docs/_meta/docs-inventory]] L50: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
+- [[docs/_meta/status-marker-index]] L13: - [[docs/_meta/docs-inventory]] L52: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
+- [[docs/_meta/status-marker-index]] L14: - [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e temp-script workflow |
+- [[docs/_meta/status-marker-index]] L15: - [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
+- [[docs/_meta/status-marker-index]] L16: - [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
+- [[docs/_meta/status-marker-index]] L17: - [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
+- [[docs/_meta/status-marker-index]] L18: - [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
+- [[docs/_meta/status-marker-index]] L19: - [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
+- [[docs/_meta/status-marker-index]] L20: - [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado 0.4.23 |
+- [[docs/_meta/status-marker-index]] L21: - [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package |
+- [[docs/_meta/status-marker-index]] L22: - [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore Pizza noise |
+- [[docs/_meta/status-marker-index]] L23: - [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local de gateway e worker |
+- [[docs/_meta/status-marker-index]] L24: - [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe seguro |
+- [[docs/_meta/status-marker-index]] L25: - [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback |
+- [[docs/_meta/status-marker-index]] L26: - [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e delivery feedback |
+- [[docs/_meta/status-marker-index]] L27: - [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedback |
+- [[docs/_meta/status-marker-index]] L28: - [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative source_chat_id |
+- [[docs/_meta/status-marker-index]] L29: - [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
+- [[docs/_meta/status-marker-index]] L30: - [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
+- [[docs/_meta/status-marker-index]] L31: - [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
+- [[docs/_meta/status-marker-index]] L32: - [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10 |
+- [[docs/_meta/status-marker-index]] L33: - [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L34: - [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
+- [[docs/_meta/status-marker-index]] L35: - [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
+- [[docs/_meta/status-marker-index]] L36: - [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/status-marker-index]] L37: - [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/status-marker-index]] L38: - [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L39: - [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L40: - [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L41: - [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/status-marker-index]] L42: - [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/status-marker-index]] L43: - [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/status-marker-index]] L44: - [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L45: - [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L46: - [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L47: - [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L48: - [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L49: - [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L50: - [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L51: - [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L52: - [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L53: - [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L54: - [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L55: - [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L56: - [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L57: - [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L58: - [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L59: - [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L60: - [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L61: - [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L62: - [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L63: - [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L64: - [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L65: - [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L66: - [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L67: - [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/status-marker-index]] L68: - [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L69: - [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L70: - [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L71: - [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L72: - [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L73: - [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L74: - [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L75: - [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L76: - [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L77: - [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L78: - [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L79: - [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L80: - [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L81: - [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L82: - [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/status-marker-index]] L83: - [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/status-marker-index]] L84: - [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/status-marker-index]] L85: - [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L86: - [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L87: - [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L88: - [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L89: - [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L90: - [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L91: - [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L92: - [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L93: - [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L94: - [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L95: - [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L96: - [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L97: - [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L98: - [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L99: - [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L100: - [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L101: - [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L102: - [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L103: - [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L104: - [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L105: - [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L106: - [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L107: - [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L108: - [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/status-marker-index]] L109: - [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L110: - [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L111: - [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L112: - [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L113: - [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L114: - [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L115: - [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L116: - [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L117: - [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L118: - [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L119: - [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L120: - [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L121: - [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L122: - [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L123: - [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L124: - [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L125: - [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L126: - [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L127: - [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L128: - [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L129: - [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L130: - [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L131: - [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L132: - [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/status-marker-index]] L133: - [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido |
+- [[docs/_meta/status-marker-index]] L134: - [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/status-marker-index]] L135: - [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L136: - [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L137: - [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L138: - [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez contra falhas de comandos |
+- [[docs/_meta/status-marker-index]] L139: - [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L140: - [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L141: - [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L142: - [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/status-marker-index]] L143: - [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 |
+- [[docs/_meta/status-marker-index]] L144: - [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/status-marker-index]] L145: - [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L146: - [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L147: - [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L148: - [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L149: - [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L150: - [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L151: - [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L152: - [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L153: - [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L154: - [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L155: - [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L156: - [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L157: - [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L158: - [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L159: - [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L160: - [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L161: - [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L162: - [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L163: - [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L164: - [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L165: - [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L166: - [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L167: - [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L168: - [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.4.98 |
+- [[docs/_meta/status-marker-index]] L169: - [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L170: - [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L171: - [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L172: - [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L173: - [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L174: - [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L175: - [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L176: - [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L177: - [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L178: - [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L179: - [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L180: - [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L181: - [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L182: - [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L183: - [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L184: - [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L185: - [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L186: - [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L187: - [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L188: - [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L189: - [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L190: - [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L191: - [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L192: - [[docs/_meta/docs-inventory]] L234: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L193: - [[docs/_meta/docs-inventory]] L235: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L194: - [[docs/_meta/docs-inventory]] L236: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L195: - [[docs/_meta/docs-inventory]] L237: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L196: - [[docs/_meta/docs-inventory]] L238: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L197: - [[docs/_meta/docs-inventory]] L239: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L198: - [[docs/_meta/docs-inventory]] L240: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L199: - [[docs/_meta/docs-inventory]] L241: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
+- [[docs/_meta/status-marker-index]] L200: - [[docs/_meta/docs-inventory]] L242: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L201: - [[docs/_meta/docs-inventory]] L250: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
+- [[docs/_meta/status-marker-index]] L202: - [[docs/_meta/docs-inventory]] L285: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.4.72 |
+- [[docs/_meta/status-marker-index]] L203: - [[docs/_meta/docs-inventory]] L286: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
 - [[docs/_meta/status-marker-index]] L204: - [[docs/_meta/duplicates]] L13: - [[docs/legacy/COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/status-marker-index]] L205: - [[docs/_meta/duplicates]] L14: - [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/status-marker-index]] L206: - [[docs/_meta/duplicates]] L15: - [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/status-marker-index]] L207: - [[docs/_meta/duplicates]] L19: - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/_meta/status-marker-index]] L208: - [[docs/_meta/duplicates]] L20: - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/_meta/status-marker-index]] L209: - [[docs/_meta/duplicates]] L21: - [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L210: - [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L211: - [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L212: - [[docs/_meta/duplicates]] L27: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L213: - [[docs/_meta/duplicates]] L31: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/status-marker-index]] L214: - [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/status-marker-index]] L215: - [[docs/_meta/duplicates]] L33: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/status-marker-index]] L216: - [[docs/_meta/duplicates]] L37: - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L217: - [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L218: - [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L219: - [[docs/_meta/duplicates]] L43: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L220: - [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L221: - [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L222: - [[docs/_meta/duplicates]] L49: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L223: - [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L224: - [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L225: - [[docs/_meta/duplicates]] L55: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/status-marker-index]] L226: - [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/status-marker-index]] L227: - [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/status-marker-index]] L228: - [[docs/_meta/duplicates]] L61: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L229: - [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L230: - [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L231: - [[docs/_meta/duplicates]] L67: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L232: - [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L233: - [[docs/_meta/duplicates]] L69: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L234: - [[docs/_meta/duplicates]] L73: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L235: - [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L236: - [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L237: - [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L238: - [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L239: - [[docs/_meta/duplicates]] L81: - [[docs/legacy/SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L240: - [[docs/_meta/duplicates]] L85: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L241: - [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L242: - [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L243: - [[docs/_meta/duplicates]] L91: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L244: - [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L245: - [[docs/_meta/duplicates]] L93: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L246: - [[docs/_meta/duplicates]] L97: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L247: - [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L248: - [[docs/_meta/duplicates]] L99: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L249: - [[docs/_meta/duplicates]] L103: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L250: - [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L251: - [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L252: - [[docs/_meta/duplicates]] L109: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L253: - [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L254: - [[docs/_meta/duplicates]] L111: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L255: - [[docs/_meta/duplicates]] L115: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L256: - [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L257: - [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L258: - [[docs/_meta/duplicates]] L121: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L259: - [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L260: - [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L261: - [[docs/_meta/duplicates]] L127: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L262: - [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L263: - [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L264: - [[docs/_meta/duplicates]] L133: - [[docs/legacy/FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L265: - [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L266: - [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L267: - [[docs/_meta/duplicates]] L139: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L268: - [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L269: - [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L270: - [[docs/_meta/duplicates]] L145: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L271: - [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L272: - [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L273: - [[docs/_meta/duplicates]] L151: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L274: - [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L275: - [[docs/_meta/duplicates]] L153: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L276: - [[docs/_meta/duplicates]] L157: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L277: - [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L278: - [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L279: - [[docs/_meta/duplicates]] L163: - [[docs/legacy/FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L280: - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L281: - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L282: - [[docs/_meta/duplicates]] L169: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L283: - [[docs/_meta/duplicates]] L170: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L284: - [[docs/_meta/duplicates]] L171: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L285: - [[docs/_meta/duplicates]] L175: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L286: - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L287: - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L288: - [[docs/_meta/duplicates]] L181: - [[docs/legacy/OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L289: - [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L290: - [[docs/_meta/duplicates]] L183: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L291: - [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L292: - [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L293: - [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L294: - [[docs/_meta/duplicates]] L193: - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L295: - [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L296: - [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L297: - [[docs/_meta/duplicates]] L199: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L298: - [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L299: - [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L300: - [[docs/_meta/duplicates]] L205: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L301: - [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L302: - [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L303: - [[docs/_meta/duplicates]] L211: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L304: - [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L305: - [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L306: - [[docs/_meta/duplicates]] L217: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L307: - [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L308: - [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L309: - [[docs/_meta/duplicates]] L223: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L310: - [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L311: - [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L312: - [[docs/_meta/duplicates]] L229: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L313: - [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L314: - [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L315: - [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L316: - [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L317: - [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L318: - [[docs/_meta/duplicates]] L241: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L319: - [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L320: - [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L321: - [[docs/_meta/duplicates]] L247: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L322: - [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L323: - [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L324: - [[docs/_meta/duplicates]] L253: - [[docs/legacy/FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L325: - [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L326: - [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L327: - [[docs/_meta/duplicates]] L259: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L328: - [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L329: - [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L330: - [[docs/_meta/duplicates]] L265: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L331: - [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L332: - [[docs/_meta/duplicates]] L267: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L333: - [[docs/_meta/duplicates]] L271: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L334: - [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L335: - [[docs/_meta/duplicates]] L273: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L336: - [[docs/_meta/duplicates]] L277: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L337: - [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L338: - [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L339: - [[docs/_meta/duplicates]] L283: - [[docs/legacy/root_1_WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L340: - [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L341: - [[docs/_meta/duplicates]] L285: - [[docs/legacy/WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L342: - [[docs/_meta/duplicates]] L289: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L343: - [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L344: - [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L345: - [[docs/_meta/duplicates]] L295: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L346: - [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L347: - [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L348: - [[docs/_meta/duplicates]] L301: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L349: - [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L350: - [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L351: - [[docs/_meta/duplicates]] L307: - [[docs/legacy/CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L352: - [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L353: - [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L354: - [[docs/_meta/duplicates]] L313: - [[docs/legacy/RELEASES]]
-- [[docs/_meta/status-marker-index]] L355: - [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_RELEASES]]
-- [[docs/_meta/status-marker-index]] L356: - [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_RELEASES]]
-- [[docs/_meta/status-marker-index]] L357: - [[docs/_meta/duplicates]] L319: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L358: - [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L359: - [[docs/_meta/duplicates]] L321: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L360: - [[docs/_meta/duplicates]] L325: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L361: - [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L362: - [[docs/_meta/duplicates]] L327: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L363: - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L364: - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L365: - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L366: - [[docs/_meta/duplicates]] L337: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L367: - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L368: - [[docs/_meta/duplicates]] L339: - [[docs/legacy/SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L369: - [[docs/_meta/status-marker-index]] L11: - [[docs/_meta/docs-inventory]] L36: | [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] | gateway | 23 | 1 | AI Bridge Local 0.5.46 - Disable legacy scanner and inline heart
-- [[docs/_meta/status-marker-index]] L370: - [[docs/_meta/status-marker-index]] L12: - [[docs/_meta/docs-inventory]] L41: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
-- [[docs/_meta/status-marker-index]] L371: - [[docs/_meta/status-marker-index]] L13: - [[docs/_meta/docs-inventory]] L43: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
-- [[docs/_meta/status-marker-index]] L372: - [[docs/_meta/status-marker-index]] L14: - [[docs/_meta/docs-inventory]] L47: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e tem
-- [[docs/_meta/status-marker-index]] L373: - [[docs/_meta/status-marker-index]] L15: - [[docs/_meta/docs-inventory]] L48: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
-- [[docs/_meta/status-marker-index]] L374: - [[docs/_meta/status-marker-index]] L16: - [[docs/_meta/docs-inventory]] L49: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
-- [[docs/_meta/status-marker-index]] L375: - [[docs/_meta/status-marker-index]] L17: - [[docs/_meta/docs-inventory]] L50: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
-- [[docs/_meta/status-marker-index]] L376: - [[docs/_meta/status-marker-index]] L18: - [[docs/_meta/docs-inventory]] L51: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
-- [[docs/_meta/status-marker-index]] L377: - [[docs/_meta/status-marker-index]] L19: - [[docs/_meta/docs-inventory]] L52: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
-- [[docs/_meta/status-marker-index]] L378: - [[docs/_meta/status-marker-index]] L20: - [[docs/_meta/docs-inventory]] L53: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado
-- [[docs/_meta/status-marker-index]] L379: - [[docs/_meta/status-marker-index]] L21: - [[docs/_meta/docs-inventory]] L54: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package 
-- [[docs/_meta/status-marker-index]] L380: - [[docs/_meta/status-marker-index]] L22: - [[docs/_meta/docs-inventory]] L55: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore 
-- [[docs/_meta/status-marker-index]] L381: - [[docs/_meta/status-marker-index]] L23: - [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local
-- [[docs/_meta/status-marker-index]] L382: - [[docs/_meta/status-marker-index]] L24: - [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe segu
-- [[docs/_meta/status-marker-index]] L383: - [[docs/_meta/status-marker-index]] L25: - [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback
-- [[docs/_meta/status-marker-index]] L384: - [[docs/_meta/status-marker-index]] L26: - [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e deliver
-- [[docs/_meta/status-marker-index]] L385: - [[docs/_meta/status-marker-index]] L27: - [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedb
-- [[docs/_meta/status-marker-index]] L386: - [[docs/_meta/status-marker-index]] L28: - [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative sour
-- [[docs/_meta/status-marker-index]] L387: - [[docs/_meta/status-marker-index]] L29: - [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
-- [[docs/_meta/status-marker-index]] L388: - [[docs/_meta/status-marker-index]] L30: - [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
-- [[docs/_meta/status-marker-index]] L389: - [[docs/_meta/status-marker-index]] L31: - [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
-- [[docs/_meta/status-marker-index]] L390: - [[docs/_meta/status-marker-index]] L32: - [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10
-- [[docs/_meta/status-marker-index]] L391: - [[docs/_meta/status-marker-index]] L33: - [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L392: - [[docs/_meta/status-marker-index]] L34: - [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
-- [[docs/_meta/status-marker-index]] L393: - [[docs/_meta/status-marker-index]] L35: - [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
-- [[docs/_meta/status-marker-index]] L394: - [[docs/_meta/status-marker-index]] L36: - [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido
-- [[docs/_meta/status-marker-index]] L395: - [[docs/_meta/status-marker-index]] L37: - [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez
-- [[docs/_meta/status-marker-index]] L396: - [[docs/_meta/status-marker-index]] L38: - [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L397: - [[docs/_meta/status-marker-index]] L39: - [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L398: - [[docs/_meta/status-marker-index]] L40: - [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L399: - [[docs/_meta/status-marker-index]] L41: - [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
-- [[docs/_meta/status-marker-index]] L400: - [[docs/_meta/status-marker-index]] L42: - [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 
-- [[docs/_meta/status-marker-index]] L401: - [[docs/_meta/status-marker-index]] L43: - [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
-- [[docs/_meta/status-marker-index]] L402: - [[docs/_meta/status-marker-index]] L44: - [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L403: - [[docs/_meta/status-marker-index]] L45: - [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L404: - [[docs/_meta/status-marker-index]] L46: - [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L405: - [[docs/_meta/status-marker-index]] L47: - [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L406: - [[docs/_meta/status-marker-index]] L48: - [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L407: - [[docs/_meta/status-marker-index]] L49: - [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L408: - [[docs/_meta/status-marker-index]] L50: - [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L409: - [[docs/_meta/status-marker-index]] L51: - [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L410: - [[docs/_meta/status-marker-index]] L52: - [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L411: - [[docs/_meta/status-marker-index]] L53: - [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L412: - [[docs/_meta/status-marker-index]] L54: - [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L413: - [[docs/_meta/status-marker-index]] L55: - [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L414: - [[docs/_meta/status-marker-index]] L56: - [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L415: - [[docs/_meta/status-marker-index]] L57: - [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L416: - [[docs/_meta/status-marker-index]] L58: - [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L417: - [[docs/_meta/status-marker-index]] L59: - [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L418: - [[docs/_meta/status-marker-index]] L60: - [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L419: - [[docs/_meta/status-marker-index]] L61: - [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L420: - [[docs/_meta/status-marker-index]] L62: - [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L421: - [[docs/_meta/status-marker-index]] L63: - [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L422: - [[docs/_meta/status-marker-index]] L64: - [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L423: - [[docs/_meta/status-marker-index]] L65: - [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L424: - [[docs/_meta/status-marker-index]] L66: - [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L425: - [[docs/_meta/status-marker-index]] L67: - [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.
-- [[docs/_meta/status-marker-index]] L426: - [[docs/_meta/status-marker-index]] L68: - [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L427: - [[docs/_meta/status-marker-index]] L69: - [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L428: - [[docs/_meta/status-marker-index]] L70: - [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L429: - [[docs/_meta/status-marker-index]] L71: - [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L430: - [[docs/_meta/status-marker-index]] L72: - [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L431: - [[docs/_meta/status-marker-index]] L73: - [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L432: - [[docs/_meta/status-marker-index]] L74: - [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L433: - [[docs/_meta/status-marker-index]] L75: - [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L434: - [[docs/_meta/status-marker-index]] L76: - [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L435: - [[docs/_meta/status-marker-index]] L77: - [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L436: - [[docs/_meta/status-marker-index]] L78: - [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L437: - [[docs/_meta/status-marker-index]] L79: - [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L438: - [[docs/_meta/status-marker-index]] L80: - [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L439: - [[docs/_meta/status-marker-index]] L81: - [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L440: - [[docs/_meta/status-marker-index]] L82: - [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0
-- [[docs/_meta/status-marker-index]] L441: - [[docs/_meta/status-marker-index]] L83: - [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix
-- [[docs/_meta/status-marker-index]] L442: - [[docs/_meta/status-marker-index]] L84: - [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.9
-- [[docs/_meta/status-marker-index]] L443: - [[docs/_meta/status-marker-index]] L85: - [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L444: - [[docs/_meta/status-marker-index]] L86: - [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L445: - [[docs/_meta/status-marker-index]] L87: - [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L446: - [[docs/_meta/status-marker-index]] L88: - [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L447: - [[docs/_meta/status-marker-index]] L89: - [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L448: - [[docs/_meta/status-marker-index]] L90: - [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L449: - [[docs/_meta/status-marker-index]] L91: - [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L450: - [[docs/_meta/status-marker-index]] L92: - [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L451: - [[docs/_meta/status-marker-index]] L93: - [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L452: - [[docs/_meta/status-marker-index]] L94: - [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L453: - [[docs/_meta/status-marker-index]] L95: - [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L454: - [[docs/_meta/status-marker-index]] L96: - [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L455: - [[docs/_meta/status-marker-index]] L97: - [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L456: - [[docs/_meta/status-marker-index]] L98: - [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L457: - [[docs/_meta/status-marker-index]] L99: - [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L458: - [[docs/_meta/status-marker-index]] L100: - [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L459: - [[docs/_meta/status-marker-index]] L101: - [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L460: - [[docs/_meta/status-marker-index]] L102: - [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L461: - [[docs/_meta/status-marker-index]] L103: - [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L462: - [[docs/_meta/status-marker-index]] L104: - [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L463: - [[docs/_meta/status-marker-index]] L105: - [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L464: - [[docs/_meta/status-marker-index]] L106: - [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L465: - [[docs/_meta/status-marker-index]] L107: - [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L466: - [[docs/_meta/status-marker-index]] L108: - [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling archite
-- [[docs/_meta/status-marker-index]] L467: - [[docs/_meta/status-marker-index]] L109: - [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L468: - [[docs/_meta/status-marker-index]] L110: - [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L469: - [[docs/_meta/status-marker-index]] L111: - [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L470: - [[docs/_meta/status-marker-index]] L112: - [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L471: - [[docs/_meta/status-marker-index]] L113: - [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L472: - [[docs/_meta/status-marker-index]] L114: - [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L473: - [[docs/_meta/status-marker-index]] L115: - [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L474: - [[docs/_meta/status-marker-index]] L116: - [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L475: - [[docs/_meta/status-marker-index]] L117: - [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L476: - [[docs/_meta/status-marker-index]] L118: - [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L477: - [[docs/_meta/status-marker-index]] L119: - [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L478: - [[docs/_meta/status-marker-index]] L120: - [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L479: - [[docs/_meta/status-marker-index]] L121: - [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L480: - [[docs/_meta/status-marker-index]] L122: - [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L481: - [[docs/_meta/status-marker-index]] L123: - [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L482: - [[docs/_meta/status-marker-index]] L124: - [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L483: - [[docs/_meta/status-marker-index]] L125: - [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L484: - [[docs/_meta/status-marker-index]] L126: - [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L485: - [[docs/_meta/status-marker-index]] L127: - [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L486: - [[docs/_meta/status-marker-index]] L128: - [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L487: - [[docs/_meta/status-marker-index]] L129: - [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L488: - [[docs/_meta/status-marker-index]] L130: - [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L489: - [[docs/_meta/status-marker-index]] L131: - [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L490: - [[docs/_meta/status-marker-index]] L132: - [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e co
-- [[docs/_meta/status-marker-index]] L491: - [[docs/_meta/status-marker-index]] L133: - [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional compl
-- [[docs/_meta/status-marker-index]] L492: - [[docs/_meta/status-marker-index]] L134: - [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge L
-- [[docs/_meta/status-marker-index]] L493: - [[docs/_meta/status-marker-index]] L135: - [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L494: - [[docs/_meta/status-marker-index]] L136: - [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L495: - [[docs/_meta/status-marker-index]] L137: - [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L496: - [[docs/_meta/status-marker-index]] L138: - [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - R
-- [[docs/_meta/status-marker-index]] L497: - [[docs/_meta/status-marker-index]] L139: - [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
-- [[docs/_meta/status-marker-index]] L498: - [[docs/_meta/status-marker-index]] L140: - [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
-- [[docs/_meta/status-marker-index]] L499: - [[docs/_meta/status-marker-index]] L141: - [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
-- [[docs/_meta/status-marker-index]] L500: - [[docs/_meta/status-marker-index]] L142: - [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.
-- [[docs/_meta/status-marker-index]] L501: - [[docs/_meta/status-marker-index]] L143: - [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 
-- [[docs/_meta/status-marker-index]] L502: - [[docs/_meta/status-marker-index]] L144: - [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96
-- [[docs/_meta/status-marker-index]] L503: - [[docs/_meta/status-marker-index]] L145: - [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
-- [[docs/_meta/status-marker-index]] L504: - [[docs/_meta/status-marker-index]] L146: - [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
-- [[docs/_meta/status-marker-index]] L505: - [[docs/_meta/status-marker-index]] L147: - [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
-- [[docs/_meta/status-marker-index]] L506: - [[docs/_meta/status-marker-index]] L148: - [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
-- [[docs/_meta/status-marker-index]] L507: - [[docs/_meta/status-marker-index]] L149: - [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
-- [[docs/_meta/status-marker-index]] L508: - [[docs/_meta/status-marker-index]] L150: - [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
-- [[docs/_meta/status-marker-index]] L509: - [[docs/_meta/status-marker-index]] L151: - [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
-- [[docs/_meta/status-marker-index]] L510: - [[docs/_meta/status-marker-index]] L152: - [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
-- [[docs/_meta/status-marker-index]] L511: - [[docs/_meta/status-marker-index]] L153: - [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
-- [[docs/_meta/status-marker-index]] L512: - [[docs/_meta/status-marker-index]] L154: - [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
-- [[docs/_meta/status-marker-index]] L513: - [[docs/_meta/status-marker-index]] L155: - [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
-- [[docs/_meta/status-marker-index]] L514: - [[docs/_meta/status-marker-index]] L156: - [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
-- [[docs/_meta/status-marker-index]] L515: - [[docs/_meta/status-marker-index]] L157: - [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
-- [[docs/_meta/status-marker-index]] L516: - [[docs/_meta/status-marker-index]] L158: - [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
-- [[docs/_meta/status-marker-index]] L517: - [[docs/_meta/status-marker-index]] L159: - [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
-- [[docs/_meta/status-marker-index]] L518: - [[docs/_meta/status-marker-index]] L160: - [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
-- [[docs/_meta/status-marker-index]] L519: - [[docs/_meta/status-marker-index]] L161: - [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
-- [[docs/_meta/status-marker-index]] L520: - [[docs/_meta/status-marker-index]] L162: - [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
-- [[docs/_meta/status-marker-index]] L521: - [[docs/_meta/status-marker-index]] L163: - [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
-- [[docs/_meta/status-marker-index]] L522: - [[docs/_meta/status-marker-index]] L164: - [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
-- [[docs/_meta/status-marker-index]] L523: - [[docs/_meta/status-marker-index]] L165: - [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
-- [[docs/_meta/status-marker-index]] L524: - [[docs/_meta/status-marker-index]] L166: - [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
-- [[docs/_meta/status-marker-index]] L525: - [[docs/_meta/status-marker-index]] L167: - [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
-- [[docs/_meta/status-marker-index]] L526: - [[docs/_meta/status-marker-index]] L168: - [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architect
-- [[docs/_meta/status-marker-index]] L527: - [[docs/_meta/status-marker-index]] L169: - [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
-- [[docs/_meta/status-marker-index]] L528: - [[docs/_meta/status-marker-index]] L170: - [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
-- [[docs/_meta/status-marker-index]] L529: - [[docs/_meta/status-marker-index]] L171: - [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
-- [[docs/_meta/status-marker-index]] L530: - [[docs/_meta/status-marker-index]] L172: - [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
-- [[docs/_meta/status-marker-index]] L531: - [[docs/_meta/status-marker-index]] L173: - [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
-- [[docs/_meta/status-marker-index]] L532: - [[docs/_meta/status-marker-index]] L174: - [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
-- [[docs/_meta/status-marker-index]] L533: - [[docs/_meta/status-marker-index]] L175: - [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
-- [[docs/_meta/status-marker-index]] L534: - [[docs/_meta/status-marker-index]] L176: - [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
-- [[docs/_meta/status-marker-index]] L535: - [[docs/_meta/status-marker-index]] L177: - [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
-- [[docs/_meta/status-marker-index]] L536: - [[docs/_meta/status-marker-index]] L178: - [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
-- [[docs/_meta/status-marker-index]] L537: - [[docs/_meta/status-marker-index]] L179: - [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
-- [[docs/_meta/status-marker-index]] L538: - [[docs/_meta/status-marker-index]] L180: - [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
-- [[docs/_meta/status-marker-index]] L539: - [[docs/_meta/status-marker-index]] L181: - [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
-- [[docs/_meta/status-marker-index]] L540: - [[docs/_meta/status-marker-index]] L182: - [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L541: - [[docs/_meta/status-marker-index]] L183: - [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L542: - [[docs/_meta/status-marker-index]] L184: - [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L543: - [[docs/_meta/status-marker-index]] L185: - [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L544: - [[docs/_meta/status-marker-index]] L186: - [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L545: - [[docs/_meta/status-marker-index]] L187: - [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L546: - [[docs/_meta/status-marker-index]] L188: - [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L547: - [[docs/_meta/status-marker-index]] L189: - [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L548: - [[docs/_meta/status-marker-index]] L190: - [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L549: - [[docs/_meta/status-marker-index]] L191: - [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
-- [[docs/_meta/status-marker-index]] L550: - [[docs/_meta/status-marker-index]] L192: - [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
-- [[docs/_meta/status-marker-index]] L551: - [[docs/_meta/status-marker-index]] L193: - [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
-- [[docs/_meta/status-marker-index]] L552: - [[docs/_meta/status-marker-index]] L194: - [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
-- [[docs/_meta/status-marker-index]] L553: - [[docs/_meta/status-marker-index]] L195: - [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
-- [[docs/_meta/status-marker-index]] L554: - [[docs/_meta/status-marker-index]] L196: - [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
-- [[docs/_meta/status-marker-index]] L555: - [[docs/_meta/status-marker-index]] L197: - [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
-- [[docs/_meta/status-marker-index]] L556: - [[docs/_meta/status-marker-index]] L198: - [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
-- [[docs/_meta/status-marker-index]] L557: - [[docs/_meta/status-marker-index]] L199: - [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
-- [[docs/_meta/status-marker-index]] L558: - [[docs/_meta/status-marker-index]] L200: - [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
-- [[docs/_meta/status-marker-index]] L559: - [[docs/_meta/status-marker-index]] L201: - [[docs/_meta/docs-inventory]] L241: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
-- [[docs/_meta/status-marker-index]] L560: - [[docs/_meta/status-marker-index]] L202: - [[docs/_meta/docs-inventory]] L276: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.
-- [[docs/_meta/status-marker-index]] L561: - [[docs/_meta/status-marker-index]] L203: - [[docs/_meta/docs-inventory]] L277: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
+- [[docs/_meta/status-marker-index]] L210: - [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L211: - [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L212: - [[docs/_meta/duplicates]] L27: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L213: - [[docs/_meta/duplicates]] L31: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L214: - [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L215: - [[docs/_meta/duplicates]] L33: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L216: - [[docs/_meta/duplicates]] L37: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L217: - [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L218: - [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L219: - [[docs/_meta/duplicates]] L43: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L220: - [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L221: - [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L222: - [[docs/_meta/duplicates]] L49: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L223: - [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L224: - [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L225: - [[docs/_meta/duplicates]] L55: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L226: - [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L227: - [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L228: - [[docs/_meta/duplicates]] L61: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L229: - [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L230: - [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L231: - [[docs/_meta/duplicates]] L67: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L232: - [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L233: - [[docs/_meta/duplicates]] L69: - [[docs/legacy/SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L234: - [[docs/_meta/duplicates]] L73: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L235: - [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L236: - [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L237: - [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L238: - [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L239: - [[docs/_meta/duplicates]] L81: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L240: - [[docs/_meta/duplicates]] L85: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L241: - [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L242: - [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L243: - [[docs/_meta/duplicates]] L91: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L244: - [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L245: - [[docs/_meta/duplicates]] L93: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L246: - [[docs/_meta/duplicates]] L97: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L247: - [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L248: - [[docs/_meta/duplicates]] L99: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L249: - [[docs/_meta/duplicates]] L103: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L250: - [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L251: - [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L252: - [[docs/_meta/duplicates]] L109: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L253: - [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L254: - [[docs/_meta/duplicates]] L111: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L255: - [[docs/_meta/duplicates]] L115: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L256: - [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L257: - [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L258: - [[docs/_meta/duplicates]] L121: - [[docs/legacy/FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L259: - [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L260: - [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L261: - [[docs/_meta/duplicates]] L127: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L262: - [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L263: - [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L264: - [[docs/_meta/duplicates]] L133: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L265: - [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L266: - [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L267: - [[docs/_meta/duplicates]] L139: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L268: - [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L269: - [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L270: - [[docs/_meta/duplicates]] L145: - [[docs/legacy/FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L271: - [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L272: - [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L273: - [[docs/_meta/duplicates]] L151: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L274: - [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L275: - [[docs/_meta/duplicates]] L153: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L276: - [[docs/_meta/duplicates]] L157: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L277: - [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L278: - [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L279: - [[docs/_meta/duplicates]] L163: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L280: - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L281: - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L282: - [[docs/_meta/duplicates]] L169: - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L283: - [[docs/_meta/duplicates]] L170: - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L284: - [[docs/_meta/duplicates]] L171: - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L285: - [[docs/_meta/duplicates]] L175: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L286: - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L287: - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L288: - [[docs/_meta/duplicates]] L181: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L289: - [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L290: - [[docs/_meta/duplicates]] L183: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L291: - [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L292: - [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L293: - [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L294: - [[docs/_meta/duplicates]] L193: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L295: - [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L296: - [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L297: - [[docs/_meta/duplicates]] L199: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L298: - [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L299: - [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L300: - [[docs/_meta/duplicates]] L205: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L301: - [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L302: - [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L303: - [[docs/_meta/duplicates]] L211: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L304: - [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L305: - [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L306: - [[docs/_meta/duplicates]] L217: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L307: - [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L308: - [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L309: - [[docs/_meta/duplicates]] L223: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L310: - [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L311: - [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L312: - [[docs/_meta/duplicates]] L229: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L313: - [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L314: - [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L315: - [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L316: - [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L317: - [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L318: - [[docs/_meta/duplicates]] L241: - [[docs/legacy/FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L319: - [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L320: - [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L321: - [[docs/_meta/duplicates]] L247: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L322: - [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L323: - [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L324: - [[docs/_meta/duplicates]] L253: - [[docs/legacy/OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L325: - [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L326: - [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L327: - [[docs/_meta/duplicates]] L259: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L328: - [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L329: - [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L330: - [[docs/_meta/duplicates]] L265: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L331: - [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L332: - [[docs/_meta/duplicates]] L267: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L333: - [[docs/_meta/duplicates]] L271: - [[docs/legacy/root_1_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L334: - [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L335: - [[docs/_meta/duplicates]] L273: - [[docs/legacy/WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L336: - [[docs/_meta/duplicates]] L277: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L337: - [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L338: - [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L339: - [[docs/_meta/duplicates]] L283: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L340: - [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L341: - [[docs/_meta/duplicates]] L285: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L342: - [[docs/_meta/duplicates]] L289: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L343: - [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L344: - [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L345: - [[docs/_meta/duplicates]] L295: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L346: - [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L347: - [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L348: - [[docs/_meta/duplicates]] L301: - [[docs/legacy/CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L349: - [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L350: - [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L351: - [[docs/_meta/duplicates]] L307: - [[docs/legacy/RELEASES]]
+- [[docs/_meta/status-marker-index]] L352: - [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_RELEASES]]
+- [[docs/_meta/status-marker-index]] L353: - [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_RELEASES]]
+- [[docs/_meta/status-marker-index]] L354: - [[docs/_meta/duplicates]] L313: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L355: - [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L356: - [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L357: - [[docs/_meta/duplicates]] L319: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L358: - [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L359: - [[docs/_meta/duplicates]] L321: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L360: - [[docs/_meta/duplicates]] L325: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L361: - [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L362: - [[docs/_meta/duplicates]] L327: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L363: - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L364: - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L365: - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L366: - [[docs/_meta/duplicates]] L337: - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L367: - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L368: - [[docs/_meta/duplicates]] L339: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L369: - [[docs/_meta/status-marker-index]] L11: - [[docs/_meta/docs-inventory]] L41: | [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] | gateway | 23 | 1 | AI Bridge Local 0.5.46 - Disable legacy scanner and inline heart
+- [[docs/_meta/status-marker-index]] L370: - [[docs/_meta/status-marker-index]] L12: - [[docs/_meta/docs-inventory]] L47: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
+- [[docs/_meta/status-marker-index]] L371: - [[docs/_meta/status-marker-index]] L13: - [[docs/_meta/docs-inventory]] L49: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
+- [[docs/_meta/status-marker-index]] L372: - [[docs/_meta/status-marker-index]] L14: - [[docs/_meta/docs-inventory]] L53: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | AI Bridge Local 0.4.17 - visual dedupe e tem
+- [[docs/_meta/status-marker-index]] L373: - [[docs/_meta/status-marker-index]] L15: - [[docs/_meta/docs-inventory]] L54: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge Local 0.4.18 - utility scripts |
+- [[docs/_meta/status-marker-index]] L374: - [[docs/_meta/status-marker-index]] L16: - [[docs/_meta/docs-inventory]] L55: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI Bridge Local 0.4.19 - filtered DB status |
+- [[docs/_meta/status-marker-index]] L375: - [[docs/_meta/status-marker-index]] L17: - [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 0.4.20 - ops report |
+- [[docs/_meta/status-marker-index]] L376: - [[docs/_meta/status-marker-index]] L18: - [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bridge Local 0.4.21 - health quick command |
+- [[docs/_meta/status-marker-index]] L377: - [[docs/_meta/status-marker-index]] L19: - [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Bridge Local 0.4.22 - cleanup policy |
+- [[docs/_meta/status-marker-index]] L378: - [[docs/_meta/status-marker-index]] L20: - [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Bridge Local - status operacional consolidado
+- [[docs/_meta/status-marker-index]] L379: - [[docs/_meta/status-marker-index]] L21: - [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI Bridge Local 0.4.24 - local export package 
+- [[docs/_meta/status-marker-index]] L380: - [[docs/_meta/status-marker-index]] L22: - [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bridge Local 0.4.25 - filtered reports ignore 
+- [[docs/_meta/status-marker-index]] L381: - [[docs/_meta/status-marker-index]] L23: - [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 | AI Bridge Local 0.4.27 - supervisor local
+- [[docs/_meta/status-marker-index]] L382: - [[docs/_meta/status-marker-index]] L24: - [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI Bridge Local 0.4.28 - supervisor dedupe segu
+- [[docs/_meta/status-marker-index]] L383: - [[docs/_meta/status-marker-index]] L25: - [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI Bridge Local 0.4.29 - parse error feedback
+- [[docs/_meta/status-marker-index]] L384: - [[docs/_meta/status-marker-index]] L26: - [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0 | AI Bridge Local 0.4.30 - parse e deliver
+- [[docs/_meta/status-marker-index]] L385: - [[docs/_meta/status-marker-index]] L27: - [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI Bridge Local 0.4.31 - queued delivery feedb
+- [[docs/_meta/status-marker-index]] L386: - [[docs/_meta/status-marker-index]] L28: - [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | AI Bridge Local 0.4.32 - authoritative sour
+- [[docs/_meta/status-marker-index]] L387: - [[docs/_meta/status-marker-index]] L29: - [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Bridge Local 0.4.33 - worker pool safe step |
+- [[docs/_meta/status-marker-index]] L388: - [[docs/_meta/status-marker-index]] L30: - [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge Local 0.4.34 - Workers virtuais por chat |
+- [[docs/_meta/status-marker-index]] L389: - [[docs/_meta/status-marker-index]] L31: - [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - baseline operacional 2026-06-10 |
+- [[docs/_meta/status-marker-index]] L390: - [[docs/_meta/status-marker-index]] L32: - [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local - exemplos de comandos e cuidados 2026-06-10
+- [[docs/_meta/status-marker-index]] L391: - [[docs/_meta/status-marker-index]] L33: - [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L392: - [[docs/_meta/status-marker-index]] L34: - [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local submit recovery 0.4.16 |
+- [[docs/_meta/status-marker-index]] L393: - [[docs/_meta/status-marker-index]] L35: - [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge Local - status atual 2026-06-10 |
+- [[docs/_meta/status-marker-index]] L394: - [[docs/_meta/status-marker-index]] L36: - [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e corrigido
+- [[docs/_meta/status-marker-index]] L395: - [[docs/_meta/status-marker-index]] L37: - [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - Robustez
+- [[docs/_meta/status-marker-index]] L396: - [[docs/_meta/status-marker-index]] L38: - [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L397: - [[docs/_meta/status-marker-index]] L39: - [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L398: - [[docs/_meta/status-marker-index]] L40: - [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L399: - [[docs/_meta/status-marker-index]] L41: - [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.4.94 |
+- [[docs/_meta/status-marker-index]] L400: - [[docs/_meta/status-marker-index]] L42: - [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 0.4.93 
+- [[docs/_meta/status-marker-index]] L401: - [[docs/_meta/status-marker-index]] L43: - [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96 |
+- [[docs/_meta/status-marker-index]] L402: - [[docs/_meta/status-marker-index]] L44: - [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L403: - [[docs/_meta/status-marker-index]] L45: - [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L404: - [[docs/_meta/status-marker-index]] L46: - [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L405: - [[docs/_meta/status-marker-index]] L47: - [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L406: - [[docs/_meta/status-marker-index]] L48: - [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L407: - [[docs/_meta/status-marker-index]] L49: - [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L408: - [[docs/_meta/status-marker-index]] L50: - [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L409: - [[docs/_meta/status-marker-index]] L51: - [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L410: - [[docs/_meta/status-marker-index]] L52: - [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L411: - [[docs/_meta/status-marker-index]] L53: - [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L412: - [[docs/_meta/status-marker-index]] L54: - [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L413: - [[docs/_meta/status-marker-index]] L55: - [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L414: - [[docs/_meta/status-marker-index]] L56: - [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L415: - [[docs/_meta/status-marker-index]] L57: - [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L416: - [[docs/_meta/status-marker-index]] L58: - [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L417: - [[docs/_meta/status-marker-index]] L59: - [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L418: - [[docs/_meta/status-marker-index]] L60: - [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L419: - [[docs/_meta/status-marker-index]] L61: - [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L420: - [[docs/_meta/status-marker-index]] L62: - [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L421: - [[docs/_meta/status-marker-index]] L63: - [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L422: - [[docs/_meta/status-marker-index]] L64: - [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L423: - [[docs/_meta/status-marker-index]] L65: - [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L424: - [[docs/_meta/status-marker-index]] L66: - [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L425: - [[docs/_meta/status-marker-index]] L67: - [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architecture 0.
+- [[docs/_meta/status-marker-index]] L426: - [[docs/_meta/status-marker-index]] L68: - [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L427: - [[docs/_meta/status-marker-index]] L69: - [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L428: - [[docs/_meta/status-marker-index]] L70: - [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L429: - [[docs/_meta/status-marker-index]] L71: - [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L430: - [[docs/_meta/status-marker-index]] L72: - [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L431: - [[docs/_meta/status-marker-index]] L73: - [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L432: - [[docs/_meta/status-marker-index]] L74: - [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L433: - [[docs/_meta/status-marker-index]] L75: - [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L434: - [[docs/_meta/status-marker-index]] L76: - [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L435: - [[docs/_meta/status-marker-index]] L77: - [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L436: - [[docs/_meta/status-marker-index]] L78: - [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L437: - [[docs/_meta/status-marker-index]] L79: - [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L438: - [[docs/_meta/status-marker-index]] L80: - [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L439: - [[docs/_meta/status-marker-index]] L81: - [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L440: - [[docs/_meta/status-marker-index]] L82: - [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0
+- [[docs/_meta/status-marker-index]] L441: - [[docs/_meta/status-marker-index]] L83: - [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix
+- [[docs/_meta/status-marker-index]] L442: - [[docs/_meta/status-marker-index]] L84: - [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.9
+- [[docs/_meta/status-marker-index]] L443: - [[docs/_meta/status-marker-index]] L85: - [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L444: - [[docs/_meta/status-marker-index]] L86: - [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L445: - [[docs/_meta/status-marker-index]] L87: - [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L446: - [[docs/_meta/status-marker-index]] L88: - [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L447: - [[docs/_meta/status-marker-index]] L89: - [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L448: - [[docs/_meta/status-marker-index]] L90: - [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L449: - [[docs/_meta/status-marker-index]] L91: - [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L450: - [[docs/_meta/status-marker-index]] L92: - [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L451: - [[docs/_meta/status-marker-index]] L93: - [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L452: - [[docs/_meta/status-marker-index]] L94: - [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L453: - [[docs/_meta/status-marker-index]] L95: - [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L454: - [[docs/_meta/status-marker-index]] L96: - [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L455: - [[docs/_meta/status-marker-index]] L97: - [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L456: - [[docs/_meta/status-marker-index]] L98: - [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L457: - [[docs/_meta/status-marker-index]] L99: - [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L458: - [[docs/_meta/status-marker-index]] L100: - [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L459: - [[docs/_meta/status-marker-index]] L101: - [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L460: - [[docs/_meta/status-marker-index]] L102: - [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L461: - [[docs/_meta/status-marker-index]] L103: - [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L462: - [[docs/_meta/status-marker-index]] L104: - [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L463: - [[docs/_meta/status-marker-index]] L105: - [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L464: - [[docs/_meta/status-marker-index]] L106: - [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L465: - [[docs/_meta/status-marker-index]] L107: - [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L466: - [[docs/_meta/status-marker-index]] L108: - [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling archite
+- [[docs/_meta/status-marker-index]] L467: - [[docs/_meta/status-marker-index]] L109: - [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L468: - [[docs/_meta/status-marker-index]] L110: - [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L469: - [[docs/_meta/status-marker-index]] L111: - [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L470: - [[docs/_meta/status-marker-index]] L112: - [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L471: - [[docs/_meta/status-marker-index]] L113: - [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L472: - [[docs/_meta/status-marker-index]] L114: - [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L473: - [[docs/_meta/status-marker-index]] L115: - [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L474: - [[docs/_meta/status-marker-index]] L116: - [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L475: - [[docs/_meta/status-marker-index]] L117: - [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L476: - [[docs/_meta/status-marker-index]] L118: - [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L477: - [[docs/_meta/status-marker-index]] L119: - [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L478: - [[docs/_meta/status-marker-index]] L120: - [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L479: - [[docs/_meta/status-marker-index]] L121: - [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L480: - [[docs/_meta/status-marker-index]] L122: - [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L481: - [[docs/_meta/status-marker-index]] L123: - [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L482: - [[docs/_meta/status-marker-index]] L124: - [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L483: - [[docs/_meta/status-marker-index]] L125: - [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L484: - [[docs/_meta/status-marker-index]] L126: - [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L485: - [[docs/_meta/status-marker-index]] L127: - [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L486: - [[docs/_meta/status-marker-index]] L128: - [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L487: - [[docs/_meta/status-marker-index]] L129: - [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L488: - [[docs/_meta/status-marker-index]] L130: - [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L489: - [[docs/_meta/status-marker-index]] L131: - [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L490: - [[docs/_meta/status-marker-index]] L132: - [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional completo e co
+- [[docs/_meta/status-marker-index]] L491: - [[docs/_meta/status-marker-index]] L133: - [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Local — Guia operacional compl
+- [[docs/_meta/status-marker-index]] L492: - [[docs/_meta/status-marker-index]] L134: - [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge L
+- [[docs/_meta/status-marker-index]] L493: - [[docs/_meta/status-marker-index]] L135: - [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L494: - [[docs/_meta/status-marker-index]] L136: - [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L495: - [[docs/_meta/status-marker-index]] L137: - [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L496: - [[docs/_meta/status-marker-index]] L138: - [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gateway | 126 | 1 | AI Bridge Local - R
+- [[docs/_meta/status-marker-index]] L497: - [[docs/_meta/status-marker-index]] L139: - [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Command Intake Roadmap |
+- [[docs/_meta/status-marker-index]] L498: - [[docs/_meta/status-marker-index]] L140: - [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Daily Watcher Checklist |
+- [[docs/_meta/status-marker-index]] L499: - [[docs/_meta/status-marker-index]] L141: - [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONAL_RULES |
+- [[docs/_meta/status-marker-index]] L500: - [[docs/_meta/status-marker-index]] L142: - [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Autonomous change proposal template 0.
+- [[docs/_meta/status-marker-index]] L501: - [[docs/_meta/status-marker-index]] L143: - [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - Autonomous evolution approval matrix 
+- [[docs/_meta/status-marker-index]] L502: - [[docs/_meta/status-marker-index]] L144: - [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Autonomous evolution audit ledger 0.4.96
+- [[docs/_meta/status-marker-index]] L503: - [[docs/_meta/status-marker-index]] L145: - [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomous evolution protocol 0.4.92 |
+- [[docs/_meta/status-marker-index]] L504: - [[docs/_meta/status-marker-index]] L146: - [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autonomous evolution task queue 0.4.95 |
+- [[docs/_meta/status-marker-index]] L505: - [[docs/_meta/status-marker-index]] L147: - [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command accepted progress notice 0.4.99 |
+- [[docs/_meta/status-marker-index]] L506: - [[docs/_meta/status-marker-index]] L148: - [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit guard 0.5.11 |
+- [[docs/_meta/status-marker-index]] L507: - [[docs/_meta/status-marker-index]] L149: - [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L508: - [[docs/_meta/status-marker-index]] L150: - [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic formatter 0.5.22 |
+- [[docs/_meta/status-marker-index]] L509: - [[docs/_meta/status-marker-index]] L151: - [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic summary 0.5.24 |
+- [[docs/_meta/status-marker-index]] L510: - [[docs/_meta/status-marker-index]] L152: - [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L511: - [[docs/_meta/status-marker-index]] L153: - [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifier 0.5.13 |
+- [[docs/_meta/status-marker-index]] L512: - [[docs/_meta/status-marker-index]] L154: - [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixtures 0.5.23 |
+- [[docs/_meta/status-marker-index]] L513: - [[docs/_meta/status-marker-index]] L155: - [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight readonly 0.5.27 |
+- [[docs/_meta/status-marker-index]] L514: - [[docs/_meta/status-marker-index]] L156: - [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classifier readonly integration 0.5.21 |
+- [[docs/_meta/status-marker-index]] L515: - [[docs/_meta/status-marker-index]] L157: - [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable worker running notice 0.5.5 |
+- [[docs/_meta/status-marker-index]] L516: - [[docs/_meta/status-marker-index]] L158: - [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L517: - [[docs/_meta/status-marker-index]] L159: - [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L518: - [[docs/_meta/status-marker-index]] L160: - [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L519: - [[docs/_meta/status-marker-index]] L161: - [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final result continue hint 0.5.7 |
+- [[docs/_meta/status-marker-index]] L520: - [[docs/_meta/status-marker-index]] L162: - [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final result failure continues 0.5.10 |
+- [[docs/_meta/status-marker-index]] L521: - [[docs/_meta/status-marker-index]] L163: - [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L522: - [[docs/_meta/status-marker-index]] L164: - [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and UTF-8 no BOM 0.5.14 |
+- [[docs/_meta/status-marker-index]] L523: - [[docs/_meta/status-marker-index]] L165: - [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible smoke policy 0.5.17 |
+- [[docs/_meta/status-marker-index]] L524: - [[docs/_meta/status-marker-index]] L166: - [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback dedup 0.5.3 |
+- [[docs/_meta/status-marker-index]] L525: - [[docs/_meta/status-marker-index]] L167: - [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gateway feedback 0.5.2 |
+- [[docs/_meta/status-marker-index]] L526: - [[docs/_meta/status-marker-index]] L168: - [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local - Latency parallel polling architect
+- [[docs/_meta/status-marker-index]] L527: - [[docs/_meta/status-marker-index]] L169: - [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat authorization gate 0.5.33 |
+- [[docs/_meta/status-marker-index]] L528: - [[docs/_meta/status-marker-index]] L170: - [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L529: - [[docs/_meta/status-marker-index]] L171: - [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report generator 0.5.26 |
+- [[docs/_meta/status-marker-index]] L530: - [[docs/_meta/status-marker-index]] L172: - [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L531: - [[docs/_meta/status-marker-index]] L173: - [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L532: - [[docs/_meta/status-marker-index]] L174: - [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playbook 0.4.88 |
+- [[docs/_meta/status-marker-index]] L533: - [[docs/_meta/status-marker-index]] L175: - [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L534: - [[docs/_meta/status-marker-index]] L176: - [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L535: - [[docs/_meta/status-marker-index]] L177: - [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke 0.5.18 |
+- [[docs/_meta/status-marker-index]] L536: - [[docs/_meta/status-marker-index]] L178: - [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safety checklist 0.4.87 |
+- [[docs/_meta/status-marker-index]] L537: - [[docs/_meta/status-marker-index]] L179: - [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L538: - [[docs/_meta/status-marker-index]] L180: - [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove accepted running notice 0.5.9 |
+- [[docs/_meta/status-marker-index]] L539: - [[docs/_meta/status-marker-index]] L181: - [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove worker running notice 0.5.6 |
+- [[docs/_meta/status-marker-index]] L540: - [[docs/_meta/status-marker-index]] L182: - [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L541: - [[docs/_meta/status-marker-index]] L183: - [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L542: - [[docs/_meta/status-marker-index]] L184: - [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L543: - [[docs/_meta/status-marker-index]] L185: - [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L544: - [[docs/_meta/status-marker-index]] L186: - [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L545: - [[docs/_meta/status-marker-index]] L187: - [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L546: - [[docs/_meta/status-marker-index]] L188: - [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L547: - [[docs/_meta/status-marker-index]] L189: - [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L548: - [[docs/_meta/status-marker-index]] L190: - [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L549: - [[docs/_meta/status-marker-index]] L191: - [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelope templates 0.4.85 |
+- [[docs/_meta/status-marker-index]] L550: - [[docs/_meta/status-marker-index]] L192: - [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L551: - [[docs/_meta/status-marker-index]] L193: - [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolution guardrails 0.4.90 |
+- [[docs/_meta/status-marker-index]] L552: - [[docs/_meta/status-marker-index]] L194: - [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard 0.5.8 |
+- [[docs/_meta/status-marker-index]] L553: - [[docs/_meta/status-marker-index]] L195: - [[docs/_meta/docs-inventory]] L234: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L554: - [[docs/_meta/status-marker-index]] L196: - [[docs/_meta/docs-inventory]] L235: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher failure taxonomy 0.4.89 |
+- [[docs/_meta/status-marker-index]] L555: - [[docs/_meta/status-marker-index]] L197: - [[docs/_meta/docs-inventory]] L236: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L556: - [[docs/_meta/status-marker-index]] L198: - [[docs/_meta/docs-inventory]] L237: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher recovery runbook 0.4.91 |
+- [[docs/_meta/status-marker-index]] L557: - [[docs/_meta/status-marker-index]] L199: - [[docs/_meta/docs-inventory]] L238: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicativo Windows residente |
+- [[docs/_meta/status-marker-index]] L558: - [[docs/_meta/status-marker-index]] L200: - [[docs/_meta/docs-inventory]] L239: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue parallelism 0.5.0 |
+- [[docs/_meta/status-marker-index]] L559: - [[docs/_meta/status-marker-index]] L201: - [[docs/_meta/docs-inventory]] L247: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
+- [[docs/_meta/status-marker-index]] L560: - [[docs/_meta/status-marker-index]] L202: - [[docs/_meta/docs-inventory]] L282: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI Bridge Local - Governance risk classifier 0.
+- [[docs/_meta/status-marker-index]] L561: - [[docs/_meta/status-marker-index]] L203: - [[docs/_meta/docs-inventory]] L283: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridge Local - Governance risk report 0.4.80 |
 - [[docs/_meta/status-marker-index]] L562: - [[docs/_meta/status-marker-index]] L204: - [[docs/_meta/duplicates]] L13: - [[docs/legacy/COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/status-marker-index]] L563: - [[docs/_meta/status-marker-index]] L205: - [[docs/_meta/duplicates]] L14: - [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]]
 - [[docs/_meta/status-marker-index]] L564: - [[docs/_meta/status-marker-index]] L206: - [[docs/_meta/duplicates]] L15: - [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]]
-- [[docs/_meta/status-marker-index]] L565: - [[docs/_meta/status-marker-index]] L207: - [[docs/_meta/duplicates]] L19: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/status-marker-index]] L566: - [[docs/_meta/status-marker-index]] L208: - [[docs/_meta/duplicates]] L20: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
-- [[docs/_meta/status-marker-index]] L567: - [[docs/_meta/status-marker-index]] L209: - [[docs/_meta/duplicates]] L21: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L565: - [[docs/_meta/status-marker-index]] L207: - [[docs/_meta/duplicates]] L19: - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L566: - [[docs/_meta/status-marker-index]] L208: - [[docs/_meta/duplicates]] L20: - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L567: - [[docs/_meta/status-marker-index]] L209: - [[docs/_meta/duplicates]] L21: - [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
 - [[docs/_meta/status-marker-index]] L568: - [[docs/_meta/status-marker-index]] L210: - [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
 - [[docs/_meta/status-marker-index]] L569: - [[docs/_meta/status-marker-index]] L211: - [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
 - [[docs/_meta/status-marker-index]] L570: - [[docs/_meta/status-marker-index]] L212: - [[docs/_meta/duplicates]] L27: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
 - [[docs/_meta/status-marker-index]] L571: - [[docs/_meta/status-marker-index]] L213: - [[docs/_meta/duplicates]] L31: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
 - [[docs/_meta/status-marker-index]] L572: - [[docs/_meta/status-marker-index]] L214: - [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
 - [[docs/_meta/status-marker-index]] L573: - [[docs/_meta/status-marker-index]] L215: - [[docs/_meta/duplicates]] L33: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
-- [[docs/_meta/status-marker-index]] L574: - [[docs/_meta/status-marker-index]] L216: - [[docs/_meta/duplicates]] L37: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L575: - [[docs/_meta/status-marker-index]] L217: - [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L576: - [[docs/_meta/status-marker-index]] L218: - [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
-- [[docs/_meta/status-marker-index]] L577: - [[docs/_meta/status-marker-index]] L219: - [[docs/_meta/duplicates]] L43: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L578: - [[docs/_meta/status-marker-index]] L220: - [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L579: - [[docs/_meta/status-marker-index]] L221: - [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
-- [[docs/_meta/status-marker-index]] L580: - [[docs/_meta/status-marker-index]] L222: - [[docs/_meta/duplicates]] L49: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L581: - [[docs/_meta/status-marker-index]] L223: - [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L582: - [[docs/_meta/status-marker-index]] L224: - [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
-- [[docs/_meta/status-marker-index]] L583: - [[docs/_meta/status-marker-index]] L225: - [[docs/_meta/duplicates]] L55: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L584: - [[docs/_meta/status-marker-index]] L226: - [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L585: - [[docs/_meta/status-marker-index]] L227: - [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
-- [[docs/_meta/status-marker-index]] L586: - [[docs/_meta/status-marker-index]] L228: - [[docs/_meta/duplicates]] L61: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L587: - [[docs/_meta/status-marker-index]] L229: - [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L588: - [[docs/_meta/status-marker-index]] L230: - [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
-- [[docs/_meta/status-marker-index]] L589: - [[docs/_meta/status-marker-index]] L231: - [[docs/_meta/duplicates]] L67: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L590: - [[docs/_meta/status-marker-index]] L232: - [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L591: - [[docs/_meta/status-marker-index]] L233: - [[docs/_meta/duplicates]] L69: - [[docs/legacy/SINGLE_WORKER_GUARD]]
-- [[docs/_meta/status-marker-index]] L592: - [[docs/_meta/status-marker-index]] L234: - [[docs/_meta/duplicates]] L73: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L593: - [[docs/_meta/status-marker-index]] L235: - [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L594: - [[docs/_meta/status-marker-index]] L236: - [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L595: - [[docs/_meta/status-marker-index]] L237: - [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L596: - [[docs/_meta/status-marker-index]] L238: - [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L597: - [[docs/_meta/status-marker-index]] L239: - [[docs/_meta/duplicates]] L81: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
-- [[docs/_meta/status-marker-index]] L598: - [[docs/_meta/status-marker-index]] L240: - [[docs/_meta/duplicates]] L85: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L599: - [[docs/_meta/status-marker-index]] L241: - [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L600: - [[docs/_meta/status-marker-index]] L242: - [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
-- [[docs/_meta/status-marker-index]] L601: - [[docs/_meta/status-marker-index]] L243: - [[docs/_meta/duplicates]] L91: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L602: - [[docs/_meta/status-marker-index]] L244: - [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L603: - [[docs/_meta/status-marker-index]] L245: - [[docs/_meta/duplicates]] L93: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
-- [[docs/_meta/status-marker-index]] L604: - [[docs/_meta/status-marker-index]] L246: - [[docs/_meta/duplicates]] L97: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L605: - [[docs/_meta/status-marker-index]] L247: - [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L606: - [[docs/_meta/status-marker-index]] L248: - [[docs/_meta/duplicates]] L99: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
-- [[docs/_meta/status-marker-index]] L607: - [[docs/_meta/status-marker-index]] L249: - [[docs/_meta/duplicates]] L103: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L608: - [[docs/_meta/status-marker-index]] L250: - [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L609: - [[docs/_meta/status-marker-index]] L251: - [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
-- [[docs/_meta/status-marker-index]] L610: - [[docs/_meta/status-marker-index]] L252: - [[docs/_meta/duplicates]] L109: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L611: - [[docs/_meta/status-marker-index]] L253: - [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L612: - [[docs/_meta/status-marker-index]] L254: - [[docs/_meta/duplicates]] L111: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/_meta/status-marker-index]] L613: - [[docs/_meta/status-marker-index]] L255: - [[docs/_meta/duplicates]] L115: - [[docs/legacy/FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L614: - [[docs/_meta/status-marker-index]] L256: - [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L615: - [[docs/_meta/status-marker-index]] L257: - [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_FINAL_AUDIT_0531]]
-- [[docs/_meta/status-marker-index]] L616: - [[docs/_meta/status-marker-index]] L258: - [[docs/_meta/duplicates]] L121: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L617: - [[docs/_meta/status-marker-index]] L259: - [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L618: - [[docs/_meta/status-marker-index]] L260: - [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
-- [[docs/_meta/status-marker-index]] L619: - [[docs/_meta/status-marker-index]] L261: - [[docs/_meta/duplicates]] L127: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L620: - [[docs/_meta/status-marker-index]] L262: - [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L621: - [[docs/_meta/status-marker-index]] L263: - [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
-- [[docs/_meta/status-marker-index]] L622: - [[docs/_meta/status-marker-index]] L264: - [[docs/_meta/duplicates]] L133: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L623: - [[docs/_meta/status-marker-index]] L265: - [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L624: - [[docs/_meta/status-marker-index]] L266: - [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
-- [[docs/_meta/status-marker-index]] L625: - [[docs/_meta/status-marker-index]] L267: - [[docs/_meta/duplicates]] L139: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L626: - [[docs/_meta/status-marker-index]] L268: - [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L627: - [[docs/_meta/status-marker-index]] L269: - [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
-- [[docs/_meta/status-marker-index]] L628: - [[docs/_meta/status-marker-index]] L270: - [[docs/_meta/duplicates]] L145: - [[docs/legacy/FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L629: - [[docs/_meta/status-marker-index]] L271: - [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L630: - [[docs/_meta/status-marker-index]] L272: - [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L631: - [[docs/_meta/status-marker-index]] L273: - [[docs/_meta/duplicates]] L151: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L632: - [[docs/_meta/status-marker-index]] L274: - [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L633: - [[docs/_meta/status-marker-index]] L275: - [[docs/_meta/duplicates]] L153: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
-- [[docs/_meta/status-marker-index]] L634: - [[docs/_meta/status-marker-index]] L276: - [[docs/_meta/duplicates]] L157: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L635: - [[docs/_meta/status-marker-index]] L277: - [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L636: - [[docs/_meta/status-marker-index]] L278: - [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
-- [[docs/_meta/status-marker-index]] L637: - [[docs/_meta/status-marker-index]] L279: - [[docs/_meta/duplicates]] L163: - [[docs/legacy/OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L638: - [[docs/_meta/status-marker-index]] L280: - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L639: - [[docs/_meta/status-marker-index]] L281: - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
-- [[docs/_meta/status-marker-index]] L640: - [[docs/_meta/status-marker-index]] L282: - [[docs/_meta/duplicates]] L169: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L641: - [[docs/_meta/status-marker-index]] L283: - [[docs/_meta/duplicates]] L170: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L642: - [[docs/_meta/status-marker-index]] L284: - [[docs/_meta/duplicates]] L171: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/_meta/status-marker-index]] L643: - [[docs/_meta/status-marker-index]] L285: - [[docs/_meta/duplicates]] L175: - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L644: - [[docs/_meta/status-marker-index]] L286: - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L645: - [[docs/_meta/status-marker-index]] L287: - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
-- [[docs/_meta/status-marker-index]] L646: - [[docs/_meta/status-marker-index]] L288: - [[docs/_meta/duplicates]] L181: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L647: - [[docs/_meta/status-marker-index]] L289: - [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L648: - [[docs/_meta/status-marker-index]] L290: - [[docs/_meta/duplicates]] L183: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
-- [[docs/_meta/status-marker-index]] L649: - [[docs/_meta/status-marker-index]] L291: - [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L650: - [[docs/_meta/status-marker-index]] L292: - [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L651: - [[docs/_meta/status-marker-index]] L293: - [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
-- [[docs/_meta/status-marker-index]] L652: - [[docs/_meta/status-marker-index]] L294: - [[docs/_meta/duplicates]] L193: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L653: - [[docs/_meta/status-marker-index]] L295: - [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L654: - [[docs/_meta/status-marker-index]] L296: - [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
-- [[docs/_meta/status-marker-index]] L655: - [[docs/_meta/status-marker-index]] L297: - [[docs/_meta/duplicates]] L199: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L656: - [[docs/_meta/status-marker-index]] L298: - [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L657: - [[docs/_meta/status-marker-index]] L299: - [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L658: - [[docs/_meta/status-marker-index]] L300: - [[docs/_meta/duplicates]] L205: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L659: - [[docs/_meta/status-marker-index]] L301: - [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L660: - [[docs/_meta/status-marker-index]] L302: - [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
-- [[docs/_meta/status-marker-index]] L661: - [[docs/_meta/status-marker-index]] L303: - [[docs/_meta/duplicates]] L211: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L662: - [[docs/_meta/status-marker-index]] L304: - [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L663: - [[docs/_meta/status-marker-index]] L305: - [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
-- [[docs/_meta/status-marker-index]] L664: - [[docs/_meta/status-marker-index]] L306: - [[docs/_meta/duplicates]] L217: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L665: - [[docs/_meta/status-marker-index]] L307: - [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L666: - [[docs/_meta/status-marker-index]] L308: - [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
-- [[docs/_meta/status-marker-index]] L667: - [[docs/_meta/status-marker-index]] L309: - [[docs/_meta/duplicates]] L223: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L668: - [[docs/_meta/status-marker-index]] L310: - [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L669: - [[docs/_meta/status-marker-index]] L311: - [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/_meta/status-marker-index]] L670: - [[docs/_meta/status-marker-index]] L312: - [[docs/_meta/duplicates]] L229: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L671: - [[docs/_meta/status-marker-index]] L313: - [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L672: - [[docs/_meta/status-marker-index]] L314: - [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L673: - [[docs/_meta/status-marker-index]] L315: - [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L674: - [[docs/_meta/status-marker-index]] L316: - [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L675: - [[docs/_meta/status-marker-index]] L317: - [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
-- [[docs/_meta/status-marker-index]] L676: - [[docs/_meta/status-marker-index]] L318: - [[docs/_meta/duplicates]] L241: - [[docs/legacy/FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L677: - [[docs/_meta/status-marker-index]] L319: - [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L678: - [[docs/_meta/status-marker-index]] L320: - [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
-- [[docs/_meta/status-marker-index]] L679: - [[docs/_meta/status-marker-index]] L321: - [[docs/_meta/duplicates]] L247: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L680: - [[docs/_meta/status-marker-index]] L322: - [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L681: - [[docs/_meta/status-marker-index]] L323: - [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
-- [[docs/_meta/status-marker-index]] L682: - [[docs/_meta/status-marker-index]] L324: - [[docs/_meta/duplicates]] L253: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L683: - [[docs/_meta/status-marker-index]] L325: - [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L684: - [[docs/_meta/status-marker-index]] L326: - [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
-- [[docs/_meta/status-marker-index]] L685: - [[docs/_meta/status-marker-index]] L327: - [[docs/_meta/duplicates]] L259: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L686: - [[docs/_meta/status-marker-index]] L328: - [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L687: - [[docs/_meta/status-marker-index]] L329: - [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
-- [[docs/_meta/status-marker-index]] L688: - [[docs/_meta/status-marker-index]] L330: - [[docs/_meta/duplicates]] L265: - [[docs/legacy/root_1_WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L689: - [[docs/_meta/status-marker-index]] L331: - [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L690: - [[docs/_meta/status-marker-index]] L332: - [[docs/_meta/duplicates]] L267: - [[docs/legacy/WATCHER_NOTES]]
-- [[docs/_meta/status-marker-index]] L691: - [[docs/_meta/status-marker-index]] L333: - [[docs/_meta/duplicates]] L271: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L692: - [[docs/_meta/status-marker-index]] L334: - [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L693: - [[docs/_meta/status-marker-index]] L335: - [[docs/_meta/duplicates]] L273: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
-- [[docs/_meta/status-marker-index]] L694: - [[docs/_meta/status-marker-index]] L336: - [[docs/_meta/duplicates]] L277: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L695: - [[docs/_meta/status-marker-index]] L337: - [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L696: - [[docs/_meta/status-marker-index]] L338: - [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
-- [[docs/_meta/status-marker-index]] L697: - [[docs/_meta/status-marker-index]] L339: - [[docs/_meta/duplicates]] L283: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L698: - [[docs/_meta/status-marker-index]] L340: - [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L699: - [[docs/_meta/status-marker-index]] L341: - [[docs/_meta/duplicates]] L285: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
-- [[docs/_meta/status-marker-index]] L700: - [[docs/_meta/status-marker-index]] L342: - [[docs/_meta/duplicates]] L289: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L701: - [[docs/_meta/status-marker-index]] L343: - [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L702: - [[docs/_meta/status-marker-index]] L344: - [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
-- [[docs/_meta/status-marker-index]] L703: - [[docs/_meta/status-marker-index]] L345: - [[docs/_meta/duplicates]] L295: - [[docs/legacy/CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L704: - [[docs/_meta/status-marker-index]] L346: - [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L705: - [[docs/_meta/status-marker-index]] L347: - [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_CURRENT_STATUS]]
-- [[docs/_meta/status-marker-index]] L706: - [[docs/_meta/status-marker-index]] L348: - [[docs/_meta/duplicates]] L301: - [[docs/legacy/RELEASES]]
-- [[docs/_meta/status-marker-index]] L707: - [[docs/_meta/status-marker-index]] L349: - [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_RELEASES]]
-- [[docs/_meta/status-marker-index]] L708: - [[docs/_meta/status-marker-index]] L350: - [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_RELEASES]]
-- [[docs/_meta/status-marker-index]] L709: - [[docs/_meta/status-marker-index]] L351: - [[docs/_meta/duplicates]] L307: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L710: - [[docs/_meta/status-marker-index]] L352: - [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L711: - [[docs/_meta/status-marker-index]] L353: - [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
-- [[docs/_meta/status-marker-index]] L712: - [[docs/_meta/status-marker-index]] L354: - [[docs/_meta/duplicates]] L313: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L713: - [[docs/_meta/status-marker-index]] L355: - [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L714: - [[docs/_meta/status-marker-index]] L356: - [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
-- [[docs/_meta/status-marker-index]] L715: - [[docs/_meta/status-marker-index]] L357: - [[docs/_meta/duplicates]] L319: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L716: - [[docs/_meta/status-marker-index]] L358: - [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L717: - [[docs/_meta/status-marker-index]] L359: - [[docs/_meta/duplicates]] L321: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
-- [[docs/_meta/status-marker-index]] L718: - [[docs/_meta/status-marker-index]] L360: - [[docs/_meta/duplicates]] L325: - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L719: - [[docs/_meta/status-marker-index]] L361: - [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L720: - [[docs/_meta/status-marker-index]] L362: - [[docs/_meta/duplicates]] L327: - [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/_meta/status-marker-index]] L721: - [[docs/_meta/status-marker-index]] L363: - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L722: - [[docs/_meta/status-marker-index]] L364: - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L723: - [[docs/_meta/status-marker-index]] L365: - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SMOKE_ALL_0520]]
-- [[docs/_meta/status-marker-index]] L724: - [[docs/_meta/status-marker-index]] L366: - [[docs/_meta/duplicates]] L337: - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L725: - [[docs/_meta/status-marker-index]] L367: - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L726: - [[docs/_meta/status-marker-index]] L368: - [[docs/_meta/duplicates]] L339: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
-- [[docs/_meta/status-marker-index]] L727: - [[docs/_meta/status-marker-index]] L369: - [[docs/_meta/status-marker-index]] L11: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L10: Este e o documento principal ativo da aplicacao. A raiz de docs deve conter apenas AI_BRIDGE_LOCA
-- [[docs/_meta/status-marker-index]] L728: - [[docs/_meta/status-marker-index]] L370: - [[docs/_meta/status-marker-index]] L12: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L25: - A raiz de docs deve manter apenas AI_BRIDGE_LOCAL_GUIDE.md e a pasta legacy.
-- [[docs/_meta/status-marker-index]] L729: - [[docs/_meta/status-marker-index]] L371: - [[docs/_meta/status-marker-index]] L13: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L42: - 0.4.71 a 0.4.97: governanca, decision log, risk report, destructive opt-in, queue health, templ
-- [[docs/_meta/status-marker-index]] L730: - [[docs/_meta/status-marker-index]] L372: - [[docs/_meta/status-marker-index]] L14: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L57: - Documentos auxiliares movidos para docs/legacy.
-- [[docs/_meta/status-marker-index]] L731: - [[docs/_meta/status-marker-index]] L373: - [[docs/_meta/status-marker-index]] L15: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L70: - Raiz de docs deve manter apenas AI_BRIDGE_LOCAL_GUIDE.md e legacy.
-- [[docs/_meta/status-marker-index]] L732: - [[docs/_meta/status-marker-index]] L374: - [[docs/_meta/status-marker-index]] L16: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L71: - Documentos auxiliares ficam em docs/legacy.
-- [[docs/_meta/status-marker-index]] L733: - [[docs/_meta/status-marker-index]] L375: - [[docs/_meta/status-marker-index]] L17: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L82: - Auditar fila pendente em readonly.
-- [[docs/_meta/status-marker-index]] L734: - [[docs/_meta/status-marker-index]] L376: - [[docs/_meta/status-marker-index]] L18: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L91: - Auditar fila pendente de comandos antigos sem executar cleanup real.
-- [[docs/_meta/status-marker-index]] L735: - [[docs/_meta/status-marker-index]] L377: - [[docs/_meta/status-marker-index]] L19: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L133: ## 25. Governance risk classifier
-- [[docs/_meta/status-marker-index]] L736: - [[docs/_meta/status-marker-index]] L378: - [[docs/_meta/status-marker-index]] L20: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L165: ## 33. Governance risk report
-- [[docs/_meta/status-marker-index]] L737: - [[docs/_meta/status-marker-index]] L379: - [[docs/_meta/status-marker-index]] L21: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L397: ## 46. Indice dos documentos movidos para docs/legacy
-- [[docs/_meta/status-marker-index]] L738: - [[docs/_meta/status-marker-index]] L380: - [[docs/_meta/status-marker-index]] L22: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L508: * risco classificado antes do envio.
-- [[docs/_meta/status-marker-index]] L739: - [[docs/_meta/status-marker-index]] L381: - [[docs/_meta/status-marker-index]] L23: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L522: * navegar em `docs/legacy`;
-- [[docs/_meta/status-marker-index]] L740: - [[docs/_meta/status-marker-index]] L382: - [[docs/_meta/status-marker-index]] L24: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L542: * risco;
-- [[docs/_meta/status-marker-index]] L741: - [[docs/_meta/status-marker-index]] L383: - [[docs/_meta/status-marker-index]] L25: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L590: - Todo comando deve ser marcado como preview/report_only.
-- [[docs/_meta/status-marker-index]] L742: - [[docs/_meta/status-marker-index]] L384: - [[docs/_meta/status-marker-index]] L26: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L637: - Exibir classificaÃ§Ã£o de risco: low, medium, high.
-- [[docs/_meta/status-marker-index]] L743: - [[docs/_meta/status-marker-index]] L385: - [[docs/_meta/status-marker-index]] L27: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L692: - docs legacy;
-- [[docs/_meta/status-marker-index]] L744: - [[docs/_meta/status-marker-index]] L386: - [[docs/_meta/status-marker-index]] L28: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L703: - badges para docs ativos e legacy;
-- [[docs/_meta/status-marker-index]] L745: - [[docs/_meta/status-marker-index]] L387: - [[docs/_meta/status-marker-index]] L29: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L928: * a raiz de `docs/` continuar contendo apenas `AI_BRIDGE_LOCAL_GUIDE.md` e `legacy/`.
-- [[docs/_meta/status-marker-index]] L746: - [[docs/_meta/status-marker-index]] L388: - [[docs/_meta/status-marker-index]] L30: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1044: O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
-- [[docs/_meta/status-marker-index]] L747: - [[docs/_meta/status-marker-index]] L389: - [[docs/_meta/status-marker-index]] L31: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1057: - DONE 2026-06-17 registrado alinhamento docs-first antes de patch de codigo.
-- [[docs/_meta/status-marker-index]] L748: - [[docs/_meta/status-marker-index]] L390: - [[docs/_meta/status-marker-index]] L32: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1060: - Risco registrado: scripts grandes colados no ChatGPT podem sofrer Markdown corruption, crases
-- [[docs/_meta/status-marker-index]] L749: - [[docs/_meta/status-marker-index]] L391: - [[docs/_meta/status-marker-index]] L33: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1084: - DONE 0.5.41 adiciona observer outbound para envelopes em respostas ChatGPT.
-- [[docs/_meta/status-marker-index]] L750: - [[docs/_meta/status-marker-index]] L392: - [[docs/_meta/status-marker-index]] L34: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1085: - DONE 0.5.41 aceita START/END e BEGIN/END.
-- [[docs/_meta/status-marker-index]] L751: - [[docs/_meta/status-marker-index]] L393: - [[docs/_meta/status-marker-index]] L35: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1086: - DONE 0.5.41 valida source_chat_id e reporta erro local quando possivel.
-- [[docs/_meta/status-marker-index]] L752: - [[docs/_meta/status-marker-index]] L394: - [[docs/_meta/status-marker-index]] L36: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1094: - DONE 0.5.42 roteia send-chat-message/inter_agent_message direto pelo background quando o targ
-- [[docs/_meta/status-marker-index]] L753: - [[docs/_meta/status-marker-index]] L395: - [[docs/_meta/status-marker-index]] L37: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1095: - DONE 0.5.42 mantem run-command/local_capability sempre via gateway/DB/worker.
-- [[docs/_meta/status-marker-index]] L754: - [[docs/_meta/status-marker-index]] L396: - [[docs/_meta/status-marker-index]] L38: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1096: - DONE 0.5.42 adiciona feature flags e evita fallback automatico para nao mascarar falhas.
-- [[docs/_meta/status-marker-index]] L755: - [[docs/_meta/status-marker-index]] L397: - [[docs/_meta/status-marker-index]] L39: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1097: - DONE 0.5.42 preserva avisos/acks/resultados do fluxo gateway.
-- [[docs/_meta/status-marker-index]] L756: - [[docs/_meta/status-marker-index]] L398: - [[docs/_meta/status-marker-index]] L40: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1105: - DONE 0.5.43 evita bloqueio global quando a pagina contem mensagens AI_LOCAL antigas.
-- [[docs/_meta/status-marker-index]] L757: - [[docs/_meta/status-marker-index]] L399: - [[docs/_meta/status-marker-index]] L41: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1106: - DONE 0.5.43 escaneia candidatos especificos de mensagens ChatGPT.
-- [[docs/_meta/status-marker-index]] L758: - [[docs/_meta/status-marker-index]] L400: - [[docs/_meta/status-marker-index]] L42: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1107: - DONE 0.5.43 adiciona varredura periodica e mutation observer para envelopes.
-- [[docs/_meta/status-marker-index]] L759: - [[docs/_meta/status-marker-index]] L401: - [[docs/_meta/status-marker-index]] L43: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1115: - DONE 0.5.44 adiciona scanner standalone sem depender de extract/send internos.
-- [[docs/_meta/status-marker-index]] L760: - [[docs/_meta/status-marker-index]] L402: - [[docs/_meta/status-marker-index]] L44: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1116: - DONE 0.5.44 injeta aviso visivel [AI_LOCAL] para entrega direta bem-sucedida.
-- [[docs/_meta/status-marker-index]] L761: - [[docs/_meta/status-marker-index]] L403: - [[docs/_meta/status-marker-index]] L45: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1117: - DONE 0.5.44 injeta aviso visivel [AI_LOCAL_ERRO] para falha de captura/rota direta.
-- [[docs/_meta/status-marker-index]] L762: - [[docs/_meta/status-marker-index]] L404: - [[docs/_meta/status-marker-index]] L46: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1118: - DONE 0.5.44 preserva gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L763: - [[docs/_meta/status-marker-index]] L405: - [[docs/_meta/status-marker-index]] L47: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1126: - DONE 0.5.45 protege sendChatHeartbeat contra ReferenceError.
-- [[docs/_meta/status-marker-index]] L764: - [[docs/_meta/status-marker-index]] L406: - [[docs/_meta/status-marker-index]] L48: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1127: - DONE 0.5.45 evita que falha de heartbeat interrompa o scanner standalone.
-- [[docs/_meta/status-marker-index]] L765: - [[docs/_meta/status-marker-index]] L407: - [[docs/_meta/status-marker-index]] L49: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1128: - DONE 0.5.45 preserva feedback visivel e gateway obrigatorio para run-command/local_capability
-- [[docs/_meta/status-marker-index]] L766: - [[docs/_meta/status-marker-index]] L408: - [[docs/_meta/status-marker-index]] L50: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1133: - Marco publicado: v0.5.46-disable-legacy-scanner-inline-heartbeat
-- [[docs/_meta/status-marker-index]] L767: - [[docs/_meta/status-marker-index]] L409: - [[docs/_meta/status-marker-index]] L51: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1135: ## Disable legacy scanner and inline heartbeat guard
-- [[docs/_meta/status-marker-index]] L768: - [[docs/_meta/status-marker-index]] L410: - [[docs/_meta/status-marker-index]] L52: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1136: - DONE 0.5.46 remove chamada fora de escopo ao aiBridgeSafeCallSendChatHeartbeat.
-- [[docs/_meta/status-marker-index]] L769: - [[docs/_meta/status-marker-index]] L411: - [[docs/_meta/status-marker-index]] L53: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1137: - DONE 0.5.46 desativa scanner legado global que chamava extract(t).forEach(send).
-- [[docs/_meta/status-marker-index]] L770: - [[docs/_meta/status-marker-index]] L412: - [[docs/_meta/status-marker-index]] L54: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1138: - DONE 0.5.46 evita erro sendTextToChat is not defined vindo do scanner legado.
-- [[docs/_meta/status-marker-index]] L771: - [[docs/_meta/status-marker-index]] L413: - [[docs/_meta/status-marker-index]] L55: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1139: - DONE 0.5.46 preserva scanner standalone com feedback visivel.
-- [[docs/_meta/status-marker-index]] L772: - [[docs/_meta/status-marker-index]] L414: - [[docs/_meta/status-marker-index]] L56: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1147: - DONE 0.5.47 permite limpar composer do destino quando ele ja contem exatamente o texto solici
-- [[docs/_meta/status-marker-index]] L773: - [[docs/_meta/status-marker-index]] L415: - [[docs/_meta/status-marker-index]] L57: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1148: - DONE 0.5.47 preserva trava contra sobrescrever texto manual diferente.
-- [[docs/_meta/status-marker-index]] L774: - [[docs/_meta/status-marker-index]] L416: - [[docs/_meta/status-marker-index]] L58: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1149: - DONE 0.5.47 melhora feedback de composer_not_empty_before_inject.
-- [[docs/_meta/status-marker-index]] L775: - [[docs/_meta/status-marker-index]] L417: - [[docs/_meta/status-marker-index]] L59: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1150: - DONE 0.5.47 mantem gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L776: - [[docs/_meta/status-marker-index]] L418: - [[docs/_meta/status-marker-index]] L60: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1158: - DONE 0.5.48 adiciona aiBridgeRobustSetText para contenteditable/textarea/input.
-- [[docs/_meta/status-marker-index]] L777: - [[docs/_meta/status-marker-index]] L419: - [[docs/_meta/status-marker-index]] L61: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1159: - DONE 0.5.48 corrige falha composer_empty_after_inject na rota direta.
-- [[docs/_meta/status-marker-index]] L778: - [[docs/_meta/status-marker-index]] L420: - [[docs/_meta/status-marker-index]] L62: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1160: - DONE 0.5.48 preserva scanner standalone com feedback visivel.
-- [[docs/_meta/status-marker-index]] L779: - [[docs/_meta/status-marker-index]] L421: - [[docs/_meta/status-marker-index]] L63: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1161: - DONE 0.5.48 mantem gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L780: - [[docs/_meta/status-marker-index]] L422: - [[docs/_meta/status-marker-index]] L64: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1169: - DONE 0.5.49 prioriza #prompt-textarea.ProseMirror como composer real.
-- [[docs/_meta/status-marker-index]] L781: - [[docs/_meta/status-marker-index]] L423: - [[docs/_meta/status-marker-index]] L65: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1170: - DONE 0.5.49 ignora inputs de upload/camera.
-- [[docs/_meta/status-marker-index]] L782: - [[docs/_meta/status-marker-index]] L424: - [[docs/_meta/status-marker-index]] L66: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1171: - DONE 0.5.49 adiciona diagnostico do composer escolhido.
-- [[docs/_meta/status-marker-index]] L783: - [[docs/_meta/status-marker-index]] L425: - [[docs/_meta/status-marker-index]] L67: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1172: - DONE 0.5.49 preserva scanner standalone e gateway obrigatorio para run-command/local_capabili
-- [[docs/_meta/status-marker-index]] L784: - [[docs/_meta/status-marker-index]] L426: - [[docs/_meta/status-marker-index]] L68: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1180: - DONE 0.5.50 corrige smoke falho do patch de composer.
-- [[docs/_meta/status-marker-index]] L785: - [[docs/_meta/status-marker-index]] L427: - [[docs/_meta/status-marker-index]] L69: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1181: - DONE 0.5.50 preserva priorizacao de #prompt-textarea.ProseMirror.
-- [[docs/_meta/status-marker-index]] L786: - [[docs/_meta/status-marker-index]] L428: - [[docs/_meta/status-marker-index]] L70: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1182: - DONE 0.5.50 adiciona composer descriptor flexivel.
-- [[docs/_meta/status-marker-index]] L787: - [[docs/_meta/status-marker-index]] L429: - [[docs/_meta/status-marker-index]] L71: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1183: - DONE 0.5.50 mantem gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L788: - [[docs/_meta/status-marker-index]] L430: - [[docs/_meta/status-marker-index]] L72: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1191: - DONE 0.5.51 corrige status visivel do scanner standalone no chat origem.
-- [[docs/_meta/status-marker-index]] L789: - [[docs/_meta/status-marker-index]] L431: - [[docs/_meta/status-marker-index]] L73: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1192: - DONE 0.5.51 remove dependencia de helper de composer fora do IIFE standalone.
-- [[docs/_meta/status-marker-index]] L790: - [[docs/_meta/status-marker-index]] L432: - [[docs/_meta/status-marker-index]] L74: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1193: - DONE 0.5.51 preserva entrega direta inter-chat ja validada.
-- [[docs/_meta/status-marker-index]] L791: - [[docs/_meta/status-marker-index]] L433: - [[docs/_meta/status-marker-index]] L75: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1194: - DONE 0.5.51 mantem gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L792: - [[docs/_meta/status-marker-index]] L434: - [[docs/_meta/status-marker-index]] L76: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1202: - DONE 0.5.52 corrige `LOCAL_STATUS_PREFIXES is not defined` no Gemini envelope observer.
-- [[docs/_meta/status-marker-index]] L793: - [[docs/_meta/status-marker-index]] L435: - [[docs/_meta/status-marker-index]] L77: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1203: - DONE 0.5.52 preserva rota direta inter-chat sem gateway/DB.
-- [[docs/_meta/status-marker-index]] L794: - [[docs/_meta/status-marker-index]] L436: - [[docs/_meta/status-marker-index]] L78: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1204: - DONE 0.5.52 mantem gateway obrigatorio para run-command/local_capability.
-- [[docs/_meta/status-marker-index]] L795: - [[docs/_meta/status-marker-index]] L437: - [[docs/_meta/status-marker-index]] L79: - [[docs/CHATGPT_OUTBOUND_ENVELOPE_CAPTURE_0541]] L22: - Em caso de erro, tenta postar `[AI_LOCAL_ERRO]` no próprio chat.
-- [[docs/_meta/status-marker-index]] L796: - [[docs/_meta/status-marker-index]] L438: - [[docs/_meta/status-marker-index]] L80: - [[docs/CHATGPT_STANDALONE_SCANNER_NODE_SCOPE_REPAIR_0557]] L7: Corrigir erro no console do ChatGPT origem:
-- [[docs/_meta/status-marker-index]] L797: - [[docs/_meta/status-marker-index]] L439: - [[docs/_meta/status-marker-index]] L81: - [[docs/COMMAND_STATUS_PROBE]] L12: - do not treat queued local status messages as proof that the original run-command is still pendin
-- [[docs/_meta/status-marker-index]] L798: - [[docs/_meta/status-marker-index]] L440: - [[docs/_meta/status-marker-index]] L82: - [[docs/CONTENT_SCRIPT_HEARTBEAT_GUARD_0545]] L11: Esse erro pode interromper o restante do content script e impedir a instalação do s
-- [[docs/_meta/status-marker-index]] L799: - [[docs/_meta/status-marker-index]] L441: - [[docs/_meta/status-marker-index]] L83: - [[docs/decisions/ADR-0002-extension-internal-router]] L32: - Reduz risco de quebrar gateway ao mexer em interchat.
-- [[docs/_meta/status-marker-index]] L800: - [[docs/_meta/status-marker-index]] L442: - [[docs/_meta/status-marker-index]] L84: - [[docs/DEEPSEEK_INLINE_RECEIPT_SYNTAX_REPAIR_0556]] L7: Corrigir a 0.5.55, que foi commitada com erro de sintaxe JavaScript apesar do
-- [[docs/_meta/status-marker-index]] L801: - [[docs/_meta/status-marker-index]] L443: - [[docs/_meta/status-marker-index]] L85: - [[docs/DEEPSEEK_OUTBOUND_ENVELOPE_CAPTURE_0553]] L15: - A aba DeepSeek mostra aviso visual simples de enviado ou erro.
-- [[docs/_meta/status-marker-index]] L802: - [[docs/_meta/status-marker-index]] L444: - [[docs/_meta/status-marker-index]] L86: - [[docs/DEEPSEEK_PERSISTENT_DELIVERY_RECEIPT_0554]] L22: - erro, se houver
-- [[docs/_meta/status-marker-index]] L803: - [[docs/_meta/status-marker-index]] L445: - [[docs/_meta/status-marker-index]] L87: - [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] L1: # AI Bridge Local 0.5.46 - Disable legacy scanner and inline heartbeat guar
-- [[docs/_meta/status-marker-index]] L804: - [[docs/_meta/status-marker-index]] L446: - [[docs/_meta/status-marker-index]] L88: - [[docs/history/legacy-map]] L6: - legacy
-- [[docs/_meta/status-marker-index]] L805: - [[docs/_meta/status-marker-index]] L447: - [[docs/_meta/status-marker-index]] L89: - [[docs/history/legacy-map]] L9: # Legacy map
-- [[docs/_meta/status-marker-index]] L806: - [[docs/_meta/status-marker-index]] L448: - [[docs/_meta/status-marker-index]] L90: - [[docs/history/legacy-map]] L17: - mover para legacy
-- [[docs/_meta/status-marker-index]] L807: - [[docs/_meta/status-marker-index]] L449: - [[docs/_meta/status-marker-index]] L91: - [[docs/how-to/recover-from-envelope-error]] L9: # Recover from envelope error
-- [[docs/_meta/status-marker-index]] L808: - [[docs/_meta/status-marker-index]] L450: - [[docs/_meta/status-marker-index]] L92: - [[docs/index]] L35: - legacy: documentos antigos preservados.
-- [[docs/_meta/status-marker-index]] L809: - [[docs/_meta/status-marker-index]] L451: - [[docs/_meta/status-marker-index]] L93: - [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] L1: # AI Bridge Local 0.4.29 - parse error feedback
-- [[docs/_meta/status-marker-index]] L810: - [[docs/_meta/status-marker-index]] L452: - [[docs/_meta/status-marker-index]] L94: - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] L28: GET /bridge/pending-sources?target_chat_id=gateway-brain-supervi
-- [[docs/_meta/status-marker-index]] L811: - [[docs/_meta/status-marker-index]] L453: - [[docs/_meta/status-marker-index]] L95: - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] L56: O `poll_once()` agora consulta `/bridge/pending-sources` e perco
-- [[docs/_meta/status-marker-index]] L812: - [[docs/_meta/status-marker-index]] L454: - [[docs/_meta/status-marker-index]] L96: - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] L79: O endpoint novo retornou ambas as origens com fila pendente. O w
-- [[docs/_meta/status-marker-index]] L813: - [[docs/_meta/status-marker-index]] L455: - [[docs/_meta/status-marker-index]] L97: - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] L84: O smoke confirmou a arquitetura de filas virtuais por origem. A 
-- [[docs/_meta/status-marker-index]] L814: - [[docs/_meta/status-marker-index]] L456: - [[docs/_meta/status-marker-index]] L98: - [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] L107: Depois de alterar `gateway_local.py`, e necessario reiniciar o 
-- [[docs/_meta/status-marker-index]] L815: - [[docs/_meta/status-marker-index]] L457: - [[docs/_meta/status-marker-index]] L99: - [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] L59: Correcao: brain_worker.py v0.1.2 rejeita comando ausente com erro claro e ac
-- [[docs/_meta/status-marker-index]] L816: - [[docs/_meta/status-marker-index]] L458: - [[docs/_meta/status-marker-index]] L100: - [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] L67: ## Observacao pendente
-- [[docs/_meta/status-marker-index]] L817: - [[docs/_meta/status-marker-index]] L459: - [[docs/_meta/status-marker-index]] L101: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L49: - reportar erro de parse, erro de entrega e status operacional.
-- [[docs/_meta/status-marker-index]] L818: - [[docs/_meta/status-marker-index]] L460: - [[docs/_meta/status-marker-index]] L102: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L186: Todo envelope real deve ter:
-- [[docs/_meta/status-marker-index]] L819: - [[docs/_meta/status-marker-index]] L461: - [[docs/_meta/status-marker-index]] L103: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L510: 8. Se houver erro, não insistir com múltiplos envios; coletar di
-- [[docs/_meta/status-marker-index]] L820: - [[docs/_meta/status-marker-index]] L462: - [[docs/_meta/status-marker-index]] L104: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] L32: ### Feedback de erro e auditoria
-- [[docs/_meta/status-marker-index]] L821: - [[docs/_meta/status-marker-index]] L463: - [[docs/_meta/status-marker-index]] L105: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L23: - classify command risk
-- [[docs/_meta/status-marker-index]] L822: - [[docs/_meta/status-marker-index]] L464: - [[docs/_meta/status-marker-index]] L106: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L48: ## Risk classes
-- [[docs/_meta/status-marker-index]] L823: - [[docs/_meta/status-marker-index]] L465: - [[docs/_meta/status-marker-index]] L107: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L81: ### v0.4.42-command-risk-policy
-- [[docs/_meta/status-marker-index]] L824: - [[docs/_meta/status-marker-index]] L466: - [[docs/_meta/status-marker-index]] L108: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L83: - add risk classes
-- [[docs/_meta/status-marker-index]] L825: - [[docs/_meta/status-marker-index]] L467: - [[docs/_meta/status-marker-index]] L109: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] L5: No legacy delivery kind in new commands.
-- [[docs/_meta/status-marker-index]] L826: - [[docs/_meta/status-marker-index]] L468: - [[docs/_meta/status-marker-index]] L110: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] L10: - Risco: read_only, docs_only, low_risk_code, mutating_runtime, data_cleanu
-- [[docs/_meta/status-marker-index]] L827: - [[docs/_meta/status-marker-index]] L469: - [[docs/_meta/status-marker-index]] L111: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] L21: A evolucao autonoma fica limitada por risco, aprovacao, auditabilidade e r
-- [[docs/_meta/status-marker-index]] L828: - [[docs/_meta/status-marker-index]] L470: - [[docs/_meta/status-marker-index]] L112: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] L9: 3. Classificar risco com governance dry-run.
-- [[docs/_meta/status-marker-index]] L829: - [[docs/_meta/status-marker-index]] L471: - [[docs/_meta/status-marker-index]] L113: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] L21: - Sem comandos grandes repetidos depois de parse error.
-- [[docs/_meta/status-marker-index]] L830: - [[docs/_meta/status-marker-index]] L472: - [[docs/_meta/status-marker-index]] L114: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L8: - triaged: risco e escopo classificados.
-- [[docs/_meta/status-marker-index]] L831: - [[docs/_meta/status-marker-index]] L473: - [[docs/_meta/status-marker-index]] L115: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L14: - blocked: item parado por risco, falha ou falta de aprovacao.
-- [[docs/_meta/status-marker-index]] L832: - [[docs/_meta/status-marker-index]] L474: - [[docs/_meta/status-marker-index]] L116: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L19: - Cada item deve declarar objetivo, risco, arquivos tocados, checks e rollback.
-- [[docs/_meta/status-marker-index]] L833: - [[docs/_meta/status-marker-index]] L475: - [[docs/_meta/status-marker-index]] L117: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] L3: Objetivo: adicionar um classificador local, puro e readonly para transformar textos de
-- [[docs/_meta/status-marker-index]] L834: - [[docs/_meta/status-marker-index]] L476: - [[docs/_meta/status-marker-index]] L118: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] L9: - Mostra alvo, command_id, tamanho de payload e risco.
-- [[docs/_meta/status-marker-index]] L835: - [[docs/_meta/status-marker-index]] L477: - [[docs/_meta/status-marker-index]] L119: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] L14: - Todo novo micro deve, quando necessario, tornar o smoke do micro anterio
-- [[docs/_meta/status-marker-index]] L836: - [[docs/_meta/status-marker-index]] L478: - [[docs/_meta/status-marker-index]] L120: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] L35: Os caminhos postAck e postDeliveryStatus continuam ativos nos fluxos acke
-- [[docs/_meta/status-marker-index]] L837: - [[docs/_meta/status-marker-index]] L479: - [[docs/_meta/status-marker-index]] L121: - [[docs/legacy/RELEASES]] L22: - Operational effect: reduces duplicate processing risk from concurrent workers.
-- [[docs/_meta/status-marker-index]] L838: - [[docs/_meta/status-marker-index]] L480: - [[docs/_meta/status-marker-index]] L122: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] L10: - Risco: read_only, docs_only, low_risk_code, mutating_runtime, data
-- [[docs/_meta/status-marker-index]] L839: - [[docs/_meta/status-marker-index]] L481: - [[docs/_meta/status-marker-index]] L123: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] L21: A evolucao autonoma fica limitada por risco, aprovacao, auditabilid
-- [[docs/_meta/status-marker-index]] L840: - [[docs/_meta/status-marker-index]] L482: - [[docs/_meta/status-marker-index]] L124: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] L9: 3. Classificar risco com governance dry-run.
-- [[docs/_meta/status-marker-index]] L841: - [[docs/_meta/status-marker-index]] L483: - [[docs/_meta/status-marker-index]] L125: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] L21: - Sem comandos grandes repetidos depois de parse error.
-- [[docs/_meta/status-marker-index]] L842: - [[docs/_meta/status-marker-index]] L484: - [[docs/_meta/status-marker-index]] L126: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L8: - triaged: risco e escopo classificados.
-- [[docs/_meta/status-marker-index]] L843: - [[docs/_meta/status-marker-index]] L485: - [[docs/_meta/status-marker-index]] L127: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L14: - blocked: item parado por risco, falha ou falta de aprovacao.
-- [[docs/_meta/status-marker-index]] L844: - [[docs/_meta/status-marker-index]] L486: - [[docs/_meta/status-marker-index]] L128: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L19: - Cada item deve declarar objetivo, risco, arquivos tocados, checks e ro
-- [[docs/_meta/status-marker-index]] L845: - [[docs/_meta/status-marker-index]] L487: - [[docs/_meta/status-marker-index]] L129: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] L3: Objetivo: adicionar um classificador local, puro e readonly para transformar te
-- [[docs/_meta/status-marker-index]] L846: - [[docs/_meta/status-marker-index]] L488: - [[docs/_meta/status-marker-index]] L130: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] L9: - Mostra alvo, command_id, tamanho de payload e risco.
-- [[docs/_meta/status-marker-index]] L847: - [[docs/_meta/status-marker-index]] L489: - [[docs/_meta/status-marker-index]] L131: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] L14: - Todo novo micro deve, quando necessario, tornar o smoke do micro 
-- [[docs/_meta/status-marker-index]] L848: - [[docs/_meta/status-marker-index]] L490: - [[docs/_meta/status-marker-index]] L132: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] L35: Os caminhos postAck e postDeliveryStatus continuam ativos nos flux
-- [[docs/_meta/status-marker-index]] L849: - [[docs/_meta/status-marker-index]] L491: - [[docs/_meta/status-marker-index]] L133: - [[docs/legacy/root_1_RELEASES]] L22: - Operational effect: reduces duplicate processing risk from concurrent workers.
-- [[docs/_meta/status-marker-index]] L850: - [[docs/_meta/status-marker-index]] L492: - [[docs/_meta/status-marker-index]] L134: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] L23: Todo script completo de release deve usar checagem explicita do codigo de retor
-- [[docs/_meta/status-marker-index]] L851: - [[docs/_meta/status-marker-index]] L493: - [[docs/_meta/status-marker-index]] L135: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] L19: 2. Classificar risco da mudanca.
-- [[docs/_meta/status-marker-index]] L852: - [[docs/_meta/status-marker-index]] L494: - [[docs/_meta/status-marker-index]] L136: - [[docs/legacy/root_1_SMOKE_ALL_0520]] L14: Ele reduz erro operacional ao substituir listas longas de comandos por um ponto unico de 
-- [[docs/_meta/status-marker-index]] L853: - [[docs/_meta/status-marker-index]] L495: - [[docs/_meta/status-marker-index]] L137: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] L7: The gateway continues to store pending actions in queue_local.db.
-- [[docs/_meta/status-marker-index]] L854: - [[docs/_meta/status-marker-index]] L496: - [[docs/_meta/status-marker-index]] L138: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L49: - reportar erro de parse, erro de entrega e status operacion
-- [[docs/_meta/status-marker-index]] L855: - [[docs/_meta/status-marker-index]] L497: - [[docs/_meta/status-marker-index]] L139: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L186: Todo envelope real deve ter:
-- [[docs/_meta/status-marker-index]] L856: - [[docs/_meta/status-marker-index]] L498: - [[docs/_meta/status-marker-index]] L140: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L510: 8. Se houver erro, não insistir com múltiplos envios; colet
-- [[docs/_meta/status-marker-index]] L857: - [[docs/_meta/status-marker-index]] L499: - [[docs/_meta/status-marker-index]] L141: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L49: - reportar erro de parse, erro de entrega e status o
-- [[docs/_meta/status-marker-index]] L858: - [[docs/_meta/status-marker-index]] L500: - [[docs/_meta/status-marker-index]] L142: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L186: Todo envelope real deve ter:
-- [[docs/_meta/status-marker-index]] L859: - [[docs/_meta/status-marker-index]] L501: - [[docs/_meta/status-marker-index]] L143: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] L510: 8. Se houver erro, não insistir com múltiplos envio
-- [[docs/_meta/status-marker-index]] L860: - [[docs/_meta/status-marker-index]] L502: - [[docs/_meta/status-marker-index]] L144: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] L32: ### Feedback de erro e 
-- [[docs/_meta/status-marker-index]] L861: - [[docs/_meta/status-marker-index]] L503: - [[docs/_meta/status-marker-index]] L145: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L23: - classify command risk
-- [[docs/_meta/status-marker-index]] L862: - [[docs/_meta/status-marker-index]] L504: - [[docs/_meta/status-marker-index]] L146: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L48: ## Risk classes
-- [[docs/_meta/status-marker-index]] L863: - [[docs/_meta/status-marker-index]] L505: - [[docs/_meta/status-marker-index]] L147: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L81: ### v0.4.42-command-risk-policy
-- [[docs/_meta/status-marker-index]] L864: - [[docs/_meta/status-marker-index]] L506: - [[docs/_meta/status-marker-index]] L148: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L83: - add risk classes
-- [[docs/_meta/status-marker-index]] L865: - [[docs/_meta/status-marker-index]] L507: - [[docs/_meta/status-marker-index]] L149: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] L5: No legacy delivery kind in new commands.
-- [[docs/_meta/status-marker-index]] L866: - [[docs/_meta/status-marker-index]] L508: - [[docs/_meta/status-marker-index]] L150: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] L32: ### Feedback de erro e auditori
-- [[docs/_meta/status-marker-index]] L867: - [[docs/_meta/status-marker-index]] L509: - [[docs/_meta/status-marker-index]] L151: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L23: - classify command risk
-- [[docs/_meta/status-marker-index]] L868: - [[docs/_meta/status-marker-index]] L510: - [[docs/_meta/status-marker-index]] L152: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L48: ## Risk classes
-- [[docs/_meta/status-marker-index]] L869: - [[docs/_meta/status-marker-index]] L511: - [[docs/_meta/status-marker-index]] L153: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L81: ### v0.4.42-command-risk-policy
-- [[docs/_meta/status-marker-index]] L870: - [[docs/_meta/status-marker-index]] L512: - [[docs/_meta/status-marker-index]] L154: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] L83: - add risk classes
-- [[docs/_meta/status-marker-index]] L871: - [[docs/_meta/status-marker-index]] L513: - [[docs/_meta/status-marker-index]] L155: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] L5: No legacy delivery kind in new commands.
-- [[docs/_meta/status-marker-index]] L872: - [[docs/_meta/status-marker-index]] L514: - [[docs/_meta/status-marker-index]] L156: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] L10: - Risco: read_only, docs_only, low_risk_code, mutating_runtime, data_c
-- [[docs/_meta/status-marker-index]] L873: - [[docs/_meta/status-marker-index]] L515: - [[docs/_meta/status-marker-index]] L157: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] L21: A evolucao autonoma fica limitada por risco, aprovacao, auditabilidad
-- [[docs/_meta/status-marker-index]] L874: - [[docs/_meta/status-marker-index]] L516: - [[docs/_meta/status-marker-index]] L158: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] L9: 3. Classificar risco com governance dry-run.
-- [[docs/_meta/status-marker-index]] L875: - [[docs/_meta/status-marker-index]] L517: - [[docs/_meta/status-marker-index]] L159: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] L21: - Sem comandos grandes repetidos depois de parse error.
-- [[docs/_meta/status-marker-index]] L876: - [[docs/_meta/status-marker-index]] L518: - [[docs/_meta/status-marker-index]] L160: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L8: - triaged: risco e escopo classificados.
-- [[docs/_meta/status-marker-index]] L877: - [[docs/_meta/status-marker-index]] L519: - [[docs/_meta/status-marker-index]] L161: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L14: - blocked: item parado por risco, falha ou falta de aprovacao.
-- [[docs/_meta/status-marker-index]] L878: - [[docs/_meta/status-marker-index]] L520: - [[docs/_meta/status-marker-index]] L162: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] L19: - Cada item deve declarar objetivo, risco, arquivos tocados, checks e roll
-- [[docs/_meta/status-marker-index]] L879: - [[docs/_meta/status-marker-index]] L521: - [[docs/_meta/status-marker-index]] L163: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] L3: Objetivo: adicionar um classificador local, puro e readonly para transformar text
-- [[docs/_meta/status-marker-index]] L880: - [[docs/_meta/status-marker-index]] L522: - [[docs/_meta/status-marker-index]] L164: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] L9: - Mostra alvo, command_id, tamanho de payload e risco.
-- [[docs/_meta/status-marker-index]] L881: - [[docs/_meta/status-marker-index]] L523: - [[docs/_meta/status-marker-index]] L165: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] L14: - Todo novo micro deve, quando necessario, tornar o smoke do micro an
-- [[docs/_meta/status-marker-index]] L882: - [[docs/_meta/status-marker-index]] L524: - [[docs/_meta/status-marker-index]] L166: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] L35: Os caminhos postAck e postDeliveryStatus continuam ativos nos fluxos
-- [[docs/_meta/status-marker-index]] L883: - [[docs/_meta/status-marker-index]] L525: - [[docs/_meta/status-marker-index]] L167: - [[docs/legacy/root_RELEASES]] L22: - Operational effect: reduces duplicate processing risk from concurrent workers.
-- [[docs/_meta/status-marker-index]] L884: - [[docs/_meta/status-marker-index]] L526: - [[docs/_meta/status-marker-index]] L168: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] L23: Todo script completo de release deve usar checagem explicita do codigo de retorno
-- [[docs/_meta/status-marker-index]] L885: - [[docs/_meta/status-marker-index]] L527: - [[docs/_meta/status-marker-index]] L169: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] L19: 2. Classificar risco da mudanca.
-- [[docs/_meta/status-marker-index]] L886: - [[docs/_meta/status-marker-index]] L528: - [[docs/_meta/status-marker-index]] L170: - [[docs/legacy/root_SMOKE_ALL_0520]] L14: Ele reduz erro operacional ao substituir listas longas de comandos por um ponto unico de va
-- [[docs/_meta/status-marker-index]] L887: - [[docs/_meta/status-marker-index]] L529: - [[docs/_meta/status-marker-index]] L171: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] L7: The gateway continues to store pending actions in queue_local.db.
-- [[docs/_meta/status-marker-index]] L888: - [[docs/_meta/status-marker-index]] L530: - [[docs/_meta/status-marker-index]] L172: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] L23: Todo script completo de release deve usar checagem explicita do codigo de retorno.
-- [[docs/_meta/status-marker-index]] L889: - [[docs/_meta/status-marker-index]] L531: - [[docs/_meta/status-marker-index]] L173: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] L19: 2. Classificar risco da mudanca.
-- [[docs/_meta/status-marker-index]] L890: - [[docs/_meta/status-marker-index]] L532: - [[docs/_meta/status-marker-index]] L174: - [[docs/legacy/SMOKE_ALL_0520]] L14: Ele reduz erro operacional ao substituir listas longas de comandos por um ponto unico de validac
-- [[docs/_meta/status-marker-index]] L891: - [[docs/_meta/status-marker-index]] L533: - [[docs/_meta/status-marker-index]] L175: - [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] L45: - Tabela de chats ativos com chat_id, source_chat_id, ultima atividade, fila pendent
-- [[docs/_meta/status-marker-index]] L892: - [[docs/_meta/status-marker-index]] L534: - [[docs/_meta/status-marker-index]] L176: - [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] L48: - Diagnostico claro para destino nao registrado, tabId antigo, composer nao encontra
-- [[docs/_meta/status-marker-index]] L893: - [[docs/_meta/status-marker-index]] L535: - [[docs/_meta/status-marker-index]] L177: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]] L7: The gateway continues to store pending actions in queue_local.db.
-- [[docs/_meta/status-marker-index]] L894: - [[docs/_meta/status-marker-index]] L536: - [[docs/_meta/status-marker-index]] L178: - [[docs/reference/error-taxonomy]] L10: # Error taxonomy
-- [[docs/_meta/status-marker-index]] L895: - [[docs/_meta/status-marker-index]] L537: - [[docs/_meta/status-marker-index]] L179: - [[docs/templates/ADR-template]] L12: Proposed | Accepted | Deprecated | Superseded
-- [[docs/_meta/status-marker-index]] L896: - [[docs/_meta/status-marker-index]] L538: - [[docs/_meta/status-marker-index]] L180: - [[reports/AI_BRIDGE_LOCAL_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE_2026-06-14]] L8: - Reforca escopo, risco, dry-run, teste, rollback e a
-- [[docs/_meta/status-marker-index]] L897: - [[docs/_meta/status-marker-index]] L539: - [[docs/_meta/status-marker-index]] L181: - [[reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_GATE_2026-06-14]] L8: - --fail-on-destructive bloqueia destructive apenas quando 
-- [[docs/_meta/status-marker-index]] L898: - [[docs/_meta/status-marker-index]] L540: - [[docs/_meta/status-marker-index]] L182: - [[reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_ADVISORY_GATE_2026-06-14]] L9: - --fail-on-mutating bloqueia mutating e destructive apenas
-- [[docs/_meta/status-marker-index]] L899: - [[docs/_meta/status-marker-index]] L541: - [[docs/_meta/status-marker-index]] L183: - [[reports/AI_BRIDGE_LOCAL_COMMAND_BUILDER_GOVERNANCE_2026-06-14]] L17: Usar o retorno de governance_preflight_for_command na montage
-- [[docs/_meta/status-marker-index]] L900: - [[docs/_meta/status-marker-index]] L542: - [[docs/_meta/status-marker-index]] L184: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L56: 3aec2b8 docs: consolidate guide and move docs to legacy
-- [[docs/_meta/status-marker-index]] L901: - [[docs/_meta/status-marker-index]] L543: - [[docs/_meta/status-marker-index]] L185: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L217: "docs\legacy\*.md",
-- [[docs/_meta/status-marker-index]] L902: - [[docs/_meta/status-marker-index]] L544: - [[docs/_meta/status-marker-index]] L186: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L235: "docs\legacy\*.md",
-- [[docs/_meta/status-marker-index]] L903: - [[docs/_meta/status-marker-index]] L545: - [[docs/_meta/status-marker-index]] L187: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L351: 3aec2b8 docs: consolidate guide and move docs to legacy
-- [[docs/_meta/status-marker-index]] L904: - [[docs/_meta/status-marker-index]] L546: - [[docs/_meta/status-marker-index]] L188: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L402: v0.4.80-governance-risk-report
-- [[docs/_meta/status-marker-index]] L905: - [[docs/_meta/status-marker-index]] L547: - [[docs/_meta/status-marker-index]] L189: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L410: v0.4.72-governance-risk-classifier
-- [[docs/_meta/status-marker-index]] L906: - [[docs/_meta/status-marker-index]] L548: - [[docs/_meta/status-marker-index]] L190: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L427: v0.4.55-roadmap-done-alignment
-- [[docs/_meta/status-marker-index]] L907: - [[docs/_meta/status-marker-index]] L549: - [[docs/_meta/status-marker-index]] L191: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L456: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L908: - [[docs/_meta/status-marker-index]] L550: - [[docs/_meta/status-marker-index]] L192: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L457: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L909: - [[docs/_meta/status-marker-index]] L551: - [[docs/_meta/status-marker-index]] L193: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L458: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L910: - [[docs/_meta/status-marker-index]] L552: - [[docs/_meta/status-marker-index]] L194: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L459: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L911: - [[docs/_meta/status-marker-index]] L553: - [[docs/_meta/status-marker-index]] L195: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L460: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L912: - [[docs/_meta/status-marker-index]] L554: - [[docs/_meta/status-marker-index]] L196: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L461: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L913: - [[docs/_meta/status-marker-index]] L555: - [[docs/_meta/status-marker-index]] L197: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L462: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L914: - [[docs/_meta/status-marker-index]] L556: - [[docs/_meta/status-marker-index]] L198: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L463: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L915: - [[docs/_meta/status-marker-index]] L557: - [[docs/_meta/status-marker-index]] L199: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L464: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L916: - [[docs/_meta/status-marker-index]] L558: - [[docs/_meta/status-marker-index]] L200: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L465: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L917: - [[docs/_meta/status-marker-index]] L559: - [[docs/_meta/status-marker-index]] L201: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L466: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L918: - [[docs/_meta/status-marker-index]] L560: - [[docs/_meta/status-marker-index]] L202: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L467: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L919: - [[docs/_meta/status-marker-index]] L561: - [[docs/_meta/status-marker-index]] L203: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L468: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L920: - [[docs/_meta/status-marker-index]] L562: - [[docs/_meta/status-marker-index]] L204: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L469: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L921: - [[docs/_meta/status-marker-index]] L563: - [[docs/_meta/status-marker-index]] L205: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L470: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L922: - [[docs/_meta/status-marker-index]] L564: - [[docs/_meta/status-marker-index]] L206: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L471: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L923: - [[docs/_meta/status-marker-index]] L565: - [[docs/_meta/status-marker-index]] L207: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L472: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_04
-- [[docs/_meta/status-marker-index]] L924: - [[docs/_meta/status-marker-index]] L566: - [[docs/_meta/status-marker-index]] L208: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L473: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_BA
-- [[docs/_meta/status-marker-index]] L925: - [[docs/_meta/status-marker-index]] L567: - [[docs/_meta/status-marker-index]] L209: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L474: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_CO
-- [[docs/_meta/status-marker-index]] L926: - [[docs/_meta/status-marker-index]] L568: - [[docs/_meta/status-marker-index]] L210: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L475: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_FI
-- [[docs/_meta/status-marker-index]] L927: - [[docs/_meta/status-marker-index]] L569: - [[docs/_meta/status-marker-index]] L211: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L476: D:\dev\autocode\ai-bridge-local\docs\legacy\AI_BRIDGE_LOCAL_SU
-- [[docs/_meta/status-marker-index]] L928: - [[docs/_meta/status-marker-index]] L570: - [[docs/_meta/status-marker-index]] L212: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L477: D:\dev\autocode\ai-bridge-local\docs\legacy\AUTONOMOUS_CHANGE_
-- [[docs/_meta/status-marker-index]] L929: - [[docs/_meta/status-marker-index]] L571: - [[docs/_meta/status-marker-index]] L213: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L478: D:\dev\autocode\ai-bridge-local\docs\legacy\AUTONOMOUS_EVOLUTI
-- [[docs/_meta/status-marker-index]] L930: - [[docs/_meta/status-marker-index]] L572: - [[docs/_meta/status-marker-index]] L214: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L479: D:\dev\autocode\ai-bridge-local\docs\legacy\AUTONOMOUS_EVOLUTI
-- [[docs/_meta/status-marker-index]] L931: - [[docs/_meta/status-marker-index]] L573: - [[docs/_meta/status-marker-index]] L215: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L480: D:\dev\autocode\ai-bridge-local\docs\legacy\AUTONOMOUS_EVOLUTI
-- [[docs/_meta/status-marker-index]] L932: - [[docs/_meta/status-marker-index]] L574: - [[docs/_meta/status-marker-index]] L216: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L481: D:\dev\autocode\ai-bridge-local\docs\legacy\AUTONOMOUS_EVOLUTI
-- [[docs/_meta/status-marker-index]] L933: - [[docs/_meta/status-marker-index]] L575: - [[docs/_meta/status-marker-index]] L217: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L482: D:\dev\autocode\ai-bridge-local\docs\legacy\COMMAND_ACCEPTED_P
-- [[docs/_meta/status-marker-index]] L934: - [[docs/_meta/status-marker-index]] L576: - [[docs/_meta/status-marker-index]] L218: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L483: D:\dev\autocode\ai-bridge-local\docs\legacy\COMPOSER_SUBMIT_GU
-- [[docs/_meta/status-marker-index]] L935: - [[docs/_meta/status-marker-index]] L577: - [[docs/_meta/status-marker-index]] L219: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L484: D:\dev\autocode\ai-bridge-local\docs\legacy\CURRENT_STATUS.md
-- [[docs/_meta/status-marker-index]] L936: - [[docs/_meta/status-marker-index]] L578: - [[docs/_meta/status-marker-index]] L220: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L485: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_DIAGNOSTI
-- [[docs/_meta/status-marker-index]] L937: - [[docs/_meta/status-marker-index]] L579: - [[docs/_meta/status-marker-index]] L221: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L486: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_DIAGNOSTI
-- [[docs/_meta/status-marker-index]] L938: - [[docs/_meta/status-marker-index]] L580: - [[docs/_meta/status-marker-index]] L222: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L487: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_DIAGNOSTI
-- [[docs/_meta/status-marker-index]] L939: - [[docs/_meta/status-marker-index]] L581: - [[docs/_meta/status-marker-index]] L223: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L488: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_DIAGNOSTI
-- [[docs/_meta/status-marker-index]] L940: - [[docs/_meta/status-marker-index]] L582: - [[docs/_meta/status-marker-index]] L224: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L489: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_FAILURE_F
-- [[docs/_meta/status-marker-index]] L941: - [[docs/_meta/status-marker-index]] L583: - [[docs/_meta/status-marker-index]] L225: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L490: D:\dev\autocode\ai-bridge-local\docs\legacy\DELIVERY_PREFLIGHT
-- [[docs/_meta/status-marker-index]] L942: - [[docs/_meta/status-marker-index]] L584: - [[docs/_meta/status-marker-index]] L226: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L491: D:\dev\autocode\ai-bridge-local\docs\legacy\DIAGNOSTIC_READONL
-- [[docs/_meta/status-marker-index]] L943: - [[docs/_meta/status-marker-index]] L585: - [[docs/_meta/status-marker-index]] L227: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L492: D:\dev\autocode\ai-bridge-local\docs\legacy\DISABLE_WORKER_RUN
-- [[docs/_meta/status-marker-index]] L944: - [[docs/_meta/status-marker-index]] L586: - [[docs/_meta/status-marker-index]] L228: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L493: D:\dev\autocode\ai-bridge-local\docs\legacy\DRY_RUN_DELIVERY_P
-- [[docs/_meta/status-marker-index]] L945: - [[docs/_meta/status-marker-index]] L587: - [[docs/_meta/status-marker-index]] L229: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L494: D:\dev\autocode\ai-bridge-local\docs\legacy\FINAL_AUDIT_0531.m
-- [[docs/_meta/status-marker-index]] L946: - [[docs/_meta/status-marker-index]] L588: - [[docs/_meta/status-marker-index]] L230: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L495: D:\dev\autocode\ai-bridge-local\docs\legacy\FINAL_HANDOFF_0532
-- [[docs/_meta/status-marker-index]] L947: - [[docs/_meta/status-marker-index]] L589: - [[docs/_meta/status-marker-index]] L231: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L496: D:\dev\autocode\ai-bridge-local\docs\legacy\FINAL_RESULT_CONTI
-- [[docs/_meta/status-marker-index]] L948: - [[docs/_meta/status-marker-index]] L590: - [[docs/_meta/status-marker-index]] L232: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L497: D:\dev\autocode\ai-bridge-local\docs\legacy\FINAL_RESULT_FAILU
-- [[docs/_meta/status-marker-index]] L949: - [[docs/_meta/status-marker-index]] L591: - [[docs/_meta/status-marker-index]] L233: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L498: D:\dev\autocode\ai-bridge-local\docs\legacy\FINAL_STABILIZATIO
-- [[docs/_meta/status-marker-index]] L950: - [[docs/_meta/status-marker-index]] L592: - [[docs/_meta/status-marker-index]] L234: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L499: D:\dev\autocode\ai-bridge-local\docs\legacy\FIX_VERSION_SMOKES
-- [[docs/_meta/status-marker-index]] L951: - [[docs/_meta/status-marker-index]] L593: - [[docs/_meta/status-marker-index]] L235: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L500: D:\dev\autocode\ai-bridge-local\docs\legacy\FORWARD_COMPATIBLE
-- [[docs/_meta/status-marker-index]] L952: - [[docs/_meta/status-marker-index]] L594: - [[docs/_meta/status-marker-index]] L236: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L501: D:\dev\autocode\ai-bridge-local\docs\legacy\GATEWAY_FEEDBACK_D
-- [[docs/_meta/status-marker-index]] L953: - [[docs/_meta/status-marker-index]] L595: - [[docs/_meta/status-marker-index]] L237: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L502: D:\dev\autocode\ai-bridge-local\docs\legacy\IMMEDIATE_GATEWAY_
-- [[docs/_meta/status-marker-index]] L954: - [[docs/_meta/status-marker-index]] L596: - [[docs/_meta/status-marker-index]] L238: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L503: D:\dev\autocode\ai-bridge-local\docs\legacy\LATENCY_PARALLEL_P
-- [[docs/_meta/status-marker-index]] L955: - [[docs/_meta/status-marker-index]] L597: - [[docs/_meta/status-marker-index]] L239: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L504: D:\dev\autocode\ai-bridge-local\docs\legacy\LIVE_INTERCHAT_AUT
-- [[docs/_meta/status-marker-index]] L956: - [[docs/_meta/status-marker-index]] L598: - [[docs/_meta/status-marker-index]] L240: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L505: D:\dev\autocode\ai-bridge-local\docs\legacy\NO_SHELL_CLOSE_AUD
-- [[docs/_meta/status-marker-index]] L957: - [[docs/_meta/status-marker-index]] L599: - [[docs/_meta/status-marker-index]] L241: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L506: D:\dev\autocode\ai-bridge-local\docs\legacy\OPERATIONAL_REPORT
-- [[docs/_meta/status-marker-index]] L958: - [[docs/_meta/status-marker-index]] L600: - [[docs/_meta/status-marker-index]] L242: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L507: D:\dev\autocode\ai-bridge-local\docs\legacy\OPERATIONS_RUNBOOK
-- [[docs/_meta/status-marker-index]] L959: - [[docs/_meta/status-marker-index]] L601: - [[docs/_meta/status-marker-index]] L243: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L508: D:\dev\autocode\ai-bridge-local\docs\legacy\QUEUE_REPORTS_CLEA
-- [[docs/_meta/status-marker-index]] L960: - [[docs/_meta/status-marker-index]] L602: - [[docs/_meta/status-marker-index]] L244: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L509: D:\dev\autocode\ai-bridge-local\docs\legacy\QUEUE_TRIAGE_PLAYB
-- [[docs/_meta/status-marker-index]] L961: - [[docs/_meta/status-marker-index]] L603: - [[docs/_meta/status-marker-index]] L245: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L510: D:\dev\autocode\ai-bridge-local\docs\legacy\QUEUE_WORKER_HEALT
-- [[docs/_meta/status-marker-index]] L962: - [[docs/_meta/status-marker-index]] L604: - [[docs/_meta/status-marker-index]] L246: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L511: D:\dev\autocode\ai-bridge-local\docs\legacy\RELEASE_CHECKLIST_
-- [[docs/_meta/status-marker-index]] L963: - [[docs/_meta/status-marker-index]] L605: - [[docs/_meta/status-marker-index]] L247: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L512: D:\dev\autocode\ai-bridge-local\docs\legacy\RELEASE_RUNNER_SEL
-- [[docs/_meta/status-marker-index]] L964: - [[docs/_meta/status-marker-index]] L606: - [[docs/_meta/status-marker-index]] L248: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L513: D:\dev\autocode\ai-bridge-local\docs\legacy\RELEASE_SAFETY_CHE
-- [[docs/_meta/status-marker-index]] L965: - [[docs/_meta/status-marker-index]] L607: - [[docs/_meta/status-marker-index]] L249: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L514: D:\dev\autocode\ai-bridge-local\docs\legacy\RELEASES.md
-- [[docs/_meta/status-marker-index]] L966: - [[docs/_meta/status-marker-index]] L608: - [[docs/_meta/status-marker-index]] L250: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L515: D:\dev\autocode\ai-bridge-local\docs\legacy\REMOVE_ACCEPTED_RU
-- [[docs/_meta/status-marker-index]] L967: - [[docs/_meta/status-marker-index]] L609: - [[docs/_meta/status-marker-index]] L251: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L516: D:\dev\autocode\ai-bridge-local\docs\legacy\REMOVE_WORKER_RUNN
-- [[docs/_meta/status-marker-index]] L968: - [[docs/_meta/status-marker-index]] L610: - [[docs/_meta/status-marker-index]] L252: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L517: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AI_BRIDGE_L
-- [[docs/_meta/status-marker-index]] L969: - [[docs/_meta/status-marker-index]] L611: - [[docs/_meta/status-marker-index]] L253: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L518: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AUTONOMOUS_
-- [[docs/_meta/status-marker-index]] L970: - [[docs/_meta/status-marker-index]] L612: - [[docs/_meta/status-marker-index]] L254: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L519: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AUTONOMOUS_
-- [[docs/_meta/status-marker-index]] L971: - [[docs/_meta/status-marker-index]] L613: - [[docs/_meta/status-marker-index]] L255: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L520: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AUTONOMOUS_
-- [[docs/_meta/status-marker-index]] L972: - [[docs/_meta/status-marker-index]] L614: - [[docs/_meta/status-marker-index]] L256: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L521: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AUTONOMOUS_
-- [[docs/_meta/status-marker-index]] L973: - [[docs/_meta/status-marker-index]] L615: - [[docs/_meta/status-marker-index]] L257: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L522: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_AUTONOMOUS_
-- [[docs/_meta/status-marker-index]] L974: - [[docs/_meta/status-marker-index]] L616: - [[docs/_meta/status-marker-index]] L258: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L523: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_COMMAND_ACC
-- [[docs/_meta/status-marker-index]] L975: - [[docs/_meta/status-marker-index]] L617: - [[docs/_meta/status-marker-index]] L259: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L524: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_COMPOSER_SU
-- [[docs/_meta/status-marker-index]] L976: - [[docs/_meta/status-marker-index]] L618: - [[docs/_meta/status-marker-index]] L260: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L525: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_CURRENT_STA
-- [[docs/_meta/status-marker-index]] L977: - [[docs/_meta/status-marker-index]] L619: - [[docs/_meta/status-marker-index]] L261: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L526: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_DI
-- [[docs/_meta/status-marker-index]] L978: - [[docs/_meta/status-marker-index]] L620: - [[docs/_meta/status-marker-index]] L262: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L527: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_DI
-- [[docs/_meta/status-marker-index]] L979: - [[docs/_meta/status-marker-index]] L621: - [[docs/_meta/status-marker-index]] L263: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L528: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_DI
-- [[docs/_meta/status-marker-index]] L980: - [[docs/_meta/status-marker-index]] L622: - [[docs/_meta/status-marker-index]] L264: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L529: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_DI
-- [[docs/_meta/status-marker-index]] L981: - [[docs/_meta/status-marker-index]] L623: - [[docs/_meta/status-marker-index]] L265: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L530: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_FA
-- [[docs/_meta/status-marker-index]] L982: - [[docs/_meta/status-marker-index]] L624: - [[docs/_meta/status-marker-index]] L266: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L531: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DELIVERY_PR
-- [[docs/_meta/status-marker-index]] L983: - [[docs/_meta/status-marker-index]] L625: - [[docs/_meta/status-marker-index]] L267: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L532: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DIAGNOSTIC_
-- [[docs/_meta/status-marker-index]] L984: - [[docs/_meta/status-marker-index]] L626: - [[docs/_meta/status-marker-index]] L268: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L533: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DISABLE_WOR
-- [[docs/_meta/status-marker-index]] L985: - [[docs/_meta/status-marker-index]] L627: - [[docs/_meta/status-marker-index]] L269: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L534: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_DRY_RUN_DEL
-- [[docs/_meta/status-marker-index]] L986: - [[docs/_meta/status-marker-index]] L628: - [[docs/_meta/status-marker-index]] L270: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L535: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FINAL_AUDIT
-- [[docs/_meta/status-marker-index]] L987: - [[docs/_meta/status-marker-index]] L629: - [[docs/_meta/status-marker-index]] L271: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L536: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FINAL_HANDO
-- [[docs/_meta/status-marker-index]] L988: - [[docs/_meta/status-marker-index]] L630: - [[docs/_meta/status-marker-index]] L272: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L537: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FINAL_RESUL
-- [[docs/_meta/status-marker-index]] L989: - [[docs/_meta/status-marker-index]] L631: - [[docs/_meta/status-marker-index]] L273: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L538: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FINAL_RESUL
-- [[docs/_meta/status-marker-index]] L990: - [[docs/_meta/status-marker-index]] L632: - [[docs/_meta/status-marker-index]] L274: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L539: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FINAL_STABI
-- [[docs/_meta/status-marker-index]] L991: - [[docs/_meta/status-marker-index]] L633: - [[docs/_meta/status-marker-index]] L275: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L540: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FIX_VERSION
-- [[docs/_meta/status-marker-index]] L992: - [[docs/_meta/status-marker-index]] L634: - [[docs/_meta/status-marker-index]] L276: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L541: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_FORWARD_COM
-- [[docs/_meta/status-marker-index]] L993: - [[docs/_meta/status-marker-index]] L635: - [[docs/_meta/status-marker-index]] L277: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L542: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_GATEWAY_FEE
-- [[docs/_meta/status-marker-index]] L994: - [[docs/_meta/status-marker-index]] L636: - [[docs/_meta/status-marker-index]] L278: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L543: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_IMMEDIATE_G
-- [[docs/_meta/status-marker-index]] L995: - [[docs/_meta/status-marker-index]] L637: - [[docs/_meta/status-marker-index]] L279: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L544: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_LATENCY_PAR
-- [[docs/_meta/status-marker-index]] L996: - [[docs/_meta/status-marker-index]] L638: - [[docs/_meta/status-marker-index]] L280: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L545: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_LIVE_INTERC
-- [[docs/_meta/status-marker-index]] L997: - [[docs/_meta/status-marker-index]] L639: - [[docs/_meta/status-marker-index]] L281: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L546: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_NO_SHELL_CL
-- [[docs/_meta/status-marker-index]] L998: - [[docs/_meta/status-marker-index]] L640: - [[docs/_meta/status-marker-index]] L282: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L547: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_OPERATIONAL
-- [[docs/_meta/status-marker-index]] L999: - [[docs/_meta/status-marker-index]] L641: - [[docs/_meta/status-marker-index]] L283: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L548: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_OPERATIONS_
-- [[docs/_meta/status-marker-index]] L1000: - [[docs/_meta/status-marker-index]] L642: - [[docs/_meta/status-marker-index]] L284: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L549: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_QUEUE_REPOR
-- [[docs/_meta/status-marker-index]] L1001: - [[docs/_meta/status-marker-index]] L643: - [[docs/_meta/status-marker-index]] L285: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L550: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_QUEUE_TRIAG
-- [[docs/_meta/status-marker-index]] L1002: - [[docs/_meta/status-marker-index]] L644: - [[docs/_meta/status-marker-index]] L286: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L551: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_QUEUE_WORKE
-- [[docs/_meta/status-marker-index]] L1003: - [[docs/_meta/status-marker-index]] L645: - [[docs/_meta/status-marker-index]] L287: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L552: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_RELEASE_CHE
-- [[docs/_meta/status-marker-index]] L1004: - [[docs/_meta/status-marker-index]] L646: - [[docs/_meta/status-marker-index]] L288: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L553: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_RELEASE_RUN
-- [[docs/_meta/status-marker-index]] L1005: - [[docs/_meta/status-marker-index]] L647: - [[docs/_meta/status-marker-index]] L289: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L554: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_RELEASE_SAF
-- [[docs/_meta/status-marker-index]] L1006: - [[docs/_meta/status-marker-index]] L648: - [[docs/_meta/status-marker-index]] L290: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L555: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_RELEASES.md
-- [[docs/_meta/status-marker-index]] L1007: - [[docs/_meta/status-marker-index]] L649: - [[docs/_meta/status-marker-index]] L291: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L556: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_REMOVE_ACCE
-- [[docs/_meta/status-marker-index]] L1008: - [[docs/_meta/status-marker-index]] L650: - [[docs/_meta/status-marker-index]] L292: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L557: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_REMOVE_WORK
-- [[docs/_meta/status-marker-index]] L1009: - [[docs/_meta/status-marker-index]] L651: - [[docs/_meta/status-marker-index]] L293: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L558: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_SAFE_ENVELO
-- [[docs/_meta/status-marker-index]] L1010: - [[docs/_meta/status-marker-index]] L652: - [[docs/_meta/status-marker-index]] L294: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L559: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_SAFE_RELEAS
-- [[docs/_meta/status-marker-index]] L1011: - [[docs/_meta/status-marker-index]] L653: - [[docs/_meta/status-marker-index]] L295: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L560: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_SELF_EVOLUT
-- [[docs/_meta/status-marker-index]] L1012: - [[docs/_meta/status-marker-index]] L654: - [[docs/_meta/status-marker-index]] L296: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L561: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_SINGLE_WORK
-- [[docs/_meta/status-marker-index]] L1013: - [[docs/_meta/status-marker-index]] L655: - [[docs/_meta/status-marker-index]] L297: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L562: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_SMOKE_ALL_0
-- [[docs/_meta/status-marker-index]] L1014: - [[docs/_meta/status-marker-index]] L656: - [[docs/_meta/status-marker-index]] L298: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L563: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_WATCHER_FAI
-- [[docs/_meta/status-marker-index]] L1015: - [[docs/_meta/status-marker-index]] L657: - [[docs/_meta/status-marker-index]] L299: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L564: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_WATCHER_NOT
-- [[docs/_meta/status-marker-index]] L1016: - [[docs/_meta/status-marker-index]] L658: - [[docs/_meta/status-marker-index]] L300: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L565: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_WATCHER_REC
-- [[docs/_meta/status-marker-index]] L1017: - [[docs/_meta/status-marker-index]] L659: - [[docs/_meta/status-marker-index]] L301: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L566: D:\dev\autocode\ai-bridge-local\docs\legacy\root_1_WORKER_QUEU
-- [[docs/_meta/status-marker-index]] L1018: - [[docs/_meta/status-marker-index]] L660: - [[docs/_meta/status-marker-index]] L302: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L567: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AI_BRIDGE_LOC
-- [[docs/_meta/status-marker-index]] L1019: - [[docs/_meta/status-marker-index]] L661: - [[docs/_meta/status-marker-index]] L303: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L568: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AUTONOMOUS_CH
-- [[docs/_meta/status-marker-index]] L1020: - [[docs/_meta/status-marker-index]] L662: - [[docs/_meta/status-marker-index]] L304: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L569: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AUTONOMOUS_EV
-- [[docs/_meta/status-marker-index]] L1021: - [[docs/_meta/status-marker-index]] L663: - [[docs/_meta/status-marker-index]] L305: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L570: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AUTONOMOUS_EV
-- [[docs/_meta/status-marker-index]] L1022: - [[docs/_meta/status-marker-index]] L664: - [[docs/_meta/status-marker-index]] L306: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L571: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AUTONOMOUS_EV
-- [[docs/_meta/status-marker-index]] L1023: - [[docs/_meta/status-marker-index]] L665: - [[docs/_meta/status-marker-index]] L307: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L572: D:\dev\autocode\ai-bridge-local\docs\legacy\root_AUTONOMOUS_EV
-- [[docs/_meta/status-marker-index]] L1024: - [[docs/_meta/status-marker-index]] L666: - [[docs/_meta/status-marker-index]] L308: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L573: D:\dev\autocode\ai-bridge-local\docs\legacy\root_COMMAND_ACCEP
-- [[docs/_meta/status-marker-index]] L1025: - [[docs/_meta/status-marker-index]] L667: - [[docs/_meta/status-marker-index]] L309: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L574: D:\dev\autocode\ai-bridge-local\docs\legacy\root_COMPOSER_SUBM
-- [[docs/_meta/status-marker-index]] L1026: - [[docs/_meta/status-marker-index]] L668: - [[docs/_meta/status-marker-index]] L310: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L575: D:\dev\autocode\ai-bridge-local\docs\legacy\root_CURRENT_STATU
-- [[docs/_meta/status-marker-index]] L1027: - [[docs/_meta/status-marker-index]] L669: - [[docs/_meta/status-marker-index]] L311: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L576: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_DIAG
-- [[docs/_meta/status-marker-index]] L1028: - [[docs/_meta/status-marker-index]] L670: - [[docs/_meta/status-marker-index]] L312: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L577: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_DIAG
-- [[docs/_meta/status-marker-index]] L1029: - [[docs/_meta/status-marker-index]] L671: - [[docs/_meta/status-marker-index]] L313: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L578: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_DIAG
-- [[docs/_meta/status-marker-index]] L1030: - [[docs/_meta/status-marker-index]] L672: - [[docs/_meta/status-marker-index]] L314: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L579: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_DIAG
-- [[docs/_meta/status-marker-index]] L1031: - [[docs/_meta/status-marker-index]] L673: - [[docs/_meta/status-marker-index]] L315: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L580: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_FAIL
-- [[docs/_meta/status-marker-index]] L1032: - [[docs/_meta/status-marker-index]] L674: - [[docs/_meta/status-marker-index]] L316: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L581: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DELIVERY_PREF
-- [[docs/_meta/status-marker-index]] L1033: - [[docs/_meta/status-marker-index]] L675: - [[docs/_meta/status-marker-index]] L317: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L582: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DIAGNOSTIC_RE
-- [[docs/_meta/status-marker-index]] L1034: - [[docs/_meta/status-marker-index]] L676: - [[docs/_meta/status-marker-index]] L318: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L583: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DISABLE_WORKE
-- [[docs/_meta/status-marker-index]] L1035: - [[docs/_meta/status-marker-index]] L677: - [[docs/_meta/status-marker-index]] L319: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L584: D:\dev\autocode\ai-bridge-local\docs\legacy\root_DRY_RUN_DELIV
-- [[docs/_meta/status-marker-index]] L1036: - [[docs/_meta/status-marker-index]] L678: - [[docs/_meta/status-marker-index]] L320: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L585: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FINAL_AUDIT_0
-- [[docs/_meta/status-marker-index]] L1037: - [[docs/_meta/status-marker-index]] L679: - [[docs/_meta/status-marker-index]] L321: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L586: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FINAL_HANDOFF
-- [[docs/_meta/status-marker-index]] L1038: - [[docs/_meta/status-marker-index]] L680: - [[docs/_meta/status-marker-index]] L322: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L587: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FINAL_RESULT_
-- [[docs/_meta/status-marker-index]] L1039: - [[docs/_meta/status-marker-index]] L681: - [[docs/_meta/status-marker-index]] L323: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L588: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FINAL_RESULT_
-- [[docs/_meta/status-marker-index]] L1040: - [[docs/_meta/status-marker-index]] L682: - [[docs/_meta/status-marker-index]] L324: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L589: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FINAL_STABILI
-- [[docs/_meta/status-marker-index]] L1041: - [[docs/_meta/status-marker-index]] L683: - [[docs/_meta/status-marker-index]] L325: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L590: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FIX_VERSION_S
-- [[docs/_meta/status-marker-index]] L1042: - [[docs/_meta/status-marker-index]] L684: - [[docs/_meta/status-marker-index]] L326: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L591: D:\dev\autocode\ai-bridge-local\docs\legacy\root_FORWARD_COMPA
-- [[docs/_meta/status-marker-index]] L1043: - [[docs/_meta/status-marker-index]] L685: - [[docs/_meta/status-marker-index]] L327: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L592: D:\dev\autocode\ai-bridge-local\docs\legacy\root_GATEWAY_FEEDB
-- [[docs/_meta/status-marker-index]] L1044: - [[docs/_meta/status-marker-index]] L686: - [[docs/_meta/status-marker-index]] L328: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L593: D:\dev\autocode\ai-bridge-local\docs\legacy\root_IMMEDIATE_GAT
-- [[docs/_meta/status-marker-index]] L1045: - [[docs/_meta/status-marker-index]] L687: - [[docs/_meta/status-marker-index]] L329: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L594: D:\dev\autocode\ai-bridge-local\docs\legacy\root_LATENCY_PARAL
-- [[docs/_meta/status-marker-index]] L1046: - [[docs/_meta/status-marker-index]] L688: - [[docs/_meta/status-marker-index]] L330: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L595: D:\dev\autocode\ai-bridge-local\docs\legacy\root_LIVE_INTERCHA
-- [[docs/_meta/status-marker-index]] L1047: - [[docs/_meta/status-marker-index]] L689: - [[docs/_meta/status-marker-index]] L331: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L596: D:\dev\autocode\ai-bridge-local\docs\legacy\root_NO_SHELL_CLOS
-- [[docs/_meta/status-marker-index]] L1048: - [[docs/_meta/status-marker-index]] L690: - [[docs/_meta/status-marker-index]] L332: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L597: D:\dev\autocode\ai-bridge-local\docs\legacy\root_OPERATIONAL_R
-- [[docs/_meta/status-marker-index]] L1049: - [[docs/_meta/status-marker-index]] L691: - [[docs/_meta/status-marker-index]] L333: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L598: D:\dev\autocode\ai-bridge-local\docs\legacy\root_OPERATIONS_RU
-- [[docs/_meta/status-marker-index]] L1050: - [[docs/_meta/status-marker-index]] L692: - [[docs/_meta/status-marker-index]] L334: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L599: D:\dev\autocode\ai-bridge-local\docs\legacy\root_QUEUE_REPORTS
-- [[docs/_meta/status-marker-index]] L1051: - [[docs/_meta/status-marker-index]] L693: - [[docs/_meta/status-marker-index]] L335: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L600: D:\dev\autocode\ai-bridge-local\docs\legacy\root_QUEUE_TRIAGE_
-- [[docs/_meta/status-marker-index]] L1052: - [[docs/_meta/status-marker-index]] L694: - [[docs/_meta/status-marker-index]] L336: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L601: D:\dev\autocode\ai-bridge-local\docs\legacy\root_QUEUE_WORKER_
-- [[docs/_meta/status-marker-index]] L1053: - [[docs/_meta/status-marker-index]] L695: - [[docs/_meta/status-marker-index]] L337: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L602: D:\dev\autocode\ai-bridge-local\docs\legacy\root_RELEASE_CHECK
-- [[docs/_meta/status-marker-index]] L1054: - [[docs/_meta/status-marker-index]] L696: - [[docs/_meta/status-marker-index]] L338: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L603: D:\dev\autocode\ai-bridge-local\docs\legacy\root_RELEASE_RUNNE
-- [[docs/_meta/status-marker-index]] L1055: - [[docs/_meta/status-marker-index]] L697: - [[docs/_meta/status-marker-index]] L339: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L604: D:\dev\autocode\ai-bridge-local\docs\legacy\root_RELEASE_SAFET
-- [[docs/_meta/status-marker-index]] L1056: - [[docs/_meta/status-marker-index]] L698: - [[docs/_meta/status-marker-index]] L340: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L605: D:\dev\autocode\ai-bridge-local\docs\legacy\root_RELEASES.md
-- [[docs/_meta/status-marker-index]] L1057: - [[docs/_meta/status-marker-index]] L699: - [[docs/_meta/status-marker-index]] L341: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L606: D:\dev\autocode\ai-bridge-local\docs\legacy\root_REMOVE_ACCEPT
-- [[docs/_meta/status-marker-index]] L1058: - [[docs/_meta/status-marker-index]] L700: - [[docs/_meta/status-marker-index]] L342: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L607: D:\dev\autocode\ai-bridge-local\docs\legacy\root_REMOVE_WORKER
-- [[docs/_meta/status-marker-index]] L1059: - [[docs/_meta/status-marker-index]] L701: - [[docs/_meta/status-marker-index]] L343: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L608: D:\dev\autocode\ai-bridge-local\docs\legacy\root_SAFE_ENVELOPE
-- [[docs/_meta/status-marker-index]] L1060: - [[docs/_meta/status-marker-index]] L702: - [[docs/_meta/status-marker-index]] L344: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L609: D:\dev\autocode\ai-bridge-local\docs\legacy\root_SAFE_RELEASE_
-- [[docs/_meta/status-marker-index]] L1061: - [[docs/_meta/status-marker-index]] L703: - [[docs/_meta/status-marker-index]] L345: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L610: D:\dev\autocode\ai-bridge-local\docs\legacy\root_SELF_EVOLUTIO
-- [[docs/_meta/status-marker-index]] L1062: - [[docs/_meta/status-marker-index]] L704: - [[docs/_meta/status-marker-index]] L346: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L611: D:\dev\autocode\ai-bridge-local\docs\legacy\root_SINGLE_WORKER
-- [[docs/_meta/status-marker-index]] L1063: - [[docs/_meta/status-marker-index]] L705: - [[docs/_meta/status-marker-index]] L347: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L612: D:\dev\autocode\ai-bridge-local\docs\legacy\root_SMOKE_ALL_052
-- [[docs/_meta/status-marker-index]] L1064: - [[docs/_meta/status-marker-index]] L706: - [[docs/_meta/status-marker-index]] L348: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L613: D:\dev\autocode\ai-bridge-local\docs\legacy\root_WATCHER_FAILU
-- [[docs/_meta/status-marker-index]] L1065: - [[docs/_meta/status-marker-index]] L707: - [[docs/_meta/status-marker-index]] L349: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L614: D:\dev\autocode\ai-bridge-local\docs\legacy\root_WATCHER_NOTES
-- [[docs/_meta/status-marker-index]] L1066: - [[docs/_meta/status-marker-index]] L708: - [[docs/_meta/status-marker-index]] L350: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L615: D:\dev\autocode\ai-bridge-local\docs\legacy\root_WATCHER_RECOV
-- [[docs/_meta/status-marker-index]] L1067: - [[docs/_meta/status-marker-index]] L709: - [[docs/_meta/status-marker-index]] L351: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L616: D:\dev\autocode\ai-bridge-local\docs\legacy\root_WORKER_QUEUE_
-- [[docs/_meta/status-marker-index]] L1068: - [[docs/_meta/status-marker-index]] L710: - [[docs/_meta/status-marker-index]] L352: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L617: D:\dev\autocode\ai-bridge-local\docs\legacy\SAFE_ENVELOPE_TEMP
-- [[docs/_meta/status-marker-index]] L1069: - [[docs/_meta/status-marker-index]] L711: - [[docs/_meta/status-marker-index]] L353: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L618: D:\dev\autocode\ai-bridge-local\docs\legacy\SAFE_RELEASE_RUNNE
-- [[docs/_meta/status-marker-index]] L1070: - [[docs/_meta/status-marker-index]] L712: - [[docs/_meta/status-marker-index]] L354: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L619: D:\dev\autocode\ai-bridge-local\docs\legacy\SELF_EVOLUTION_GUA
-- [[docs/_meta/status-marker-index]] L1071: - [[docs/_meta/status-marker-index]] L713: - [[docs/_meta/status-marker-index]] L355: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L620: D:\dev\autocode\ai-bridge-local\docs\legacy\SINGLE_WORKER_GUAR
-- [[docs/_meta/status-marker-index]] L1072: - [[docs/_meta/status-marker-index]] L714: - [[docs/_meta/status-marker-index]] L356: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L621: D:\dev\autocode\ai-bridge-local\docs\legacy\SMOKE_ALL_0520.md
-- [[docs/_meta/status-marker-index]] L1073: - [[docs/_meta/status-marker-index]] L715: - [[docs/_meta/status-marker-index]] L357: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L622: D:\dev\autocode\ai-bridge-local\docs\legacy\WATCHER_FAILURE_TA
-- [[docs/_meta/status-marker-index]] L1074: - [[docs/_meta/status-marker-index]] L716: - [[docs/_meta/status-marker-index]] L358: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L623: D:\dev\autocode\ai-bridge-local\docs\legacy\WATCHER_NOTES.md
-- [[docs/_meta/status-marker-index]] L1075: - [[docs/_meta/status-marker-index]] L717: - [[docs/_meta/status-marker-index]] L359: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L624: D:\dev\autocode\ai-bridge-local\docs\legacy\WATCHER_RECOVERY_R
-- [[docs/_meta/status-marker-index]] L1076: - [[docs/_meta/status-marker-index]] L718: - [[docs/_meta/status-marker-index]] L360: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L625: D:\dev\autocode\ai-bridge-local\docs\legacy\WINDOWS_CONTROL_CE
-- [[docs/_meta/status-marker-index]] L1077: - [[docs/_meta/status-marker-index]] L719: - [[docs/_meta/status-marker-index]] L361: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L626: D:\dev\autocode\ai-bridge-local\docs\legacy\WORKER_QUEUE_PARAL
-- [[docs/_meta/status-marker-index]] L1078: - [[docs/_meta/status-marker-index]] L720: - [[docs/_meta/status-marker-index]] L362: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L717: risk report, destructive opt-in, queue health, templates segur
-- [[docs/_meta/status-marker-index]] L1079: - [[docs/_meta/status-marker-index]] L721: - [[docs/_meta/status-marker-index]] L363: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L750: docs\legacy\AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_202
-- [[docs/_meta/status-marker-index]] L1080: - [[docs/_meta/status-marker-index]] L722: - [[docs/_meta/status-marker-index]] L364: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L752: docs\legacy\AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_202
-- [[docs/_meta/status-marker-index]] L1081: - [[docs/_meta/status-marker-index]] L723: - [[docs/_meta/status-marker-index]] L365: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L754: docs\legacy\AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_202
-- [[docs/_meta/status-marker-index]] L1082: - [[docs/_meta/status-marker-index]] L724: - [[docs/_meta/status-marker-index]] L366: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L756: docs\legacy\AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_202
-- [[docs/_meta/status-marker-index]] L1083: - [[docs/_meta/status-marker-index]] L725: - [[docs/_meta/status-marker-index]] L367: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L760: docs\legacy\AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10.md
-- [[docs/_meta/status-marker-index]] L1084: - [[docs/_meta/status-marker-index]] L726: - [[docs/_meta/status-marker-index]] L368: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L762: docs\legacy\AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10.md
-- [[docs/_meta/status-marker-index]] L1085: - [[docs/_meta/status-marker-index]] L727: - [[docs/_meta/status-marker-index]] L369: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L765: docs\legacy\AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10.md
-- [[docs/_meta/status-marker-index]] L1086: - [[docs/_meta/status-marker-index]] L728: - [[docs/_meta/status-marker-index]] L370: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L767: docs\legacy\AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10.md
-- [[docs/_meta/status-marker-index]] L1087: - [[docs/_meta/status-marker-index]] L729: - [[docs/_meta/status-marker-index]] L371: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L770: docs\legacy\AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10
-- [[docs/_meta/status-marker-index]] L1088: - [[docs/_meta/status-marker-index]] L730: - [[docs/_meta/status-marker-index]] L372: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L772: docs\legacy\AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10.md:1:# 
-- [[docs/_meta/status-marker-index]] L1089: - [[docs/_meta/status-marker-index]] L731: - [[docs/_meta/status-marker-index]] L373: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L774: docs\legacy\AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10.md:7:A 
-- [[docs/_meta/status-marker-index]] L1090: - [[docs/_meta/status-marker-index]] L732: - [[docs/_meta/status-marker-index]] L374: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L777: docs\legacy\AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10.md:17:-
-- [[docs/_meta/status-marker-index]] L1091: - [[docs/_meta/status-marker-index]] L733: - [[docs/_meta/status-marker-index]] L375: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L779: docs\legacy\AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10.md:21:-
-- [[docs/_meta/status-marker-index]] L1092: - [[docs/_meta/status-marker-index]] L734: - [[docs/_meta/status-marker-index]] L376: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L781: docs\legacy\AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10.md:46:E
-- [[docs/_meta/status-marker-index]] L1093: - [[docs/_meta/status-marker-index]] L735: - [[docs/_meta/status-marker-index]] L377: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L784: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1094: - [[docs/_meta/status-marker-index]] L736: - [[docs/_meta/status-marker-index]] L378: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L786: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1095: - [[docs/_meta/status-marker-index]] L737: - [[docs/_meta/status-marker-index]] L379: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L788: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1096: - [[docs/_meta/status-marker-index]] L738: - [[docs/_meta/status-marker-index]] L380: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L790: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1097: - [[docs/_meta/status-marker-index]] L739: - [[docs/_meta/status-marker-index]] L381: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L792: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1098: - [[docs/_meta/status-marker-index]] L740: - [[docs/_meta/status-marker-index]] L382: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L794: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1099: - [[docs/_meta/status-marker-index]] L741: - [[docs/_meta/status-marker-index]] L383: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L796: docs\legacy\AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-
-- [[docs/_meta/status-marker-index]] L1100: - [[docs/_meta/status-marker-index]] L742: - [[docs/_meta/status-marker-index]] L384: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L798: docs\legacy\AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10.md:
-- [[docs/_meta/status-marker-index]] L1101: - [[docs/_meta/status-marker-index]] L743: - [[docs/_meta/status-marker-index]] L385: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L800: docs\legacy\AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10.md:
-- [[docs/_meta/status-marker-index]] L1102: - [[docs/_meta/status-marker-index]] L744: - [[docs/_meta/status-marker-index]] L386: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L803: docs\legacy\AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10.md:
-- [[docs/_meta/status-marker-index]] L1103: - [[docs/_meta/status-marker-index]] L745: - [[docs/_meta/status-marker-index]] L387: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L805: docs\legacy\AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10.md:
-- [[docs/_meta/status-marker-index]] L1104: - [[docs/_meta/status-marker-index]] L746: - [[docs/_meta/status-marker-index]] L388: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L807: docs\legacy\AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10.md:
-- [[docs/_meta/status-marker-index]] L1105: - [[docs/_meta/status-marker-index]] L747: - [[docs/_meta/status-marker-index]] L389: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L809: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1106: - [[docs/_meta/status-marker-index]] L748: - [[docs/_meta/status-marker-index]] L390: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L811: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1107: - [[docs/_meta/status-marker-index]] L749: - [[docs/_meta/status-marker-index]] L391: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L814: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1108: - [[docs/_meta/status-marker-index]] L750: - [[docs/_meta/status-marker-index]] L392: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L816: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1109: - [[docs/_meta/status-marker-index]] L751: - [[docs/_meta/status-marker-index]] L393: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L818: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1110: - [[docs/_meta/status-marker-index]] L752: - [[docs/_meta/status-marker-index]] L394: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L820: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1111: - [[docs/_meta/status-marker-index]] L753: - [[docs/_meta/status-marker-index]] L395: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L822: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1112: - [[docs/_meta/status-marker-index]] L754: - [[docs/_meta/status-marker-index]] L396: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L824: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1113: - [[docs/_meta/status-marker-index]] L755: - [[docs/_meta/status-marker-index]] L397: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L826: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1114: - [[docs/_meta/status-marker-index]] L756: - [[docs/_meta/status-marker-index]] L398: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L828: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1115: - [[docs/_meta/status-marker-index]] L757: - [[docs/_meta/status-marker-index]] L399: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L830: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1116: - [[docs/_meta/status-marker-index]] L758: - [[docs/_meta/status-marker-index]] L400: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L832: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1117: - [[docs/_meta/status-marker-index]] L759: - [[docs/_meta/status-marker-index]] L401: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L834: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1118: - [[docs/_meta/status-marker-index]] L760: - [[docs/_meta/status-marker-index]] L402: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L836: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1119: - [[docs/_meta/status-marker-index]] L761: - [[docs/_meta/status-marker-index]] L403: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L838: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1120: - [[docs/_meta/status-marker-index]] L762: - [[docs/_meta/status-marker-index]] L404: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L840: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1121: - [[docs/_meta/status-marker-index]] L763: - [[docs/_meta/status-marker-index]] L405: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L842: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1122: - [[docs/_meta/status-marker-index]] L764: - [[docs/_meta/status-marker-index]] L406: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L844: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1123: - [[docs/_meta/status-marker-index]] L765: - [[docs/_meta/status-marker-index]] L407: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L846: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1124: - [[docs/_meta/status-marker-index]] L766: - [[docs/_meta/status-marker-index]] L408: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L848: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1125: - [[docs/_meta/status-marker-index]] L767: - [[docs/_meta/status-marker-index]] L409: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L850: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1126: - [[docs/_meta/status-marker-index]] L768: - [[docs/_meta/status-marker-index]] L410: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L852: docs\legacy\AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-1
-- [[docs/_meta/status-marker-index]] L1127: - [[docs/_meta/status-marker-index]] L769: - [[docs/_meta/status-marker-index]] L411: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L854: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1128: - [[docs/_meta/status-marker-index]] L770: - [[docs/_meta/status-marker-index]] L412: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L856: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1129: - [[docs/_meta/status-marker-index]] L771: - [[docs/_meta/status-marker-index]] L413: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L858: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1130: - [[docs/_meta/status-marker-index]] L772: - [[docs/_meta/status-marker-index]] L414: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L860: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1131: - [[docs/_meta/status-marker-index]] L773: - [[docs/_meta/status-marker-index]] L415: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L863: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1132: - [[docs/_meta/status-marker-index]] L774: - [[docs/_meta/status-marker-index]] L416: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L865: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1133: - [[docs/_meta/status-marker-index]] L775: - [[docs/_meta/status-marker-index]] L417: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L867: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1134: - [[docs/_meta/status-marker-index]] L776: - [[docs/_meta/status-marker-index]] L418: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L869: docs\legacy\AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-
-- [[docs/_meta/status-marker-index]] L1135: - [[docs/_meta/status-marker-index]] L777: - [[docs/_meta/status-marker-index]] L419: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L871: docs\legacy\AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10
-- [[docs/_meta/status-marker-index]] L1136: - [[docs/_meta/status-marker-index]] L778: - [[docs/_meta/status-marker-index]] L420: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L873: docs\legacy\AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10
-- [[docs/_meta/status-marker-index]] L1137: - [[docs/_meta/status-marker-index]] L779: - [[docs/_meta/status-marker-index]] L421: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L877: docs\legacy\AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_
-- [[docs/_meta/status-marker-index]] L1138: - [[docs/_meta/status-marker-index]] L780: - [[docs/_meta/status-marker-index]] L422: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L879: docs\legacy\AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_
-- [[docs/_meta/status-marker-index]] L1139: - [[docs/_meta/status-marker-index]] L781: - [[docs/_meta/status-marker-index]] L423: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L882: docs\legacy\AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_
-- [[docs/_meta/status-marker-index]] L1140: - [[docs/_meta/status-marker-index]] L782: - [[docs/_meta/status-marker-index]] L424: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L887: docs\legacy\AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-0
-- [[docs/_meta/status-marker-index]] L1141: - [[docs/_meta/status-marker-index]] L783: - [[docs/_meta/status-marker-index]] L425: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L889: docs\legacy\AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-0
-- [[docs/_meta/status-marker-index]] L1142: - [[docs/_meta/status-marker-index]] L784: - [[docs/_meta/status-marker-index]] L426: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L891: docs\legacy\AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-
-- [[docs/_meta/status-marker-index]] L1143: - [[docs/_meta/status-marker-index]] L785: - [[docs/_meta/status-marker-index]] L427: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L892: Bridge Local 0.4.29 - parse error feedback
-- [[docs/_meta/status-marker-index]] L1144: - [[docs/_meta/status-marker-index]] L786: - [[docs/_meta/status-marker-index]] L428: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L893: docs\legacy\AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-
-- [[docs/_meta/status-marker-index]] L1145: - [[docs/_meta/status-marker-index]] L787: - [[docs/_meta/status-marker-index]] L429: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L897: docs\legacy\AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2
-- [[docs/_meta/status-marker-index]] L1146: - [[docs/_meta/status-marker-index]] L788: - [[docs/_meta/status-marker-index]] L430: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L899: docs\legacy\AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2
-- [[docs/_meta/status-marker-index]] L1147: - [[docs/_meta/status-marker-index]] L789: - [[docs/_meta/status-marker-index]] L431: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L901: docs\legacy\AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026
-- [[docs/_meta/status-marker-index]] L1148: - [[docs/_meta/status-marker-index]] L790: - [[docs/_meta/status-marker-index]] L432: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L903: docs\legacy\AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026
-- [[docs/_meta/status-marker-index]] L1149: - [[docs/_meta/status-marker-index]] L791: - [[docs/_meta/status-marker-index]] L433: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L907: docs\legacy\AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_202
-- [[docs/_meta/status-marker-index]] L1150: - [[docs/_meta/status-marker-index]] L792: - [[docs/_meta/status-marker-index]] L434: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L909: docs\legacy\AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06
-- [[docs/_meta/status-marker-index]] L1151: - [[docs/_meta/status-marker-index]] L793: - [[docs/_meta/status-marker-index]] L435: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L911: docs\legacy\AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10.md
-- [[docs/_meta/status-marker-index]] L1152: - [[docs/_meta/status-marker-index]] L794: - [[docs/_meta/status-marker-index]] L436: - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]] L913: docs\legacy\AI_BRIDGE_LOCAL_BASELINE_2026-06-10.md:7:Tag atual
+- [[docs/_meta/status-marker-index]] L574: - [[docs/_meta/status-marker-index]] L216: - [[docs/_meta/duplicates]] L37: - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L575: - [[docs/_meta/status-marker-index]] L217: - [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L576: - [[docs/_meta/status-marker-index]] L218: - [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L577: - [[docs/_meta/status-marker-index]] L219: - [[docs/_meta/duplicates]] L43: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L578: - [[docs/_meta/status-marker-index]] L220: - [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L579: - [[docs/_meta/status-marker-index]] L221: - [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L580: - [[docs/_meta/status-marker-index]] L222: - [[docs/_meta/duplicates]] L49: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L581: - [[docs/_meta/status-marker-index]] L223: - [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L582: - [[docs/_meta/status-marker-index]] L224: - [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L583: - [[docs/_meta/status-marker-index]] L225: - [[docs/_meta/duplicates]] L55: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L584: - [[docs/_meta/status-marker-index]] L226: - [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L585: - [[docs/_meta/status-marker-index]] L227: - [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L586: - [[docs/_meta/status-marker-index]] L228: - [[docs/_meta/duplicates]] L61: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L587: - [[docs/_meta/status-marker-index]] L229: - [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L588: - [[docs/_meta/status-marker-index]] L230: - [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L589: - [[docs/_meta/status-marker-index]] L231: - [[docs/_meta/duplicates]] L67: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L590: - [[docs/_meta/status-marker-index]] L232: - [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L591: - [[docs/_meta/status-marker-index]] L233: - [[docs/_meta/duplicates]] L69: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L592: - [[docs/_meta/status-marker-index]] L234: - [[docs/_meta/duplicates]] L73: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L593: - [[docs/_meta/status-marker-index]] L235: - [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L594: - [[docs/_meta/status-marker-index]] L236: - [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L595: - [[docs/_meta/status-marker-index]] L237: - [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L596: - [[docs/_meta/status-marker-index]] L238: - [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L597: - [[docs/_meta/status-marker-index]] L239: - [[docs/_meta/duplicates]] L81: - [[docs/legacy/SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L598: - [[docs/_meta/status-marker-index]] L240: - [[docs/_meta/duplicates]] L85: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L599: - [[docs/_meta/status-marker-index]] L241: - [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L600: - [[docs/_meta/status-marker-index]] L242: - [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L601: - [[docs/_meta/status-marker-index]] L243: - [[docs/_meta/duplicates]] L91: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L602: - [[docs/_meta/status-marker-index]] L244: - [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L603: - [[docs/_meta/status-marker-index]] L245: - [[docs/_meta/duplicates]] L93: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L604: - [[docs/_meta/status-marker-index]] L246: - [[docs/_meta/duplicates]] L97: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L605: - [[docs/_meta/status-marker-index]] L247: - [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L606: - [[docs/_meta/status-marker-index]] L248: - [[docs/_meta/duplicates]] L99: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L607: - [[docs/_meta/status-marker-index]] L249: - [[docs/_meta/duplicates]] L103: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L608: - [[docs/_meta/status-marker-index]] L250: - [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L609: - [[docs/_meta/status-marker-index]] L251: - [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L610: - [[docs/_meta/status-marker-index]] L252: - [[docs/_meta/duplicates]] L109: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L611: - [[docs/_meta/status-marker-index]] L253: - [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L612: - [[docs/_meta/status-marker-index]] L254: - [[docs/_meta/duplicates]] L111: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L613: - [[docs/_meta/status-marker-index]] L255: - [[docs/_meta/duplicates]] L115: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L614: - [[docs/_meta/status-marker-index]] L256: - [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L615: - [[docs/_meta/status-marker-index]] L257: - [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L616: - [[docs/_meta/status-marker-index]] L258: - [[docs/_meta/duplicates]] L121: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L617: - [[docs/_meta/status-marker-index]] L259: - [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L618: - [[docs/_meta/status-marker-index]] L260: - [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L619: - [[docs/_meta/status-marker-index]] L261: - [[docs/_meta/duplicates]] L127: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L620: - [[docs/_meta/status-marker-index]] L262: - [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L621: - [[docs/_meta/status-marker-index]] L263: - [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L622: - [[docs/_meta/status-marker-index]] L264: - [[docs/_meta/duplicates]] L133: - [[docs/legacy/FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L623: - [[docs/_meta/status-marker-index]] L265: - [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L624: - [[docs/_meta/status-marker-index]] L266: - [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L625: - [[docs/_meta/status-marker-index]] L267: - [[docs/_meta/duplicates]] L139: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L626: - [[docs/_meta/status-marker-index]] L268: - [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L627: - [[docs/_meta/status-marker-index]] L269: - [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L628: - [[docs/_meta/status-marker-index]] L270: - [[docs/_meta/duplicates]] L145: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L629: - [[docs/_meta/status-marker-index]] L271: - [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L630: - [[docs/_meta/status-marker-index]] L272: - [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L631: - [[docs/_meta/status-marker-index]] L273: - [[docs/_meta/duplicates]] L151: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L632: - [[docs/_meta/status-marker-index]] L274: - [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L633: - [[docs/_meta/status-marker-index]] L275: - [[docs/_meta/duplicates]] L153: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L634: - [[docs/_meta/status-marker-index]] L276: - [[docs/_meta/duplicates]] L157: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L635: - [[docs/_meta/status-marker-index]] L277: - [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L636: - [[docs/_meta/status-marker-index]] L278: - [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L637: - [[docs/_meta/status-marker-index]] L279: - [[docs/_meta/duplicates]] L163: - [[docs/legacy/FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L638: - [[docs/_meta/status-marker-index]] L280: - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L639: - [[docs/_meta/status-marker-index]] L281: - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L640: - [[docs/_meta/status-marker-index]] L282: - [[docs/_meta/duplicates]] L169: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L641: - [[docs/_meta/status-marker-index]] L283: - [[docs/_meta/duplicates]] L170: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L642: - [[docs/_meta/status-marker-index]] L284: - [[docs/_meta/duplicates]] L171: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L643: - [[docs/_meta/status-marker-index]] L285: - [[docs/_meta/duplicates]] L175: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L644: - [[docs/_meta/status-marker-index]] L286: - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L645: - [[docs/_meta/status-marker-index]] L287: - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L646: - [[docs/_meta/status-marker-index]] L288: - [[docs/_meta/duplicates]] L181: - [[docs/legacy/OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L647: - [[docs/_meta/status-marker-index]] L289: - [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L648: - [[docs/_meta/status-marker-index]] L290: - [[docs/_meta/duplicates]] L183: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L649: - [[docs/_meta/status-marker-index]] L291: - [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L650: - [[docs/_meta/status-marker-index]] L292: - [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L651: - [[docs/_meta/status-marker-index]] L293: - [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L652: - [[docs/_meta/status-marker-index]] L294: - [[docs/_meta/duplicates]] L193: - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L653: - [[docs/_meta/status-marker-index]] L295: - [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L654: - [[docs/_meta/status-marker-index]] L296: - [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L655: - [[docs/_meta/status-marker-index]] L297: - [[docs/_meta/duplicates]] L199: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L656: - [[docs/_meta/status-marker-index]] L298: - [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L657: - [[docs/_meta/status-marker-index]] L299: - [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L658: - [[docs/_meta/status-marker-index]] L300: - [[docs/_meta/duplicates]] L205: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L659: - [[docs/_meta/status-marker-index]] L301: - [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L660: - [[docs/_meta/status-marker-index]] L302: - [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L661: - [[docs/_meta/status-marker-index]] L303: - [[docs/_meta/duplicates]] L211: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L662: - [[docs/_meta/status-marker-index]] L304: - [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L663: - [[docs/_meta/status-marker-index]] L305: - [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L664: - [[docs/_meta/status-marker-index]] L306: - [[docs/_meta/duplicates]] L217: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L665: - [[docs/_meta/status-marker-index]] L307: - [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L666: - [[docs/_meta/status-marker-index]] L308: - [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L667: - [[docs/_meta/status-marker-index]] L309: - [[docs/_meta/duplicates]] L223: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L668: - [[docs/_meta/status-marker-index]] L310: - [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L669: - [[docs/_meta/status-marker-index]] L311: - [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L670: - [[docs/_meta/status-marker-index]] L312: - [[docs/_meta/duplicates]] L229: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L671: - [[docs/_meta/status-marker-index]] L313: - [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L672: - [[docs/_meta/status-marker-index]] L314: - [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L673: - [[docs/_meta/status-marker-index]] L315: - [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L674: - [[docs/_meta/status-marker-index]] L316: - [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L675: - [[docs/_meta/status-marker-index]] L317: - [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L676: - [[docs/_meta/status-marker-index]] L318: - [[docs/_meta/duplicates]] L241: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L677: - [[docs/_meta/status-marker-index]] L319: - [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L678: - [[docs/_meta/status-marker-index]] L320: - [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L679: - [[docs/_meta/status-marker-index]] L321: - [[docs/_meta/duplicates]] L247: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L680: - [[docs/_meta/status-marker-index]] L322: - [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L681: - [[docs/_meta/status-marker-index]] L323: - [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L682: - [[docs/_meta/status-marker-index]] L324: - [[docs/_meta/duplicates]] L253: - [[docs/legacy/FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L683: - [[docs/_meta/status-marker-index]] L325: - [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L684: - [[docs/_meta/status-marker-index]] L326: - [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L685: - [[docs/_meta/status-marker-index]] L327: - [[docs/_meta/duplicates]] L259: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L686: - [[docs/_meta/status-marker-index]] L328: - [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L687: - [[docs/_meta/status-marker-index]] L329: - [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L688: - [[docs/_meta/status-marker-index]] L330: - [[docs/_meta/duplicates]] L265: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L689: - [[docs/_meta/status-marker-index]] L331: - [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L690: - [[docs/_meta/status-marker-index]] L332: - [[docs/_meta/duplicates]] L267: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L691: - [[docs/_meta/status-marker-index]] L333: - [[docs/_meta/duplicates]] L271: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L692: - [[docs/_meta/status-marker-index]] L334: - [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L693: - [[docs/_meta/status-marker-index]] L335: - [[docs/_meta/duplicates]] L273: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L694: - [[docs/_meta/status-marker-index]] L336: - [[docs/_meta/duplicates]] L277: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L695: - [[docs/_meta/status-marker-index]] L337: - [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L696: - [[docs/_meta/status-marker-index]] L338: - [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L697: - [[docs/_meta/status-marker-index]] L339: - [[docs/_meta/duplicates]] L283: - [[docs/legacy/root_1_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L698: - [[docs/_meta/status-marker-index]] L340: - [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L699: - [[docs/_meta/status-marker-index]] L341: - [[docs/_meta/duplicates]] L285: - [[docs/legacy/WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L700: - [[docs/_meta/status-marker-index]] L342: - [[docs/_meta/duplicates]] L289: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L701: - [[docs/_meta/status-marker-index]] L343: - [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L702: - [[docs/_meta/status-marker-index]] L344: - [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L703: - [[docs/_meta/status-marker-index]] L345: - [[docs/_meta/duplicates]] L295: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L704: - [[docs/_meta/status-marker-index]] L346: - [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L705: - [[docs/_meta/status-marker-index]] L347: - [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L706: - [[docs/_meta/status-marker-index]] L348: - [[docs/_meta/duplicates]] L301: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L707: - [[docs/_meta/status-marker-index]] L349: - [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L708: - [[docs/_meta/status-marker-index]] L350: - [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L709: - [[docs/_meta/status-marker-index]] L351: - [[docs/_meta/duplicates]] L307: - [[docs/legacy/CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L710: - [[docs/_meta/status-marker-index]] L352: - [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L711: - [[docs/_meta/status-marker-index]] L353: - [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L712: - [[docs/_meta/status-marker-index]] L354: - [[docs/_meta/duplicates]] L313: - [[docs/legacy/RELEASES]]
+- [[docs/_meta/status-marker-index]] L713: - [[docs/_meta/status-marker-index]] L355: - [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_RELEASES]]
+- [[docs/_meta/status-marker-index]] L714: - [[docs/_meta/status-marker-index]] L356: - [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_RELEASES]]
+- [[docs/_meta/status-marker-index]] L715: - [[docs/_meta/status-marker-index]] L357: - [[docs/_meta/duplicates]] L319: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L716: - [[docs/_meta/status-marker-index]] L358: - [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L717: - [[docs/_meta/status-marker-index]] L359: - [[docs/_meta/duplicates]] L321: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L718: - [[docs/_meta/status-marker-index]] L360: - [[docs/_meta/duplicates]] L325: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L719: - [[docs/_meta/status-marker-index]] L361: - [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L720: - [[docs/_meta/status-marker-index]] L362: - [[docs/_meta/duplicates]] L327: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L721: - [[docs/_meta/status-marker-index]] L363: - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L722: - [[docs/_meta/status-marker-index]] L364: - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L723: - [[docs/_meta/status-marker-index]] L365: - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L724: - [[docs/_meta/status-marker-index]] L366: - [[docs/_meta/duplicates]] L337: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L725: - [[docs/_meta/status-marker-index]] L367: - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L726: - [[docs/_meta/status-marker-index]] L368: - [[docs/_meta/duplicates]] L339: - [[docs/legacy/SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L727: - [[docs/_meta/status-marker-index]] L369: - [[docs/_meta/status-marker-index]] L11: - [[docs/_meta/docs-inventory]] L36: | [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]] | gateway | 23 | 1 | AI Bridge Local 0.5.4
+- [[docs/_meta/status-marker-index]] L728: - [[docs/_meta/status-marker-index]] L370: - [[docs/_meta/status-marker-index]] L12: - [[docs/_meta/docs-inventory]] L41: | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
+- [[docs/_meta/status-marker-index]] L729: - [[docs/_meta/status-marker-index]] L371: - [[docs/_meta/status-marker-index]] L13: - [[docs/_meta/docs-inventory]] L43: | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error
+- [[docs/_meta/status-marker-index]] L730: - [[docs/_meta/status-marker-index]] L372: - [[docs/_meta/status-marker-index]] L14: - [[docs/_meta/docs-inventory]] L47: | [[docs/legacy/AI_BRIDGE_LOCAL_0417_VISUAL_DEDUPE_TEMP_SCRIPT_2026-06-10]] | gateway | 48 | 0 | A
+- [[docs/_meta/status-marker-index]] L731: - [[docs/_meta/status-marker-index]] L373: - [[docs/_meta/status-marker-index]] L15: - [[docs/_meta/docs-inventory]] L48: | [[docs/legacy/AI_BRIDGE_LOCAL_0418_UTILITY_SCRIPTS_2026-06-10]] | gateway | 44 | 0 | AI Bridge L
+- [[docs/_meta/status-marker-index]] L732: - [[docs/_meta/status-marker-index]] L374: - [[docs/_meta/status-marker-index]] L16: - [[docs/_meta/docs-inventory]] L49: | [[docs/legacy/AI_BRIDGE_LOCAL_0419_FILTERED_DB_STATUS_2026-06-10]] | architecture | 30 | 0 | AI 
+- [[docs/_meta/status-marker-index]] L733: - [[docs/_meta/status-marker-index]] L375: - [[docs/_meta/status-marker-index]] L17: - [[docs/_meta/docs-inventory]] L50: | [[docs/legacy/AI_BRIDGE_LOCAL_0420_OPS_REPORT_2026-06-10]] | gateway | 47 | 0 | AI Bridge Local 
+- [[docs/_meta/status-marker-index]] L734: - [[docs/_meta/status-marker-index]] L376: - [[docs/_meta/status-marker-index]] L18: - [[docs/_meta/docs-inventory]] L51: | [[docs/legacy/AI_BRIDGE_LOCAL_0421_HEALTH_QUICK_COMMAND_2026-06-10]] | gateway | 40 | 0 | AI Bri
+- [[docs/_meta/status-marker-index]] L735: - [[docs/_meta/status-marker-index]] L377: - [[docs/_meta/status-marker-index]] L19: - [[docs/_meta/docs-inventory]] L52: | [[docs/legacy/AI_BRIDGE_LOCAL_0422_CLEANUP_POLICY_2026-06-10]] | architecture | 45 | 0 | AI Brid
+- [[docs/_meta/status-marker-index]] L736: - [[docs/_meta/status-marker-index]] L378: - [[docs/_meta/status-marker-index]] L20: - [[docs/_meta/docs-inventory]] L53: | [[docs/legacy/AI_BRIDGE_LOCAL_0423_CONSOLIDATED_STATUS_2026-06-10]] | interchat | 84 | 0 | AI Br
+- [[docs/_meta/status-marker-index]] L737: - [[docs/_meta/status-marker-index]] L379: - [[docs/_meta/status-marker-index]] L21: - [[docs/_meta/docs-inventory]] L54: | [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]] | operations | 36 | 0 | AI 
+- [[docs/_meta/status-marker-index]] L738: - [[docs/_meta/status-marker-index]] L380: - [[docs/_meta/status-marker-index]] L22: - [[docs/_meta/docs-inventory]] L55: | [[docs/legacy/AI_BRIDGE_LOCAL_0425_IGNORE_PIZZA_NOISE_2026-06-10]] | interchat | 35 | 0 | AI Bri
+- [[docs/_meta/status-marker-index]] L739: - [[docs/_meta/status-marker-index]] L381: - [[docs/_meta/status-marker-index]] L23: - [[docs/_meta/docs-inventory]] L56: | [[docs/legacy/AI_BRIDGE_LOCAL_0427_SUPERVISOR_WORKER_ROBUSTNESS_2026-06-10]] | gateway | 76 | 0 
+- [[docs/_meta/status-marker-index]] L740: - [[docs/_meta/status-marker-index]] L382: - [[docs/_meta/status-marker-index]] L24: - [[docs/_meta/docs-inventory]] L57: | [[docs/legacy/AI_BRIDGE_LOCAL_0428_SUPERVISOR_DEDUPE_SAFE_2026-06-10]] | gateway | 54 | 0 | AI B
+- [[docs/_meta/status-marker-index]] L741: - [[docs/_meta/status-marker-index]] L383: - [[docs/_meta/status-marker-index]] L25: - [[docs/_meta/docs-inventory]] L58: | [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]] | diagnostics | 38 | 1 | AI
+- [[docs/_meta/status-marker-index]] L742: - [[docs/_meta/status-marker-index]] L384: - [[docs/_meta/status-marker-index]] L26: - [[docs/_meta/docs-inventory]] L59: | [[docs/legacy/AI_BRIDGE_LOCAL_0430_PARSE_AND_DELIVERY_FEEDBACK_2026-06-10]] | interchat | 27 | 0
+- [[docs/_meta/status-marker-index]] L743: - [[docs/_meta/status-marker-index]] L385: - [[docs/_meta/status-marker-index]] L27: - [[docs/_meta/docs-inventory]] L60: | [[docs/legacy/AI_BRIDGE_LOCAL_0431_QUEUED_DELIVERY_FEEDBACK_2026-06-10]] | gateway | 6 | 0 | AI 
+- [[docs/_meta/status-marker-index]] L744: - [[docs/_meta/status-marker-index]] L386: - [[docs/_meta/status-marker-index]] L28: - [[docs/_meta/docs-inventory]] L61: | [[docs/legacy/AI_BRIDGE_LOCAL_0432_AUTHORITATIVE_SOURCE_CHAT_2026-06-10]] | interchat | 8 | 0 | 
+- [[docs/_meta/status-marker-index]] L745: - [[docs/_meta/status-marker-index]] L387: - [[docs/_meta/status-marker-index]] L29: - [[docs/_meta/docs-inventory]] L62: | [[docs/legacy/AI_BRIDGE_LOCAL_0433_WORKER_POOL_SAFE_STEP_2026-06-10]] | gateway | 16 | 0 | AI Br
+- [[docs/_meta/status-marker-index]] L746: - [[docs/_meta/status-marker-index]] L388: - [[docs/_meta/status-marker-index]] L30: - [[docs/_meta/docs-inventory]] L63: | [[docs/legacy/AI_BRIDGE_LOCAL_0434_VIRTUAL_WORKERS_2026-06-10]] | gateway | 108 | 5 | AI Bridge 
+- [[docs/_meta/status-marker-index]] L747: - [[docs/_meta/status-marker-index]] L389: - [[docs/_meta/status-marker-index]] L31: - [[docs/_meta/docs-inventory]] L64: | [[docs/legacy/AI_BRIDGE_LOCAL_BASELINE_2026-06-10]] | gateway | 96 | 2 | AI Bridge Local - basel
+- [[docs/_meta/status-marker-index]] L748: - [[docs/_meta/status-marker-index]] L390: - [[docs/_meta/status-marker-index]] L32: - [[docs/_meta/docs-inventory]] L65: | [[docs/legacy/AI_BRIDGE_LOCAL_COMMAND_USAGE_2026-06-10]] | gateway | 160 | 0 | AI Bridge Local -
+- [[docs/_meta/status-marker-index]] L749: - [[docs/_meta/status-marker-index]] L391: - [[docs/_meta/status-marker-index]] L33: - [[docs/_meta/docs-inventory]] L66: | [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Local fina
+- [[docs/_meta/status-marker-index]] L750: - [[docs/_meta/status-marker-index]] L392: - [[docs/_meta/status-marker-index]] L34: - [[docs/_meta/docs-inventory]] L67: | [[docs/legacy/AI_BRIDGE_LOCAL_SUBMIT_RECOVERY_2026-06-10]] | gateway | 20 | 0 | AI Bridge Local 
+- [[docs/_meta/status-marker-index]] L751: - [[docs/_meta/status-marker-index]] L393: - [[docs/_meta/status-marker-index]] L35: - [[docs/_meta/docs-inventory]] L68: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_CURRENT_STATUS_2026-06-10]] | gateway | 33 | 0 | AI Bridge
+- [[docs/_meta/status-marker-index]] L752: - [[docs/_meta/status-marker-index]] L394: - [[docs/_meta/status-marker-index]] L36: - [[docs/_meta/docs-inventory]] L69: | [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Bridge Lo
+- [[docs/_meta/status-marker-index]] L753: - [[docs/_meta/status-marker-index]] L395: - [[docs/_meta/status-marker-index]] L37: - [[docs/_meta/docs-inventory]] L70: | [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]] | gat
+- [[docs/_meta/status-marker-index]] L754: - [[docs/_meta/status-marker-index]] L396: - [[docs/_meta/status-marker-index]] L38: - [[docs/_meta/docs-inventory]] L71: | [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 | Comman
+- [[docs/_meta/status-marker-index]] L755: - [[docs/_meta/status-marker-index]] L397: - [[docs/_meta/status-marker-index]] L39: - [[docs/_meta/docs-inventory]] L72: | [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 | 0 | Da
+- [[docs/_meta/status-marker-index]] L756: - [[docs/_meta/status-marker-index]] L398: - [[docs/_meta/status-marker-index]] L40: - [[docs/_meta/docs-inventory]] L73: | [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPERATIONA
+- [[docs/_meta/status-marker-index]] L757: - [[docs/_meta/status-marker-index]] L399: - [[docs/_meta/status-marker-index]] L41: - [[docs/_meta/docs-inventory]] L74: | [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Local - Au
+- [[docs/_meta/status-marker-index]] L758: - [[docs/_meta/status-marker-index]] L400: - [[docs/_meta/status-marker-index]] L42: - [[docs/_meta/docs-inventory]] L75: | [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Local - A
+- [[docs/_meta/status-marker-index]] L759: - [[docs/_meta/status-marker-index]] L401: - [[docs/_meta/status-marker-index]] L43: - [[docs/_meta/docs-inventory]] L76: | [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local - Auto
+- [[docs/_meta/status-marker-index]] L760: - [[docs/_meta/status-marker-index]] L402: - [[docs/_meta/status-marker-index]] L44: - [[docs/_meta/docs-inventory]] L77: | [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - Autonomo
+- [[docs/_meta/status-marker-index]] L761: - [[docs/_meta/status-marker-index]] L403: - [[docs/_meta/status-marker-index]] L45: - [[docs/_meta/docs-inventory]] L78: | [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local - Autono
+- [[docs/_meta/status-marker-index]] L762: - [[docs/_meta/status-marker-index]] L404: - [[docs/_meta/status-marker-index]] L46: - [[docs/_meta/docs-inventory]] L79: | [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - Command 
+- [[docs/_meta/status-marker-index]] L763: - [[docs/_meta/status-marker-index]] L405: - [[docs/_meta/status-marker-index]] L47: - [[docs/_meta/docs-inventory]] L80: | [[docs/legacy/COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer submit gua
+- [[docs/_meta/status-marker-index]] L764: - [[docs/_meta/status-marker-index]] L406: - [[docs/_meta/status-marker-index]] L48: - [[docs/_meta/docs-inventory]] L81: | [[docs/legacy/CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L765: - [[docs/_meta/status-marker-index]] L407: - [[docs/_meta/status-marker-index]] L49: - [[docs/_meta/docs-inventory]] L82: | [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diagnostic 
+- [[docs/_meta/status-marker-index]] L766: - [[docs/_meta/status-marker-index]] L408: - [[docs/_meta/status-marker-index]] L50: - [[docs/_meta/docs-inventory]] L83: | [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagnostic su
+- [[docs/_meta/status-marker-index]] L767: - [[docs/_meta/status-marker-index]] L409: - [[docs/_meta/status-marker-index]] L51: - [[docs/_meta/docs-inventory]] L84: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0.5.12 |
+- [[docs/_meta/status-marker-index]] L768: - [[docs/_meta/status-marker-index]] L410: - [[docs/_meta/status-marker-index]] L52: - [[docs/_meta/docs-inventory]] L85: | [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic classifie
+- [[docs/_meta/status-marker-index]] L769: - [[docs/_meta/status-marker-index]] L411: - [[docs/_meta/status-marker-index]] L53: - [[docs/_meta/docs-inventory]] L86: | [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure fixture
+- [[docs/_meta/status-marker-index]] L770: - [[docs/_meta/status-marker-index]] L412: - [[docs/_meta/status-marker-index]] L54: - [[docs/_meta/docs-inventory]] L87: | [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflight reado
+- [[docs/_meta/status-marker-index]] L771: - [[docs/_meta/status-marker-index]] L413: - [[docs/_meta/status-marker-index]] L55: - [[docs/_meta/docs-inventory]] L88: | [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic classif
+- [[docs/_meta/status-marker-index]] L772: - [[docs/_meta/status-marker-index]] L414: - [[docs/_meta/status-marker-index]] L56: - [[docs/_meta/docs-inventory]] L89: | [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disable wor
+- [[docs/_meta/status-marker-index]] L773: - [[docs/_meta/status-marker-index]] L415: - [[docs/_meta/status-marker-index]] L57: - [[docs/_meta/docs-inventory]] L90: | [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0.5.28 |
+- [[docs/_meta/status-marker-index]] L774: - [[docs/_meta/status-marker-index]] L416: - [[docs/_meta/status-marker-index]] L58: - [[docs/_meta/docs-inventory]] L91: | [[docs/legacy/FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L775: - [[docs/_meta/status-marker-index]] L417: - [[docs/_meta/status-marker-index]] L59: - [[docs/_meta/docs-inventory]] L92: | [[docs/legacy/FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L776: - [[docs/_meta/status-marker-index]] L418: - [[docs/_meta/status-marker-index]] L60: - [[docs/_meta/docs-inventory]] L93: | [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Final resu
+- [[docs/_meta/status-marker-index]] L777: - [[docs/_meta/status-marker-index]] L419: - [[docs/_meta/status-marker-index]] L61: - [[docs/_meta/docs-inventory]] L94: | [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local - Final 
+- [[docs/_meta/status-marker-index]] L778: - [[docs/_meta/status-marker-index]] L420: - [[docs/_meta/status-marker-index]] L62: - [[docs/_meta/docs-inventory]] L95: | [[docs/legacy/FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.30 |
+- [[docs/_meta/status-marker-index]] L779: - [[docs/_meta/status-marker-index]] L421: - [[docs/_meta/status-marker-index]] L63: - [[docs/_meta/docs-inventory]] L96: | [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smokes and U
+- [[docs/_meta/status-marker-index]] L780: - [[docs/_meta/status-marker-index]] L422: - [[docs/_meta/status-marker-index]] L64: - [[docs/_meta/docs-inventory]] L97: | [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compatible s
+- [[docs/_meta/status-marker-index]] L781: - [[docs/_meta/status-marker-index]] L423: - [[docs/_meta/status-marker-index]] L65: - [[docs/_meta/docs-inventory]] L98: | [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway feedback d
+- [[docs/_meta/status-marker-index]] L782: - [[docs/_meta/status-marker-index]] L424: - [[docs/_meta/status-marker-index]] L66: - [[docs/_meta/docs-inventory]] L99: | [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immediate gate
+- [[docs/_meta/status-marker-index]] L783: - [[docs/_meta/status-marker-index]] L425: - [[docs/_meta/status-marker-index]] L67: - [[docs/_meta/docs-inventory]] L100: | [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge Local
+- [[docs/_meta/status-marker-index]] L784: - [[docs/_meta/status-marker-index]] L426: - [[docs/_meta/status-marker-index]] L68: - [[docs/_meta/docs-inventory]] L101: | [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interchat au
+- [[docs/_meta/status-marker-index]] L785: - [[docs/_meta/status-marker-index]] L427: - [[docs/_meta/status-marker-index]] L69: - [[docs/_meta/docs-inventory]] L102: | [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.5.16 |
+- [[docs/_meta/status-marker-index]] L786: - [[docs/_meta/status-marker-index]] L428: - [[docs/_meta/status-marker-index]] L70: - [[docs/_meta/docs-inventory]] L103: | [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational report g
+- [[docs/_meta/status-marker-index]] L787: - [[docs/_meta/status-marker-index]] L429: - [[docs/_meta/status-marker-index]] L71: - [[docs/_meta/docs-inventory]] L104: | [[docs/legacy/OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runbook |
+- [[docs/_meta/status-marker-index]] L788: - [[docs/_meta/status-marker-index]] L430: - [[docs/_meta/status-marker-index]] L72: - [[docs/_meta/docs-inventory]] L105: | [[docs/legacy/QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L789: - [[docs/_meta/status-marker-index]] L431: - [[docs/_meta/status-marker-index]] L73: - [[docs/_meta/docs-inventory]] L106: | [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage playb
+- [[docs/_meta/status-marker-index]] L790: - [[docs/_meta/status-marker-index]] L432: - [[docs/_meta/status-marker-index]] L74: - [[docs/_meta/docs-inventory]] L107: | [[docs/legacy/QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 |
+- [[docs/_meta/status-marker-index]] L791: - [[docs/_meta/status-marker-index]] L433: - [[docs/_meta/status-marker-index]] L75: - [[docs/_meta/docs-inventory]] L108: | [[docs/legacy/RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L792: - [[docs/_meta/status-marker-index]] L434: - [[docs/_meta/status-marker-index]] L76: - [[docs/_meta/docs-inventory]] L109: | [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self-smoke
+- [[docs/_meta/status-marker-index]] L793: - [[docs/_meta/status-marker-index]] L435: - [[docs/_meta/status-marker-index]] L77: - [[docs/_meta/docs-inventory]] L110: | [[docs/legacy/RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Release safe
+- [[docs/_meta/status-marker-index]] L794: - [[docs/_meta/status-marker-index]] L436: - [[docs/_meta/status-marker-index]] L78: - [[docs/_meta/docs-inventory]] L111: | [[docs/legacy/RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L795: - [[docs/_meta/status-marker-index]] L437: - [[docs/_meta/status-marker-index]] L79: - [[docs/_meta/docs-inventory]] L112: | [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Remove ac
+- [[docs/_meta/status-marker-index]] L796: - [[docs/_meta/status-marker-index]] L438: - [[docs/_meta/status-marker-index]] L80: - [[docs/_meta/docs-inventory]] L113: | [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remove work
+- [[docs/_meta/status-marker-index]] L797: - [[docs/_meta/status-marker-index]] L439: - [[docs/_meta/status-marker-index]] L81: - [[docs/_meta/docs-inventory]] L114: | [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Lo
+- [[docs/_meta/status-marker-index]] L798: - [[docs/_meta/status-marker-index]] L440: - [[docs/_meta/status-marker-index]] L82: - [[docs/_meta/docs-inventory]] L115: | [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Lo
+- [[docs/_meta/status-marker-index]] L799: - [[docs/_meta/status-marker-index]] L441: - [[docs/_meta/status-marker-index]] L83: - [[docs/_meta/docs-inventory]] L116: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge L
+- [[docs/_meta/status-marker-index]] L800: - [[docs/_meta/status-marker-index]] L442: - [[docs/_meta/status-marker-index]] L84: - [[docs/_meta/docs-inventory]] L117: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Loca
+- [[docs/_meta/status-marker-index]] L801: - [[docs/_meta/status-marker-index]] L443: - [[docs/_meta/status-marker-index]] L85: - [[docs/_meta/docs-inventory]] L118: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - 
+- [[docs/_meta/status-marker-index]] L802: - [[docs/_meta/status-marker-index]] L444: - [[docs/_meta/status-marker-index]] L86: - [[docs/_meta/docs-inventory]] L119: | [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local 
+- [[docs/_meta/status-marker-index]] L803: - [[docs/_meta/status-marker-index]] L445: - [[docs/_meta/status-marker-index]] L87: - [[docs/_meta/docs-inventory]] L120: | [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - 
+- [[docs/_meta/status-marker-index]] L804: - [[docs/_meta/status-marker-index]] L446: - [[docs/_meta/status-marker-index]] L88: - [[docs/_meta/docs-inventory]] L121: | [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer su
+- [[docs/_meta/status-marker-index]] L805: - [[docs/_meta/status-marker-index]] L447: - [[docs/_meta/status-marker-index]] L89: - [[docs/_meta/docs-inventory]] L122: | [[docs/legacy/root_1_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status 
+- [[docs/_meta/status-marker-index]] L806: - [[docs/_meta/status-marker-index]] L448: - [[docs/_meta/status-marker-index]] L90: - [[docs/_meta/docs-inventory]] L123: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery dia
+- [[docs/_meta/status-marker-index]] L807: - [[docs/_meta/status-marker-index]] L449: - [[docs/_meta/status-marker-index]] L91: - [[docs/_meta/docs-inventory]] L124: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagn
+- [[docs/_meta/status-marker-index]] L808: - [[docs/_meta/status-marker-index]] L450: - [[docs/_meta/status-marker-index]] L92: - [[docs/_meta/docs-inventory]] L125: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 
+- [[docs/_meta/status-marker-index]] L809: - [[docs/_meta/status-marker-index]] L451: - [[docs/_meta/status-marker-index]] L93: - [[docs/_meta/docs-inventory]] L126: | [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic c
+- [[docs/_meta/status-marker-index]] L810: - [[docs/_meta/status-marker-index]] L452: - [[docs/_meta/status-marker-index]] L94: - [[docs/_meta/docs-inventory]] L127: | [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure
+- [[docs/_meta/status-marker-index]] L811: - [[docs/_meta/status-marker-index]] L453: - [[docs/_meta/status-marker-index]] L95: - [[docs/_meta/docs-inventory]] L128: | [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery preflig
+- [[docs/_meta/status-marker-index]] L812: - [[docs/_meta/status-marker-index]] L454: - [[docs/_meta/status-marker-index]] L96: - [[docs/_meta/docs-inventory]] L129: | [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic
+- [[docs/_meta/status-marker-index]] L813: - [[docs/_meta/status-marker-index]] L455: - [[docs/_meta/status-marker-index]] L97: - [[docs/_meta/docs-inventory]] L130: | [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Dis
+- [[docs/_meta/status-marker-index]] L814: - [[docs/_meta/status-marker-index]] L456: - [[docs/_meta/status-marker-index]] L98: - [[docs/_meta/docs-inventory]] L131: | [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 
+- [[docs/_meta/status-marker-index]] L815: - [[docs/_meta/status-marker-index]] L457: - [[docs/_meta/status-marker-index]] L99: - [[docs/_meta/docs-inventory]] L132: | [[docs/legacy/root_1_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L816: - [[docs/_meta/status-marker-index]] L458: - [[docs/_meta/status-marker-index]] L100: - [[docs/_meta/docs-inventory]] L133: | [[docs/legacy/root_1_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L817: - [[docs/_meta/status-marker-index]] L459: - [[docs/_meta/status-marker-index]] L101: - [[docs/_meta/docs-inventory]] L134: | [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - F
+- [[docs/_meta/status-marker-index]] L818: - [[docs/_meta/status-marker-index]] L460: - [[docs/_meta/status-marker-index]] L102: - [[docs/_meta/docs-inventory]] L135: | [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local
+- [[docs/_meta/status-marker-index]] L819: - [[docs/_meta/status-marker-index]] L461: - [[docs/_meta/status-marker-index]] L103: - [[docs/_meta/docs-inventory]] L136: | [[docs/legacy/root_1_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.
+- [[docs/_meta/status-marker-index]] L820: - [[docs/_meta/status-marker-index]] L462: - [[docs/_meta/status-marker-index]] L104: - [[docs/_meta/docs-inventory]] L137: | [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smo
+- [[docs/_meta/status-marker-index]] L821: - [[docs/_meta/status-marker-index]] L463: - [[docs/_meta/status-marker-index]] L105: - [[docs/_meta/docs-inventory]] L138: | [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-com
+- [[docs/_meta/status-marker-index]] L822: - [[docs/_meta/status-marker-index]] L464: - [[docs/_meta/status-marker-index]] L106: - [[docs/_meta/docs-inventory]] L139: | [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway f
+- [[docs/_meta/status-marker-index]] L823: - [[docs/_meta/status-marker-index]] L465: - [[docs/_meta/status-marker-index]] L107: - [[docs/_meta/docs-inventory]] L140: | [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immed
+- [[docs/_meta/status-marker-index]] L824: - [[docs/_meta/status-marker-index]] L466: - [[docs/_meta/status-marker-index]] L108: - [[docs/_meta/docs-inventory]] L141: | [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Brid
+- [[docs/_meta/status-marker-index]] L825: - [[docs/_meta/status-marker-index]] L467: - [[docs/_meta/status-marker-index]] L109: - [[docs/_meta/docs-inventory]] L142: | [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live inte
+- [[docs/_meta/status-marker-index]] L826: - [[docs/_meta/status-marker-index]] L468: - [[docs/_meta/status-marker-index]] L110: - [[docs/_meta/docs-inventory]] L143: | [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 
+- [[docs/_meta/status-marker-index]] L827: - [[docs/_meta/status-marker-index]] L469: - [[docs/_meta/status-marker-index]] L111: - [[docs/_meta/docs-inventory]] L144: | [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational 
+- [[docs/_meta/status-marker-index]] L828: - [[docs/_meta/status-marker-index]] L470: - [[docs/_meta/status-marker-index]] L112: - [[docs/_meta/docs-inventory]] L145: | [[docs/legacy/root_1_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Ru
+- [[docs/_meta/status-marker-index]] L829: - [[docs/_meta/status-marker-index]] L471: - [[docs/_meta/status-marker-index]] L113: - [[docs/_meta/docs-inventory]] L146: | [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_1_QUEUE_REPORTS_CLEANUP 
+- [[docs/_meta/status-marker-index]] L830: - [[docs/_meta/status-marker-index]] L472: - [[docs/_meta/status-marker-index]] L114: - [[docs/_meta/docs-inventory]] L147: | [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue tria
+- [[docs/_meta/status-marker-index]] L831: - [[docs/_meta/status-marker-index]] L473: - [[docs/_meta/status-marker-index]] L115: - [[docs/_meta/docs-inventory]] L148: | [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.2
+- [[docs/_meta/status-marker-index]] L832: - [[docs/_meta/status-marker-index]] L474: - [[docs/_meta/status-marker-index]] L116: - [[docs/_meta/docs-inventory]] L149: | [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19
+- [[docs/_meta/status-marker-index]] L833: - [[docs/_meta/status-marker-index]] L475: - [[docs/_meta/status-marker-index]] L117: - [[docs/_meta/docs-inventory]] L150: | [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner se
+- [[docs/_meta/status-marker-index]] L834: - [[docs/_meta/status-marker-index]] L476: - [[docs/_meta/status-marker-index]] L118: - [[docs/_meta/docs-inventory]] L151: | [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Rele
+- [[docs/_meta/status-marker-index]] L835: - [[docs/_meta/status-marker-index]] L477: - [[docs/_meta/status-marker-index]] L119: - [[docs/_meta/docs-inventory]] L152: | [[docs/legacy/root_1_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L836: - [[docs/_meta/status-marker-index]] L478: - [[docs/_meta/status-marker-index]] L120: - [[docs/_meta/docs-inventory]] L153: | [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - R
+- [[docs/_meta/status-marker-index]] L837: - [[docs/_meta/status-marker-index]] L479: - [[docs/_meta/status-marker-index]] L121: - [[docs/_meta/docs-inventory]] L154: | [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Rem
+- [[docs/_meta/status-marker-index]] L838: - [[docs/_meta/status-marker-index]] L480: - [[docs/_meta/status-marker-index]] L122: - [[docs/_meta/docs-inventory]] L155: | [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe
+- [[docs/_meta/status-marker-index]] L839: - [[docs/_meta/status-marker-index]] L481: - [[docs/_meta/status-marker-index]] L123: - [[docs/_meta/docs-inventory]] L156: | [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.
+- [[docs/_meta/status-marker-index]] L840: - [[docs/_meta/status-marker-index]] L482: - [[docs/_meta/status-marker-index]] L124: - [[docs/_meta/docs-inventory]] L157: | [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Sel
+- [[docs/_meta/status-marker-index]] L841: - [[docs/_meta/status-marker-index]] L483: - [[docs/_meta/status-marker-index]] L125: - [[docs/_meta/docs-inventory]] L158: | [[docs/legacy/root_1_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worke
+- [[docs/_meta/status-marker-index]] L842: - [[docs/_meta/status-marker-index]] L484: - [[docs/_meta/status-marker-index]] L126: - [[docs/_meta/docs-inventory]] L159: | [[docs/legacy/root_1_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L843: - [[docs/_meta/status-marker-index]] L485: - [[docs/_meta/status-marker-index]] L127: - [[docs/_meta/docs-inventory]] L160: | [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Wat
+- [[docs/_meta/status-marker-index]] L844: - [[docs/_meta/status-marker-index]] L486: - [[docs/_meta/status-marker-index]] L128: - [[docs/_meta/docs-inventory]] L161: | [[docs/legacy/root_1_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L845: - [[docs/_meta/status-marker-index]] L487: - [[docs/_meta/status-marker-index]] L129: - [[docs/_meta/docs-inventory]] L162: | [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watc
+- [[docs/_meta/status-marker-index]] L846: - [[docs/_meta/status-marker-index]] L488: - [[docs/_meta/status-marker-index]] L130: - [[docs/_meta/docs-inventory]] L163: | [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker 
+- [[docs/_meta/status-marker-index]] L847: - [[docs/_meta/status-marker-index]] L489: - [[docs/_meta/status-marker-index]] L131: - [[docs/_meta/docs-inventory]] L164: | [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]] | smoke-tests | 46 | 0 | AI Bridge Loc
+- [[docs/_meta/status-marker-index]] L848: - [[docs/_meta/status-marker-index]] L490: - [[docs/_meta/status-marker-index]] L132: - [[docs/_meta/docs-inventory]] L165: | [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3 | AI Br
+- [[docs/_meta/status-marker-index]] L849: - [[docs/_meta/status-marker-index]] L491: - [[docs/_meta/status-marker-index]] L133: - [[docs/_meta/docs-inventory]] L166: | [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]] | gateway | 781 | 3
+- [[docs/_meta/status-marker-index]] L850: - [[docs/_meta/status-marker-index]] L492: - [[docs/_meta/status-marker-index]] L134: - [[docs/_meta/docs-inventory]] L167: | [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_202
+- [[docs/_meta/status-marker-index]] L851: - [[docs/_meta/status-marker-index]] L493: - [[docs/_meta/status-marker-index]] L135: - [[docs/_meta/docs-inventory]] L168: | [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 
+- [[docs/_meta/status-marker-index]] L852: - [[docs/_meta/status-marker-index]] L494: - [[docs/_meta/status-marker-index]] L136: - [[docs/_meta/docs-inventory]] L169: | [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operation
+- [[docs/_meta/status-marker-index]] L853: - [[docs/_meta/status-marker-index]] L495: - [[docs/_meta/status-marker-index]] L137: - [[docs/_meta/docs-inventory]] L170: | [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 |
+- [[docs/_meta/status-marker-index]] L854: - [[docs/_meta/status-marker-index]] L496: - [[docs/_meta/status-marker-index]] L138: - [[docs/_meta/docs-inventory]] L171: | [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]
+- [[docs/_meta/status-marker-index]] L855: - [[docs/_meta/status-marker-index]] L497: - [[docs/_meta/status-marker-index]] L139: - [[docs/_meta/docs-inventory]] L172: | [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]] | gateway | 98 | 4 |
+- [[docs/_meta/status-marker-index]] L856: - [[docs/_meta/status-marker-index]] L498: - [[docs/_meta/status-marker-index]] L140: - [[docs/_meta/docs-inventory]] L173: | [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]] | operations | 10 |
+- [[docs/_meta/status-marker-index]] L857: - [[docs/_meta/status-marker-index]] L499: - [[docs/_meta/status-marker-index]] L141: - [[docs/_meta/docs-inventory]] L174: | [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]] | interchat | 9 | 1 | OPE
+- [[docs/_meta/status-marker-index]] L858: - [[docs/_meta/status-marker-index]] L500: - [[docs/_meta/status-marker-index]] L142: - [[docs/_meta/docs-inventory]] L175: | [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]] | governance | 22 | 1 | AI Bridge Loc
+- [[docs/_meta/status-marker-index]] L859: - [[docs/_meta/status-marker-index]] L501: - [[docs/_meta/status-marker-index]] L143: - [[docs/_meta/docs-inventory]] L176: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]] | governance | 22 | 1 | AI Bridge Lo
+- [[docs/_meta/status-marker-index]] L860: - [[docs/_meta/status-marker-index]] L502: - [[docs/_meta/status-marker-index]] L144: - [[docs/_meta/docs-inventory]] L177: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]] | operations | 29 | 0 | AI Bridge Local
+- [[docs/_meta/status-marker-index]] L861: - [[docs/_meta/status-marker-index]] L503: - [[docs/_meta/status-marker-index]] L145: - [[docs/_meta/docs-inventory]] L178: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]] | operations | 26 | 2 | AI Bridge Local - A
+- [[docs/_meta/status-marker-index]] L862: - [[docs/_meta/status-marker-index]] L504: - [[docs/_meta/status-marker-index]] L146: - [[docs/_meta/docs-inventory]] L179: | [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]] | operations | 26 | 3 | AI Bridge Local -
+- [[docs/_meta/status-marker-index]] L863: - [[docs/_meta/status-marker-index]] L505: - [[docs/_meta/status-marker-index]] L147: - [[docs/_meta/docs-inventory]] L180: | [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]] | gateway | 28 | 0 | AI Bridge Local - C
+- [[docs/_meta/status-marker-index]] L864: - [[docs/_meta/status-marker-index]] L506: - [[docs/_meta/status-marker-index]] L148: - [[docs/_meta/docs-inventory]] L181: | [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]] | chatgpt | 11 | 0 | AI Bridge Local - Composer sub
+- [[docs/_meta/status-marker-index]] L865: - [[docs/_meta/status-marker-index]] L507: - [[docs/_meta/status-marker-index]] L149: - [[docs/_meta/docs-inventory]] L182: | [[docs/legacy/root_CURRENT_STATUS]] | governance | 25 | 0 | AI Bridge Local - Current Status |
+- [[docs/_meta/status-marker-index]] L866: - [[docs/_meta/status-marker-index]] L508: - [[docs/_meta/status-marker-index]] L150: - [[docs/_meta/docs-inventory]] L183: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]] | diagnostics | 20 | 0 | Delivery diag
+- [[docs/_meta/status-marker-index]] L867: - [[docs/_meta/status-marker-index]] L509: - [[docs/_meta/status-marker-index]] L151: - [[docs/_meta/docs-inventory]] L184: | [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]] | diagnostics | 18 | 0 | Delivery diagno
+- [[docs/_meta/status-marker-index]] L868: - [[docs/_meta/status-marker-index]] L510: - [[docs/_meta/status-marker-index]] L152: - [[docs/_meta/docs-inventory]] L185: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]] | diagnostics | 18 | 0 | Delivery diagnostics 0
+- [[docs/_meta/status-marker-index]] L869: - [[docs/_meta/status-marker-index]] L511: - [[docs/_meta/status-marker-index]] L153: - [[docs/_meta/docs-inventory]] L186: | [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]] | diagnostics | 31 | 1 | Delivery diagnostic cl
+- [[docs/_meta/status-marker-index]] L870: - [[docs/_meta/status-marker-index]] L512: - [[docs/_meta/status-marker-index]] L154: - [[docs/_meta/docs-inventory]] L187: | [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]] | diagnostics | 22 | 0 | Delivery failure 
+- [[docs/_meta/status-marker-index]] L871: - [[docs/_meta/status-marker-index]] L513: - [[docs/_meta/status-marker-index]] L155: - [[docs/_meta/docs-inventory]] L188: | [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]] | interchat | 24 | 0 | Delivery prefligh
+- [[docs/_meta/status-marker-index]] L872: - [[docs/_meta/status-marker-index]] L514: - [[docs/_meta/status-marker-index]] L156: - [[docs/_meta/docs-inventory]] L189: | [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]] | diagnostics | 15 | 0 | Diagnostic 
+- [[docs/_meta/status-marker-index]] L873: - [[docs/_meta/status-marker-index]] L515: - [[docs/_meta/status-marker-index]] L157: - [[docs/_meta/docs-inventory]] L190: | [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Disa
+- [[docs/_meta/status-marker-index]] L874: - [[docs/_meta/status-marker-index]] L516: - [[docs/_meta/status-marker-index]] L158: - [[docs/_meta/docs-inventory]] L191: | [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]] | interchat | 17 | 1 | Dry-run delivery plan 0
+- [[docs/_meta/status-marker-index]] L875: - [[docs/_meta/status-marker-index]] L517: - [[docs/_meta/status-marker-index]] L159: - [[docs/_meta/docs-inventory]] L192: | [[docs/legacy/root_FINAL_AUDIT_0531]] | interchat | 18 | 0 | Final audit 0.5.31 |
+- [[docs/_meta/status-marker-index]] L876: - [[docs/_meta/status-marker-index]] L518: - [[docs/_meta/status-marker-index]] L160: - [[docs/_meta/docs-inventory]] L193: | [[docs/legacy/root_FINAL_HANDOFF_0532]] | interchat | 16 | 0 | Final handoff 0.5.32 |
+- [[docs/_meta/status-marker-index]] L877: - [[docs/_meta/status-marker-index]] L519: - [[docs/_meta/status-marker-index]] L161: - [[docs/_meta/docs-inventory]] L194: | [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]] | diagnostics | 19 | 0 | AI Bridge Local - Fin
+- [[docs/_meta/status-marker-index]] L878: - [[docs/_meta/status-marker-index]] L520: - [[docs/_meta/status-marker-index]] L162: - [[docs/_meta/docs-inventory]] L195: | [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]] | diagnostics | 24 | 0 | AI Bridge Local -
+- [[docs/_meta/status-marker-index]] L879: - [[docs/_meta/status-marker-index]] L521: - [[docs/_meta/status-marker-index]] L163: - [[docs/_meta/docs-inventory]] L196: | [[docs/legacy/root_FINAL_STABILIZATION_0530]] | operations | 20 | 0 | Final stabilization 0.5.
+- [[docs/_meta/status-marker-index]] L880: - [[docs/_meta/status-marker-index]] L522: - [[docs/_meta/status-marker-index]] L164: - [[docs/_meta/docs-inventory]] L197: | [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]] | diagnostics | 16 | 0 | Fix version smoke
+- [[docs/_meta/status-marker-index]] L881: - [[docs/_meta/status-marker-index]] L523: - [[docs/_meta/status-marker-index]] L165: - [[docs/_meta/docs-inventory]] L198: | [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]] | interchat | 20 | 1 | Forward-compa
+- [[docs/_meta/status-marker-index]] L882: - [[docs/_meta/status-marker-index]] L524: - [[docs/_meta/status-marker-index]] L166: - [[docs/_meta/docs-inventory]] L199: | [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]] | gateway | 13 | 0 | AI Bridge Local - Gateway fee
+- [[docs/_meta/status-marker-index]] L883: - [[docs/_meta/status-marker-index]] L525: - [[docs/_meta/status-marker-index]] L167: - [[docs/_meta/docs-inventory]] L200: | [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]] | gateway | 11 | 0 | AI Bridge Local - Immedia
+- [[docs/_meta/status-marker-index]] L884: - [[docs/_meta/status-marker-index]] L526: - [[docs/_meta/status-marker-index]] L168: - [[docs/_meta/docs-inventory]] L201: | [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]] | architecture | 36 | 1 | AI Bridge
+- [[docs/_meta/status-marker-index]] L885: - [[docs/_meta/status-marker-index]] L527: - [[docs/_meta/status-marker-index]] L169: - [[docs/_meta/docs-inventory]] L202: | [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]] | interchat | 27 | 0 | Live interc
+- [[docs/_meta/status-marker-index]] L886: - [[docs/_meta/status-marker-index]] L528: - [[docs/_meta/status-marker-index]] L170: - [[docs/_meta/docs-inventory]] L203: | [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]] | operations | 20 | 0 | No shell close audit 0.
+- [[docs/_meta/status-marker-index]] L887: - [[docs/_meta/status-marker-index]] L529: - [[docs/_meta/status-marker-index]] L171: - [[docs/_meta/docs-inventory]] L204: | [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]] | diagnostics | 15 | 0 | Operational re
+- [[docs/_meta/status-marker-index]] L888: - [[docs/_meta/status-marker-index]] L530: - [[docs/_meta/status-marker-index]] L172: - [[docs/_meta/docs-inventory]] L205: | [[docs/legacy/root_OPERATIONS_RUNBOOK]] | gateway | 29 | 0 | AI Bridge Local - Operations Runb
+- [[docs/_meta/status-marker-index]] L889: - [[docs/_meta/status-marker-index]] L531: - [[docs/_meta/status-marker-index]] L173: - [[docs/_meta/docs-inventory]] L206: | [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]] | gateway | 2 | 0 | root_QUEUE_REPORTS_CLEANUP |
+- [[docs/_meta/status-marker-index]] L890: - [[docs/_meta/status-marker-index]] L532: - [[docs/_meta/status-marker-index]] L174: - [[docs/_meta/docs-inventory]] L207: | [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]] | gateway | 19 | 0 | AI Bridge Local - Queue triage
+- [[docs/_meta/status-marker-index]] L891: - [[docs/_meta/status-marker-index]] L533: - [[docs/_meta/status-marker-index]] L175: - [[docs/_meta/docs-inventory]] L208: | [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]] | gateway | 21 | 0 | Queue worker health 0.5.25 
+- [[docs/_meta/status-marker-index]] L892: - [[docs/_meta/status-marker-index]] L534: - [[docs/_meta/status-marker-index]] L176: - [[docs/_meta/docs-inventory]] L209: | [[docs/legacy/root_RELEASE_CHECKLIST_0519]] | operations | 29 | 0 | Release checklist 0.5.19 |
+- [[docs/_meta/status-marker-index]] L893: - [[docs/_meta/status-marker-index]] L535: - [[docs/_meta/status-marker-index]] L177: - [[docs/_meta/docs-inventory]] L210: | [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]] | interchat | 14 | 0 | Release runner self
+- [[docs/_meta/status-marker-index]] L894: - [[docs/_meta/status-marker-index]] L536: - [[docs/_meta/status-marker-index]] L178: - [[docs/_meta/docs-inventory]] L211: | [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]] | operations | 24 | 0 | AI Bridge Local - Releas
+- [[docs/_meta/status-marker-index]] L895: - [[docs/_meta/status-marker-index]] L537: - [[docs/_meta/status-marker-index]] L179: - [[docs/_meta/docs-inventory]] L212: | [[docs/legacy/root_RELEASES]] | gateway | 23 | 1 | AI Bridge Local - Releases |
+- [[docs/_meta/status-marker-index]] L896: - [[docs/_meta/status-marker-index]] L538: - [[docs/_meta/status-marker-index]] L180: - [[docs/_meta/docs-inventory]] L213: | [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]] | gateway | 15 | 0 | AI Bridge Local - Rem
+- [[docs/_meta/status-marker-index]] L897: - [[docs/_meta/status-marker-index]] L539: - [[docs/_meta/status-marker-index]] L181: - [[docs/_meta/docs-inventory]] L214: | [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]] | gateway | 11 | 0 | AI Bridge Local - Remov
+- [[docs/_meta/status-marker-index]] L898: - [[docs/_meta/status-marker-index]] L540: - [[docs/_meta/status-marker-index]] L182: - [[docs/_meta/docs-inventory]] L215: | [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe e
+- [[docs/_meta/status-marker-index]] L899: - [[docs/_meta/status-marker-index]] L541: - [[docs/_meta/status-marker-index]] L183: - [[docs/_meta/docs-inventory]] L216: | [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.
+- [[docs/_meta/status-marker-index]] L900: - [[docs/_meta/status-marker-index]] L542: - [[docs/_meta/status-marker-index]] L184: - [[docs/_meta/docs-inventory]] L217: | [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self 
+- [[docs/_meta/status-marker-index]] L901: - [[docs/_meta/status-marker-index]] L543: - [[docs/_meta/status-marker-index]] L185: - [[docs/_meta/docs-inventory]] L218: | [[docs/legacy/root_SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker 
+- [[docs/_meta/status-marker-index]] L902: - [[docs/_meta/status-marker-index]] L544: - [[docs/_meta/status-marker-index]] L186: - [[docs/_meta/docs-inventory]] L219: | [[docs/legacy/root_SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L903: - [[docs/_meta/status-marker-index]] L545: - [[docs/_meta/status-marker-index]] L187: - [[docs/_meta/docs-inventory]] L220: | [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watch
+- [[docs/_meta/status-marker-index]] L904: - [[docs/_meta/status-marker-index]] L546: - [[docs/_meta/status-marker-index]] L188: - [[docs/_meta/docs-inventory]] L221: | [[docs/legacy/root_WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L905: - [[docs/_meta/status-marker-index]] L547: - [[docs/_meta/status-marker-index]] L189: - [[docs/_meta/docs-inventory]] L222: | [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watche
+- [[docs/_meta/status-marker-index]] L906: - [[docs/_meta/status-marker-index]] L548: - [[docs/_meta/status-marker-index]] L190: - [[docs/_meta/docs-inventory]] L223: | [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker qu
+- [[docs/_meta/status-marker-index]] L907: - [[docs/_meta/status-marker-index]] L549: - [[docs/_meta/status-marker-index]] L191: - [[docs/_meta/docs-inventory]] L224: | [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]] | smoke-tests | 21 | 0 | AI Bridge Local - Safe envelo
+- [[docs/_meta/status-marker-index]] L908: - [[docs/_meta/status-marker-index]] L550: - [[docs/_meta/status-marker-index]] L192: - [[docs/_meta/docs-inventory]] L225: | [[docs/legacy/SAFE_RELEASE_RUNNER_0515]] | operations | 25 | 1 | Safe release runner 0.5.15 |
+- [[docs/_meta/status-marker-index]] L909: - [[docs/_meta/status-marker-index]] L551: - [[docs/_meta/status-marker-index]] L193: - [[docs/_meta/docs-inventory]] L226: | [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]] | governance | 25 | 1 | AI Bridge Local - Self evolu
+- [[docs/_meta/status-marker-index]] L910: - [[docs/_meta/status-marker-index]] L552: - [[docs/_meta/status-marker-index]] L194: - [[docs/_meta/docs-inventory]] L227: | [[docs/legacy/SINGLE_WORKER_GUARD]] | gateway | 18 | 0 | AI Bridge Local - Single worker guard
+- [[docs/_meta/status-marker-index]] L911: - [[docs/_meta/status-marker-index]] L553: - [[docs/_meta/status-marker-index]] L195: - [[docs/_meta/docs-inventory]] L228: | [[docs/legacy/SMOKE_ALL_0520]] | gateway | 22 | 1 | Smoke all 0.5.20 |
+- [[docs/_meta/status-marker-index]] L912: - [[docs/_meta/status-marker-index]] L554: - [[docs/_meta/status-marker-index]] L196: - [[docs/_meta/docs-inventory]] L229: | [[docs/legacy/WATCHER_FAILURE_TAXONOMY]] | diagnostics | 21 | 0 | AI Bridge Local - Watcher fa
+- [[docs/_meta/status-marker-index]] L913: - [[docs/_meta/status-marker-index]] L555: - [[docs/_meta/status-marker-index]] L197: - [[docs/_meta/docs-inventory]] L230: | [[docs/legacy/WATCHER_NOTES]] | interchat | 18 | 0 | AI Bridge Local - Watcher Notes |
+- [[docs/_meta/status-marker-index]] L914: - [[docs/_meta/status-marker-index]] L556: - [[docs/_meta/status-marker-index]] L198: - [[docs/_meta/docs-inventory]] L231: | [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]] | operations | 25 | 0 | AI Bridge Local - Watcher rec
+- [[docs/_meta/status-marker-index]] L915: - [[docs/_meta/status-marker-index]] L557: - [[docs/_meta/status-marker-index]] L199: - [[docs/_meta/docs-inventory]] L232: | [[docs/legacy/WINDOWS_CONTROL_CENTER_APP]] | diagnostics | 49 | 2 | AI Bridge Local - Aplicati
+- [[docs/_meta/status-marker-index]] L916: - [[docs/_meta/status-marker-index]] L558: - [[docs/_meta/status-marker-index]] L200: - [[docs/_meta/docs-inventory]] L233: | [[docs/legacy/WORKER_QUEUE_PARALLELISM]] | gateway | 20 | 1 | AI Bridge Local - Worker queue p
+- [[docs/_meta/status-marker-index]] L917: - [[docs/_meta/status-marker-index]] L559: - [[docs/_meta/status-marker-index]] L201: - [[docs/_meta/docs-inventory]] L241: | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
+- [[docs/_meta/status-marker-index]] L918: - [[docs/_meta/status-marker-index]] L560: - [[docs/_meta/status-marker-index]] L202: - [[docs/_meta/docs-inventory]] L276: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_CLASSIFIER_2026-06-14]] | governance | 21 | 2 | AI B
+- [[docs/_meta/status-marker-index]] L919: - [[docs/_meta/status-marker-index]] L561: - [[docs/_meta/status-marker-index]] L203: - [[docs/_meta/docs-inventory]] L277: | [[reports/AI_BRIDGE_LOCAL_GOVERNANCE_RISK_REPORT_2026-06-14]] | governance | 11 | 1 | AI Bridg
+- [[docs/_meta/status-marker-index]] L920: - [[docs/_meta/status-marker-index]] L562: - [[docs/_meta/status-marker-index]] L204: - [[docs/_meta/duplicates]] L13: - [[docs/legacy/COMPOSER_SUBMIT_GUARD]]
+- [[docs/_meta/status-marker-index]] L921: - [[docs/_meta/status-marker-index]] L563: - [[docs/_meta/status-marker-index]] L205: - [[docs/_meta/duplicates]] L14: - [[docs/legacy/root_1_COMPOSER_SUBMIT_GUARD]]
+- [[docs/_meta/status-marker-index]] L922: - [[docs/_meta/status-marker-index]] L564: - [[docs/_meta/status-marker-index]] L206: - [[docs/_meta/duplicates]] L15: - [[docs/legacy/root_COMPOSER_SUBMIT_GUARD]]
+- [[docs/_meta/status-marker-index]] L923: - [[docs/_meta/status-marker-index]] L565: - [[docs/_meta/status-marker-index]] L207: - [[docs/_meta/duplicates]] L19: - [[docs/legacy/FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L924: - [[docs/_meta/status-marker-index]] L566: - [[docs/_meta/status-marker-index]] L208: - [[docs/_meta/duplicates]] L20: - [[docs/legacy/root_1_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L925: - [[docs/_meta/status-marker-index]] L567: - [[docs/_meta/status-marker-index]] L209: - [[docs/_meta/duplicates]] L21: - [[docs/legacy/root_FORWARD_COMPATIBLE_SMOKE_POLICY_0517]]
+- [[docs/_meta/status-marker-index]] L926: - [[docs/_meta/status-marker-index]] L568: - [[docs/_meta/status-marker-index]] L210: - [[docs/_meta/duplicates]] L25: - [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L927: - [[docs/_meta/status-marker-index]] L569: - [[docs/_meta/status-marker-index]] L211: - [[docs/_meta/duplicates]] L26: - [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L928: - [[docs/_meta/status-marker-index]] L570: - [[docs/_meta/status-marker-index]] L212: - [[docs/_meta/duplicates]] L27: - [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L929: - [[docs/_meta/status-marker-index]] L571: - [[docs/_meta/status-marker-index]] L213: - [[docs/_meta/duplicates]] L31: - [[docs/legacy/root_1_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L930: - [[docs/_meta/status-marker-index]] L572: - [[docs/_meta/status-marker-index]] L214: - [[docs/_meta/duplicates]] L32: - [[docs/legacy/root_SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L931: - [[docs/_meta/status-marker-index]] L573: - [[docs/_meta/status-marker-index]] L215: - [[docs/_meta/duplicates]] L33: - [[docs/legacy/SAFE_RELEASE_RUNNER_0515]]
+- [[docs/_meta/status-marker-index]] L932: - [[docs/_meta/status-marker-index]] L574: - [[docs/_meta/status-marker-index]] L216: - [[docs/_meta/duplicates]] L37: - [[docs/legacy/NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L933: - [[docs/_meta/status-marker-index]] L575: - [[docs/_meta/status-marker-index]] L217: - [[docs/_meta/duplicates]] L38: - [[docs/legacy/root_1_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L934: - [[docs/_meta/status-marker-index]] L576: - [[docs/_meta/status-marker-index]] L218: - [[docs/_meta/duplicates]] L39: - [[docs/legacy/root_NO_SHELL_CLOSE_AUDIT_0516]]
+- [[docs/_meta/status-marker-index]] L935: - [[docs/_meta/status-marker-index]] L577: - [[docs/_meta/status-marker-index]] L219: - [[docs/_meta/duplicates]] L43: - [[docs/legacy/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L936: - [[docs/_meta/status-marker-index]] L578: - [[docs/_meta/status-marker-index]] L220: - [[docs/_meta/duplicates]] L44: - [[docs/legacy/root_archive/archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L937: - [[docs/_meta/status-marker-index]] L579: - [[docs/_meta/status-marker-index]] L221: - [[docs/_meta/duplicates]] L45: - [[docs/legacy/root_archive/consolidated_20260614/OPERATIONAL_RULES]]
+- [[docs/_meta/status-marker-index]] L938: - [[docs/_meta/status-marker-index]] L580: - [[docs/_meta/status-marker-index]] L222: - [[docs/_meta/duplicates]] L49: - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L939: - [[docs/_meta/status-marker-index]] L581: - [[docs/_meta/status-marker-index]] L223: - [[docs/_meta/duplicates]] L50: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L940: - [[docs/_meta/status-marker-index]] L582: - [[docs/_meta/status-marker-index]] L224: - [[docs/_meta/duplicates]] L51: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
+- [[docs/_meta/status-marker-index]] L941: - [[docs/_meta/status-marker-index]] L583: - [[docs/_meta/status-marker-index]] L225: - [[docs/_meta/duplicates]] L55: - [[docs/legacy/DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L942: - [[docs/_meta/status-marker-index]] L584: - [[docs/_meta/status-marker-index]] L226: - [[docs/_meta/duplicates]] L56: - [[docs/legacy/root_1_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L943: - [[docs/_meta/status-marker-index]] L585: - [[docs/_meta/status-marker-index]] L227: - [[docs/_meta/duplicates]] L57: - [[docs/legacy/root_DIAGNOSTIC_READONLY_INTEGRATION_0521]]
+- [[docs/_meta/status-marker-index]] L944: - [[docs/_meta/status-marker-index]] L586: - [[docs/_meta/status-marker-index]] L228: - [[docs/_meta/duplicates]] L61: - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L945: - [[docs/_meta/status-marker-index]] L587: - [[docs/_meta/status-marker-index]] L229: - [[docs/_meta/duplicates]] L62: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L946: - [[docs/_meta/status-marker-index]] L588: - [[docs/_meta/status-marker-index]] L230: - [[docs/_meta/duplicates]] L63: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
+- [[docs/_meta/status-marker-index]] L947: - [[docs/_meta/status-marker-index]] L589: - [[docs/_meta/status-marker-index]] L231: - [[docs/_meta/duplicates]] L67: - [[docs/legacy/root_1_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L948: - [[docs/_meta/status-marker-index]] L590: - [[docs/_meta/status-marker-index]] L232: - [[docs/_meta/duplicates]] L68: - [[docs/legacy/root_SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L949: - [[docs/_meta/status-marker-index]] L591: - [[docs/_meta/status-marker-index]] L233: - [[docs/_meta/duplicates]] L69: - [[docs/legacy/SINGLE_WORKER_GUARD]]
+- [[docs/_meta/status-marker-index]] L950: - [[docs/_meta/status-marker-index]] L592: - [[docs/_meta/status-marker-index]] L234: - [[docs/_meta/duplicates]] L73: - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L951: - [[docs/_meta/status-marker-index]] L593: - [[docs/_meta/status-marker-index]] L235: - [[docs/_meta/duplicates]] L74: - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L952: - [[docs/_meta/status-marker-index]] L594: - [[docs/_meta/status-marker-index]] L236: - [[docs/_meta/duplicates]] L75: - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L953: - [[docs/_meta/status-marker-index]] L595: - [[docs/_meta/status-marker-index]] L237: - [[docs/_meta/duplicates]] L79: - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L954: - [[docs/_meta/status-marker-index]] L596: - [[docs/_meta/status-marker-index]] L238: - [[docs/_meta/duplicates]] L80: - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L955: - [[docs/_meta/status-marker-index]] L597: - [[docs/_meta/status-marker-index]] L239: - [[docs/_meta/duplicates]] L81: - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
+- [[docs/_meta/status-marker-index]] L956: - [[docs/_meta/status-marker-index]] L598: - [[docs/_meta/status-marker-index]] L240: - [[docs/_meta/duplicates]] L85: - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L957: - [[docs/_meta/status-marker-index]] L599: - [[docs/_meta/status-marker-index]] L241: - [[docs/_meta/duplicates]] L86: - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L958: - [[docs/_meta/status-marker-index]] L600: - [[docs/_meta/status-marker-index]] L242: - [[docs/_meta/duplicates]] L87: - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
+- [[docs/_meta/status-marker-index]] L959: - [[docs/_meta/status-marker-index]] L601: - [[docs/_meta/status-marker-index]] L243: - [[docs/_meta/duplicates]] L91: - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L960: - [[docs/_meta/status-marker-index]] L602: - [[docs/_meta/status-marker-index]] L244: - [[docs/_meta/duplicates]] L92: - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L961: - [[docs/_meta/status-marker-index]] L603: - [[docs/_meta/status-marker-index]] L245: - [[docs/_meta/duplicates]] L93: - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
+- [[docs/_meta/status-marker-index]] L962: - [[docs/_meta/status-marker-index]] L604: - [[docs/_meta/status-marker-index]] L246: - [[docs/_meta/duplicates]] L97: - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L963: - [[docs/_meta/status-marker-index]] L605: - [[docs/_meta/status-marker-index]] L247: - [[docs/_meta/duplicates]] L98: - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L964: - [[docs/_meta/status-marker-index]] L606: - [[docs/_meta/status-marker-index]] L248: - [[docs/_meta/duplicates]] L99: - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
+- [[docs/_meta/status-marker-index]] L965: - [[docs/_meta/status-marker-index]] L607: - [[docs/_meta/status-marker-index]] L249: - [[docs/_meta/duplicates]] L103: - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L966: - [[docs/_meta/status-marker-index]] L608: - [[docs/_meta/status-marker-index]] L250: - [[docs/_meta/duplicates]] L104: - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L967: - [[docs/_meta/status-marker-index]] L609: - [[docs/_meta/status-marker-index]] L251: - [[docs/_meta/duplicates]] L105: - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
+- [[docs/_meta/status-marker-index]] L968: - [[docs/_meta/status-marker-index]] L610: - [[docs/_meta/status-marker-index]] L252: - [[docs/_meta/duplicates]] L109: - [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L969: - [[docs/_meta/status-marker-index]] L611: - [[docs/_meta/status-marker-index]] L253: - [[docs/_meta/duplicates]] L110: - [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L970: - [[docs/_meta/status-marker-index]] L612: - [[docs/_meta/status-marker-index]] L254: - [[docs/_meta/duplicates]] L111: - [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/_meta/status-marker-index]] L971: - [[docs/_meta/status-marker-index]] L613: - [[docs/_meta/status-marker-index]] L255: - [[docs/_meta/duplicates]] L115: - [[docs/legacy/FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L972: - [[docs/_meta/status-marker-index]] L614: - [[docs/_meta/status-marker-index]] L256: - [[docs/_meta/duplicates]] L116: - [[docs/legacy/root_1_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L973: - [[docs/_meta/status-marker-index]] L615: - [[docs/_meta/status-marker-index]] L257: - [[docs/_meta/duplicates]] L117: - [[docs/legacy/root_FINAL_AUDIT_0531]]
+- [[docs/_meta/status-marker-index]] L974: - [[docs/_meta/status-marker-index]] L616: - [[docs/_meta/status-marker-index]] L258: - [[docs/_meta/duplicates]] L121: - [[docs/legacy/RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L975: - [[docs/_meta/status-marker-index]] L617: - [[docs/_meta/status-marker-index]] L259: - [[docs/_meta/duplicates]] L122: - [[docs/legacy/root_1_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L976: - [[docs/_meta/status-marker-index]] L618: - [[docs/_meta/status-marker-index]] L260: - [[docs/_meta/duplicates]] L123: - [[docs/legacy/root_RELEASE_RUNNER_SELF_SMOKE_0518]]
+- [[docs/_meta/status-marker-index]] L977: - [[docs/_meta/status-marker-index]] L619: - [[docs/_meta/status-marker-index]] L261: - [[docs/_meta/duplicates]] L127: - [[docs/legacy/QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L978: - [[docs/_meta/status-marker-index]] L620: - [[docs/_meta/status-marker-index]] L262: - [[docs/_meta/duplicates]] L128: - [[docs/legacy/root_1_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L979: - [[docs/_meta/status-marker-index]] L621: - [[docs/_meta/status-marker-index]] L263: - [[docs/_meta/duplicates]] L129: - [[docs/legacy/root_QUEUE_TRIAGE_PLAYBOOK]]
+- [[docs/_meta/status-marker-index]] L980: - [[docs/_meta/status-marker-index]] L622: - [[docs/_meta/status-marker-index]] L264: - [[docs/_meta/duplicates]] L133: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L981: - [[docs/_meta/status-marker-index]] L623: - [[docs/_meta/status-marker-index]] L265: - [[docs/_meta/duplicates]] L134: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L982: - [[docs/_meta/status-marker-index]] L624: - [[docs/_meta/status-marker-index]] L266: - [[docs/_meta/duplicates]] L135: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0512]]
+- [[docs/_meta/status-marker-index]] L983: - [[docs/_meta/status-marker-index]] L625: - [[docs/_meta/status-marker-index]] L267: - [[docs/_meta/duplicates]] L139: - [[docs/legacy/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L984: - [[docs/_meta/status-marker-index]] L626: - [[docs/_meta/status-marker-index]] L268: - [[docs/_meta/duplicates]] L140: - [[docs/legacy/root_archive/archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L985: - [[docs/_meta/status-marker-index]] L627: - [[docs/_meta/status-marker-index]] L269: - [[docs/_meta/duplicates]] L141: - [[docs/legacy/root_archive/consolidated_20260614/COMMAND_INTAKE_ROADMAP]]
+- [[docs/_meta/status-marker-index]] L986: - [[docs/_meta/status-marker-index]] L628: - [[docs/_meta/status-marker-index]] L270: - [[docs/_meta/duplicates]] L145: - [[docs/legacy/FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L987: - [[docs/_meta/status-marker-index]] L629: - [[docs/_meta/status-marker-index]] L271: - [[docs/_meta/duplicates]] L146: - [[docs/legacy/root_1_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L988: - [[docs/_meta/status-marker-index]] L630: - [[docs/_meta/status-marker-index]] L272: - [[docs/_meta/duplicates]] L147: - [[docs/legacy/root_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L989: - [[docs/_meta/status-marker-index]] L631: - [[docs/_meta/status-marker-index]] L273: - [[docs/_meta/duplicates]] L151: - [[docs/legacy/root_1_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L990: - [[docs/_meta/status-marker-index]] L632: - [[docs/_meta/status-marker-index]] L274: - [[docs/_meta/duplicates]] L152: - [[docs/legacy/root_SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L991: - [[docs/_meta/status-marker-index]] L633: - [[docs/_meta/status-marker-index]] L275: - [[docs/_meta/duplicates]] L153: - [[docs/legacy/SELF_EVOLUTION_GUARDRAILS]]
+- [[docs/_meta/status-marker-index]] L992: - [[docs/_meta/status-marker-index]] L634: - [[docs/_meta/status-marker-index]] L276: - [[docs/_meta/duplicates]] L157: - [[docs/legacy/AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L993: - [[docs/_meta/status-marker-index]] L635: - [[docs/_meta/status-marker-index]] L277: - [[docs/_meta/duplicates]] L158: - [[docs/legacy/root_1_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L994: - [[docs/_meta/status-marker-index]] L636: - [[docs/_meta/status-marker-index]] L278: - [[docs/_meta/duplicates]] L159: - [[docs/legacy/root_AUTONOMOUS_CHANGE_PROPOSAL_TEMPLATE]]
+- [[docs/_meta/status-marker-index]] L995: - [[docs/_meta/status-marker-index]] L637: - [[docs/_meta/status-marker-index]] L279: - [[docs/_meta/duplicates]] L163: - [[docs/legacy/OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L996: - [[docs/_meta/status-marker-index]] L638: - [[docs/_meta/status-marker-index]] L280: - [[docs/_meta/duplicates]] L164: - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L997: - [[docs/_meta/status-marker-index]] L639: - [[docs/_meta/status-marker-index]] L281: - [[docs/_meta/duplicates]] L165: - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
+- [[docs/_meta/status-marker-index]] L998: - [[docs/_meta/status-marker-index]] L640: - [[docs/_meta/status-marker-index]] L282: - [[docs/_meta/duplicates]] L169: - [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L999: - [[docs/_meta/status-marker-index]] L641: - [[docs/_meta/status-marker-index]] L283: - [[docs/_meta/duplicates]] L170: - [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L1000: - [[docs/_meta/status-marker-index]] L642: - [[docs/_meta/status-marker-index]] L284: - [[docs/_meta/duplicates]] L171: - [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/_meta/status-marker-index]] L1001: - [[docs/_meta/status-marker-index]] L643: - [[docs/_meta/status-marker-index]] L285: - [[docs/_meta/duplicates]] L175: - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L1002: - [[docs/_meta/status-marker-index]] L644: - [[docs/_meta/status-marker-index]] L286: - [[docs/_meta/duplicates]] L176: - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L1003: - [[docs/_meta/status-marker-index]] L645: - [[docs/_meta/status-marker-index]] L287: - [[docs/_meta/duplicates]] L177: - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
+- [[docs/_meta/status-marker-index]] L1004: - [[docs/_meta/status-marker-index]] L646: - [[docs/_meta/status-marker-index]] L288: - [[docs/_meta/duplicates]] L181: - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1005: - [[docs/_meta/status-marker-index]] L647: - [[docs/_meta/status-marker-index]] L289: - [[docs/_meta/duplicates]] L182: - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1006: - [[docs/_meta/status-marker-index]] L648: - [[docs/_meta/status-marker-index]] L290: - [[docs/_meta/duplicates]] L183: - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1007: - [[docs/_meta/status-marker-index]] L649: - [[docs/_meta/status-marker-index]] L291: - [[docs/_meta/duplicates]] L187: - [[docs/legacy/DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L1008: - [[docs/_meta/status-marker-index]] L650: - [[docs/_meta/status-marker-index]] L292: - [[docs/_meta/duplicates]] L188: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L1009: - [[docs/_meta/status-marker-index]] L651: - [[docs/_meta/status-marker-index]] L293: - [[docs/_meta/duplicates]] L189: - [[docs/legacy/root_DELIVERY_DIAGNOSTICS_0513]]
+- [[docs/_meta/status-marker-index]] L1010: - [[docs/_meta/status-marker-index]] L652: - [[docs/_meta/status-marker-index]] L294: - [[docs/_meta/duplicates]] L193: - [[docs/legacy/FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L1011: - [[docs/_meta/status-marker-index]] L653: - [[docs/_meta/status-marker-index]] L295: - [[docs/_meta/duplicates]] L194: - [[docs/legacy/root_1_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L1012: - [[docs/_meta/status-marker-index]] L654: - [[docs/_meta/status-marker-index]] L296: - [[docs/_meta/duplicates]] L195: - [[docs/legacy/root_FINAL_RESULT_CONTINUE_HINT]]
+- [[docs/_meta/status-marker-index]] L1013: - [[docs/_meta/status-marker-index]] L655: - [[docs/_meta/status-marker-index]] L297: - [[docs/_meta/duplicates]] L199: - [[docs/legacy/DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1014: - [[docs/_meta/status-marker-index]] L656: - [[docs/_meta/status-marker-index]] L298: - [[docs/_meta/duplicates]] L200: - [[docs/legacy/root_1_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1015: - [[docs/_meta/status-marker-index]] L657: - [[docs/_meta/status-marker-index]] L299: - [[docs/_meta/duplicates]] L201: - [[docs/legacy/root_DISABLE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1016: - [[docs/_meta/status-marker-index]] L658: - [[docs/_meta/status-marker-index]] L300: - [[docs/_meta/duplicates]] L205: - [[docs/legacy/DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L1017: - [[docs/_meta/status-marker-index]] L659: - [[docs/_meta/status-marker-index]] L301: - [[docs/_meta/duplicates]] L206: - [[docs/legacy/root_1_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L1018: - [[docs/_meta/status-marker-index]] L660: - [[docs/_meta/status-marker-index]] L302: - [[docs/_meta/duplicates]] L207: - [[docs/legacy/root_DELIVERY_FAILURE_FIXTURES_0523]]
+- [[docs/_meta/status-marker-index]] L1019: - [[docs/_meta/status-marker-index]] L661: - [[docs/_meta/status-marker-index]] L303: - [[docs/_meta/duplicates]] L211: - [[docs/legacy/AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L1020: - [[docs/_meta/status-marker-index]] L662: - [[docs/_meta/status-marker-index]] L304: - [[docs/_meta/duplicates]] L212: - [[docs/legacy/root_1_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L1021: - [[docs/_meta/status-marker-index]] L663: - [[docs/_meta/status-marker-index]] L305: - [[docs/_meta/duplicates]] L213: - [[docs/legacy/root_AI_BRIDGE_LOCAL_FINAL_HANDOFF_0532]]
+- [[docs/_meta/status-marker-index]] L1022: - [[docs/_meta/status-marker-index]] L664: - [[docs/_meta/status-marker-index]] L306: - [[docs/_meta/duplicates]] L217: - [[docs/legacy/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L1023: - [[docs/_meta/status-marker-index]] L665: - [[docs/_meta/status-marker-index]] L307: - [[docs/_meta/duplicates]] L218: - [[docs/legacy/root_archive/archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06
+- [[docs/_meta/status-marker-index]] L1024: - [[docs/_meta/status-marker-index]] L666: - [[docs/_meta/status-marker-index]] L308: - [[docs/_meta/duplicates]] L219: - [[docs/legacy/root_archive/consolidated_20260614/AI_BRIDGE_LOCAL_ROBUSTNESS_STATUS_2026-06-12]]
+- [[docs/_meta/status-marker-index]] L1025: - [[docs/_meta/status-marker-index]] L667: - [[docs/_meta/status-marker-index]] L309: - [[docs/_meta/duplicates]] L223: - [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L1026: - [[docs/_meta/status-marker-index]] L668: - [[docs/_meta/status-marker-index]] L310: - [[docs/_meta/duplicates]] L224: - [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L1027: - [[docs/_meta/status-marker-index]] L669: - [[docs/_meta/status-marker-index]] L311: - [[docs/_meta/duplicates]] L225: - [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/_meta/status-marker-index]] L1028: - [[docs/_meta/status-marker-index]] L670: - [[docs/_meta/status-marker-index]] L312: - [[docs/_meta/duplicates]] L229: - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1029: - [[docs/_meta/status-marker-index]] L671: - [[docs/_meta/status-marker-index]] L313: - [[docs/_meta/duplicates]] L230: - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1030: - [[docs/_meta/status-marker-index]] L672: - [[docs/_meta/status-marker-index]] L314: - [[docs/_meta/duplicates]] L231: - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1031: - [[docs/_meta/status-marker-index]] L673: - [[docs/_meta/status-marker-index]] L315: - [[docs/_meta/duplicates]] L235: - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L1032: - [[docs/_meta/status-marker-index]] L674: - [[docs/_meta/status-marker-index]] L316: - [[docs/_meta/duplicates]] L236: - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L1033: - [[docs/_meta/status-marker-index]] L675: - [[docs/_meta/status-marker-index]] L317: - [[docs/_meta/duplicates]] L237: - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
+- [[docs/_meta/status-marker-index]] L1034: - [[docs/_meta/status-marker-index]] L676: - [[docs/_meta/status-marker-index]] L318: - [[docs/_meta/duplicates]] L241: - [[docs/legacy/FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L1035: - [[docs/_meta/status-marker-index]] L677: - [[docs/_meta/status-marker-index]] L319: - [[docs/_meta/duplicates]] L242: - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L1036: - [[docs/_meta/status-marker-index]] L678: - [[docs/_meta/status-marker-index]] L320: - [[docs/_meta/duplicates]] L243: - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
+- [[docs/_meta/status-marker-index]] L1037: - [[docs/_meta/status-marker-index]] L679: - [[docs/_meta/status-marker-index]] L321: - [[docs/_meta/duplicates]] L247: - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L1038: - [[docs/_meta/status-marker-index]] L680: - [[docs/_meta/status-marker-index]] L322: - [[docs/_meta/duplicates]] L248: - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L1039: - [[docs/_meta/status-marker-index]] L681: - [[docs/_meta/status-marker-index]] L323: - [[docs/_meta/duplicates]] L249: - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
+- [[docs/_meta/status-marker-index]] L1040: - [[docs/_meta/status-marker-index]] L682: - [[docs/_meta/status-marker-index]] L324: - [[docs/_meta/duplicates]] L253: - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1041: - [[docs/_meta/status-marker-index]] L683: - [[docs/_meta/status-marker-index]] L325: - [[docs/_meta/duplicates]] L254: - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1042: - [[docs/_meta/status-marker-index]] L684: - [[docs/_meta/status-marker-index]] L326: - [[docs/_meta/duplicates]] L255: - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
+- [[docs/_meta/status-marker-index]] L1043: - [[docs/_meta/status-marker-index]] L685: - [[docs/_meta/status-marker-index]] L327: - [[docs/_meta/duplicates]] L259: - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L1044: - [[docs/_meta/status-marker-index]] L686: - [[docs/_meta/status-marker-index]] L328: - [[docs/_meta/duplicates]] L260: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L1045: - [[docs/_meta/status-marker-index]] L687: - [[docs/_meta/status-marker-index]] L329: - [[docs/_meta/duplicates]] L261: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
+- [[docs/_meta/status-marker-index]] L1046: - [[docs/_meta/status-marker-index]] L688: - [[docs/_meta/status-marker-index]] L330: - [[docs/_meta/duplicates]] L265: - [[docs/legacy/root_1_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L1047: - [[docs/_meta/status-marker-index]] L689: - [[docs/_meta/status-marker-index]] L331: - [[docs/_meta/duplicates]] L266: - [[docs/legacy/root_WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L1048: - [[docs/_meta/status-marker-index]] L690: - [[docs/_meta/status-marker-index]] L332: - [[docs/_meta/duplicates]] L267: - [[docs/legacy/WATCHER_NOTES]]
+- [[docs/_meta/status-marker-index]] L1049: - [[docs/_meta/status-marker-index]] L691: - [[docs/_meta/status-marker-index]] L333: - [[docs/_meta/duplicates]] L271: - [[docs/legacy/AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L1050: - [[docs/_meta/status-marker-index]] L692: - [[docs/_meta/status-marker-index]] L334: - [[docs/_meta/duplicates]] L272: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L1051: - [[docs/_meta/status-marker-index]] L693: - [[docs/_meta/status-marker-index]] L335: - [[docs/_meta/duplicates]] L273: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_TASK_QUEUE]]
+- [[docs/_meta/status-marker-index]] L1052: - [[docs/_meta/status-marker-index]] L694: - [[docs/_meta/status-marker-index]] L336: - [[docs/_meta/duplicates]] L277: - [[docs/legacy/RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L1053: - [[docs/_meta/status-marker-index]] L695: - [[docs/_meta/status-marker-index]] L337: - [[docs/_meta/duplicates]] L278: - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L1054: - [[docs/_meta/status-marker-index]] L696: - [[docs/_meta/status-marker-index]] L338: - [[docs/_meta/duplicates]] L279: - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
+- [[docs/_meta/status-marker-index]] L1055: - [[docs/_meta/status-marker-index]] L697: - [[docs/_meta/status-marker-index]] L339: - [[docs/_meta/duplicates]] L283: - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L1056: - [[docs/_meta/status-marker-index]] L698: - [[docs/_meta/status-marker-index]] L340: - [[docs/_meta/duplicates]] L284: - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L1057: - [[docs/_meta/status-marker-index]] L699: - [[docs/_meta/status-marker-index]] L341: - [[docs/_meta/duplicates]] L285: - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
+- [[docs/_meta/status-marker-index]] L1058: - [[docs/_meta/status-marker-index]] L700: - [[docs/_meta/status-marker-index]] L342: - [[docs/_meta/duplicates]] L289: - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L1059: - [[docs/_meta/status-marker-index]] L701: - [[docs/_meta/status-marker-index]] L343: - [[docs/_meta/duplicates]] L290: - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L1060: - [[docs/_meta/status-marker-index]] L702: - [[docs/_meta/status-marker-index]] L344: - [[docs/_meta/duplicates]] L291: - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
+- [[docs/_meta/status-marker-index]] L1061: - [[docs/_meta/status-marker-index]] L703: - [[docs/_meta/status-marker-index]] L345: - [[docs/_meta/duplicates]] L295: - [[docs/legacy/CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L1062: - [[docs/_meta/status-marker-index]] L704: - [[docs/_meta/status-marker-index]] L346: - [[docs/_meta/duplicates]] L296: - [[docs/legacy/root_1_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L1063: - [[docs/_meta/status-marker-index]] L705: - [[docs/_meta/status-marker-index]] L347: - [[docs/_meta/duplicates]] L297: - [[docs/legacy/root_CURRENT_STATUS]]
+- [[docs/_meta/status-marker-index]] L1064: - [[docs/_meta/status-marker-index]] L706: - [[docs/_meta/status-marker-index]] L348: - [[docs/_meta/duplicates]] L301: - [[docs/legacy/RELEASES]]
+- [[docs/_meta/status-marker-index]] L1065: - [[docs/_meta/status-marker-index]] L707: - [[docs/_meta/status-marker-index]] L349: - [[docs/_meta/duplicates]] L302: - [[docs/legacy/root_1_RELEASES]]
+- [[docs/_meta/status-marker-index]] L1066: - [[docs/_meta/status-marker-index]] L708: - [[docs/_meta/status-marker-index]] L350: - [[docs/_meta/duplicates]] L303: - [[docs/legacy/root_RELEASES]]
+- [[docs/_meta/status-marker-index]] L1067: - [[docs/_meta/status-marker-index]] L709: - [[docs/_meta/status-marker-index]] L351: - [[docs/_meta/duplicates]] L307: - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L1068: - [[docs/_meta/status-marker-index]] L710: - [[docs/_meta/status-marker-index]] L352: - [[docs/_meta/duplicates]] L308: - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L1069: - [[docs/_meta/status-marker-index]] L711: - [[docs/_meta/status-marker-index]] L353: - [[docs/_meta/duplicates]] L309: - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
+- [[docs/_meta/status-marker-index]] L1070: - [[docs/_meta/status-marker-index]] L712: - [[docs/_meta/status-marker-index]] L354: - [[docs/_meta/duplicates]] L313: - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L1071: - [[docs/_meta/status-marker-index]] L713: - [[docs/_meta/status-marker-index]] L355: - [[docs/_meta/duplicates]] L314: - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L1072: - [[docs/_meta/status-marker-index]] L714: - [[docs/_meta/status-marker-index]] L356: - [[docs/_meta/duplicates]] L315: - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
+- [[docs/_meta/status-marker-index]] L1073: - [[docs/_meta/status-marker-index]] L715: - [[docs/_meta/status-marker-index]] L357: - [[docs/_meta/duplicates]] L319: - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L1074: - [[docs/_meta/status-marker-index]] L716: - [[docs/_meta/status-marker-index]] L358: - [[docs/_meta/duplicates]] L320: - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L1075: - [[docs/_meta/status-marker-index]] L717: - [[docs/_meta/status-marker-index]] L359: - [[docs/_meta/duplicates]] L321: - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
+- [[docs/_meta/status-marker-index]] L1076: - [[docs/_meta/status-marker-index]] L718: - [[docs/_meta/status-marker-index]] L360: - [[docs/_meta/duplicates]] L325: - [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1077: - [[docs/_meta/status-marker-index]] L719: - [[docs/_meta/status-marker-index]] L361: - [[docs/_meta/duplicates]] L326: - [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1078: - [[docs/_meta/status-marker-index]] L720: - [[docs/_meta/status-marker-index]] L362: - [[docs/_meta/duplicates]] L327: - [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/_meta/status-marker-index]] L1079: - [[docs/_meta/status-marker-index]] L721: - [[docs/_meta/status-marker-index]] L363: - [[docs/_meta/duplicates]] L331: - [[docs/legacy/root_1_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L1080: - [[docs/_meta/status-marker-index]] L722: - [[docs/_meta/status-marker-index]] L364: - [[docs/_meta/duplicates]] L332: - [[docs/legacy/root_SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L1081: - [[docs/_meta/status-marker-index]] L723: - [[docs/_meta/status-marker-index]] L365: - [[docs/_meta/duplicates]] L333: - [[docs/legacy/SMOKE_ALL_0520]]
+- [[docs/_meta/status-marker-index]] L1082: - [[docs/_meta/status-marker-index]] L724: - [[docs/_meta/status-marker-index]] L366: - [[docs/_meta/duplicates]] L337: - [[docs/legacy/DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L1083: - [[docs/_meta/status-marker-index]] L725: - [[docs/_meta/status-marker-index]] L367: - [[docs/_meta/duplicates]] L338: - [[docs/legacy/root_1_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L1084: - [[docs/_meta/status-marker-index]] L726: - [[docs/_meta/status-marker-index]] L368: - [[docs/_meta/duplicates]] L339: - [[docs/legacy/root_DELIVERY_DIAGNOSTIC_SUMMARY_0524]]
+- [[docs/_meta/status-marker-index]] L1086: - [[docs/_meta/status-marker-index]] L728: - [[docs/_meta/status-marker-index]] L370: - [[docs/_meta/status-marker-index]] L12: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L25: - A raiz de docs deve manter apenas AI_BRIDGE_LOCAL_GU
+- [[docs/_meta/status-marker-index]] L1087: - [[docs/_meta/status-marker-index]] L729: - [[docs/_meta/status-marker-index]] L371: - [[docs/_meta/status-marker-index]] L13: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L42: - 0.4.71 a 0.4.97: governanca, decision log, risk repo
+- [[docs/_meta/status-marker-index]] L1088: - [[docs/_meta/status-marker-index]] L730: - [[docs/_meta/status-marker-index]] L372: - [[docs/_meta/status-marker-index]] L14: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L57: - Documentos auxiliares movidos para docs/legacy.
+- [[docs/_meta/status-marker-index]] L1089: - [[docs/_meta/status-marker-index]] L731: - [[docs/_meta/status-marker-index]] L373: - [[docs/_meta/status-marker-index]] L15: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L70: - Raiz de docs deve manter apenas AI_BRIDGE_LOCAL_GUID
+- [[docs/_meta/status-marker-index]] L1090: - [[docs/_meta/status-marker-index]] L732: - [[docs/_meta/status-marker-index]] L374: - [[docs/_meta/status-marker-index]] L16: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L71: - Documentos auxiliares ficam em docs/legacy.
+- [[docs/_meta/status-marker-index]] L1091: - [[docs/_meta/status-marker-index]] L733: - [[docs/_meta/status-marker-index]] L375: - [[docs/_meta/status-marker-index]] L17: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L82: - Auditar fila pendente em readonly.
+- [[docs/_meta/status-marker-index]] L1092: - [[docs/_meta/status-marker-index]] L734: - [[docs/_meta/status-marker-index]] L376: - [[docs/_meta/status-marker-index]] L18: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L91: - Auditar fila pendente de comandos antigos sem execut
+- [[docs/_meta/status-marker-index]] L1093: - [[docs/_meta/status-marker-index]] L735: - [[docs/_meta/status-marker-index]] L377: - [[docs/_meta/status-marker-index]] L19: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L133: ## 25. Governance risk classifier
+- [[docs/_meta/status-marker-index]] L1094: - [[docs/_meta/status-marker-index]] L736: - [[docs/_meta/status-marker-index]] L378: - [[docs/_meta/status-marker-index]] L20: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L165: ## 33. Governance risk report
+- [[docs/_meta/status-marker-index]] L1095: - [[docs/_meta/status-marker-index]] L737: - [[docs/_meta/status-marker-index]] L379: - [[docs/_meta/status-marker-index]] L21: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L397: ## 46. Indice dos documentos movidos para docs/legacy
+- [[docs/_meta/status-marker-index]] L1096: - [[docs/_meta/status-marker-index]] L738: - [[docs/_meta/status-marker-index]] L380: - [[docs/_meta/status-marker-index]] L22: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L508: * risco classificado antes do envio.
+- [[docs/_meta/status-marker-index]] L1097: - [[docs/_meta/status-marker-index]] L739: - [[docs/_meta/status-marker-index]] L381: - [[docs/_meta/status-marker-index]] L23: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L522: * navegar em `docs/legacy`;
+- [[docs/_meta/status-marker-index]] L1098: - [[docs/_meta/status-marker-index]] L740: - [[docs/_meta/status-marker-index]] L382: - [[docs/_meta/status-marker-index]] L24: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L542: * risco;
+- [[docs/_meta/status-marker-index]] L1099: - [[docs/_meta/status-marker-index]] L741: - [[docs/_meta/status-marker-index]] L383: - [[docs/_meta/status-marker-index]] L25: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L590: - Todo comando deve ser marcado como preview/report_o
+- [[docs/_meta/status-marker-index]] L1100: - [[docs/_meta/status-marker-index]] L742: - [[docs/_meta/status-marker-index]] L384: - [[docs/_meta/status-marker-index]] L26: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L637: - Exibir classificaÃ§Ã£o de risco: low, medium, high.
+- [[docs/_meta/status-marker-index]] L1101: - [[docs/_meta/status-marker-index]] L743: - [[docs/_meta/status-marker-index]] L385: - [[docs/_meta/status-marker-index]] L27: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L692: - docs legacy;
+- [[docs/_meta/status-marker-index]] L1102: - [[docs/_meta/status-marker-index]] L744: - [[docs/_meta/status-marker-index]] L386: - [[docs/_meta/status-marker-index]] L28: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L703: - badges para docs ativos e legacy;
+- [[docs/_meta/status-marker-index]] L1103: - [[docs/_meta/status-marker-index]] L745: - [[docs/_meta/status-marker-index]] L387: - [[docs/_meta/status-marker-index]] L29: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L928: * a raiz de `docs/` continuar contendo apenas `AI_BRI
+- [[docs/_meta/status-marker-index]] L1104: - [[docs/_meta/status-marker-index]] L746: - [[docs/_meta/status-marker-index]] L388: - [[docs/_meta/status-marker-index]] L30: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1044: O writer permite gerar notas Markdown de tarefa, dec
+- [[docs/_meta/status-marker-index]] L1105: - [[docs/_meta/status-marker-index]] L747: - [[docs/_meta/status-marker-index]] L389: - [[docs/_meta/status-marker-index]] L31: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1057: - DONE 2026-06-17 registrado alinhamento docs-first 
+- [[docs/_meta/status-marker-index]] L1106: - [[docs/_meta/status-marker-index]] L748: - [[docs/_meta/status-marker-index]] L390: - [[docs/_meta/status-marker-index]] L32: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1060: - Risco registrado: scripts grandes colados no ChatG
+- [[docs/_meta/status-marker-index]] L1107: - [[docs/_meta/status-marker-index]] L749: - [[docs/_meta/status-marker-index]] L391: - [[docs/_meta/status-marker-index]] L33: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1084: - DONE 0.5.41 adiciona observer outbound para envelo
+- [[docs/_meta/status-marker-index]] L1108: - [[docs/_meta/status-marker-index]] L750: - [[docs/_meta/status-marker-index]] L392: - [[docs/_meta/status-marker-index]] L34: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1085: - DONE 0.5.41 aceita START/END e BEGIN/END.
+- [[docs/_meta/status-marker-index]] L1109: - [[docs/_meta/status-marker-index]] L751: - [[docs/_meta/status-marker-index]] L393: - [[docs/_meta/status-marker-index]] L35: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1086: - DONE 0.5.41 valida source_chat_id e reporta erro l
+- [[docs/_meta/status-marker-index]] L1110: - [[docs/_meta/status-marker-index]] L752: - [[docs/_meta/status-marker-index]] L394: - [[docs/_meta/status-marker-index]] L36: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1094: - DONE 0.5.42 roteia send-chat-message/inter_agent_m
+- [[docs/_meta/status-marker-index]] L1111: - [[docs/_meta/status-marker-index]] L753: - [[docs/_meta/status-marker-index]] L395: - [[docs/_meta/status-marker-index]] L37: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1095: - DONE 0.5.42 mantem run-command/local_capability se
+- [[docs/_meta/status-marker-index]] L1112: - [[docs/_meta/status-marker-index]] L754: - [[docs/_meta/status-marker-index]] L396: - [[docs/_meta/status-marker-index]] L38: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1096: - DONE 0.5.42 adiciona feature flags e evita fallbac
+- [[docs/_meta/status-marker-index]] L1113: - [[docs/_meta/status-marker-index]] L755: - [[docs/_meta/status-marker-index]] L397: - [[docs/_meta/status-marker-index]] L39: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1097: - DONE 0.5.42 preserva avisos/acks/resultados do flu
+- [[docs/_meta/status-marker-index]] L1114: - [[docs/_meta/status-marker-index]] L756: - [[docs/_meta/status-marker-index]] L398: - [[docs/_meta/status-marker-index]] L40: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1105: - DONE 0.5.43 evita bloqueio global quando a pagina 
+- [[docs/_meta/status-marker-index]] L1115: - [[docs/_meta/status-marker-index]] L757: - [[docs/_meta/status-marker-index]] L399: - [[docs/_meta/status-marker-index]] L41: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1106: - DONE 0.5.43 escaneia candidatos especificos de men
+- [[docs/_meta/status-marker-index]] L1116: - [[docs/_meta/status-marker-index]] L758: - [[docs/_meta/status-marker-index]] L400: - [[docs/_meta/status-marker-index]] L42: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1107: - DONE 0.5.43 adiciona varredura periodica e mutatio
+- [[docs/_meta/status-marker-index]] L1117: - [[docs/_meta/status-marker-index]] L759: - [[docs/_meta/status-marker-index]] L401: - [[docs/_meta/status-marker-index]] L43: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1115: - DONE 0.5.44 adiciona scanner standalone sem depend
+- [[docs/_meta/status-marker-index]] L1118: - [[docs/_meta/status-marker-index]] L760: - [[docs/_meta/status-marker-index]] L402: - [[docs/_meta/status-marker-index]] L44: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1116: - DONE 0.5.44 injeta aviso visivel [AI_LOCAL] para e
+- [[docs/_meta/status-marker-index]] L1119: - [[docs/_meta/status-marker-index]] L761: - [[docs/_meta/status-marker-index]] L403: - [[docs/_meta/status-marker-index]] L45: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1117: - DONE 0.5.44 injeta aviso visivel [AI_LOCAL_ERRO] p
+- [[docs/_meta/status-marker-index]] L1120: - [[docs/_meta/status-marker-index]] L762: - [[docs/_meta/status-marker-index]] L404: - [[docs/_meta/status-marker-index]] L46: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1118: - DONE 0.5.44 preserva gateway obrigatorio para run-
+- [[docs/_meta/status-marker-index]] L1121: - [[docs/_meta/status-marker-index]] L763: - [[docs/_meta/status-marker-index]] L405: - [[docs/_meta/status-marker-index]] L47: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1126: - DONE 0.5.45 protege sendChatHeartbeat contra Refer
+- [[docs/_meta/status-marker-index]] L1122: - [[docs/_meta/status-marker-index]] L764: - [[docs/_meta/status-marker-index]] L406: - [[docs/_meta/status-marker-index]] L48: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1127: - DONE 0.5.45 evita que falha de heartbeat interromp
+- [[docs/_meta/status-marker-index]] L1123: - [[docs/_meta/status-marker-index]] L765: - [[docs/_meta/status-marker-index]] L407: - [[docs/_meta/status-marker-index]] L49: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1128: - DONE 0.5.45 preserva feedback visivel e gateway ob
+- [[docs/_meta/status-marker-index]] L1124: - [[docs/_meta/status-marker-index]] L766: - [[docs/_meta/status-marker-index]] L408: - [[docs/_meta/status-marker-index]] L50: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1133: - Marco publicado: v0.5.46-disable-legacy-scanner-in
+- [[docs/_meta/status-marker-index]] L1125: - [[docs/_meta/status-marker-index]] L767: - [[docs/_meta/status-marker-index]] L409: - [[docs/_meta/status-marker-index]] L51: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1135: ## Disable legacy scanner and inline heartbeat guard
+- [[docs/_meta/status-marker-index]] L1126: - [[docs/_meta/status-marker-index]] L768: - [[docs/_meta/status-marker-index]] L410: - [[docs/_meta/status-marker-index]] L52: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1136: - DONE 0.5.46 remove chamada fora de escopo ao aiBri
+- [[docs/_meta/status-marker-index]] L1127: - [[docs/_meta/status-marker-index]] L769: - [[docs/_meta/status-marker-index]] L411: - [[docs/_meta/status-marker-index]] L53: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1137: - DONE 0.5.46 desativa scanner legado global que cha
+- [[docs/_meta/status-marker-index]] L1128: - [[docs/_meta/status-marker-index]] L770: - [[docs/_meta/status-marker-index]] L412: - [[docs/_meta/status-marker-index]] L54: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1138: - DONE 0.5.46 evita erro sendTextToChat is not defin
+- [[docs/_meta/status-marker-index]] L1129: - [[docs/_meta/status-marker-index]] L771: - [[docs/_meta/status-marker-index]] L413: - [[docs/_meta/status-marker-index]] L55: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1139: - DONE 0.5.46 preserva scanner standalone com feedba
+- [[docs/_meta/status-marker-index]] L1130: - [[docs/_meta/status-marker-index]] L772: - [[docs/_meta/status-marker-index]] L414: - [[docs/_meta/status-marker-index]] L56: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1147: - DONE 0.5.47 permite limpar composer do destino qua
+- [[docs/_meta/status-marker-index]] L1131: - [[docs/_meta/status-marker-index]] L773: - [[docs/_meta/status-marker-index]] L415: - [[docs/_meta/status-marker-index]] L57: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1148: - DONE 0.5.47 preserva trava contra sobrescrever tex
+- [[docs/_meta/status-marker-index]] L1132: - [[docs/_meta/status-marker-index]] L774: - [[docs/_meta/status-marker-index]] L416: - [[docs/_meta/status-marker-index]] L58: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1149: - DONE 0.5.47 melhora feedback de composer_not_empty
+- [[docs/_meta/status-marker-index]] L1133: - [[docs/_meta/status-marker-index]] L775: - [[docs/_meta/status-marker-index]] L417: - [[docs/_meta/status-marker-index]] L59: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1150: - DONE 0.5.47 mantem gateway obrigatorio para run-co
+- [[docs/_meta/status-marker-index]] L1134: - [[docs/_meta/status-marker-index]] L776: - [[docs/_meta/status-marker-index]] L418: - [[docs/_meta/status-marker-index]] L60: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1158: - DONE 0.5.48 adiciona aiBridgeRobustSetText para co
+- [[docs/_meta/status-marker-index]] L1135: - [[docs/_meta/status-marker-index]] L777: - [[docs/_meta/status-marker-index]] L419: - [[docs/_meta/status-marker-index]] L61: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1159: - DONE 0.5.48 corrige falha composer_empty_after_inj
+- [[docs/_meta/status-marker-index]] L1136: - [[docs/_meta/status-marker-index]] L778: - [[docs/_meta/status-marker-index]] L420: - [[docs/_meta/status-marker-index]] L62: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1160: - DONE 0.5.48 preserva scanner standalone com feedba
+- [[docs/_meta/status-marker-index]] L1137: - [[docs/_meta/status-marker-index]] L779: - [[docs/_meta/status-marker-index]] L421: - [[docs/_meta/status-marker-index]] L63: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1161: - DONE 0.5.48 mantem gateway obrigatorio para run-co
+- [[docs/_meta/status-marker-index]] L1138: - [[docs/_meta/status-marker-index]] L780: - [[docs/_meta/status-marker-index]] L422: - [[docs/_meta/status-marker-index]] L64: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1169: - DONE 0.5.49 prioriza #prompt-textarea.ProseMirror 
+- [[docs/_meta/status-marker-index]] L1139: - [[docs/_meta/status-marker-index]] L781: - [[docs/_meta/status-marker-index]] L423: - [[docs/_meta/status-marker-index]] L65: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1170: - DONE 0.5.49 ignora inputs de upload/camera.
+- [[docs/_meta/status-marker-index]] L1140: - [[docs/_meta/status-marker-index]] L782: - [[docs/_meta/status-marker-index]] L424: - [[docs/_meta/status-marker-index]] L66: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1171: - DONE 0.5.49 adiciona diagnostico do composer escol
+- [[docs/_meta/status-marker-index]] L1141: - [[docs/_meta/status-marker-index]] L783: - [[docs/_meta/status-marker-index]] L425: - [[docs/_meta/status-marker-index]] L67: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1172: - DONE 0.5.49 preserva scanner standalone e gateway 
+- [[docs/_meta/status-marker-index]] L1142: - [[docs/_meta/status-marker-index]] L784: - [[docs/_meta/status-marker-index]] L426: - [[docs/_meta/status-marker-index]] L68: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1180: - DONE 0.5.50 corrige smoke falho do patch de compos
+- [[docs/_meta/status-marker-index]] L1143: - [[docs/_meta/status-marker-index]] L785: - [[docs/_meta/status-marker-index]] L427: - [[docs/_meta/status-marker-index]] L69: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1181: - DONE 0.5.50 preserva priorizacao de #prompt-textar
+- [[docs/_meta/status-marker-index]] L1144: - [[docs/_meta/status-marker-index]] L786: - [[docs/_meta/status-marker-index]] L428: - [[docs/_meta/status-marker-index]] L70: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1182: - DONE 0.5.50 adiciona composer descriptor flexivel.
+- [[docs/_meta/status-marker-index]] L1145: - [[docs/_meta/status-marker-index]] L787: - [[docs/_meta/status-marker-index]] L429: - [[docs/_meta/status-marker-index]] L71: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1183: - DONE 0.5.50 mantem gateway obrigatorio para run-co
+- [[docs/_meta/status-marker-index]] L1146: - [[docs/_meta/status-marker-index]] L788: - [[docs/_meta/status-marker-index]] L430: - [[docs/_meta/status-marker-index]] L72: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1191: - DONE 0.5.51 corrige status visivel do scanner stan
+- [[docs/_meta/status-marker-index]] L1147: - [[docs/_meta/status-marker-index]] L789: - [[docs/_meta/status-marker-index]] L431: - [[docs/_meta/status-marker-index]] L73: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1192: - DONE 0.5.51 remove dependencia de helper de compos
+- [[docs/_meta/status-marker-index]] L1148: - [[docs/_meta/status-marker-index]] L790: - [[docs/_meta/status-marker-index]] L432: - [[docs/_meta/status-marker-index]] L74: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1193: - DONE 0.5.51 preserva entrega direta inter-chat ja 
+- [[docs/_meta/status-marker-index]] L1149: - [[docs/_meta/status-marker-index]] L791: - [[docs/_meta/status-marker-index]] L433: - [[docs/_meta/status-marker-index]] L75: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1194: - DONE 0.5.51 mantem gateway obrigatorio para run-co
+- [[docs/_meta/status-marker-index]] L1150: - [[docs/_meta/status-marker-index]] L792: - [[docs/_meta/status-marker-index]] L434: - [[docs/_meta/status-marker-index]] L76: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1202: - DONE 0.5.52 corrige `LOCAL_STATUS_PREFIXES is not 
+- [[docs/_meta/status-marker-index]] L1151: - [[docs/_meta/status-marker-index]] L793: - [[docs/_meta/status-marker-index]] L435: - [[docs/_meta/status-marker-index]] L77: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1203: - DONE 0.5.52 preserva rota direta inter-chat sem ga
+- [[docs/_meta/status-marker-index]] L1152: - [[docs/_meta/status-marker-index]] L794: - [[docs/_meta/status-marker-index]] L436: - [[docs/_meta/status-marker-index]] L78: - [[docs/AI_BRIDGE_LOCAL_GUIDE]] L1204: - DONE 0.5.52 mantem gateway obrigatorio para run-co
+- [[docs/_meta/status-marker-index]] L1153: - [[docs/_meta/status-marker-index]] L795: - [[docs/_meta/status-marker-index]] L437: - [[docs/_meta/status-marker-index]] L79: - [[docs/CHATGPT_OUTBOUND_ENVELOPE_CAPTURE_0541]] L22: - Em caso de erro, tenta postar `[AI_

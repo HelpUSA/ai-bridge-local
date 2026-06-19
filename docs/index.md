@@ -15,6 +15,7 @@ Este e o ponto de entrada da documentacao atual.
 - [[docs/architecture/overview|Architecture overview]]
 - [[docs/reference/envelope-contract|Envelope contract]]
 - [[docs/reference/router-contract|Router contract]]
+- [[docs/reference/route-classifier|Route classifier]]
 - [[docs/reference/adapter-contract|Adapter contract]]
 - [[docs/reference/transport-modes|Transport modes]]
 - [[docs/operations/runbook|Operations runbook]]
@@ -33,3 +34,4 @@ Este e o ponto de entrada da documentacao atual.
 - decisions: ADRs.
 - history: evolucao e legado.
 - legacy: documentos antigos preservados.
+

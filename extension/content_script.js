@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.44";
+  const VERSION = "0.5.45";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -613,6 +613,21 @@
  }
 }
 
+
+function aiBridgeSafeCallSendChatHeartbeat(reason) {
+  try {
+    if (typeof sendChatHeartbeat === "function") {
+      aiBridgeSafeCallSendChatHeartbeat("direct_call");
+      return true;
+    }
+    console.warn("[AI Bridge Local] sendChatHeartbeat unavailable; skipped heartbeat", reason || "");
+    return false;
+  } catch (e) {
+    console.warn("[AI Bridge Local] sendChatHeartbeat failed; skipped heartbeat", reason || "", e && e.message);
+    return false;
+  }
+}
+
 function sendChatHeartbeat() {
  sendTelemetryEvent('chat_heartbeat', { chat_id: getChatId(), href: location.href });
 }
@@ -777,8 +792,8 @@ function reportEnvelopeError(kind, errorMessage, raw) {
   }, 2000);
 })();
 
-setInterval(sendChatHeartbeat, 30000);
-sendChatHeartbeat();
+setInterval(() => aiBridgeSafeCallSendChatHeartbeat("interval"), 30000);
+aiBridgeSafeCallSendChatHeartbeat("direct_call");
 
 /* AI Bridge Local: Gemini auto envelope capture. */
 (function installAiBridgeGeminiCapturedEnvelopeBridge() {
@@ -962,7 +977,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.44";
+  const CAPTURE_VERSION = "0.5.45";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1223,7 +1238,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.44";
+  const SCANNER_VERSION = "0.5.45";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1341,7 +1356,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.44";
+  const STANDALONE_VERSION = "0.5.45";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";

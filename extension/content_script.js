@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.43";
+  const VERSION = "0.5.44";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -962,7 +962,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.43";
+  const CAPTURE_VERSION = "0.5.44";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1223,7 +1223,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.43";
+  const SCANNER_VERSION = "0.5.44";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1332,6 +1332,412 @@ sendChatHeartbeat();
     document.addEventListener("DOMContentLoaded", installCandidateScanner, { once: true });
   } else {
     installCandidateScanner();
+  }
+})();
+
+
+/* AI Bridge Local: ChatGPT standalone envelope scanner with visible feedback. */
+(function installAiBridgeChatGptStandaloneEnvelopeScannerFeedback() {
+  if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
+  window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
+
+  const STANDALONE_VERSION = "0.5.44";
+  const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
+  const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
+  const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+  const LOCAL_SCHEMA = "ai_bridge_local.envelope";
+  const MAX_TEXT_CHARS = 35000;
+  const SCAN_INTERVAL_MS = 1400;
+  const BOOTSTRAP_SUPPRESS_MS = 2500;
+  const bootUntil = Date.now() + BOOTSTRAP_SUPPRESS_MS;
+  const DEDUPE_PREFIX = "ai_bridge_standalone_scanner_seen:";
+  const STATUS_PREFIXES = ["[AI_LOCAL]", "[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]"];
+  const CANDIDATE_SELECTOR = [
+    "article",
+    "[data-message-author-role]",
+    "pre",
+    "code",
+    ".markdown",
+    "[class*='message']",
+    "[class*='response']",
+    "[role='article']"
+  ].join(",");
+
+  function isChatGptPage() {
+    return /chatgpt\.com/i.test(location.hostname);
+  }
+
+  function safePart(value) {
+    return String(value || "unknown").replace(/[^a-zA-Z0-9_-]+/g, "_").slice(0, 96);
+  }
+
+  function getCurrentChatId() {
+    const href = String(location.href || "");
+    const patterns = [
+      /\/c\/([0-9a-fA-F-]{36})(?:[/?#]|$)/,
+      /[?&]chat_id=([0-9a-fA-F-]{36})(?:&|$)/
+    ];
+
+    for (const pattern of patterns) {
+      const match = href.match(pattern);
+      if (match) return match[1];
+    }
+
+    return "";
+  }
+
+  function isLocalStatusText(text) {
+    const t = String(text || "").trim();
+    return STATUS_PREFIXES.some((prefix) => t.startsWith(prefix));
+  }
+
+  function hasEnvelopeMarkers(text) {
+    const t = String(text || "");
+    return (t.includes(START_MARKER) || t.includes(BEGIN_MARKER)) &&
+      t.includes(END_MARKER) &&
+      t.includes(LOCAL_SCHEMA);
+  }
+
+  function extractEnvelopeBlocks(text) {
+    const source = String(text || "");
+    const blocks = [];
+    const startPattern = "(@@AI_BRIDGE_LOCAL_START@@|@@AI_BRIDGE_LOCAL_BEGIN@@)";
+    const regex = new RegExp(startPattern + "[\\t ]*(?:\\r?\\n)?([\\s\\S]*?)(?:\\r?\\n)?@@AI_BRIDGE_LOCAL_END@@", "g");
+    let match;
+
+    while ((match = regex.exec(source)) !== null) {
+      blocks.push({
+        raw: String(match[2] || "").trim(),
+        full: match[0]
+      });
+    }
+
+    return blocks;
+  }
+
+  function normalizeCommand(cmd) {
+    if (!cmd || typeof cmd !== "object" || Array.isArray(cmd)) {
+      throw new Error("envelope_not_object");
+    }
+
+    const normalized = Object.assign({}, cmd);
+    normalized.action = normalized.action || normalized.type;
+    normalized.type = normalized.type || normalized.action;
+
+    if (normalized.schema !== LOCAL_SCHEMA) {
+      throw new Error("bad_schema");
+    }
+
+    if (!normalized.command_id) throw new Error("missing_command_id");
+    if (!normalized.action) throw new Error("missing_action");
+    if (!normalized.target_chat_id) throw new Error("missing_target_chat_id");
+    if (!normalized.delivery_kind) throw new Error("missing_delivery_kind");
+
+    if (normalized.action === "send-chat-message") {
+      if (normalized.delivery_kind !== "inter_agent_message") throw new Error("send_chat_message_requires_inter_agent_message");
+      if (!normalized.message) throw new Error("missing_message");
+    }
+
+    if (normalized.action === "run-command") {
+      if (normalized.delivery_kind !== "local_capability") throw new Error("run_command_requires_local_capability");
+      if (!normalized.payload || typeof normalized.payload !== "object" || Array.isArray(normalized.payload)) throw new Error("run_command_requires_payload_object");
+    }
+
+    const currentChatId = getCurrentChatId();
+    if (currentChatId) {
+      if (normalized.source_chat_id && normalized.source_chat_id !== currentChatId) {
+        throw new Error("source_chat_id_mismatch:" + normalized.source_chat_id + ":current:" + currentChatId);
+      }
+      normalized.source_chat_id = currentChatId;
+      normalized.source_url = location.href;
+    }
+
+    return normalized;
+  }
+
+  function seenKey(commandId) {
+    return DEDUPE_PREFIX + safePart(commandId);
+  }
+
+  function hasSeen(commandId) {
+    try {
+      return Boolean(sessionStorage.getItem(seenKey(commandId)));
+    } catch (_) {
+      window.__AI_BRIDGE_STANDALONE_SEEN_IDS__ = window.__AI_BRIDGE_STANDALONE_SEEN_IDS__ || new Set();
+      return window.__AI_BRIDGE_STANDALONE_SEEN_IDS__.has(String(commandId));
+    }
+  }
+
+  function markSeen(commandId, reason) {
+    try {
+      sessionStorage.setItem(seenKey(commandId), String(Date.now()) + ":" + String(reason || ""));
+    } catch (_) {
+      window.__AI_BRIDGE_STANDALONE_SEEN_IDS__ = window.__AI_BRIDGE_STANDALONE_SEEN_IDS__ || new Set();
+      window.__AI_BRIDGE_STANDALONE_SEEN_IDS__.add(String(commandId));
+    }
+  }
+
+  function getCandidateTexts() {
+    if (!document.body) return [];
+    const nodes = Array.from(document.querySelectorAll(CANDIDATE_SELECTOR));
+    const texts = [];
+    const seenText = new Set();
+
+    for (const node of nodes) {
+      if (!(node instanceof Element)) continue;
+
+      const text = String(node.innerText || node.textContent || "").trim();
+      if (!text || text.length > MAX_TEXT_CHARS) continue;
+      if (isLocalStatusText(text)) continue;
+      if (!hasEnvelopeMarkers(text)) continue;
+      if (seenText.has(text)) continue;
+
+      seenText.add(text);
+      texts.push(text);
+    }
+
+    return texts;
+  }
+
+  function findComposer() {
+    const selectors = [
+      "#prompt-textarea",
+      "[data-testid='composer'] [contenteditable='true']",
+      "[contenteditable='true'][role='textbox']",
+      "[contenteditable='true']",
+      "textarea",
+      "[role='textbox']"
+    ];
+
+    for (const selector of selectors) {
+      const el = document.querySelector(selector);
+      if (el) return el;
+    }
+
+    return null;
+  }
+
+  function setComposerText(composer, text) {
+    composer.focus();
+
+    if (composer.tagName === "TEXTAREA" || composer.tagName === "INPUT") {
+      composer.value = text;
+      composer.dispatchEvent(new Event("input", { bubbles: true }));
+      composer.dispatchEvent(new Event("change", { bubbles: true }));
+      return;
+    }
+
+    try {
+      composer.textContent = "";
+      composer.dispatchEvent(new InputEvent("beforeinput", {
+        bubbles: true,
+        inputType: "insertText",
+        data: text
+      }));
+    } catch (_) {}
+
+    try {
+      document.execCommand("insertText", false, text);
+    } catch (_) {
+      composer.textContent = text;
+    }
+
+    composer.dispatchEvent(new InputEvent("input", {
+      bubbles: true,
+      inputType: "insertText",
+      data: text
+    }));
+  }
+
+  function findSendButton() {
+    const selectors = [
+      "button[data-testid='send-button']",
+      "button[aria-label='Send prompt']",
+      "button[aria-label='Send message']",
+      "button[aria-label*='Send']",
+      "button[type='submit']"
+    ];
+
+    for (const selector of selectors) {
+      const btn = document.querySelector(selector);
+      if (btn && !btn.disabled && btn.getAttribute("aria-disabled") !== "true") return btn;
+    }
+
+    return null;
+  }
+
+  function injectVisibleStatus(text, statusId) {
+    window.setTimeout(() => {
+      try {
+        const composer = findComposer();
+        if (!composer) {
+          console.warn("[Local v" + STANDALONE_VERSION + "] visible status failed: no composer", statusId);
+          return;
+        }
+
+        setComposerText(composer, text);
+
+        window.setTimeout(() => {
+          const btn = findSendButton();
+          if (btn) {
+            btn.click();
+            console.log("[Local v" + STANDALONE_VERSION + "] visible status sent", statusId);
+            return;
+          }
+
+          try {
+            composer.dispatchEvent(new KeyboardEvent("keydown", {
+              bubbles: true,
+              cancelable: true,
+              key: "Enter",
+              code: "Enter",
+              which: 13,
+              keyCode: 13
+            }));
+          } catch (_) {}
+
+          console.log("[Local v" + STANDALONE_VERSION + "] visible status attempted enter", statusId);
+        }, 350);
+      } catch (e) {
+        console.warn("[Local v" + STANDALONE_VERSION + "] visible status error", statusId, e && e.message);
+      }
+    }, 350);
+  }
+
+  function directOkStatus(cmd, response) {
+    return [
+      "[AI_LOCAL]",
+      "comando enviado direto pela extensao",
+      "id=" + String(cmd.command_id || "unknown"),
+      "status=sent_direct",
+      "versao=" + STANDALONE_VERSION,
+      "no_reply=1",
+      "origem=" + String(cmd.source_chat_id || getCurrentChatId() || "unknown"),
+      "destino=" + String(cmd.target_chat_id || "unknown"),
+      "observacao=Mensagem inter-chat entregue sem gateway/DB. Nao precisa responder a esta mensagem."
+    ].join("\n");
+  }
+
+  function errorStatus(cmd, error, detail) {
+    const commandId = cmd && cmd.command_id ? cmd.command_id : "unknown";
+    const target = cmd && cmd.target_chat_id ? cmd.target_chat_id : "unknown";
+    const source = cmd && cmd.source_chat_id ? cmd.source_chat_id : (getCurrentChatId() || "unknown");
+
+    return [
+      "[AI_LOCAL_ERRO]",
+      "acao=verifique_destino_ou_reenvie",
+      "no_reply=0",
+      "executado=nao",
+      "tipo=direct_interchat_or_capture_failed",
+      "versao=" + STANDALONE_VERSION,
+      "id_original=" + String(commandId),
+      "chat_atual=" + String(getCurrentChatId() || "unknown"),
+      "origem=" + String(source),
+      "destino=" + String(target),
+      "erro=" + String(error || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 700),
+      "detalhe=" + String(detail || "").replace(/[\r\n]+/g, " ").slice(0, 700),
+      "correcao=Recarregue a aba destino para registrar o chat_id, confira target_chat_id, ou reenvie com force_gateway=true se quiser usar gateway."
+    ].join("\n");
+  }
+
+  function sendCommandToBackground(cmd, raw) {
+    const commandId = String(cmd.command_id || "unknown");
+    if (hasSeen(commandId)) return;
+    markSeen(commandId, "send_start");
+
+    console.log("[Local v" + STANDALONE_VERSION + "] Standalone scanner sending command", commandId, cmd.action, cmd.delivery_kind);
+
+    chrome.runtime.sendMessage({ type: "AI_BRIDGE_BRIDGE_COMMAND", command: cmd }, (response) => {
+      const runtimeError = chrome.runtime.lastError;
+      if (runtimeError) {
+        const msg = runtimeError.message || "runtime_error";
+        console.warn("[Local v" + STANDALONE_VERSION + "] Standalone scanner runtime error:", msg);
+        injectVisibleStatus(errorStatus(cmd, msg, "chrome.runtime.lastError"), "runtime_" + commandId);
+        return;
+      }
+
+      if (response && response.ok) {
+        console.log("[Local v" + STANDALONE_VERSION + "] Standalone scanner background ok:", commandId, JSON.stringify(response));
+        if (response.direct) {
+          injectVisibleStatus(directOkStatus(cmd, response), "direct_ok_" + commandId);
+        }
+        return;
+      }
+
+      const err = response && response.error ? response.error : "background_rejected_command";
+      console.warn("[Local v" + STANDALONE_VERSION + "] Standalone scanner background rejected:", commandId, JSON.stringify(response || {}));
+      injectVisibleStatus(errorStatus(cmd, err, JSON.stringify(response || {})), "direct_err_" + commandId);
+    });
+  }
+
+  function processText(text, reason, bootstrapOnly) {
+    const blocks = extractEnvelopeBlocks(text);
+    if (!blocks.length) return;
+
+    for (const block of blocks) {
+      let parsed;
+      try {
+        parsed = JSON.parse(block.raw);
+      } catch (e) {
+        continue;
+      }
+
+      let cmd;
+      try {
+        cmd = normalizeCommand(parsed);
+      } catch (e) {
+        const rawCommandId = parsed && parsed.command_id ? parsed.command_id : "unknown";
+        if (!hasSeen(rawCommandId) && !bootstrapOnly && Date.now() >= bootUntil) {
+          markSeen(rawCommandId, "normalize_error");
+          injectVisibleStatus(errorStatus(parsed || {}, e && e.message, "normalizeCommand"), "normalize_" + rawCommandId);
+        }
+        continue;
+      }
+
+      if (bootstrapOnly || Date.now() < bootUntil) {
+        markSeen(cmd.command_id, "bootstrap_existing");
+        continue;
+      }
+
+      sendCommandToBackground(cmd, block.raw);
+    }
+  }
+
+  function scan(reason, bootstrapOnly) {
+    if (!isChatGptPage()) return;
+
+    const texts = getCandidateTexts();
+    if (texts.length) {
+      console.log("[Local v" + STANDALONE_VERSION + "] Standalone candidate scan", reason, "candidates=" + texts.length, "bootstrapOnly=" + Boolean(bootstrapOnly));
+    }
+
+    for (const text of texts) {
+      processText(text, reason, bootstrapOnly);
+    }
+  }
+
+  function install() {
+    if (!isChatGptPage()) return;
+
+    scan("bootstrap_existing", true);
+
+    window.setTimeout(() => scan("startup_after_bootstrap", false), BOOTSTRAP_SUPPRESS_MS + 300);
+    window.setInterval(() => scan("interval", false), SCAN_INTERVAL_MS);
+
+    if (document.body) {
+      const observer = new MutationObserver(() => {
+        window.setTimeout(() => scan("mutation", false), 450);
+      });
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
+
+    console.log("[Local v" + STANDALONE_VERSION + "] ChatGPT standalone envelope scanner with visible feedback installed");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", install, { once: true });
+  } else {
+    install();
   }
 })();
 

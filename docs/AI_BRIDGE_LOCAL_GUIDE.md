@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.43
+Versao atual: 0.5.44
 Branch principal: main
-Marco publicado mais recente: v0.5.43-chatgpt-candidate-envelope-scanner
+Marco publicado mais recente: v0.5.44-standalone-chatgpt-scanner-feedback
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.43.
+- Versao atual: 0.5.44.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1077,7 +1077,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.43
+- Versao atual: 0.5.44
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
@@ -1087,7 +1087,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.42
-- Versao atual: 0.5.43
+- Versao atual: 0.5.44
 - Marco publicado: v0.5.42-direct-interchat-router-safe
 
 ## Direct inter-chat router safe
@@ -1098,10 +1098,21 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.43
-- Versao atual: 0.5.43
+- Versao atual: 0.5.44
 - Marco publicado: v0.5.43-chatgpt-candidate-envelope-scanner
 
 ## ChatGPT candidate envelope scanner
 - DONE 0.5.43 evita bloqueio global quando a pagina contem mensagens AI_LOCAL antigas.
 - DONE 0.5.43 escaneia candidatos especificos de mensagens ChatGPT.
 - DONE 0.5.43 adiciona varredura periodica e mutation observer para envelopes.
+
+
+## Version alignment 0.5.44
+- Versao atual: 0.5.44
+- Marco publicado: v0.5.44-standalone-chatgpt-scanner-feedback
+
+## Standalone ChatGPT scanner with visible feedback
+- DONE 0.5.44 adiciona scanner standalone sem depender de extract/send internos.
+- DONE 0.5.44 injeta aviso visivel [AI_LOCAL] para entrega direta bem-sucedida.
+- DONE 0.5.44 injeta aviso visivel [AI_LOCAL_ERRO] para falha de captura/rota direta.
+- DONE 0.5.44 preserva gateway obrigatorio para run-command/local_capability.

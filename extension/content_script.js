@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.47";
+  const VERSION = "0.5.48";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -307,7 +307,178 @@
     });
   }
 
-  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  
+function aiBridgeDispatchInputEvents(element, text) {
+  try {
+    element.dispatchEvent(new InputEvent("beforeinput", {
+      bubbles: true,
+      cancelable: true,
+      inputType: "insertText",
+      data: text
+    }));
+  } catch (_) {}
+
+  try {
+    element.dispatchEvent(new InputEvent("input", {
+      bubbles: true,
+      inputType: "insertText",
+      data: text
+    }));
+  } catch (_) {
+    element.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+
+  try {
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  } catch (_) {}
+
+  try {
+    element.dispatchEvent(new KeyboardEvent("keyup", {
+      bubbles: true,
+      cancelable: true,
+      key: " ",
+      code: "Space",
+      which: 32,
+      keyCode: 32
+    }));
+  } catch (_) {}
+}
+
+function aiBridgeSetNativeValue(element, value) {
+  const tag = String(element.tagName || "").toUpperCase();
+  if (tag !== "TEXTAREA" && tag !== "INPUT") return false;
+
+  const proto = tag === "TEXTAREA" ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+  const descriptor = Object.getOwnPropertyDescriptor(proto, "value");
+  if (descriptor && descriptor.set) {
+    descriptor.set.call(element, value);
+  } else {
+    element.value = value;
+  }
+
+  aiBridgeDispatchInputEvents(element, value);
+  return true;
+}
+
+function aiBridgeSetContentEditableByRange(element, value) {
+  try {
+    element.focus();
+
+    const selection = window.getSelection();
+    if (!selection) return false;
+
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    range.deleteContents();
+    range.collapse(true);
+
+    const lines = String(value || "").split(/\n/);
+    lines.forEach((line, index) => {
+      if (index > 0) {
+        range.insertNode(document.createElement("br"));
+        range.collapse(false);
+      }
+      range.insertNode(document.createTextNode(line));
+      range.collapse(false);
+    });
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+    aiBridgeDispatchInputEvents(element, value);
+    return true;
+  } catch (e) {
+    console.warn("[Local v" + VERSION + "] aiBridgeSetContentEditableByRange failed", e && e.message);
+    return false;
+  }
+}
+
+function aiBridgeSetContentEditableByParagraphDom(element, value) {
+  try {
+    element.focus();
+    element.innerHTML = "";
+
+    const lines = String(value || "").split(/\n/);
+    const wrapper = document.createDocumentFragment();
+
+    lines.forEach((line) => {
+      const p = document.createElement("p");
+      p.textContent = line || "";
+      wrapper.appendChild(p);
+    });
+
+    element.appendChild(wrapper);
+    aiBridgeDispatchInputEvents(element, value);
+    return true;
+  } catch (e) {
+    console.warn("[Local v" + VERSION + "] aiBridgeSetContentEditableByParagraphDom failed", e && e.message);
+    return false;
+  }
+}
+
+function aiBridgeSetContentEditableByExecCommand(element, value) {
+  try {
+    element.focus();
+    document.execCommand("selectAll", false, null);
+    document.execCommand("delete", false, null);
+    const ok = document.execCommand("insertText", false, String(value || ""));
+    aiBridgeDispatchInputEvents(element, value);
+    return Boolean(ok);
+  } catch (e) {
+    console.warn("[Local v" + VERSION + "] aiBridgeSetContentEditableByExecCommand failed", e && e.message);
+    return false;
+  }
+}
+
+function aiBridgeRobustSetText(element, value) {
+  const text = String(value || "");
+  if (!element) return false;
+
+  try {
+    element.focus();
+  } catch (_) {}
+
+  if (aiBridgeSetNativeValue(element, text)) {
+    return true;
+  }
+
+  const before = String(getComposerText(element) || "").trim();
+
+  const attempts = [
+    () => aiBridgeSetContentEditableByExecCommand(element, text),
+    () => aiBridgeSetContentEditableByRange(element, text),
+    () => aiBridgeSetContentEditableByParagraphDom(element, text)
+  ];
+
+  for (const attempt of attempts) {
+    try {
+      attempt();
+      const after = String(getComposerText(element) || "").trim();
+      if (text.trim() === "" || after === text.trim() || after.length > 0) {
+        return true;
+      }
+    } catch (_) {}
+  }
+
+  try {
+    element.textContent = text;
+    aiBridgeDispatchInputEvents(element, text);
+    const finalText = String(getComposerText(element) || "").trim();
+    if (text.trim() === "" || finalText === text.trim() || finalText.length > 0) {
+      return true;
+    }
+  } catch (_) {}
+
+  console.warn("[Local v" + VERSION + "] aiBridgeRobustSetText failed", {
+    before_length: before.length,
+    requested_length: text.length,
+    after_length: String(getComposerText(element) || "").trim().length
+  });
+
+  return false;
+}
+
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message && message.type === "AI_BRIDGE_INJECT_TEXT") {
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
       const text = message.action?.text || message.action?.message || message.text || "";
@@ -335,7 +506,7 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
  const ownedPreflightText = composerAlreadyHasRequestedText || beforeText.includes("AI_BRIDGE_LOCAL_START") || beforeText.includes("ai_bridge_local.envelope") || beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
  if (ownedPreflightText) {
  showNotice("Limpando composer travado da extensao", "command_id=" + actionId, "warn");
- setText(composer, String());
+ aiBridgeRobustSetText(composer, String());
  } else {
  showNotice("Falha: composer nao vazio antes da injecao", "command_id=" + actionId, "error");
  sendResponse({
@@ -349,7 +520,7 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
  }
  }
 
-      setText(composer, text);
+      aiBridgeRobustSetText(composer, text);
 
       let attempts = 0;
       const maxAttempts = 24;
@@ -434,7 +605,7 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
         } else {
           const finalText = getComposerText(composer);
           const ownedStuckText = finalText && expectedPrefix && finalText.includes(expectedPrefix);
- if (ownedStuckText) setText(composer, String());
+ if (ownedStuckText) aiBridgeRobustSetText(composer, String());
  const finalBtn = findSendButton(composer);
  const diagnostic = collectSubmitDiagnostics(composer, finalBtn, finalText, clickedAtLeastOnce);
  const reason = clickedAtLeastOnce ? 'submit_not_confirmed_composer_still_has_text' : diagnostic.reason;
@@ -793,7 +964,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     });
   }
 
-  /* AI Bridge Local: legacy global body scanner disabled in 0.5.47.
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.48.
    Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
    The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
 let last = "";
@@ -1002,7 +1173,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.47";
+  const CAPTURE_VERSION = "0.5.48";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1263,7 +1434,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.47";
+  const SCANNER_VERSION = "0.5.48";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1381,7 +1552,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.47";
+  const STANDALONE_VERSION = "0.5.48";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";

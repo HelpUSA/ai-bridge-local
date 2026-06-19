@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.39
+Versao atual: 0.5.40
 Branch principal: main
-Marco publicado mais recente: v0.5.39-final-result-feedback-guard
+Marco publicado mais recente: v0.5.40-gemini-manifest-name-sync
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.39.
+- Versao atual: 0.5.40.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1067,3 +1067,10 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Evita `local_status_accepted_result_to_*` para resultados finais.
 - Preserva o fluxo esperado: queued inicial + `[AI_LOCAL_RUN]` final.
 - Mantem `final_result_sweeper_v3.py` apenas como mitigacao operacional temporaria.
+
+
+## Atualização 0.5.40 - Gemini manifest name sync
+
+- Sincroniza `extension/manifest.json` para exibir `AI Bridge Local 0.5.40`.
+- Mantem `version` e `name` da extensão alinhados para evitar confusão ao recarregar a extensão no Chrome.
+- Sem alteração de lógica do gateway/worker.

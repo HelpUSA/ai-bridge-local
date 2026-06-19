@@ -26,3 +26,9 @@ build/
 logs/
 temp/
 backups/queue_local/*.db
+
+# Obsidian local workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins

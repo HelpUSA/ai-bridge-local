@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.52";
+  const VERSION = "0.5.53";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1059,7 +1059,17 @@ function reportEnvelopeError(kind, errorMessage, raw) {
  'correcao=Reenvie o envelope a partir do chat correto ou ajuste source_chat_id para o chat atual.'
  ].join(String.fromCharCode(10));
  showNotice('Source chat divergente', 'command_id=' + (cmd.command_id || 'unknown') + String.fromCharCode(10) + 'origem=' + declaredSource + String.fromCharCode(10) + 'chat_atual=' + actualSourceChatId, 'error');
- sendTextToChat(statusText, 'source_chat_id_mismatch_' + (cmd.command_id || 'unknown'));
+ const mismatchKey = 'ai_bridge_source_chat_id_mismatch:' + (cmd.command_id || 'unknown');
+try {
+  if (sessionStorage.getItem(mismatchKey) === '1') {
+    console.warn('[Local v' + VERSION + '] source_chat_id_mismatch suppressed duplicate for', cmd.command_id || 'unknown');
+  } else {
+    sessionStorage.setItem(mismatchKey, '1');
+    sendTextToChat(statusText, 'source_chat_id_mismatch_' + (cmd.command_id || 'unknown'));
+  }
+} catch (_) {
+  sendTextToChat(statusText, 'source_chat_id_mismatch_' + (cmd.command_id || 'unknown'));
+}
  return;
  }
  cmd.source_chat_id = actualSourceChatId;
@@ -2178,6 +2188,259 @@ function findComposer() {
     document.addEventListener("DOMContentLoaded", install, { once: true });
   } else {
     install();
+  }
+})();
+
+
+/* AI Bridge Local: DeepSeek outbound envelope capture 0.5.53. */
+(function installAiBridgeDeepSeekCapturedEnvelopeBridge() {
+  if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
+  window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
+
+  const CAPTURE_VERSION = "0.5.53";
+  const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
+  const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+  const MAX_CAPTURE_CHARS = 30000;
+  const DEDUPE_PREFIX = "ai_bridge_deepseek_captured_envelope:";
+  const BOOTSTRAP_MS = 2500;
+  const bootUntil = Date.now() + BOOTSTRAP_MS;
+
+  function isDeepSeekPage() {
+    return /(^|\.)chat\.deepseek\.com$/i.test(location.hostname || "");
+  }
+
+  function getDeepSeekChatId() {
+    const href = String(location.href || "");
+    const match = href.match(/\/a\/chat\/s\/([^/?#]+)/i);
+    return match ? decodeURIComponent(match[1]) : "";
+  }
+
+  function countOccurrences(haystack, needle) {
+    let count = 0;
+    let offset = 0;
+    while (true) {
+      const foundAt = haystack.indexOf(needle, offset);
+      if (foundAt < 0) break;
+      count += 1;
+      offset = foundAt + needle.length;
+    }
+    return count;
+  }
+
+  function extractEnvelopeBlocks(rawText) {
+    const text = String(rawText || "");
+    if (!text || !text.includes(START_MARKER) || !text.includes(END_MARKER)) return [];
+    if (text.length > MAX_CAPTURE_CHARS) return [];
+
+    const blocks = [];
+    let offset = 0;
+    while (offset < text.length) {
+      const start = text.indexOf(START_MARKER, offset);
+      if (start < 0) break;
+      const bodyStart = start + START_MARKER.length;
+      const end = text.indexOf(END_MARKER, bodyStart);
+      if (end < 0) break;
+
+      const raw = text.slice(bodyStart, end).trim();
+      const rawTextBlock = text.slice(start, end + END_MARKER.length).trim();
+      blocks.push({ raw, raw_text: rawTextBlock });
+      offset = end + END_MARKER.length;
+    }
+    return blocks;
+  }
+
+  function wasCaptured(commandId) {
+    if (!commandId) return true;
+    const key = DEDUPE_PREFIX + commandId;
+    try {
+      if (sessionStorage.getItem(key) === "1") return true;
+      sessionStorage.setItem(key, "1");
+      return false;
+    } catch (_) {
+      window.__AI_BRIDGE_DEEPSEEK_CAPTURED_IDS__ = window.__AI_BRIDGE_DEEPSEEK_CAPTURED_IDS__ || new Set();
+      if (window.__AI_BRIDGE_DEEPSEEK_CAPTURED_IDS__.has(commandId)) return true;
+      window.__AI_BRIDGE_DEEPSEEK_CAPTURED_IDS__.add(commandId);
+      return false;
+    }
+  }
+
+  function isComposerOrInputNode(node) {
+    if (!node || !(node instanceof Element)) return false;
+    return Boolean(node.closest('textarea,input,[contenteditable="true"],[role="textbox"],form'));
+  }
+
+  function parseBlock(block) {
+    let envelope;
+    try {
+      envelope = JSON.parse(block.raw);
+    } catch (err) {
+      return { ok: false, error: "json_parse_error" };
+    }
+
+    if (!envelope || typeof envelope !== "object" || Array.isArray(envelope)) {
+      return { ok: false, error: "envelope_not_object" };
+    }
+
+    const commandId = String(envelope.command_id || "").trim();
+    const sourceChatId = String(envelope.source_chat_id || "").trim();
+    const targetChatId = String(envelope.target_chat_id || "").trim();
+    const action = String(envelope.action || envelope.type || "").trim();
+    const deliveryKind = String(envelope.delivery_kind || "").trim();
+    const currentChatId = getDeepSeekChatId();
+
+    if (!commandId) return { ok: false, error: "missing_command_id" };
+    if (!currentChatId) return { ok: false, error: "deepseek_chat_id_unknown" };
+    if (sourceChatId !== currentChatId) return { ok: false, error: "source_chat_id_mismatch" };
+    if (!targetChatId) return { ok: false, error: "missing_target_chat_id" };
+    if (action !== "send-chat-message" && action !== "run-command") return { ok: false, error: "action_not_allowed" };
+    if (action === "send-chat-message" && deliveryKind !== "inter_agent_message") {
+      return { ok: false, error: "send_chat_message_requires_inter_agent_message" };
+    }
+    if (action === "run-command" && deliveryKind !== "local_capability") {
+      return { ok: false, error: "run_command_requires_local_capability" };
+    }
+
+    return {
+      ok: true,
+      command_id: commandId,
+      envelope,
+      raw_text: block.raw_text
+    };
+  }
+
+  function showNotice(kind, title, detail) {
+    try {
+      const id = "ai-bridge-deepseek-capture-notice";
+      let box = document.getElementById(id);
+      if (!box) {
+        box = document.createElement("div");
+        box.id = id;
+        box.style.position = "fixed";
+        box.style.zIndex = "2147483647";
+        box.style.right = "16px";
+        box.style.bottom = "16px";
+        box.style.maxWidth = "520px";
+        box.style.padding = "10px 12px";
+        box.style.borderRadius = "10px";
+        box.style.fontFamily = "Arial, sans-serif";
+        box.style.fontSize = "12px";
+        box.style.lineHeight = "1.35";
+        box.style.boxShadow = "0 8px 24px rgba(0,0,0,.24)";
+        document.documentElement.appendChild(box);
+      }
+      box.style.background = kind === "error" ? "#4b1111" : kind === "warn" ? "#4a3608" : "#102a16";
+      box.style.color = "#fff";
+      box.textContent = title + (detail ? "\n" + detail : "");
+      clearTimeout(window.__AI_BRIDGE_DEEPSEEK_CAPTURE_NOTICE_TIMER__);
+      window.__AI_BRIDGE_DEEPSEEK_CAPTURE_NOTICE_TIMER__ = setTimeout(() => {
+        try { box.remove(); } catch (_) {}
+      }, 9000);
+    } catch (_) {}
+  }
+
+  function sendCapturedEnvelope(parsed) {
+    if (wasCaptured(parsed.command_id)) return;
+
+    console.log("[Local v" + CAPTURE_VERSION + "] DeepSeek outbound scanner sending", parsed.command_id);
+
+    chrome.runtime.sendMessage({
+      type: "AI_BRIDGE_CAPTURED_ENVELOPE",
+      source_chat_id: getDeepSeekChatId(),
+      raw_text: parsed.raw_text,
+      envelope: parsed.envelope
+    }, (response) => {
+      const runtimeError = chrome.runtime.lastError;
+      if (runtimeError) {
+        const msg = runtimeError.message || "runtime_error";
+        console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope runtime error:", msg);
+        showNotice("error", "[AI_LOCAL_ERRO] DeepSeek watcher local", "id=" + parsed.command_id + "\nerro=" + msg);
+        return;
+      }
+
+      if (response && response.ok) {
+        console.log("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope accepted:", parsed.command_id);
+        showNotice("success", "[AI_LOCAL] DeepSeek watcher local", "envelope enviado\nid=" + parsed.command_id);
+        return;
+      }
+
+      const err = response && response.error ? response.error : "background_rejected_captured_envelope";
+      console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope rejected:", parsed.command_id, JSON.stringify(response || {}));
+      showNotice("error", "[AI_LOCAL_ERRO] DeepSeek watcher local", "id=" + parsed.command_id + "\nerro=" + err);
+    });
+  }
+
+  function processText(text, reason, bootstrapOnly) {
+    const blocks = extractEnvelopeBlocks(text);
+    if (!blocks.length) return;
+
+    for (const block of blocks) {
+      const parsed = parseBlock(block);
+      if (!parsed.ok) continue;
+
+      if (bootstrapOnly || Date.now() < bootUntil) {
+        wasCaptured(parsed.command_id);
+        continue;
+      }
+
+      sendCapturedEnvelope(parsed);
+    }
+  }
+
+  function scanNode(node, reason, bootstrapOnly) {
+    if (!node) return;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      processText(node.textContent || "", reason, bootstrapOnly);
+      return;
+    }
+
+    if (!(node instanceof Element)) return;
+    if (isComposerOrInputNode(node)) return;
+
+    const text = node.innerText || node.textContent || "";
+    processText(text, reason, bootstrapOnly);
+  }
+
+  function scanDocument(reason, bootstrapOnly) {
+    if (!document.body) return;
+    scanNode(document.body, reason, bootstrapOnly);
+  }
+
+  function installObserver() {
+    if (!isDeepSeekPage()) return;
+    if (!document.body) return;
+
+    scanDocument("bootstrap", true);
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes || []) {
+          scanNode(node, "mutation", false);
+        }
+        if (mutation.type === "characterData" && mutation.target) {
+          scanNode(mutation.target, "characterData", false);
+        }
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+
+    setTimeout(() => scanDocument("post_bootstrap", false), BOOTSTRAP_MS + 500);
+    setInterval(() => scanDocument("interval", false), 5000);
+
+    console.log("[Local v" + CAPTURE_VERSION + "] DeepSeek outbound envelope observer installed for chat:", getDeepSeekChatId());
+  }
+
+  if (!isDeepSeekPage()) return;
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installObserver, { once: true });
+  } else {
+    installObserver();
   }
 })();
 

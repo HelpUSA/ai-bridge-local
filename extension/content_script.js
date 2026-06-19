@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.46";
+  const VERSION = "0.5.47";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -329,8 +329,10 @@
       }
 
  const beforeText = getComposerText(composer).trim();
+const requestedTextBeforeInject = String(text || "").trim();
+const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBeforeInject && beforeText === requestedTextBeforeInject);
  if (beforeText) {
- const ownedPreflightText = beforeText.includes("AI_BRIDGE_LOCAL_START") || beforeText.includes("ai_bridge_local.envelope") || beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
+ const ownedPreflightText = composerAlreadyHasRequestedText || beforeText.includes("AI_BRIDGE_LOCAL_START") || beforeText.includes("ai_bridge_local.envelope") || beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
  if (ownedPreflightText) {
  showNotice("Limpando composer travado da extensao", "command_id=" + actionId, "warn");
  setText(composer, String());
@@ -339,6 +341,7 @@
  sendResponse({
  ok: false,
  reason: "composer_not_empty_before_inject",
+  composer_text_matches_requested_text: composerAlreadyHasRequestedText,
  text_length: beforeText.length,
  preview: beforeText.slice(0, 200)
  });
@@ -790,7 +793,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     });
   }
 
-  /* AI Bridge Local: legacy global body scanner disabled in 0.5.46.
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.47.
    Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
    The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
 let last = "";
@@ -999,7 +1002,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.46";
+  const CAPTURE_VERSION = "0.5.47";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1260,7 +1263,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.46";
+  const SCANNER_VERSION = "0.5.47";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1378,7 +1381,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.46";
+  const STANDALONE_VERSION = "0.5.47";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";

@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.46
+Versao atual: 0.5.47
 Branch principal: main
-Marco publicado mais recente: v0.5.46-disable-legacy-scanner-inline-heartbeat
+Marco publicado mais recente: v0.5.47-matching-composer-direct-inject-retry
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.46.
+- Versao atual: 0.5.47.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1077,7 +1077,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
@@ -1087,7 +1087,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.42
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.42-direct-interchat-router-safe
 
 ## Direct inter-chat router safe
@@ -1098,7 +1098,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.43
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.43-chatgpt-candidate-envelope-scanner
 
 ## ChatGPT candidate envelope scanner
@@ -1108,7 +1108,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.44
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.44-standalone-chatgpt-scanner-feedback
 
 ## Standalone ChatGPT scanner with visible feedback
@@ -1119,7 +1119,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.45
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.45-content-script-heartbeat-guard
 
 ## Content script heartbeat guard
@@ -1129,7 +1129,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.46
-- Versao atual: 0.5.46
+- Versao atual: 0.5.47
 - Marco publicado: v0.5.46-disable-legacy-scanner-inline-heartbeat
 
 ## Disable legacy scanner and inline heartbeat guard
@@ -1137,3 +1137,14 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.46 desativa scanner legado global que chamava extract(t).forEach(send).
 - DONE 0.5.46 evita erro sendTextToChat is not defined vindo do scanner legado.
 - DONE 0.5.46 preserva scanner standalone com feedback visivel.
+
+
+## Version alignment 0.5.47
+- Versao atual: 0.5.47
+- Marco publicado: v0.5.47-matching-composer-direct-inject-retry
+
+## Matching composer direct inject retry
+- DONE 0.5.47 permite limpar composer do destino quando ele ja contem exatamente o texto solicitado.
+- DONE 0.5.47 preserva trava contra sobrescrever texto manual diferente.
+- DONE 0.5.47 melhora feedback de composer_not_empty_before_inject.
+- DONE 0.5.47 mantem gateway obrigatorio para run-command/local_capability.

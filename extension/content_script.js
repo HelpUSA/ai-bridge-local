@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.55";
+  const VERSION = "0.5.56";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1305,7 +1305,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.55";
+  const CAPTURE_VERSION = "0.5.56";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -2192,7 +2192,7 @@ function findComposer() {
 })();
 
 
-/* AI Bridge Local: DeepSeek outbound envelope capture with inline receipt after envelope 0.5.55. */
+/* AI Bridge Local: DeepSeek outbound envelope capture with inline receipt after envelope 0.5.56. */
 (function installAiBridgeDeepSeekCapturedEnvelopeBridge() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
@@ -2345,8 +2345,7 @@ function findComposer() {
   }
 
   function formatReceiptLines(lines) {
-    return (lines || []).filter(Boolean).join("
-");
+    return (lines || []).filter(Boolean).join("\n");
   }
 
   function nodeTextContainsEnvelope(node, commandId) {
@@ -2480,8 +2479,7 @@ function findComposer() {
       receipt.style.background = kind === "error" ? "rgba(120, 20, 20, .94)" : kind === "warn" ? "rgba(120, 82, 10, .94)" : "rgba(15, 95, 45, .94)";
       receipt.style.color = "#fff";
 
-      receipt.textContent = title + "
-" + formatReceiptLines(lines);
+      receipt.textContent = title + "\n" + formatReceiptLines(lines);
 
       const anchor = findDeepSeekEnvelopeAnchor(parsed);
       if (insertReceiptAfterAnchor(receipt, anchor)) {

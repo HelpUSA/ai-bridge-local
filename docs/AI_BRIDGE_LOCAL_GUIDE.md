@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.40
+Versao atual: 0.5.41
 Branch principal: main
-Marco publicado mais recente: v0.5.40-gemini-manifest-name-sync
+Marco publicado mais recente: v0.5.41-chatgpt-outbound-envelope-capture
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.40.
+- Versao atual: 0.5.41.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1074,3 +1074,13 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Sincroniza `extension/manifest.json` para exibir `AI Bridge Local 0.5.40`.
 - Mantem `version` e `name` da extensão alinhados para evitar confusão ao recarregar a extensão no Chrome.
 - Sem alteração de lógica do gateway/worker.
+
+
+## Version alignment 0.5.41
+- Versao atual: 0.5.41
+- Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
+
+## ChatGPT outbound envelope capture
+- DONE 0.5.41 adiciona observer outbound para envelopes em respostas ChatGPT.
+- DONE 0.5.41 aceita START/END e BEGIN/END.
+- DONE 0.5.41 valida source_chat_id e reporta erro local quando possivel.

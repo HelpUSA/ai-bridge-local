@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.39";
+  const VERSION = "0.5.41";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -954,3 +954,265 @@ sendChatHeartbeat();
     installGeminiEnvelopeObserver();
   }
 })();
+
+
+/* AI Bridge Local: ChatGPT outbound envelope capture. */
+(function installAiBridgeChatGptOutboundEnvelopeCapture() {
+  if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
+  window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
+
+  const CAPTURE_VERSION = "0.5.41";
+  const MAX_CAPTURE_CHARS = 30000;
+  const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
+
+  const START_MARKERS = [
+    "@@" + "AI_BRIDGE_LOCAL_START" + "@@",
+    "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@"
+  ];
+  const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+
+  function isChatGptPage() {
+    return /chatgpt\.com/i.test(location.hostname);
+  }
+
+  function getCurrentChatId() {
+    const href = String(location.href || "");
+    const patterns = [
+      /\/c\/([0-9a-fA-F-]{36})/i,
+      /chatgpt\.com\/c\/([0-9a-fA-F-]{36})/i,
+      /chatgpt\.com\/g\/[^/]+\/c\/([0-9a-fA-F-]{36})/i
+    ];
+    for (const pattern of patterns) {
+      const match = href.match(pattern);
+      if (match) return match[1];
+    }
+    return "";
+  }
+
+  function isComposerOrInputNode(element) {
+    if (!element || !(element instanceof Element)) return false;
+    return Boolean(
+      element.closest("textarea, input, [contenteditable='true'], form") ||
+      element.matches("textarea, input, [contenteditable='true']")
+    );
+  }
+
+  function safeIdPart(value) {
+    return String(value || "unknown").replace(/[^a-zA-Z0-9_.-]+/g, "_").slice(0, 80) || "unknown";
+  }
+
+  function wasCaptured(commandId) {
+    if (!commandId) return false;
+    const key = DEDUPE_PREFIX + commandId;
+    try {
+      if (sessionStorage.getItem(key)) return true;
+      sessionStorage.setItem(key, String(Date.now()));
+    } catch (_) {
+      if (window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ && window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__.has(commandId)) return true;
+      window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ = window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__ || new Set();
+      window.__AI_BRIDGE_CHATGPT_CAPTURED_IDS__.add(commandId);
+    }
+    return false;
+  }
+
+  function showCaptureNotice(title, text, kind) {
+    try {
+      const id = "ai-bridge-chatgpt-outbound-capture-notice";
+      let box = document.getElementById(id);
+      if (!box) {
+        box = document.createElement("div");
+        box.id = id;
+        box.style.position = "fixed";
+        box.style.right = "12px";
+        box.style.bottom = "12px";
+        box.style.zIndex = "2147483647";
+        box.style.maxWidth = "520px";
+        box.style.padding = "10px 12px";
+        box.style.borderRadius = "8px";
+        box.style.font = "12px/1.35 system-ui, sans-serif";
+        box.style.whiteSpace = "pre-wrap";
+        box.style.boxShadow = "0 4px 18px rgba(0,0,0,.25)";
+        document.documentElement.appendChild(box);
+      }
+      box.style.background = kind === "error" ? "#7f1d1d" : "#064e3b";
+      box.style.color = "white";
+      box.textContent = "[AI Bridge Local " + CAPTURE_VERSION + "] " + title + "\n" + String(text || "").slice(0, 1000);
+      window.setTimeout(() => {
+        try { box.remove(); } catch (_) {}
+      }, 7000);
+    } catch (_) {}
+  }
+
+  function sendCommandToBackground(cmd) {
+    chrome.runtime.sendMessage({ type: "AI_BRIDGE_BRIDGE_COMMAND", command: cmd }, (response) => {
+      const runtimeError = chrome.runtime.lastError;
+      if (runtimeError) {
+        console.warn("[Local v" + CAPTURE_VERSION + "] ChatGPT outbound capture sendMessage failed:", runtimeError.message);
+        showCaptureNotice("Falha ao enviar ao background", runtimeError.message, "error");
+        return;
+      }
+      if (!response || !response.ok) {
+        const err = response && response.error ? response.error : "unknown_background_error";
+        console.warn("[Local v" + CAPTURE_VERSION + "] ChatGPT outbound capture rejected:", err);
+        showCaptureNotice("Captura rejeitada", err, "error");
+        return;
+      }
+      showCaptureNotice("Comando local capturado", "command_id=" + (cmd.command_id || "unknown") + "\naction=" + (cmd.action || "unknown"), "info");
+    });
+  }
+
+  function sendLocalError(kind, commandId, message, raw) {
+    const currentChatId = getCurrentChatId();
+    if (!currentChatId) {
+      showCaptureNotice("Erro de envelope", kind + "\n" + message, "error");
+      return;
+    }
+    const errCmd = {
+      schema: "ai_bridge_local.envelope",
+      schema_version: 1,
+      command_id: "local_status_" + safeIdPart(kind) + "_" + safeIdPart(commandId) + "_" + Date.now(),
+      action: "send-chat-message",
+      source_chat_id: currentChatId,
+      target_chat_id: currentChatId,
+      delivery_kind: "inter_agent_message",
+      conversation_id: "chatgpt_outbound_capture_diagnostics",
+      from_agent: "AI Bridge Local Extension " + CAPTURE_VERSION,
+      to_agent: "Current ChatGPT Chat",
+      message:
+        "[AI_LOCAL_ERRO]\n" +
+        "acao=corrija_e_reenvie\n" +
+        "no_reply=0\n" +
+        "executado=nao\n" +
+        "tipo=" + kind + "\n" +
+        "versao=" + CAPTURE_VERSION + "\n" +
+        "id_original=" + (commandId || "unknown") + "\n" +
+        "chat_atual=" + currentChatId + "\n" +
+        "erro=" + String(message || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
+        "correcao=Use JSON estrito entre @@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@, com source_chat_id igual ao chat atual.\n" +
+        "original_sanitizado=\n" + String(raw || "").replace(/\r/g, "").slice(0, 1200),
+      no_reply: 1
+    };
+    sendCommandToBackground(errCmd);
+  }
+
+  function extractEnvelopeBlocks(text) {
+    const source = String(text || "");
+    const blocks = [];
+    for (const start of START_MARKERS) {
+      let offset = 0;
+      while (true) {
+        const startIndex = source.indexOf(start, offset);
+        if (startIndex < 0) break;
+        const bodyStart = startIndex + start.length;
+        const endIndex = source.indexOf(END_MARKER, bodyStart);
+        if (endIndex < 0) break;
+        const raw = source.slice(bodyStart, endIndex).trim();
+        blocks.push({ raw, start });
+        offset = endIndex + END_MARKER.length;
+      }
+    }
+    return blocks;
+  }
+
+  function processText(text) {
+    const source = String(text || "").trim();
+    if (!source || source.length > MAX_CAPTURE_CHARS) return;
+    if (!source.includes("AI_BRIDGE_LOCAL_") || !source.includes("ai_bridge_local.envelope")) return;
+    if (source.includes("[AI_LOCAL]") || source.includes("[AI_LOCAL_ERRO]") || source.includes("[AI_LOCAL_RUN]")) return;
+
+    const blocks = extractEnvelopeBlocks(source);
+    if (!blocks.length) return;
+
+    const currentChatId = getCurrentChatId();
+
+    for (const block of blocks) {
+      let cmd;
+      try {
+        cmd = JSON.parse(block.raw);
+      } catch (e) {
+        sendLocalError("envelope_parse_error", "unknown", e && e.message ? e.message : String(e), block.raw);
+        continue;
+      }
+
+      const commandId = String(cmd.command_id || "").trim();
+      if (!commandId) {
+        sendLocalError("envelope_missing_command_id", "unknown", "command_id ausente", block.raw);
+        continue;
+      }
+      if (wasCaptured(commandId)) continue;
+
+      if (cmd.source_chat_id && currentChatId && cmd.source_chat_id !== currentChatId) {
+        sendLocalError("source_chat_id_mismatch", commandId, "source_chat_id do envelope nao corresponde ao chat atual", block.raw);
+        continue;
+      }
+
+      cmd.source_chat_id = currentChatId || cmd.source_chat_id || "unknown";
+      cmd.source_url = location.href;
+      sendCommandToBackground(cmd);
+    }
+  }
+
+  function collectCandidateText(element) {
+    const candidates = [];
+    const push = (el) => {
+      if (!el || !(el instanceof Element)) return;
+      if (isComposerOrInputNode(el)) return;
+      const text = String(el.innerText || el.textContent || "").trim();
+      if (text) candidates.push(text);
+    };
+
+    push(element);
+    push(element.closest("article"));
+    push(element.closest("[data-message-author-role]"));
+    push(element.closest("[role='article']"));
+    push(element.parentElement);
+
+    candidates.sort((a, b) => a.length - b.length);
+    return [...new Set(candidates)];
+  }
+
+  function tryCaptureFromElement(element) {
+    if (!isChatGptPage()) return;
+    if (!element || !(element instanceof Element)) return;
+    if (isComposerOrInputNode(element)) return;
+
+    for (const text of collectCandidateText(element)) {
+      processText(text);
+    }
+  }
+
+  function installObserver() {
+    if (!isChatGptPage() || !document.body) return;
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === "childList") {
+          for (const node of mutation.addedNodes) {
+            if (node instanceof Element) {
+              window.setTimeout(() => tryCaptureFromElement(node), 300);
+              window.setTimeout(() => tryCaptureFromElement(node), 1200);
+            }
+          }
+        } else if (mutation.type === "characterData" && mutation.target && mutation.target.parentElement) {
+          const parent = mutation.target.parentElement;
+          window.setTimeout(() => tryCaptureFromElement(parent), 500);
+        }
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+
+    console.log("[Local v" + CAPTURE_VERSION + "] ChatGPT outbound envelope observer installed for chat:", getCurrentChatId());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installObserver, { once: true });
+  } else {
+    installObserver();
+  }
+})();
+

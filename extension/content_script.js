@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.54";
+  const VERSION = "0.5.55";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1305,7 +1305,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.52";
+  const CAPTURE_VERSION = "0.5.55";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -2192,7 +2192,7 @@ function findComposer() {
 })();
 
 
-/* AI Bridge Local: DeepSeek outbound envelope capture with persistent receipt 0.5.54. */
+/* AI Bridge Local: DeepSeek outbound envelope capture with inline receipt after envelope 0.5.55. */
 (function installAiBridgeDeepSeekCapturedEnvelopeBridge() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
@@ -2339,12 +2339,121 @@ function findComposer() {
   }
 
 
+
   function sanitizeReceiptId(value) {
     return String(value || "unknown").replace(/[^a-zA-Z0-9_-]+/g, "_").slice(0, 180);
   }
 
   function formatReceiptLines(lines) {
-    return (lines || []).filter(Boolean).join("\n");
+    return (lines || []).filter(Boolean).join("
+");
+  }
+
+  function nodeTextContainsEnvelope(node, commandId) {
+    try {
+      if (!node) return false;
+      const text = String(node.innerText || node.textContent || "");
+      return text.includes(commandId) && text.includes(START_MARKER) && text.includes(END_MARKER);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function isBadReceiptAnchor(node) {
+    try {
+      if (!node || !(node instanceof Element)) return true;
+      if (node === document.body || node === document.documentElement) return true;
+      if (node.closest('[data-ai-bridge-deepseek-receipt="1"]')) return true;
+      if (isComposerOrInputNode(node)) return true;
+      return false;
+    } catch (_) {
+      return true;
+    }
+  }
+
+  function chooseSmallestEnvelopeElement(commandId, preferredNode) {
+    const candidates = [];
+
+    function pushCandidate(node, reason) {
+      if (!node || !(node instanceof Element)) return;
+      if (isBadReceiptAnchor(node)) return;
+      if (!nodeTextContainsEnvelope(node, commandId)) return;
+      const len = String(node.innerText || node.textContent || "").length;
+      if (len < 20 || len > MAX_CAPTURE_CHARS + 5000) return;
+      candidates.push({ node, len, reason });
+    }
+
+    try {
+      if (preferredNode && preferredNode instanceof Element) {
+        pushCandidate(preferredNode, "preferred");
+        const closest = preferredNode.closest('[data-testid], [data-message-id], [class*="message"], [class*="chat"], [class*="markdown"], .ds-markdown, article, section, div');
+        pushCandidate(closest, "closest");
+        let p = preferredNode.parentElement;
+        let depth = 0;
+        while (p && depth < 6) {
+          pushCandidate(p, "parent");
+          p = p.parentElement;
+          depth += 1;
+        }
+      }
+
+      const selectors = [
+        ".ds-markdown",
+        '[class*="markdown"]',
+        '[class*="message"]',
+        '[data-message-id]',
+        '[data-testid]',
+        "article",
+        "section",
+        "pre",
+        "code",
+        "div"
+      ];
+
+      for (const sel of selectors) {
+        const nodes = document.querySelectorAll(sel);
+        for (const node of nodes) {
+          pushCandidate(node, sel);
+          if (candidates.length > 80) break;
+        }
+        if (candidates.length > 80) break;
+      }
+    } catch (_) {}
+
+    candidates.sort((a, b) => a.len - b.len);
+    return candidates.length ? candidates[0].node : null;
+  }
+
+  function findDeepSeekEnvelopeAnchor(parsed) {
+    try {
+      const commandId = parsed && parsed.command_id ? parsed.command_id : "";
+      if (!commandId) return null;
+
+      let sourceNode = parsed && parsed.source_node ? parsed.source_node : null;
+      if (sourceNode && sourceNode.nodeType === Node.TEXT_NODE) {
+        sourceNode = sourceNode.parentElement;
+      }
+
+      const best = chooseSmallestEnvelopeElement(commandId, sourceNode);
+      if (best) return best;
+    } catch (err) {
+      console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek receipt anchor lookup failed:", err && err.message ? err.message : err);
+    }
+    return null;
+  }
+
+  function insertReceiptAfterAnchor(receipt, anchor) {
+    try {
+      if (!receipt || !anchor || !anchor.parentNode) return false;
+      if (anchor.nextSibling === receipt) return true;
+
+      anchor.parentNode.insertBefore(receipt, anchor.nextSibling);
+      receipt.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      return true;
+    } catch (err) {
+      console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek inline receipt insert failed:", err && err.message ? err.message : err);
+      return false;
+    }
   }
 
   function appendPersistentReceipt(parsed, kind, title, lines) {
@@ -2352,40 +2461,31 @@ function findComposer() {
       const commandId = parsed && parsed.command_id ? parsed.command_id : "unknown";
       const receiptId = "ai-bridge-deepseek-persistent-receipt-" + sanitizeReceiptId(commandId);
 
-      let existing = document.getElementById(receiptId);
-      if (!existing) {
-        existing = document.createElement("div");
-        existing.id = receiptId;
-        existing.setAttribute("data-ai-bridge-deepseek-receipt", "1");
-        existing.style.margin = "10px 0";
-        existing.style.padding = "10px 12px";
-        existing.style.borderRadius = "10px";
-        existing.style.whiteSpace = "pre-wrap";
-        existing.style.fontFamily = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
-        existing.style.fontSize = "12px";
-        existing.style.lineHeight = "1.35";
-        existing.style.border = "1px solid rgba(255,255,255,.18)";
-        existing.style.boxShadow = "0 4px 14px rgba(0,0,0,.18)";
+      let receipt = document.getElementById(receiptId);
+      if (!receipt) {
+        receipt = document.createElement("div");
+        receipt.id = receiptId;
+        receipt.setAttribute("data-ai-bridge-deepseek-receipt", "1");
+        receipt.style.margin = "10px 0";
+        receipt.style.padding = "10px 12px";
+        receipt.style.borderRadius = "10px";
+        receipt.style.whiteSpace = "pre-wrap";
+        receipt.style.fontFamily = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+        receipt.style.fontSize = "12px";
+        receipt.style.lineHeight = "1.35";
+        receipt.style.border = "1px solid rgba(255,255,255,.22)";
+        receipt.style.boxShadow = "0 4px 14px rgba(0,0,0,.20)";
       }
 
-      existing.style.background = kind === "error" ? "rgba(120, 20, 20, .92)" : kind === "warn" ? "rgba(120, 82, 10, .92)" : "rgba(15, 95, 45, .92)";
-      existing.style.color = "#fff";
+      receipt.style.background = kind === "error" ? "rgba(120, 20, 20, .94)" : kind === "warn" ? "rgba(120, 82, 10, .94)" : "rgba(15, 95, 45, .94)";
+      receipt.style.color = "#fff";
 
-      existing.textContent = title + "\n" + formatReceiptLines(lines);
+      receipt.textContent = title + "
+" + formatReceiptLines(lines);
 
-      const sourceNode = parsed && parsed.source_node;
-      let anchor = null;
-
-      if (sourceNode && sourceNode instanceof Element) {
-        anchor = sourceNode.closest('[data-testid], [data-message-id], [class*="message"], [class*="chat"], [class*="markdown"], .ds-markdown') || sourceNode;
-      }
-
-      if (anchor && anchor !== document.body && anchor.parentNode) {
-        if (existing.parentNode !== anchor.parentNode) {
-          anchor.parentNode.insertBefore(existing, anchor.nextSibling);
-        } else if (existing.previousSibling !== anchor) {
-          anchor.parentNode.insertBefore(existing, anchor.nextSibling);
-        }
+      const anchor = findDeepSeekEnvelopeAnchor(parsed);
+      if (insertReceiptAfterAnchor(receipt, anchor)) {
+        console.log("[Local v" + CAPTURE_VERSION + "] DeepSeek inline receipt inserted after envelope:", commandId);
         return;
       }
 
@@ -2404,13 +2504,16 @@ function findComposer() {
         document.documentElement.appendChild(panel);
       }
 
-      if (existing.parentNode !== panel) {
-        panel.appendChild(existing);
+      if (receipt.parentNode !== panel) {
+        panel.appendChild(receipt);
       }
+
+      console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek inline receipt anchor not found; used fixed panel:", commandId);
     } catch (err) {
       console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek persistent receipt failed:", err && err.message ? err.message : err);
     }
   }
+
 
   function sendCapturedEnvelope(parsed) {
     if (wasCaptured(parsed.command_id)) return;

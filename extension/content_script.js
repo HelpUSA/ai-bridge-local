@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.53";
+  const VERSION = "0.5.54";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -2120,7 +2120,7 @@ function findComposer() {
     });
   }
 
-  function processText(text, reason, bootstrapOnly) {
+  function processText(text, reason, bootstrapOnly, sourceNode) {
     const blocks = extractEnvelopeBlocks(text);
     if (!blocks.length) return;
 
@@ -2162,7 +2162,7 @@ function findComposer() {
     }
 
     for (const text of texts) {
-      processText(text, reason, bootstrapOnly);
+      processText(text, reason, bootstrapOnly, node);
     }
   }
 
@@ -2192,12 +2192,12 @@ function findComposer() {
 })();
 
 
-/* AI Bridge Local: DeepSeek outbound envelope capture 0.5.53. */
+/* AI Bridge Local: DeepSeek outbound envelope capture with persistent receipt 0.5.54. */
 (function installAiBridgeDeepSeekCapturedEnvelopeBridge() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.53";
+  const CAPTURE_VERSION = "0.5.54";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;
@@ -2338,6 +2338,80 @@ function findComposer() {
     } catch (_) {}
   }
 
+
+  function sanitizeReceiptId(value) {
+    return String(value || "unknown").replace(/[^a-zA-Z0-9_-]+/g, "_").slice(0, 180);
+  }
+
+  function formatReceiptLines(lines) {
+    return (lines || []).filter(Boolean).join("\n");
+  }
+
+  function appendPersistentReceipt(parsed, kind, title, lines) {
+    try {
+      const commandId = parsed && parsed.command_id ? parsed.command_id : "unknown";
+      const receiptId = "ai-bridge-deepseek-persistent-receipt-" + sanitizeReceiptId(commandId);
+
+      let existing = document.getElementById(receiptId);
+      if (!existing) {
+        existing = document.createElement("div");
+        existing.id = receiptId;
+        existing.setAttribute("data-ai-bridge-deepseek-receipt", "1");
+        existing.style.margin = "10px 0";
+        existing.style.padding = "10px 12px";
+        existing.style.borderRadius = "10px";
+        existing.style.whiteSpace = "pre-wrap";
+        existing.style.fontFamily = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+        existing.style.fontSize = "12px";
+        existing.style.lineHeight = "1.35";
+        existing.style.border = "1px solid rgba(255,255,255,.18)";
+        existing.style.boxShadow = "0 4px 14px rgba(0,0,0,.18)";
+      }
+
+      existing.style.background = kind === "error" ? "rgba(120, 20, 20, .92)" : kind === "warn" ? "rgba(120, 82, 10, .92)" : "rgba(15, 95, 45, .92)";
+      existing.style.color = "#fff";
+
+      existing.textContent = title + "\n" + formatReceiptLines(lines);
+
+      const sourceNode = parsed && parsed.source_node;
+      let anchor = null;
+
+      if (sourceNode && sourceNode instanceof Element) {
+        anchor = sourceNode.closest('[data-testid], [data-message-id], [class*="message"], [class*="chat"], [class*="markdown"], .ds-markdown') || sourceNode;
+      }
+
+      if (anchor && anchor !== document.body && anchor.parentNode) {
+        if (existing.parentNode !== anchor.parentNode) {
+          anchor.parentNode.insertBefore(existing, anchor.nextSibling);
+        } else if (existing.previousSibling !== anchor) {
+          anchor.parentNode.insertBefore(existing, anchor.nextSibling);
+        }
+        return;
+      }
+
+      let panel = document.getElementById("ai-bridge-deepseek-persistent-receipt-panel");
+      if (!panel) {
+        panel = document.createElement("div");
+        panel.id = "ai-bridge-deepseek-persistent-receipt-panel";
+        panel.style.position = "fixed";
+        panel.style.zIndex = "2147483646";
+        panel.style.right = "16px";
+        panel.style.bottom = "16px";
+        panel.style.width = "min(560px, calc(100vw - 32px))";
+        panel.style.maxHeight = "45vh";
+        panel.style.overflow = "auto";
+        panel.style.pointerEvents = "auto";
+        document.documentElement.appendChild(panel);
+      }
+
+      if (existing.parentNode !== panel) {
+        panel.appendChild(existing);
+      }
+    } catch (err) {
+      console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek persistent receipt failed:", err && err.message ? err.message : err);
+    }
+  }
+
   function sendCapturedEnvelope(parsed) {
     if (wasCaptured(parsed.command_id)) return;
 
@@ -2353,23 +2427,49 @@ function findComposer() {
       if (runtimeError) {
         const msg = runtimeError.message || "runtime_error";
         console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope runtime error:", msg);
+        appendPersistentReceipt(parsed, "error", "[AI_LOCAL_ERRO] DeepSeek watcher local", [
+          "id=" + parsed.command_id,
+          "status=runtime_error",
+          "versao=" + CAPTURE_VERSION,
+          "origem=" + getDeepSeekChatId(),
+          "destino=" + (parsed.envelope && parsed.envelope.target_chat_id ? parsed.envelope.target_chat_id : "unknown"),
+          "erro=" + msg
+        ]);
         showNotice("error", "[AI_LOCAL_ERRO] DeepSeek watcher local", "id=" + parsed.command_id + "\nerro=" + msg);
         return;
       }
 
       if (response && response.ok) {
         console.log("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope accepted:", parsed.command_id);
+        const directFlag = response && response.direct ? "sent_direct" : "accepted";
+        appendPersistentReceipt(parsed, "success", "[AI_LOCAL] DeepSeek watcher local", [
+          "envelope capturado e entregue pela extensao",
+          "id=" + parsed.command_id,
+          "status=" + directFlag,
+          "versao=" + CAPTURE_VERSION,
+          "origem=" + getDeepSeekChatId(),
+          "destino=" + (parsed.envelope && parsed.envelope.target_chat_id ? parsed.envelope.target_chat_id : "unknown"),
+          "observacao=Mensagem inter-chat enviada pelo watcher local."
+        ]);
         showNotice("success", "[AI_LOCAL] DeepSeek watcher local", "envelope enviado\nid=" + parsed.command_id);
         return;
       }
 
       const err = response && response.error ? response.error : "background_rejected_captured_envelope";
       console.warn("[Local v" + CAPTURE_VERSION + "] DeepSeek captured envelope rejected:", parsed.command_id, JSON.stringify(response || {}));
+      appendPersistentReceipt(parsed, "error", "[AI_LOCAL_ERRO] DeepSeek watcher local", [
+        "id=" + parsed.command_id,
+        "status=rejected",
+        "versao=" + CAPTURE_VERSION,
+        "origem=" + getDeepSeekChatId(),
+        "destino=" + (parsed.envelope && parsed.envelope.target_chat_id ? parsed.envelope.target_chat_id : "unknown"),
+        "erro=" + err
+      ]);
       showNotice("error", "[AI_LOCAL_ERRO] DeepSeek watcher local", "id=" + parsed.command_id + "\nerro=" + err);
     });
   }
 
-  function processText(text, reason, bootstrapOnly) {
+  function processText(text, reason, bootstrapOnly, sourceNode) {
     const blocks = extractEnvelopeBlocks(text);
     if (!blocks.length) return;
 
@@ -2382,6 +2482,7 @@ function findComposer() {
         continue;
       }
 
+      parsed.source_node = sourceNode || null;
       sendCapturedEnvelope(parsed);
     }
   }
@@ -2390,7 +2491,7 @@ function findComposer() {
     if (!node) return;
 
     if (node.nodeType === Node.TEXT_NODE) {
-      processText(node.textContent || "", reason, bootstrapOnly);
+      processText(node.textContent || "", reason, bootstrapOnly, node.parentElement || null);
       return;
     }
 
@@ -2398,7 +2499,7 @@ function findComposer() {
     if (isComposerOrInputNode(node)) return;
 
     const text = node.innerText || node.textContent || "";
-    processText(text, reason, bootstrapOnly);
+    processText(text, reason, bootstrapOnly, node);
   }
 
   function scanDocument(reason, bootstrapOnly) {

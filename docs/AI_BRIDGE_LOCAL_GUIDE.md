@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.33
+Versao atual: 0.5.39
 Branch principal: main
-Marco publicado mais recente: v0.5.33-live-interchat-authorization-gate
+Marco publicado mais recente: v0.5.39-final-result-feedback-guard
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.33.
+- Versao atual: 0.5.39.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1059,3 +1059,11 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Decisao: usar Knowledge Vault e knowledge_writer.py como nova ferramenta operacional antes da integracao SMART_TASK_KNOWLEDGE_INTEGRATION_V2_SAFE.
 - Risco registrado: scripts grandes colados no ChatGPT podem sofrer Markdown corruption, crases indevidas e quebras de codigo.
 - Proximo micro: executar integracao minima somente apos docs, nota, report, smokes e diff check passarem.
+
+
+## Atualização 0.5.39 - final result feedback guard
+
+- Impede feedback local intermediario para `result_to_*`.
+- Evita `local_status_accepted_result_to_*` para resultados finais.
+- Preserva o fluxo esperado: queued inicial + `[AI_LOCAL_RUN]` final.
+- Mantem `final_result_sweeper_v3.py` apenas como mitigacao operacional temporaria.

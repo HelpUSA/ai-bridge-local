@@ -197,7 +197,65 @@ def fetch_control_status():
         conn.close()
 
 
+
+def is_final_result_feedback_notice(body):
+    """Return True for final-result messages that must not receive local accepted feedback."""
+    if not isinstance(body, dict):
+        return False
+
+    command_id = str(body.get("command_id", "") or "")
+    action = str(body.get("action", "") or "")
+    message = str(body.get("message", "") or "")
+    payload = body.get("payload", {})
+    payload_json = body.get("payload_json", {})
+
+    payload_text = ""
+    try:
+        payload_text = json.dumps(payload, ensure_ascii=False)
+    except Exception:
+        payload_text = str(payload or "")
+
+    payload_json_text = ""
+    try:
+        payload_json_text = json.dumps(payload_json, ensure_ascii=False)
+    except Exception:
+        payload_json_text = str(payload_json or "")
+
+    blob = "\n".join([message, payload_text, payload_json_text]).lower()
+
+    if command_id.startswith("result_to_"):
+        return True
+
+    if "[ai_local_run]" in blob:
+        return True
+
+    if "result_is_final=1" in blob and "chat_can_continue=" in blob:
+        return True
+
+    if '"result_is_final": true' in blob or '"result_is_final": 1' in blob:
+        return True
+
+    if action == "send-chat-message" and "next_action=" in blob and "chat_can_continue=" in blob:
+        return True
+
+    return False
+
+
+def should_skip_source_feedback(body):
+    """Prevent feedback loops for local status and final result messages."""
+    if not isinstance(body, dict):
+        return False
+
+    command_id = str(body.get("command_id", "") or "")
+    if command_id.startswith("local_status_"):
+        return True
+
+    return is_final_result_feedback_notice(body)
+
+
 def enqueue_source_feedback(body, feedback_type, detail):
+    if should_skip_source_feedback(body):
+        return None
     source_chat_id = body.get('source_chat_id', '')
     if not source_chat_id:
         return

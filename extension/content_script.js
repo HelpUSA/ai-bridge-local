@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.45";
+  const VERSION = "0.5.46";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -617,7 +617,15 @@
 function aiBridgeSafeCallSendChatHeartbeat(reason) {
   try {
     if (typeof sendChatHeartbeat === "function") {
-      aiBridgeSafeCallSendChatHeartbeat("direct_call");
+      try {
+  if (typeof sendChatHeartbeat === "function") {
+    sendChatHeartbeat();
+  } else {
+    console.warn("[AI Bridge Local] sendChatHeartbeat unavailable; skipped heartbeat direct_call");
+  }
+} catch (e) {
+  console.warn("[AI Bridge Local] sendChatHeartbeat failed; skipped heartbeat direct_call", e && e.message);
+}
       return true;
     }
     console.warn("[AI Bridge Local] sendChatHeartbeat unavailable; skipped heartbeat", reason || "");
@@ -782,18 +790,32 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     });
   }
 
-  let last = "";
-  setInterval(() => {
-    const t = document.body?.innerText || "";
-    if (t !== last) {
-      last = t;
-      extract(t).forEach(send);
-    }
-  }, 2000);
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.46.
+   Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
+   The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
+let last = "";
 })();
 
-setInterval(() => aiBridgeSafeCallSendChatHeartbeat("interval"), 30000);
-aiBridgeSafeCallSendChatHeartbeat("direct_call");
+setInterval(() => {
+  try {
+    if (typeof sendChatHeartbeat === "function") {
+      sendChatHeartbeat();
+    } else {
+      console.warn("[AI Bridge Local] sendChatHeartbeat unavailable; skipped heartbeat interval");
+    }
+  } catch (e) {
+    console.warn("[AI Bridge Local] sendChatHeartbeat failed; skipped heartbeat interval", e && e.message);
+  }
+}, 30000);
+try {
+  if (typeof sendChatHeartbeat === "function") {
+    sendChatHeartbeat();
+  } else {
+    console.warn("[AI Bridge Local] sendChatHeartbeat unavailable; skipped heartbeat direct_call");
+  }
+} catch (e) {
+  console.warn("[AI Bridge Local] sendChatHeartbeat failed; skipped heartbeat direct_call", e && e.message);
+}
 
 /* AI Bridge Local: Gemini auto envelope capture. */
 (function installAiBridgeGeminiCapturedEnvelopeBridge() {
@@ -977,7 +999,7 @@ aiBridgeSafeCallSendChatHeartbeat("direct_call");
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.45";
+  const CAPTURE_VERSION = "0.5.46";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1238,7 +1260,7 @@ aiBridgeSafeCallSendChatHeartbeat("direct_call");
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.45";
+  const SCANNER_VERSION = "0.5.46";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1356,7 +1378,7 @@ aiBridgeSafeCallSendChatHeartbeat("direct_call");
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.45";
+  const STANDALONE_VERSION = "0.5.46";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";

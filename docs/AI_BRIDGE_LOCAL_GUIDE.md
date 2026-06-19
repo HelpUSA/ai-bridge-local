@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.45
+Versao atual: 0.5.46
 Branch principal: main
-Marco publicado mais recente: v0.5.45-content-script-heartbeat-guard
+Marco publicado mais recente: v0.5.46-disable-legacy-scanner-inline-heartbeat
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.45.
+- Versao atual: 0.5.46.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1077,7 +1077,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.45
+- Versao atual: 0.5.46
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
@@ -1087,7 +1087,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.42
-- Versao atual: 0.5.45
+- Versao atual: 0.5.46
 - Marco publicado: v0.5.42-direct-interchat-router-safe
 
 ## Direct inter-chat router safe
@@ -1098,7 +1098,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.43
-- Versao atual: 0.5.45
+- Versao atual: 0.5.46
 - Marco publicado: v0.5.43-chatgpt-candidate-envelope-scanner
 
 ## ChatGPT candidate envelope scanner
@@ -1108,7 +1108,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.44
-- Versao atual: 0.5.45
+- Versao atual: 0.5.46
 - Marco publicado: v0.5.44-standalone-chatgpt-scanner-feedback
 
 ## Standalone ChatGPT scanner with visible feedback
@@ -1119,10 +1119,21 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.45
-- Versao atual: 0.5.45
+- Versao atual: 0.5.46
 - Marco publicado: v0.5.45-content-script-heartbeat-guard
 
 ## Content script heartbeat guard
 - DONE 0.5.45 protege sendChatHeartbeat contra ReferenceError.
 - DONE 0.5.45 evita que falha de heartbeat interrompa o scanner standalone.
 - DONE 0.5.45 preserva feedback visivel e gateway obrigatorio para run-command/local_capability.
+
+
+## Version alignment 0.5.46
+- Versao atual: 0.5.46
+- Marco publicado: v0.5.46-disable-legacy-scanner-inline-heartbeat
+
+## Disable legacy scanner and inline heartbeat guard
+- DONE 0.5.46 remove chamada fora de escopo ao aiBridgeSafeCallSendChatHeartbeat.
+- DONE 0.5.46 desativa scanner legado global que chamava extract(t).forEach(send).
+- DONE 0.5.46 evita erro sendTextToChat is not defined vindo do scanner legado.
+- DONE 0.5.46 preserva scanner standalone com feedback visivel.

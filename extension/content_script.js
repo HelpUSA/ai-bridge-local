@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.48";
+  const VERSION = "0.5.49";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -58,6 +58,11 @@
   setInterval(registerChatWithBridge, REGISTER_CHAT_INTERVAL_MS);
 
   function findComposer() {
+  const aiBridgePreferredComposer = aiBridgeFindChatGptPromptTextarea();
+  if (aiBridgePreferredComposer) {
+    console.log("[Local v" + VERSION + "] using preferred ChatGPT composer", aiBridgeDescribeComposerElement(aiBridgePreferredComposer));
+    return aiBridgePreferredComposer;
+  }
     const selectors = [
       '#prompt-textarea',
       '[data-testid="composer"] [contenteditable="true"]',
@@ -273,7 +278,7 @@
       }
     }
 
-    el.dispatchEvent(new InputEvent("input", {bubbles: true, cancelable: true, inputType: "insertText", data: text}));
+    el.dispatchEvent(new InputEvent("input:not([type='file']):not(#upload-photos):not(#upload-camera)", {bubbles: true, cancelable: true, inputType: "insertText", data: text}));
     el.dispatchEvent(new Event("change", {bubbles: true}));
     el.dispatchEvent(new KeyboardEvent("keyup", {key: " ", code: "Space", bubbles: true}));
   }
@@ -319,13 +324,13 @@ function aiBridgeDispatchInputEvents(element, text) {
   } catch (_) {}
 
   try {
-    element.dispatchEvent(new InputEvent("input", {
+    element.dispatchEvent(new InputEvent("input:not([type='file']):not(#upload-photos):not(#upload-camera)", {
       bubbles: true,
       inputType: "insertText",
       data: text
     }));
   } catch (_) {
-    element.dispatchEvent(new Event("input", { bubbles: true }));
+    element.dispatchEvent(new Event("input:not([type='file']):not(#upload-photos):not(#upload-camera)", { bubbles: true }));
   }
 
   try {
@@ -475,6 +480,110 @@ function aiBridgeRobustSetText(element, value) {
   });
 
   return false;
+}
+
+
+
+function aiBridgeIsElementVisibleForComposer(element) {
+  if (!element || !(element instanceof Element)) return false;
+
+  const rect = element.getBoundingClientRect();
+  const style = getComputedStyle(element);
+
+  return rect.width > 0 &&
+    rect.height > 0 &&
+    style.visibility !== "hidden" &&
+    style.display !== "none";
+}
+
+function aiBridgeIsUsableComposerCandidate(element) {
+  if (!element || !(element instanceof Element)) return false;
+  if (!aiBridgeIsElementVisibleForComposer(element)) return false;
+
+  const tag = String(element.tagName || "").toUpperCase();
+  const type = String(element.getAttribute("type") || "").toLowerCase();
+  const id = String(element.id || "").toLowerCase();
+  const ariaHidden = String(element.getAttribute("aria-hidden") || "").toLowerCase();
+  const disabled = element.disabled || String(element.getAttribute("aria-disabled") || "").toLowerCase() === "true";
+
+  if (disabled) return false;
+  if (ariaHidden === "true") return false;
+  if (type === "file") return false;
+  if (id.includes("upload")) return false;
+
+  if (tag === "TEXTAREA") return true;
+
+  if (tag === "INPUT") {
+    return ["", "text", "search"].includes(type);
+  }
+
+  if (String(element.getAttribute("contenteditable") || "").toLowerCase() === "true") {
+    return true;
+  }
+
+  if (String(element.getAttribute("role") || "").toLowerCase() === "textbox") {
+    return true;
+  }
+
+  return false;
+}
+
+function aiBridgeDescribeComposerElement(element) {
+  if (!element || !(element instanceof Element)) return { found: false };
+
+  return {
+    found: true,
+    tag: String(element.tagName || ""),
+    id: String(element.id || ""),
+    role: String(element.getAttribute("role") || ""),
+    contenteditable: String(element.getAttribute("contenteditable") || ""),
+    testid: String(element.getAttribute("data-testid") || ""),
+    aria_label: String(element.getAttribute("aria-label") || ""),
+    type: String(element.getAttribute("type") || ""),
+    class_name: String(element.className || "").slice(0, 160),
+    text_length: String(getComposerText(element) || "").trim().length
+  };
+}
+
+function aiBridgeFindChatGptPromptTextarea() {
+  const preferredSelectors = [
+    "#prompt-textarea.ProseMirror[contenteditable='true']",
+    "div#prompt-textarea[contenteditable='true'][role='textbox']",
+    "#prompt-textarea[contenteditable='true']",
+    "#prompt-textarea",
+    "[data-testid='prompt-textarea']",
+    "[aria-label='Converse com o ChatGPT'][contenteditable='true']",
+    "[aria-label='Message ChatGPT'][contenteditable='true']",
+    "[aria-label='Send a message'][contenteditable='true']",
+    "main form .ProseMirror[contenteditable='true']",
+    "form .ProseMirror[contenteditable='true']",
+    ".ProseMirror[contenteditable='true'][role='textbox']"
+  ];
+
+  for (const selector of preferredSelectors) {
+    const element = document.querySelector(selector);
+    if (aiBridgeIsUsableComposerCandidate(element)) {
+      return element;
+    }
+  }
+
+  const fallbackSelectors = [
+    "textarea:not([type='file'])",
+    "[contenteditable='true'][role='textbox']",
+    "[contenteditable='true']",
+    "[role='textbox']"
+  ];
+
+  for (const selector of fallbackSelectors) {
+    const elements = Array.from(document.querySelectorAll(selector));
+    for (const element of elements) {
+      if (aiBridgeIsUsableComposerCandidate(element)) {
+        return element;
+      }
+    }
+  }
+
+  return null;
 }
 
 
@@ -964,7 +1073,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     });
   }
 
-  /* AI Bridge Local: legacy global body scanner disabled in 0.5.48.
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.49.
    Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
    The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
 let last = "";
@@ -1173,7 +1282,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.48";
+  const CAPTURE_VERSION = "0.5.49";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1434,7 +1543,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.48";
+  const SCANNER_VERSION = "0.5.49";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1552,7 +1661,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.48";
+  const STANDALONE_VERSION = "0.5.49";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1711,6 +1820,11 @@ try {
   }
 
   function findComposer() {
+  const aiBridgePreferredComposer = aiBridgeFindChatGptPromptTextarea();
+  if (aiBridgePreferredComposer) {
+    console.log("[Local v" + VERSION + "] using preferred ChatGPT composer", aiBridgeDescribeComposerElement(aiBridgePreferredComposer));
+    return aiBridgePreferredComposer;
+  }
     const selectors = [
       "#prompt-textarea",
       "[data-testid='composer'] [contenteditable='true']",
@@ -1733,7 +1847,7 @@ try {
 
     if (composer.tagName === "TEXTAREA" || composer.tagName === "INPUT") {
       composer.value = text;
-      composer.dispatchEvent(new Event("input", { bubbles: true }));
+      composer.dispatchEvent(new Event("input:not([type='file']):not(#upload-photos):not(#upload-camera)", { bubbles: true }));
       composer.dispatchEvent(new Event("change", { bubbles: true }));
       return;
     }
@@ -1753,7 +1867,7 @@ try {
       composer.textContent = text;
     }
 
-    composer.dispatchEvent(new InputEvent("input", {
+    composer.dispatchEvent(new InputEvent("input:not([type='file']):not(#upload-photos):not(#upload-camera)", {
       bubbles: true,
       inputType: "insertText",
       data: text

@@ -1,9 +1,9 @@
 ﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-06-16
-Versao atual: 0.5.51
+Versao atual: 0.5.52
 Branch principal: main
-Marco publicado mais recente: v0.5.51-standalone-visible-status-composer-scope
+Marco publicado mais recente: v0.5.52-gemini-local-status-prefix-scope
 Commit de referencia: 2d60f91 test: restore valid cleanup smoke
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.51.
+- Versao atual: 0.5.52.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
@@ -1077,7 +1077,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
@@ -1087,7 +1087,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.42
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.42-direct-interchat-router-safe
 
 ## Direct inter-chat router safe
@@ -1098,7 +1098,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.43
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.43-chatgpt-candidate-envelope-scanner
 
 ## ChatGPT candidate envelope scanner
@@ -1108,7 +1108,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.44
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.44-standalone-chatgpt-scanner-feedback
 
 ## Standalone ChatGPT scanner with visible feedback
@@ -1119,7 +1119,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.45
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.45-content-script-heartbeat-guard
 
 ## Content script heartbeat guard
@@ -1129,7 +1129,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.46
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.46-disable-legacy-scanner-inline-heartbeat
 
 ## Disable legacy scanner and inline heartbeat guard
@@ -1140,7 +1140,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.47
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.47-matching-composer-direct-inject-retry
 
 ## Matching composer direct inject retry
@@ -1151,7 +1151,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.48
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.48-robust-composer-text-injection
 
 ## Robust composer text injection
@@ -1162,7 +1162,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.49
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.49-force-chatgpt-prompt-textarea-composer
 
 ## Force ChatGPT prompt-textarea composer
@@ -1173,7 +1173,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.50
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.50-repair-prompt-textarea-composer-smoke
 
 ## Repair prompt-textarea composer smoke
@@ -1184,7 +1184,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.51
-- Versao atual: 0.5.51
+- Versao atual: 0.5.52
 - Marco publicado: v0.5.51-standalone-visible-status-composer-scope
 
 ## Standalone visible status composer scope
@@ -1192,3 +1192,13 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.51 remove dependencia de helper de composer fora do IIFE standalone.
 - DONE 0.5.51 preserva entrega direta inter-chat ja validada.
 - DONE 0.5.51 mantem gateway obrigatorio para run-command/local_capability.
+
+
+## Version alignment 0.5.52
+- Versao atual: 0.5.52
+- Marco publicado: v0.5.52-gemini-local-status-prefix-scope
+
+## Gemini local status prefix scope
+- DONE 0.5.52 corrige `LOCAL_STATUS_PREFIXES is not defined` no Gemini envelope observer.
+- DONE 0.5.52 preserva rota direta inter-chat sem gateway/DB.
+- DONE 0.5.52 mantem gateway obrigatorio para run-command/local_capability.

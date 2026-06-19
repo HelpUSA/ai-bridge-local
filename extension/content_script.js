@@ -1,6 +1,14 @@
+var LOCAL_STATUS_PREFIXES = globalThis.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ || [
+  "[AI_LOCAL_ERRO]",
+  "[AI_LOCAL_RUN]",
+  "[AI_LOCAL]"
+];
+globalThis.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
+window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
+
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.51";
+  const VERSION = "0.5.52";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1078,7 +1086,7 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     });
   }
 
-  /* AI Bridge Local: legacy global body scanner disabled in 0.5.51.
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.52.
    Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
    The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
 let last = "";
@@ -1287,7 +1295,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.51";
+  const CAPTURE_VERSION = "0.5.52";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1548,7 +1556,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.51";
+  const SCANNER_VERSION = "0.5.52";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1666,7 +1674,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.51";
+  const STANDALONE_VERSION = "0.5.52";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";

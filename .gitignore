@@ -42,3 +42,6 @@ reports/obsidian_context_*.md
 .obsidian/appearance.json
 .obsidian/graph.json
 reports/obsidian_context_*.md
+
+# Historical evidence copied into docs/history/evidence
+reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt

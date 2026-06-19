@@ -17,6 +17,7 @@ tags:
 
 ## 0.0.1
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -77,6 +78,7 @@ tags:
 
 ## 0.2.9
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -87,6 +89,7 @@ tags:
 
 ## 0.26100.8655
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -102,6 +105,7 @@ tags:
 
 ## 0.26200.0
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -122,6 +126,7 @@ tags:
 
 ## 0.30319.42000
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -1165,6 +1170,7 @@ tags:
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/FINAL_RESULT_FEEDBACK_GUARD_0539]]
 - [[docs/GEMINI_MANIFEST_NAME_SYNC_0540]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -1179,6 +1185,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/GEMINI_MANIFEST_NAME_SYNC_0540]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -1191,6 +1198,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CHATGPT_OUTBOUND_ENVELOPE_CAPTURE_0541]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1203,6 +1211,7 @@ tags:
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CHATGPT_CANDIDATE_ENVELOPE_SCANNER_0543]]
 - [[docs/DIRECT_INTERCHAT_ROUTER_SAFE_0542]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/STANDALONE_CHATGPT_SCANNER_FEEDBACK_0544]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1214,6 +1223,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CHATGPT_CANDIDATE_ENVELOPE_SCANNER_0543]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1224,6 +1234,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CONTENT_SCRIPT_HEARTBEAT_GUARD_0545]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/STANDALONE_CHATGPT_SCANNER_FEEDBACK_0544]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1236,6 +1247,7 @@ tags:
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/CONTENT_SCRIPT_HEARTBEAT_GUARD_0545]]
 - [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1246,6 +1258,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/DISABLE_LEGACY_SCANNER_INLINE_HEARTBEAT_0546]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1255,6 +1268,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/MATCHING_COMPOSER_DIRECT_INJECT_RETRY_0547]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1265,6 +1279,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/ROBUST_COMPOSER_TEXT_INJECTION_0548]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1276,6 +1291,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/FORCE_CHATGPT_PROMPT_TEXTAREA_COMPOSER_0549]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1299,6 +1315,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/REPAIR_PROMPT_TEXTAREA_COMPOSER_SMOKE_0550]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1309,6 +1326,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/STANDALONE_VISIBLE_STATUS_COMPOSER_SCOPE_0551]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1320,6 +1338,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
 - [[docs/GEMINI_LOCAL_STATUS_PREFIX_SCOPE_0552]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/RUNTIME_VERSION_LABEL_ALIGNMENT_0558]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1330,6 +1349,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/DEEPSEEK_OUTBOUND_ENVELOPE_CAPTURE_0553]]
 - [[docs/DEEPSEEK_PERSISTENT_DELIVERY_RECEIPT_0554]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1339,6 +1359,7 @@ tags:
 - [[docs/_meta/docs-inventory]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_AFTER_ENVELOPE_0555]]
 - [[docs/DEEPSEEK_PERSISTENT_DELIVERY_RECEIPT_0554]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1349,6 +1370,7 @@ tags:
 - [[docs/_meta/status-marker-index]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_AFTER_ENVELOPE_0555]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_SYNTAX_REPAIR_0556]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1357,6 +1379,7 @@ tags:
 
 - [[docs/_meta/docs-inventory]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_SYNTAX_REPAIR_0556]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1365,6 +1388,7 @@ tags:
 
 - [[docs/_meta/docs-inventory]]
 - [[docs/CHATGPT_STANDALONE_SCANNER_NODE_SCOPE_REPAIR_0557]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1372,6 +1396,7 @@ tags:
 ## 0.5.58
 
 - [[docs/_meta/docs-inventory]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/RUNTIME_VERSION_LABEL_ALIGNMENT_0558]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -1379,6 +1404,7 @@ tags:
 
 ## 0.5.59
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -1429,6 +1455,7 @@ tags:
 
 - [[docs/_meta/docs-inventory]]
 - [[docs/_meta/status-marker-index]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[docs/legacy/RELEASES]]
@@ -1463,6 +1490,7 @@ tags:
 
 ## v0.2.3
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -2240,6 +2268,7 @@ tags:
 
 ## v0.5.39
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2252,6 +2281,7 @@ tags:
 
 ## v0.5.39-final-result-feedback-guard
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -2283,6 +2313,7 @@ tags:
 
 ## v0.5.40-gemini-manifest-name-sync
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
@@ -2291,6 +2322,7 @@ tags:
 
 ## v0.5.41-chatgpt
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2298,6 +2330,7 @@ tags:
 ## v0.5.41-chatgpt-outbound-envelope-capture
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
@@ -2305,12 +2338,14 @@ tags:
 
 ## v0.5.42
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.42-direct-inter
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2318,12 +2353,14 @@ tags:
 ## v0.5.42-direct-interchat-router-safe
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.43-chatgp
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2331,12 +2368,14 @@ tags:
 ## v0.5.43-chatgpt-candidate-envelope-scanner
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.44-stand
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2344,12 +2383,14 @@ tags:
 ## v0.5.44-standalone-chatgpt-scanner-feedback
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.45-content-sc
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2357,12 +2398,14 @@ tags:
 ## v0.5.45-content-script-heartbeat-guard
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.46-d
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2371,12 +2414,14 @@ tags:
 
 - [[docs/_meta/status-marker-index]]
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.47-mat
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2384,12 +2429,14 @@ tags:
 ## v0.5.47-matching-composer-direct-inject-retry
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.48-robust-com
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2397,6 +2444,7 @@ tags:
 ## v0.5.48-robust-composer-text-injection
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2404,12 +2452,14 @@ tags:
 ## v0.5.49-force-chatgpt-prompt-textarea-composer
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.50-rep
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2417,12 +2467,14 @@ tags:
 ## v0.5.50-repair-prompt-textarea-composer-smoke
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.51
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2430,6 +2482,7 @@ tags:
 ## v0.5.51-standalone-visible-status-composer-scope
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2437,12 +2490,14 @@ tags:
 ## v0.5.52
 
 - [[docs/CHATGPT_STANDALONE_SCANNER_NODE_SCOPE_REPAIR_0557]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.52-gemini-l
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2450,18 +2505,21 @@ tags:
 ## v0.5.52-gemini-local-status-prefix-scope
 
 - [[docs/AI_BRIDGE_LOCAL_GUIDE]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.53-deepse
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.53-deepseek-outbound-envelope-capture
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2469,18 +2527,21 @@ tags:
 ## v0.5.54
 
 - [[docs/DEEPSEEK_PERSISTENT_DELIVERY_RECEIPT_0554]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.54-deep
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.54-deepseek-persistent-delivery-receipt
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2488,30 +2549,35 @@ tags:
 ## v0.5.55
 
 - [[docs/DEEPSEEK_INLINE_RECEIPT_AFTER_ENVELOPE_0555]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.55-de
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.55-deepseek-inline-receipt-after-envelope
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.56-dee
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.56-deepseek-inline-receipt-syntax-repair
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
@@ -2519,36 +2585,42 @@ tags:
 ## v0.5.57
 
 - [[docs/CHATGPT_STANDALONE_SCANNER_NODE_SCOPE_REPAIR_0557]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.57-cha
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.57-chatgpt-standalone-scanner-node-scope
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.58-runtime-v
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.58-runtime-version-label-alignment
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]
 
 ## v0.5.59-chatgpt-prosemirror-inject-repair
 
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/history/evolution-timeline]]
 - [[reports/AI_BRIDGE_LOCAL_EVOLUTION_AUDIT_20260618_220746.txt]]
 - [[reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt]]

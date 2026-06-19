@@ -54,6 +54,7 @@ tags:
 
 - [[docs/_meta/status-marker-index]]
 - [[docs/DEEPSEEK_INLINE_RECEIPT_SYNTAX_REPAIR_0556]]
+- [[docs/history/evidence/chatgpt-outbound-capture-root-cause-20260618-224150.txt]]
 - [[docs/how-to/recover-from-envelope-error]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0429_PARSE_ERROR_FEEDBACK_2026-06-10]]
 - [[docs/legacy/DELIVERY_DIAGNOSTIC_FORMATTER_0522]]
@@ -235,6 +236,7 @@ tags:
 
 ## interchat
 
+- [[docs/_meta/duplicates]]
 - [[docs/architecture/direct-interchat]]
 - [[docs/CHATGPT_CANDIDATE_ENVELOPE_SCANNER_0543]]
 - [[docs/decisions/ADR-0003-direct-interchat-no-gateway]]
@@ -288,7 +290,6 @@ tags:
 
 ## operations
 
-- [[docs/_meta/duplicates]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]]
 - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]

@@ -1,6 +1,6 @@
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.41";
+  const VERSION = "0.5.43";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -663,7 +663,8 @@ function reportEnvelopeError(kind, errorMessage, raw) {
   function extract(text) {
     const cmds = [];
     const sourceText = String(text || "");
-    if (LOCAL_STATUS_PREFIXES.some((prefix) => sourceText.includes(prefix))) {
+    const trimmedSourceText = sourceText.trim();
+    if (LOCAL_STATUS_PREFIXES.some((prefix) => trimmedSourceText.startsWith(prefix))) {
       return cmds;
     }
     const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
@@ -961,7 +962,7 @@ sendChatHeartbeat();
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.41";
+  const CAPTURE_VERSION = "0.5.43";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1213,6 +1214,124 @@ sendChatHeartbeat();
     document.addEventListener("DOMContentLoaded", installObserver, { once: true });
   } else {
     installObserver();
+  }
+})();
+
+
+/* AI Bridge Local: ChatGPT candidate envelope periodic scanner. */
+(function installAiBridgeChatGptCandidateEnvelopeScanner() {
+  if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
+  window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
+
+  const SCANNER_VERSION = "0.5.43";
+  const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
+  const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
+  const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+  const MAX_TEXT_CHARS = 30000;
+  const SCAN_INTERVAL_MS = 1500;
+  const CANDIDATE_SELECTOR = [
+    "article",
+    "[data-message-author-role]",
+    "pre",
+    "code",
+    ".markdown",
+    "[class*='message']",
+    "[class*='response']",
+    "[role='article']"
+  ].join(",");
+
+  function isChatGptCandidatePage() {
+    return /chatgpt\.com/i.test(location.hostname);
+  }
+
+  function candidateStartsWithLocalStatus(text) {
+    const t = String(text || "").trim();
+    return t.startsWith("[AI_LOCAL]") || t.startsWith("[AI_LOCAL_ERRO]") || t.startsWith("[AI_LOCAL_RUN]");
+  }
+
+  function hasEnvelopeMarkers(text) {
+    const t = String(text || "");
+    return (t.includes(START_MARKER) || t.includes(BEGIN_MARKER)) &&
+      t.includes(END_MARKER) &&
+      t.includes("ai_bridge_local.envelope");
+  }
+
+  function getCandidateElements() {
+    if (!document.body) return [];
+    const nodes = Array.from(document.querySelectorAll(CANDIDATE_SELECTOR));
+    const filtered = [];
+    const seen = new WeakSet();
+
+    for (const node of nodes) {
+      if (!(node instanceof Element)) continue;
+      if (seen.has(node)) continue;
+      seen.add(node);
+
+      const text = String(node.innerText || node.textContent || "").trim();
+      if (!text || text.length > MAX_TEXT_CHARS) continue;
+      if (!hasEnvelopeMarkers(text)) continue;
+      if (candidateStartsWithLocalStatus(text)) continue;
+      filtered.push(node);
+    }
+
+    return filtered;
+  }
+
+  function scanCandidateElements(reason) {
+    if (!isChatGptCandidatePage()) return;
+    const candidates = getCandidateElements();
+
+    if (candidates.length) {
+      console.log("[Local v" + SCANNER_VERSION + "] ChatGPT candidate scanner found", candidates.length, "candidate(s), reason=" + reason);
+    }
+
+    for (const node of candidates) {
+      try {
+        const text = String(node.innerText || node.textContent || "").trim();
+        if (typeof extract === "function") {
+          const cmds = extract(text);
+          if (cmds && cmds.length) {
+            console.log("[Local v" + SCANNER_VERSION + "] Candidate scanner extracted", cmds.length, "command(s)");
+            for (const cmd of cmds) {
+              try {
+                if (typeof send === "function") {
+                  send(cmd);
+                } else {
+                  chrome.runtime.sendMessage({ type: "AI_BRIDGE_BRIDGE_COMMAND", command: cmd });
+                }
+              } catch (sendError) {
+                console.warn("[Local v" + SCANNER_VERSION + "] Candidate scanner send failed:", sendError && sendError.message);
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.warn("[Local v" + SCANNER_VERSION + "] Candidate scanner failed:", e && e.message);
+      }
+    }
+  }
+
+  function installCandidateScanner() {
+    if (!isChatGptCandidatePage()) return;
+
+    window.setTimeout(() => scanCandidateElements("startup_500ms"), 500);
+    window.setTimeout(() => scanCandidateElements("startup_2000ms"), 2000);
+    window.setInterval(() => scanCandidateElements("interval"), SCAN_INTERVAL_MS);
+
+    if (document.body) {
+      const observer = new MutationObserver(() => {
+        window.setTimeout(() => scanCandidateElements("mutation"), 400);
+      });
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
+
+    console.log("[Local v" + SCANNER_VERSION + "] ChatGPT candidate envelope scanner installed");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installCandidateScanner, { once: true });
+  } else {
+    installCandidateScanner();
   }
 })();
 

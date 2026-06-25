@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 ﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.59";
+  const VERSION = "0.5.61";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -986,13 +986,14 @@ function reportEnvelopeError(kind, errorMessage, raw) {
     if (LOCAL_STATUS_PREFIXES.some((prefix) => trimmedSourceText.startsWith(prefix))) {
       return cmds;
     }
-    const regex = /(?:^|\n)?@@AI_BRIDGE_LOCAL_START@@[ \t]*(?:\r?\n)?([\s\S]*?)(?:\r?\n)?@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\n|$)/g;
+    const regex = /(?:^|\n)[ \t]*@@AI_BRIDGE_LOCAL_START@@[ \t]*\r?\n([\s\S]*?)\r?\n[ \t]*@@AI_BRIDGE_LOCAL_END@@[ \t]*(?=\r?\n|$)/g; // AIBRIDGE_LINE_ISOLATED_ENVELOPE_CAPTURE
     let m;
 
     while ((m = regex.exec(sourceText)) !== null) {
       const raw = m[1].trim();
 
       try {
+        if (!/^\s*\{/.test(raw || "")) { continue; } // AIBRIDGE_INLINE_MARKER_PARSE_GUARD_061
         const c = normalizeLocalCommand(JSON.parse(raw));
 
         if (!c.command_id) {
@@ -1096,7 +1097,7 @@ try {
     });
   }
 
-  /* AI Bridge Local: legacy global body scanner disabled in 0.5.59.
+  /* AI Bridge Local: legacy global body scanner disabled in 0.5.61.
    Reason: it scans document.body, reprocesses stale envelopes, and can call sendTextToChat outside scope.
    The standalone ChatGPT scanner with visible feedback is now responsible for outbound envelope capture. */
 let last = "";
@@ -1305,7 +1306,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.59";
+  const CAPTURE_VERSION = "0.5.61";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1472,6 +1473,7 @@ try {
     for (const block of blocks) {
       let cmd;
       try {
+        if (!/^\s*\{/.test(block.raw || "")) { continue; } // AIBRIDGE_INLINE_MARKER_PARSE_GUARD_061
         cmd = JSON.parse(block.raw);
       } catch (e) {
         sendLocalError("envelope_parse_error", "unknown", e && e.message ? e.message : String(e), block.raw);
@@ -1566,7 +1568,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.59";
+  const SCANNER_VERSION = "0.5.61";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1684,7 +1686,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.59";
+  const STANDALONE_VERSION = "0.5.61";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1736,16 +1738,17 @@ try {
 
   function hasEnvelopeMarkers(text) {
     const t = String(text || "");
-    return (t.includes(START_MARKER) || t.includes(BEGIN_MARKER)) &&
-      t.includes(END_MARKER) &&
-      t.includes(LOCAL_SCHEMA);
+    if (!t.includes(LOCAL_SCHEMA)) return false;
+    const startRe = /(?:^|\n)[\t ]*(?:@@AI_BRIDGE_LOCAL_START@@|@@AI_BRIDGE_LOCAL_BEGIN@@)[\t ]*(?:\r?\n)/;
+    const endRe = /(?:^|\n)[\t ]*@@AI_BRIDGE_LOCAL_END@@[\t ]*(?=\r?\n|$)/;
+    return startRe.test(t) && endRe.test(t);
   }
 
   function extractEnvelopeBlocks(text) {
     const source = String(text || "");
     const blocks = [];
     const startPattern = "(@@AI_BRIDGE_LOCAL_START@@|@@AI_BRIDGE_LOCAL_BEGIN@@)";
-    const regex = new RegExp(startPattern + "[\\t ]*(?:\\r?\\n)?([\\s\\S]*?)(?:\\r?\\n)?@@AI_BRIDGE_LOCAL_END@@", "g");
+    const regex = new RegExp("(?:^|\\n)[\\t ]*" + startPattern + "[\\t ]*\\r?\\n([\\s\\S]*?)\\r?\\n[\\t ]*@@AI_BRIDGE_LOCAL_END@@[\\t ]*(?=\\r?\\n|$)", "g"); // AIBRIDGE_LINE_ISOLATED_ENVELOPE_CAPTURE
     let match;
 
     while ((match = regex.exec(source)) !== null) {
@@ -2127,6 +2130,7 @@ function findComposer() {
     for (const block of blocks) {
       let parsed;
       try {
+        if (!/^\s*\{/.test(block.raw || "")) { continue; } // AIBRIDGE_INLINE_MARKER_PARSE_GUARD_061
         parsed = JSON.parse(block.raw);
       } catch (e) {
         continue;
@@ -2192,12 +2196,12 @@ function findComposer() {
 })();
 
 
-/* AI Bridge Local: DeepSeek outbound envelope capture with inline receipt after envelope 0.5.59. */
+/* AI Bridge Local: DeepSeek outbound envelope capture with inline receipt after envelope 0.5.61. */
 (function installAiBridgeDeepSeekCapturedEnvelopeBridge() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.59";
+  const CAPTURE_VERSION = "0.5.61";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;
@@ -2272,6 +2276,7 @@ function findComposer() {
   function parseBlock(block) {
     let envelope;
     try {
+      if (!/^\s*\{/.test(block.raw || "")) { return { ok: false, error: "non_json_envelope_block" }; } // AIBRIDGE_INLINE_MARKER_PARSE_GUARD_061
       envelope = JSON.parse(block.raw);
     } catch (err) {
       return { ok: false, error: "json_parse_error" };

@@ -1,36 +1,36 @@
 {
-  "manifest_version": 3,
-  "name": "AI Bridge Local 0.5.52",
-  "version": "0.5.58",
-  "description": "Gateway local - comunicacao direta",
-  "permissions": [
-    "tabs",
-    "storage",
-    "alarms",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://chatgpt.com/*",
-    "https://chat.deepseek.com/*",
-    "http://127.0.0.1:8766/*",
-    "https://ai.helpusbr.com/*",
-    "https://gemini.google.com/*"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://chatgpt.com/*",
-        "https://chat.deepseek.com/*",
-        "https://ai.helpusbr.com/*",
-        "https://gemini.google.com/*"
-      ],
-      "js": [
-        "content_script.js"
-      ],
-      "run_at": "document_start"
-    }
-  ]
+    "manifest_version":  3,
+    "name":  "AI Bridge Local 0.5.59",
+    "version":  "0.5.59",
+    "description":  "Gateway local - comunicacao direta",
+    "permissions":  [
+                        "tabs",
+                        "storage",
+                        "alarms",
+                        "scripting"
+                    ],
+    "host_permissions":  [
+                             "https://chatgpt.com/*",
+                             "https://chat.deepseek.com/*",
+                             "http://127.0.0.1:8766/*",
+                             "https://ai.helpusbr.com/*",
+                             "https://gemini.google.com/*"
+                         ],
+    "background":  {
+                       "service_worker":  "background.js"
+                   },
+    "content_scripts":  [
+                            {
+                                "matches":  [
+                                                "https://chatgpt.com/*",
+                                                "https://chat.deepseek.com/*",
+                                                "https://ai.helpusbr.com/*",
+                                                "https://gemini.google.com/*"
+                                            ],
+                                "js":  [
+                                           "content_script.js"
+                                       ],
+                                "run_at":  "document_start"
+                            }
+                        ]
 }

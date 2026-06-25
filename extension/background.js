@@ -593,7 +593,73 @@ function validateAiBridgeCapturedEnvelopeMessage(message, sender) {
 }
 
 
+
+/* AIBRIDGE_DIRECT_INTERCHAT_DELIVERY_START */
+async function aiBridgeDirectDeliverCapturedEnvelope(envelope) {
+  const targetChatId = canonicalChatId(envelope && envelope.target_chat_id ? envelope.target_chat_id : "");
+  const commandId = envelope && envelope.command_id ? envelope.command_id : "unknown";
+
+  if (!targetChatId) {
+    return { ok: false, route: "direct_interchat", error: "direct_delivery_missing_target_chat_id" };
+  }
+
+  const tabId = registry[targetChatId];
+  if (!tabId) {
+    console.warn("[bg] direct interchat target not registered:", targetChatId, commandId);
+    return { ok: false, route: "direct_interchat", error: "direct_delivery_target_not_registered", target_chat_id: targetChatId };
+  }
+
+  postTelemetryEvent("direct_interchat_delivery_started", {
+    command_id: commandId,
+    target_chat_id: targetChatId,
+    tab_id: tabId,
+    action: envelope && envelope.action
+  });
+
+  const startedAt = Date.now();
+  const result = await withTimeout(
+    injectText(tabId, envelope),
+    20000,
+    {
+      ok: false,
+      route: "direct_interchat",
+      reason: "direct_inject_timeout",
+      error: "direct_inject_timeout"
+    }
+  );
+
+  const ok = !!(result && result.ok);
+  const reason = ok ? "" : String((result && (result.reason || result.error)) || "direct_delivery_inject_failed");
+
+  postTelemetryEvent(ok ? "direct_interchat_delivery_ok" : "direct_interchat_delivery_failed", {
+    command_id: commandId,
+    target_chat_id: targetChatId,
+    tab_id: tabId,
+    duration_ms: Date.now() - startedAt,
+    reason: reason
+  });
+
+  if (!ok) {
+    return {
+      ok: false,
+      route: "direct_interchat",
+      error: reason,
+      target_chat_id: targetChatId,
+      result: result || null
+    };
+  }
+
+  return {
+    ok: true,
+    route: "direct_interchat",
+    target_chat_id: targetChatId,
+    result: result || null
+  };
+}
+/* AIBRIDGE_DIRECT_INTERCHAT_DELIVERY_END */
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+
   if (message && message.type === "AI_BRIDGE_CAPTURED_ENVELOPE") {
     const validation = validateAiBridgeCapturedEnvelopeMessage(message, sender);
     if (!validation.ok) {
@@ -602,13 +668,33 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return true;
     }
 
-    routeBridgeCommand(validation.envelope, "capturedEnvelope")
-      .then((r) => {
-        sendResponse(r);
+    const route = globalThis.aiBridgeClassifyRouteSafe(validation.envelope);
+
+    if (route === "direct_interchat") {
+      aiBridgeDirectDeliverCapturedEnvelope(validation.envelope)
+        .then((result) => {
+          if (result && result.ok) {
+            sendResponse({ ok: true, route: "direct_interchat", data: result });
+          } else {
+            const error = result && result.error ? result.error : "direct_interchat_delivery_failed";
+            sendResponse({ ok: false, route: "direct_interchat", error, data: result || null });
+          }
+        })
+        .catch((e) => {
+          console.log("[bg] direct interchat captured envelope error:", e.message);
+          sendResponse({ ok: false, route: "direct_interchat", error: e.message });
+        });
+      return true;
+    }
+
+    postCommand(validation.envelope)
+      .then(() => {
+        pollMessagesSoon("capturedEnvelope");
+        sendResponse({ ok: true, route: "local_gateway" });
       })
       .catch((e) => {
-        console.log("[bg] captured envelope route error:", e.message);
-        sendResponse({ ok: false, error: e.message });
+        console.log("[bg] captured envelope postCommand error:", e.message);
+        sendResponse({ ok: false, route: "local_gateway", error: e.message });
       });
     return true;
   }

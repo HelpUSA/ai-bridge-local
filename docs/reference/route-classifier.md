@@ -72,3 +72,20 @@ Micro 2 still does not change live delivery behavior. It only makes a safe backg
     globalThis.aiBridgeClassifyRouteSafe(envelope)
 
 The next micro can use this helper to route `send-chat-message` directly and keep command-like operations on the local gateway.
+## Current Micro 3 status
+
+The captured envelope handler now uses:
+
+    globalThis.aiBridgeClassifyRouteSafe(validation.envelope)
+
+Routing behavior:
+
+| Captured envelope | Route |
+|---|---|
+| send-chat-message + inter_agent_message | direct_interchat |
+| run-command + local_capability | local_gateway |
+| force_gateway=true | local_gateway |
+
+Direct interchat delivery uses the registered target tab from the background registry and injects the message with the existing content-script injection path.
+
+Gateway fallback is preserved for command-like and forced-gateway envelopes.

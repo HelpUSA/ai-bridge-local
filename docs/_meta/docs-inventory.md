@@ -8,16 +8,16 @@ tags:
 
 # Documentation inventory
 
-Generated: 2026-06-24T21:52:03
+Generated: 2026-06-24T22:23:05
 
 | File | Topic | Lines | Status markers | Title |
 |---|---:|---:|---:|---|
-| [[docs/_meta/docs-inventory]] | architecture | 327 | 193 | Documentation inventory |
-| [[docs/_meta/duplicates]] | interchat | 341 | 165 | Duplicate exact-content groups |
-| [[docs/_meta/obsidian-setup-report]] | uncategorized | 27 | 0 | Obsidian setup report |
-| [[docs/_meta/status-marker-index]] | diagnostics | 1511 | 1497 | Status marker index |
-| [[docs/_meta/tag-index]] | chatgpt | 29 | 0 | Tag index |
-| [[docs/_meta/topic-map]] | architecture | 353 | 190 | Topic map |
+| [[docs/_meta/docs-inventory]] | architecture | 326 | 193 | Documentation inventory |
+| [[docs/_meta/duplicates]] | operations | 339 | 165 | Duplicate exact-content groups |
+| [[docs/_meta/obsidian-setup-report]] | uncategorized | 26 | 0 | Obsidian setup report |
+| [[docs/_meta/status-marker-index]] | diagnostics | 1510 | 1497 | Status marker index |
+| [[docs/_meta/tag-index]] | chatgpt | 28 | 0 | Tag index |
+| [[docs/_meta/topic-map]] | architecture | 351 | 190 | Topic map |
 | [[docs/AI_BRIDGE_LOCAL_GUIDE]] | gateway | 1205 | 68 | AI Bridge Local - Guia Unificado Operacional e Roadmap |
 | [[docs/architecture/adapter-isolation]] | architecture | 22 | 0 | Adapter isolation |
 | [[docs/architecture/direct-interchat]] | interchat | 22 | 0 | Direct interchat |
@@ -47,7 +47,7 @@ Generated: 2026-06-24T21:52:03
 | [[docs/history/evidence/direct-envelope-capture-diag-20260618-223315.txt]] | interchat | 8886 | 99 | main...origin/main |
 | [[docs/history/evidence/direct-interchat-gateway-dependency-analysis-20260618-225931.txt]] | interchat | 1780 | 62 | main...origin/main |
 | [[docs/history/evidence-index]] | architecture | 35 | 1 | Evidence index |
-| [[docs/history/evolution-timeline]] | interchat | 2975 | 326 | Evolution timeline by version |
+| [[docs/history/evolution-timeline]] | interchat | 2961 | 326 | Evolution timeline by version |
 | [[docs/history/legacy-map]] | architecture | 21 | 3 | Legacy map |
 | [[docs/how-to/add-new-ai-adapter]] | architecture | 20 | 0 | Add new AI adapter |
 | [[docs/how-to/recover-from-envelope-error]] | diagnostics | 20 | 1 | Recover from envelope error |
@@ -249,7 +249,7 @@ Generated: 2026-06-24T21:52:03
 | [[docs/reference/adapter-contract]] | architecture | 34 | 0 | Adapter contract |
 | [[docs/reference/envelope-contract]] | interchat | 34 | 0 | Envelope contract |
 | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
-| [[docs/reference/route-classifier]] | interchat | 75 | 0 | Route classifier |
+| [[docs/reference/route-classifier]] | interchat | 92 | 0 | Route classifier |
 | [[docs/reference/router-contract]] | interchat | 31 | 0 | Router contract |
 | [[docs/reference/smoke-test-matrix]] | interchat | 30 | 0 | Smoke test matrix |
 | [[docs/reference/transport-modes]] | interchat | 22 | 0 | Transport modes |

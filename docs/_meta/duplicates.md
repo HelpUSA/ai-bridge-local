@@ -16,9 +16,9 @@ tags:
 
 ## Duplicate group 2
 
-- [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
-- [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
+- [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
 
 ## Duplicate group 3
 
@@ -70,57 +70,57 @@ tags:
 
 ## Duplicate group 11
 
+- [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+- [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
+
+## Duplicate group 12
+
 - [[docs/legacy/REMOVE_ACCEPTED_RUNNING_NOTICE]]
 - [[docs/legacy/root_1_REMOVE_ACCEPTED_RUNNING_NOTICE]]
 - [[docs/legacy/root_REMOVE_ACCEPTED_RUNNING_NOTICE]]
 
-## Duplicate group 12
+## Duplicate group 13
 
 - [[docs/legacy/root_1_WORKER_QUEUE_PARALLELISM]]
 - [[docs/legacy/root_WORKER_QUEUE_PARALLELISM]]
 - [[docs/legacy/WORKER_QUEUE_PARALLELISM]]
 
-## Duplicate group 13
+## Duplicate group 14
 
 - [[docs/legacy/FINAL_RESULT_FAILURE_CONTINUES]]
 - [[docs/legacy/root_1_FINAL_RESULT_FAILURE_CONTINUES]]
 - [[docs/legacy/root_FINAL_RESULT_FAILURE_CONTINUES]]
 
-## Duplicate group 14
+## Duplicate group 15
 
 - [[docs/legacy/DRY_RUN_DELIVERY_PLAN_0528]]
 - [[docs/legacy/root_1_DRY_RUN_DELIVERY_PLAN_0528]]
 - [[docs/legacy/root_DRY_RUN_DELIVERY_PLAN_0528]]
 
-## Duplicate group 15
+## Duplicate group 16
 
 - [[docs/legacy/root_1_WATCHER_FAILURE_TAXONOMY]]
 - [[docs/legacy/root_WATCHER_FAILURE_TAXONOMY]]
 - [[docs/legacy/WATCHER_FAILURE_TAXONOMY]]
 
-## Duplicate group 16
+## Duplicate group 17
 
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_PROTOCOL]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_PROTOCOL]]
 - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_PROTOCOL]]
 
-## Duplicate group 17
+## Duplicate group 18
 
 - [[docs/legacy/QUEUE_REPORTS_CLEANUP]]
 - [[docs/legacy/root_1_QUEUE_REPORTS_CLEANUP]]
 - [[docs/legacy/root_QUEUE_REPORTS_CLEANUP]]
 
-## Duplicate group 18
-
-- [[docs/legacy/LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/legacy/root_1_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-- [[docs/legacy/root_LATENCY_PARALLEL_POLLING_ARCHITECTURE]]
-
 ## Duplicate group 19
 
-- [[docs/legacy/FINAL_AUDIT_0531]]
-- [[docs/legacy/root_1_FINAL_AUDIT_0531]]
-- [[docs/legacy/root_FINAL_AUDIT_0531]]
+- [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
+- [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
 
 ## Duplicate group 20
 
@@ -160,21 +160,21 @@ tags:
 
 ## Duplicate group 26
 
-- [[docs/legacy/DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/legacy/root_1_DELIVERY_PREFLIGHT_READONLY_0527]]
-- [[docs/legacy/root_DELIVERY_PREFLIGHT_READONLY_0527]]
-
-## Duplicate group 27
-
 - [[docs/legacy/LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
 - [[docs/legacy/root_1_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
 - [[docs/legacy/root_LIVE_INTERCHAT_AUTHORIZATION_GATE_0533]]
 
-## Duplicate group 28
+## Duplicate group 27
 
 - [[docs/legacy/COMMAND_ACCEPTED_PROGRESS_NOTICE]]
 - [[docs/legacy/root_1_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
 - [[docs/legacy/root_COMMAND_ACCEPTED_PROGRESS_NOTICE]]
+
+## Duplicate group 28
+
+- [[docs/legacy/root_1_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/legacy/root_WATCHER_RECOVERY_RUNBOOK]]
+- [[docs/legacy/WATCHER_RECOVERY_RUNBOOK]]
 
 ## Duplicate group 29
 
@@ -220,51 +220,51 @@ tags:
 
 ## Duplicate group 36
 
-- [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
-- [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
-- [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
-
-## Duplicate group 37
-
 - [[docs/legacy/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
 - [[docs/legacy/root_archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
 - [[docs/legacy/root_archive/archive/AI_BRIDGE_LOCAL_GUIDE_0.4.37_20260612]]
 
-## Duplicate group 38
+## Duplicate group 37
 
 - [[docs/legacy/FINAL_STABILIZATION_0530]]
 - [[docs/legacy/root_1_FINAL_STABILIZATION_0530]]
 - [[docs/legacy/root_FINAL_STABILIZATION_0530]]
 
-## Duplicate group 39
+## Duplicate group 38
 
 - [[docs/legacy/OPERATIONAL_REPORT_GENERATOR_0526]]
 - [[docs/legacy/root_1_OPERATIONAL_REPORT_GENERATOR_0526]]
 - [[docs/legacy/root_OPERATIONAL_REPORT_GENERATOR_0526]]
 
-## Duplicate group 40
+## Duplicate group 39
 
 - [[docs/legacy/OPERATIONS_RUNBOOK]]
 - [[docs/legacy/root_1_OPERATIONS_RUNBOOK]]
 - [[docs/legacy/root_OPERATIONS_RUNBOOK]]
 
-## Duplicate group 41
+## Duplicate group 40
 
 - [[docs/legacy/RELEASE_SAFETY_CHECKLIST]]
 - [[docs/legacy/root_1_RELEASE_SAFETY_CHECKLIST]]
 - [[docs/legacy/root_RELEASE_SAFETY_CHECKLIST]]
 
-## Duplicate group 42
+## Duplicate group 41
 
 - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
 - [[docs/legacy/root_archive/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
 - [[docs/legacy/root_archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
 
-## Duplicate group 43
+## Duplicate group 42
 
 - [[docs/legacy/root_1_WATCHER_NOTES]]
 - [[docs/legacy/root_WATCHER_NOTES]]
 - [[docs/legacy/WATCHER_NOTES]]
+
+## Duplicate group 43
+
+- [[docs/legacy/FINAL_AUDIT_0531]]
+- [[docs/legacy/root_1_FINAL_AUDIT_0531]]
+- [[docs/legacy/root_FINAL_AUDIT_0531]]
 
 ## Duplicate group 44
 
@@ -274,57 +274,57 @@ tags:
 
 ## Duplicate group 45
 
+- [[docs/legacy/QUEUE_WORKER_HEALTH_0525]]
+- [[docs/legacy/root_1_QUEUE_WORKER_HEALTH_0525]]
+- [[docs/legacy/root_QUEUE_WORKER_HEALTH_0525]]
+
+## Duplicate group 46
+
 - [[docs/legacy/RELEASE_CHECKLIST_0519]]
 - [[docs/legacy/root_1_RELEASE_CHECKLIST_0519]]
 - [[docs/legacy/root_RELEASE_CHECKLIST_0519]]
 
-## Duplicate group 46
+## Duplicate group 47
 
 - [[docs/legacy/IMMEDIATE_GATEWAY_FEEDBACK]]
 - [[docs/legacy/root_1_IMMEDIATE_GATEWAY_FEEDBACK]]
 - [[docs/legacy/root_IMMEDIATE_GATEWAY_FEEDBACK]]
 
-## Duplicate group 47
+## Duplicate group 48
 
 - [[docs/legacy/GATEWAY_FEEDBACK_DEDUP]]
 - [[docs/legacy/root_1_GATEWAY_FEEDBACK_DEDUP]]
 - [[docs/legacy/root_GATEWAY_FEEDBACK_DEDUP]]
 
-## Duplicate group 48
+## Duplicate group 49
 
 - [[docs/legacy/CURRENT_STATUS]]
 - [[docs/legacy/root_1_CURRENT_STATUS]]
 - [[docs/legacy/root_CURRENT_STATUS]]
 
-## Duplicate group 49
+## Duplicate group 50
 
 - [[docs/legacy/RELEASES]]
 - [[docs/legacy/root_1_RELEASES]]
 - [[docs/legacy/root_RELEASES]]
 
-## Duplicate group 50
+## Duplicate group 51
 
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
 - [[docs/legacy/root_1_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
 - [[docs/legacy/root_AUTONOMOUS_EVOLUTION_APPROVAL_MATRIX]]
 
-## Duplicate group 51
+## Duplicate group 52
 
 - [[docs/legacy/FIX_VERSION_SMOKES_NO_BOM_0514]]
 - [[docs/legacy/root_1_FIX_VERSION_SMOKES_NO_BOM_0514]]
 - [[docs/legacy/root_FIX_VERSION_SMOKES_NO_BOM_0514]]
 
-## Duplicate group 52
+## Duplicate group 53
 
 - [[docs/legacy/root_1_SAFE_ENVELOPE_TEMPLATES]]
 - [[docs/legacy/root_SAFE_ENVELOPE_TEMPLATES]]
 - [[docs/legacy/SAFE_ENVELOPE_TEMPLATES]]
-
-## Duplicate group 53
-
-- [[docs/legacy/REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/legacy/root_1_REMOVE_WORKER_RUNNING_NOTICE]]
-- [[docs/legacy/root_REMOVE_WORKER_RUNNING_NOTICE]]
 
 ## Duplicate group 54
 

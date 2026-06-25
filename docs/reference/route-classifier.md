@@ -1,4 +1,4 @@
-﻿---
+---
 type: reference
 status: current
 tags:
@@ -62,3 +62,13 @@ Expected:
 - [[docs/architecture/extension-router]]
 - [[docs/architecture/direct-interchat]]
 - [[docs/architecture/local-gateway-client]]
+
+## Current Micro 2 status
+
+The classifier is now loaded by `extension/background.js` using `importScripts("route_classifier.js")`.
+
+Micro 2 still does not change live delivery behavior. It only makes a safe background helper available:
+
+    globalThis.aiBridgeClassifyRouteSafe(envelope)
+
+The next micro can use this helper to route `send-chat-message` directly and keep command-like operations on the local gateway.

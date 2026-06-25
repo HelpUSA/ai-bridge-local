@@ -1,4 +1,49 @@
-﻿// AI Bridge Local v0. - HelpUS AI compatible bridge
+/* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_START */
+try {
+  if (
+    typeof importScripts === "function" &&
+    typeof globalThis.AIBridgeRouteClassifier === "undefined"
+  ) {
+    importScripts("route_classifier.js");
+  }
+} catch (error) {
+  console.warn("[AI Bridge Local] route classifier load failed", error);
+}
+
+globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelope) {
+  if (
+    globalThis.AIBridgeRouteClassifier &&
+    typeof globalThis.AIBridgeRouteClassifier.classifyRoute === "function"
+  ) {
+    return globalThis.AIBridgeRouteClassifier.classifyRoute(envelope);
+  }
+
+  const payload = envelope && typeof envelope.payload === "object" ? envelope.payload : {};
+  const forceGateway = envelope && (envelope.force_gateway === true || envelope.force_gateway === "true" || payload.force_gateway === true || payload.force_gateway === "true");
+
+  if (forceGateway) {
+    return "local_gateway";
+  }
+
+  const action = String((envelope && (envelope.action || payload.action)) || "").trim().toLowerCase();
+  const transport = String((envelope && (envelope.transport || payload.transport)) || "").trim().toLowerCase();
+
+  if (transport === "direct_interchat" || transport === "direct-interchat" || transport === "direct") {
+    return "direct_interchat";
+  }
+
+  if (transport === "local_gateway" || transport === "local-gateway" || transport === "gateway") {
+    return "local_gateway";
+  }
+
+  if (action === "send-chat-message" || action === "send_chat_message") {
+    return "direct_interchat";
+  }
+
+  return "local_gateway";
+};
+/* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
+// AI Bridge Local v0. - HelpUS AI compatible bridge
 const VERSION = "0.5.58";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};

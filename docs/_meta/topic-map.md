@@ -1,4 +1,4 @@
-﻿---
+---
 type: generated-index
 status: generated
 tags:
@@ -237,6 +237,7 @@ tags:
 
 ## interchat
 
+- [[docs/_meta/duplicates]]
 - [[docs/architecture/direct-interchat]]
 - [[docs/CHATGPT_CANDIDATE_ENVELOPE_SCANNER_0543]]
 - [[docs/decisions/ADR-0003-direct-interchat-no-gateway]]
@@ -291,7 +292,6 @@ tags:
 
 ## operations
 
-- [[docs/_meta/duplicates]]
 - [[docs/legacy/AI_BRIDGE_LOCAL_0424_LOCAL_EXPORT_PACKAGE_2026-06-10]]
 - [[docs/legacy/archive/consolidated_20260614/DAILY_WATCHER_CHECKLIST]]
 - [[docs/legacy/AUTONOMOUS_EVOLUTION_AUDIT_LEDGER]]
@@ -349,5 +349,3 @@ tags:
 ## uncategorized
 
 - [[docs/_meta/obsidian-setup-report]]
-- [[reports/extension_inventory_20260619_152538.txt]]
-

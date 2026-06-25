@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.pyc
 .venv/
@@ -45,3 +45,8 @@ reports/obsidian_context_*.md
 
 # Historical evidence copied into docs/history/evidence
 reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt
+
+# Temporary extension inventories
+reports/extension_inventory_*.txt
+reports/micro2_*.txt
+reports/patch_backups/

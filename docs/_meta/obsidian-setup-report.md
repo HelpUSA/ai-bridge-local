@@ -1,4 +1,4 @@
-﻿---
+---
 type: generated-report
 status: generated
 tags:
@@ -8,13 +8,13 @@ tags:
 
 # Obsidian setup report
 
-Generated: 2026-06-19T15:31:54
+Generated: 2026-06-24T21:52:03
 
 ## Summary
 
-- Files indexed: 313
+- Files indexed: 312
 - Topics: 10
-- Versions found: 295
+- Versions found: 297
 - Duplicate groups: 55
 
 ## Next files to review

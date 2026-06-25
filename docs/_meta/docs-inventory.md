@@ -8,12 +8,12 @@ tags:
 
 # Documentation inventory
 
-Generated: 2026-06-24T22:23:05
+Generated: 2026-06-24T23:12:10
 
 | File | Topic | Lines | Status markers | Title |
 |---|---:|---:|---:|---|
 | [[docs/_meta/docs-inventory]] | architecture | 326 | 193 | Documentation inventory |
-| [[docs/_meta/duplicates]] | operations | 339 | 165 | Duplicate exact-content groups |
+| [[docs/_meta/duplicates]] | interchat | 339 | 165 | Duplicate exact-content groups |
 | [[docs/_meta/obsidian-setup-report]] | uncategorized | 26 | 0 | Obsidian setup report |
 | [[docs/_meta/status-marker-index]] | diagnostics | 1510 | 1497 | Status marker index |
 | [[docs/_meta/tag-index]] | chatgpt | 28 | 0 | Tag index |
@@ -249,7 +249,7 @@ Generated: 2026-06-24T22:23:05
 | [[docs/reference/adapter-contract]] | architecture | 34 | 0 | Adapter contract |
 | [[docs/reference/envelope-contract]] | interchat | 34 | 0 | Envelope contract |
 | [[docs/reference/error-taxonomy]] | diagnostics | 31 | 1 | Error taxonomy |
-| [[docs/reference/route-classifier]] | interchat | 92 | 0 | Route classifier |
+| [[docs/reference/route-classifier]] | interchat | 109 | 0 | Route classifier |
 | [[docs/reference/router-contract]] | interchat | 31 | 0 | Router contract |
 | [[docs/reference/smoke-test-matrix]] | interchat | 30 | 0 | Smoke test matrix |
 | [[docs/reference/transport-modes]] | interchat | 22 | 0 | Transport modes |

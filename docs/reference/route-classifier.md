@@ -89,3 +89,19 @@ Routing behavior:
 Direct interchat delivery uses the registered target tab from the background registry and injects the message with the existing content-script injection path.
 
 Gateway fallback is preserved for command-like and forced-gateway envelopes.
+## Current Micro 4 status
+
+The direct route contract is now covered by a static smoke:
+
+    node .\scripts\smoke\smoke_direct_route_contract.js
+
+The smoke verifies:
+
+- captured envelopes are classified before delivery
+- direct_interchat uses the background target registry
+- direct_interchat calls injectText(tabId, envelope)
+- local_gateway fallback remains available through postCommand(validation.envelope)
+- the content script still receives AI_BRIDGE_INJECT_TEXT
+- direct success receipt remains available in the content script
+
+Micro 4 does not change runtime routing. It freezes the expected direct-route contract before real browser-tab validation. Direct delivery failures are represented by structured background responses and telemetry.

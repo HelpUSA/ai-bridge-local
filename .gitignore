@@ -49,4 +49,4 @@ reports/CHATGPT_OUTBOUND_CAPTURE_ROOT_CAUSE_20260618_224150.txt
 # Temporary extension inventories
 reports/extension_inventory_*.txt
 reports/micro2_*.txt
-reports/patch_backups/reports/micro3_route_integration_probe_*.txt
+reports/patch_backups/reports/micro3_route_integration_probe_*.txtreports/micro4_direct_route_contract_probe_*.txt

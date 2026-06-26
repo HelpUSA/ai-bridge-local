@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.61";
+const VERSION = "0.5.62";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
@@ -336,7 +336,50 @@ async function routeBridgeCommand(cmd, sourceLabel) {
   return { ok: false, direct: false, error: "unroutable_command" };
 }
 
-async function injectText(tabId, action) {
+/* AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062_START */
+function aiBridgeLooksLikeMissingReceiverResult(result) {
+  const text = String(
+    (result && (result.error || result.reason || result.message)) ||
+    JSON.stringify(result || {})
+  );
+  return /Receiving end does not exist|Could not establish connection/i.test(text);
+}
+
+function aiBridgeSleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function aiBridgeReinjectContentScriptForDirectDelivery(tabId, commandId) {
+  const numericTabId = Number(tabId);
+  if (!Number.isFinite(numericTabId)) {
+    return { ok: false, error: "invalid_tab_id_for_reinject", tab_id: tabId, command_id: commandId || "unknown" };
+  }
+
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: numericTabId },
+      files: ["content_script.js"]
+    });
+    await aiBridgeSleep(900);
+    return {
+      ok: true,
+      method: "content_script_reinjected",
+      tab_id: numericTabId,
+      command_id: commandId || "unknown"
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      method: "content_script_reinject_failed",
+      tab_id: numericTabId,
+      command_id: commandId || "unknown",
+      error: String(err && err.message ? err.message : err)
+    };
+  }
+}
+/* AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062_HELPERS_END */
+
+async function injectTextOnce(tabId, action) {
   const message = {
     type: "AI_BRIDGE_INJECT_TEXT",
     action: {
@@ -387,6 +430,34 @@ async function injectText(tabId, action) {
     }
   });
 }
+
+async function injectText(tabId, action) {
+  const first = await injectTextOnce(tabId, action);
+  if (first && first.ok) return first;
+
+  if (!aiBridgeLooksLikeMissingReceiverResult(first)) {
+    return first;
+  }
+
+  console.warn("[bg] direct delivery receiver missing; reinjecting content_script.js:", "unknown", "tab:", tabId);
+  const reinject = await aiBridgeReinjectContentScriptForDirectDelivery(tabId, "unknown");
+
+  if (!reinject || !reinject.ok) {
+    return Object.assign({}, first || {}, {
+      ok: false,
+      reason: "content_script_reinject_failed",
+      reinject
+    });
+  }
+
+  const second = await injectTextOnce(tabId, action);
+  if (second && typeof second === "object") {
+    second.reinjected_content_script = true;
+    second.reinject = reinject;
+  }
+  return second;
+}
+/* AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062_END */
 const POLL_INTERVAL_MS = 1000;
 const POLL_SOON_DEBOUNCE_MS = 150;
 const MAX_ACTIONS_PER_CHAT_CYCLE = 3;

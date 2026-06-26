@@ -20,8 +20,8 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-assert(version === "0.5.61", "VERSION must be 0.5.61");
-assert(manifest.version === "0.5.61", "manifest version must be 0.5.61");
+assert(version === "0.5.62", "VERSION must be 0.5.62");
+assert(manifest.version === "0.5.62", "manifest version must be 0.5.62");
 assert(content.includes("AIBRIDGE_INLINE_MARKER_PARSE_GUARD_061"), "missing inline marker parse guard");
 
 const guardLines = content

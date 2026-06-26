@@ -1202,3 +1202,41 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.52 corrige `LOCAL_STATUS_PREFIXES is not defined` no Gemini envelope observer.
 - DONE 0.5.52 preserva rota direta inter-chat sem gateway/DB.
 - DONE 0.5.52 mantem gateway obrigatorio para run-command/local_capability.
+
+## Version alignment 0.5.59
+- Versao atual: 0.5.59
+- Marco publicado: v0.5.59-direct-interchat-chatgpt
+
+## Direct interchat ChatGPT
+- DONE 0.5.59 criou rota direta inter-chat para send-chat-message sem gateway/DB quando transport=direct_interchat.
+- DONE 0.5.59 manteve run-command, patch, smoke e inspect no gateway local.
+- DONE 0.5.59 adicionou smokes de route classifier, background route load, captured envelope route integration e direct route contract.
+
+## Version alignment 0.5.60
+- Versao atual: 0.5.60
+- Marco publicado: v0.5.60-line-isolated-envelope-capture
+
+## ChatGPT line-isolated envelope capture
+- DONE 0.5.60 iniciou guarda para captura de envelopes apenas em blocos isolados por linha.
+- DONE 0.5.60 identificou que ainda havia caminho runtime capturando mencoes inline de marcadores.
+
+## Version alignment 0.5.61
+- Versao atual: 0.5.61
+- Marco publicado: v0.5.61-inline-marker-parse-guard
+
+## Inline marker parse guard
+- DONE 0.5.61 ignora mencoes inline de marcadores e processa somente blocos locais isolados.
+- DONE 0.5.61 adicionou smoke_chatgpt_line_isolated_envelope_capture.js.
+- DONE 0.5.61 adicionou smoke_chatgpt_inline_marker_parse_guard_061.js.
+- DONE 0.5.61 commit 34f27b0 extension: ignore inline ChatGPT marker mentions.
+
+## Version alignment 0.5.62
+- Versao atual: 0.5.62
+- Marco publicado: v0.5.62-direct-interchat-auto-reinject
+
+## Direct interchat auto reinject
+- DONE 0.5.62 adiciona retry de entrega direta apos falha de receiver ausente.
+- DONE 0.5.62 background reinjeta content_script.js no tab destino quando encontra Could not establish connection / Receiving end does not exist.
+- DONE 0.5.62 adicionou smoke_direct_reinject_missing_receiver_062.js.
+- DONE 0.5.62 validado em runtime com conversa ChatGPT para ChatGPT: RECEBIDO conversa 0.5.62.
+- DONE 0.5.62 commit 8ec0de7 extension: retry direct delivery after content script reinject.

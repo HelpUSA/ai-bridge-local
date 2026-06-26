@@ -1,10 +1,10 @@
-﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
+# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
-Atualizado em: 2026-06-16
-Versao atual: 0.5.52
+Atualizado em: 2026-06-25
+Versao atual: 0.5.63
 Branch principal: main
-Marco publicado mais recente: v0.5.52-gemini-local-status-prefix-scope
-Commit de referencia: 2d60f91 test: restore valid cleanup smoke
+Marco publicado mais recente: v0.5.63-direct-target-discovery
+Commit de referencia: v0.5.63-direct-target-discovery
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este e o documento principal ativo da aplicacao. A raiz de docs deve conter apenas AI_BRIDGE_LOCAL_GUIDE.md e a pasta legacy. Os demais documentos historicos ficam em docs/legacy e tambem tem seu conteudo preservado neste guia.
@@ -1240,3 +1240,14 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.62 adicionou smoke_direct_reinject_missing_receiver_062.js.
 - DONE 0.5.62 validado em runtime com conversa ChatGPT para ChatGPT: RECEBIDO conversa 0.5.62.
 - DONE 0.5.62 commit 8ec0de7 extension: retry direct delivery after content script reinject.
+
+## Version alignment 0.5.63
+- Versao atual: 0.5.63
+- Marco publicado: v0.5.63-direct-target-discovery
+
+## Direct interchat target discovery
+- DONE 0.5.63 direct_interchat nao falha imediatamente quando target_chat_id ainda nao esta no registry.
+- DONE 0.5.63 background procura abas abertas cuja URL contenha o target_chat_id.
+- DONE 0.5.63 ao encontrar a aba, registra target_chat_id -> tabId, reinjeta content_script.js e tenta a entrega direta.
+- DONE 0.5.63 erro final passa a distinguir target_chat_not_registered de target_tab_not_open em discovery.
+- DONE 0.5.63 adicionou smoke_direct_discover_unregistered_target_063.js.

@@ -1,0 +1,25 @@
+const fs = require('fs');
+const path = require('path');
+const root = path.resolve(__dirname, '..', '..');
+const text = fs.readFileSync(path.join(root, 'extension', 'background.js'), 'utf8');
+function assert(condition, message) { if (!condition) throw new Error(message); }
+assert(text.includes('AIBRIDGE_DIRECT_TARGET_DISCOVERY_063_START'), 'missing discovery marker');
+assert(text.includes('function aiBridgeUrlMatchesDirectTarget'), 'missing URL matcher helper');
+assert(text.includes('async function aiBridgeDiscoverDirectTargetTab'), 'missing discovery helper');
+assert(text.includes('chrome.tabs.query({})'), 'missing tabs query discovery');
+assert(text.includes('registry[canonicalTargetChatId] = tabId'), 'missing discovered registry write');
+assert(text.includes('target_tab_not_open'), 'missing target_tab_not_open error');
+assert(text.includes('aiBridgeReinjectContentScriptForDirectDelivery(tabId'), 'missing reinject after discovery');
+const directFunction = text.indexOf('async function deliverInterChatDirect');
+const directDiscovery = text.indexOf('aiBridgeDiscoverDirectTargetTab(targetChatId', directFunction);
+const directError = text.indexOf('target_chat_not_registered', directFunction);
+assert(directDiscovery !== -1, 'missing deliverInterChatDirect discovery call');
+assert(directError !== -1, 'missing direct not registered error');
+assert(directDiscovery < directError, 'discovery must run before target_chat_not_registered');
+const capturedFunction = text.indexOf('async function aiBridgeDirectDeliverCapturedEnvelope');
+const capturedDiscovery = text.indexOf('aiBridgeDiscoverDirectTargetTab(targetChatId', capturedFunction);
+const capturedError = text.indexOf('direct_delivery_target_not_registered', capturedFunction);
+assert(capturedDiscovery !== -1, 'missing captured delivery discovery call');
+assert(capturedError !== -1, 'missing captured delivery error');
+assert(capturedDiscovery < capturedError, 'captured discovery must run before final error');
+console.log('OK smoke_direct_discover_unregistered_target_063');

@@ -23,7 +23,7 @@ mustInclude(background, "globalThis.aiBridgeClassifyRouteSafe", "background clas
 mustInclude(background, "AIBRIDGE_DIRECT_INTERCHAT_DELIVERY_START", "background direct helper");
 mustInclude(background, "async function aiBridgeDirectDeliverCapturedEnvelope", "background direct helper");
 mustInclude(background, "canonicalChatId(envelope && envelope.target_chat_id", "background target canonicalization");
-mustInclude(background, "const tabId = registry[targetChatId];", "background target registry lookup");
+mustInclude(background, "let tabId = registry[targetChatId];", "background target registry lookup");
 mustInclude(background, "injectText(tabId, envelope)", "background direct injection");
 mustInclude(background, "direct_interchat_delivery_started", "background direct telemetry start");
 mustInclude(background, "direct_interchat_delivery_ok", "background direct telemetry ok");

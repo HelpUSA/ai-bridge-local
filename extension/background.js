@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.62";
+const VERSION = "0.5.63";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
@@ -259,6 +259,55 @@ function mustUseGateway(cmd) {
   return true;
 }
 
+
+/* AIBRIDGE_DIRECT_TARGET_DISCOVERY_063_START */
+function aiBridgeUrlMatchesDirectTarget(url, targetChatId, targetUrl) {
+  const urlText = String(url || "");
+  const chatId = canonicalChatId(targetChatId || "");
+  const wantedUrl = String(targetUrl || "").trim();
+  if (!urlText || !chatId) return false;
+  if (urlText.includes(chatId)) return true;
+  try {
+    if (decodeURIComponent(urlText).includes(chatId)) return true;
+  } catch (_) {}
+  if (wantedUrl) {
+    if (urlText === wantedUrl) return true;
+    try {
+      const current = new URL(urlText);
+      const wanted = new URL(wantedUrl);
+      if (current.origin === wanted.origin && current.pathname === wanted.pathname) return true;
+    } catch (_) {}
+  }
+  return false;
+}
+
+async function aiBridgeDiscoverDirectTargetTab(targetChatId, targetUrl, commandId) {
+  const canonicalTargetChatId = canonicalChatId(targetChatId || "");
+  if (!canonicalTargetChatId) return { ok: false, error: "missing_target_chat_id" };
+  if (typeof chrome === "undefined" || !chrome.tabs || !chrome.tabs.query) {
+    return { ok: false, error: "tabs_query_unavailable", target_chat_id: canonicalTargetChatId };
+  }
+  let tabs = [];
+  try {
+    tabs = await chrome.tabs.query({});
+  } catch (error) {
+    return { ok: false, error: "tabs_query_failed", target_chat_id: canonicalTargetChatId, detail: error && error.message ? error.message : String(error || "unknown") };
+  }
+  const match = (tabs || []).find((tab) => tab && aiBridgeUrlMatchesDirectTarget(tab.url, canonicalTargetChatId, targetUrl));
+  if (!match || !Number.isFinite(Number(match.id))) {
+    return { ok: false, error: "target_tab_not_open", target_chat_id: canonicalTargetChatId };
+  }
+  const tabId = Number(match.id);
+  registry[canonicalTargetChatId] = tabId;
+  try {
+    await aiBridgeReinjectContentScriptForDirectDelivery(tabId, commandId || "unknown");
+  } catch (error) {
+    console.warn("[bg] direct target discovery reinject failed:", error);
+  }
+  return { ok: true, discovered: true, tab_id: tabId, target_chat_id: canonicalTargetChatId, url: match.url || "" };
+}
+/* AIBRIDGE_DIRECT_TARGET_DISCOVERY_063_END */
+
 async function deliverInterChatDirect(cmd) {
   const targetChatId = canonicalChatId(cmd.target_chat_id || "");
   const sourceChatId = canonicalChatId(cmd.source_chat_id || "");
@@ -267,15 +316,21 @@ async function deliverInterChatDirect(cmd) {
     return { ok: false, direct: true, error: "missing_target_chat_id" };
   }
 
-  const tabId = registry[targetChatId];
+  let tabId = registry[targetChatId];
   if (!tabId) {
-    return {
-      ok: false,
-      direct: true,
-      error: "target_chat_not_registered",
-      target_chat_id: targetChatId,
-      hint: "Abra/recarregue a aba destino para a extensao registrar o chat_id, ou reenvie com force_gateway=true."
-    };
+    const discoveredTarget = await aiBridgeDiscoverDirectTargetTab(targetChatId, cmd.target_url || cmd.url || "", cmd.command_id || "unknown");
+    if (discoveredTarget && discoveredTarget.ok && discoveredTarget.tab_id) {
+      tabId = discoveredTarget.tab_id;
+    } else {
+      return {
+        ok: false,
+        direct: true,
+        error: "target_chat_not_registered",
+        target_chat_id: targetChatId,
+        discovery: discoveredTarget || null,
+        hint: "Abra/recarregue a aba destino para a extensao registrar o chat_id, ou informe target_url de uma aba aberta."
+      };
+    }
   }
 
   const directAction = Object.assign({}, cmd, {
@@ -674,10 +729,15 @@ async function aiBridgeDirectDeliverCapturedEnvelope(envelope) {
     return { ok: false, route: "direct_interchat", error: "direct_delivery_missing_target_chat_id" };
   }
 
-  const tabId = registry[targetChatId];
+  let tabId = registry[targetChatId];
   if (!tabId) {
-    console.warn("[bg] direct interchat target not registered:", targetChatId, commandId);
-    return { ok: false, route: "direct_interchat", error: "direct_delivery_target_not_registered", target_chat_id: targetChatId };
+    const discoveredTarget = await aiBridgeDiscoverDirectTargetTab(targetChatId, envelope && (envelope.target_url || envelope.url) ? (envelope.target_url || envelope.url) : "", commandId);
+    if (discoveredTarget && discoveredTarget.ok && discoveredTarget.tab_id) {
+      tabId = discoveredTarget.tab_id;
+    } else {
+      console.warn("[bg] direct interchat target not registered:", targetChatId, commandId, discoveredTarget || null);
+      return { ok: false, route: "direct_interchat", error: "direct_delivery_target_not_registered", target_chat_id: targetChatId, discovery: discoveredTarget || null };
+    }
   }
 
   postTelemetryEvent("direct_interchat_delivery_started", {

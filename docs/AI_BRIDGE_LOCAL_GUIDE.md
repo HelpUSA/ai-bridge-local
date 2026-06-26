@@ -1251,3 +1251,10 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.63 ao encontrar a aba, registra target_chat_id -> tabId, reinjeta content_script.js e tenta a entrega direta.
 - DONE 0.5.63 erro final passa a distinguir target_chat_not_registered de target_tab_not_open em discovery.
 - DONE 0.5.63 adicionou smoke_direct_discover_unregistered_target_063.js.
+
+## Version alignment 0.5.64
+- Versao atual: 0.5.64
+- Marco publicado: direct-discovery-diagnostics.
+
+## 118. Direct discovery diagnostics
+- DONE 0.5.64 adiciona tab_count e tabs_sample ao erro target_tab_not_open para diagnosticar abas visiveis ao background.

@@ -293,9 +293,10 @@ async function aiBridgeDiscoverDirectTargetTab(targetChatId, targetUrl, commandI
   } catch (error) {
     return { ok: false, error: "tabs_query_failed", target_chat_id: canonicalTargetChatId, detail: error && error.message ? error.message : String(error || "unknown") };
   }
+  const tabDiagnostics = (tabs || []).slice(0, 20).map((tab) => ({ id: tab && tab.id, url: tab && tab.url ? String(tab.url).slice(0, 300) : "", title: tab && tab.title ? String(tab.title).slice(0, 120) : "" }));
   const match = (tabs || []).find((tab) => tab && aiBridgeUrlMatchesDirectTarget(tab.url, canonicalTargetChatId, targetUrl));
   if (!match || !Number.isFinite(Number(match.id))) {
-    return { ok: false, error: "target_tab_not_open", target_chat_id: canonicalTargetChatId };
+    return { ok: false, error: "target_tab_not_open", target_chat_id: canonicalTargetChatId, target_url: targetUrl || "", tab_count: (tabs || []).length, tabs_sample: tabDiagnostics };
   }
   const tabId = Number(match.id);
   registry[canonicalTargetChatId] = tabId;

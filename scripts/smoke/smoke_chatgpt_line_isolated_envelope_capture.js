@@ -15,7 +15,7 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-assert(content.includes("0.5.62"), "content script version must be 0.5.62");
+assert(content.includes("0.5.65"), "content script version must be 0.5.65");
 
 const at = "@@";
 const start = at + "AI_BRIDGE_LOCAL_START" + at;

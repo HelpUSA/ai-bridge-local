@@ -44,11 +44,11 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.63";
+const VERSION = "0.5.65";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
-const DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = false;
+const DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = true;
 
 
 async function postJson(path, body) {
@@ -345,7 +345,7 @@ async function deliverInterChatDirect(cmd) {
   console.log("[bg] Direct inter-chat delivery:", directAction.command_id, "to", targetChatId, "tab", tabId);
 
   const result = await withTimeout(
-    injectText(tabId, directAction),
+    injectText(tabId, envelope),
     20000,
     { ok: false, reason: "direct_interchat_inject_timeout" }
   );
@@ -360,11 +360,32 @@ async function deliverInterChatDirect(cmd) {
   return { ok: false, direct: true, command_id: directAction.command_id, target_chat_id: targetChatId, error: reason, result };
 }
 
+/* AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_START */
 function shouldFallbackDirectFailureToGateway(cmd, directResult) {
   if (!DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK) return false;
   if (!cmd || !directResult || directResult.ok) return false;
-  return boolFlag(cmd.allow_gateway_fallback) || boolFlag(cmd.force_gateway_on_direct_failure);
+
+  const action = String(cmd.action || cmd.type || "").trim().toLowerCase();
+  const deliveryKind = String(cmd.delivery_kind || "").trim().toLowerCase();
+
+  if (action !== "send-chat-message" && action !== "send_chat_message") return false;
+  if (deliveryKind !== "inter_agent_message") return false;
+
+  // Safety gate: local runtime capabilities must never be re-routed by the direct fallback.
+  if (action === "run-command" || action === "run_command") return false;
+  if (deliveryKind === "local_capability") return false;
+  if (boolFlag(cmd.disable_gateway_fallback) || boolFlag(cmd.no_gateway_fallback)) return false;
+
+  const reasonText = String(
+    (directResult && (directResult.error || directResult.reason || directResult.message)) ||
+    JSON.stringify(directResult || {})
+  );
+
+  if (boolFlag(cmd.allow_gateway_fallback) || boolFlag(cmd.force_gateway_on_direct_failure)) return true;
+
+  return /target_chat_not_registered|direct_delivery_target_not_registered|target_tab_not_open|target_tab_not_found|tabs_query_unavailable|tabs_query_failed|direct_delivery_target_not_registered|direct_interchat_inject_timeout|direct_interchat_inject_failed|Receiving end does not exist|Could not establish connection/i.test(reasonText);
 }
+/* AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_END */
 
 async function routeBridgeCommand(cmd, sourceLabel) {
   if (isDirectInterChatCommand(cmd)) {
@@ -722,73 +743,139 @@ function validateAiBridgeCapturedEnvelopeMessage(message, sender) {
 
 
 /* AIBRIDGE_DIRECT_INTERCHAT_DELIVERY_START */
+/* AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_CAPTURED_START */
 async function aiBridgeDirectDeliverCapturedEnvelope(envelope) {
   const targetChatId = canonicalChatId(envelope && envelope.target_chat_id ? envelope.target_chat_id : "");
+  const sourceChatId = canonicalChatId(envelope && envelope.source_chat_id ? envelope.source_chat_id : "");
   const commandId = envelope && envelope.command_id ? envelope.command_id : "unknown";
+  const action = String((envelope && (envelope.action || envelope.type)) || "").trim().toLowerCase();
+  const deliveryKind = String((envelope && envelope.delivery_kind) || "").trim().toLowerCase();
 
   if (!targetChatId) {
     return { ok: false, route: "direct_interchat", error: "direct_delivery_missing_target_chat_id" };
   }
 
+  if (action !== "send-chat-message" && action !== "send_chat_message") {
+    return { ok: false, route: "direct_interchat", error: "direct_delivery_unsupported_action", action };
+  }
+
+  if (deliveryKind !== "inter_agent_message") {
+    return { ok: false, route: "direct_interchat", error: "direct_delivery_requires_inter_agent_message" };
+  }
+
   let tabId = registry[targetChatId];
   if (!tabId) {
     const discoveredTarget = await aiBridgeDiscoverDirectTargetTab(targetChatId, envelope && (envelope.target_url || envelope.url) ? (envelope.target_url || envelope.url) : "", commandId);
+
     if (discoveredTarget && discoveredTarget.ok && discoveredTarget.tab_id) {
       tabId = discoveredTarget.tab_id;
     } else {
-      console.warn("[bg] direct interchat target not registered:", targetChatId, commandId, discoveredTarget || null);
-      return { ok: false, route: "direct_interchat", error: "direct_delivery_target_not_registered", target_chat_id: targetChatId, discovery: discoveredTarget || null };
+      const directResult = {
+        ok: false,
+        direct: true,
+        route: "direct_interchat",
+        error: "direct_delivery_target_not_registered",
+        direct_error: "target_chat_not_registered",
+        target_chat_id: targetChatId,
+        discovery: discoveredTarget || null
+      };
+
+      if (shouldFallbackDirectFailureToGateway(envelope, directResult)) {
+        console.log("[bg] Captured direct fallback to gateway:", commandId, directResult.error);
+        const gatewayResult = await postCommand(envelope);
+        pollMessagesSoon("capturedEnvelope_directCrossProfileFallback");
+        return {
+          ok: true,
+          route: "local_gateway_cross_profile",
+          direct: false,
+          fallback: true,
+          command_id: commandId,
+          target_chat_id: targetChatId,
+          direct_error: directResult.error,
+          discovery: discoveredTarget || null,
+          data: gatewayResult
+        };
+      }
+
+      return directResult;
     }
   }
+
+  Object.assign(envelope, {
+    command_id: commandId,
+    action: "send-chat-message",
+    message: envelope && envelope.message ? envelope.message : "",
+    target_chat_id: targetChatId,
+    source_chat_id: sourceChatId || (envelope && envelope.source_chat_id) || ""
+  });
 
   postTelemetryEvent("direct_interchat_delivery_started", {
     command_id: commandId,
     target_chat_id: targetChatId,
-    tab_id: tabId,
-    action: envelope && envelope.action
+    route: "captured_envelope"
   });
 
-  const startedAt = Date.now();
   const result = await withTimeout(
     injectText(tabId, envelope),
     20000,
-    {
-      ok: false,
-      route: "direct_interchat",
-      reason: "direct_inject_timeout",
-      error: "direct_inject_timeout"
-    }
+    { ok: false, reason: "direct_interchat_inject_timeout" }
   );
 
-  const ok = !!(result && result.ok);
-  const reason = ok ? "" : String((result && (result.reason || result.error)) || "direct_delivery_inject_failed");
-
-  postTelemetryEvent(ok ? "direct_interchat_delivery_ok" : "direct_interchat_delivery_failed", {
-    command_id: commandId,
-    target_chat_id: targetChatId,
-    tab_id: tabId,
-    duration_ms: Date.now() - startedAt,
-    reason: reason
-  });
-
-  if (!ok) {
-    return {
-      ok: false,
-      route: "direct_interchat",
-      error: reason,
+  if (result && result.ok) {
+    postTelemetryEvent("direct_interchat_delivery_ok", {
+      command_id: commandId,
       target_chat_id: targetChatId,
-      result: result || null
+      route: "captured_envelope"
+    });
+
+    return {
+      ok: true,
+      route: "direct_interchat",
+      direct: true,
+      command_id: commandId,
+      target_chat_id: targetChatId,
+      data: result
     };
   }
 
-  return {
-    ok: true,
-    route: "direct_interchat",
+  const reason = result && (result.reason || result.error) ? (result.reason || result.error) : "direct_interchat_inject_failed";
+
+  postTelemetryEvent("direct_interchat_delivery_failed", {
+    command_id: commandId,
     target_chat_id: targetChatId,
-    result: result || null
+    route: "captured_envelope",
+    reason: reason
+  });
+
+  const directResult = {
+    ok: false,
+    route: "direct_interchat",
+    direct: true,
+    command_id: commandId,
+    target_chat_id: targetChatId,
+    error: reason,
+    data: result || null
   };
+
+  if (shouldFallbackDirectFailureToGateway(envelope, directResult)) {
+    console.log("[bg] Captured direct inject fallback to gateway:", commandId, reason);
+    const gatewayResult = await postCommand(envelope);
+    pollMessagesSoon("capturedEnvelope_directInjectFallback");
+    return {
+      ok: true,
+      route: "local_gateway_cross_profile",
+      direct: false,
+      fallback: true,
+      command_id: commandId,
+      target_chat_id: targetChatId,
+      direct_error: reason,
+      data: gatewayResult
+    };
+  }
+
+  return directResult;
 }
-/* AIBRIDGE_DIRECT_INTERCHAT_DELIVERY_END */
+/* AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_CAPTURED_END */
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 

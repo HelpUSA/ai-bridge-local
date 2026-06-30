@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.65";
+const VERSION = "0.5.66";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
@@ -345,7 +345,7 @@ async function deliverInterChatDirect(cmd) {
   console.log("[bg] Direct inter-chat delivery:", directAction.command_id, "to", targetChatId, "tab", tabId);
 
   const result = await withTimeout(
-    injectText(tabId, envelope),
+    injectText(tabId, directAction),
     20000,
     { ok: false, reason: "direct_interchat_inject_timeout" }
   );

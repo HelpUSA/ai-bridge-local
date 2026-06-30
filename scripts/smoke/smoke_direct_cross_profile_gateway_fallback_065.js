@@ -6,8 +6,8 @@ const root = path.resolve(__dirname, "..", "..");
 const background = fs.readFileSync(path.join(root, "extension", "background.js"), "utf8");
 const version = fs.readFileSync(path.join(root, "VERSION"), "utf8").trim();
 
-assert.strictEqual(version, "0.5.65");
-assert(background.includes('const VERSION = "0.5.65";'), "background version not synced");
+assert.strictEqual(version, "0.5.66");
+assert(background.includes('const VERSION = "0.5.66";'), "background version not synced");
 assert(background.includes("AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_START"), "fallback marker missing");
 assert(background.includes("AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_CAPTURED_START"), "captured fallback marker missing");
 assert(background.includes("const DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = true;"), "gateway fallback constant must be enabled");

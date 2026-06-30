@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "../..");
-const expected = "0.5.65";
+const expected = "0.5.66";
 
 const versionPath = path.join(root, "VERSION");
 const manifestPath = path.join(root, "extension", "manifest.json");

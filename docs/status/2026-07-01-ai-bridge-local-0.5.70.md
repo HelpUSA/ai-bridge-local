@@ -4,10 +4,8 @@ status: current
 date: 2026-07-01
 component: ai-bridge-local
 version: 0.5.70
-head:
-18aebef
-origin_main:
-18aebef
+head: c2e0a93
+origin_main: c2e0a93
 tags:
  - status
  - watcher
@@ -19,11 +17,7 @@ tags:
 
 ## Current state
 
-- Repository is synchronized: HEAD
-18aebef
- and origin/main
-18aebef
-.
+- Repository is synchronized: HEAD c2e0a93 and origin/main c2e0a93.
 - VERSION is 0.5.70.
 - Manifest is AI Bridge Local 0.5.70.
 - Active content script constants are aligned to 0.5.70.
@@ -46,6 +40,7 @@ tags:
 - 6cf033a gateway: wake chat on final fallback results.
 - 682038c docs: document gateway final continuation fix.
 - 18aebef extension: align content script internal versions.
+- c2e0a93 docs: add 0.5.70 operational status.
 
 ## Validation history
 

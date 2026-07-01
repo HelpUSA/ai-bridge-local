@@ -1,7 +1,7 @@
 from pathlib import Path
 
 text = Path("extension/content_script.js").read_text(encoding="utf-8")
-assert 'const VERSION = "0.5.72";' in text
+assert 'const VERSION = "0.5.73";' in text
 assert 'function hasRawLineBreakInLikelyJsonString' in text
 assert 'quebra de linha crua dentro de campo JSON' in text
 assert 'queued ou sent_direct, sao silenciosos' in text

@@ -1,10 +1,10 @@
 ﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
-Atualizado em: 2026-06-30
-Versao atual: 0.5.67
+Atualizado em: 2026-07-01026-07-01026-06-30
+Versao atual: 0.5.69
 Branch principal: main
-Marco publicado mais recente: v0.5.67-duplicate-idempotent-captured-route
-Commit de referencia: pending-0.5.67
+Marco publicado mais recente: v0.5.69-final-run-continuation0.5.68-local-bridge-version-bump0.5.67-duplicate-idempotent-captured-route
+Commit de referencia: 359d36ec7c184ending-0.5.67
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este e o documento principal ativo da aplicacao. A raiz de docs deve conter apenas AI_BRIDGE_LOCAL_GUIDE.md e a pasta legacy. Os demais documentos historicos ficam em docs/legacy e tambem tem seu conteudo preservado neste guia.
@@ -15,14 +15,14 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.52.
+- Versao atual: 0.5.69.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
-- Commit de referencia desta consolidacao: 2d60f91 test: restore valid cleanup smoke.
+- Commit de referencia desta consolidacao: 359d36e worker: wake chat on final local run result.c7c184 extension: bump local bridge to 0.5.68.d60f91 test: restore valid cleanup smoke.
 - Rota operacional: run-command com delivery_kind local_capability para gateway-brain-supervisor.
 - Resultado final esperado: AI_LOCAL_RUN com success, result_is_final, chat_can_continue e next_action.
 - cleanup_plan.py permanece em modo report_only; nao executa limpeza real.
-- A raiz de docs deve manter apenas AI_BRIDGE_LOCAL_GUIDE.md e a pasta legacy.
+- A pasta docs funciona como vault Obsidian organizado por areas; index.md e AI_BRIDGE_LOCAL_GUIDE.md sao os pontos de entrada principais.
 
 ## 3. Visao geral da aplicacao
 
@@ -1077,7 +1077,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.41
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.41-chatgpt-outbound-envelope-capture
 
 ## ChatGPT outbound envelope capture
@@ -1087,7 +1087,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.42
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.42-direct-interchat-router-safe
 
 ## Direct inter-chat router safe
@@ -1098,7 +1098,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.43
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.43-chatgpt-candidate-envelope-scanner
 
 ## ChatGPT candidate envelope scanner
@@ -1108,7 +1108,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.44
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.44-standalone-chatgpt-scanner-feedback
 
 ## Standalone ChatGPT scanner with visible feedback
@@ -1119,7 +1119,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.45
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.45-content-script-heartbeat-guard
 
 ## Content script heartbeat guard
@@ -1129,7 +1129,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.46
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.46-disable-legacy-scanner-inline-heartbeat
 
 ## Disable legacy scanner and inline heartbeat guard
@@ -1140,7 +1140,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.47
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.47-matching-composer-direct-inject-retry
 
 ## Matching composer direct inject retry
@@ -1151,7 +1151,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.48
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.48-robust-composer-text-injection
 
 ## Robust composer text injection
@@ -1162,7 +1162,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.49
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.49-force-chatgpt-prompt-textarea-composer
 
 ## Force ChatGPT prompt-textarea composer
@@ -1173,7 +1173,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.50
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.50-repair-prompt-textarea-composer-smoke
 
 ## Repair prompt-textarea composer smoke
@@ -1184,7 +1184,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.51
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.51-standalone-visible-status-composer-scope
 
 ## Standalone visible status composer scope
@@ -1195,7 +1195,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 
 
 ## Version alignment 0.5.52
-- Versao atual: 0.5.52
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.52-gemini-local-status-prefix-scope
 
 ## Gemini local status prefix scope
@@ -1204,7 +1204,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.52 mantem gateway obrigatorio para run-command/local_capability.
 
 ## Version alignment 0.5.59
-- Versao atual: 0.5.59
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.59-direct-interchat-chatgpt
 
 ## Direct interchat ChatGPT
@@ -1213,7 +1213,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.59 adicionou smokes de route classifier, background route load, captured envelope route integration e direct route contract.
 
 ## Version alignment 0.5.60
-- Versao atual: 0.5.60
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.60-line-isolated-envelope-capture
 
 ## ChatGPT line-isolated envelope capture
@@ -1221,7 +1221,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.60 identificou que ainda havia caminho runtime capturando mencoes inline de marcadores.
 
 ## Version alignment 0.5.61
-- Versao atual: 0.5.61
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.61-inline-marker-parse-guard
 
 ## Inline marker parse guard
@@ -1231,7 +1231,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.61 commit 34f27b0 extension: ignore inline ChatGPT marker mentions.
 
 ## Version alignment 0.5.62
-- Versao atual: 0.5.62
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.62-direct-interchat-auto-reinject
 
 ## Direct interchat auto reinject
@@ -1242,7 +1242,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.62 commit 8ec0de7 extension: retry direct delivery after content script reinject.
 
 ## Version alignment 0.5.63
-- Versao atual: 0.5.63
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.63-direct-target-discovery
 
 ## Direct interchat target discovery
@@ -1253,14 +1253,14 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.63 adicionou smoke_direct_discover_unregistered_target_063.js.
 
 ## Version alignment 0.5.64
-- Versao atual: 0.5.64
+- Versao atual: 0.5.69
 - Marco publicado: direct-discovery-diagnostics.
 
 ## 118. Direct discovery diagnostics
 - DONE 0.5.64 adiciona tab_count e tabs_sample ao erro target_tab_not_open para diagnosticar abas visiveis ao background.
 
 ## Version alignment 0.5.65
-- Versao atual: 0.5.67
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.67-duplicate-idempotent-captured-route
 
 ## 66. Direct cross-profile gateway fallback
@@ -1269,7 +1269,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.65 inject_timeout, destino nao registrado e composer instavel continuam falhas de entrega, nao sucesso.
 
 ## Version alignment 0.5.66
-- Versao atual: 0.5.67
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.67-duplicate-idempotent-captured-route
 
 ## 67. Same-profile direct envelope reference
@@ -1279,7 +1279,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.66 cross-profile via gateway/local queue validado.
 
 ## Version alignment 0.5.67
-- Versao atual: 0.5.67
+- Versao atual: 0.5.69
 - Marco publicado: v0.5.67-duplicate-idempotent-captured-route
 
 ## 68. Duplicate idempotent and captured route guard
@@ -1289,3 +1289,29 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.67 envelope capturado nao posta direto via postCommand(validation.envelope); passa por routeBridgeCommand(validation.envelope, capturedEnvelope).
 - DONE 0.5.67 manifest, VERSION, background e content_script alinhados em 0.5.67.
 - VALIDADO 0.5.67 git diff --check, node --check dos JS ativos, smoke_direct_interchat_router, smoke_gateway_feedback_dedup e smoke_command_accepted_progress_notice.
+
+## Version alignment 0.5.68
+- Versao atual: 0.5.69
+- Marco publicado: v0.5.68-local-bridge-version-bump
+- Commit: 4c7c184 extension: bump local bridge to 0.5.68
+
+## 69. Local bridge 0.5.68 reload validation
+- DONE 0.5.68 bump limpo de VERSION, manifest, background e content_script.
+- DONE 0.5.68 smoke_post_command_duplicate_idempotent_0568 criado a partir do contrato 0.5.67.
+- VALIDADO 0.5.68 node --check para background, content_script e route_classifier.
+- VALIDADO 0.5.68 smokes: duplicate idempotent, direct interchat router, gateway feedback dedup e command accepted progress notice.
+- OBSERVADO 0.5.68 apos recarregar a extensao, envio inter-chat voltou a sair com metodo button_click_confirmed.
+- NOTA 0.5.68 a falha anterior foi observada como inject_timeout/estado de injecao da aba destino; nao foi encontrada regressao no contrato duplicate/idempotent.
+
+## Version alignment 0.5.69
+- Versao atual: 0.5.69
+- Marco publicado: v0.5.69-final-run-continuation
+- Commit: 359d36e worker: wake chat on final local run result
+
+## 70. Final AI_LOCAL_RUN continuation contract
+- DONE 0.5.69 brain_worker.py define final_no_reply como 0 quando chat_can_continue e 1.
+- DONE 0.5.69 AI_LOCAL_RUN final usa no_reply dinamico em vez de no_reply fixo 1.
+- DONE 0.5.69 smoke_final_run_continue_no_reply_0569 cobre o contrato result_is_final=1, chat_can_continue=1 e no_reply=0.
+- DONE 0.5.69 smoke_post_command_duplicate_idempotent_0569 preserva o contrato duplicate/idempotent.
+- VALIDADO 0.5.69 py_compile brain_worker, node --check dos JS ativos e smokes relevantes.
+- NOTA operacional: o AI_LOCAL_RUN do proprio comando que aplica o patch ainda pode vir do worker antigo; reiniciar/recarregar o worker/extensao aplica o novo contrato nas proximas execucoes.

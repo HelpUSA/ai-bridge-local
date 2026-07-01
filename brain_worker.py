@@ -220,6 +220,7 @@ def format_result_message(action, result, status):
     success = "1" if status == "acked" and return_code == 0 else "0"
     chat_can_continue = "1"
     next_action = "continue_next_activity" if success == "1" else "fix_error_before_continue"
+    final_no_reply = "0" if chat_can_continue == "1" else "1"
     observacao = (
         "Comando concluido com sucesso. O chat pode analisar o resultado e seguir para a proxima atividade."
         if success == "1"
@@ -231,7 +232,7 @@ def format_result_message(action, result, status):
         f"id={command_id}\n"
         f"status={status}\n"
         f"return_code={return_code}\n"
-        "no_reply=1\n"
+        f"no_reply={final_no_reply}\n"
         "result_is_final=1\n"
         f"success={success}\n"
         f"chat_can_continue={chat_can_continue}\n"

@@ -6,9 +6,9 @@ var LOCAL_STATUS_PREFIXES = globalThis.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ || [
 globalThis.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
-﻿// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
+// AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.67";
+  const VERSION = "0.5.68";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";

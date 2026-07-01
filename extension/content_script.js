@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 // AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.71";
+  const VERSION = "0.5.72";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -793,27 +793,75 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
       .replace(/@@AI_BRIDGE_LOCAL_START@@/g, "[AI_BRIDGE_LOCAL_START]")
       .replace(/@@AI_BRIDGE_LOCAL_END@@/g, "[AI_BRIDGE_LOCAL_END]")
       .replace(/\r/g, "")
+      .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "")
       .slice(0, 1200);
+  }
+
+  function hasRawLineBreakInLikelyJsonString(raw, fields) {
+    const source = String(raw || "");
+    return (fields || []).some((field) => {
+      const name = String(field || "").replace(/[^A-Za-z0-9_]/g, "");
+      if (!name) { return false; }
+      const marker = "\"" + name + "\"";
+      let searchFrom = 0;
+      while (searchFrom < source.length) {
+        const fieldAt = source.indexOf(marker, searchFrom);
+        if (fieldAt < 0) { return false; }
+        const colonAt = source.indexOf(":", fieldAt + marker.length);
+        if (colonAt < 0 || colonAt - fieldAt > 80) {
+          searchFrom = fieldAt + marker.length;
+          continue;
+        }
+        const quoteAt = source.indexOf("\"", colonAt + 1);
+        if (quoteAt < 0 || quoteAt - colonAt > 80) {
+          searchFrom = fieldAt + marker.length;
+          continue;
+        }
+        let escaped = false;
+        for (let i = quoteAt + 1; i < source.length; i++) {
+          const ch = source[i];
+          if (escaped) {
+            escaped = false;
+            continue;
+          }
+          if (ch === "\\") {
+            escaped = true;
+            continue;
+          }
+          if (ch === "\"") {
+            break;
+          }
+          if (ch === "\n" || ch === "\r") {
+            return true;
+          }
+        }
+        searchFrom = fieldAt + marker.length;
+      }
+      return false;
+    });
   }
 
   function classifyEnvelopeParseProblem(raw, errorMessage) {
     const source = String(raw || "");
     const causes = [];
 
-    if (/[\\u2018\\u2019\\u201c\\u201d\\u2032\\u2033]/.test(source)) {
+    if (/[\u2018\u2019\u201c\u201d\u2032\u2033]/.test(source)) {
       causes.push("aspas curvas/Unicode no lugar de aspas JSON validas");
     }
-    if (/[\\u200b\\u200c\\u200d\\ufeff]/.test(source)) {
+    if (/[\u200b\u200c\u200d\ufeff]/.test(source)) {
       causes.push("caracteres invisiveis/zero-width no comando");
     }
-    if (/(?:\\n\\s*[A-Za-z0-9_.-]\\s*){8,}/.test(source)) {
+    if (/(?:\n\s*[A-Za-z0-9_.-]\s*){8,}/.test(source)) {
       causes.push("texto quebrado letra por letra ou colado com quebras artificiais");
     }
-    if (/"command"\\s*:\\s*\\[[\\s\\S]{0,4000}\\n[\\s\\S]{0,4000}\\]/.test(source)) {
+    if (hasRawLineBreakInLikelyJsonString(source, ["message", "from_agent", "conversation_id", "target_url", "script_text"])) {
+      causes.push("quebra de linha crua dentro de campo JSON (ex: message/from_agent); use \\n ou mensagem curta");
+    }
+    if (/"command"\s*:\s*\[[\s\S]{0,4000}\n[\s\S]{0,4000}\]/.test(source)) {
       causes.push("quebra de linha dentro de string JSON sem escape");
     }
- if (source.length > 900 && (source.includes('command') || source.includes('python -c') || source.includes('EncodedCommand') || source.includes('base64') || source.includes('script_text'))) {
-      causes.push("comando inline grande/frÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡gil; prefira script_text/script_ext ou arquivo real");
+    if (source.length > 900 && (source.includes("command") || source.includes("python -c") || source.includes("EncodedCommand") || source.includes("base64") || source.includes("script_text"))) {
+      causes.push("comando inline grande/fragil; prefira payload.command com python -c + base64 em chunks pequenos ou script_text curto com \\n escapado");
     }
     if (!causes.length) {
       causes.push("JSON invalido, aspas/backslashes nao escapados ou estrutura incompleta");
@@ -822,9 +870,9 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
     return {
       summary: causes.join("; "),
       correction:
-        "Nada foi executado. Reenvie um envelope novo com command_id novo, JSON estrito, aspas duplas ASCII, sem caracteres invisiveis e sem texto quebrado. Para comandos grandes, prefira payload.command com python -c + base64; se usar script_text, escape quebras de linha como \\n.",
+        "Nada foi executado. Reenvie um envelope novo com command_id novo, JSON estrito, aspas duplas ASCII, sem caracteres invisiveis e sem texto quebrado. Para mensagens inter-chat, mantenha message/from_agent sem quebras reais ou use \\n. Para comandos grandes, prefira payload.command com python -c + base64 em chunks pequenos.",
       safeModel:
-        "Modelo seguro: use marcadores locais de inicio/fim sozinhos nas linhas; dentro deles envie um unico JSON valido com payload.cwd, payload.timeout_seconds e payload.command. Para comandos grandes, use python -c com base64; script_text somente curto com \\n escapado."
+        "Modelo seguro: marcadores locais de inicio/fim sozinhos nas linhas; dentro deles envie um unico JSON valido. Eventos com no_reply=1, como queued ou sent_direct, sao silenciosos e nao devem gerar resposta do chat."
     };
   }
 
@@ -1306,7 +1354,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.71";
+  const CAPTURE_VERSION = "0.5.72";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1434,7 +1482,7 @@ try {
         "chat_atual=" + currentChatId + "\n" +
         "erro=" + String(message || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
         "correcao=Use JSON estrito entre @@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@, com source_chat_id igual ao chat atual.\n" +
-        "original_sanitizado=\n" + String(raw || "").replace(/\r/g, "").slice(0, 1200),
+        "original_sanitizado=\n" + String(raw || "").replace(/\r/g, "").replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "").slice(0, 1200),
       no_reply: 1
     };
     sendCommandToBackground(errCmd);
@@ -1568,7 +1616,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.71";
+  const SCANNER_VERSION = "0.5.72";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1686,7 +1734,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.71";
+  const STANDALONE_VERSION = "0.5.72";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -2201,7 +2249,7 @@ function findComposer() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.71";
+  const CAPTURE_VERSION = "0.5.72";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;

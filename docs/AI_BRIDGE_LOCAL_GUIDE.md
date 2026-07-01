@@ -1,10 +1,10 @@
-﻿# AI Bridge Local - Guia Unificado Operacional e Roadmap
+# AI Bridge Local - Guia Unificado Operacional e Roadmap
 
-Atualizado em: 2026-07-01026-07-01026-06-30
-Versao atual: 0.5.69
+Atualizado em: 2026-07-01
+Versao atual: 0.5.70
 Branch principal: main
-Marco publicado mais recente: v0.5.69-final-run-continuation0.5.68-local-bridge-version-bump0.5.67-duplicate-idempotent-captured-route
-Commit de referencia: 359d36ec7c184ending-0.5.67
+Marco publicado mais recente: v0.5.70-gateway-final-fallback-results
+Commit de referencia: 6cf033a
 Repositorio local: D:/dev/autocode/ai-bridge-local
 
 Este e o documento principal ativo da aplicacao. A raiz de docs deve conter apenas AI_BRIDGE_LOCAL_GUIDE.md e a pasta legacy. Os demais documentos historicos ficam em docs/legacy e tambem tem seu conteudo preservado neste guia.
@@ -15,10 +15,10 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.69.
+- Versao atual: 0.5.70.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
-- Commit de referencia desta consolidacao: 359d36e worker: wake chat on final local run result.c7c184 extension: bump local bridge to 0.5.68.d60f91 test: restore valid cleanup smoke.
+- Commit de referencia desta consolidacao: 6cf033a gateway: wake chat on final fallback results.
 - Rota operacional: run-command com delivery_kind local_capability para gateway-brain-supervisor.
 - Resultado final esperado: AI_LOCAL_RUN com success, result_is_final, chat_can_continue e next_action.
 - cleanup_plan.py permanece em modo report_only; nao executa limpeza real.
@@ -1315,3 +1315,17 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - DONE 0.5.69 smoke_post_command_duplicate_idempotent_0569 preserva o contrato duplicate/idempotent.
 - VALIDADO 0.5.69 py_compile brain_worker, node --check dos JS ativos e smokes relevantes.
 - NOTA operacional: o AI_LOCAL_RUN do proprio comando que aplica o patch ainda pode vir do worker antigo; reiniciar/recarregar o worker/extensao aplica o novo contrato nas proximas execucoes.
+
+## Version alignment 0.5.70
+- Versao atual: 0.5.70
+- Marco publicado: v0.5.70-gateway-final-fallback-results
+- Commit: 6cf033a gateway: wake chat on final fallback results
+
+## 71. Gateway final fallback continuation contract
+- DONE 0.5.70 gateway_local.py corrige fallback AI_LOCAL_RUN final para no_reply=0 quando chat_can_continue=1.
+- DONE 0.5.70 preserva queued informativo com no_reply=1.
+- DONE 0.5.70 smoke_gateway_final_run_no_reply_0570 cobre o fallback final do gateway.
+- DONE 0.5.70 smoke_post_command_duplicate_idempotent_0570 preserva o contrato duplicate/idempotent.
+- VALIDADO 0.5.70 em execucao real: AI_LOCAL_RUN final retornou no_reply=0, result_is_final=1 e chat_can_continue=1.
+- VALIDADO 0.5.70 py_compile, node --check e smokes relevantes antes do commit.
+- NOTA operacional: 0.5.69 corrigiu brain_worker.py; 0.5.70 completou a correcao no gateway_local.py, que tambem podia emitir resultado final com no_reply antigo.

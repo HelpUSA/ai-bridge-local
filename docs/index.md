@@ -1,4 +1,4 @@
-﻿---
+---
 type: docs-home
 status: current
 tags:
@@ -36,9 +36,10 @@ Este e o ponto de entrada da documentacao atual.
 - legacy: documentos antigos preservados.
 
 ## Estado atual
-- Versao atual: 0.5.69.
-- Commit atual local: 359d36e.
-- Branch main esta ahead 3 em relacao a origin/main.
+- Versao atual: 0.5.70.
+- Commit atual local: 6cf033a.
+- Branch main esta ahead 5 em relacao a origin/main.
 - Release note: [[docs/releases/0.5.68-local-bridge-version-bump|0.5.68 local bridge version bump]].
 - Guia operacional: [[docs/AI_BRIDGE_LOCAL_GUIDE|AI Bridge Local Guide]].
 - Release note: [[docs/releases/0.5.69-final-run-continuation|0.5.69 final run continuation]].
+- Release note: [[docs/releases/0.5.70-gateway-final-fallback-results|0.5.70 gateway final fallback results]].

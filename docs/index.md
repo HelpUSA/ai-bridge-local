@@ -43,3 +43,4 @@ Este e o ponto de entrada da documentacao atual.
 - Guia operacional: [[docs/AI_BRIDGE_LOCAL_GUIDE|AI Bridge Local Guide]].
 - Release note: [[docs/releases/0.5.69-final-run-continuation|0.5.69 final run continuation]].
 - Release note: [[docs/releases/0.5.70-gateway-final-fallback-results|0.5.70 gateway final fallback results]].
+- Status operacional: [[docs/status/2026-07-01-ai-bridge-local-0.5.70|AI Bridge Local 0.5.70 operational status]].

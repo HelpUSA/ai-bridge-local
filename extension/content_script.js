@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 // AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.73";
+  const VERSION = "0.5.74";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1354,7 +1354,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.73";
+  const CAPTURE_VERSION = "0.5.74";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1616,7 +1616,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.73";
+  const SCANNER_VERSION = "0.5.74";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1734,7 +1734,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.73";
+  const STANDALONE_VERSION = "0.5.74";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -2249,7 +2249,7 @@ function findComposer() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.73";
+  const CAPTURE_VERSION = "0.5.74";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;

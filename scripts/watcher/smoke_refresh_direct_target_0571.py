@@ -1,7 +1,7 @@
 from pathlib import Path
 
 version = Path("VERSION").read_text(encoding="utf-8-sig").strip()
-assert version in {"0.5.71", "0.5.72", "0.5.73"}
+assert version in {"0.5.71", "0.5.72", "0.5.74"}
 
 manifest = Path("extension/manifest.json").read_text(encoding="utf-8-sig")
 assert f"AI Bridge Local {version}" in manifest

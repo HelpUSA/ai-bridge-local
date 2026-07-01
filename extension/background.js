@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.73";
+const VERSION = "0.5.74";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
@@ -164,8 +164,8 @@ async function postDeliveryStatus(action, status, detail, result = {}) {
     } else {
       statusMessage =
         "[AI_LOCAL_ERRO]\n" +
-        "acao=aguarde_ou_verifique\n" +
-        "no_reply=1\n" +
+        "acao=verifique_destino_ou_reenvie\n" +
+        "no_reply=0\n" +
         "tipo=delivery_result\n" +
         "versao=" + VERSION + "\n" +
         "id_original=" + action.command_id + "\n" +

@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.66";
+const VERSION = "0.5.67";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;
@@ -88,7 +88,22 @@ async function postTelemetryEvent(eventType, details = {}) {
 postTelemetryEvent('extension_version', { version: VERSION });
 async function postCommand(cmd) {
   console.log("[bg] Sending:", cmd.command_id);
-  return await postJson("/bridge/commands", cmd);
+  try {
+    return await postJson("/bridge/commands", cmd);
+  } catch (e) {
+    const errorText = String((e && e.message) || e || "");
+    if (errorText === "duplicate") {
+      console.log("[bg] Command already queued:", cmd && cmd.command_id);
+      return {
+        ok: true,
+        already_queued: true,
+        idempotent: true,
+        command_id: cmd && cmd.command_id ? cmd.command_id : null,
+        error: "duplicate"
+      };
+    }
+    throw e;
+  }
 }
 
 async function postAck(commandId, status, extra = {}) {
@@ -906,13 +921,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return true;
     }
 
-    postCommand(validation.envelope)
-      .then(() => {
-        pollMessagesSoon("capturedEnvelope");
-        sendResponse({ ok: true, route: "local_gateway" });
+    routeBridgeCommand(validation.envelope, "capturedEnvelope")
+      .then((result) => {
+        if (result && result.ok) {
+          sendResponse(Object.assign({ route: result.route || "local_gateway" }, result));
+        } else {
+          const error = result && result.error ? result.error : "captured_envelope_route_failed";
+          sendResponse({ ok: false, route: "local_gateway", error, data: result || null });
+        }
       })
       .catch((e) => {
-        console.log("[bg] captured envelope postCommand error:", e.message);
+        console.log("[bg] captured envelope routeBridgeCommand error:", e.message);
         sendResponse({ ok: false, route: "local_gateway", error: e.message });
       });
     return true;

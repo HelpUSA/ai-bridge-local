@@ -4,7 +4,7 @@ bg = Path("extension/background.js").read_text(encoding="utf-8", errors="replace
 
 required = [
     "DIRECT_INTERCHAT_ENABLED",
-    "DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = false",
+    "DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = true",
     "function shouldForceGateway",
     "function isDirectInterChatCommand",
     "function mustUseGateway",

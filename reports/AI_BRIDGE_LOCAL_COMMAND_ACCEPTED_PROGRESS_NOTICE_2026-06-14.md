@@ -1,13 +1,9 @@
-# AI Bridge Local - Command accepted progress notice report 2026-06-14
+# AI Bridge Local command accepted progress notice report
 
-## Status
-Implemented as release 0.4.99.
+Kept final [AI_LOCAL_RUN] result unchanged.
 
-## Reason
-Long commands can be correct and useful, but silence after acceptance creates the impression that execution is stuck.
-
-## Result
-- Added immediate [AI_LOCAL] accepted notice before execute_command.
-- Kept final [AI_LOCAL_RUN] result unchanged.
-- Kept large commands allowed.
-- Kept final ACK contract unchanged.
+Current validation records the post-0.5.6 contract:
+- queued gateway feedback is informational;
+- worker running notice is not required;
+- final AI_LOCAL_RUN remains authoritative;
+- failures also return final AI_LOCAL_RUN so the chat can fix and continue.

@@ -1,7 +1,7 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
 Atualizado em: 2026-07-01
-Versao atual: 0.5.70
+Versao atual: 0.5.71
 Branch principal: main
 Marco publicado mais recente: v0.5.70-gateway-final-fallback-results
 Commit de referencia: 6cf033a
@@ -15,7 +15,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.70.
+- Versao atual: 0.5.71.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 6cf033a gateway: wake chat on final fallback results.
@@ -401,57 +401,57 @@ Secao consolidada preservada para compatibilidade, historico operacional e smoke
 
 <!-- AI_BRIDGE_LOCAL_V0_UI_RESEARCH_START -->
 
-## 48. IntegraÃƒÂ§ÃƒÂ£o v0.dev / v0.app como modo de pesquisa e prototipaÃƒÂ§ÃƒÂ£o de UI
+## 48. IntegraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o v0.dev / v0.app como modo de pesquisa e prototipaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de UI
 
 ### 48.1 Objetivo
 
-O v0.dev / v0.app deve ser usado no AI Bridge Local como ferramenta externa de prototipaÃƒÂ§ÃƒÂ£o, design de interfaces e geraÃƒÂ§ÃƒÂ£o assistida de UI.
+O v0.dev / v0.app deve ser usado no AI Bridge Local como ferramenta externa de prototipaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o, design de interfaces e geraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o assistida de UI.
 
-O papel do v0 no projeto nÃƒÂ£o ÃƒÂ© executar comandos locais nem aplicar patches automaticamente no repositÃƒÂ³rio principal. Ele deve atuar como acelerador visual e gerador de protÃƒÂ³tipos, enquanto o AI Bridge Local continua sendo o executor auditÃƒÂ¡vel, com fila, smokes, gates, revisÃƒÂ£o e commit controlado.
+O papel do v0 no projeto nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© executar comandos locais nem aplicar patches automaticamente no repositÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio principal. Ele deve atuar como acelerador visual e gerador de protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos, enquanto o AI Bridge Local continua sendo o executor auditÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡vel, com fila, smokes, gates, revisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o e commit controlado.
 
 Uso recomendado:
 
-* gerar protÃƒÂ³tipos de telas para o AI Bridge Local;
-* criar variaÃƒÂ§ÃƒÂµes de dashboard operacional;
+* gerar protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos de telas para o AI Bridge Local;
+* criar variaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes de dashboard operacional;
 * desenhar o Command Builder visual;
 * prototipar visualizador de fila, dead letters e worker health;
-* propor telas de auditoria, release manager e autorizaÃƒÂ§ÃƒÂ£o interchat;
-* gerar cÃƒÂ³digo apenas em sandbox ou relatÃƒÂ³rio;
-* criar prompts reutilizÃƒÂ¡veis para evoluÃƒÂ§ÃƒÂ£o futura da UI.
+* propor telas de auditoria, release manager e autorizaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o interchat;
+* gerar cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo apenas em sandbox ou relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio;
+* criar prompts reutilizÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡veis para evoluÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o futura da UI.
 
-### 48.2 DecisÃƒÂ£o operacional
+### 48.2 DecisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o operacional
 
-DecisÃƒÂ£o: o v0.dev / v0.app pode ser usado no AI Bridge Local como acelerador visual e gerador de protÃƒÂ³tipos, mas nÃƒÂ£o como executor automÃƒÂ¡tico do repositÃƒÂ³rio principal.
+DecisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o: o v0.dev / v0.app pode ser usado no AI Bridge Local como acelerador visual e gerador de protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos, mas nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o como executor automÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tico do repositÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio principal.
 
 Modo inicial aprovado:
 
 * `report_only`
 * `research_only`
-* sem API obrigatÃƒÂ³ria
-* sem escrita em `apps/`, `backend/`, `extension/` ou cÃƒÂ³digo produtivo
-* saÃƒÂ­da em `reports/v0/`
-* revisÃƒÂ£o humana obrigatÃƒÂ³ria antes de qualquer patch
+* sem API obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ria
+* sem escrita em `apps/`, `backend/`, `extension/` ou cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo produtivo
+* saÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­da em `reports/v0/`
+* revisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o humana obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ria antes de qualquer patch
 
-Status: recomendado para fase de pesquisa e prototipaÃƒÂ§ÃƒÂ£o.
+Status: recomendado para fase de pesquisa e prototipaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.
 
-### 48.3 PrincÃƒÂ­pio de seguranÃƒÂ§a
+### 48.3 PrincÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­pio de seguranÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§a
 
 O v0 deve entrar no AI Bridge Local como capacidade externa controlada.
 
 Fluxo seguro:
 
-1. O AI Bridge Local gera um prompt tÃƒÂ©cnico para o v0.
-2. O prompt ÃƒÂ© salvo em `reports/v0/`.
-3. O humano cola o prompt no v0 manualmente ou, em fase futura, uma integraÃƒÂ§ÃƒÂ£o chama a API do v0.
-4. O resultado gerado pelo v0 ÃƒÂ© tratado como artefato externo.
-5. Nenhum cÃƒÂ³digo gerado ÃƒÂ© aplicado automaticamente.
+1. O AI Bridge Local gera um prompt tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©cnico para o v0.
+2. O prompt ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© salvo em `reports/v0/`.
+3. O humano cola o prompt no v0 manualmente ou, em fase futura, uma integraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o chama a API do v0.
+4. O resultado gerado pelo v0 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© tratado como artefato externo.
+5. Nenhum cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo gerado ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© aplicado automaticamente.
 6. Um auditor revisa o resultado.
-7. Um patch local separado ÃƒÂ© criado somente depois de aprovaÃƒÂ§ÃƒÂ£o.
+7. Um patch local separado ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© criado somente depois de aprovaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.
 8. O patch passa por smokes, `git diff --check`, stage de arquivos exatos, commit e push.
 
 Regra central:
 
-> v0 gera ideias, protÃƒÂ³tipos e cÃƒÂ³digo candidato. AI Bridge Local valida, audita e executa.
+> v0 gera ideias, protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos e cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo candidato. AI Bridge Local valida, audita e executa.
 
 ### 48.4 Telas candidatas para prototipar no v0
 
@@ -459,14 +459,14 @@ Primeiro lote recomendado:
 
 1. **AI Bridge Local Operations Dashboard**
 
-   * visÃƒÂ£o geral da fila;
+   * visÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o geral da fila;
    * worker health;
    * comandos pendentes;
    * comandos recentes;
    * falhas por tipo;
-   * status do repositÃƒÂ³rio;
-   * ÃƒÂºltimo commit;
-   * ÃƒÂºltimos smokes.
+   * status do repositÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio;
+   * ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºltimo commit;
+   * ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºltimos smokes.
 
 2. **Queue Inspector**
 
@@ -481,36 +481,36 @@ Primeiro lote recomendado:
 3. **Dead Letters Viewer**
 
    * agrupar falhas por tipo;
-   * mostrar causa provÃƒÂ¡vel;
-   * sugerir correÃƒÂ§ÃƒÂ£o segura;
+   * mostrar causa provÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡vel;
+   * sugerir correÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o segura;
    * manter modo readonly;
-   * exportar relatÃƒÂ³rio.
+   * exportar relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio.
 
 4. **Worker Health Panel**
 
    * worker ativo/inativo;
    * PID lock;
-   * ÃƒÂºltimos ciclos;
-   * comandos em execuÃƒÂ§ÃƒÂ£o;
+   * ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºltimos ciclos;
+   * comandos em execuÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o;
    * locks por `cwd`;
-   * tempo mÃƒÂ©dio de execuÃƒÂ§ÃƒÂ£o.
+   * tempo mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©dio de execuÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.
 
 5. **Command Builder Visual**
 
-   * formulÃƒÂ¡rio para criar envelopes;
-   * seleÃƒÂ§ÃƒÂ£o de action;
-   * seleÃƒÂ§ÃƒÂ£o de destino;
+   * formulÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rio para criar envelopes;
+   * seleÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de action;
+   * seleÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de destino;
    * `cwd`;
    * timeout;
    * `script_ext`;
-   * prÃƒÂ©via do JSON;
-   * validaÃƒÂ§ÃƒÂ£o local;
+   * prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©via do JSON;
+   * validaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o local;
    * risco classificado antes do envio.
 
 6. **Envelope Preview**
 
    * mostrar JSON formatado;
-   * validar campos obrigatÃƒÂ³rios;
+   * validar campos obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rios;
    * destacar `command_id`;
    * destacar `delivery_kind`;
    * destacar `payload`;
@@ -522,17 +522,17 @@ Primeiro lote recomendado:
    * navegar em `docs/legacy`;
    * pesquisar runbooks;
    * mostrar roadmap;
-   * mostrar prÃƒÂ³ximas atividades;
-   * mostrar histÃƒÂ³rico de releases.
+   * mostrar prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximas atividades;
+   * mostrar histÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rico de releases.
 
 8. **Release Checklist UI**
 
    * status limpo do git;
-   * smokes obrigatÃƒÂ³rios;
+   * smokes obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rios;
    * diff check;
    * arquivos staged;
    * mensagem de commit;
-   * confirmaÃƒÂ§ÃƒÂ£o de push;
+   * confirmaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de push;
    * plano de rollback.
 
 9. **Interchat Authorization Gate UI**
@@ -547,10 +547,10 @@ Primeiro lote recomendado:
 
 10. **Audit Timeline**
 
-    * sequÃƒÂªncia de comandos;
-    * decisÃƒÂµes;
+    * sequÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncia de comandos;
+    * decisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes;
     * falhas;
-    * correÃƒÂ§ÃƒÂµes;
+    * correÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes;
     * commits;
     * pushes;
     * tags;
@@ -558,16 +558,16 @@ Primeiro lote recomendado:
 
 ### 48.5 Prompt base para uso manual no v0
 
-Use este prompt no v0 para a primeira exploraÃƒÂ§ÃƒÂ£o:
+Use este prompt no v0 para a primeira exploraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o:
 
 ```text
 Crie um dashboard web moderno para o AI Bridge Local.
 
 Contexto:
-AI Bridge Local ÃƒÂ© uma ponte local entre chats/agentes de IA e repositÃƒÂ³rios locais. Ele usa envelopes JSON, gateway local, fila SQLite queue_local.db, worker supervisor, smokes, auditoria e commits controlados.
+AI Bridge Local ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© uma ponte local entre chats/agentes de IA e repositÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rios locais. Ele usa envelopes JSON, gateway local, fila SQLite queue_local.db, worker supervisor, smokes, auditoria e commits controlados.
 
 Objetivo:
-Criar uma UI de operaÃƒÂ§ÃƒÂµes para monitorar e controlar o sistema sem executar comandos automaticamente.
+Criar uma UI de operaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes para monitorar e controlar o sistema sem executar comandos automaticamente.
 
 Telas:
 1. Queue Overview
@@ -580,13 +580,13 @@ Telas:
 8. Audit Timeline
 9. Interchat Authorization Gate
 
-Regras de seguranÃƒÂ§a:
-- NÃƒÂ£o incluir segredos.
-- NÃƒÂ£o incluir tokens.
-- NÃƒÂ£o executar comandos reais.
-- NÃƒÂ£o conectar em banco real.
+Regras de seguranÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§a:
+- NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o incluir segredos.
+- NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o incluir tokens.
+- NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o executar comandos reais.
+- NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o conectar em banco real.
 - Usar dados mockados.
-- Separar claramente botÃƒÂµes de aÃƒÂ§ÃƒÂ£o real e botÃƒÂµes desabilitados.
+- Separar claramente botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes de aÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o real e botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes desabilitados.
 - Todo comando deve ser marcado como preview/report_only.
 - Nenhum patch deve ser aplicado automaticamente.
 - Priorizar Next.js, React, Tailwind e shadcn/ui.
@@ -598,8 +598,8 @@ Entregue:
 - componentes React;
 - dados mockados;
 - layout responsivo;
-- explicaÃƒÂ§ÃƒÂ£o curta da arquitetura da UI;
-- sugestÃƒÂµes de prÃƒÂ³ximos componentes.
+- explicaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o curta da arquitetura da UI;
+- sugestÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes de prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximos componentes.
 ```
 
 ### 48.6 Prompt para Command Builder visual
@@ -626,15 +626,15 @@ Campos:
 - no_reply
 
 Regras:
-- NÃƒÂ£o executar comandos.
+- NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o executar comandos.
 - Apenas gerar preview.
-- Validar campos obrigatÃƒÂ³rios.
-- Alertar se script_text contiver padrÃƒÂµes perigosos.
+- Validar campos obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rios.
+- Alertar se script_text contiver padrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes perigosos.
 - Alertar se houver comandos destrutivos.
 - Mostrar o JSON final formatado.
-- BotÃƒÂ£o Ã¢â‚¬Å“Copy JSONÃ¢â‚¬Â permitido.
-- BotÃƒÂ£o Ã¢â‚¬Å“ExecuteÃ¢â‚¬Â deve ficar desabilitado.
-- Exibir classificaÃƒÂ§ÃƒÂ£o de risco: low, medium, high.
+- BotÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Copy JSONÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â permitido.
+- BotÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ExecuteÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â deve ficar desabilitado.
+- Exibir classificaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de risco: low, medium, high.
 
 Stack:
 Next.js, React, Tailwind, shadcn/ui.
@@ -669,9 +669,9 @@ Funcionalidades:
 - busca por command_id;
 - badges coloridos;
 - painel lateral com detalhes do comando;
-- botÃƒÂ£o Ã¢â‚¬Å“Generate readonly diagnosticÃ¢â‚¬Â;
-- botÃƒÂ£o Ã¢â‚¬Å“RetryÃ¢â‚¬Â desabilitado por padrÃƒÂ£o;
-- aviso de que a tela ÃƒÂ© apenas protÃƒÂ³tipo/report_only.
+- botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Generate readonly diagnosticÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â;
+- botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“RetryÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â desabilitado por padrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o;
+- aviso de que a tela ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© apenas protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipo/report_only.
 
 Stack:
 Next.js, React, Tailwind, shadcn/ui.
@@ -685,24 +685,24 @@ Use dados mockados.
 Crie uma tela chamada AI Bridge Docs and Runbook Viewer.
 
 Objetivo:
-Visualizar documentaÃƒÂ§ÃƒÂ£o operacional do AI Bridge Local.
+Visualizar documentaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o operacional do AI Bridge Local.
 
-SeÃƒÂ§ÃƒÂµes:
+SeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes:
 - guia principal;
 - docs legacy;
 - runbooks;
 - roadmap;
-- ÃƒÂºltimos commits;
+- ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºltimos commits;
 - smokes;
 - release checklist.
 
 Funcionalidades:
 - busca textual;
-- ÃƒÂ¡rvore lateral de documentos;
+- ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rvore lateral de documentos;
 - preview markdown;
 - badges para docs ativos e legacy;
-- bloco de prÃƒÂ³ximas atividades;
-- botÃƒÂ£o Ã¢â‚¬Å“Copy sectionÃ¢â‚¬Â;
+- bloco de prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ximas atividades;
+- botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Copy sectionÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â;
 - nenhum acesso real a arquivos;
 - dados mockados.
 
@@ -728,15 +728,15 @@ Envelope conceitual futuro:
 }
 ```
 
-Essa capability deve apenas gerar prompt, relatÃƒÂ³rio e checklist.
+Essa capability deve apenas gerar prompt, relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio e checklist.
 
-Ela nÃƒÂ£o deve:
+Ela nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o deve:
 
-* escrever cÃƒÂ³digo em `apps/`;
-* escrever cÃƒÂ³digo em `backend/`;
-* escrever cÃƒÂ³digo em `extension/`;
+* escrever cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo em `apps/`;
+* escrever cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo em `backend/`;
+* escrever cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo em `extension/`;
 * alterar arquivos produtivos;
-* instalar dependÃƒÂªncias;
+* instalar dependÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncias;
 * executar `npm`;
 * executar `vercel`;
 * executar deploy;
@@ -745,29 +745,29 @@ Ela nÃƒÂ£o deve:
 
 ### 48.10 Fase 1: sem API
 
-ImplementaÃƒÂ§ÃƒÂ£o inicial recomendada:
+ImplementaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o inicial recomendada:
 
 * criar `reports/v0/AI_BRIDGE_LOCAL_V0_UI_RESEARCH_PLAN_YYYY-MM-DD.md`;
 * criar script futuro `scripts/research/v0_ui_prompt_plan.py`;
 * criar smoke futuro `scripts/watcher/smoke_v0_ui_research_mode.py`;
 * garantir que o smoke valide o termo `report_only`;
 * garantir que nenhum patch de UI seja aplicado pela fase de pesquisa;
-* manter todos os resultados em relatÃƒÂ³rio.
+* manter todos os resultados em relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio.
 
-CritÃƒÂ©rios de aceite da fase 1:
+CritÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©rios de aceite da fase 1:
 
 * o script gera prompts;
-* o script nÃƒÂ£o chama API externa;
-* o script nÃƒÂ£o altera cÃƒÂ³digo produtivo;
+* o script nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o chama API externa;
+* o script nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o altera cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo produtivo;
 * o script salva somente em `reports/v0/`;
-* o smoke confirma que o modo ÃƒÂ© `report_only`;
-* o smoke confirma que nÃƒÂ£o hÃƒÂ¡ escrita em pastas produtivas.
+* o smoke confirma que o modo ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© `report_only`;
+* o smoke confirma que nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o hÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ escrita em pastas produtivas.
 
 ### 48.11 Fase 2: com API do v0
 
-A API do v0 sÃƒÂ³ deve ser considerada depois que existirem controles explÃƒÂ­citos.
+A API do v0 sÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ deve ser considerada depois que existirem controles explÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­citos.
 
-PrÃƒÂ©-requisitos:
+PrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©-requisitos:
 
 * `V0_API_KEY` em `.env` local;
 * `.env` em `.gitignore`;
@@ -775,15 +775,15 @@ PrÃƒÂ©-requisitos:
 * limite de custo;
 * limite de chamadas;
 * limite de tamanho de prompt;
-* bloqueio de envio de arquivos sensÃƒÂ­veis;
+* bloqueio de envio de arquivos sensÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­veis;
 * bloqueio de envio de `queue_local.db` real;
 * bloqueio de envio de tokens;
 * bloqueio de envio de cookies;
 * bloqueio de envio de credenciais;
-* saÃƒÂ­da sempre em `reports/v0/`;
-* nenhum apply automÃƒÂ¡tico.
+* saÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­da sempre em `reports/v0/`;
+* nenhum apply automÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tico.
 
-VariÃƒÂ¡veis propostas:
+VariÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡veis propostas:
 
 ```text
 V0_API_KEY=local_secret_only
@@ -793,28 +793,28 @@ AI_BRIDGE_V0_MAX_PROMPT_CHARS=12000
 AI_BRIDGE_V0_ALLOW_EXTERNAL_CALLS=0
 ```
 
-A variÃƒÂ¡vel `AI_BRIDGE_V0_ALLOW_EXTERNAL_CALLS` deve comeÃƒÂ§ar como `0`.
+A variÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡vel `AI_BRIDGE_V0_ALLOW_EXTERNAL_CALLS` deve comeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ar como `0`.
 
-### 48.12 Fase 3: importaÃƒÂ§ÃƒÂ£o guardada
+### 48.12 Fase 3: importaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o guardada
 
-Se o resultado do v0 for aprovado, a importaÃƒÂ§ÃƒÂ£o deve usar outro fluxo.
+Se o resultado do v0 for aprovado, a importaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o deve usar outro fluxo.
 
-Fluxo de importaÃƒÂ§ÃƒÂ£o:
+Fluxo de importaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o:
 
 1. criar branch ou patch separado;
 2. verificar `git status --short`;
 3. revisar arquivos gerados;
-4. remover dependÃƒÂªncias desnecessÃƒÂ¡rias;
+4. remover dependÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncias desnecessÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rias;
 5. remover segredos;
 6. remover chamadas reais;
 7. usar dados mockados;
-8. rodar lint/test quando aplicÃƒÂ¡vel;
-9. rodar smoke especÃƒÂ­fico;
+8. rodar lint/test quando aplicÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡vel;
+9. rodar smoke especÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­fico;
 10. rodar `git diff --check`;
 11. stage de arquivos exatos;
 12. auditoria humana;
 13. commit com mensagem clara;
-14. push somente depois de validaÃƒÂ§ÃƒÂ£o.
+14. push somente depois de validaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o.
 
 Capability futura separada:
 
@@ -836,32 +836,32 @@ Capability futura separada:
 Riscos principais:
 
 * gerar UI bonita, mas desalinhada com a arquitetura real;
-* importar dependÃƒÂªncias desnecessÃƒÂ¡rias;
+* importar dependÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncias desnecessÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡rias;
 * criar acoplamento indevido com Vercel;
-* expor contexto sensÃƒÂ­vel em prompt externo;
-* aplicar cÃƒÂ³digo gerado sem auditoria;
-* confundir protÃƒÂ³tipo com implementaÃƒÂ§ÃƒÂ£o validada;
-* criar botÃƒÂµes que pareÃƒÂ§am executar aÃƒÂ§ÃƒÂµes reais;
-* gerar cÃƒÂ³digo com padrÃƒÂµes incompatÃƒÂ­veis com o repo;
-* gerar telas que nÃƒÂ£o respeitam o protocolo de envelopes;
+* expor contexto sensÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­vel em prompt externo;
+* aplicar cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo gerado sem auditoria;
+* confundir protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipo com implementaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o validada;
+* criar botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes que pareÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§am executar aÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes reais;
+* gerar cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo com padrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes incompatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­veis com o repo;
+* gerar telas que nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o respeitam o protocolo de envelopes;
 * gerar chamadas externas sem controle de custo.
 
-### 48.14 MitigaÃƒÂ§ÃƒÂµes
+### 48.14 MitigaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes
 
-MitigaÃƒÂ§ÃƒÂµes obrigatÃƒÂ³rias:
+MitigaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rias:
 
-* usar v0 como pesquisa e protÃƒÂ³tipo;
-* manter AI Bridge Local como executor auditÃƒÂ¡vel;
-* manter modo `report_only` como padrÃƒÂ£o;
-* separar relatÃƒÂ³rio, patch e commit;
-* manter smokes como gate obrigatÃƒÂ³rio;
+* usar v0 como pesquisa e protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipo;
+* manter AI Bridge Local como executor auditÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡vel;
+* manter modo `report_only` como padrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o;
+* separar relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio, patch e commit;
+* manter smokes como gate obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio;
 * nunca enviar segredos;
 * nunca enviar `.env`;
 * nunca enviar banco local real;
 * nunca aplicar patch automaticamente;
-* revisar dependÃƒÂªncias antes de instalar;
-* exigir aprovaÃƒÂ§ÃƒÂ£o humana para qualquer importaÃƒÂ§ÃƒÂ£o;
-* manter botÃƒÂ£o de execuÃƒÂ§ÃƒÂ£o real desabilitado em protÃƒÂ³tipos.
+* revisar dependÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncias antes de instalar;
+* exigir aprovaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o humana para qualquer importaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o;
+* manter botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de execuÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o real desabilitado em protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos.
 
 ### 48.15 Primeira entrega recomendada
 
@@ -871,14 +871,14 @@ Primeira entrega:
 reports/v0/AI_BRIDGE_LOCAL_V0_UI_RESEARCH_PLAN_2026-06-16.md
 ```
 
-ConteÃƒÂºdo do relatÃƒÂ³rio:
+ConteÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºdo do relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio:
 
 * objetivo;
 * prompts sugeridos;
 * telas candidatas;
-* regras de seguranÃƒÂ§a;
+* regras de seguranÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§a;
 * limites do uso do v0;
-* critÃƒÂ©rios de aceite;
+* critÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©rios de aceite;
 * plano de fase 1;
 * plano de fase 2;
 * plano de fase 3.
@@ -895,8 +895,8 @@ Responsabilidade:
 * gerar prompt do command builder;
 * gerar prompt do queue inspector;
 * salvar tudo em `reports/v0/`;
-* nÃƒÂ£o chamar API externa;
-* nÃƒÂ£o alterar cÃƒÂ³digo produtivo.
+* nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o chamar API externa;
+* nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o alterar cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo produtivo.
 
 Terceira entrega:
 
@@ -907,27 +907,27 @@ scripts/watcher/smoke_v0_ui_research_mode.py
 Responsabilidade:
 
 * validar que o script existe;
-* validar que o modo padrÃƒÂ£o ÃƒÂ© `report_only`;
-* validar que a saÃƒÂ­da vai para `reports/v0/`;
-* validar que nÃƒÂ£o hÃƒÂ¡ escrita em `apps/`, `backend/` ou `extension/`;
-* validar que nÃƒÂ£o hÃƒÂ¡ uso obrigatÃƒÂ³rio de `V0_API_KEY` na fase 1;
-* validar que o relatÃƒÂ³rio contÃƒÂ©m Ã¢â‚¬Å“nenhum patch automÃƒÂ¡ticoÃ¢â‚¬Â.
+* validar que o modo padrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â© `report_only`;
+* validar que a saÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­da vai para `reports/v0/`;
+* validar que nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o hÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ escrita em `apps/`, `backend/` ou `extension/`;
+* validar que nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o hÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ uso obrigatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio de `V0_API_KEY` na fase 1;
+* validar que o relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio contÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©m ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“nenhum patch automÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ticoÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â.
 
-### 48.16 CritÃƒÂ©rios de aceite
+### 48.16 CritÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©rios de aceite
 
-A integraÃƒÂ§ÃƒÂ£o documental do v0 serÃƒÂ¡ considerada vÃƒÂ¡lida quando:
+A integraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o documental do v0 serÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ considerada vÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡lida quando:
 
 * este guia mencionar v0.dev / v0.app;
 * o modo recomendado for `report_only`;
-* o guia deixar claro que v0 nÃƒÂ£o executa comandos locais;
-* existir relatÃƒÂ³rio em `reports/v0/`;
+* o guia deixar claro que v0 nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o executa comandos locais;
+* existir relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rio em `reports/v0/`;
 * existir plano para `scripts/research/v0_ui_prompt_plan.py`;
 * existir plano para `scripts/watcher/smoke_v0_ui_research_mode.py`;
 * `smoke_docs.py` continuar passando;
 * `git diff --check` continuar passando;
 * a raiz de `docs/` continuar contendo apenas `AI_BRIDGE_LOCAL_GUIDE.md` e `legacy/`.
 
-### 48.17 DecisÃƒÂ£o final
+### 48.17 DecisÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o final
 
 O v0.dev / v0.app entra no roadmap do AI Bridge Local como:
 
@@ -944,16 +944,16 @@ report_only
 Uso principal:
 
 ```text
-gerar prompts, protÃƒÂ³tipos e relatÃƒÂ³rios de UI
+gerar prompts, protÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tipos e relatÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³rios de UI
 ```
 
 Uso proibido na fase inicial:
 
 ```text
-executar comandos, aplicar patches, fazer deploy, instalar dependÃƒÂªncias ou alterar cÃƒÂ³digo produtivo automaticamente
+executar comandos, aplicar patches, fazer deploy, instalar dependÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªncias ou alterar cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³digo produtivo automaticamente
 ```
 
-PrÃƒÂ³xima atividade recomendada:
+PrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³xima atividade recomendada:
 
 ```text
 Criar scripts/research/v0_ui_prompt_plan.py e scripts/watcher/smoke_v0_ui_research_mode.py.
@@ -1061,7 +1061,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Proximo micro: executar integracao minima somente apos docs, nota, report, smokes e diff check passarem.
 
 
-## AtualizaÃƒÂ§ÃƒÂ£o 0.5.39 - final result feedback guard
+## AtualizaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 0.5.39 - final result feedback guard
 
 - Impede feedback local intermediario para `result_to_*`.
 - Evita `local_status_accepted_result_to_*` para resultados finais.
@@ -1069,11 +1069,11 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Mantem `final_result_sweeper_v3.py` apenas como mitigacao operacional temporaria.
 
 
-## AtualizaÃƒÂ§ÃƒÂ£o 0.5.40 - Gemini manifest name sync
+## AtualizaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 0.5.40 - Gemini manifest name sync
 
 - Sincroniza `extension/manifest.json` para exibir `AI Bridge Local 0.5.40`.
-- Mantem `version` e `name` da extensÃƒÂ£o alinhados para evitar confusÃƒÂ£o ao recarregar a extensÃƒÂ£o no Chrome.
-- Sem alteraÃƒÂ§ÃƒÂ£o de lÃƒÂ³gica do gateway/worker.
+- Mantem `version` e `name` da extensÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o alinhados para evitar confusÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o ao recarregar a extensÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o no Chrome.
+- Sem alteraÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³gica do gateway/worker.
 
 
 ## Version alignment 0.5.41
@@ -1317,7 +1317,7 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - NOTA operacional: o AI_LOCAL_RUN do proprio comando que aplica o patch ainda pode vir do worker antigo; reiniciar/recarregar o worker/extensao aplica o novo contrato nas proximas execucoes.
 
 ## Version alignment 0.5.70
-- Versao atual: 0.5.70
+- Versao atual: 0.5.71
 - Marco publicado: v0.5.70-gateway-final-fallback-results
 - Commit: 6cf033a gateway: wake chat on final fallback results
 
@@ -1329,3 +1329,16 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - VALIDADO 0.5.70 em execucao real: AI_LOCAL_RUN final retornou no_reply=0, result_is_final=1 e chat_can_continue=1.
 - VALIDADO 0.5.70 py_compile, node --check e smokes relevantes antes do commit.
 - NOTA operacional: 0.5.69 corrigiu brain_worker.py; 0.5.70 completou a correcao no gateway_local.py, que tambem podia emitir resultado final com no_reply antigo.
+
+## Version alignment 0.5.71
+- Versao atual: 0.5.71
+- Commit: 7ed6d5e extension: refresh direct target before delivery.
+7ed6d5e
+ extension: refresh direct target before delivery
+
+## 72. Direct inter-chat target refresh
+- DONE 0.5.71 redescobre a aba alvo antes da entrega direta.
+- DONE 0.5.71 prefere aba ativa que bate com target_chat_id ou target_url.
+- VALIDADO 0.5.71 com post_reload_live_smoke_0571_20260701_001.
+- VALIDADO 0.5.71 com interchat_live_0571_target_url_20260701_003 retornando sent_direct.
+- PENDENTE para 0.5.72: endurecer parser contra quebras de linha cruas dentro de strings JSON.

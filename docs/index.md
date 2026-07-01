@@ -44,3 +44,5 @@ Este e o ponto de entrada da documentacao atual.
 - Release note: [[docs/releases/0.5.69-final-run-continuation|0.5.69 final run continuation]].
 - Release note: [[docs/releases/0.5.70-gateway-final-fallback-results|0.5.70 gateway final fallback results]].
 - Status operacional: [[docs/status/2026-07-01-ai-bridge-local-0.5.70|AI Bridge Local 0.5.70 operational status]].
+- Release note: [[docs/releases/0.5.71-refresh-direct-target-before-delivery|0.5.71 refresh direct target before delivery]].
+- Status operacional: [[docs/status/2026-07-01-ai-bridge-local-0.5.71|AI Bridge Local 0.5.71 operational status]].

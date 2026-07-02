@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.3.0"""
+"""AI Bridge Local - Gateway v0.3.1"""
 import json
 import sqlite3
 import uuid
+import threading
+import time
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
@@ -15,7 +17,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -176,6 +178,36 @@ def fail_stale_deliveries(max_age_seconds=45):
     except Exception as e:
         print("[gateway] fail_stale_deliveries error:", e)
 
+
+
+def fail_stale_queued(max_age_seconds=180):
+    try:
+        cutoff = f"-{int(max_age_seconds)} seconds"
+        conn = open_db()
+        try:
+            rows = conn.execute("SELECT command_id,source_chat_id,target_chat_id,conversation_id FROM commands WHERE status='queued' AND action='run-command' AND delivery_kind='local_capability' AND target_chat_id='gateway-brain-supervisor' AND datetime(substr(created_at,1,19)) < datetime('now',?)", (cutoff,)).fetchall()
+            for cid, src, tgt, conv in rows:
+                err = "queued_timeout: runner did not consume local_capability run-command from gateway queue"
+                conn.execute("UPDATE commands SET status='failed',acked_at=?,return_code=-1,stderr=?,last_error=? WHERE command_id=? AND status='queued'", (now_iso(), err, err, cid))
+                if src:
+                    rid = "result_to_" + str(cid) + "_queued_timeout"
+                    msg = chr(10).join(["[AI_LOCAL_ERRO]","acao=verifique_runner","no_reply=0","executado=nao","tipo=queued_timeout","versao=" + VERSION,"id_original=" + str(cid),"origem=" + str(src),"destino=" + str(tgt),"erro=" + err,"correcao=Verifique ou reinicie o runner local; o gateway recebeu o comando, mas ele nao saiu da fila em tempo util."])
+                    try:
+                        conn.execute("INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)", (rid,"gateway-brain-supervisor",src,"send-chat-message","inter_agent_message",(conv or "local_run_command") + "_queued_timeout","AI Bridge Local Gateway",msg,"{}"))
+                    except sqlite3.IntegrityError:
+                        pass
+            conn.commit()
+        finally:
+            conn.close()
+    except Exception as e:
+        print("[gateway] fail_stale_queued error:", e)
+
+
+def watchdog_loop():
+    while True:
+        fail_stale_deliveries()
+        fail_stale_queued()
+        time.sleep(15)
 
 def fetch_control_status():
     fail_stale_deliveries()
@@ -349,6 +381,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             return
 
         if self.path == "/health":
+            fail_stale_queued()
             conn = open_db()
             q = conn.execute("SELECT COUNT(*) FROM commands WHERE status='queued'").fetchone()[0]
             d = conn.execute("SELECT COUNT(*) FROM commands WHERE status='delivering'").fetchone()[0]
@@ -510,6 +543,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
 def main():
     print(f"[gateway] AI Bridge Local v{VERSION} - Porta {PORT} - Filtra por target_chat_id")
     init_db()
+    threading.Thread(target=watchdog_loop, daemon=True).start()
     ThreadingHTTPServer((HOST, PORT), GatewayHandler).serve_forever()
 
 if __name__ == "__main__":

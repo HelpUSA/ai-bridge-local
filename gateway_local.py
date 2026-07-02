@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.2.3"""
+"""AI Bridge Local - Gateway v0.3.0"""
 import json
 import sqlite3
 import uuid
@@ -15,7 +15,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.2.9"
+VERSION = "0.3.0"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -275,7 +275,8 @@ def enqueue_source_feedback(body, feedback_type, detail):
             'comando recebido pelo gateway',
             'id=' + original_id,
             'status=queued',
-            'processamento=na_fila_local',
+            'versao=' + VERSION,
+ 'processamento=na_fila_local',
             'no_reply=1',
             'destino=' + target_chat_id,
             'observacao=Evento intermediario: comando entrou na fila local e sera processado. Aguarde o AI_LOCAL_RUN final. O assistente deve ficar silencioso neste evento. Se o resultado final nao aparecer em alguns minutos, verifique fila/runner.',

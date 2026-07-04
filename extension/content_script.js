@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 // AI Bridge Local v0.5.39 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.76";
+  const VERSION = "0.5.77";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1097,7 +1097,11 @@ function reportEnvelopeError(kind, errorMessage, raw) {
  '[AI_LOCAL_ERRO]',
  'acao=corrija_e_reenvie',
  'no_reply=0',
+                  'result_is_final=1',
+                  'chat_can_continue=1',
+                  'next_action=fix_error_before_continue',
  'executado=nao',
+                  'observacao=Evento final de erro pre-gateway. O chat deve analisar a causa, corrigir o envelope, usar command_id novo e continuar.',
  'tipo=source_chat_id_mismatch',
  'versao=' + VERSION,
  'id_original=' + (cmd.command_id || 'unknown'),
@@ -1354,7 +1358,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.76";
+  const CAPTURE_VERSION = "0.5.77";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1475,13 +1479,17 @@ try {
         "[AI_LOCAL_ERRO]\n" +
         "acao=corrija_e_reenvie\n" +
         "no_reply=0\n" +
+        "result_is_final=1\n" +
+        "chat_can_continue=1\n" +
+        "next_action=fix_error_before_continue\n" +
         "executado=nao\n" +
+        "observacao=Evento final de erro pre-gateway. O chat deve analisar a causa, corrigir o envelope, usar command_id novo e continuar.\n" +
         "tipo=" + kind + "\n" +
         "versao=" + CAPTURE_VERSION + "\n" +
         "id_original=" + (commandId || "unknown") + "\n" +
         "chat_atual=" + currentChatId + "\n" +
         "erro=" + String(message || "unknown_error").replace(/[\r\n]+/g, " ").slice(0, 500) + "\n" +
-        "correcao=Use JSON estrito entre @@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@, com source_chat_id igual ao chat atual.\n" +
+        "correcao=Use JSON estrito entre @@AI_BRIDGE_LOCAL_START@@ e @@AI_BRIDGE_LOCAL_END@@, com source_chat_id igual ao chat atual. Para comandos com aspas internas, barras, ou multilinha, use python -c + base64 e um command_id novo.\n" +
         "original_sanitizado=\n" + String(raw || "").replace(/\r/g, "").replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "").slice(0, 1200),
       no_reply: 1
     };
@@ -1616,7 +1624,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.76";
+  const SCANNER_VERSION = "0.5.77";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1734,7 +1742,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.76";
+  const STANDALONE_VERSION = "0.5.77";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -2249,7 +2257,7 @@ function findComposer() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.76";
+  const CAPTURE_VERSION = "0.5.77";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;

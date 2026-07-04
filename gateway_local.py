@@ -311,7 +311,7 @@ def enqueue_source_feedback(body, feedback_type, detail):
  'processamento=na_fila_local',
             'no_reply=1',
             'destino=' + target_chat_id,
-            'observacao=Evento intermediario: comando entrou na fila local e sera processado. Aguarde o AI_LOCAL_RUN final. O assistente deve ficar silencioso neste evento. Se o resultado final nao aparecer em alguns minutos, verifique fila/runner.',
+            'observacao=Evento intermediario non-bloqueante: comando entrou na fila local. O chat pode continuar atividades que nao dependem do resultado final. Para run-command que dependa de stdout/stderr, continue apenas apos AI_LOCAL_RUN final. Se o resultado final nao aparecer em alguns minutos, verifique fila/runner.',
         ]
     else:
         lines = [

@@ -191,7 +191,7 @@ def fail_stale_queued(max_age_seconds=180):
                 conn.execute("UPDATE commands SET status='failed',acked_at=?,return_code=-1,stderr=?,last_error=? WHERE command_id=? AND status='queued'", (now_iso(), err, err, cid))
                 if src:
                     rid = "result_to_" + str(cid) + "_queued_timeout"
-                    msg = chr(10).join(["[AI_LOCAL_ERRO]","acao=verifique_runner","no_reply=0","executado=nao","tipo=queued_timeout","versao=" + VERSION,"id_original=" + str(cid),"origem=" + str(src),"destino=" + str(tgt),"erro=" + err,"correcao=Verifique ou reinicie o runner local; o gateway recebeu o comando, mas ele nao saiu da fila em tempo util."])
+                    msg = chr(10).join(["[AI_LOCAL_ERRO]","acao=verifique_runner","no_reply=0","result_is_final=1","chat_can_continue=1","next_action=check_runner_queue_or_restart_runner","executado=nao","tipo=queued_timeout","versao=" + VERSION,"id_original=" + str(cid),"origem=" + str(src),"destino=" + str(tgt),"erro=" + err,"correcao=Verifique ou reinicie o runner local; o gateway recebeu o comando, mas ele nao saiu da fila em tempo util.","observacao=Evento final de timeout pos-gateway. Nao aguarde AI_LOCAL_RUN para este comando; verifique runner/fila e continue com atividades independentes."])
                     try:
                         conn.execute("INSERT INTO commands (command_id,source_chat_id,target_chat_id,action,delivery_kind,conversation_id,from_agent,message,payload_json) VALUES (?,?,?,?,?,?,?,?,?)", (rid,"gateway-brain-supervisor",src,"send-chat-message","inter_agent_message",(conv or "local_run_command") + "_queued_timeout","AI Bridge Local Gateway",msg,"{}"))
                     except sqlite3.IntegrityError:

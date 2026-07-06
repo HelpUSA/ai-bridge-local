@@ -46,3 +46,16 @@ Este e o ponto de entrada da documentacao atual.
 - Status operacional: [[docs/status/2026-07-01-ai-bridge-local-0.5.70|AI Bridge Local 0.5.70 operational status]].
 - Release note: [[docs/releases/0.5.71-refresh-direct-target-before-delivery|0.5.71 refresh direct target before delivery]].
 - Status operacional: [[docs/status/2026-07-01-ai-bridge-local-0.5.71|AI Bridge Local 0.5.71 operational status]].
+
+## Control plane redesign
+
+- [[docs/decisions/2026-07-06-control-plane-boundary|ADR: control plane boundary]]
+- [[docs/architecture/control-plane|Control plane architecture]]
+- [[docs/reference/thin-extension-protocol|Thin extension protocol]]
+- [[docs/reference/control-plane-invariants|Control plane invariants]]
+- [[docs/reference/queue-run-state-machine|Queue and run state machine]]
+- [[docs/reference/worker-supervisor|Worker supervisor]]
+- [[docs/reference/command-contract-v2|Command Contract v2]]
+- [[docs/reference/command-recipes|Command recipes]]
+- [[docs/reference/security-gate|Security gate]]
+- [[docs/operations/roadmap-0579-0600|Roadmap 0.5.79 to 0.6.0]]

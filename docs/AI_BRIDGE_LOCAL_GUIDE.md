@@ -1353,3 +1353,26 @@ O writer permite gerar notas Markdown de tarefa, decisao, erro, smoke e release.
 - Eventos queued/sent_direct com no_reply=1 devem informar que sao intermediarios.
 - O assistente deve ficar silencioso nesses eventos e aguardar AI_LOCAL_RUN final quando aplicavel.
 - Se o resultado final nao aparecer em alguns minutos, verifique fila/runner.
+
+## 2026-07-06 - Control plane redesign decision
+
+A decisao arquitetural atual e tornar o AI Bridge Local o control plane duravel da aplicacao.
+
+- Extensao: thin browser adapter.
+- AI Bridge Local: estado duravel, fila, workers, recipes, security gate, summarizer e politica de resposta.
+- Worker: executor supervisionado com heartbeat.
+- Control Center: UI operacional sobre o estado duravel.
+- Chats: produtores de intencao e consumidores de resumo.
+
+Documentos principais:
+
+- [[docs/decisions/2026-07-06-control-plane-boundary|ADR control plane boundary]]
+- [[docs/architecture/control-plane|Control plane architecture]]
+- [[docs/reference/thin-extension-protocol|Thin extension protocol]]
+- [[docs/reference/control-plane-invariants|Control plane invariants]]
+- [[docs/reference/queue-run-state-machine|Queue and run state machine]]
+- [[docs/reference/worker-supervisor|Worker supervisor]]
+- [[docs/reference/command-contract-v2|Command Contract v2]]
+- [[docs/reference/command-recipes|Command recipes]]
+- [[docs/reference/security-gate|Security gate]]
+- [[docs/operations/roadmap-0579-0600|Roadmap 0.5.79 to 0.6.0]]

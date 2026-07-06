@@ -44,7 +44,7 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.77";
+const VERSION = "0.5.79";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 const DIRECT_INTERCHAT_ENABLED = true;

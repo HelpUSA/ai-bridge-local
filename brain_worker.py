@@ -15,6 +15,7 @@ VERSION = "0.1.5"
 
 
 WORKER_LOCK_PATH = Path("temp/brain_worker.pid")
+WORKER_ATTENTION_PATH = Path("temp/brain_worker.needs_supervisor")
 
 def _pid_is_running(pid: int) -> bool:
     if pid <= 0:
@@ -56,11 +57,16 @@ def acquire_single_worker_lock() -> None:
             print(f"[worker] another brain_worker.py is already running pid={existing_pid}; exiting")
             raise SystemExit(0)
 
-        print(f"[worker] removing stale worker lock pid={raw}")
+        ts = time.strftime("%Y%m%d_%H%M%S")
+        backup = WORKER_LOCK_PATH.with_name(WORKER_LOCK_PATH.name + f".stale_backup_{ts}_{current_pid}")
+        print(f"[worker] backing up stale worker lock pid={raw} backup={backup}")
         try:
-            WORKER_LOCK_PATH.unlink()
+            WORKER_LOCK_PATH.replace(backup)
         except FileNotFoundError:
             pass
+        except Exception as exc:
+            WORKER_ATTENTION_PATH.write_text(f"reason=stale_lock_backup_failed raw={raw} error={exc}", encoding="utf-8")
+            raise SystemExit(1)
 
     WORKER_LOCK_PATH.write_text(str(current_pid), encoding="utf-8")
     atexit.register(_release_single_worker_lock)

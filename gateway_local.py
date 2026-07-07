@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.3.1"""
+"""AI Bridge Local - Gateway v0.5.80"""
 import json
 import sqlite3
 import uuid
@@ -17,7 +17,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.3.1"
+VERSION = "0.5.80"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -28,6 +28,9 @@ def init_db():
     conn.execute("CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, event_type TEXT, message TEXT, payload_json TEXT, created_at TEXT DEFAULT (datetime('now')))")
     conn.execute("CREATE TABLE IF NOT EXISTS invalid_messages (id INTEGER PRIMARY KEY AUTOINCREMENT, source_chat_id TEXT, raw_text TEXT, error TEXT, created_at TEXT DEFAULT (datetime('now')) )")
     conn.execute("CREATE TABLE IF NOT EXISTS dead_letters (id INTEGER PRIMARY KEY AUTOINCREMENT, command_id TEXT, source_chat_id TEXT, target_chat_id TEXT, action TEXT, delivery_kind TEXT, payload_json TEXT, last_error TEXT, attempt_count INTEGER, failed_at TEXT DEFAULT (datetime('now')))")
+    conn.execute("CREATE TABLE IF NOT EXISTS browser_events (id INTEGER PRIMARY KEY AUTOINCREMENT, event_id TEXT UNIQUE NOT NULL, event_type TEXT NOT NULL, trace_id TEXT, chat_id TEXT, platform TEXT, tab_id TEXT, url TEXT, observed_at TEXT, dedupe_key TEXT, payload_json TEXT, created_at TEXT DEFAULT (datetime('now')) )")
+    conn.execute("CREATE TABLE IF NOT EXISTS browser_actions (id INTEGER PRIMARY KEY AUTOINCREMENT, action_id TEXT UNIQUE NOT NULL, action_type TEXT NOT NULL, trace_id TEXT, chat_id TEXT, status TEXT DEFAULT 'requested', payload_json TEXT, result_json TEXT, requested_at TEXT DEFAULT (datetime('now')), delivered_at TEXT, result_at TEXT, deadline_at TEXT, last_error TEXT)")
+    conn.execute("CREATE TABLE IF NOT EXISTS queue_heartbeats (id INTEGER PRIMARY KEY AUTOINCREMENT, subject_id TEXT UNIQUE NOT NULL, status TEXT, payload_json TEXT, last_seen_at TEXT DEFAULT (datetime('now')) )")
     conn.commit()
     conn.close()
 
@@ -216,6 +219,10 @@ def fetch_control_status():
         rows = conn.execute("SELECT status, COUNT(1) FROM commands GROUP BY status").fetchall()
         recent = conn.execute("SELECT command_id, source_chat_id, target_chat_id, action, status, created_at, last_error FROM commands ORDER BY id DESC LIMIT 30").fetchall()
         events = conn.execute("SELECT command_id, event_type, message, created_at FROM events ORDER BY id DESC LIMIT 30").fetchall()
+        browser_event_total = conn.execute("SELECT COUNT(1) FROM browser_events").fetchone()[0]
+        browser_action_rows = conn.execute("SELECT status, COUNT(1) FROM browser_actions GROUP BY status").fetchall()
+        recent_browser_events = conn.execute("SELECT event_id, event_type, chat_id, created_at FROM browser_events ORDER BY id DESC LIMIT 20").fetchall()
+        recent_browser_actions = conn.execute("SELECT action_id, action_type, chat_id, status, requested_at, delivered_at, result_at, last_error FROM browser_actions ORDER BY id DESC LIMIT 20").fetchall()
         return dict(
             ok=True,
             service="ai-bridge-local",
@@ -224,6 +231,10 @@ def fetch_control_status():
             command_status={(r[0] or ""): r[1] for r in rows},
             recent_commands=[dict(command_id=r[0], source_chat_id=r[1], target_chat_id=r[2], action=r[3], status=r[4], created_at=r[5], last_error=r[6]) for r in recent],
             recent_events=[dict(command_id=r[0], event_type=r[1], message=r[2], created_at=r[3]) for r in events],
+            browser_events_total=browser_event_total,
+            browser_action_status={(r[0] or ""): r[1] for r in browser_action_rows},
+            recent_browser_events=[dict(event_id=r[0], event_type=r[1], chat_id=r[2], created_at=r[3]) for r in recent_browser_events],
+            recent_browser_actions=[dict(action_id=r[0], action_type=r[1], chat_id=r[2], status=r[3], requested_at=r[4], delivered_at=r[5], result_at=r[6], last_error=r[7]) for r in recent_browser_actions],
         )
     finally:
         conn.close()
@@ -353,6 +364,90 @@ def normalize_payload(body):
 
     return payload
 
+
+def _json_payload(value):
+    if value is None:
+        value = {}
+    try:
+        return json.dumps(value, ensure_ascii=False)
+    except Exception:
+        return "{}"
+
+def record_browser_event(body):
+    event_type = str(body.get("event_type") or body.get("type") or "")
+    if not event_type:
+        raise ValueError("missing_event_type")
+    event_id = str(body.get("event_id") or uuid.uuid4())
+    payload = body.get("payload") if "payload" in body else body.get("payload_json", {})
+    conn = open_db()
+    try:
+        cur = conn.execute("INSERT OR IGNORE INTO browser_events (event_id,event_type,trace_id,chat_id,platform,tab_id,url,observed_at,dedupe_key,payload_json) VALUES (?,?,?,?,?,?,?,?,?,?)", (event_id,event_type,str(body.get("trace_id","")),str(body.get("chat_id","")),str(body.get("platform","")),str(body.get("tab_id","")),str(body.get("url","")),str(body.get("observed_at") or now_iso()),str(body.get("dedupe_key","")),_json_payload(payload)))
+        conn.commit()
+        return {"ok": True, "event_id": event_id, "event_type": event_type, "inserted": cur.rowcount == 1}
+    finally:
+        conn.close()
+
+def create_browser_action(body):
+    action_type = str(body.get("action_type") or body.get("type") or "")
+    if not action_type:
+        raise ValueError("missing_action_type")
+    action_id = str(body.get("action_id") or uuid.uuid4())
+    status = str(body.get("status") or "requested")
+    payload = body.get("payload") if "payload" in body else body.get("payload_json", {})
+    conn = open_db()
+    try:
+        try:
+            conn.execute("INSERT INTO browser_actions (action_id,action_type,trace_id,chat_id,status,payload_json,deadline_at) VALUES (?,?,?,?,?,?,?)", (action_id,action_type,str(body.get("trace_id","")),str(body.get("chat_id","")),status,_json_payload(payload),body.get("deadline_at")))
+            conn.commit()
+            return {"ok": True, "action_id": action_id, "status": status, "inserted": True}
+        except sqlite3.IntegrityError:
+            return {"ok": False, "error": "duplicate_action_id", "action_id": action_id}
+    finally:
+        conn.close()
+
+def _browser_action_row_to_dict(row, status_override=None):
+    if not row:
+        return None
+    try:
+        payload = json.loads(row[4]) if row[4] else {}
+    except Exception:
+        payload = {}
+    return {"action_id": row[0], "action_type": row[1], "trace_id": row[2], "chat_id": row[3], "status": status_override or "requested", "payload": payload, "deadline_at": row[5], "requested_at": row[6]}
+
+def claim_browser_action(chat_id=""):
+    conn = open_db()
+    try:
+        if chat_id:
+            row = conn.execute("SELECT action_id,action_type,trace_id,chat_id,payload_json,deadline_at,requested_at FROM browser_actions WHERE status='requested' AND (chat_id=? OR chat_id='' OR chat_id IS NULL) ORDER BY id ASC LIMIT 1", (chat_id,)).fetchone()
+        else:
+            row = conn.execute("SELECT action_id,action_type,trace_id,chat_id,payload_json,deadline_at,requested_at FROM browser_actions WHERE status='requested' ORDER BY id ASC LIMIT 1").fetchone()
+        if not row:
+            return None
+        conn.execute("UPDATE browser_actions SET status='delivered_to_extension', delivered_at=? WHERE action_id=? AND status='requested'", (now_iso(), row[0]))
+        conn.commit()
+        return _browser_action_row_to_dict(row, "delivered_to_extension")
+    finally:
+        conn.close()
+
+def record_browser_action_result(body):
+    action_id = str(body.get("action_id") or "")
+    if not action_id:
+        raise ValueError("missing_action_id")
+    status = str(body.get("status") or "")
+    if status not in {"sent_to_chat", "failed", "unavailable", "expired", "deduped"}:
+        raise ValueError("bad_action_result_status")
+    result_payload = body.get("result") if "result" in body else body.get("result_json", {})
+    conn = open_db()
+    try:
+        cur = conn.execute("UPDATE browser_actions SET status=?, result_json=?, result_at=?, last_error=? WHERE action_id=?", (status,_json_payload(result_payload),now_iso(),str(body.get("error") or body.get("last_error") or ""),action_id))
+        conn.commit()
+        if cur.rowcount != 1:
+            raise ValueError("unknown_action_id")
+        return {"ok": True, "action_id": action_id, "status": status}
+    finally:
+        conn.close()
+
+
 class GatewayHandler(BaseHTTPRequestHandler):
     def _send_json(self, data, status=200):
         raw = json.dumps(data, ensure_ascii=False).encode("utf-8")
@@ -455,6 +550,13 @@ class GatewayHandler(BaseHTTPRequestHandler):
             })
             return
 
+        if self.path.startswith("/browser/actions/next"):
+            qs = parse_qs(urlparse(self.path).query)
+            chat_id = qs.get("chat_id", [""])[0]
+            action = claim_browser_action(chat_id)
+            self._send_json({"ok": True, "action": action})
+            return
+
         if self.path == '/event':
             event_type = body.get('event_type') or body.get('type')
             if not event_type:
@@ -472,6 +574,36 @@ class GatewayHandler(BaseHTTPRequestHandler):
         except Exception as e:
             record_invalid_message({}, 'invalid_json: ' + str(e), getattr(self, '_last_raw_body', ''))
             self._send_json({"ok": False, "error": "invalid_json", "detail": str(e)}, 400)
+            return
+
+        if self.path == "/browser/events":
+            try:
+                result = record_browser_event(body)
+            except ValueError as exc:
+                self._send_json({"ok": False, "error": str(exc)}, 400)
+                return
+            self._send_json(result)
+            return
+
+        if self.path == "/browser/actions":
+            try:
+                result = create_browser_action(body)
+            except ValueError as exc:
+                self._send_json({"ok": False, "error": str(exc)}, 400)
+                return
+            if not result.get("ok"):
+                self._send_json(result, 409)
+                return
+            self._send_json(result)
+            return
+
+        if self.path == "/browser/actions/result":
+            try:
+                result = record_browser_action_result(body)
+            except ValueError as exc:
+                self._send_json({"ok": False, "error": str(exc)}, 400)
+                return
+            self._send_json(result)
             return
 
         if self.path == "/bridge/commands":

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.5.80"""
+"""AI Bridge Local - Gateway v0.5.83"""
 import json
 import sqlite3
 import uuid
@@ -17,7 +17,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.5.80"
+VERSION = "0.5.83"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()

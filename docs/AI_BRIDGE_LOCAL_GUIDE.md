@@ -1,5 +1,7 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
+Versao operacional atual: 0.5.83
+
 Atualizado em: 2026-07-01
 Versao atual: 0.5.76
 Branch principal: main

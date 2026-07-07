@@ -1378,3 +1378,29 @@ Documentos principais:
 - [[docs/reference/command-recipes|Command recipes]]
 - [[docs/reference/security-gate|Security gate]]
 - [[docs/operations/roadmap-0579-0600|Roadmap 0.5.79 to 0.6.0]]
+
+
+<!-- watcher-json-safe-0583-start -->
+## Operacao segura do watcher apos 0.5.83
+
+A partir da 0.5.83, toda manutencao via watcher deve seguir o padrao JSON-safe:
+
+- usar caminhos com barra normal, como `docs/status` e `scripts/watcher`;
+- evitar backslash cru dentro do JSON;
+- usar `python -c` com `base64` para comandos longos;
+- nunca reutilizar `command_id` em retry;
+- aguardar `AI_LOCAL_RUN` final antes de concluir uma validacao;
+- considerar `envelope_parse_error` como falha pre-gateway, sem execucao local.
+
+Checklist pos-release:
+
+1. Validar localmente.
+2. Commitar.
+3. Fazer push.
+4. Rodar `python scripts/watcher/post_push_audit_0582.py`.
+5. Recarregar a extensao no Chrome.
+6. Reiniciar gateway local ou Control Center.
+7. Confirmar `/health` e `/control/status`.
+
+Documento detalhado: `docs/how-to/watcher-json-safe-commands.md`.
+<!-- watcher-json-safe-0583-end -->

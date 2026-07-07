@@ -28,3 +28,17 @@ Alinhar os labels de runtime depois da extensao chegar a 0.5.82, removendo refer
 
 O gateway em execucao precisa ser reiniciado para /health e /control/status passarem a reportar 0.5.83.
 
+<!-- post-release-ops-0583-start -->
+## Nota operacional pos-release
+
+Depois do push da 0.5.83, a extensao e os arquivos de runtime foram alinhados para `0.5.83`.
+
+Pontos importantes observados durante a validacao:
+
+- se o gateway antigo ainda estiver em execucao, `/health`, `/control/status` e eventos intermediarios podem continuar mostrando versao antiga;
+- o restart do gateway local ou do Control Center e necessario para carregar o `gateway_local.py` novo;
+- erros `envelope_parse_error` vistos depois da release foram causados por JSON invalido no envelope, principalmente por backslash em caminhos Windows e quebras de linha cruas em strings;
+- esses erros sao pre-gateway e nao alteram arquivos locais.
+
+Acao documentada: criar `docs/how-to/watcher-json-safe-commands.md` e referenciar o checklist no guia operacional.
+<!-- post-release-ops-0583-end -->

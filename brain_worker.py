@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Brain Worker v0.1.2"""
+"""AI Bridge Local - Brain Worker v0.5.81"""
 import json
 import atexit
 import os
@@ -10,8 +10,13 @@ import urllib.request
 import threading
 from concurrent.futures import ThreadPoolExecutor
 
+try:
+    import queue_adapter
+except Exception:
+    queue_adapter = None
+
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.1.5"
+VERSION = "0.5.81"
 
 
 WORKER_LOCK_PATH = Path("temp/brain_worker.pid")
@@ -349,10 +354,8 @@ def poll_source(source_chat_id):
     print(f"[worker] Running: {command_id} ({action_type}) source={source_chat_id}")
 
     if action_type == "run-command":
-        # accepted/running notice removed in 0.5.9
-        result = execute_command(payload, command_id)
-        status = "acked" if result["return_code"] == 0 else "failed"
-        enqueue_result_message(action, result, status)
+        submit_run_action(action)
+        return
     else:
         result = {"return_code": 0, "stdout": f"OK {action_type}", "stderr": ""}
         status = "acked"
@@ -372,6 +375,25 @@ def poll_source(source_chat_id):
     except Exception as e:
         print(f"[worker] ACK error: {e}")
 
+
+
+def worker_heartbeat():
+    if queue_adapter is None:
+        return False
+    try:
+        with RUN_FUTURES_LOCK:
+            active_run_futures = len(RUN_FUTURES)
+        payload = {
+            "pid": os.getpid(),
+            "version": VERSION,
+            "max_parallel_run_commands": MAX_PARALLEL_RUN_COMMANDS,
+            "active_run_futures": active_run_futures,
+        }
+        queue_adapter.QueueAdapter().heartbeat("brain_worker", status="ok", payload=payload)
+        return True
+    except Exception as exc:
+        print(f"[worker] heartbeat error: {exc}")
+        return False
 
 def poll_once():
     reap_run_futures()
@@ -394,7 +416,11 @@ def main():
     acquire_single_worker_lock()
     print(f"[worker] AI Bridge Local Worker v{VERSION} - Porta 8766")
     print("[worker] Ctrl+C to stop")
+    last_heartbeat = 0
     while True:
+        if time.time() - last_heartbeat >= 30:
+            worker_heartbeat()
+            last_heartbeat = time.time()
         poll_once()
         time.sleep(2)
 

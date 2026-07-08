@@ -96,3 +96,37 @@ Depois de uma release que altera gateway, worker ou extensao:
 ## Observacao da 0.5.83
 
 Na 0.5.83, o codigo foi alinhado para reportar `0.5.83`, mas o runtime em execucao so muda depois de reiniciar o gateway ou Control Center. Eventos antigos ou processos ainda vivos podem continuar mostrando versao anterior ate o restart.
+
+<!-- AI_BRIDGE_LOCAL_JSON_SAFE_TOOLING_0584_START -->
+## 0.5.84 JSON-safe envelope tooling
+
+Use `scripts/watcher/envelope_json_safe_helper.py` when an envelope contains content that is likely to break hand-written JSON, especially quoted Python snippets, multiline messages, or Windows-style paths.
+
+The helper renders strict one-line JSON between the bridge markers and validates the envelope before printing it.
+
+Example for a local command envelope:
+
+```bash
+python scripts/watcher/envelope_json_safe_helper.py --source <source_chat_id> --target gateway-brain-supervisor --action run-command --id <command_id> --cwd D:/dev/autocode/ai-bridge-local --command git status --short
+```
+
+Example for an inter-chat message envelope:
+
+```bash
+python scripts/watcher/envelope_json_safe_helper.py --source <source_chat_id> --target <target_chat_id> --action send-chat-message --id <command_id> --message "message text" --force-gateway
+```
+
+Validation helpers:
+
+```bash
+python scripts/smoke/smoke_envelope_json_safety.py
+python scripts/watcher/post_push_auditor.py --expect-file scripts/watcher/envelope_json_safe_helper.py --expect-file scripts/smoke/smoke_envelope_json_safety.py --expect-file scripts/watcher/post_push_auditor.py
+```
+
+Notes:
+
+- Keep the JSON body between markers on one physical line.
+- Prefer forward slashes in paths inside envelopes.
+- Do not paste raw multiline JSON into a live bridge envelope.
+- Do not paste raw Windows backslashes into hand-written JSON.
+<!-- AI_BRIDGE_LOCAL_JSON_SAFE_TOOLING_0584_END -->

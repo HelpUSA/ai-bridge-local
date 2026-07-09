@@ -32,6 +32,7 @@ if getattr(sys, "frozen", False):
 else:
 	ROOT = Path(__file__).resolve().parents[1]
 URL = "http://127.0.0.1:8766/control/status"
+DIAGNOSTICS_URL = "http://127.0.0.1:8766/control/diagnostics"
 LOG_DIR = ROOT / "logs"
 GATEWAY_LOG = LOG_DIR / "control_center_gateway.log"
 WORKER_LOG = LOG_DIR / "control_center_worker.log"
@@ -165,8 +166,18 @@ class ControlCenterApp:
 		self.root.after(0, self.exit_app)
 
 	def fetch_status(self):
-		with urlopen(URL, timeout=5) as response:
-			return json.loads(response.read().decode("utf-8"))
+		errors = []
+		for endpoint in [DIAGNOSTICS_URL, URL]:
+			try:
+				with urlopen(endpoint, timeout=5) as response:
+					data = json.loads(response.read().decode("utf-8"))
+					data["_control_center_endpoint"] = endpoint
+					if endpoint == URL:
+						data["_control_center_fallback"] = "control/status"
+					return data
+			except Exception as exc:
+				errors.append(endpoint + " -> " + str(exc))
+		raise RuntimeError("Gateway status unavailable: " + " | ".join(errors))
 
 	def list_processes(self):
 		items = []
@@ -195,7 +206,7 @@ class ControlCenterApp:
 		return workers, gateways
 
 	def render_dashboard(self, data):
-		counts = data.get("command_status", {})
+		counts = data.get("command_status", {}) or data.get("queue", {})
 		workers, gateways = self.count_processes()
 		recent = data.get("recent_commands", []) or []
 		rows = []
@@ -205,12 +216,37 @@ class ControlCenterApp:
 		rows.append(("[OK] Gateway online" if gateways else "[ALERTA] Gateway offline"))
 		rows.append("Worker ativo: " + str(workers))
 		rows.append("Comandos recentes: " + str(len(recent)))
+		rows.append("Endpoint: " + str(data.get("_control_center_endpoint", URL)))
+		if data.get("_control_center_fallback"):
+			rows.append("Fallback: " + str(data.get("_control_center_fallback")))
+		if data.get("gateway_first"):
+			rows.append("Modo gateway-first: ativo")
 		rows.append("")
 		rows.append("Status da fila/comandos")
 		rows.append(" acked: " + str(counts.get("acked", 0)))
 		rows.append(" queued: " + str(counts.get("queued", 0)))
 		rows.append(" delivering: " + str(counts.get("delivering", 0)))
 		rows.append(" failed: " + str(counts.get("failed", 0)))
+		queue = data.get("queue", {}) or {}
+		active_targets = queue.get("active_targets", []) or []
+		if active_targets:
+			rows.append("")
+			rows.append("Targets ativos")
+			for item in active_targets[:8]:
+				rows.append(" " + item.get("status", "") + " " + str(item.get("count", 0)) + " -> " + item.get("target_chat_id", ""))
+		diagnostics = data.get("diagnostics", {}) or {}
+		control_plane = data.get("control_plane", {}) or {}
+		if diagnostics or control_plane:
+			rows.append("")
+			rows.append("Diagnosticos do gateway")
+			rows.append(" dead_letters: " + str(diagnostics.get("dead_letter_count", 0)))
+			rows.append(" recent_errors: " + str(len(diagnostics.get("recent_errors", []) or [])))
+			if control_plane:
+				rows.append(" extension_role: " + str(control_plane.get("extension_role", "")))
+				rows.append(" chats_role: " + str(control_plane.get("chats_role", "")))
+			checks = diagnostics.get("recommended_next_checks", []) or []
+			if checks:
+				rows.append(" next_checks: " + ", ".join(checks[:5]))
 		rows.append("")
 		rows.append("Aviso do sistema:")
 		rows.append(" " + bridge_background_notice())
@@ -288,7 +324,7 @@ class ControlCenterApp:
 		try:
 			data = self.fetch_status()
 			self.last_data = data
-			counts = data.get("command_status", {})
+			counts = data.get("command_status", {}) or data.get("queue", {})
 			self.status_var.set("Gateway online - " + data.get("timestamp", ""))
 			self.summary_var.set("acked={0} queued={1} delivering={2} failed={3}".format(counts.get("acked", 0), counts.get("queued", 0), counts.get("delivering", 0), counts.get("failed", 0)))
 			self.set_text(self.dashboard_text, self.render_dashboard(data))

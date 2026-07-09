@@ -241,6 +241,89 @@ def fetch_control_status():
 
 
 
+
+def fetch_gateway_diagnostics():
+    # Gateway-first diagnostics without changing queue/protocol behavior.
+    fail_stale_deliveries()
+    fail_stale_queued()
+
+    control = fetch_control_status()
+    conn = open_db()
+    try:
+        active_targets = conn.execute(
+            "SELECT target_chat_id, status, COUNT(1) FROM commands WHERE status IN ('queued','delivering') GROUP BY target_chat_id, status ORDER BY target_chat_id, status"
+        ).fetchall()
+        active_sources = conn.execute(
+            "SELECT source_chat_id, status, COUNT(1) FROM commands WHERE status IN ('queued','delivering') GROUP BY source_chat_id, status ORDER BY source_chat_id, status"
+        ).fetchall()
+        recent_errors = conn.execute(
+            "SELECT command_id, status, last_error, created_at FROM commands WHERE COALESCE(last_error,'') != '' ORDER BY id DESC LIMIT 20"
+        ).fetchall()
+        dead_letter_count = 0
+        try:
+            dead_letter_count = conn.execute("SELECT COUNT(1) FROM dead_letters").fetchone()[0]
+        except sqlite3.Error:
+            dead_letter_count = 0
+    finally:
+        conn.close()
+
+    command_status = control.get("command_status", {})
+    browser_action_status = control.get("browser_action_status", {})
+    queued = int(command_status.get("queued", 0) or 0)
+    delivering = int(command_status.get("delivering", 0) or 0)
+    failed = int(command_status.get("failed", 0) or 0)
+
+    return dict(
+        ok=True,
+        service="ai-bridge-local",
+        version=VERSION,
+        timestamp=now_iso(),
+        gateway_first=True,
+        compatibility="0.5.83-envelope-compatible",
+        control_plane=dict(
+            owns_validation=True,
+            owns_queue=True,
+            owns_retry_diagnostics=True,
+            extension_role="thin transport",
+            chats_role="intent senders",
+        ),
+        queue=dict(
+            queued=queued,
+            delivering=delivering,
+            failed=failed,
+            active_targets=[
+                dict(target_chat_id=r[0] or "", status=r[1] or "", count=r[2])
+                for r in active_targets
+            ],
+            active_sources=[
+                dict(source_chat_id=r[0] or "", status=r[1] or "", count=r[2])
+                for r in active_sources
+            ],
+        ),
+        browser=dict(
+            browser_events_total=control.get("browser_events_total", 0),
+            browser_action_status=browser_action_status,
+            recent_browser_actions=control.get("recent_browser_actions", []),
+        ),
+        diagnostics=dict(
+            dead_letter_count=dead_letter_count,
+            recent_errors=[
+                dict(command_id=r[0], status=r[1], last_error=r[2], created_at=r[3])
+                for r in recent_errors
+            ],
+            recommended_next_checks=[
+                "runner_status",
+                "registered_chats",
+                "queue_depth",
+                "stale_deliveries",
+                "browser_capture_errors",
+            ],
+        ),
+        recent_commands=control.get("recent_commands", []),
+        recent_events=control.get("recent_events", []),
+    )
+
+
 def is_final_result_feedback_notice(body):
     """Return True for final-result messages that must not receive local accepted feedback."""
     if not isinstance(body, dict):
@@ -473,6 +556,10 @@ class GatewayHandler(BaseHTTPRequestHandler):
 
         if self.path == "/control/status":
             self._send_json(fetch_control_status())
+            return
+
+        if self.path == "/control/diagnostics":
+            self._send_json(fetch_gateway_diagnostics())
             return
 
         if self.path == "/health":

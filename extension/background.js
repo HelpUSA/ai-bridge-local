@@ -47,7 +47,8 @@ globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelo
 const VERSION = "0.5.83";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
-const DIRECT_INTERCHAT_ENABLED = true;
+const DIRECT_INTERCHAT_ENABLED = false;
+const DIRECT_INTERCHAT_DISABLED_REASON = "gateway_first_control_plane_owns_delivery";
 const DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = true;
 
 
@@ -268,7 +269,7 @@ function mustUseGateway(cmd) {
   if (cmd.delivery_kind === "local_capability") return true;
 
   if (cmd.action === "send-chat-message" && cmd.delivery_kind === "inter_agent_message") {
-    return false;
+    return !DIRECT_INTERCHAT_ENABLED;
   }
 
   return true;

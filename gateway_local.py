@@ -279,6 +279,17 @@ def fetch_gateway_diagnostics():
         version=VERSION,
         timestamp=now_iso(),
         gateway_first=True,
+        route_policy=dict(
+            mode="gateway_first",
+            direct_interchat_enabled=False,
+            direct_interchat_disabled_reason="gateway_first_control_plane_owns_delivery",
+            blocked_route="direct_interchat",
+            replacement_route="local_gateway",
+            inter_agent_message_route="local_gateway",
+            local_capability_route="local_gateway",
+            decision_owner="gateway_control_plane",
+            extension_role="thin_transport_executor",
+        ),
         compatibility="0.5.83-envelope-compatible",
         control_plane=dict(
             owns_validation=True,

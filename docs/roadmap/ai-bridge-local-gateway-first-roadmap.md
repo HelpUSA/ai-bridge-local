@@ -77,3 +77,12 @@ Completed after the current-state documentation:
 3. Introduce gateway-owned route decision records.
 4. Let Control Center render recent route decisions and blocked direct-interchat attempts.
 5. Gradually reduce `extension/background.js` to capture, browser-action execution, and result reporting.
+
+## 2026-07-10 update: route policy diagnostics
+
+Completed after the route lock:
+
+- Gateway diagnostics now include an explicit `route_policy` block.
+- Control Center renders route policy and direct interchat block reason.
+- The active policy declares `local_gateway` as the route for inter-agent messages and local capability commands.
+- Remaining roadmap item: convert diagnostic route policy into an executable gateway-owned route-decision helper/API.

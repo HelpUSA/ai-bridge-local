@@ -63,3 +63,16 @@ Operational interpretation:
 - `local_capability` continues to be gateway-only.
 - `send-chat-message/inter_agent_message` should not use direct interchat by default.
 - Any direct-interchat attempt while disabled should be treated as a route-policy event, not a delivery path.
+
+## Reading route policy in Control Center
+
+The Control Center reads `/control/diagnostics` first. When available, it displays:
+
+- `Politica de rota`
+- direct interchat status
+- direct interchat disabled reason
+- inter-agent route
+- local capability route
+- route lock mapping from `direct_interchat` to `local_gateway`
+
+If these fields are missing, verify that the gateway is running the version containing `route_policy` in `fetch_gateway_diagnostics()`.

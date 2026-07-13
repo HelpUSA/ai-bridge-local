@@ -221,6 +221,16 @@ class ControlCenterApp:
 			rows.append("Fallback: " + str(data.get("_control_center_fallback")))
 		if data.get("gateway_first"):
 			rows.append("Modo gateway-first: ativo")
+			policy = data.get("route_policy", {}) if isinstance(data.get("route_policy", {}), dict) else {}
+			if policy:
+				rows.append("Politica de rota: " + str(policy.get("mode", "")))
+				rows.append(" Direct interchat: " + ("ativo" if policy.get("direct_interchat_enabled") else "bloqueado"))
+				if policy.get("direct_interchat_disabled_reason"):
+					rows.append(" Motivo: " + str(policy.get("direct_interchat_disabled_reason")))
+				rows.append(" Inter-agent route: " + str(policy.get("inter_agent_message_route", "")))
+				rows.append(" Local capability route: " + str(policy.get("local_capability_route", "")))
+				if policy.get("blocked_route") and policy.get("replacement_route"):
+					rows.append(" Route lock: " + str(policy.get("blocked_route")) + " -> " + str(policy.get("replacement_route")))
 		rows.append("")
 		rows.append("Status da fila/comandos")
 		rows.append(" acked: " + str(counts.get("acked", 0)))

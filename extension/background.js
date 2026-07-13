@@ -974,3 +974,30 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 setInterval(() => pollMessages('interval'), POLL_INTERVAL_MS);
 pollMessagesSoon('startup');
 console.log("[AI Bridge Local] v" + VERSION);
+
+/*
+ * AI Bridge Local 0.5.85 gateway-first route lock.
+ * Keeps route classification gateway-first while direct interchat is disabled.
+ */
+if (typeof globalThis !== "undefined" && typeof globalThis.aiBridgeClassifyRouteSafe === "function") {
+  const aiBridgeClassifyRouteSafeGatewayFirstBase = globalThis.aiBridgeClassifyRouteSafe;
+  globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafeGatewayFirst(cmd) {
+    const route = aiBridgeClassifyRouteSafeGatewayFirstBase(cmd);
+    if (!DIRECT_INTERCHAT_ENABLED && route === "direct_interchat") {
+      const event = {
+        reason: DIRECT_INTERCHAT_DISABLED_REASON,
+        route: "local_gateway",
+        blocked_route: "direct_interchat",
+        action: cmd && cmd.action ? cmd.action : null,
+        delivery_kind: cmd && cmd.delivery_kind ? cmd.delivery_kind : null,
+        ts: Date.now(),
+      };
+      globalThis.aiBridgeGatewayFirstLastBlockedRoute = event;
+      if (typeof console !== "undefined" && console.info) {
+        console.info("[AI_BRIDGE_LOCAL] gateway_first_route_lock", event);
+      }
+      return "local_gateway";
+    }
+    return route;
+  };
+}

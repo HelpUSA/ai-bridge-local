@@ -59,3 +59,21 @@ Validate local capability, inter-agent message, missing target, reload, gateway 
 - [ ] Control Center displays effective direct-interchat mode.
 - [ ] End-to-end smoke suite passes.
 - [ ] Post-push auditor passes.
+
+<!-- 2026-07-10-route-lock-update -->
+
+## 2026-07-10 update: route lock checkpoint
+
+Completed after the current-state documentation:
+
+- Guardrail tests now protect the direct-interchat cutoff.
+- A route lock converts `direct_interchat` classifications to `local_gateway` while `DIRECT_INTERCHAT_ENABLED=false`.
+- The extension records a local blocked-route event for diagnostics follow-up.
+
+### Updated implementation order
+
+1. Keep the route lock and direct-interchat-disabled guardrails green on every gateway-first change.
+2. Move blocked-route telemetry from extension-local state into gateway diagnostics.
+3. Introduce gateway-owned route decision records.
+4. Let Control Center render recent route decisions and blocked direct-interchat attempts.
+5. Gradually reduce `extension/background.js` to capture, browser-action execution, and result reporting.

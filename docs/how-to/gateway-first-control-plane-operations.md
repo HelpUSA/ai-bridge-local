@@ -86,3 +86,18 @@ Use `POST /control/route-decision` with a JSON body containing at least `deliver
 Normal command submission through `POST /bridge/commands` now applies the same helper before persistence and returns a `route_decision` object. For `local_capability`, the persisted target is always `gateway-brain-supervisor`. For `inter_agent_message`, the destination chat is preserved while the route remains `local_gateway`.
 
 A payload or body requesting `direct_interchat` is reported as blocked and replaced by `local_gateway`.
+
+## Extension gateway-only dispatch
+
+The extension is a thin transport/executor. New commands and captured envelopes are
+submitted to the local gateway through `POST /bridge/commands`.
+
+The extension must not choose `direct_interchat`. Route policy and normalization are
+owned by:
+
+- `GET /control/route-policy`
+- `POST /control/route-decision`
+- `POST /bridge/commands`
+
+Browser-side injection helpers execute actions claimed from the gateway; they are not
+an alternative control plane.

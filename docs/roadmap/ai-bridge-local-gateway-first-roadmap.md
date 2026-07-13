@@ -99,3 +99,15 @@ Completed:
 - direct interchat request replacement with `local_gateway`.
 
 Next: add an end-to-end HTTP harness that starts an isolated gateway, submits route-decision and command requests, and verifies persisted queue targets.
+
+## 2026-07-13 — extension gateway-only dispatch
+
+Completed:
+
+- removed the active direct-interchat branch from `routeBridgeCommand()`;
+- routed captured envelopes through the same gateway command endpoint;
+- reduced the extension classifier to a compatibility shim returning `local_gateway`;
+- added a smoke guardrail against extension-owned route selection.
+
+Next cleanup: remove unreachable legacy direct-dispatch helpers after gateway E2E
+browser-action coverage proves they are no longer required.

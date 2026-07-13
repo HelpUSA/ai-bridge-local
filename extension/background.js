@@ -1,45 +1,10 @@
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_START */
-try {
-  if (
-    typeof importScripts === "function" &&
-    typeof globalThis.AIBridgeRouteClassifier === "undefined"
-  ) {
-    importScripts("route_classifier.js");
-  }
-} catch (error) {
-  console.warn("[AI Bridge Local] route classifier load failed", error);
-}
-
-globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe(envelope) {
-  if (
-    globalThis.AIBridgeRouteClassifier &&
-    typeof globalThis.AIBridgeRouteClassifier.classifyRoute === "function"
-  ) {
-    return globalThis.AIBridgeRouteClassifier.classifyRoute(envelope);
-  }
-
-  const payload = envelope && typeof envelope.payload === "object" ? envelope.payload : {};
-  const forceGateway = envelope && (envelope.force_gateway === true || envelope.force_gateway === "true" || payload.force_gateway === true || payload.force_gateway === "true");
-
-  if (forceGateway) {
-    return "local_gateway";
-  }
-
-  const action = String((envelope && (envelope.action || payload.action)) || "").trim().toLowerCase();
-  const transport = String((envelope && (envelope.transport || payload.transport)) || "").trim().toLowerCase();
-
-  if (transport === "direct_interchat" || transport === "direct-interchat" || transport === "direct") {
-    return "direct_interchat";
-  }
-
-  if (transport === "local_gateway" || transport === "local-gateway" || transport === "gateway") {
-    return "local_gateway";
-  }
-
-  if (action === "send-chat-message" || action === "send_chat_message") {
-    return "direct_interchat";
-  }
-
+/*
+ * Gateway-first transport lock.
+ * The extension no longer decides between direct inter-chat and the local gateway.
+ * Route ownership belongs to gateway_local.py.
+ */
+globalThis.aiBridgeClassifyRouteSafe = function aiBridgeClassifyRouteSafe() {
   return "local_gateway";
 };
 /* AIBRIDGE_ROUTE_CLASSIFIER_LOAD_END */
@@ -403,29 +368,9 @@ function shouldFallbackDirectFailureToGateway(cmd, directResult) {
 /* AIBRIDGE_DIRECT_CROSS_PROFILE_GATEWAY_FALLBACK_065_END */
 
 async function routeBridgeCommand(cmd, sourceLabel) {
-  if (isDirectInterChatCommand(cmd)) {
-    const directResult = await deliverInterChatDirect(cmd);
-    if (directResult && directResult.ok) {
-      return { ok: true, direct: true, data: directResult };
-    }
-
-    if (shouldFallbackDirectFailureToGateway(cmd, directResult)) {
-      console.log("[bg] Direct inter-chat fallback to gateway:", cmd.command_id, directResult && directResult.error);
-      const gatewayResult = await postCommand(cmd);
-      pollMessagesSoon(sourceLabel + "_directFallback");
-      return { ok: true, direct: false, fallback: true, data: gatewayResult, direct_error: directResult && directResult.error };
-    }
-
-    return { ok: false, direct: true, error: (directResult && directResult.error) || "direct_interchat_failed", data: directResult };
-  }
-
-  if (mustUseGateway(cmd)) {
-    const gatewayResult = await postCommand(cmd);
-    pollMessagesSoon(sourceLabel || "postCommand");
-    return { ok: true, direct: false, data: gatewayResult };
-  }
-
-  return { ok: false, direct: false, error: "unroutable_command" };
+  const gatewayResult = await postCommand(cmd);
+  pollMessagesSoon(sourceLabel || "postCommand");
+  return { ok: true, direct: false, route: "local_gateway", data: gatewayResult };
 }
 
 /* AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062_START */
@@ -899,25 +844,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (!validation.ok) {
       console.warn("[bg] captured envelope rejected:", validation.error);
       sendResponse({ ok: false, error: validation.error });
-      return true;
-    }
-
-    const route = globalThis.aiBridgeClassifyRouteSafe(validation.envelope);
-
-    if (route === "direct_interchat") {
-      aiBridgeDirectDeliverCapturedEnvelope(validation.envelope)
-        .then((result) => {
-          if (result && result.ok) {
-            sendResponse({ ok: true, route: "direct_interchat", data: result });
-          } else {
-            const error = result && result.error ? result.error : "direct_interchat_delivery_failed";
-            sendResponse({ ok: false, route: "direct_interchat", error, data: result || null });
-          }
-        })
-        .catch((e) => {
-          console.log("[bg] direct interchat captured envelope error:", e.message);
-          sendResponse({ ok: false, route: "direct_interchat", error: e.message });
-        });
       return true;
     }
 

@@ -6,7 +6,9 @@ def main() -> int:
     gateway = Path("gateway_local.py").read_text(encoding="utf-8")
     control_center = Path("app_windows/control_center_app.py").read_text(encoding="utf-8")
     for marker in [
-        "route_policy=dict(",
+        "def get_gateway_route_policy():",
+        "def decide_gateway_route(",
+        "route_policy=get_gateway_route_policy()",
         'mode="gateway_first"',
         "direct_interchat_enabled=False",
         'direct_interchat_disabled_reason="gateway_first_control_plane_owns_delivery"',

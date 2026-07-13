@@ -76,3 +76,13 @@ The Control Center reads `/control/diagnostics` first. When available, it displa
 - route lock mapping from `direct_interchat` to `local_gateway`
 
 If these fields are missing, verify that the gateway is running the version containing `route_policy` in `fetch_gateway_diagnostics()`.
+
+## Executable route-decision endpoints
+
+Use `GET /control/route-policy` to inspect the active gateway-owned policy.
+
+Use `POST /control/route-decision` with a JSON body containing at least `delivery_kind` and `target_chat_id` to preview the route without enqueueing a command.
+
+Normal command submission through `POST /bridge/commands` now applies the same helper before persistence and returns a `route_decision` object. For `local_capability`, the persisted target is always `gateway-brain-supervisor`. For `inter_agent_message`, the destination chat is preserved while the route remains `local_gateway`.
+
+A payload or body requesting `direct_interchat` is reported as blocked and replaced by `local_gateway`.

@@ -86,3 +86,16 @@ Completed after the route lock:
 - Control Center renders route policy and direct interchat block reason.
 - The active policy declares `local_gateway` as the route for inter-agent messages and local capability commands.
 - Remaining roadmap item: convert diagnostic route policy into an executable gateway-owned route-decision helper/API.
+
+## 2026-07-13 update: executable route decisions
+
+Completed:
+
+- shared gateway route-policy helper;
+- executable route-decision helper;
+- route-policy and route-decision control endpoints;
+- route decision applied before command enqueue;
+- local capability target enforcement;
+- direct interchat request replacement with `local_gateway`.
+
+Next: add an end-to-end HTTP harness that starts an isolated gateway, submits route-decision and command requests, and verifies persisted queue targets.

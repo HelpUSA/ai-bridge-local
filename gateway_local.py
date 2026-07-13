@@ -58,6 +58,70 @@ def validate_command_body(body, payload):
             return 'missing_payload_command_or_script'
     return ''
 
+
+def get_gateway_route_policy():
+    """Return the gateway-owned route policy used by diagnostics and routing."""
+    return dict(
+        mode="gateway_first",
+        direct_interchat_enabled=False,
+        direct_interchat_disabled_reason="gateway_first_control_plane_owns_delivery",
+        blocked_route="direct_interchat",
+        replacement_route="local_gateway",
+        inter_agent_message_route="local_gateway",
+        local_capability_route="local_gateway",
+        decision_owner="gateway_control_plane",
+        extension_role="thin_transport_executor",
+    )
+
+
+def decide_gateway_route(body, payload=None):
+    """Resolve the executable gateway route for a validated command envelope."""
+    if not isinstance(body, dict):
+        raise ValueError("bad_body")
+
+    payload = payload if isinstance(payload, dict) else {}
+    delivery_kind = str(body.get("delivery_kind", "") or "")
+    requested_route = str(
+        body.get("requested_route")
+        or payload.get("requested_route")
+        or ""
+    ).strip()
+    original_target_chat_id = str(body.get("target_chat_id", "") or "")
+
+    if delivery_kind == "local_capability":
+        target_chat_id = "gateway-brain-supervisor"
+        executor_role = "local_capability_executor"
+        reason = "local_capability_owned_by_gateway"
+    elif delivery_kind == "inter_agent_message":
+        target_chat_id = original_target_chat_id
+        executor_role = "thin_transport_executor"
+        reason = "gateway_first_inter_agent_delivery"
+    else:
+        raise ValueError("bad_delivery_kind")
+
+    blocked_route = ""
+    if requested_route == "direct_interchat":
+        blocked_route = "direct_interchat"
+        reason = "direct_interchat_blocked_by_gateway_first_policy"
+
+    return dict(
+        ok=True,
+        mode="gateway_first",
+        route="local_gateway",
+        requested_route=requested_route,
+        blocked_route=blocked_route,
+        replacement_route="local_gateway" if blocked_route else "",
+        decision_owner="gateway_control_plane",
+        delivery_kind=delivery_kind,
+        action=str(body.get("action", "") or ""),
+        source_chat_id=str(body.get("source_chat_id", "") or ""),
+        original_target_chat_id=original_target_chat_id,
+        target_chat_id=target_chat_id,
+        executor_role=executor_role,
+        reason=reason,
+    )
+
+
 def record_invalid_message(body, error, raw_text=None):
     conn = open_db()
     try:
@@ -279,17 +343,7 @@ def fetch_gateway_diagnostics():
         version=VERSION,
         timestamp=now_iso(),
         gateway_first=True,
-        route_policy=dict(
-            mode="gateway_first",
-            direct_interchat_enabled=False,
-            direct_interchat_disabled_reason="gateway_first_control_plane_owns_delivery",
-            blocked_route="direct_interchat",
-            replacement_route="local_gateway",
-            inter_agent_message_route="local_gateway",
-            local_capability_route="local_gateway",
-            decision_owner="gateway_control_plane",
-            extension_role="thin_transport_executor",
-        ),
+        route_policy=get_gateway_route_policy(),
         compatibility="0.5.83-envelope-compatible",
         control_plane=dict(
             owns_validation=True,
@@ -569,6 +623,10 @@ class GatewayHandler(BaseHTTPRequestHandler):
             self._send_json(fetch_control_status())
             return
 
+        if self.path == "/control/route-policy":
+            self._send_json(dict(ok=True, route_policy=get_gateway_route_policy()))
+            return
+
         if self.path == "/control/diagnostics":
             self._send_json(fetch_gateway_diagnostics())
             return
@@ -704,6 +762,15 @@ class GatewayHandler(BaseHTTPRequestHandler):
             self._send_json(result)
             return
 
+        if self.path == "/control/route-decision":
+            try:
+                decision = decide_gateway_route(body, normalize_payload(body))
+            except ValueError as exc:
+                self._send_json({"ok": False, "error": str(exc)}, 400)
+                return
+            self._send_json(decision)
+            return
+
         if self.path == "/bridge/commands":
             cmd_id = body.get("command_id", str(uuid.uuid4()))
             payload = normalize_payload(body)
@@ -714,8 +781,14 @@ class GatewayHandler(BaseHTTPRequestHandler):
                 self._send_json(dict(ok=False, error='invalid_envelope', detail=validation_error), 400)
                 return
 
-            if body.get("action") == "run-command" and body.get("delivery_kind") == "local_capability":
-                body["target_chat_id"] = "gateway-brain-supervisor"
+            try:
+                route_decision = decide_gateway_route(body, payload)
+            except ValueError as exc:
+                record_invalid_message(body, str(exc))
+                enqueue_source_feedback(body, "invalid_envelope", str(exc))
+                self._send_json(dict(ok=False, error="invalid_envelope", detail=str(exc)), 400)
+                return
+            body["target_chat_id"] = route_decision["target_chat_id"]
 
             conn = open_db()
             try:
@@ -735,7 +808,13 @@ class GatewayHandler(BaseHTTPRequestHandler):
                 )
                 conn.commit()
                 enqueue_source_feedback(body, 'accepted', 'queued')
-                self._send_json({"ok": True, "command_id": cmd_id, "status": "queued", "target_chat_id": body.get("target_chat_id", "")})
+                self._send_json({
+                    "ok": True,
+                    "command_id": cmd_id,
+                    "status": "queued",
+                    "target_chat_id": body.get("target_chat_id", ""),
+                    "route_decision": route_decision,
+                })
             except sqlite3.IntegrityError:
                 self._send_json({"ok": False, "error": "duplicate", "command_id": cmd_id}, 409)
             finally:

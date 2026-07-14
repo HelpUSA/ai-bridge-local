@@ -1,30 +1,35 @@
-#!/usr/bin/env python3
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
+background = (ROOT / "extension" / "background.js").read_text(encoding="utf-8")
 
-def main() -> int:
-    print("SMOKE_GATEWAY_FIRST_ROUTE_GUARDRAILS_START", flush=True)
-    text = Path("extension/background.js").read_text(encoding="utf-8")
+print("SMOKE_GATEWAY_FIRST_ROUTE_GUARDRAILS_START", flush=True)
 
-    assert "globalThis.aiBridgeClassifyRouteSafe" in text
-    assert "function mustUseGateway(cmd)" in text
-    assert "const DIRECT_INTERCHAT_ENABLED = false;" in text
-    assert "return !DIRECT_INTERCHAT_ENABLED;" in text
+assert background.count("routeBridgeCommand(") == 3
+assert background.count("async function routeBridgeCommand") == 1
+assert background.count("await postCommand(cmd)") == 1
 
-    route_lock_pos = text.find("AI Bridge Local 0.5.85 gateway-first route lock")
-    classify_pos = text.find("globalThis.aiBridgeClassifyRouteSafe")
-    assert classify_pos >= 0
-    assert route_lock_pos > classify_pos
+route_start = background.index("async function routeBridgeCommand")
+route_end = background.index(
+    "/* AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062_START */",
+    route_start,
+)
+route_block = background[route_start:route_end]
 
-    route_lock = text[route_lock_pos:]
-    assert 'route === "direct_interchat"' in route_lock
-    assert 'return "local_gateway";' in route_lock
-    assert "DIRECT_INTERCHAT_DISABLED_REASON" in route_lock
-    assert "aiBridgeGatewayFirstLastBlockedRoute" in route_lock
+assert 'route: "local_gateway"' in route_block
+assert "direct: false" in route_block
+assert "fallback:" not in route_block
+assert "chrome.tabs" not in route_block
+assert "injectText(" not in route_block
 
-    print("SMOKE_GATEWAY_FIRST_ROUTE_GUARDRAILS_OK", flush=True)
-    return 0
+for forbidden in [
+    "mustUseGateway",
+    "isDirectInterChatCommand",
+    "deliverInterChatDirect",
+    "aiBridgeDirectDeliverCapturedEnvelope",
+    "aiBridgeDiscoverDirectTargetTab",
+    "route_classifier.js",
+]:
+    assert forbidden not in background, f"forbidden extension route owner: {forbidden}"
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+print("SMOKE_GATEWAY_FIRST_ROUTE_GUARDRAILS_OK", flush=True)

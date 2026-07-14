@@ -27,7 +27,7 @@ for item in bad:
     if item in cs:
         raise SystemExit("forbidden legacy/unguarded call remains: " + item)
 
-if "mustUseGateway" not in bg or "run-command" not in bg or "local_capability" not in bg:
+if "routeBridgeCommand" not in bg or "run-command" not in bg or "local_capability" not in bg:
     raise SystemExit("background gateway safety markers missing")
 
 print("OK smoke_disable_legacy_scanner_inline_heartbeat")

@@ -1,30 +1,25 @@
-#!/usr/bin/env python3
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
+background = (ROOT / "extension" / "background.js").read_text(encoding="utf-8")
 
-def main() -> int:
-    print("SMOKE_GATEWAY_FIRST_DIRECT_INTERCHAT_DISABLED_START", flush=True)
-    text = Path("extension/background.js").read_text(encoding="utf-8")
+print("SMOKE_GATEWAY_FIRST_DIRECT_INTERCHAT_DISABLED_START", flush=True)
 
-    required = [
-        "const DIRECT_INTERCHAT_ENABLED = false;",
-        "const DIRECT_INTERCHAT_DISABLED_REASON",
-        "return !DIRECT_INTERCHAT_ENABLED;",
-        "DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK = true;",
-        "AI Bridge Local 0.5.85 gateway-first route lock",
-        "aiBridgeClassifyRouteSafeGatewayFirstBase",
-        "aiBridgeGatewayFirstLastBlockedRoute",
-        'blocked_route: "direct_interchat"',
-        'route: "local_gateway"',
-    ]
+for token in [
+    "DIRECT_INTERCHAT_ENABLED",
+    "DIRECT_INTERCHAT_DISABLED_REASON",
+    "DIRECT_INTERCHAT_ALLOW_GATEWAY_FALLBACK",
+    "isDirectInterChatCommand",
+    "deliverInterChatDirect",
+    "aiBridgeDirectDeliverCapturedEnvelope",
+    'route: "direct_interchat"',
+]:
+    assert token not in background, f"direct delivery contract remains: {token}"
 
-    for marker in required:
-        assert marker in text, marker
+assert 'route: "local_gateway"' in background
+assert "async function routeBridgeCommand" in background
+assert "const gatewayResult = await postCommand(cmd);" in background
+assert 'routeBridgeCommand(validation.envelope, "capturedEnvelope")' in background
+assert 'routeBridgeCommand(cmd, "postCommand")' in background
 
-    assert "const DIRECT_INTERCHAT_ENABLED = true;" not in text
-    print("SMOKE_GATEWAY_FIRST_DIRECT_INTERCHAT_DISABLED_OK", flush=True)
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+print("SMOKE_GATEWAY_FIRST_DIRECT_INTERCHAT_DISABLED_OK", flush=True)

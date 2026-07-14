@@ -45,7 +45,7 @@ for forbidden in [
     if forbidden in cs:
         raise SystemExit("forbidden old pattern remains: " + forbidden)
 
-if "mustUseGateway" not in bg or "run-command" not in bg or "local_capability" not in bg:
+if "routeBridgeCommand" not in bg or "run-command" not in bg or "local_capability" not in bg:
     raise SystemExit("background gateway safety markers missing")
 
 print("OK smoke_standalone_visible_status_composer_scope")

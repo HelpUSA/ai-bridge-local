@@ -28,7 +28,7 @@ top_prefix = re.search(
 if not top_prefix:
     raise SystemExit("LOCAL_STATUS_PREFIXES global var not found at top-level")
 
-if "mustUseGateway" not in bg or "run-command" not in bg or "local_capability" not in bg:
+if "routeBridgeCommand" not in bg or "run-command" not in bg or "local_capability" not in bg:
     raise SystemExit("background gateway safety markers missing")
 
 print("OK smoke_gemini_local_status_prefix_scope")

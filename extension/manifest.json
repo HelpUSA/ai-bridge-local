@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "AI Bridge Local 0.5.83",
   "version": "0.5.83",
-  "description": "Gateway local - comunicacao direta",
+  "description": "Gateway local com transporte controlado pelo plano de controle",
   "permissions": [
     "tabs",
     "storage",

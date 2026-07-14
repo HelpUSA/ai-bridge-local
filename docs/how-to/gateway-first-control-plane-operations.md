@@ -101,3 +101,18 @@ owned by:
 
 Browser-side injection helpers execute actions claimed from the gateway; they are not
 an alternative control plane.
+
+## 2026-07-13 ? extens?o sem decis?o local de rota
+
+A extens?o agora possui apenas um caminho de despacho: todo envelope ?
+enviado para `/bridge/commands` por `routeBridgeCommand`. Os antigos
+helpers de classifica??o direta, descoberta de aba, entrega interchat e
+fallback direto foram removidos.
+
+`injectText` e sua l?gica de reinje??o continuam presentes porque fazem
+parte do executor de a??es entregues pelo gateway. Eles n?o escolhem a
+rota e n?o permitem que a extens?o contorne o plano de controle.
+
+Refer?ncias anteriores a `DIRECT_INTERCHAT_ENABLED` ou `mustUseGateway`
+neste hist?rico descrevem a fase intermedi?ria da migra??o e n?o o
+estado atual.

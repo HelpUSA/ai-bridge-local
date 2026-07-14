@@ -30,7 +30,7 @@ for forbidden in ["typeof extract", "typeof send"]:
     if forbidden in standalone:
         raise SystemExit("standalone scanner still depends on internal " + forbidden)
 
-if "run-command" not in bg or "local_capability" not in bg or "mustUseGateway" not in bg:
+if "run-command" not in bg or "local_capability" not in bg or "routeBridgeCommand" not in bg:
     raise SystemExit("background gateway safety markers missing")
 
 print("OK smoke_standalone_scanner_feedback")

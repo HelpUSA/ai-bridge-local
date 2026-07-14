@@ -12,8 +12,9 @@ function assert(condition, message) {
   }
 }
 
-assert(version === "0.5.66", "VERSION must be 0.5.66");
-assert(manifest.version === "0.5.66", "manifest version must be 0.5.66");
+const backgroundVersionMatch = background.match(/const VERSION = "(\d+\.\d+\.\d+)";/);
+assert(backgroundVersionMatch, "background VERSION constant missing");
+assert(manifest.version === backgroundVersionMatch[1], "manifest version must match background VERSION");
 assert(background.includes("AIBRIDGE_DIRECT_REINJECT_ON_MISSING_RECEIVER_062"), "missing direct reinject marker");
 assert(background.includes("aiBridgeLooksLikeMissingReceiverResult"), "missing missing-receiver detector");
 assert(background.includes("aiBridgeReinjectContentScriptForDirectDelivery"), "missing content script reinject helper");

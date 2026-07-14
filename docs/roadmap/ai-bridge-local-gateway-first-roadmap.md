@@ -111,3 +111,16 @@ Completed:
 
 Next cleanup: remove unreachable legacy direct-dispatch helpers after gateway E2E
 browser-action coverage proves they are no longer required.
+
+## Conclu?do em 2026-07-13 ? remo??o do caminho direto ?rf?o
+
+- removido o classificador local `route_classifier.js`;
+- removidos os entry points de entrega interchat direta;
+- removida a descoberta local de aba para roteamento;
+- removidos os fallbacks locais direto ? gateway;
+- preservado o executor de browser actions, incluindo `injectText`;
+- adicionados guardrails que falham caso a extens?o volte a assumir
+  decis?o de rota.
+
+A pr?xima etapa ? ampliar a cobertura ponta a ponta do ciclo
+gateway ? fila ? executor da extens?o ? ACK.

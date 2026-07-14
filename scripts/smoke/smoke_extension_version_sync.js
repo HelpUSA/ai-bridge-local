@@ -1,48 +1,54 @@
-const assert = require("assert");
 const fs = require("fs");
 const path = require("path");
+const assert = require("assert");
 
-const root = path.resolve(__dirname, "../..");
-const expected = "0.5.66";
+const root = path.resolve(__dirname, "..", "..");
 
 const versionPath = path.join(root, "VERSION");
 const manifestPath = path.join(root, "extension", "manifest.json");
+const backgroundPath = path.join(root, "extension", "background.js");
+
+assert.ok(fs.existsSync(versionPath), "VERSION file missing");
+assert.ok(fs.existsSync(manifestPath), "extension manifest missing");
+assert.ok(fs.existsSync(backgroundPath), "extension background missing");
 
 const version = fs.readFileSync(versionPath, "utf8").trim();
-const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+const manifest = JSON.parse(
+  fs.readFileSync(manifestPath, "utf8")
+);
+const background = fs.readFileSync(backgroundPath, "utf8");
 
-assert.strictEqual(version, expected, `VERSION expected ${expected}, got ${version}`);
-assert.strictEqual(manifest.version, expected, `manifest.version expected ${expected}, got ${manifest.version}`);
-assert(
-  String(manifest.name || "").includes(expected),
-  `manifest.name should include ${expected}, got ${manifest.name}`
+assert.match(
+  version,
+  /^\d+\.\d+\.\d+$/,
+  `VERSION must use semantic numeric format, got ${version}`
 );
 
-const extensionDir = path.join(root, "extension");
-const oldVersions = ["0.5.52", "0.5.58"];
+assert.strictEqual(
+  manifest.version,
+  version,
+  `manifest.version expected ${version}, got ${manifest.version}`
+);
 
-function walk(dir) {
-  const out = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      out.push(...walk(full));
-    } else {
-      out.push(full);
-    }
-  }
-  return out;
-}
+const backgroundVersionMatch = background.match(
+  /const VERSION = "(\d+\.\d+\.\d+)";/
+);
 
-for (const file of walk(extensionDir)) {
-  if (!/\.(js|json|html|css)$/.test(file)) continue;
-  const text = fs.readFileSync(file, "utf8");
-  for (const oldVersion of oldVersions) {
-    assert(
-      !text.includes(oldVersion),
-      `${path.relative(root, file)} still contains old version ${oldVersion}`
-    );
-  }
-}
+assert.ok(
+  backgroundVersionMatch,
+  "background VERSION constant missing"
+);
+
+assert.strictEqual(
+  backgroundVersionMatch[1],
+  version,
+  `background VERSION expected ${version}, got ${backgroundVersionMatch[1]}`
+);
+
+assert.ok(
+  manifest.background &&
+  manifest.background.service_worker === "background.js",
+  "manifest background service worker must be background.js"
+);
 
 console.log("OK smoke_extension_version_sync");

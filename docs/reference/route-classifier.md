@@ -1,3 +1,11 @@
+<!-- ROUTE_CLASSIFIER_RETIRED_2026_07_13 -->
+
+> **Status: aposentado.** Desde 13 de julho de 2026, a extens?o n?o
+> carrega nem executa `extension/route_classifier.js`. A decis?o de rota
+> pertence exclusivamente ao plano de controle em `gateway_local.py`.
+> O conte?do hist?rico abaixo permanece apenas como refer?ncia das
+> vers?es anteriores.
+
 ---
 type: reference
 status: current

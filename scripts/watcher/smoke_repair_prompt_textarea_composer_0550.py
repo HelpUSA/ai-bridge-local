@@ -31,7 +31,7 @@ for item in bad:
     if item in cs:
         raise SystemExit("forbidden old pattern remains: " + item)
 
-if "mustUseGateway" not in bg or "run-command" not in bg or "local_capability" not in bg:
+if "routeBridgeCommand" not in bg or "run-command" not in bg or "local_capability" not in bg:
     raise SystemExit("background gateway safety markers missing")
 
 print("OK smoke_repair_prompt_textarea_composer")

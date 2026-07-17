@@ -190,3 +190,25 @@ The gateway now owns leases, retry, idempotency, payload references, results and
 See `docs/architecture/gateway-command-plane.md`.
 
 <!-- AI_BRIDGE_MANAGED:GATEWAY_COMMAND_PLANE_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:COMMAND_PLANE_AND_CONTROL_CENTER_0585:START -->
+
+## Command plane and Control Center boundary
+
+The browser extension remains a thin transport adapter.
+
+The gateway owns:
+
+- route decisions;
+- command persistence;
+- acknowledgements and state transitions;
+- durable capability dispatch;
+- retry and dead-letter policy.
+
+The Control Center is an operational diagnostics UI. It does not replace the
+gateway or command plane.
+
+Current `queued` and `delivering` values are displayed separately from
+historical `acked`, `failed` and `dead_letters` totals.
+
+<!-- AI_BRIDGE_MANAGED:COMMAND_PLANE_AND_CONTROL_CENTER_0585:END -->

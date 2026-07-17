@@ -156,3 +156,27 @@ Next sequence:
 5. prepare a commit only after explicit operator authorization.
 
 <!-- AI_BRIDGE_MANAGED:ROADMAP_RECONCILIATION_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M10_VALIDATION_CHECKPOINT_0585:START -->
+
+## M10 final validation checkpoint - 0.5.85
+
+M10 is complete.
+
+Validated areas:
+
+- gateway-first route policy;
+- isolated legacy gateway HTTP lifecycle;
+- isolated command-plane HTTP endpoints;
+- Control Center mutex, autostart and asynchronous refresh;
+- smart launcher behavior;
+- live browser interchat delivery;
+- live read-only local-capability delivery;
+- deterministic probe cleanup;
+- empty active queues after cleanup;
+- consolidated automated regression suite.
+
+The remaining activity is repository finalization: inspect the complete diff,
+authorize the commit and push the validated changes.
+
+<!-- AI_BRIDGE_MANAGED:M10_VALIDATION_CHECKPOINT_0585:END -->

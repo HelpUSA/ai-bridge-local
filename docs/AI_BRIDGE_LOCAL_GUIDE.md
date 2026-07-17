@@ -1,9 +1,9 @@
 # AI Bridge Local - Guia Unificado Operacional e Roadmap
 
-Versao operacional atual: 0.5.83
+Versao operacional atual: 0.5.85
 
 Atualizado em: 2026-07-01
-Versao atual: 0.5.76
+Versao atual: 0.5.85
 Branch principal: main
 Marco publicado mais recente: v0.5.70-gateway-final-fallback-results
 Commit de referencia: 6cf033a
@@ -17,7 +17,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.76.
+- Versao atual: 0.5.85.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 6cf033a gateway: wake chat on final fallback results.
@@ -1404,3 +1404,35 @@ Checklist pos-release:
 
 Documento detalhado: `docs/how-to/watcher-json-safe-commands.md`.
 <!-- watcher-json-safe-0583-end -->
+
+<!-- AI_BRIDGE_MANAGED:CURRENT_CHECKPOINT_0585:START -->
+
+## Current checkpoint 0.5.85 - 2026-07-17
+
+The gateway-first command plane, Control Center recovery and M10 integrated
+validation are complete.
+
+Final validation evidence:
+
+- 15 combined pytest cases passed;
+- isolated legacy gateway HTTP E2E passed;
+- isolated command-plane HTTP E2E passed;
+- live browser interchat delivery reached `acked`;
+- live read-only `run-command` delivery reached `acked`;
+- the run-command returned code `0` and the expected stdout token;
+- gateway diagnostic smoke passed;
+- Control Center launcher validation passed;
+- exactly one gateway, worker and Control Center process remained active;
+- the live active queues returned to zero;
+- exact database rows created by the probes were removed.
+
+The visible interchat token remains in the destination chat as runtime
+evidence.
+
+Safety backup:
+
+`backups/queue_local/queue_local_before_phase_023c4_m10b_20260717_133140_ab748ed4.db`
+
+M10 is complete. Only final Git review, commit and push authorization remain.
+
+<!-- AI_BRIDGE_MANAGED:CURRENT_CHECKPOINT_0585:END -->

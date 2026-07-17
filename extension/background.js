@@ -1,5 +1,5 @@
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.83";
+const VERSION = "0.5.85";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -581,3 +581,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 setInterval(() => pollMessages('interval'), POLL_INTERVAL_MS);
 pollMessagesSoon('startup');
 console.log("[AI Bridge Local] v" + VERSION);
+
+/* AI_BRIDGE_MANAGED:COMPACT_BACKGROUND_0585:START */
+(() => {
+  if (globalThis.__AI_BRIDGE_COMPACT_BACKGROUND_0585__) return;
+  globalThis.__AI_BRIDGE_COMPACT_BACKGROUND_0585__ = true;
+  chrome.runtime.onMessage.addListener((message, sender, reply) => {
+    if (!message || message.type !== "ai_bridge_compact_command_0585") return false;
+    fetch("http://127.0.0.1:8767/v1/commands/compact", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(message.command)})
+      .then(async r => reply({ok:r.ok,status:r.status,data:await r.json().catch(()=>({}))}))
+      .catch(e => reply({ok:false,error:String(e)}));
+    return true;
+  });
+})();
+/* AI_BRIDGE_MANAGED:COMPACT_BACKGROUND_0585:END */

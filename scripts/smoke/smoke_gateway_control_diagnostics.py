@@ -6,16 +6,68 @@ from __future__ import annotations
 import importlib.util
 import tempfile
 from pathlib import Path
+import sys
 
 
 def load_gateway_module():
-    path = Path(__file__).resolve().parents[2] / "gateway_local.py"
-    spec = importlib.util.spec_from_file_location("gateway_local_smoke", path)
-    if spec is None or spec.loader is None:
-        raise AssertionError("could not load gateway_local.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    repository = (
+        Path(__file__)
+        .resolve()
+        .parents[2]
+    )
+
+    repository_text = str(
+        repository
+    )
+
+    inserted = (
+        repository_text
+        not in sys.path
+    )
+
+    if inserted:
+        sys.path.insert(
+            0,
+            repository_text,
+        )
+
+    try:
+        spec = (
+            importlib.util.spec_from_file_location(
+                "gateway_local_smoke",
+                repository
+                / "gateway_local.py",
+            )
+        )
+
+        if (
+            spec is None
+            or spec.loader is None
+        ):
+            raise RuntimeError(
+                "could not load gateway_local.py"
+            )
+
+        module = (
+            importlib.util.module_from_spec(
+                spec
+            )
+        )
+
+        spec.loader.exec_module(
+            module
+        )
+
+        return module
+
+    finally:
+        if inserted:
+            try:
+                sys.path.remove(
+                    repository_text
+                )
+            except ValueError:
+                pass
 
 
 def main() -> int:
@@ -29,7 +81,7 @@ def main() -> int:
     assert data["ok"] is True
     assert data["service"] == "ai-bridge-local"
     assert data["gateway_first"] is True
-    assert data["compatibility"] == "0.5.83-envelope-compatible"
+    assert data["compatibility"] == "0.5.85-envelope-compatible"
     assert data["control_plane"]["owns_validation"] is True
     assert data["control_plane"]["extension_role"] == "thin transport"
     assert "queue" in data

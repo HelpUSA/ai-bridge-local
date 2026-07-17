@@ -34,9 +34,11 @@ Check gateway diagnostics, queue counts, active targets, recent errors, dead let
 
 Make the smallest behavior change, add smoke coverage, run syntax checks, run `git diff --check`, stage only expected files, commit, push, then run `scripts/watcher/post_push_auditor.py --allow-dirty`.
 
-## Known local-only file
+## Official Control Center launcher artifacts
 
-`app_windows/controlcenter.bat` should stay untracked by default.
+`app_windows/controlcenter.bat` and
+`app_windows/controlcenter_launcher.ps1` are official project artifacts and
+must be tracked together.
 
 <!-- 2026-07-10-route-lock-ops -->
 
@@ -116,3 +118,38 @@ rota e n?o permitem que a extens?o contorne o plano de controle.
 Refer?ncias anteriores a `DIRECT_INTERCHAT_ENABLED` ou `mustUseGateway`
 neste hist?rico descrevem a fase intermedi?ria da migra??o e n?o o
 estado atual.
+
+<!-- AI_BRIDGE_MANAGED:CONTROL_CENTER_OPERATIONS_0585:START -->
+
+## Control Center recovery and diagnostics
+
+The official paired launcher artifacts are:
+
+- `app_windows/controlcenter.bat`;
+- `app_windows/controlcenter_launcher.ps1`.
+
+Running the BAT closes only an existing visible, hidden or stale Control Center
+process. Gateway and worker are preserved. The launcher waits for the UI mutex
+and starts exactly one new Control Center instance.
+
+The Control Center starts gateway and worker when they are absent.
+
+Health interpretation:
+
+- `queued` and `delivering` represent current active work;
+- `fila_ativa` is their sum;
+- `acked`, `failed` and `dead_letters` are historical totals;
+- historical totals do not mean the current queue is unhealthy;
+- historical `acked` can use a read-only query against `queue_local.db`.
+
+HTTP requests, process scans, database reads and log reads run outside the Tk
+thread. Widget updates remain on the main Tk thread.
+
+Ports:
+
+- `8766`: legacy transport, acknowledgements and diagnostics;
+- `8767`: compact command plane.
+
+`local.run` remains disabled unless explicitly enabled and confirmed.
+
+<!-- AI_BRIDGE_MANAGED:CONTROL_CENTER_OPERATIONS_0585:END -->

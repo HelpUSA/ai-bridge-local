@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 // AI Bridge Local v0.5.83 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.83";
+  const VERSION = "0.5.85";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -63,7 +63,44 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
   const REGISTER_CHAT_INTERVAL_MS = 1500;
   registerChatWithBridge();
-  setInterval(registerChatWithBridge, REGISTER_CHAT_INTERVAL_MS);
+  /* AI_BRIDGE_MANAGED:REGISTER_CHAT_DEBOUNCE:START */
+  let aiBridgeRegisterInFlight = false;
+  let aiBridgeLastRegisterKey = String(location.href || "");
+  let aiBridgeLastRegisterAt = Date.now();
+
+  async function registerChatWithBridgeDebounced() {
+    const now = Date.now();
+    const currentKey = String(location.href || "");
+    const configuredInterval = Number(REGISTER_CHAT_INTERVAL_MS) || 0;
+    const minimumInterval = Math.max(configuredInterval, 30000);
+
+    if (aiBridgeRegisterInFlight) return;
+
+    if (
+      currentKey === aiBridgeLastRegisterKey &&
+      now - aiBridgeLastRegisterAt < minimumInterval
+    ) {
+      return;
+    }
+
+    aiBridgeRegisterInFlight = true;
+
+    try {
+      await Promise.resolve(registerChatWithBridge());
+      aiBridgeLastRegisterKey = currentKey;
+      aiBridgeLastRegisterAt = Date.now();
+    } catch (error) {
+      console.warn("[AI Bridge Local] debounced register failed:", error);
+    } finally {
+      aiBridgeRegisterInFlight = false;
+    }
+  }
+
+  setInterval(
+    registerChatWithBridgeDebounced,
+    Math.max(Number(REGISTER_CHAT_INTERVAL_MS) || 0, 30000)
+  );
+  /* AI_BRIDGE_MANAGED:REGISTER_CHAT_DEBOUNCE:END */
 
   function findComposer() {
   const aiBridgePreferredComposer = aiBridgeFindChatGptPromptTextarea();
@@ -1156,6 +1193,11 @@ let last = "";
 })();
 
 setInterval(() => {
+  /* AI_BRIDGE_MANAGED:HEARTBEAT_AVAILABILITY_GUARD:START */
+  if (typeof sendChatHeartbeat !== "function") {
+    return;
+  }
+  /* AI_BRIDGE_MANAGED:HEARTBEAT_AVAILABILITY_GUARD:END */
   try {
     if (typeof sendChatHeartbeat === "function") {
       sendChatHeartbeat();
@@ -1358,7 +1400,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.83";
+  const CAPTURE_VERSION = "0.5.85";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1621,10 +1663,16 @@ try {
 
 /* AI Bridge Local: ChatGPT candidate envelope periodic scanner. */
 (function installAiBridgeChatGptCandidateEnvelopeScanner() {
+  /* AI_BRIDGE_MANAGED:CHATGPT_LEGACY_CANDIDATE_DISABLED:START */
+  // Disabled by default. Primary ChatGPT capture is authoritative.
+  if (window.__AI_BRIDGE_ENABLE_LEGACY_CHATGPT_SCANNERS__ !== true) {
+    return;
+  }
+  /* AI_BRIDGE_MANAGED:CHATGPT_LEGACY_CANDIDATE_DISABLED:END */
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.83";
+  const SCANNER_VERSION = "0.5.85";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1739,10 +1787,16 @@ try {
 
 /* AI Bridge Local: ChatGPT standalone envelope scanner with visible feedback. */
 (function installAiBridgeChatGptStandaloneEnvelopeScannerFeedback() {
+  /* AI_BRIDGE_MANAGED:CHATGPT_LEGACY_STANDALONE_DISABLED:START */
+  // Disabled by default. Primary ChatGPT capture is authoritative.
+  if (window.__AI_BRIDGE_ENABLE_LEGACY_CHATGPT_SCANNERS__ !== true) {
+    return;
+  }
+  /* AI_BRIDGE_MANAGED:CHATGPT_LEGACY_STANDALONE_DISABLED:END */
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.83";
+  const STANDALONE_VERSION = "0.5.85";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -2257,7 +2311,7 @@ function findComposer() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.83";
+  const CAPTURE_VERSION = "0.5.85";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;
@@ -2706,3 +2760,594 @@ function findComposer() {
     installObserver();
   }
 })();
+
+/* AI Bridge Local: HelpUS outbound envelope capture 0.5.83. */
+(function installAiBridgeHelpUsCapturedEnvelopeBridge() {
+  if (window.__AI_BRIDGE_HELPUS_CAPTURE_INSTALLED__) return;
+  if (!/^ai\.helpusbr\.com$/i.test(location.hostname)) return;
+
+  window.__AI_BRIDGE_HELPUS_CAPTURE_INSTALLED__ = true;
+
+  const CAPTURE_VERSION = "0.5.85";
+  const LOCAL_SCHEMA = "ai_bridge_local.envelope";
+  const MAX_CAPTURE_CHARS = 30000;
+  const DEDUPE_PREFIX = "ai_bridge_helpus_captured_envelope:";
+
+  const START_MARKERS = [
+    "@@" + "AI_BRIDGE_LOCAL_START" + "@@",
+    "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@"
+  ];
+
+  const END_MARKER =
+    "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
+
+  const inFlight = new Set();
+
+  function getHelpUsChatId() {
+    const match = location.pathname.match(
+      /^\/c\/([0-9a-fA-F-]{36})(?:\/|$)/
+    );
+
+    return match ? match[1] : "";
+  }
+
+  function storageKey(commandId) {
+    return DEDUPE_PREFIX + String(commandId || "");
+  }
+
+  function wasCaptured(commandId) {
+    if (!commandId) return true;
+
+    try {
+      return sessionStorage.getItem(
+        storageKey(commandId)
+      ) === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function markCaptured(commandId) {
+    if (!commandId) return;
+
+    try {
+      sessionStorage.setItem(
+        storageKey(commandId),
+        "1"
+      );
+    } catch (_) {
+      // Best effort only.
+    }
+  }
+
+  function isLocalStatusText(text) {
+    const value = String(text || "").trim();
+
+    return (
+      value.startsWith("[AI_LOCAL]") ||
+      value.startsWith("[AI_LOCAL_ERRO]") ||
+      value.startsWith("[AI_LOCAL_RUN]")
+    );
+  }
+
+  function isAssistantMessageElement(element) {
+    if (!(element instanceof Element)) return false;
+
+    const markdown = element.matches(".markdown-message")
+      ? element
+      : element.closest(".markdown-message");
+
+    if (!markdown) return false;
+
+    const article = markdown.closest("article");
+
+    if (!article) return false;
+
+    const classes = String(
+      article.className || ""
+    );
+
+    if (
+      classes.includes("bg-blue-600") ||
+      classes.includes("text-white")
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function extractEnvelopeBlocks(rawText) {
+    const text = String(rawText || "");
+    const blocks = [];
+
+    if (
+      !text ||
+      text.length > MAX_CAPTURE_CHARS ||
+      !text.includes(END_MARKER)
+    ) {
+      return blocks;
+    }
+
+    for (const startMarker of START_MARKERS) {
+      let offset = 0;
+
+      while (offset < text.length) {
+        const startIndex = text.indexOf(
+          startMarker,
+          offset
+        );
+
+        if (startIndex < 0) break;
+
+        const bodyStart =
+          startIndex + startMarker.length;
+
+        const endIndex = text.indexOf(
+          END_MARKER,
+          bodyStart
+        );
+
+        if (endIndex < 0) break;
+
+        const jsonBody = text.slice(
+          bodyStart,
+          endIndex
+        ).trim();
+
+        const rawBlock = text.slice(
+          startIndex,
+          endIndex + END_MARKER.length
+        ).trim();
+
+        blocks.push({
+          json_body: jsonBody,
+          raw_text: rawBlock
+        });
+
+        offset =
+          endIndex + END_MARKER.length;
+      }
+    }
+
+    return blocks;
+  }
+
+  function parseEnvelopeBlock(block) {
+    if (
+      !block ||
+      !block.json_body ||
+      !block.raw_text
+    ) {
+      return {
+        ok: false,
+        error: "empty_block"
+      };
+    }
+
+    let envelope;
+
+    try {
+      envelope = JSON.parse(
+        block.json_body
+      );
+    } catch (error) {
+      return {
+        ok: false,
+        error:
+          "invalid_json: "
+          + String(
+            error && error.message
+              ? error.message
+              : error
+          )
+      };
+    }
+
+    if (
+      !envelope ||
+      typeof envelope !== "object" ||
+      Array.isArray(envelope)
+    ) {
+      return {
+        ok: false,
+        error: "envelope_not_object"
+      };
+    }
+
+    if (envelope.schema !== LOCAL_SCHEMA) {
+      return {
+        ok: false,
+        error: "invalid_schema"
+      };
+    }
+
+    if (
+      Number(envelope.schema_version) !== 1
+    ) {
+      return {
+        ok: false,
+        error: "invalid_schema_version"
+      };
+    }
+
+    const commandId = String(
+      envelope.command_id || ""
+    ).trim();
+
+    if (!commandId) {
+      return {
+        ok: false,
+        error: "missing_command_id"
+      };
+    }
+
+    const action = String(
+      envelope.action ||
+      envelope.type ||
+      ""
+    ).trim();
+
+    if (
+      action !== "send-chat-message" &&
+      action !== "run-command"
+    ) {
+      return {
+        ok: false,
+        error: "unsupported_action"
+      };
+    }
+
+    const currentChatId = getHelpUsChatId();
+
+    if (!currentChatId) {
+      return {
+        ok: false,
+        error: "helpus_chat_id_missing"
+      };
+    }
+
+    if (
+      String(
+        envelope.source_chat_id || ""
+      ).trim() !== currentChatId
+    ) {
+      return {
+        ok: false,
+        error: "source_chat_id_mismatch"
+      };
+    }
+
+    if (
+      !String(
+        envelope.target_chat_id || ""
+      ).trim()
+    ) {
+      return {
+        ok: false,
+        error: "target_chat_id_missing"
+      };
+    }
+
+    return {
+      ok: true,
+      command_id: commandId,
+      envelope,
+      raw_text: block.raw_text
+    };
+  }
+
+  function sendCapturedEnvelope(parsed) {
+    const commandId = parsed.command_id;
+
+    if (
+      wasCaptured(commandId) ||
+      inFlight.has(commandId)
+    ) {
+      return;
+    }
+
+    inFlight.add(commandId);
+
+    console.log(
+      "[Local v"
+        + CAPTURE_VERSION
+        + "] HelpUS outbound scanner sending:",
+      commandId
+    );
+
+    chrome.runtime.sendMessage(
+      {
+        type: "AI_BRIDGE_CAPTURED_ENVELOPE",
+        source_chat_id: getHelpUsChatId(),
+        raw_text: parsed.raw_text,
+        envelope: parsed.envelope
+      },
+      (response) => {
+        const runtimeError =
+          chrome.runtime.lastError;
+
+        if (runtimeError) {
+          inFlight.delete(commandId);
+
+          console.warn(
+            "[Local v"
+              + CAPTURE_VERSION
+              + "] HelpUS capture runtime error:",
+            runtimeError.message ||
+              "runtime_error"
+          );
+
+          return;
+        }
+
+        if (response && response.ok) {
+          markCaptured(commandId);
+          inFlight.delete(commandId);
+
+          console.log(
+            "[Local v"
+              + CAPTURE_VERSION
+              + "] HelpUS captured envelope accepted:",
+            commandId
+          );
+
+          return;
+        }
+
+        inFlight.delete(commandId);
+
+        console.warn(
+          "[Local v"
+            + CAPTURE_VERSION
+            + "] HelpUS captured envelope rejected:",
+          commandId,
+          response || {}
+        );
+      }
+    );
+  }
+
+  function scanMarkdownElement(
+    markdown,
+    reason,
+    baselineOnly
+  ) {
+    if (
+      !(markdown instanceof Element) ||
+      !isAssistantMessageElement(markdown)
+    ) {
+      return;
+    }
+
+    const text = String(
+      markdown.innerText ||
+      markdown.textContent ||
+      ""
+    ).trim();
+
+    if (
+      !text ||
+      text.length > MAX_CAPTURE_CHARS ||
+      isLocalStatusText(text)
+    ) {
+      return;
+    }
+
+    const blocks =
+      extractEnvelopeBlocks(text);
+
+    for (const block of blocks) {
+      const parsed =
+        parseEnvelopeBlock(block);
+
+      if (!parsed.ok) {
+        console.debug(
+          "[Local v"
+            + CAPTURE_VERSION
+            + "] HelpUS candidate rejected:",
+          parsed.error,
+          "reason=" + reason
+        );
+
+        continue;
+      }
+
+      if (baselineOnly) {
+        markCaptured(
+          parsed.command_id
+        );
+
+        continue;
+      }
+
+      sendCapturedEnvelope(parsed);
+    }
+  }
+
+  function candidateMarkdownElements(node) {
+    const candidates = new Set();
+
+    let element = null;
+
+    if (node instanceof Element) {
+      element = node;
+    } else if (
+      node &&
+      node.parentElement instanceof Element
+    ) {
+      element = node.parentElement;
+    }
+
+    if (!element) return [];
+
+    if (
+      element.matches(".markdown-message")
+    ) {
+      candidates.add(element);
+    }
+
+    const closest =
+      element.closest(".markdown-message");
+
+    if (closest) {
+      candidates.add(closest);
+    }
+
+    element
+      .querySelectorAll(".markdown-message")
+      .forEach((candidate) => {
+        candidates.add(candidate);
+      });
+
+    return Array.from(candidates);
+  }
+
+  function scanNode(
+    node,
+    reason,
+    baselineOnly = false
+  ) {
+    for (
+      const markdown
+      of candidateMarkdownElements(node)
+    ) {
+      scanMarkdownElement(
+        markdown,
+        reason,
+        baselineOnly
+      );
+    }
+  }
+
+  function scanDocument(
+    reason,
+    baselineOnly = false
+  ) {
+    if (!document.body) return;
+
+    document
+      .querySelectorAll(
+        "article .markdown-message"
+      )
+      .forEach((markdown) => {
+        scanMarkdownElement(
+          markdown,
+          reason,
+          baselineOnly
+        );
+      });
+  }
+
+  function installObserver() {
+    if (!document.body) return;
+
+    /*
+     * Prevent old HelpUS replies already visible at
+     * extension reload time from being resubmitted.
+     * Only subsequent messages are delivered.
+     */
+    scanDocument(
+      "bootstrap_baseline",
+      true
+    );
+
+    const observer =
+      new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (
+            mutation.type === "childList"
+          ) {
+            for (
+              const node
+              of mutation.addedNodes || []
+            ) {
+              window.setTimeout(
+                () => scanNode(
+                  node,
+                  "mutation_child"
+                ),
+                250
+              );
+            }
+          }
+
+          if (
+            mutation.type ===
+              "characterData" &&
+            mutation.target
+          ) {
+            window.setTimeout(
+              () => scanNode(
+                mutation.target,
+                "mutation_character"
+              ),
+              250
+            );
+          }
+        }
+      });
+
+    observer.observe(
+      document.body,
+      {
+        childList: true,
+        subtree: true,
+        characterData: true
+      }
+    );
+
+    window.setInterval(
+      () => scanDocument("interval"),
+      2500
+    );
+
+    console.log(
+      "[Local v"
+        + CAPTURE_VERSION
+        + "] HelpUS outbound envelope observer installed for chat:",
+      getHelpUsChatId()
+    );
+  }
+
+  if (
+    document.readyState === "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      installObserver,
+      { once: true }
+    );
+  } else {
+    installObserver();
+  }
+})();
+
+/* AI_BRIDGE_MANAGED:COMPACT_WATCHER_0585:START */
+(() => {
+  const host=String(location.hostname||"").toLowerCase();
+  if (!(host.includes("chatgpt.com")||host.includes("chat.openai.com")||host.includes("helpus"))) return;
+  if (window.__AI_BRIDGE_COMPACT_WATCHER_0585__) return;
+  window.__AI_BRIDGE_COMPACT_WATCHER_0585__=true;
+  const prefix="@@AI_BRIDGE_CMD_V1@@", sent="ai_bridge_compact_0585:", timers=new WeakMap();
+  function root(node) {
+    if (!(node instanceof Element)) return null;
+    const g=node.closest('[data-message-author-role="assistant"]'); if (g) return g;
+    const m=node.matches(".markdown-message")?node:node.closest(".markdown-message"); if (!m) return null;
+    const a=m.closest("article"); if (!a||a.classList.contains("bg-blue-600")||a.classList.contains("text-white")||a.querySelector(".bg-blue-600,.text-white")) return null;
+    return m;
+  }
+  function scan(r) {
+    for (const raw of (r.innerText||r.textContent||"").split(/\r?\n/)) {
+      const line=raw.trim(); if (!line.startsWith(prefix)) continue;
+      let c; try { c=JSON.parse(line.slice(prefix.length).trim()); } catch (_) { continue; }
+      if (!c||c.v!==1||typeof c.id!=="string"||typeof c.cap!=="string"||!c.id.trim()||!c.cap.trim()) continue;
+      c.args=c.args||{};c.src=c.src||location.href;c.dst=c.dst||"gateway";c.reply_mode=c.reply_mode||"summary";
+      const key=sent+c.id;if(sessionStorage.getItem(key)==="1")continue;sessionStorage.setItem(key,"1");
+      chrome.runtime.sendMessage({type:"ai_bridge_compact_command_0585",command:c},response=>{if(chrome.runtime.lastError||!response||!response.ok)sessionStorage.removeItem(key);});
+    }
+  }
+  function schedule(r) {if(!r)return;const old=timers.get(r);if(old)clearTimeout(old);const t=setTimeout(()=>{timers.delete(r);scan(r);},700);timers.set(r,t);}
+  new MutationObserver(ms=>{for(const m of ms){const t=m.target instanceof Element?m.target:m.target.parentElement;schedule(root(t));for(const n of m.addedNodes){if(!(n instanceof Element))continue;schedule(root(n));for(const d of n.querySelectorAll('[data-message-author-role="assistant"],article .markdown-message'))schedule(root(d));}}}).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+})();
+/* AI_BRIDGE_MANAGED:COMPACT_WATCHER_0585:END */

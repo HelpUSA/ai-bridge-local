@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "AI Bridge Local 0.5.83",
-  "version": "0.5.83",
+  "name": "AI Bridge Local 0.5.85",
+  "version": "0.5.85",
   "description": "Gateway local com transporte controlado pelo plano de controle",
   "permissions": [
     "tabs",
@@ -14,7 +14,8 @@
     "https://chat.deepseek.com/*",
     "http://127.0.0.1:8766/*",
     "https://ai.helpusbr.com/*",
-    "https://gemini.google.com/*"
+    "https://gemini.google.com/*",
+    "http://127.0.0.1:8767/*"
   ],
   "background": {
     "service_worker": "background.js"

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Minimal QueueAdapter for AI Bridge Local 0.5.83.
+"""Minimal QueueAdapter for AI Bridge Local 0.5.85.
 
 Compatibility adapter over the existing gateway_local commands table.
 Durable Queue v2 can expand this without changing callers.

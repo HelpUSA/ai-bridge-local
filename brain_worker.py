@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Brain Worker v0.5.83"""
+"""AI Bridge Local - Brain Worker v0.5.85"""
 import json
 import atexit
 import os
@@ -16,7 +16,7 @@ except Exception:
     queue_adapter = None
 
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.5.83"
+VERSION = "0.5.85"
 
 
 WORKER_LOCK_PATH = Path("temp/brain_worker.pid")
@@ -423,6 +423,11 @@ def main():
             last_heartbeat = time.time()
         poll_once()
         time.sleep(2)
+
+# AI_BRIDGE_MANAGED:WORKER_COMMAND_PLANE_0585:START
+from gateway_command_plane import start_compact_worker as _start_compact_worker_0585
+AI_BRIDGE_WORKER_COMMAND_PLANE_0585=_start_compact_worker_0585(globals())
+# AI_BRIDGE_MANAGED:WORKER_COMMAND_PLANE_0585:END
 
 if __name__ == "__main__":
     main()

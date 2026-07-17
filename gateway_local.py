@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.5.83"""
+"""AI Bridge Local - Gateway v0.5.85"""
 import json
 import sqlite3
 import uuid
@@ -17,7 +17,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.5.83"
+VERSION = "0.5.85"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -344,7 +344,7 @@ def fetch_gateway_diagnostics():
         timestamp=now_iso(),
         gateway_first=True,
         route_policy=get_gateway_route_policy(),
-        compatibility="0.5.83-envelope-compatible",
+        compatibility="0.5.85-envelope-compatible",
         control_plane=dict(
             owns_validation=True,
             owns_queue=True,
@@ -854,6 +854,11 @@ def main():
     init_db()
     threading.Thread(target=watchdog_loop, daemon=True).start()
     ThreadingHTTPServer((HOST, PORT), GatewayHandler).serve_forever()
+
+# AI_BRIDGE_MANAGED:GATEWAY_COMMAND_PLANE_0585:START
+from gateway_command_plane import start_gateway_command_api as _start_gateway_command_api_0585
+AI_BRIDGE_GATEWAY_COMMAND_PLANE_0585=_start_gateway_command_api_0585(globals())
+# AI_BRIDGE_MANAGED:GATEWAY_COMMAND_PLANE_0585:END
 
 if __name__ == "__main__":
     main()

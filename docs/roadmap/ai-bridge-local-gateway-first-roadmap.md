@@ -124,3 +124,35 @@ browser-action coverage proves they are no longer required.
 
 A pr?xima etapa ? ampliar a cobertura ponta a ponta do ciclo
 gateway ? fila ? executor da extens?o ? ACK.
+
+<!-- AI_BRIDGE_MANAGED:ROADMAP_RECONCILIATION_0585:START -->
+
+## 2026-07-16 checkpoint: command plane and Control Center
+
+Implementation work previously listed as M5 through M9 is complete:
+
+- gateway-first route guardrails and executable route decisions;
+- extension gateway-only dispatch during normal operation;
+- obsolete extension-owned direct dispatch removed;
+- legacy transport and diagnostics on port `8766`;
+- compact command plane on port `8767`;
+- additive `bridge2_*` durable storage;
+- leases, retries, dead letters and persistent idempotency;
+- Control Center autostart, single-instance mutex and recovery launcher;
+- asynchronous UI refresh outside the Tk thread;
+- active queue separated from historical counters;
+- nine stale legacy queued commands archived without replay or deletion.
+
+### Current roadmap position
+
+The active roadmap item is M10: integrated end-to-end validation.
+
+Next sequence:
+
+1. add Control Center and launcher regression tests;
+2. add an isolated HTTP harness for ports `8766` and `8767`;
+3. validate persistence, targets, idempotency, leases, retries and dead letters;
+4. run browser interchat and read-only local-capability checks;
+5. prepare a commit only after explicit operator authorization.
+
+<!-- AI_BRIDGE_MANAGED:ROADMAP_RECONCILIATION_0585:END -->

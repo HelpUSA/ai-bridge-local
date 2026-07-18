@@ -47,3 +47,18 @@ Cada adapter deve validar:
 | Probe cleanup | exact test IDs removed after validation | Implemented |
 
 <!-- AI_BRIDGE_MANAGED:COMMAND_PLANE_CONTROL_CENTER_SMOKES_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:START -->
+
+## M11 watcher delivery reliability
+
+| Area | Validation | State |
+| --- | --- | --- |
+| Source audit | composer, command identity, send and retry inventory | Implemented |
+| Static watcher contracts | `pytest tests/test_watcher_delivery_contract_0585.py` | Implemented |
+| Guarded delivery state machine | active browser reliability patch | Next |
+| Residual composer safety | unrelated text is preserved | Next |
+| Duplicate retry prevention | one visible delivery per command | Next |
+| Live interchat regression | delivery, ACK and exact cleanup | Next |
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->

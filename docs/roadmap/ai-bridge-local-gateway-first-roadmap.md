@@ -180,3 +180,21 @@ The remaining activity is repository finalization: inspect the complete diff,
 authorize the commit and push the validated changes.
 
 <!-- AI_BRIDGE_MANAGED:M10_VALIDATION_CHECKPOINT_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:START -->
+
+## M11 watcher delivery reliability
+
+Status: baseline audit and contracts complete.
+
+Next implementation package:
+
+1. composer preflight;
+2. safe injection;
+3. observable submission confirmation;
+4. bounded idempotent retries;
+5. precise error classification;
+6. duplicate prevention;
+7. live interchat probe and exact cleanup.
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->

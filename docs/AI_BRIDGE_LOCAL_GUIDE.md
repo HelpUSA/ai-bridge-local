@@ -1436,3 +1436,17 @@ Safety backup:
 M10 is complete. Only final Git review, commit and push authorization remain.
 
 <!-- AI_BRIDGE_MANAGED:CURRENT_CHECKPOINT_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:START -->
+
+## M11 watcher delivery reliability
+
+The reproducible M11 source audit and static contract tests are established.
+
+This checkpoint inventories composer discovery, command identity, submission,
+retry and gateway-first routing without changing active watcher behavior.
+
+The next package implements the guarded browser delivery state machine and
+live regression probes.
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->

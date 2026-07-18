@@ -79,3 +79,15 @@ backup is:
 No commit or push was executed.
 
 <!-- AI_BRIDGE_MANAGED:M10_VALIDATION_CHECKPOINT_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:START -->
+
+## M11 watcher delivery checkpoint
+
+The M10 baseline remains stable.
+
+M11 now contains a reproducible source audit and static contract suite. No
+active extension, gateway, queue or worker behavior was changed in this
+checkpoint.
+
+<!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->

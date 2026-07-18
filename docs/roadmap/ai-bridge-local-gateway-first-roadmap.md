@@ -198,3 +198,27 @@ Next implementation package:
 7. live interchat probe and exact cleanup.
 
 <!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:START -->
+
+## M11 active watcher delivery reliability
+
+Implemented:
+
+- strict composer ownership;
+- preservation of unrelated user drafts;
+- visible-message idempotency;
+- bounded transient retries;
+- stable command identity;
+- retry telemetry;
+- ACK retry metadata;
+- Node and Python regression tests.
+
+Remaining acceptance activity:
+
+- reload the unpacked extension;
+- execute the live interchat probe;
+- verify ACK and delivery token;
+- remove only the probe records.
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->

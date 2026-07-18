@@ -637,6 +637,54 @@ function aiBridgeFindChatGptPromptTextarea() {
 }
 
 
+/* AI_BRIDGE_MANAGED:M11_CONTENT_DELIVERY_GUARD_0585:START */
+function aiBridgeM11NormalizeDeliveryText(value) {
+  return String(value || "")
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n")
+    .trim();
+}
+
+function aiBridgeM11ComposerOwnsRequestedText(
+  beforeText,
+  requestedText
+) {
+  const before =
+    aiBridgeM11NormalizeDeliveryText(beforeText);
+
+  const requested =
+    aiBridgeM11NormalizeDeliveryText(requestedText);
+
+  return Boolean(
+    before &&
+    requested &&
+    before === requested
+  );
+}
+
+function aiBridgeM11AlreadyVisible(requestedText) {
+  const requested =
+    aiBridgeM11NormalizeDeliveryText(requestedText);
+
+  if (!requested) return false;
+
+  try {
+    return Boolean(
+      documentContainsSentMessage(requested)
+    );
+  } catch (error) {
+    console.warn(
+      "[AI Bridge Local] M11 visibility check failed:",
+      error && error.message
+        ? error.message
+        : String(error || "unknown")
+    );
+
+    return false;
+  }
+}
+/* AI_BRIDGE_MANAGED:M11_CONTENT_DELIVERY_GUARD_0585:END */
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message && message.type === "AI_BRIDGE_INJECT_TEXT") {
       const actionId = message.action?.action_id || message.action?.command_id || "unknown";
@@ -660,9 +708,22 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
  const beforeText = getComposerText(composer).trim();
 const requestedTextBeforeInject = String(text || "").trim();
-const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBeforeInject && beforeText === requestedTextBeforeInject);
+const m11AlreadyVisibleBeforeInject = aiBridgeM11AlreadyVisible(requestedTextBeforeInject);
+if (m11AlreadyVisibleBeforeInject) {
+  showNotice("Mensagem ja confirmada no chat", "command_id=" + actionId, "success");
+  sendResponse({
+    ok: true,
+    method: "m11_already_visible",
+    attempts: 0,
+    text_length: requestedTextBeforeInject.length,
+    idempotent: true,
+    confirmation: "document_message_visible"
+  });
+  return false;
+}
+const composerAlreadyHasRequestedText = aiBridgeM11ComposerOwnsRequestedText(beforeText, requestedTextBeforeInject);
  if (beforeText) {
- const ownedPreflightText = composerAlreadyHasRequestedText || beforeText.includes("AI_BRIDGE_LOCAL_START") || beforeText.includes("ai_bridge_local.envelope") || beforeText.includes("[AI_LOCAL]") || beforeText.includes("[AI_LOCAL_ERRO]");
+ const ownedPreflightText = aiBridgeM11ComposerOwnsRequestedText(beforeText, requestedTextBeforeInject);
  if (ownedPreflightText) {
  showNotice("Limpando composer travado da extensao", "command_id=" + actionId, "warn");
  aiBridgeRobustSetText(composer, String());
@@ -671,6 +732,8 @@ const composerAlreadyHasRequestedText = Boolean(beforeText && requestedTextBefor
  sendResponse({
  ok: false,
  reason: "composer_not_empty_before_inject",
+ retryable: false,
+ ownership: "user_content",
   composer_text_matches_requested_text: composerAlreadyHasRequestedText,
  text_length: beforeText.length,
  preview: beforeText.slice(0, 200)

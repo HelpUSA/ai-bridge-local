@@ -1450,3 +1450,18 @@ The next package implements the guarded browser delivery state machine and
 live regression probes.
 
 <!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:START -->
+
+## M11 active watcher delivery reliability
+
+The browser delivery path preserves unrelated composer content, detects
+messages already visible in the conversation and retries only transient
+failures.
+
+Retries retain the original command ID. Composer text is treated as
+extension-owned only when it exactly matches the current delivery request.
+
+Reload the unpacked Chrome extension before the live browser acceptance probe.
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->

@@ -91,3 +91,16 @@ active extension, gateway, queue or worker behavior was changed in this
 checkpoint.
 
 <!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:START -->
+
+## M11 active delivery reliability checkpoint
+
+Strict composer ownership, visible-delivery idempotency and bounded retry
+handling are implemented in the extension source.
+
+This source package does not mutate live queue records.
+
+Reload the unpacked Chrome extension before the live M11 probe.
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->

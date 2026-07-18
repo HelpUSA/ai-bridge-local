@@ -62,3 +62,19 @@ Cada adapter deve validar:
 | Live interchat regression | delivery, ACK and exact cleanup | Next |
 
 <!-- AI_BRIDGE_MANAGED:M11_WATCHER_DELIVERY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:START -->
+
+## M11 active watcher delivery reliability
+
+| Area | Validation | State |
+| --- | --- | --- |
+| User composer preservation | unrelated text is not cleared | Implemented |
+| Visible-message idempotency | visible delivery returns success | Implemented |
+| Bounded retries | maximum of three attempts | Implemented |
+| Stable command identity | retries retain the command ID | Implemented |
+| Retry telemetry | scheduled retries produce events | Implemented |
+| Node behavioral smoke | delivery policy VM test | Implemented |
+| Live browser probe | reload, delivery, ACK and cleanup | Pending reload |
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->

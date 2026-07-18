@@ -328,6 +328,122 @@ function pollMessagesSoon(reason = 'manual') {
   }, POLL_SOON_DEBOUNCE_MS);
 }
 
+/* AI_BRIDGE_MANAGED:M11_BACKGROUND_RETRY_0585:START */
+function aiBridgeM11RetryableReason(result) {
+  const reason = String(
+    result &&
+    (result.reason || result.error)
+      ? (result.reason || result.error)
+      : ""
+  ).toLowerCase();
+
+  if (!reason) return false;
+
+  return [
+    "no_composer",
+    "inject_outer_timeout",
+    "inject_timeout",
+    "send_response_timeout",
+    "receiving end",
+    "message port closed",
+    "submit_not_confirmed",
+    "delivery_in_progress",
+    "reinjected_content_script"
+  ].some((token) => reason.includes(token));
+}
+
+async function injectTextWithM11Retry(
+  tabId,
+  action
+) {
+  const delays = [0, 450, 1100];
+
+  let lastResult = {
+    ok: false,
+    reason: "inject_not_attempted",
+    delivery_attempts: 0
+  };
+
+  for (
+    let index = 0;
+    index < delays.length;
+    index += 1
+  ) {
+    if (delays[index] > 0) {
+      await aiBridgeSleep(delays[index]);
+    }
+
+    let result;
+
+    try {
+      result = await injectText(
+        tabId,
+        action
+      );
+    } catch (error) {
+      result = {
+        ok: false,
+        reason:
+          "inject_exception:"
+          + String(
+            error && error.message
+              ? error.message
+              : error || "unknown"
+          )
+      };
+    }
+
+    lastResult = Object.assign(
+      {},
+      result || {},
+      {
+        delivery_attempts: index + 1,
+        stable_command_id:
+          action && action.command_id
+            ? action.command_id
+            : "unknown"
+      }
+    );
+
+    if (lastResult.ok) {
+      return lastResult;
+    }
+
+    if (
+      !aiBridgeM11RetryableReason(
+        lastResult
+      )
+    ) {
+      return lastResult;
+    }
+
+    if (index + 1 < delays.length) {
+      postTelemetryEvent(
+        "inject_retry_scheduled",
+        {
+          command_id:
+            action && action.command_id
+              ? action.command_id
+              : null,
+          target_chat_id:
+            action && action.target_chat_id
+              ? action.target_chat_id
+              : null,
+          completed_attempts: index + 1,
+          next_attempt: index + 2,
+          reason:
+            lastResult.reason
+            || lastResult.error
+            || "unknown"
+        }
+      );
+    }
+  }
+
+  return lastResult;
+}
+/* AI_BRIDGE_MANAGED:M11_BACKGROUND_RETRY_0585:END */
+
 async function pollOneChat(chatId) {
   if (chatId === 'unknown') return;
   if (perChatInFlight.has(chatId)) return;
@@ -365,8 +481,8 @@ async function pollOneChat(chatId) {
       });
 
       const result = await withTimeout(
-        injectText(tabId, action),
-        20000,
+        injectTextWithM11Retry(tabId, action),
+        55000,
         {
           ok: false,
           reason: 'inject_outer_timeout',
@@ -390,6 +506,8 @@ async function pollOneChat(chatId) {
           stdout: JSON.stringify({
             method: result.method || 'unknown',
             attempts: result.attempts ?? null,
+            delivery_attempts: result.delivery_attempts ?? null,
+            idempotent: result.idempotent ?? false,
             text_length: result.text_length ?? null
           })
         });

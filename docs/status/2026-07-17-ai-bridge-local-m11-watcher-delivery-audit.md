@@ -219,3 +219,20 @@ Version: `0.5.85`
 5. Specific delivery errors.
 6. Duplicate-delivery prevention.
 7. Live interchat regression and exact cleanup.
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:START -->
+
+## Active reliability implementation
+
+The M11 audit was converted into active browser-delivery safeguards.
+
+The content script now preserves unrelated composer content and short-circuits
+when the requested delivery is already visible.
+
+The background worker applies bounded retries only to transient failures while
+retaining the same command ID.
+
+Static, behavioral and runtime validations are required before commit. The
+live browser probe remains gated on reloading the unpacked extension.
+
+<!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->

@@ -94,7 +94,7 @@ def _ai_bridge_control_center_single_instance_0585():
                     "j? est? aberta."
                 ),
                 (
-                    "AI Bridge Local 0.5.85"
+                    "AI Bridge Local 0.5.86"
                 ),
                 0x00000040,
             )
@@ -128,7 +128,7 @@ def _ai_bridge_control_center_autostart_0585():
     from pathlib import Path as _AbPath
 
     def _ab_runner():
-        version = "0.5.85"
+        version = "0.5.86"
 
         root = (
             _AbPath(__file__)
@@ -689,7 +689,7 @@ except Exception:
 	TRAY_AVAILABLE = False
 
 APP_VERSION = "14"
-APP_TITLE = "AI Bridge Local - Central de Controle 0.5.85"
+APP_TITLE = "AI Bridge Local - Central de Controle 0.5.86"
 if getattr(sys, "frozen", False):
 	ROOT = Path(sys.executable).resolve().parents[2]
 else:

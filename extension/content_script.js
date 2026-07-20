@@ -8,7 +8,7 @@ window.__AI_BRIDGE_LOCAL_STATUS_PREFIXES__ = LOCAL_STATUS_PREFIXES;
 
 // AI Bridge Local v0.5.83 - HelpUS AI compatible bridge
 (() => {
-  const VERSION = "0.5.85";
+  const VERSION = "0.5.86";
   const ENVELOPE_ERROR_DEDUPE_MS = 30 * 60 * 1000;
   const LOCAL_STATUS_PREFIXES = ["[AI_LOCAL_ERRO]", "[AI_LOCAL_RUN]", "[AI_LOCAL]"];
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
@@ -1463,7 +1463,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_OUTBOUND_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.85";
+  const CAPTURE_VERSION = "0.5.86";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_chatgpt_outbound_capture:";
 
@@ -1735,7 +1735,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_CANDIDATE_SCANNER_INSTALLED__ = true;
 
-  const SCANNER_VERSION = "0.5.85";
+  const SCANNER_VERSION = "0.5.86";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -1859,7 +1859,7 @@ try {
   if (window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__) return;
   window.__AI_BRIDGE_CHATGPT_STANDALONE_SCANNER_FEEDBACK_INSTALLED__ = true;
 
-  const STANDALONE_VERSION = "0.5.85";
+  const STANDALONE_VERSION = "0.5.86";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const BEGIN_MARKER = "@@" + "AI_BRIDGE_LOCAL_BEGIN" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
@@ -2374,7 +2374,7 @@ function findComposer() {
   if (window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__) return;
   window.__AI_BRIDGE_DEEPSEEK_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.85";
+  const CAPTURE_VERSION = "0.5.86";
   const START_MARKER = "@@" + "AI_BRIDGE_LOCAL_START" + "@@";
   const END_MARKER = "@@" + "AI_BRIDGE_LOCAL_END" + "@@";
   const MAX_CAPTURE_CHARS = 30000;
@@ -2831,7 +2831,7 @@ function findComposer() {
 
   window.__AI_BRIDGE_HELPUS_CAPTURE_INSTALLED__ = true;
 
-  const CAPTURE_VERSION = "0.5.85";
+  const CAPTURE_VERSION = "0.5.86";
   const LOCAL_SCHEMA = "ai_bridge_local.envelope";
   const MAX_CAPTURE_CHARS = 30000;
   const DEDUPE_PREFIX = "ai_bridge_helpus_captured_envelope:";
@@ -3414,3 +3414,115 @@ function findComposer() {
   new MutationObserver(ms=>{for(const m of ms){const t=m.target instanceof Element?m.target:m.target.parentElement;schedule(root(t));for(const n of m.addedNodes){if(!(n instanceof Element))continue;schedule(root(n));for(const d of n.querySelectorAll('[data-message-author-role="assistant"],article .markdown-message'))schedule(root(d));}}}).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
 })();
 /* AI_BRIDGE_MANAGED:COMPACT_WATCHER_0585:END */
+
+/* AI_BRIDGE_MANAGED:M11_CHAT_REGISTRATION_0586:START */
+(() => {
+  if (
+    globalThis
+      .__AI_BRIDGE_M11_CHAT_REGISTRATION_0586__
+  ) {
+    return;
+  }
+
+  globalThis
+    .__AI_BRIDGE_M11_CHAT_REGISTRATION_0586__ =
+      true;
+
+  const HEARTBEAT_TYPE =
+    "AI_BRIDGE_CHAT_HEARTBEAT";
+
+  function extractChatIdFromCurrentUrl() {
+    const pathname = String(
+      globalThis.location &&
+      globalThis.location.pathname
+        ? globalThis.location.pathname
+        : ""
+    );
+
+    const match = pathname.match(
+      /\/c\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(?:\/|$)/i
+    );
+
+    return match
+      ? match[1].toLowerCase()
+      : "";
+  }
+
+  function sendHeartbeat(reason) {
+    const chatId =
+      extractChatIdFromCurrentUrl();
+
+    if (!chatId) {
+      return;
+    }
+
+    const message = {
+      type: HEARTBEAT_TYPE,
+      chat_id: chatId,
+      url: String(
+        globalThis.location
+          ? globalThis.location.href
+          : ""
+      ),
+      title: String(
+        globalThis.document
+          ? globalThis.document.title
+          : ""
+      ),
+      visible:
+        !globalThis.document ||
+        globalThis.document.visibilityState
+          !== "hidden",
+      reason: String(
+        reason || "interval"
+      ),
+      observed_at:
+        new Date().toISOString()
+    };
+
+    try {
+      chrome.runtime.sendMessage(
+        message,
+        () => {
+          void chrome.runtime.lastError;
+        }
+      );
+    } catch (error) {
+      console.warn(
+        "[AI Bridge Local] heartbeat failed:",
+        error && error.message
+          ? error.message
+          : String(error || "unknown")
+      );
+    }
+  }
+
+  globalThis.addEventListener(
+    "focus",
+    () => sendHeartbeat("focus"),
+    true
+  );
+
+  globalThis.addEventListener(
+    "popstate",
+    () => sendHeartbeat("popstate"),
+    true
+  );
+
+  globalThis.document.addEventListener(
+    "visibilitychange",
+    () => sendHeartbeat("visibilitychange"),
+    true
+  );
+
+  globalThis.setInterval(
+    () => sendHeartbeat("interval"),
+    5000
+  );
+
+  globalThis.setTimeout(
+    () => sendHeartbeat("startup"),
+    500
+  );
+})();
+/* AI_BRIDGE_MANAGED:M11_CHAT_REGISTRATION_0586:END */

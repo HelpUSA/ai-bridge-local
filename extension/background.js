@@ -1,5 +1,5 @@
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.85";
+const VERSION = "0.5.86";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -328,6 +328,386 @@ function pollMessagesSoon(reason = 'manual') {
   }, POLL_SOON_DEBOUNCE_MS);
 }
 
+/* AI_BRIDGE_MANAGED:M11_TARGET_REGISTRY_0586:START */
+const aiBridgeM11ChatRegistry =
+  new Map();
+
+const AI_BRIDGE_M11_CHAT_TTL_MS =
+  20000;
+
+function aiBridgeM11NormalizeChatId(
+  value
+) {
+  const normalized = String(
+    value || ""
+  ).trim().toLowerCase();
+
+  return (
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+      .test(normalized)
+  )
+    ? normalized
+    : "";
+}
+
+function aiBridgeM11ExtractChatIdFromUrl(
+  value
+) {
+  let pathname = "";
+
+  try {
+    pathname = new URL(
+      String(value || "")
+    ).pathname;
+  } catch (error) {
+    pathname = String(value || "");
+  }
+
+  const match = pathname.match(
+    /\/c\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(?:\/|$)/i
+  );
+
+  return match
+    ? match[1].toLowerCase()
+    : "";
+}
+
+function aiBridgeM11TabsGet(tabId) {
+  return new Promise((resolve) => {
+    if (
+      !Number.isInteger(tabId) ||
+      tabId < 0
+    ) {
+      resolve(null);
+      return;
+    }
+
+    chrome.tabs.get(
+      tabId,
+      (tab) => {
+        const error =
+          chrome.runtime.lastError;
+
+        resolve(
+          error
+            ? null
+            : (tab || null)
+        );
+      }
+    );
+  });
+}
+
+function aiBridgeM11TabsQuery() {
+  return new Promise((resolve) => {
+    chrome.tabs.query(
+      {},
+      (tabs) => {
+        const error =
+          chrome.runtime.lastError;
+
+        resolve(
+          error
+            ? []
+            : (
+                Array.isArray(tabs)
+                  ? tabs
+                  : []
+              )
+        );
+      }
+    );
+  });
+}
+
+function aiBridgeM11TabMatchesTarget(
+  tab,
+  targetChatId
+) {
+  if (!tab) {
+    return false;
+  }
+
+  const target =
+    aiBridgeM11NormalizeChatId(
+      targetChatId
+    );
+
+  const actual =
+    aiBridgeM11ExtractChatIdFromUrl(
+      tab.url || ""
+    );
+
+  return Boolean(
+    target &&
+    actual &&
+    target === actual
+  );
+}
+
+function aiBridgeM11RegisterHeartbeat(
+  message,
+  sender
+) {
+  const chatId =
+    aiBridgeM11NormalizeChatId(
+      message &&
+      message.chat_id
+    );
+
+  const tabId =
+    sender &&
+    sender.tab &&
+    Number.isInteger(sender.tab.id)
+      ? sender.tab.id
+      : null;
+
+  const url = String(
+    sender &&
+    sender.tab &&
+    sender.tab.url
+      ? sender.tab.url
+      : (
+          message &&
+          message.url
+            ? message.url
+            : ""
+        )
+  );
+
+  const urlChatId =
+    aiBridgeM11ExtractChatIdFromUrl(
+      url
+    );
+
+  if (
+    !chatId ||
+    !urlChatId ||
+    chatId !== urlChatId ||
+    tabId === null
+  ) {
+    return {
+      ok: false,
+      reason:
+        "chat_registration_identity_mismatch",
+      chat_id: chatId || null,
+      url_chat_id: urlChatId || null,
+      tab_id: tabId
+    };
+  }
+
+  const record = {
+    chat_id: chatId,
+    tab_id: tabId,
+    url,
+    title: String(
+      message &&
+      message.title
+        ? message.title
+        : ""
+    ),
+    visible: Boolean(
+      message &&
+      message.visible
+    ),
+    reason: String(
+      message &&
+      message.reason
+        ? message.reason
+        : "unknown"
+    ),
+    observed_at: String(
+      message &&
+      message.observed_at
+        ? message.observed_at
+        : new Date().toISOString()
+    ),
+    received_at_ms: Date.now()
+  };
+
+  aiBridgeM11ChatRegistry.set(
+    chatId,
+    record
+  );
+
+  try {
+    postTelemetryEvent(
+      "chat_registration_heartbeat",
+      {
+        chat_id: chatId,
+        tab_id: tabId,
+        url,
+        visible: record.visible,
+        observed_at: record.observed_at
+      }
+    );
+  } catch (error) {
+    console.warn(
+      "[AI Bridge Local] registration telemetry failed:",
+      error && error.message
+        ? error.message
+        : String(error || "unknown")
+    );
+  }
+
+  return Object.assign(
+    {ok: true},
+    record
+  );
+}
+
+async function aiBridgeM11ResolveExactTargetTab(
+  targetChatId,
+  preferredTabId
+) {
+  const target =
+    aiBridgeM11NormalizeChatId(
+      targetChatId
+    );
+
+  if (!target) {
+    return {
+      ok: false,
+      reason:
+        "invalid_target_chat_id",
+      retryable: false
+    };
+  }
+
+  const candidates = new Map();
+
+  async function consider(
+    tab,
+    source
+  ) {
+    if (
+      !aiBridgeM11TabMatchesTarget(
+        tab,
+        target
+      )
+    ) {
+      return;
+    }
+
+    if (
+      !tab ||
+      !Number.isInteger(tab.id)
+    ) {
+      return;
+    }
+
+    candidates.set(
+      tab.id,
+      {
+        tab,
+        source
+      }
+    );
+  }
+
+  await consider(
+    await aiBridgeM11TabsGet(
+      preferredTabId
+    ),
+    "preferred_tab"
+  );
+
+  const remembered =
+    aiBridgeM11ChatRegistry.get(
+      target
+    );
+
+  if (
+    remembered &&
+    Date.now()
+      - remembered.received_at_ms
+      <= AI_BRIDGE_M11_CHAT_TTL_MS
+  ) {
+    await consider(
+      await aiBridgeM11TabsGet(
+        remembered.tab_id
+      ),
+      "heartbeat_registry"
+    );
+  }
+
+  const openTabs =
+    await aiBridgeM11TabsQuery();
+
+  for (const tab of openTabs) {
+    await consider(
+      tab,
+      "open_tabs_query"
+    );
+  }
+
+  const matches = Array.from(
+    candidates.values()
+  );
+
+  if (matches.length === 0) {
+    return {
+      ok: false,
+      reason:
+        "target_chat_tab_not_found",
+      retryable: false,
+      target_chat_id: target
+    };
+  }
+
+  if (matches.length > 1) {
+    return {
+      ok: false,
+      reason:
+        "target_chat_tab_ambiguous",
+      retryable: false,
+      target_chat_id: target,
+      matching_tab_ids:
+        matches.map(
+          (item) => item.tab.id
+        )
+    };
+  }
+
+  const selected = matches[0];
+
+  return {
+    ok: true,
+    tab_id: selected.tab.id,
+    url: String(
+      selected.tab.url || ""
+    ),
+    target_chat_id: target,
+    source: selected.source
+  };
+}
+
+chrome.runtime.onMessage.addListener(
+  (
+    message,
+    sender,
+    sendResponse
+  ) => {
+    if (
+      !message ||
+      message.type
+        !== "AI_BRIDGE_CHAT_HEARTBEAT"
+    ) {
+      return false;
+    }
+
+    sendResponse(
+      aiBridgeM11RegisterHeartbeat(
+        message,
+        sender
+      )
+    );
+
+    return false;
+  }
+);
+/* AI_BRIDGE_MANAGED:M11_TARGET_REGISTRY_0586:END */
+
 /* AI_BRIDGE_MANAGED:M11_BACKGROUND_RETRY_0585:START */
 function aiBridgeM11RetryableReason(result) {
   const reason = String(
@@ -356,6 +736,29 @@ async function injectTextWithM11Retry(
   tabId,
   action
 ) {
+  const targetResolution =
+    await aiBridgeM11ResolveExactTargetTab(
+      action && action.target_chat_id,
+      tabId
+    );
+
+  if (!targetResolution.ok) {
+    return Object.assign(
+      {
+        ok: false,
+        delivery_attempts: 0,
+        stable_command_id:
+          action && action.command_id
+            ? action.command_id
+            : "unknown"
+      },
+      targetResolution
+    );
+  }
+
+  const resolvedTabId =
+    targetResolution.tab_id;
+
   const delays = [0, 450, 1100];
 
   let lastResult = {
@@ -377,7 +780,7 @@ async function injectTextWithM11Retry(
 
     try {
       result = await injectText(
-        tabId,
+        resolvedTabId,
         action
       );
     } catch (error) {

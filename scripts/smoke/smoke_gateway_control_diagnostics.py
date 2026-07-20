@@ -81,7 +81,7 @@ def main() -> int:
     assert data["ok"] is True
     assert data["service"] == "ai-bridge-local"
     assert data["gateway_first"] is True
-    assert data["compatibility"] == "0.5.85-envelope-compatible"
+    assert data["compatibility"] == "0.5.86-envelope-compatible"
     assert data["control_plane"]["owns_validation"] is True
     assert data["control_plane"]["extension_role"] == "thin transport"
     assert "queue" in data

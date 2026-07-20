@@ -98,6 +98,20 @@ const events = [];
 
 const backgroundContext = {
   console,
+
+  /* AI_BRIDGE_MANAGED:M11_RETRY_SMOKE_TARGET_STUB_0586:START */
+  async aiBridgeM11ResolveExactTargetTab(
+    targetChatId,
+    tabId
+  ) {
+    return {
+      ok: true,
+      tab_id: tabId,
+      target_chat_id: targetChatId,
+      source: "delivery_policy_smoke_stub"
+    };
+  },
+  /* AI_BRIDGE_MANAGED:M11_RETRY_SMOKE_TARGET_STUB_0586:END */
   async aiBridgeSleep() {},
   postTelemetryEvent(name, payload) {
     events.push({name, payload});

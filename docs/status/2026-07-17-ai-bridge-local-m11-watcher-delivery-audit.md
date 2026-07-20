@@ -236,3 +236,40 @@ Static, behavioral and runtime validations are required before commit. The
 live browser probe remains gated on reloading the unpacked extension.
 
 <!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:START -->
+
+## Final live acceptance ? release 0.5.86
+
+The initial browser acceptance selected a historical destination because no
+active target-tab registry existed. Release `0.5.86` closes that routing gap
+by validating the requested chat UUID against the browser tab URL.
+
+Release: `0.5.86`
+
+Live acceptance time: `2026-07-18T23:10:20.069551+00:00`
+
+Confirmed target: `6a563525-4740-83e9-a8a1-212c8e5baf1e`
+
+Live command: `m11_fixed_target_primary_20260718_225107_0bb256ee`
+
+Observed acceptance:
+
+- gateway-first selected `local_gateway`;
+- original, routed and persisted target IDs matched;
+- delivery used `button_click_confirmed`;
+- delivery completed in one wrapper attempt;
+- automatic target discovery was disabled;
+- historical command and dead-letter fallback were disabled;
+- one visible delivery was executed;
+- probe database records were removed;
+- the live acceptance suite passed 32 tests;
+- release validation adds one explicit version test, bringing the suite to 33 tests.
+
+The visible acceptance token was:
+
+`AI_BRIDGE_M11_FIXED_TARGET_OK_20260718_225107_0BB256EE`
+
+The token reached the explicitly confirmed conversation.
+
+<!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:END -->

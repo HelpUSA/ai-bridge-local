@@ -222,3 +222,34 @@ Remaining acceptance activity:
 - remove only the probe records.
 
 <!-- AI_BRIDGE_MANAGED:M11_ACTIVE_DELIVERY_RELIABILITY_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:START -->
+
+## M11 completion ? exact target isolation
+
+M11 is complete in release `0.5.86`.
+
+Release: `0.5.86`
+
+Live acceptance time: `2026-07-18T23:10:20.069551+00:00`
+
+Confirmed target: `6a563525-4740-83e9-a8a1-212c8e5baf1e`
+
+Live command: `m11_fixed_target_primary_20260718_225107_0bb256ee`
+
+Observed acceptance:
+
+- gateway-first selected `local_gateway`;
+- original, routed and persisted target IDs matched;
+- delivery used `button_click_confirmed`;
+- delivery completed in one wrapper attempt;
+- automatic target discovery was disabled;
+- historical command and dead-letter fallback were disabled;
+- one visible delivery was executed;
+- probe database records were removed;
+- the live acceptance suite passed 32 tests;
+- release validation adds one explicit version test, bringing the suite to 33 tests.
+
+The next roadmap activity is M12: safe transport for large command payloads.
+
+<!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:END -->

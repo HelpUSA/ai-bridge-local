@@ -38,3 +38,20 @@ operator authorization.
 - `python scripts/maintenance/queue_admin_0585.py summary`
 
 <!-- AI_BRIDGE_MANAGED:COMPACT_COMMAND_OPERATIONS_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M12_BROWSER_LARGE_PAYLOAD_0587:START -->
+## Automatic browser spooling in 0.5.87
+
+The background service performs the large-payload sequence automatically:
+
+1. Serialize the compact command `args` object as JSON.
+2. Measure its UTF-8 byte length.
+3. Keep it inline when the size is at most 32768 bytes.
+4. Otherwise, send the serialized object to `/v1/payloads` with
+   `encoding: "utf-8"`.
+5. Submit the original compact command with `args: {}` and the returned
+   `payload_ref`.
+
+Commands that already contain `payload_ref` are passed through without
+creating another stored payload.
+<!-- AI_BRIDGE_MANAGED:M12_BROWSER_LARGE_PAYLOAD_0587:END -->

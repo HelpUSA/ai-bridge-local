@@ -133,5 +133,5 @@ def test_release_version_0586() -> None:
         )
     )
 
-    assert manifest["version"] == "0.5.86"
-    assert manifest["name"] == "AI Bridge Local 0.5.86"
+    assert manifest["version"] == "0.5.87"
+    assert manifest["name"] == "AI Bridge Local 0.5.87"

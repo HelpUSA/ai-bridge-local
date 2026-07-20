@@ -120,3 +120,21 @@ Observed acceptance:
 - release validation adds one explicit version test, bringing the suite to 33 tests.
 
 <!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:END -->
+
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:START -->
+## M12 safe large payload transport - 0.5.87
+
+| Validation | Result |
+| --- | --- |
+| Small command remains inline | Implemented |
+| Large command uploads JSON payload | Implemented |
+| Compact command receives SHA-256 payload reference | Implemented |
+| Existing payload reference passes through | Implemented |
+| Command-plane durable payload round trip | Implemented |
+| Legacy gateway boundary preserved | Implemented |
+| Legacy QueueAdapter boundary preserved | Implemented |
+| Brain Worker boundary preserved | Implemented |
+| Node behavioral smoke | Added |
+| Python contract tests | Added |
+| Runtime reload verification | Pending publication |
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:END -->

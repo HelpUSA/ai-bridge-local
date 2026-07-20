@@ -60,3 +60,21 @@ Port `8766` serves the legacy browser transport and diagnostics.
 Port `8767` serves compact command-plane operations.
 
 <!-- AI_BRIDGE_MANAGED:COMMAND_PLANE_DETAILS_0585:END -->
+
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:START -->
+## Browser large-payload bridge - 0.5.87
+
+The browser background service now selects between two command argument
+transport forms:
+
+1. Inline JSON arguments when the UTF-8 serialized object is no larger
+   than `MAX_INLINE`.
+2. Durable JSON content stored through `/v1/payloads`, followed by a
+   compact command containing `payload_ref`.
+
+The existing command-plane store remains authoritative for SHA-256
+calculation, expiration, reference validation and payload resolution.
+
+The legacy gateway, legacy queue and Brain Worker are not extended with
+a parallel payload-reference implementation.
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:END -->

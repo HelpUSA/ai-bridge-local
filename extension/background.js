@@ -1,5 +1,5 @@
 // AI Bridge Local v0. - HelpUS AI compatible bridge
-const VERSION = "0.5.86";
+const VERSION = "0.5.87";
 const GATEWAY = "http://127.0.0.1:8766";
 const registry = {};
 
@@ -39,7 +39,7 @@ async function postTelemetryEvent(eventType, details = {}) {
 }
 
 postTelemetryEvent('extension_version', { version: VERSION });
-async function postCommand(cmd) {
+async function aiBridgePostCommandInline0586(cmd) {
   console.log("[bg] Sending:", cmd.command_id);
   try {
     return await postJson("/bridge/commands", cmd);
@@ -58,6 +58,112 @@ async function postCommand(cmd) {
     throw e;
   }
 }
+
+// AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:START
+const AI_BRIDGE_M12_INLINE_LIMIT_BYTES = 32768;
+const AI_BRIDGE_M12_PAYLOAD_ENDPOINT =
+  "http://127.0.0.1:8767/v1/payloads";
+
+function aiBridgeM12PlainObject(value) {
+  return Boolean(value) &&
+    typeof value === "object" &&
+    !Array.isArray(value);
+}
+
+function aiBridgeM12Utf8ByteLength(value) {
+  return new TextEncoder().encode(String(value)).length;
+}
+
+async function aiBridgeM12StoreLargePayload(serializedArgs) {
+  const response = await fetch(
+    AI_BRIDGE_M12_PAYLOAD_ENDPOINT,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        content: serializedArgs,
+        encoding: "utf-8"
+      })
+    }
+  );
+
+  let result = null;
+
+  try {
+    result = await response.json();
+  } catch (_) {
+    result = null;
+  }
+
+  if (
+    !response.ok ||
+    !result ||
+    result.ok !== true ||
+    typeof result.payload_ref !== "string" ||
+    !/^sha256:[0-9a-f]{64}$/.test(result.payload_ref)
+  ) {
+    const status =
+      response && Number.isFinite(response.status)
+        ? response.status
+        : "unknown";
+
+    throw new Error(
+      "large_payload_store_failed:" + status
+    );
+  }
+
+  return result.payload_ref;
+}
+
+async function postCommand(cmd) {
+  if (!aiBridgeM12PlainObject(cmd)) {
+    return aiBridgePostCommandInline0586(cmd);
+  }
+
+  if (
+    typeof cmd.payload_ref === "string" &&
+    cmd.payload_ref.length > 0
+  ) {
+    return aiBridgePostCommandInline0586(cmd);
+  }
+
+  const args =
+    aiBridgeM12PlainObject(cmd.args)
+      ? cmd.args
+      : {};
+
+  const serializedArgs =
+    JSON.stringify(args);
+
+  const inlineBytes =
+    aiBridgeM12Utf8ByteLength(
+      serializedArgs
+    );
+
+  if (
+    inlineBytes <=
+    AI_BRIDGE_M12_INLINE_LIMIT_BYTES
+  ) {
+    return aiBridgePostCommandInline0586(
+      cmd
+    );
+  }
+
+  const payloadRef =
+    await aiBridgeM12StoreLargePayload(
+      serializedArgs
+    );
+
+  return aiBridgePostCommandInline0586({
+    ...cmd,
+    args: {},
+    payload_ref: payloadRef
+  });
+}
+// AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:END
+
 
 async function postAck(commandId, status, extra = {}) {
   const body = Object.assign({

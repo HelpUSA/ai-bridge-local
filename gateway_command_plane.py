@@ -4,7 +4,7 @@ from contextlib import closing
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
-VERSION="0.5.86"; ROOT=Path(__file__).resolve().parent
+VERSION="0.5.87"; ROOT=Path(__file__).resolve().parent
 DB=Path(os.getenv("AI_BRIDGE_QUEUE_DB", str(ROOT/"queue_local.db"))).resolve()
 HOST=os.getenv("AI_BRIDGE_COMMAND_HOST","127.0.0.1"); PORT=int(os.getenv("AI_BRIDGE_COMMAND_PORT","8767"))
 MAX_INLINE=32768; MAX_BODY=1048576; MAX_RESULT=262144

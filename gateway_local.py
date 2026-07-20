@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Gateway v0.5.86"""
+"""AI Bridge Local - Gateway v0.5.87"""
 import json
 import sqlite3
 import uuid
@@ -17,7 +17,7 @@ def open_db():
     conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute('PRAGMA busy_timeout = 30000')
     return conn
-VERSION = "0.5.86"
+VERSION = "0.5.87"
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat()
@@ -344,7 +344,7 @@ def fetch_gateway_diagnostics():
         timestamp=now_iso(),
         gateway_first=True,
         route_policy=get_gateway_route_policy(),
-        compatibility="0.5.86-envelope-compatible",
+        compatibility="0.5.87-envelope-compatible",
         control_plane=dict(
             owns_validation=True,
             owns_queue=True,

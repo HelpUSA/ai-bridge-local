@@ -253,3 +253,25 @@ Observed acceptance:
 The next roadmap activity is M12: safe transport for large command payloads.
 
 <!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:END -->
+
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:START -->
+## M12 implementation - safe transport for large command payloads
+
+M12 targets release `0.5.87`.
+
+The command plane already provided durable SHA-256 payload storage,
+reference validation and execution-time payload resolution. M12 closes
+the browser-side gap by making `extension/background.js` upload compact
+command arguments that exceed the inline limit and then submit only the
+returned `payload_ref`.
+
+Scope boundaries:
+
+- one functional source change in `extension/background.js`;
+- version alignment across runtime-facing components;
+- no Control Center v2 functional work;
+- no legacy gateway payload-reference integration;
+- no legacy queue payload-reference integration;
+- no Brain Worker payload-reference resolution;
+- compatibility retained for small inline commands and both local ports.
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:END -->

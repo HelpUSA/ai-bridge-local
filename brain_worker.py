@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""AI Bridge Local - Brain Worker v0.5.86"""
+"""AI Bridge Local - Brain Worker v0.5.87"""
 import json
 import atexit
 import os
@@ -16,7 +16,7 @@ except Exception:
     queue_adapter = None
 
 GATEWAY = "http://127.0.0.1:8766"
-VERSION = "0.5.86"
+VERSION = "0.5.87"
 
 
 WORKER_LOCK_PATH = Path("temp/brain_worker.pid")

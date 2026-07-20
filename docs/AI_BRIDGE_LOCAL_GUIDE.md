@@ -17,7 +17,7 @@ O AI Bridge Local permite que chats e agentes de IA trabalhem com seguranca sobr
 
 ## 2. Estado atual validado
 
-- Versao atual: 0.5.85.
+- Versao atual: 0.5.87.
 - Repositorio local: D:/dev/autocode/ai-bridge-local.
 - Branch principal: main.
 - Commit de referencia desta consolidacao: 6cf033a gateway: wake chat on final fallback results.
@@ -1499,3 +1499,24 @@ A missing target or multiple tabs matching the same chat UUID is a final,
 non-retryable routing failure.
 
 <!-- AI_BRIDGE_MANAGED:M11_TARGET_REGISTRATION_REPAIR_0586:END -->
+
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:START -->
+## M12 safe large command payload transport - 0.5.87
+
+Release `0.5.87` connects the browser command sender to the durable
+payload storage already provided by the command plane.
+
+Operational contract:
+
+- compact argument objects up to 32768 UTF-8 JSON bytes remain inline;
+- larger argument objects are uploaded to `POST /v1/payloads`;
+- the browser submits the command with `args: {}` and `payload_ref`;
+- the command plane validates the SHA-256 reference, loads the JSON
+  payload and merges it before capability execution;
+- the port `8766` legacy browser transport remains unchanged;
+- `queue_adapter.py` and `brain_worker.py` do not resolve payload references;
+- Control Center v2 is outside the functional M12 scope.
+
+Runtime-facing version checks require extension reload and local process
+restart only after source validation and publication.
+<!-- AI_BRIDGE_MANAGED:M12_LARGE_PAYLOAD_TRANSPORT_0587:END -->
